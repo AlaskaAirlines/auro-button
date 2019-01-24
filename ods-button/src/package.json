@@ -1,0 +1,13 @@
+{
+  "name": "ods-button",
+  "version": "0.1.0",
+  "description": "Orion Design System Button element",
+  "main": "ods-button.js",
+  "dependencies": {
+    "lit-element": "^2.0.0-rc.3"
+  },
+  "scripts": {
+    "sass-render": "sass-render *.scss",
+    "set-patch": "versiony ./package.json --patch"
+  }
+}

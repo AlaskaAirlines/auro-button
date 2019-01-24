@@ -16,7 +16,7 @@
       import "@polymer/iron-demo-helpers/demo-snippet";
     </script>
 
-    <script type="module" src="../ods-button.js"></script>
+    <script type="module" src="../src/ods-button.js"></script>
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles"></style>
@@ -27,27 +27,31 @@
       <h3>Basic ods-button demo</h3>
       <demo-snippet>
         <template>
-          <ods-button disabled string="Disabled primary" />
+          <ods-button disabled string="Disabled primary"></ods-button>
         </template>
       </demo-snippet>
       <demo-snippet>
         <template>
-          <ods-button string="Primary" />
+          <ods-button string="Primary"></ods-button>
         </template>
       </demo-snippet>
       <demo-snippet>
         <template>
-          <ods-button active string="Primary active..." />
+          <ods-button active string="Primary active..."></ods-button>
         </template>
       </demo-snippet>
       <demo-snippet>
         <template>
-          <ods-button type="secondary" string="Secondary" />
+          <ods-button type="secondary" string="Secondary"></ods-button>
         </template>
       </demo-snippet>
       <demo-snippet>
         <template>
-          <ods-button type="secondary" disabled string="Disabled secondary" />
+          <ods-button
+            type="secondary"
+            disabled
+            string="Disabled secondary"
+          ></ods-button>
         </template>
       </demo-snippet>
     </div>

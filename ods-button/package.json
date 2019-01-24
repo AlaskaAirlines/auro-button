@@ -16,6 +16,6 @@
     "wct-mocha": "^1.0.0"
   },
   "scripts": {
-    "sass-render": "sass-render *.scss"
+    "sass-render": "sass-render src/*.scss"
   }
 }
