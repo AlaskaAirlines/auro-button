@@ -7,7 +7,6 @@
     "lit-element": "^2.0.0-rc.3"
   },
   "scripts": {
-    "sass-render": "sass-render *.scss",
     "set-patch": "versiony ./package.json --patch"
   }
 }
