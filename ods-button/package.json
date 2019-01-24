@@ -3,7 +3,8 @@
   "description": "Orion Design System Button element",
   "main": "ods-button.js",
   "dependencies": {
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/polymer": "^3.0.0",
+    "lit-element": "^2.0.0-rc.3"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
@@ -11,6 +12,10 @@
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
+    "wc-sass-render": "^1.1.2",
     "wct-mocha": "^1.0.0"
+  },
+  "scripts": {
+    "sass-render": "sass-render *.scss"
   }
 }

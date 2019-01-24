@@ -1,32 +1,20 @@
-import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import { LitElement, html } from 'lit-element';
+import css from './ods-button-css.js';
 
-/**
- * `ods-button`
- * Orion Design System Button element
- *
- * @customElement
- * @polymer
- * @demo demo/index.html
- */
-class OdsButton extends PolymerElement {
-  static get template() {
-    return html`
-      <style>
-        :host {
-          display: block;
-        }
-      </style>
-      <h2>Hello [[prop1]]!</h2>
-    `;
-  }
+class OdsButton extends LitElement {
   static get properties() {
     return {
-      prop1: {
-        type: String,
-        value: 'ods-button',
-      },
-    };
+      style: String,
+    }
+  }
+
+  render() {
+    return html`
+      ${css}
+
+      <button class='${this.style}'><slot></slot></button>
+    `;
   }
 }
 
-window.customElements.define('ods-button', OdsButton);
+customElements.define('ods-button', OdsButton);
