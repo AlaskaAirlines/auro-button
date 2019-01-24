@@ -1,5 +1,5 @@
 {
-  "name": "ods-button",
+  "name": "@alaskaair/ods-button",
   "version": "0.1.0",
   "description": "Orion Design System Button element",
   "main": "ods-button.js",
