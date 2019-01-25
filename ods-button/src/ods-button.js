@@ -8,6 +8,7 @@ class OdsButton extends LitElement {
     this.type = "primary";
     this.disabled = false;
     this.active = false;
+    this.onclick = "";
     this.getButtonStyle = this.getButtonStyle.bind(this);
   }
 
@@ -24,6 +25,9 @@ class OdsButton extends LitElement {
       },
       active: {
         type: Boolean
+      },
+      onclick: {
+        type: String
       }
     };
   }
@@ -39,6 +43,7 @@ class OdsButton extends LitElement {
       <button
         class="button ${this.getButtonStyle(this.active, this.type)}"
         ?disabled="${this.disabled || this.active}"
+        @click="${this.onclick}"
       >
         ${this.string}
       </button>

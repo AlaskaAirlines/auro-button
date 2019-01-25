@@ -17,6 +17,7 @@
     </script>
 
     <script type="module" src="../src/ods-button.js"></script>
+    <script src="../demo/alert.js"></script>
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles"></style>
@@ -32,7 +33,10 @@
       </demo-snippet>
       <demo-snippet>
         <template>
-          <ods-button string="Primary"></ods-button>
+          <ods-button
+            string="Primary"
+            onclick="popAlert('Primary')"
+          ></ods-button>
         </template>
       </demo-snippet>
       <demo-snippet>
@@ -42,7 +46,11 @@
       </demo-snippet>
       <demo-snippet>
         <template>
-          <ods-button type="secondary" string="Secondary"></ods-button>
+          <ods-button
+            type="secondary"
+            string="Secondary"
+            onclick="popAlert('Secondary')"
+          ></ods-button>
         </template>
       </demo-snippet>
       <demo-snippet>
