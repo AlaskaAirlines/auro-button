@@ -28,29 +28,51 @@
       <h3>Basic ods-button demo</h3>
       <demo-snippet>
         <template>
-          <ods-button disabled string="Disabled primary"></ods-button>
+          <ods-button disabled="true" string="Disabled primary"></ods-button>
         </template>
       </demo-snippet>
       <demo-snippet>
         <template>
-          <ods-button string="Primary"></ods-button>
+          <ods-button
+            disabled="false"
+            active="false"
+            string="Primary with attributes"
+          ></ods-button>
         </template>
       </demo-snippet>
       <demo-snippet>
         <template>
-          <ods-button active string="Primary active..."></ods-button>
+          <ods-button string="Primary without attributes"></ods-button>
         </template>
       </demo-snippet>
       <demo-snippet>
         <template>
-          <ods-button type="secondary" string="Secondary"></ods-button>
+          <ods-button active="true" string="Primary active..."></ods-button>
         </template>
       </demo-snippet>
       <demo-snippet>
         <template>
           <ods-button
             type="secondary"
-            disabled
+            string="Secondary without attributes"
+          ></ods-button>
+        </template>
+      </demo-snippet>
+      <demo-snippet>
+        <template>
+          <ods-button
+            disabled="false"
+            active="false"
+            type="secondary"
+            string="Secondary with attributes"
+          ></ods-button>
+        </template>
+      </demo-snippet>
+      <demo-snippet>
+        <template>
+          <ods-button
+            type="secondary"
+            disabled="true"
             string="Disabled secondary"
           ></ods-button>
         </template>

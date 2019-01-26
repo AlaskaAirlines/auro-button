@@ -6,8 +6,8 @@ class OdsButton extends LitElement {
     super();
     this.string = "";
     this.type = "primary";
-    this.disabled = false;
-    this.active = false;
+    this.disabled = "false";
+    this.active = "false";
     this.getButtonStyle = this.getButtonStyle.bind(this);
   }
 
@@ -20,17 +20,22 @@ class OdsButton extends LitElement {
         type: String
       },
       disabled: {
-        type: Boolean
+        type: String
       },
       active: {
-        type: Boolean
+        type: String
       }
     };
   }
 
   getButtonStyle(active, type) {
     if (type === "secondary") return "button--secondary";
-    return active ? "button--active" : "";
+    return active === "true" ? "button--active" : "";
+  }
+
+  isDisabled(disabled, active) {
+    console.log(disabled);
+    return disabled === "true" || active === "true";
   }
 
   render() {
@@ -38,7 +43,7 @@ class OdsButton extends LitElement {
       ${css}
       <button
         class="button ${this.getButtonStyle(this.active, this.type)}"
-        ?disabled="${this.disabled || this.active}"
+        ?disabled="${this.isDisabled(this.disabled, this.active)}"
       >
         ${this.string}
       </button>
