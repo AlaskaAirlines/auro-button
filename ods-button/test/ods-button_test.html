@@ -26,7 +26,7 @@
 
     <test-fixture id="ChangedPropertyTestFixture">
       <template>
-        <ods-button prop1="new-prop1"></ods-button>
+        <ods-button string="foo"></ods-button>
       </template>
     </test-fixture>
 
@@ -35,22 +35,19 @@
         test("it's a test", () => {
           assert.equal(1, 1);
         });
-        //   test("instantiating the element with default properties works", () => {
-        //     const element = fixture("BasicTestFixture");
-        //     assert.equal(element.prop1, "ods-button");
-        //     const elementShadowRoot = element.shadowRoot;
-        //     const elementHeader = elementShadowRoot.querySelector("h2");
-        //     assert.equal(elementHeader.innerHTML, "Hello ods-button!");
-        //   });
+        test("instantiating the element with default properties works", () => {
+          const element = fixture("BasicTestFixture");
+          assert.equal(element.string, "");
+          assert.equal(element.type, "primary");
+          assert.equal(element.disabled, "false");
+          assert.equal(element.active, "false");
+        });
 
-        //   test("setting a property on the element works", () => {
-        //     // Create a test fixture
-        //     const element = fixture("ChangedPropertyTestFixture");
-        //     assert.equal(element.prop1, "new-prop1");
-        //     const elementShadowRoot = element.shadowRoot;
-        //     const elementHeader = elementShadowRoot.querySelector("h2");
-        //     assert.equal(elementHeader.innerHTML, "Hello new-prop1!");
-        //   });
+        test("setting a property on the element works", () => {
+          // Create a test fixture
+          const element = fixture("ChangedPropertyTestFixture");
+          assert.equal(element.string, "foo");
+        });
       });
     </script>
   </body>

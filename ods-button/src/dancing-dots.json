@@ -1,0 +1,59 @@
+{
+  "dancingdots": {
+    "display": {"value": "none"},
+    "offset": {"value": "-2px"},
+    "is-active": {
+      "display": {"value": "inline-block"}
+    },
+    "dots": {
+      "display": {"value": "flex"}
+    },
+    "block": {
+      "width": {"value": "2px"},
+      "height": {"value": "2px"},
+      "margin": {"value": "0 0.5px"},
+      "opacity": {"value": 0},
+      "background": {
+        "color": {"value": "var(--color-base-white)"}
+      },
+      "secondary": {
+        "background": {
+          "color": {"value": "var(--color-brand-blue-atlas)"}
+        }
+      }
+    },
+    "animation": {
+      "name": {"value": "bounce"},
+      "timing-function": {"value": "linear"},
+      "iteration-count": {"value": "infinite"},
+      "duration": {"value": "1s"},
+      "delay": {
+        "child": {
+          "two": {"value": "0.3s"},
+          "three": {"value": "0.6s"}
+        }
+      }
+    },
+    "keyframe": {
+      "step1": {
+        "name": {"value": "0"},
+        "transform": {"value": "translateY(0)"},
+        "opacity": {"value": 0}
+      },
+      "step2": {
+        "name": {"value": "8"},
+        "transform": {"value": "translateY(-2px)"},
+        "opacity": {"value": 1}
+      },
+      "step3": {
+        "name": {"value": "15"},
+        "transform": {"value": "translateY(0)"},
+        "opacity": {"value": 1}
+      },
+      "step4": {
+        "name": {"value": "100"},
+        "opacity": {"value": 0}
+      }
+    }
+  }
+}

@@ -1,59 +1,205 @@
-.button {
-  user-select: none;
-  align-items: center;
-  border: 0;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 300;
-  height: 50px;
-  line-height: 1;
-  padding: 0 1em;
-  min-width: 100%;
-  background-color: #0074c8;
-  color: white;
-  min-width: 155px;
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
 
-  &--active {
+// ---------------------------------------------------------------------
+
+// Creates ods-button CSS UI definition of shape
+
+
+@import "./generated/tokenVariables";
+@import "./generated/buttonVariables";
+@import "./generated/dotsVariables";
+
+@import "./generated/tokenProperties";
+@import "./generated/buttonProperties";
+@import "./generated/dotsProperties";
+
+@import "./node_modules/@alaskaair/orion-web-core-style-sheets/breakpoints";
+@import "./node_modules/@alaskaair/orion-web-core-style-sheets/baselineLTE";
+@import "./node_modules/@alaskaair/orion-web-core-style-sheets/animation";
+
+// container
+:host {
+  display: $host-display;
+  flex-direction: $host-flex-direction-mobile;
+
+  @include breakpoint-narrow {
+    flex-direction: $host-flex-direction-phone-large-and-above;
+  }
+}
+
+// layout
+span {
+  display: inline-block;
+}
+
+// button shape
+.button {
+  @include transition;
+
+  display: var(--ods-button-display);
+  font-family: var(--ods-button-font-family);
+  border-width: var(--ods-button-border-width);
+  border-radius: var(--ods-button-border-radius);
+  font-size: var(--ods-button-font-size);
+  font-weight: var(--ods-button-font-weight);
+  line-height: var(--ods-button-height);
+  padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding);
+  width: var(--ods-button-width-mobile);
+  background-color: var(--ods-button-background-color);
+  color: var(--ods-button-text-color);
+  white-space: var(--ods-button-white-space);
+  cursor: var(--ods-button-cursor);
+
+  &:hover {
+    background-color: var(--ods-button-hover-background-color); // atlas hacked color
+    box-shadow: 0 0 16px var(--ods-button-hover-shadow-color); // midnight hacked color
+  }
+
+  &:active {
+    background-color: var(--ods-button-active-background-color);
+  }
+
+  &.is-active {
     &:disabled {
-      cursor: not-allowed;
-      color: white;
-      font-size: 15px;
-      background-color: #62bdff;
+      cursor: var(--ods-button-disabled-cursor);
+      color: var(--ods-button-is-active-disabled-color);
+      background-color: var(--ods-button-is-active-disabled-background-color);
+
+      &:hover {
+        background-color: var(--ods-button-is-active-disabled-background-color);
+      }
+    }
+  }
+
+  &--enclosed {
+    @include breakpoint-narrow {
+      width: var(--ods-button-width-narrow) !important;
     }
   }
 
   &--secondary {
-    background-color: white;
-    border: 1px solid #0074c8;
-    color: #0074c8;
-
-    &:disabled {
-      cursor: not-allowed;
-      color: #6e7783;
-      font-size: 15px;
-      background-color: #e5ecf0;
-      border: 1px solid #e5ecf0;
-    }
+    background-color: var(--ods-button-secondary-background-color);
+    border: var(--ods-button-secondary-border-width) var(--ods-button-secondary-border-style) var(--ods-button-secondary-border-color);
+    color: var(--ods-button-secondary-color);
 
     &:active {
-      color: white;
-      font-size: 15px;
-      background-color: #62bdff;
+      color: var(--ods-button-secondary-active-color);
+      border-color: var(--ods-button-secondary-active-border-color);
+      background-color: var(--ods-button-secondary-active-background-color)
     }
+
+    &:hover {
+      background-color: var(--ods-button-secondary-hover-background-color);
+      box-shadow: 0 0 16px var(--ods-button-secondary-hover-shadow-color);
+      border-color: var(--ods-button-secondary-hover-border-color);
+      color: var(--ods-button-secondary-hover-text-color);
+    }
+
+    &:disabled {
+      cursor: var(--ods-button-disabled-cursor);
+      color: var(--ods-button-disabled-color);
+      border-color: var(--ods-button-secondary-disabled-border-color);
+      background-color: var(--ods-button-secondary-disabled-background-color);
+
+      &:hover {
+        border-color: var(--ods-button-secondary-disabled-hover-border-color);
+        background-color: var(--ods-button-secondary-disabled-hover-background-color);
+      }
+    }
+
+    &.is-active {
+      &:disabled {
+        color: var(--ods-button-secondary-is-active-disabled-color);
+        border-color: var(--ods-button-secondary-is-active-disabled-border-color);
+        background-color: var(--ods-button-secondary-is-active-disabled-background-color);
+
+        &:hover {
+          background-color: var(--ods-button-secondary-is-active-disabled-hover-background-color)
+        }
+      }
+    }
+  }
+
+  @include breakpoint-narrow {
+    width: var(--ods-button-width-medium);
   }
 }
 
 :disabled {
-  cursor: not-allowed;
-  color: #6e7783;
-  font-size: 15px;
-  background-color: #e5ecf0;
-  border: 1px solid #e5ecf0;
+  cursor: var(--ods-button-disabled-cursor);
+  color: var(--ods-button-disabled-color);
+  background-color: var(--ods-button-disabled-background-color);
+
+  &:hover {
+    background-color: var(--ods-button-disabled-hover-background-color);
+    color: var(--ods-button-disabled-color);
+    box-shadow: unset;
+  }
 }
 
-:active {
-  color: white;
-  font-size: 15px;
-  background-color: #62bdff;
+// dancing dots
+.dancingDots {
+  display: var(--dancingdots-display);
+  margin-left: var(--dancingdots-offset);
+
+  &.is-active {
+    display: var(--dancingdots-is-active-display);
+  }
+}
+
+.dots {
+  display: var(--dancingdots-dots-display);
+}
+
+.block {
+  display: var(--dancingdots-dots-display);
+  width: var(--dancingdots-block-width);
+  height: var(--dancingdots-block-height);
+  margin: var(--dancingdots-block-margin);
+  opacity: var(--dancingdots-block-opacity);
+  background-color: var(--dancingdots-block-background-color);
+
+  .button--secondary & {
+    background-color: var(--dancingdots-block-secondary-background-color);
+  }
+
+  &:nth-child(1) {
+    animation: var(--dancingdots-animation-name)
+      var(--dancingdots-animation-duration)
+      var(--dancingdots-animation-timing-function)
+      var(--dancingdots-animation-iteration-count);
+  }
+  &:nth-child(2) {
+    animation: var(--dancingdots-animation-name)
+      var(--dancingdots-animation-duration)
+      var(--dancingdots-animation-delay-child-two)
+      var(--dancingdots-animation-timing-function)
+      var(--dancingdots-animation-iteration-count);
+  }
+  &:nth-child(3) {
+    animation: var(--dancingdots-animation-name)
+      var(--dancingdots-animation-duration)
+      var(--dancingdots-animation-delay-child-three)
+      var(--dancingdots-animation-timing-function)
+      var(--dancingdots-animation-iteration-count);
+  }
+}
+
+@keyframes #{$dancingdots-animation-name} {
+  #{$dancingdots-keyframe-step-1-name}% {
+    transform: var(--dancingdots-keyframe-step-1-transform);
+    opacity: var(--dancingdots-keyframe-step-1-opacity);
+  }
+  #{$dancingdots-keyframe-step-2-name}% {
+    transform: var(--dancingdots-keyframe-step-2-transform);
+    opacity: var(--dancingdots-keyframe-step-2-opacity);
+  }
+  #{$dancingdots-keyframe-step-3-name}% {
+    transform: var(--dancingdots-keyframe-step-3-transform);
+    opacity: var(--dancingdots-keyframe-step-3-opacity);
+  }
+  #{$dancingdots-keyframe-step-4-name}% {
+    opacity: var(--dancingdots-keyframe-step-4-opacity);
+  }
 }

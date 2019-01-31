@@ -1,21 +1,51 @@
 {
-  "name": "ods-button",
+  "name": "@alaskaair/ods-button",
+  "version": "0.2.0",
   "description": "Orion Design System Button element",
-  "main": "ods-button.js",
+  "author": "Product design and research",
+  "repository": {
+    "type": "git",
+    "url": "https://itsals.visualstudio.com/DefaultCollection/Orion%20Design%20System/_git/statelessComponents"
+  },
+  "main": "src/",
+  "license": "Apache-2.0",
   "dependencies": {
+    "@polymer/iron-icons": "^3.0.1",
     "@polymer/polymer": "^3.0.0",
+    "gulp": "^4.0.0",
     "lit-element": "^2.0.0-rc.3"
   },
   "devDependencies": {
+    "@alaskaair/orion-design-tokens": "^0.4.1419434",
+    "@alaskaair/orion-web-core-style-sheets": "^0.3.1419101",
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
     "@polymer/test-fixture": "^4.0.2",
     "@webcomponents/webcomponentsjs": "^2.0.0",
+    "autoprefixer": "^9.4.7",
     "chai": "^4.2.0",
+    "copyfiles": "^2.1.0",
+    "css-byebye": "^2.0.0",
+    "fs": "0.0.1-security",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "lodash": "^4.17.11",
     "mocha": "^5.2.0",
+    "npm-watch": "^0.6.0",
+    "postcss-custom-properties": "^8.0.9",
+    "postcss-remove-selectors": "^2.0.0",
+    "style-dictionary": "^2.6.2",
     "wc-sass-render": "^1.1.2",
     "wct-mocha": "^1.0.0"
   },
+  "watch": {
+    "build-tokens": "./src/*.json"
+  },
   "scripts": {
-    "sass-render": "sass-render src/*.scss"
+    "copyfiles": "copyfiles -f ./node_modules/@alaskaair/orion-web-core-style-sheets/fonts/*.* ./demo/fonts/",
+    "build-tokens": "node scripts/tokenScript.js",
+    "sass-render-w": "sass-render -w src/**/*.{scss,css}",
+    "sass-render": "sass-render src/**/*.{scss,css}",
+    "tokens": "npm-watch build-tokens | npm-watch sass-render-w"
   }
 }

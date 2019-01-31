@@ -1,0 +1,25 @@
+{
+  "source": [ "./src/ods-button.json" ],
+  "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "./src/generated/",
+      "files": [
+        {
+          "destination": "_buttonVariables.scss",
+          "format": "scss/variables"
+        }
+      ]
+    },
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "./src/generated/",
+      "files": [
+        {
+          "destination": "_buttonProperties.scss",
+          "format": "css/variables"
+        }
+      ]
+    }
+  }
+}
