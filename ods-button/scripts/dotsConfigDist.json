@@ -1,0 +1,15 @@
+{
+  "source": [ "./src/dancing-dots.json"],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "./src/generated/",
+      "files": [
+        {
+          "destination": "_dotsProperties.scss",
+          "format": "custom/css/variables"
+        }
+      ]
+    }
+  }
+}

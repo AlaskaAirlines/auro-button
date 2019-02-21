@@ -24,8 +24,13 @@ Prior to starting the server, UI dependencies must be built.
 
 ```
 $ gulp build  // builds font, tokens and initial Sass resources
-$ npm run sass-render
-$ polymer serve
+$ npm run build  // builds token resources and starts server
+```
+
+Once the server is loaded, it will be viewable at:
+
+```
+http://127.0.0.1:8081
 ```
 
 ## Development
@@ -34,13 +39,7 @@ When actively developing component resources, the following watchers are necessa
 
 ```
 $ gulp dev // watches and rebuilds development resources
-$ npm run tokens // watches token resources to build development resources
-```
-
-The Polymer server is required for building browser resources
-
-```
-$ polymer serve
+$ npm run dev // watches token resources and starts server
 ```
 
 Once the server is loaded, it will be viewable at:
@@ -54,6 +53,6 @@ http://127.0.0.1:8081
 Prior to completing work and submitting a pull request, be sure to address the following steps to ensure that all proper resources have been generated.
 
 ```
-$ gulp build
-$ npm run sass-render
+$ gulp dist
+$ npm run dist
 ```

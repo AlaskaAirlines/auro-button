@@ -15,9 +15,9 @@ const gulp = require('gulp'),
   StyleDictionary = require('style-dictionary'),
   copyfiles = require('copyfiles');
 
-const tokenConfig = StyleDictionary.extend('./scripts/tokenConfig.json');
-const buttonConfig = StyleDictionary.extend('./scripts/buttonConfig.json');
-const dotsConfig = StyleDictionary.extend('./scripts/dotsConfig.json');
+// const tokenConfig = StyleDictionary.extend('./scripts/tokenConfig.json');
+// const buttonConfig = StyleDictionary.extend('./scripts/buttonConfig.json');
+// const dotsConfig = StyleDictionary.extend('./scripts/dotsConfig.json');
 
 
 // task to copy font files from the OWCSS npm to the local project
@@ -30,9 +30,14 @@ gulp.task('copy:fonts', function(cb) {
 
 // task to build CSS/Sass resources from Token JSON files
 gulp.task('build:tokens', function(cb) {
-  tokenConfig.buildAllPlatforms();
-  buttonConfig.buildAllPlatforms();
-  dotsConfig.buildAllPlatforms();
+  StyleDictionary.extend('./scripts/tokenScript.js');
+  cb();
+});
+
+
+// produce CSS Tokens using :host versus :root
+gulp.task('dist:tokens', function(cb) {
+  StyleDictionary.extend('./scripts/tokenScriptCustom.js');
   cb();
 });
 
@@ -118,3 +123,7 @@ gulp.task('sass:watch', function() {
 gulp.task('build', gulp.series(gulp.parallel('copy:fonts', 'build:tokens', 'process:demo', 'process:src')));
 
 gulp.task('dev', gulp.series(gulp.parallel('copy:fonts', 'build:tokens', 'process:demo', 'process:dev', 'sass:watch')));
+
+gulp.task('dist', gulp.series(gulp.parallel('build', 'dist:tokens')));
+
+

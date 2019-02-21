@@ -46,8 +46,11 @@
     "set-patch": "versiony ./src/package.json --patch",
     "copyfiles": "copyfiles -f ./node_modules/@alaskaair/orion-web-core-style-sheets/fonts/*.* ./demo/fonts/",
     "build-tokens": "node scripts/tokenScript.js",
+    "build-tokens-custom": "node scripts/tokenScriptCustom.js",
     "sass-render-w": "sass-render -w src/**/*.{scss,css}",
     "sass-render": "sass-render src/**/*.{scss,css}",
-    "tokens": "npm-watch build-tokens | npm-watch sass-render-w"
+    "build": "npm run sass-render | polymer serve",
+    "dist": "npm run build-tokens-custom | npm run sass-render",
+    "dev": "npm-watch build-tokens | npm-watch sass-render-w | polymer serve"
   }
 }
