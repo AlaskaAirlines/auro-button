@@ -51,11 +51,15 @@ span {
   white-space: var(--ods-button-white-space);
   cursor: var(--ods-button-cursor);
 
-  &:hover {
-    background-color: var(--ods-button-hover-background-color); // atlas hacked color
-    box-shadow: 0 0 16px var(--ods-button-hover-shadow-color); // midnight hacked color
+  // refeerence :host selector for .is-touching state selector
+  // only use hover UI if non-touch scenario
+  :host(:not(.is-touching)) & {
+    &:hover {
+      background-color: var(--ods-button-hover-background-color);
+      box-shadow: 0 0 16px var(--ods-button-hover-shadow-color);
+    }
   }
-
+  
   &:active {
     background-color: var(--ods-button-active-background-color);
   }

@@ -3,7 +3,6 @@ import buttonProperties from './generated/_buttonProperties-css.js';
 import dotsProperties from './generated/_dotsProperties-css.js';
 import odsButtonCss from "./ods-button-css.js";
 
-
 class OdsButton extends LitElement {
   constructor() {
     super();
@@ -15,6 +14,11 @@ class OdsButton extends LitElement {
     this.getButtonType = this.getButtonType.bind(this);
     this.getButtonState = this.getButtonState.bind(this);
     this.getButtonContext = this.getButtonContext.bind(this);
+    
+    // adds event based on activelly being touched
+    this.addEventListener('touchstart', function() {
+      this.classList.add('is-touching');
+    });
   }
 
   static get properties() {

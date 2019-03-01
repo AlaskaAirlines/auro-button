@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@alaskaair/orion-design-tokens": "^0.4.1419434",
-    "@alaskaair/orion-web-core-style-sheets": "^0.3.1419101",
+    "@alaskaair/orion-web-core-style-sheets": "^0.3.1422151",
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
     "@polymer/test-fixture": "^4.0.2",
     "@webcomponents/webcomponentsjs": "^2.0.0",
