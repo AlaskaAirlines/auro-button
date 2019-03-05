@@ -17,7 +17,7 @@
     "versiony-cli": "^1.3.0"
   },
   "devDependencies": {
-    "@alaskaair/orion-design-tokens": "^0.4.1419434",
+    "@alaskaair/orion-design-tokens": "^0.4.1420687",
     "@alaskaair/orion-web-core-style-sheets": "^0.3.1422151",
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
     "@polymer/test-fixture": "^4.0.2",
@@ -35,7 +35,6 @@
     "npm-watch": "^0.6.0",
     "postcss-custom-properties": "^8.0.9",
     "postcss-remove-selectors": "^2.0.0",
-    "style-dictionary": "^2.6.2",
     "wc-sass-render": "^1.1.2",
     "wct-mocha": "^1.0.0"
   },
