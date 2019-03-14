@@ -6,7 +6,7 @@
       "buildPath": "./src/generated/",
       "files": [
         {
-          "destination": "_dotsProperties.scss",
+          "destination": "dotsProperties.scss",
           "format": "custom/css/variables"
         }
       ]

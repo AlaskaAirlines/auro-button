@@ -16,7 +16,7 @@
       "buildPath": "./src/generated/",
       "files": [
         {
-          "destination": "_buttonProperties.scss",
+          "destination": "buttonProperties.scss",
           "format": "css/variables"
         }
       ]
