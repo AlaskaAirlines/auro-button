@@ -1,10 +1,29 @@
-// =====================================================================
+// =========================================================================
 
 /*
-  Notes
+  Build process API
+
+  # To build resources to view the demo file, perform the following tasks
+    1. $ gulp build
+    2. $ npm run build
+    3. $ polymer serve
+    4. Go to http://127.0.0.1:8081
+
+  # To work within the development environment, run the following tasks
+    1. $ gulp dev
+    2. $ npm run dev
+    3. Go to http://127.0.0.1:8081
+  
+  # To build the distribution resources locally, run the following tasks
+    1. $ gulp dist
+    2. $ npm run dist
+    3. You can view dist version now at http://127.0.0.1:8081
+
+    To build the dist package, run
+    $ npm run buildPackage
 */
 
-// =====================================================================
+// =========================================================================
 
 const gulp = require('gulp'),
   gulpSass = require('gulp-sass'),
@@ -17,28 +36,28 @@ const gulp = require('gulp'),
 
 // task to copy font files from the OWCSS npm to the local project
 // resources are NOT to be committed to version control
-gulp.task('copy:fonts', function(cb) {
+gulp.task('copyFonts', function(cb) {
   copyfiles(['./node_modules/@alaskaair/orion-web-core-style-sheets/fonts/*.*', './demo/fonts/'], true, cb);
   cb();
 });
 
 
 // task to build CSS/Sass resources from Token JSON files
-gulp.task('build:tokens', function(cb) {
+gulp.task('buildTokens', function(cb) {
   StyleDictionary.extend('./scripts/tokenScript.js');
   cb();
 });
 
 
 // produce CSS Tokens using :host versus :root
-gulp.task('dist:tokens', function(cb) {
+gulp.task('distTokens', function(cb) {
   StyleDictionary.extend('./scripts/tokenScriptCustom.js');
   cb();
 });
 
 
 // task to address Sass processing for the demo view
-gulp.task('process:demo', function() {
+gulp.task('processDemo', function() {
   // set path to where Sass files are located to be processed
   return gulp.src('./demo/sass/{,*/}*.{scss,sass}')
 
@@ -54,9 +73,9 @@ gulp.task('process:demo', function() {
 
 
 // task for Production Sass processing and legacy support
-gulp.task('process:src', function() {
+gulp.task('processSrc', function() {
   // set path to where Sass files are located to be processed
-  return gulp.src('./src/{,*/}*.{scss,sass}')
+  return gulp.src('./src/*.scss')
 
     // Sass pipeline
     .pipe(gulpSass({
@@ -86,9 +105,9 @@ gulp.task('process:src', function() {
 });
 
 // task for Development Sass processing
-gulp.task('process:dev', function() {
+gulp.task('processDev', function() {
   // set path to where Sass files are located to be processed
-  return gulp.src('./src/{,*/}*.{scss,sass}')
+  return gulp.src('./src/*.scss')
 
     // Sass pipeline
     .pipe(gulpSass({
@@ -109,16 +128,14 @@ gulp.task('process:dev', function() {
 });
 
 // Sass watcher
-gulp.task('sass:watch', function() {
-  gulp.watch('./**/*.{scss,sass}', gulp.series(gulp.parallel('process:demo', 'process:dev')));
+gulp.task('sassWatch', function() {
+  gulp.watch('./**/*.{scss,sass}', gulp.series(gulp.parallel('processDemo', 'processDev')));
 });
 
 // Task(s)
 // Gulp Sequence is used to force Gulp to address tasks in specific build order
-gulp.task('build', gulp.series(gulp.parallel('copy:fonts', 'build:tokens', 'process:demo', 'process:src')));
+gulp.task('build', gulp.series(gulp.parallel('copyFonts', 'buildTokens', 'processDemo', 'processSrc')));
 
-gulp.task('dev', gulp.series(gulp.parallel('copy:fonts', 'build:tokens', 'process:demo', 'process:dev', 'sass:watch')));
+gulp.task('dev', gulp.series(gulp.parallel('copyFonts', 'buildTokens', 'processDemo', 'processDev', 'sassWatch')));
 
-gulp.task('dist', gulp.series(gulp.parallel('build', 'dist:tokens')));
-
-
+gulp.task('dist', gulp.series(gulp.parallel('build', 'distTokens')));
