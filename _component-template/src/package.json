@@ -1,7 +1,7 @@
 {
-  "name": "@alaskaair/ods-button",
-  "version": "1.0.0",
-  "description": "Orion Design System Button element",
+  "name": "@alaskaair/ods-[name]",
+  "version": "0.0.0",
+  "description": "Orion Design System [name] element",
   "author": "Product design and research",
   "license": "Apache-2.0",
   "repository": {

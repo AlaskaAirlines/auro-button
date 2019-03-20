@@ -7,16 +7,16 @@
 
 
 @import "./generated/tokenVariables";
-@import "./generated/buttonVariables";
+@import "./generated/componentVariables";
 @import "./generated/dotsVariables";
 
 @import "./generated/tokenProperties";
-@import "./generated/buttonProperties";
+@import "./generated/componentProperties";
 @import "./generated/dotsProperties";
 
-@import "./node_modules/@alaskaair/orion-web-core-style-sheets/breakpoints";
-@import "./node_modules/@alaskaair/orion-web-core-style-sheets/baselineLTE";
-@import "./node_modules/@alaskaair/orion-web-core-style-sheets/animation";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/breakpoints";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/baselineLTE";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/animation";
 
 // container
 :host {

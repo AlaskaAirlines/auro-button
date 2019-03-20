@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit-element";
-import buttonProperties from './generated/buttonProperties-css.js';
+import buttonProperties from './generated/componentProperties-css.js';
 import dotsProperties from './generated/dotsProperties-css.js';
-import odsButtonCss from "./ods-button-css.js";
+import styleCss from "./style-css.js";
 
 class OdsButton extends LitElement {
   constructor() {
@@ -61,7 +61,7 @@ class OdsButton extends LitElement {
     return html`
       ${buttonProperties}
       ${dotsProperties}
-      ${odsButtonCss}
+      ${styleCss}
 
       <button
         aria-labelledby='odsButtonString'

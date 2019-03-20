@@ -112,18 +112,3 @@ import "@alaskaair/ods-button/ods-button";
 ODS Web Components use CSS Custom Properties to define core UI properties of each element or component. Where CSS Custom Properties are not supported, fallback properties are generated.
 
 When installing a ODS Web Component, all CSS needed for the component is included with the npm package. No additional builds or processing is needed at the project level.
-
-## Accessibility (lighthouse report 2.19.18)
-
-| Test | Result |
-|----|----|
-| [aria-*] attributes match their roles | √ |
-| [aria-*] attributes have valid values | √ |
-| [aria-*] attributes are valid and not misspelled | √ |
-| Buttons have an accessible name | √ |
-| Background and foreground colors have a sufficient contrast ratio | √ |
-| Document has a \<title> element | √ |
-| [id] attributes on the page are unique | √ |
-| <html> element has a [lang] attribute | √ |
-| <html> element has a valid value for its [lang] attribute | √ |
-| [user-scalable="no"] is not used in the <meta name="viewport"> element and the [maximum-scale] attribute is not less than 5. | √ |

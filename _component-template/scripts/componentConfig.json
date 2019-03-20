@@ -1,0 +1,25 @@
+{
+  "source": [ "./src/shape.json" ],
+  "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "./src/generated/",
+      "files": [
+        {
+          "destination": "_componentShapeVariables.scss",
+          "format": "scss/variables"
+        }
+      ]
+    },
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "./src/generated/",
+      "files": [
+        {
+          "destination": "componentShapeProperties.scss",
+          "format": "css/variables"
+        }
+      ]
+    }
+  }
+}

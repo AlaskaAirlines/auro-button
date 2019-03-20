@@ -1,0 +1,15 @@
+{
+  "source": [ "./src/shape.json" ],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "./src/generated/",
+      "files": [
+        {
+          "destination": "componentProperties.scss",
+          "format": "custom/css/variables"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,65 @@
+# \<ods-[name]>
+
+[![Build status](https://itsals.visualstudio.com/Orion%20Design%20System/_apis/build/status/ods-button)](https://itsals.visualstudio.com/Orion%20Design%20System/_build/latest?definitionId=3214)
+
+Orion Design System [name] element, [statement ...].
+
+\<ods-[element]> is a [summery ...].
+
+## Element \<ods-[name]>
+
+```
+class Ods[Name] extends LitElement
+```
+
+### Styling:
+
+Notes if required
+
+###[name] use cases
+
+The \<ods-[name]> element should be used in situations where users may:
+
+* list item
+* list item
+
+### Responsive state:
+
+The \<ods-[name]> element will respond [statement ...]
+
+### Properties:
+
+| Attribute | value type | Description |
+|----|----|----|
+| string | string | Value entered as string will be displayed as string value within the button element |
+
+
+### API Code Examples
+
+Default [name]
+
+```
+<ods-[name] string="hello world"></ods-[name]>
+```
+
+## Install instructions
+
+[statement ...]
+
+**Define component dependency**
+
+```
+import "@alaskaair/ods-[name]/ods-[name]";
+```
+
+**Reference component in HTML**
+
+```
+<ods-[name] string="hello world" />
+```
+
+### CSS, Custom Properties and fallbacks
+
+ODS Web Components use CSS Custom Properties to define core UI properties of each element or component. Where CSS Custom Properties are not supported, fallback properties are generated.
+
+When installing a ODS Web Component, all CSS needed for the component is included with the npm package. No additional builds or processing is needed at the project level.

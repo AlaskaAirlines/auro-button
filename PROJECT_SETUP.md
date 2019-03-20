@@ -22,9 +22,24 @@ $ npm i
 
 Prior to starting the server, UI dependencies must be built.
 
+Prior to running any build processes, there are some common resources that need to be installed. 
+
+```
+$ npm run prepare
+```
+
+This command will also check to see of there are any npm packages that are out of date. If there are packages that require updating, it's recommended to update. To do so, run the following command:
+
+```
+$ npm run npmOutdatedUpdate
+```
+
+Once completed, run the following commands to render a version of the component. 
+
 ```
 $ gulp build  // builds font, tokens and initial Sass resources
-$ npm run build  // builds token resources and starts server
+$ npm run build  // builds token resources
+$ polymer serve // starts server
 ```
 
 Once the server is loaded, it will be viewable at:
@@ -37,6 +52,20 @@ http://127.0.0.1:8081
 
 When actively developing component resources, the following watchers are necessary.
 
+To ensure that you have the project resources properly prepared, run:
+
+```
+$ npm run prepare
+```
+
+This command will also check to see of there are any npm packages that are out of date. If there are packages that require updating, it's recommended to update. To do so, run the following command:
+
+```
+$ npm run npmOutdatedUpdate
+```
+
+Once completed, run the following.
+
 ```
 $ gulp dev // watches and rebuilds development resources
 $ npm run dev // watches token resources and starts server
@@ -46,13 +75,4 @@ Once the server is loaded, it will be viewable at:
 
 ```
 http://127.0.0.1:8081
-```
-
-## Resource prep
-
-Prior to completing work and submitting a pull request, be sure to address the following steps to ensure that all proper resources have been generated.
-
-```
-$ gulp dist
-$ npm run dist
 ```

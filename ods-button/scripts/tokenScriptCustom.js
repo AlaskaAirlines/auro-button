@@ -36,17 +36,42 @@ StyleDictionary.registerFormat({
   }
 });
 
+console.log('')
 console.log('Build started...');
-console.log('\n==============================================');
+
+console.log('')
+console.log('         .         . ')
+console.log('               *       *')
+console.log('')
+console.log('                 * * *')
+console.log('                    !')
+console.log('               *       * ')
+console.log('')
+console.log(" ██████╗ ██████╗ ██╗ ██████╗ ███╗   ██╗")
+console.log("██╔═══██╗██╔══██╗██║██╔═══██╗████╗  ██║")
+console.log("██║   ██║██████╔╝██║██║   ██║██╔██╗ ██║")
+console.log("██║   ██║██╔══██╗██║██║   ██║██║╚██╗██║")
+console.log("╚██████╔╝██║  ██║██║╚██████╔╝██║ ╚████║")
+console.log(" ╚═════╝ ╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝")
+console.log('') 
+console.log("██████╗ ███████╗███████╗██╗ ██████╗ ███╗   ██╗")
+console.log("██╔══██╗██╔════╝██╔════╝██║██╔════╝ ████╗  ██║")
+console.log("██║  ██║█████╗  ███████╗██║██║  ███╗██╔██╗ ██║")
+console.log("██║  ██║██╔══╝  ╚════██║██║██║   ██║██║╚██╗██║")
+console.log("██████╔╝███████╗███████║██║╚██████╔╝██║ ╚████║")
+console.log("╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝")
+console.log('')
+console.log("███████╗██╗   ██╗███████╗████████╗███████╗███╗   ███╗")
+console.log("██╔════╝╚██╗ ██╔╝██╔════╝╚══██╔══╝██╔════╝████╗ ████║")
+console.log("███████╗ ╚████╔╝ ███████╗   ██║   █████╗  ██╔████╔██║")
+console.log("╚════██║  ╚██╔╝  ╚════██║   ██║   ██╔══╝  ██║╚██╔╝██║")
+console.log("███████║   ██║   ███████║   ██║   ███████╗██║ ╚═╝ ██║")
+console.log("╚══════╝   ╚═╝   ╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚═╝")
+console.log('')
 
 // FINALLY, BUILD ALL THE PLATFORMS
-const buttonConfig = StyleDictionary.extend('./scripts/buttonConfigDist.json');
+const componentConfig = StyleDictionary.extend('./scripts/componentConfigDist.json');
 const dotsConfig = StyleDictionary.extend('./scripts/dotsConfigDist.json');
 
-buttonConfig.buildAllPlatforms();
+componentConfig.buildAllPlatforms();
 dotsConfig.buildAllPlatforms();
-
-
-console.log('\n==============================================');
-console.log('\nBuild completed!');
-
