@@ -7,7 +7,7 @@ generated/
 ## CSS built from Sass process
 demo/css
 demo/sass/tokenProperties.scss
-src/ods-button.css
+src/style.css
 
 ## *-css built from sass-render process
 *-css.js

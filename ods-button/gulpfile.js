@@ -140,5 +140,3 @@ gulp.task('sassWatch', function() {
 gulp.task('build', gulp.series(gulp.parallel('copyFonts', 'buildTokens', 'processDemo', 'processSrc')));
 
 gulp.task('dev', gulp.series(gulp.parallel('copyFonts', 'buildTokens', 'processDemo', 'processDev', 'sassWatch')));
-
-gulp.task('dist', gulp.series(gulp.parallel('build', 'distTokens')));

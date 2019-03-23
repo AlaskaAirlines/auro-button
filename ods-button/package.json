@@ -30,7 +30,7 @@
     "  $ npm run buildDist",
     "================================================================================"
   ],
-  "name": "@alaskaair/ods-button",
+  "name": "@alaskaairux/ods-button",
   "version": "1.0.0",
   "description": "Orion Design System Button element",
   "author": "Product design and research",
@@ -51,8 +51,10 @@
     "@polymer/iron-demo-helpers": "^3.1.0",
     "@polymer/test-fixture": "^4.0.2",
     "@webcomponents/webcomponentsjs": "^2.2.7",
+    "auto-changelog": "^1.12.0",
     "autoprefixer": "^9.5.0",
     "chai": "^4.2.0",
+    "concat": "^1.0.3",
     "copyfiles": "^2.1.0",
     "css-byebye": "^2.0.0",
     "fs": "0.0.2",
@@ -79,7 +81,11 @@
     "pa11y": "./src/*.js"
   },
   "scripts": {
-    "set-patch": "versiony ./src/package.json --patch",
+    "set-patch-root": "versiony ./package.json --patch",
+    "set-patch-src": "versiony ./src/package.json --patch",
+    "changelog": "auto-changelog --template ./template.hbs --output ./dist/CHANGELOG.md -p -b 5",
+    "copyResources": "copyfiles -f -V './README.md' '../NOTICE' '../LICENSE' ./dist",
+    "concat": "concat -o ./dist/README.md ./dist/README.md ./dist/CHANGELOG.md",
     "prepare": "npm run npmOutdated",
     "npmOutdated": "ncu",
     "npmOutdatedUpdate": "ncu -u",

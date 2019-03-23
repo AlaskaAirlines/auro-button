@@ -1,10 +1,10 @@
 # Project Setup
 
-To view and/or develop with the element/component, it is required to install the Polymer CLI and run the element/app locally.
+To view and/or develop with the element/component, it is required to install the Polymer CLI and run the element locally.
 
 ## Install the Polymer-CLI
 
-First, make sure to have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed.
+Make sure to have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed.
 
 ```
 $ npm polymer-cli -g
@@ -22,13 +22,13 @@ $ npm i
 
 Prior to starting the server, UI dependencies must be built.
 
-Prior to running any build processes, there are some common resources that need to be installed. 
+To validate all packages are up to date, please run: 
 
 ```
 $ npm run prepare
 ```
 
-This command will also check to see of there are any npm packages that are out of date. If there are packages that require updating, it's recommended to update. To do so, run the following command:
+If there are packages that require updating, run the following command:
 
 ```
 $ npm run npmOutdatedUpdate
@@ -58,7 +58,7 @@ To ensure that you have the project resources properly prepared, run:
 $ npm run prepare
 ```
 
-This command will also check to see of there are any npm packages that are out of date. If there are packages that require updating, it's recommended to update. To do so, run the following command:
+If there are packages that require updating, run the following command:
 
 ```
 $ npm run npmOutdatedUpdate

@@ -39,7 +39,7 @@ There are a number of files that will need to be updated to in order to build th
 Update the following lines:
 
 ```
-"name": "@alaskaair/ods-[name]",
+"name": "@alaskaairux/ods-[name]",
 
 "description": "Orion Design System [name] element",
 ```
@@ -58,6 +58,14 @@ Once the new component setup is complete, run the following command to replace t
 
 ```
 mv README.temp README.md
+```
+
+### ./.travis.yml
+
+Run the following command to allow Travis CI to see the new repository. 
+
+```
+mv .travis.temp .travis.yml
 ```
 
 ## New component config - ./demo

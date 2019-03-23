@@ -53,6 +53,14 @@ To start a local component server:
 $ polymer serve
 ```
 
+## Iron icons
+
+`iron-icons` is a Polymer utility that includes the definition for the `iron-iconset-svg` element, as well as an import for the default icon set.
+
+Icon icons are **not used** for Orion purposes. This is a utility only used for the purposes of the **demo** within each component directory.
+
+See [demo](https://www.webcomponents.org/element/@polymer/iron-icons/demo/demo/index.html)
+
 ## Custom fonts
 
 Building components requires local access to custom web fonts. After installing the Orion Web Core Stylesheet(OWCSS) npm, the following script is needed to copy fonts from the npm package and onto the scope of the element / component in development.
@@ -107,6 +115,28 @@ Using Sass and other techniques makes this undesirable to edit directly within t
 |----|----|
 | `$ npm run sass-render` | Converts CSS or Sass to JavaScript module |
 
+## Accessibility and testing
+
+Development of components requires a fine attention to details in regards to conforming to accessibility regulations. For more information on how to best use Aria rules, please be sure to review this document by the [Google Chrome team](https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules).
+
+### Accessibility testing
+
+When building new components, it is required that the component be reviewed using the latest tooling to assess accessibility compliance.
+
+Each project component is set up to use [pa11y](https://www.npmjs.com/package/pa11y) during the development process. 
+
+| Command | Description |
+|----|----|
+| `$ npm run dev` | Runs `npm-watch pa11y` |
+
+The `pa11y` script will output an error report to `./pa11yReport.json` if detected.
+
+### Google Chrome Inspector 
+
+Built within Google's Chrome inspector is an **audit** tab that will run the Lighthouse performance tool. Uncheck all the audits except for **Accessbility**, choose either Desktop or Mobile and run the audit. Lighthouse will return a detailed report about the accessibility performance of the component. 
+
+Also within Google's Chrome inspector is the **Accessibility** tab. This view will give individual results on the accessibility of the element you have selected. 
+
 ## Component Demo
 
 For the purpose of demonstrating an element or component the demo requires all the same dependencies that other projects do. This includes Design Tokens, OWCSS breakpoints; fonts; normalize; baseline and utility classes.
@@ -129,11 +159,39 @@ The following is a list of Gulp tasks as defined in `[ods-component]/gulpfile.js
 
 | Task | Description |
 |----|----|
-| copy:fonts | Copy files from npm to local resources |
-| build:tokens | Builds out CSS resources necessary for local development |
-| process:demo | Build CSS from Sass for component demo |
-| process:src | Build all CSS resources needed for production deployment and browser testing |
-| process:dev | Build minimal CSS resources needed for local development |
-| sass:watch | Watcher for building CSS resources from Sass files |
+| copyFonts | Copy files from npm to local resources |
+| buildTokens | Builds out CSS resources necessary for local development |
+| processDemo | Build CSS from Sass for component demo |
+| processSrc | Build all CSS resources needed for production deployment and browser testing |
+| processDev | Build minimal CSS resources needed for local development |
+| sassWatch | Watcher for building CSS resources from Sass files |
 | build | Main task to run all build tasks |
 | dev | Main task to run all development tasks |
+
+## package.json API
+
+The following is a list of npm scripts as defined in `[ods-component]/package.json`
+
+| Task | Description |
+|----|----|
+| set-patch-root | Updates the root package.json semver |
+| set-patch-src | Updates the ./src package.json semver |
+| changelog | Generates the build changelog based on Git commits |
+| copyReadme | Dist build step to copy ./README.md to ./dist |
+| concat | Concatinates the generated changelong with the readme file | 
+| prepare | Checks for outdated npm packages |
+| npmOutdated | Script to run ncu package |
+| npmOutdatedUpdate | Script to run `ncu -u` command |
+| copyFonts | Copy files from npm to local resources |
+| buildTokens | Builds out CSS resources necessary for local development |
+| distTokens | Builds out CSS resources based on custom Style Dictionary rules | 
+| sassRender | Builds `*-css.js` files from Sass/CSS dev files | 
+| sassRender-w | Watches Sass/CSS files to re-render `*-css-js` files in dev mode |
+| cssLint | CSS linter | 
+| jsonLint | JSON linter |
+| pa11y | Runs accessibility testing tool |
+| build | Main task to run all build tasks |
+| dist | Prepares files for packaging distribution |
+| buildDist | Copies source files from `./src` directory to `./dist` | 
+| buildDistLocal | Same as `buildDist`, but syntax is slightly different | 
+| clean | Removes all dynamic build resources from local repo | 

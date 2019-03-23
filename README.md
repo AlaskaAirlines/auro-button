@@ -1,34 +1,81 @@
 # ODS Stateless Components
 
-Orion Design System Stateless Components are framework agnostic reusable UI components intended for use across all internal and external facing applications across all if IT and ecommerce at Alaska Airlines.
+Orion Design System Stateless Components are framework agnostic reusable UI components intended for use across all internal and external facing applications across all of IT and e-commerce at Alaska Airlines.
 
-Contained within this repository will be the resourced needed to build and deploy individual component and element resources as they pertain to the Orion Design System (ODS)
+Contained within this repository will be the resources needed to build and deploy individual components and elements as they pertain to the Orion Design System (ODS)
 
-Please see all other documentation in regards to contributing, code of conduct and software license agreements of use.
-
-## Install development resources
-
-For install and setup instructions, please see `PROJECT_SETUP.md` and `TECH_DETAILS.md` documents.
+Please see all other documentation in regards to `CONTRIBUTING`, `CODE_OF_CONDUCT` and software `LICENSE` agreements of use.
 
 ## Element or Component?
 
 The difference between an element or a component is mainly for semantics and reference. Regardless of naming, there is no difference in development.
 
-* Element: Stand-alone UI that is unable to individually complete a task. E.g. a button. Alone a button cannot complete a task unless it is associated with another context.
-* Component: UI that is comprised of two or more elements and is able to individually complete a task. E.g. a button and a text element in conjunction would make a component.
+* **Element**: Stand-alone UI that is unable to individually complete a task. E.g. a button. Alone a button cannot complete a task unless it is associated with another context.
+* **Component**: UI that is comprised of two or more elements and is able to individually complete a task. E.g. a button and a text element in conjunction would make a component.
 
+## Install development resources
+
+For install and setup instructions, please see `PROJECT_SETUP` and `TECH_DETAILS` documents per each individual component within this repository.
+
+## Set up a new component directory 
+
+All instructions for setting up a new component directory can be found in:
+
+```
+/OrionStatelessComponents
+├── _component-template
+|  ├── README.md
+```
+## Component directory structure 
+
+The following boilerplate directory structure will be found in `./_component-template`. Be sure to read all the setup instructions in `./_component-template/README.md` prior to any development. 
+
+```
+/OrionStatelessComponents
+├── README.md
+├── README.temp
+├── demo
+|  ├── alert.js
+|  ├── index.html
+|  └── sass
+|     └── style.scss
+├── gulpfile.js
+├── index.html
+├── pa11yReport.json
+├── package-lock.json
+├── package.json
+├── polymer.json
+├── scripts
+|  ├── componentConfig.json
+|  ├── componentConfigDist.json
+|  ├── tokenConfig.json
+|  ├── tokenScript.js
+|  └── tokenScriptCustom.js
+├── src
+|  ├── ods-[name].js
+|  ├── package.json
+|  ├── shape.json
+|  └── style.scss
+└── test
+   ├── index.html
+   └── ods-[name]_test.html
+```
 
 ## What defines the shape of a element or component?
 
-One of the main goals of the ODS Stateless Component Design System is to not only produce reusable UI components to be used in the web space, but to also define the shape of the component in a way that this information is useful to other platforms.
+One of the main goals of the ODS Stateless Components project is to not only produce reusable UI components to be used in the web space, but to also define the shape of the component in a way that this information is useful to other platforms.
 
-Within the `./src/` directory for each component there will be a `[ods-component].json` file. It is the intent of this file to describe the shape of the component and in turn it will define the variables to be used when building the Sass for the component itself.
+Within the `./src/` directory for each component there will be a `shape.json` file. It is the intent of this file to describe the shape of the component and in turn it will define the variables to be used when building the Sass for the component itself.
 
+Please refer to all notes and examples contained within this file for any questions. 
 
-## Iron icons
+```
+/OrionStatelessComponents
+├── src
+|  └── shape.json
+```
 
-`iron-icons` is a utility import that includes the definition for the iron-icon element, `iron-iconset-svg` element, as well as an import for the default icon set.
+## 
 
-Icon icons are not used for Orion purposes. This is a utility only used for the purposes of the demo within each component directory.
-
-See [demo](https://www.webcomponents.org/element/@polymer/iron-icons/demo/demo/index.html)
+Alaska Airlines Orion Design System<br>
+Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
