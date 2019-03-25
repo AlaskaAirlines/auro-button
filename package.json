@@ -30,22 +30,22 @@
     "  $ npm run buildDist",
     "================================================================================"
   ],
-  "name": "@alaskaairux/ods-[name]",
-  "version": "0.0.0",
-  "description": "Orion Design System [name] element",
+  "name": "@alaskaairux/ods-button",
+  "version": "1.0.0",
+  "description": "Orion Design System Button element",
   "author": "Product design and research",
   "repository": {
     "type": "git",
-    "url": "https://itsals.visualstudio.com/DefaultCollection/Orion%20Design%20System/_git/statelessComponents"
+    "url": "https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button"
   },
   "main": "src/",
   "license": "Apache-2.0",
   "dependencies": {
+    "@alaskaairux/orion-design-tokens": "^1.0.511115043",
+    "@alaskaairux/orion-web-core-style-sheets": "^0.3.510113606",
     "@polymer/iron-icons": "^3.0.1",
     "@polymer/polymer": "^3.2.0",
-    "lit-element": "^2.1.0",
-    "@alaskaairux/orion-design-tokens": "^1.0.506066516",
-    "@alaskaairux/orion-web-core-style-sheets": "^0.3.510113606"
+    "lit-element": "^2.1.0"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.1.0",
@@ -84,7 +84,7 @@
     "set-patch-root": "versiony ./package.json --patch",
     "set-patch-src": "versiony ./src/package.json --patch",
     "changelog": "auto-changelog --template ./template.hbs --output ./dist/CHANGELOG.md -p -b 5",
-    "copyResources": "copyfiles -f -V './README.md' '../NOTICE' '../LICENSE' ./dist",
+    "copyResources": "copyfiles -f -V './README.md' './NOTICE' './LICENSE' ./dist",
     "concat": "concat -o ./dist/README.md ./dist/README.md ./dist/CHANGELOG.md",
     "prepare": "npm run npmOutdated",
     "npmOutdated": "ncu",
@@ -103,5 +103,8 @@
     "buildDist": "copyfiles -u 1 -V ./src/**/*.js ./src/*.json ./dist",
     "buildDistLocal": "copyfiles -u 1 -V './src/**/*.js' './src/*.json' ./dist",
     "clean": "rm -rf ./demo/css ./demo/fonts ./dist ./src/generated | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
