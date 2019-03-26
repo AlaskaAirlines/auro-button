@@ -40,14 +40,16 @@
   },
   "main": "src/",
   "license": "Apache-2.0",
+  "peerDependencies": {
+    "@alaskaairux/orion-design-tokens": "^1.0.511115043"
+  },
   "dependencies": {
-    "@alaskaairux/orion-design-tokens": "^1.0.511115043",
-    "@alaskaairux/orion-web-core-style-sheets": "^0.3.510113606",
-    "@polymer/iron-icons": "^3.0.1",
-    "@polymer/polymer": "^3.2.0",
     "lit-element": "^2.1.0"
   },
   "devDependencies": {
+    "@alaskaairux/orion-web-core-style-sheets": "^0.3.510113606",
+    "@polymer/iron-icons": "^3.0.1",
+    "@polymer/polymer": "^3.2.0",
     "@polymer/iron-demo-helpers": "^3.1.0",
     "@polymer/test-fixture": "^4.0.2",
     "@webcomponents/webcomponentsjs": "^2.2.7",

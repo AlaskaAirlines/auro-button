@@ -8,14 +8,29 @@
     "type": "git",
     "url": "https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button"
   },
-  "dependencies": {
-    "@polymer/iron-icons": "^3.0.1",
-    "@polymer/polymer": "^3.0.0",
-    "lit-element": "^2.0.0-rc.3",
+  "peerDependencies": {
     "@alaskaairux/orion-design-tokens": "^1.0.506066516",
     "@alaskaairux/orion-web-core-style-sheets": "^0.3.506081169"
   },
+  "dependencies": {
+    "lit-element": "^2.0.0-rc.3"
+  },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "alaska airlines",
+    "orion design system",
+    "web components",
+    "button"
+  ],
+  "contributors": [
+    {
+      "name": "Dale Sande",
+      "email": "dale.sande@alaskaair.com"
+    }, {
+      "name": "Kevin Sonnichsen",
+      "email": "Kevin.Sonnichsen@alaskaair.com"
+    }
+  ]
 }

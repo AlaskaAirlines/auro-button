@@ -1,8 +1,81 @@
 # \<ods-button>
 
+[![Build Status](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button)
+![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-button.svg?color=orange)
+![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-button.svg?color=blue)
+
 Orion Design System Button element, clickable elements used to perform an action.
 
-\<ods-button> is a wrapper for a standard \<button> element. The content of a button is to be passed in via the `string` attribute. See below for examples of use.
+\<ods-button> is a wrapper compoent for a HTML \<button> element containing styling and behavior. The content of a button is to be passed in via the `string` attribute. See below for examples of use.
+
+## Install
+
+```
+$ npm i @alaskaairux/ods-button
+```
+
+### Design Token CSS Custom Property dependency
+
+The use of any ODS Component has a dependency on the [ODS Design Tokens](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens). See repository and API information [here](https://github.com/AlaskaAirlines/OrionDesignTokens).
+
+Orion Web Components have a dependency specifically on the generation of **CSS Custom Properties** from the Orion Design Tokens package. Consider the following example config for Design Token generation. 
+
+```
+{
+  "source": [ "./node_modules/@alaskaairux/orion-design-tokens/**/*.json" ],
+  "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "./src/sass/",
+      "files": [
+        {
+          "destination": "_TokenVariables.scss",
+          "format": "scss/variables"
+        }
+      ]
+    },
+    "css": {
+      "transformGroup": "scss",
+      "buildPath": "./src/sass/",
+      "files": [
+        {
+          "destination": "_TokenProperties.scss",
+          "format": "css/variables"
+        }
+      ]
+    }
+  }
+}
+```
+
+In the project's primary Sass output file, consider the following imports example:
+
+```
+@import "./tokenVariables";
+@import "./tokenProperties";
+```
+
+CSS Custom Properties should be fully printed out into the global stylesheet of the project. 
+
+### CSS Custom Property fallbacks
+
+In older browsers where CSS Custom Properties are not supported, fallback properties are pre-generated and included with the npm. Any update to the Orion Design Tokens will be immediately reflected with supporting browsers. Legacy browsers will need updated components with pre-generated fallback properties. 
+
+### Define dependency in project component 
+
+Define the component dependency within each component that is using the \<ods-button> component.
+
+**Define component dependency**
+
+```
+import "@alaskaairux/ods-button/ods-button";
+```
+
+**Reference component in HTML**
+
+```
+<ods-button string="hello world" />
+```
 
 ## Element \<ods-button>
 
@@ -88,25 +161,3 @@ In this scenario, simply set the `context` of the element to be `true`.
 ```
 <ods-button string="Default state; context true" context="true"></ods-button>
 ```
-
-## Install instructions
-
-The use of any ODS Element or Component has a prerequisite requirement of the ODS [Design Tokens](https://itsals.visualstudio.com/Orion%20Design%20System/_packaging?_a=package&feed=as.com-npm&package=%40alaskaair%2Forion-design-tokens&protocolType=Npm&version=0.4.1419099). See repository and API information [here](https://itsals.visualstudio.com/Orion%20Design%20System/_git/designTokens?_a=readme). Install dependency from [npm artifacts repository](https://itsals.visualstudio.com/Orion%20Design%20System/_packaging?_a=package&feed=as.com-npm&package=%40alaskaair%2Fods-button&protocolType=Npm&version=0.1.1411490)
-
-**Define component dependency**
-
-```
-import "@alaskaairux/ods-button/ods-button";
-```
-
-**Reference component in HTML**
-
-```
-<ods-button string="hello world" />
-```
-
-### CSS, Custom Properties and fallbacks
-
-ODS Web Components use CSS Custom Properties to define core UI properties of each element or component. Where CSS Custom Properties are not supported, fallback properties are generated.
-
-When installing a ODS Web Component, all CSS needed for the component is included with the npm package. No additional builds or processing is needed at the project level.
