@@ -6,13 +6,17 @@
 
 Orion Design System Button element, clickable elements used to perform an action.
 
-\<ods-button> is a wrapper compoent for a HTML \<button> element containing styling and behavior. The content of a button is to be passed in via the `string` attribute. See below for examples of use.
+\<ods-button> is a wrapper component for a HTML \<button> element containing styling and behavior. The content of a button is to be passed in via the `string` attribute. See below for examples of use.
 
 ## Install
 
 ```
 $ npm i @alaskaairux/ods-button
 ```
+
+### Step by step Orion dependency instructions
+
+To build an app from the ground up using the Orion Design system and all it's individual resources, see this [step by step](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/blob/master/examples/create-react-app-example.md) build example doc. 
 
 ### Design Token CSS Custom Property dependency
 
