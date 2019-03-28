@@ -216,16 +216,16 @@ Referencing the object and the SVG string within the `htmlParser()` function wil
 
 ## Install ODS Component
 
-ODS Components are fully contained Native Web Component resources. To start, update the project to use the \<ods-button> component.
+ODS Components are fully contained Native Web Component resources. To start, update the project to use the \<ods-[name]> component.
 
 ```
-$ npm i @alaskaairux/ods-button
+$ npm i @alaskaairux/ods-[name]
 ```
 
 Update `./src/App.js` to make use of the dependency:
 
 ```js
-import "@alaskaairux/ods-button/ods-button";
+import "@alaskaairux/ods-[name]/ods-[name]";
 ```
 
 Then update the `App` component in the `./src/App.js` file:
@@ -236,7 +236,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <ods-button string="hello world" />
+          <ods-[name] string="hello world" />
         </header>
       </div>
     );
@@ -273,3 +273,45 @@ $ npm run httpserve
 ```
 
 When browser opens, open the Chrome Inspector, click the `Audits` tab and click `Run audits`
+
+## Legacy browser support 
+
+Web Components and lit-element are not supported by legacy browsers, especially anything in the IE family of browsers. 
+
+The Orion Web Components take a two-step process to support legacy browsers. 
+
+1. Each component package comes with CSS fallbacks
+2. The project needs to test for Web Component support and apply the appropriate polyfills
+
+In regards to the polyfills, Polymer, and by extension lit-element, addresses many of these issues. But there are a few additional polyfills needed based on the browser. 
+
+The best way to address this is by one of the following. 
+
+1. Load the `webcomponents-loader.js` via CDN
+2. Load the `webcomponents-loader.js` internally with the project 
+
+### Load via CDN
+
+In the head of your project, insert the following HTML
+
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.7/webcomponents-loader.js"></script>
+```
+
+### Load with the project 
+
+#### Install 
+
+```
+npm i @webcomponents/webcomponentsjs
+```
+
+#### Load Synchronous
+
+Place the following script tag in the `<head>` of your main app template. 
+
+```
+<script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+```
+
+Read more about the [npm package](https://www.npmjs.com/package/@webcomponents/webcomponentsjs) and the different ways to install as to best fit your needs. 
