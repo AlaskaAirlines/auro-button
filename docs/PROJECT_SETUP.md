@@ -50,7 +50,7 @@ http://127.0.0.1:8081
 
 ## Development
 
-When actively developing component resources, the following watchers are necessary.
+When actively developing component resources, there are a series of watchers to make developing easy to do.
 
 To ensure that you have the project resources properly prepared, run:
 

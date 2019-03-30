@@ -90,7 +90,7 @@ Building out Sass Variables and CSS Custom Properties from Design Token JSON fil
 
 | Command | Description |
 |----|----|
-| `$ npm run build-tokens` | References JSON files within project and transpiles into CSS/Sass resources per the config file*† |
+| `$ npm run buildTokens` | References JSON files within project and transpiles into CSS/Sass resources per the config file*† |
 
 \* Each JSON file must have an individual config for individual resource building.
 
@@ -113,7 +113,7 @@ Using Sass and other techniques makes this undesirable to edit directly within t
 
 | Command | Description |
 |----|----|
-| `$ npm run sass-render` | Converts CSS or Sass to JavaScript module |
+| `$ npm run sassRender` | Converts CSS or Sass to JavaScript module |
 
 ## Accessibility and testing
 
@@ -192,6 +192,7 @@ The following is a list of npm scripts as defined in `[ods-component]/package.js
 | pa11y | Runs accessibility testing tool |
 | build | Main task to run all build tasks |
 | dist | Prepares files for packaging distribution |
+| babel | Processes ES6 Javascript to ES5 for legacy browser support |
 | buildDist | Copies source files from `./src` directory to `./dist` | 
 | buildDistLocal | Same as `buildDist`, but syntax is slightly different | 
 | clean | Removes all dynamic build resources from local repo | 

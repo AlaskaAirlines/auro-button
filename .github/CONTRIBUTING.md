@@ -49,15 +49,13 @@ For example:
 
 #### Push branch and submit pull request
 
-One you have committed new work to your feature branch, be sure to push your updates to the Azure repository. Depending on your IDE or CLI configuration this may be a manual or automatic step.
+One you have committed new work to your feature branch, be sure to push your updates to your Github repository. Depending on your IDE or CLI configuration this may be a manual or automatic step.
 
-To submit a new pull request, please go to [https://itsals.visualstudio.com/](https://itsals.visualstudio.com/) to find your project. Within the project navigate to **REPOS > BRANCHES**. Hover over your branch and you should see `New pull request` appear to the right. Click on `New pull request`.
+To submit a new pull request, please go to [https://github.com/AlaskaAirlines/](https://github.com/AlaskaAirlines/) to find your project. Within the project navigate to the **PULL REQUESTS** tab and click on `New pull request` to the right.
 
 On the pull request page, the new pull request should be `[your-new-branch] into [master]`
 
 Please be sure to follow the **Pull Request template** that appears on the comment window.
-
-You must select up to two reviews from your team to validate that the update is correct, solves the problem presented by the story and meets all the requirements for a new merge.
 
 Finally, click the `Create` button.
 
@@ -67,4 +65,4 @@ Once a pull request has been created, the assigned reviewers should have receive
 
 A reviewer has the option to leave comments, ask questions and reject the pull request.
 
-Once two reviewers have approved the work, the pull request can then be completed.
+Once the reviewers have approved the work, the pull request can then be completed.
