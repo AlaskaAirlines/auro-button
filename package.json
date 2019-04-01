@@ -106,7 +106,7 @@
     "dist": "npm run distTokens | npm run sassRender | npm run cssLint | npm run jsonLint",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w | polymer serve | npm-watch pa11y",
     "babel": "babel --presets es2015 src -d dist",
-    "buildDist": "npm run babel | copyfiles -u 1 -V './src/*.json' ./dist",
+    "buildDist": "copyfiles -u 1 -V './src/**/*.js' './src/*.json' ./dist",
     "clean": "rm -rf ./demo/css ./demo/fonts ./dist ./src/generated | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js"
   },
   "publishConfig": {
