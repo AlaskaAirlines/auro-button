@@ -48,6 +48,10 @@
   },
   "devDependencies": {
     "@alaskaairux/orion-web-core-style-sheets": "^0.3.511780638",
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
     "@polymer/iron-demo-helpers": "^3.1.0",
     "@polymer/iron-icons": "^3.0.1",
     "@polymer/polymer": "^3.2.0",
@@ -55,9 +59,6 @@
     "@webcomponents/webcomponentsjs": "^2.2.7",
     "auto-changelog": "^1.12.0",
     "autoprefixer": "^9.5.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1",
     "chai": "^4.2.0",
     "concat": "^1.0.3",
     "copyfiles": "^2.1.0",
@@ -86,10 +87,9 @@
     "pa11y": "./src/*.js"
   },
   "scripts": {
-    "set-patch-root": "versiony ./package.json --patch",
-    "set-patch-src": "versiony ./src/package.json --patch",
+    "set-patch": "versiony ./package.json --patch",
     "changelog": "auto-changelog --template ./template.hbs --output ./dist/CHANGELOG.md -p -b 5",
-    "copyResources": "copyfiles -f -V './README.md' './NOTICE' './LICENSE' ./dist",
+    "copyResources": "copyfiles -f -V './package.json' './README.md' './NOTICE' './LICENSE' ./dist",
     "concat": "concat -o ./dist/README.md ./dist/README.md ./dist/CHANGELOG.md",
     "prepare": "npm run npmOutdated",
     "npmOutdated": "ncu",
@@ -105,11 +105,29 @@
     "build": "npm run sassRender | npm run cssLint | npm run jsonLint",
     "dist": "npm run distTokens | npm run sassRender | npm run cssLint | npm run jsonLint",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w | polymer serve | npm-watch pa11y",
-    "babel": "babel --presets es2015 src -d dist",
-    "buildDist": "copyfiles -u 1 -V './src/**/*.js' './src/*.json' ./dist",
+    "babel": "babel src --out-dir dist",
+    "buildDist": "copyfiles -u 1 -V './package.json' './src/*.json' ./dist",
     "clean": "rm -rf ./demo/css ./demo/fonts ./dist ./src/generated | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Dale Sande",
+      "email": "dale.sande@alaskaair.com"
+    }, {
+      "name": "Kevin Sonnichsen",
+      "email": "Kevin.Sonnichsen@alaskaair.com"
+    }
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "alaska airlines",
+    "orion design system",
+    "web components",
+    "button"
+  ]
 }
