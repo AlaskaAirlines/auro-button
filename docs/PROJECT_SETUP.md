@@ -25,14 +25,10 @@ Prior to starting the server, UI dependencies must be built.
 To validate all packages are up to date, please run: 
 
 ```
-$ npm run prepare
+$ npm outdated
 ```
 
-If there are packages that require updating, run the following command:
-
-```
-$ npm run npmOutdatedUpdate
-```
+If there are packages that require updating, update accordingly. 
 
 Once completed, run the following commands to render a version of the component. 
 

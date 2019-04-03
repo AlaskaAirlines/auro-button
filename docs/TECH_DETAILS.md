@@ -179,7 +179,6 @@ The following is a list of npm scripts as defined in `[ods-component]/package.js
 | changelog | Generates the build changelog based on Git commits |
 | copyReadme | Dist build step to copy ./README.md to ./dist |
 | concat | Concatinates the generated changelong with the readme file | 
-| prepare | Checks for outdated npm packages |
 | npmOutdated | Script to run ncu package |
 | npmOutdatedUpdate | Script to run `ncu -u` command |
 | copyFonts | Copy files from npm to local resources |
