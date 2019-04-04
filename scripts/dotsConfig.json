@@ -3,7 +3,7 @@
   "platforms": {
     "scss": {
       "transformGroup": "scss",
-      "buildPath": "./src/generated/",
+      "buildPath": "./src/tokens/",
       "files": [
         {
           "destination": "_dotsVariables.scss",
@@ -13,7 +13,7 @@
     },
     "css": {
       "transformGroup": "css",
-      "buildPath": "./src/generated/",
+      "buildPath": "./src/tokens/",
       "files": [
         {
           "destination": "dotsProperties.scss",

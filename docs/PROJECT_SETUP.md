@@ -72,3 +72,7 @@ Once the server is loaded, it will be viewable at:
 ```
 http://127.0.0.1:8081
 ```
+## 
+
+Alaska Airlines Orion Design System<br>
+Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.

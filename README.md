@@ -4,17 +4,11 @@
 ![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-button.svg?color=orange)
 ![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-button.svg?color=blue)
 
-Orion Design System Button element, clickable elements used to perform an action.
-
 \<ods-button> is a wrapper component for a HTML \<button> element containing styling and behavior. The content of a button is to be passed in via the `string` attribute. See below for examples of use.
 
 ## Docs
 
-All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the `./docs` directory of this repository. 
-
-### Step by step Orion dependency instructions
-
-To build an app from the ground up using the Orion Design system and all it's individual resources, see the step by step build doc in the `./examples` directory.
+All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the [./docs](/docs/) directory of this repository. 
 
 ## Install
 
@@ -26,54 +20,15 @@ $ npm i @alaskaairux/ods-button
 
 The use of any ODS Component has a dependency on the [ODS Design Tokens](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens). See repository and API information [here](https://github.com/AlaskaAirlines/OrionDesignTokens).
 
-Orion Web Components have a dependency specifically on the generation of **CSS Custom Properties** from the Orion Design Tokens package. Consider the following example config for Design Token generation. 
-
-```
-{
-  "source": [ "./node_modules/@alaskaairux/orion-design-tokens/**/*.json" ],
-  "platforms": {
-    "scss": {
-      "transformGroup": "scss",
-      "buildPath": "./src/sass/",
-      "files": [
-        {
-          "destination": "_TokenVariables.scss",
-          "format": "scss/variables"
-        }
-      ]
-    },
-    "css": {
-      "transformGroup": "scss",
-      "buildPath": "./src/sass/",
-      "files": [
-        {
-          "destination": "_TokenProperties.scss",
-          "format": "css/variables"
-        }
-      ]
-    }
-  }
-}
-```
-
-In the project's primary Sass output file, consider the following imports example:
-
-```
-@import "./tokenVariables";
-@import "./tokenProperties";
-```
-
-CSS Custom Properties should be fully printed out into the global stylesheet of the project. 
+For additional details in regards to using Orion Design Tokens with components, please see [./docs/TECH_DETAILS.md](/docs/TECH_DETAILS.md)
 
 ### CSS Custom Property fallbacks
 
-In older browsers where CSS Custom Properties are not supported, fallback properties are pre-generated and included with the npm. Any update to the Orion Design Tokens will be immediately reflected with supporting browsers. Legacy browsers will need updated components with pre-generated fallback properties. 
+CSS Custom Properties are not supported in older browsers. For this, fallback properties are pre-generated and included with the npm. Any update to the Orion Design Tokens will be immediately reflected with browsers that support CSS Custom Properties, legacy browsers will require updated components with pre-generated fallback properties. 
 
 ### Define dependency in project component 
 
 Define the component dependency within each component that is using the \<ods-button> component.
-
-**Define component dependency**
 
 ```
 import "@alaskaairux/ods-button/ods-button";
@@ -169,3 +124,48 @@ In this scenario, simply set the `context` of the element to be `true`.
 ```
 <ods-button string="Default state; context true" context="true"></ods-button>
 ```
+
+## Alternate build solutions 
+
+Included with the distributed npm are two additional directories, `./altImportsCanonical` and `./altImportsVariable`.
+
+| directory | description |
+|---|---|
+| altImportsCanonical | Sass/CSS is using canonical values within the scope of the file |
+| altImportsVariable* | Sass/CSS is using CSS Custom Properties within the scope of the file |
+
+\* Orion Design Tokens are required to import any file using CSS Custom Properties. Also see Orion Design Tokens [pre-processed resources](https://github.com/AlaskaAirlines/OrionDesignTokens#install-pre-processed-resources). PostCSS using `postcss-custom-properties` will need to be added to your project if you are supporting legacy browsers.
+
+Within the respective directories are two files, `style.css` and `style_clean.scss`
+
+```
+├── altImportsCanonical
+|  ├── style.css
+|  └── style_clean.scss
+├── altImportsVariable
+|  ├── style.css
+|  └── style_clean.scss
+```
+
+These files can be imported directly into the scope of your project's CSS. It is highly recommended that you use the `style_clean.scss` file and import this into a name-space as not to create style collisions. For example:
+
+```
+.ods-button {
+  @import "~@alaskaairux/ods-button/altImportsVariable/style_clean.scss";
+}
+```
+
+This pattern will produce all the selectors within `style_clean.scss` with the prefixed selector. 
+
+```
+.ods-button .button {
+  ...
+}
+```
+
+**Warning!** Using the canonical CSS will break the chain of using Design Tokens. If Tokens are updated, this will require the update of the components and their canonical output. Use with caution. 
+
+## 
+
+Alaska Airlines Orion Design System<br>
+Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.

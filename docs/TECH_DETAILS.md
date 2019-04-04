@@ -2,43 +2,6 @@
 
 Building the JavaScript and CSS for the components requires a handful of processing events in order to produce the desired code needed per component that meets the needs of the current state of browser support.
 
-## Browser Support Matrix
-
-Alaska Airlines currently supports the following browsers for the delivery of Polymer Stateless Components.
-
-#### Browsers that engineers are required to dev and test against:
-
-| Browser | Version | Operating System |
-|------|------|------|
-| Chrome | Current release | Windows, macOS, iOS, Android |
-| Safari | Current release | macOS, iOS |
-| Firefox | Current release | Windows, macOS, Android |
-| Edge | Current release | Windows 10 |
-| Internet Explorer | 11 | Windows 7, Windows 8, Windows 10 |
-| Internet Explorer | 10 | Windows 7, Windows 8 |
-
-#### Browser support for HTML Web Components
-
-| Feature | Chrome | Opera | Safari | Firefox | Edge | IE
-|----|----|----|----|----|----|----|
-| HTML Templates | Stable | Stable | Stable | Stable | Stable | Polyfill |
-| Custom Elements | Stable | Stable | Stable | Stable | Polyfill | Polyfill |
-| Shadow DOM | Stable | Stable | Stable | Stable | Polyfill | Polyfill |
-| ES Modules | Stable | Stable | Stable | Stable | Stable | Polyfill |
-
-#### Browser support for CSS Custom Properties (variables)
-
-| Browser | Version | Custom Selectors |
-|------|------|------|
-| Chrome | Current release | Yes |
-| Safari | Current release | Yes |
-| Firefox | Current release | Yes |
-| Edge | Current release | Yes |
-| Internet Explorer | 11 | No* |
-| Internet Explorer | 10 | No* |
-
-\* Fallback CSS is required to support browser
-
 ## Polymer Development
 
 Developing and rendering components require Polymer resources. In order to easily support this in a development environment it is suggested that developers install the Polymer-CLI for local use.
@@ -63,24 +26,24 @@ See [demo](https://www.webcomponents.org/element/@polymer/iron-icons/demo/demo/i
 
 ## Custom fonts
 
-Building components requires local access to custom web fonts. After installing the Orion Web Core Stylesheet(OWCSS) npm, the following script is needed to copy fonts from the npm package and onto the scope of the element / component in development.
+Building components requires local access to custom web fonts. After installing the [Orion Web Core Stylesheet(OWCSS)](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets) project, the following script is needed to copy fonts from the [npm](https://www.npmjs.com/package/@alaskaairux/orion-web-core-style-sheets) package and onto the scope of the element / component in development.
 
 ```
 $ npm run copyfiles
 ```
 
-| Dependency | info |
-|---|---|
-| Orion Web Core Stylesheets | [npm install](https://itsals.visualstudio.com/Orion%20Design%20System/_packaging?_a=package&feed=as.com-npm&package=%40alaskaair%2Forion-web-core-style-sheets&protocolType=Npm&version=0.1.1412915) |
-| copyfiles | [npm install](https://www.npmjs.com/package/copyfiles) |
+| Dependency | Info | Project | 
+|---|---|---|
+| Orion Web Core Stylesheets | `npm i @alaskaairux/orion-web-core-style-sheets` | [npm](https://www.npmjs.com/package/@alaskaairux/orion-web-core-style-sheets) |
+| copyfiles | `npm i copyfiles` | [npm](https://www.npmjs.com/package/copyfiles) |
 
-This function is included as part of the `gulp build` and `gulp watch` processes per component.
+Copyfiles is included as part of the `gulp build` and `gulp watch` processes per component.
 
 ## Building resources from Orion Design Tokens
 
-Every project is mandated to generate **Token CSS Custom Properties** and **Token Sass Variables** from the **Design Tokens** and include these into the main Sass file.
+The use of ODS components requires the use of **Token CSS Custom Properties** and **Token Sass Variables** from the [ODS Design Tokens](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens) project.
 
-This is necessary as each component references these global Custom Properties directly and many of the featured of OWCSS require information from the Sass variables. When the Orion Design Tokens are updated, these values will influence the nested Web Components within the scope of the project as well as any project scoped Sass.
+This is necessary as each component references these global Custom Properties directly and many of the features of OWCSS require information from the Sass variables. When the Orion Design Tokens are updated, these values will influence the nested Web Components within the scope of the project as well as any project scoped Sass.
 
 This process is represented in the `demo/` section of this project.
 
@@ -96,20 +59,20 @@ Building out Sass Variables and CSS Custom Properties from Design Token JSON fil
 
 † Function is included as part of the `gulp build` and `gulp watch` processes.
 
-| Dependency | info |
-|---|---|
-| Orion Design Tokens | [npm install](https://itsals.visualstudio.com/Orion%20Design%20System/_packaging?_a=package&feed=as.com-npm&package=%40alaskaair%2Forion-design-tokens&protocolType=Npm&version=0.2.1412909) |
-| Style Dictionary | [npm install](https://www.npmjs.com/package/style-dictionary) |
+| Dependency | Info | Project | 
+|---|---|---|
+| Orion Design Tokens | `npm i @alaskaairux/orion-design-tokens` | [npm](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens) |
+| Style Dictionary | `npm i style-dictionary` | [npm](https://www.npmjs.com/package/style-dictionary) |
 
 ## Component CSS
 
-Polymer Components are JavaScript modules that produce HTML Web Components. A feature of Web Components is encapsulated CSS, meaning that CSS needs to be written directly into the module itself.
+lit-element components are JavaScript modules that produce HTML Web Components. A feature of Web Components is encapsulated CSS through the use of the [shadowDOM](https://developers.google.com/web/fundamentals/web-components/shadowdom). Meaning, CSS needs to be written directly into the module itself.
 
 Using Sass and other techniques makes this undesirable to edit directly within the scope of the component JS file. To assist with this, the following script will process CSS resources into a JavaScript module that can be imported into the component.
 
-| Dependency | info |
-|---|---|
-| WC Sass Render | [npm install](https://itsals.visualstudio.com/Orion%20Design%20System/_packaging?_a=package&feed=as.com-npm&package=%40alaskaair%2Forion-design-tokens&protocolType=Npm&version=0.2.1412909) |
+| Dependency | Info | Project | 
+|---|---|---|
+| WC Sass Render | `npm i wc-sass-render` | [npm](https://www.npmjs.com/package/wc-sass-render) | 
 
 | Command | Description |
 |----|----|
@@ -119,11 +82,15 @@ Using Sass and other techniques makes this undesirable to edit directly within t
 
 Development of components requires a fine attention to details in regards to conforming to accessibility regulations. For more information on how to best use Aria rules, please be sure to review this document by the [Google Chrome team](https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules).
 
-### Accessibility testing
+### Testing w/pa11y
 
 When building new components, it is required that the component be reviewed using the latest tooling to assess accessibility compliance.
 
 Each project component is set up to use [pa11y](https://www.npmjs.com/package/pa11y) during the development process. 
+
+| Dependency | Info | Project | 
+|---|---|---|
+| pa11y | `npm i pa11y` | [npm](https://www.npmjs.com/package/pa11y) | 
 
 | Command | Description |
 |----|----|
@@ -161,8 +128,11 @@ The following is a list of Gulp tasks as defined in `[ods-component]/gulpfile.js
 |----|----|
 | copyFonts | Copy files from npm to local resources |
 | buildTokens | Builds out CSS resources necessary for local development |
+| distTokens | Builds Design Tokens to meet dist spec | 
 | processDemo | Build CSS from Sass for component demo |
 | processSrc | Build all CSS resources needed for production deployment and browser testing |
+| processImportsCanonical | Process Sass to create canonical resource |
+| processImportsVariable | Process Sass to create variable resource |
 | processDev | Build minimal CSS resources needed for local development |
 | sassWatch | Watcher for building CSS resources from Sass files |
 | build | Main task to run all build tasks |
@@ -174,13 +144,11 @@ The following is a list of npm scripts as defined in `[ods-component]/package.js
 
 | Task | Description |
 |----|----|
-| set-patch-root | Updates the root package.json semver |
-| set-patch-src | Updates the ./src package.json semver |
+| set-patch | Updates the `./src` package.json semver |
 | changelog | Generates the build changelog based on Git commits |
-| copyReadme | Dist build step to copy ./README.md to ./dist |
+| copyResources | Dist build step to copy ./README.md to ./dist |
+| copyImports | Dist build step to copy alternate CSS imports to ./dist |
 | concat | Concatinates the generated changelong with the readme file | 
-| npmOutdated | Script to run ncu package |
-| npmOutdatedUpdate | Script to run `ncu -u` command |
 | copyFonts | Copy files from npm to local resources |
 | buildTokens | Builds out CSS resources necessary for local development |
 | distTokens | Builds out CSS resources based on custom Style Dictionary rules | 
@@ -188,10 +156,16 @@ The following is a list of npm scripts as defined in `[ods-component]/package.js
 | sassRender-w | Watches Sass/CSS files to re-render `*-css-js` files in dev mode |
 | cssLint | CSS linter | 
 | jsonLint | JSON linter |
+| stylefluxVariable | Processes alternate processes CSS import file with CSS Custom Properties |
+| stylefluxCanonical | Processes alternate processed CSS import file with canonical CSS properties |
 | pa11y | Runs accessibility testing tool |
 | build | Main task to run all build tasks |
 | dist | Prepares files for packaging distribution |
 | babel | Processes ES6 Javascript to ES5 for legacy browser support |
 | buildDist | Copies source files from `./src` directory to `./dist` | 
-| buildDistLocal | Same as `buildDist`, but syntax is slightly different | 
-| clean | Removes all dynamic build resources from local repo | 
+| sweep | Removes all dynamic build resources from local repo | 
+
+## 
+
+Alaska Airlines Orion Design System<br>
+Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
