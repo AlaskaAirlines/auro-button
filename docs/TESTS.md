@@ -46,3 +46,8 @@ If all tests pass, the file should only contain the following:
 If there are errors, this will be printed to the CLI and exported to the JSON file. 
 
 No pull request will be accepted with an updated `./pa11yReport.json` file. 
+
+## 
+
+Alaska Airlines Orion Design System<br>
+Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.

@@ -4,8 +4,8 @@
 // ---------------------------------------------------------------------
 
 import { LitElement, html } from "lit-element";
-import buttonProperties from './generated/componentProperties-css.js';
-import dotsProperties from './generated/dotsProperties-css.js';
+import buttonProperties from './tokens/componentProperties-css.js';
+import dotsProperties from './tokens/dotsProperties-css.js';
 import styleCss from "./style-css.js";
 
 class OdsButton extends LitElement {

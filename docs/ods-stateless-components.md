@@ -22,7 +22,7 @@ For install and setup instructions, please see `PROJECT_SETUP` and `TECH_DETAILS
 The following boilerplate directory structure will be found in the [component boilerplate](https://github.com/AlaskaAirlines/OrionStatelessComponents__boilerplate) project. Be sure to read all the setup instructions in README.md prior to any development. 
 
 ```
-/OrionStatelessComponents
+~/ ... /statelessComponents/ods-[name]
 ├── LICENSE
 ├── NOTICE
 ├── README.md
@@ -36,8 +36,6 @@ The following boilerplate directory structure will be found in the [component bo
 |  ├── TECH_DETAILS.md
 |  ├── TESTS.md
 |  └── ods-stateless-components.md
-├── examples
-|  └── create-react-app-example.md
 ├── gulpfile.js
 ├── index.html
 ├── pa11yReport.json
@@ -51,8 +49,7 @@ The following boilerplate directory structure will be found in the [component bo
 |  ├── tokenScript.js
 |  └── tokenScriptCustom.js
 ├── src
-|  ├── ods-[name].js
-|  ├── package.json
+|  ├── ods-button.js
 |  ├── shape.json
 |  └── style.scss
 ├── template.hbs

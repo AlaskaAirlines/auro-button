@@ -9,10 +9,15 @@ branches:
     - master
 before_deploy:
   - gulp processSrc
+  - gulp processImportsCanonical
+  - npm run stylefluxCanonical
+  - gulp processImportsVariable
+  - npm run stylefluxVariable
   - npm run distTokens
   - npm run sassRender
   - npm run babel
   - npm run copyResources
+  - npm run copyImports
   - npm run changelog
   - npm run concat
   - cd dist

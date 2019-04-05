@@ -6,13 +6,13 @@
 // Creates ods-button CSS UI definition of shape
 
 
-@import "./generated/tokenVariables";
-@import "./generated/componentVariables";
-@import "./generated/dotsVariables";
+@import "./tokens/tokenVariables";
+@import "./tokens/componentVariables";
+@import "./tokens/dotsVariables";
 
-@import "./generated/tokenProperties";
-@import "./generated/componentProperties";
-@import "./generated/dotsProperties";
+@import "./tokens/tokenProperties";
+@import "./tokens/componentProperties";
+@import "./tokens/dotsProperties";
 
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/baselineLTE";
@@ -45,7 +45,7 @@ span {
   font-weight: var(--ods-button-font-weight);
   line-height: var(--ods-button-height);
   padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding);
-  width: var(--ods-button-width-mobile);
+  width: var(--ods-button-width-narrow);
   background-color: var(--ods-button-background-color);
   color: var(--ods-button-text-color);
   white-space: var(--ods-button-white-space);
