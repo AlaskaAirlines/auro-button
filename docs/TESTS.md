@@ -1,3 +1,5 @@
+<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" style="padding-left: 10px" /> 
+
 # Running Tests
 
 The native Polymer Test scenario depends on Selenium server for local browsers and Java installed. Due to complexities with getting these environments configured correctly, these rarely work and it is suggested to use the simpler interactive test method as described below.

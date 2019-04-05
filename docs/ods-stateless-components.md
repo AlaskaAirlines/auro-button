@@ -1,3 +1,5 @@
+<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" style="padding-left: 10px" /> 
+
 # ODS Stateless Components
 
 Orion Design System Stateless Components are framework agnostic reusable UI components intended for use across all internal and external facing applications across all of IT and e-commerce at Alaska Airlines.

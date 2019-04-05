@@ -1,3 +1,5 @@
+<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" style="padding-left: 10px" /> 
+
 # Project Setup
 
 To view and/or develop with the element/component, it is required to install the Polymer CLI and run the element locally.
