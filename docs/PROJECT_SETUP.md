@@ -9,7 +9,7 @@ To view and/or develop with the element/component, it is required to install the
 Make sure to have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed.
 
 ```
-$ npm polymer-cli -g
+$ npm i polymer-cli -g
 ```
 
 ## Install dependencies
