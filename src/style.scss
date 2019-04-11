@@ -22,6 +22,7 @@
 :host {
   display: $host-display;
   flex-direction: $host-flex-direction-mobile;
+  -webkit-tap-highlight-color: transparent;
 
   @include breakpoint-narrow {
     flex-direction: $host-flex-direction-phone-large-and-above;
@@ -59,6 +60,24 @@ span {
       box-shadow: 0 0 16px var(--ods-button-hover-shadow-color);
     }
   }
+
+  &:disabled {
+    cursor: var(--ods-button-disabled-cursor);
+    color: var(--ods-button-disabled-color);
+    background-color: var(--ods-button-disabled-background-color);
+  
+    :host(:not(.is-touching)) & {
+      &:hover {
+        background-color: var(--ods-button-disabled-hover-background-color);
+        box-shadow: unset;
+      }
+    }
+
+    &:active {
+      color: var(--ods-button-disabled-color);
+      background-color: var(--ods-button-disabled-background-color);
+    }
+  }
   
   &:active {
     background-color: var(--ods-button-active-background-color);
@@ -70,8 +89,10 @@ span {
       color: var(--ods-button-is-active-disabled-color);
       background-color: var(--ods-button-is-active-disabled-background-color);
 
-      &:hover {
-        background-color: var(--ods-button-is-active-disabled-background-color);
+      :host(:not(.is-touching)) & {
+        &:hover {
+          background-color: var(--ods-button-is-active-disabled-background-color);
+        }
       }
     }
   }
@@ -93,11 +114,13 @@ span {
       background-color: var(--ods-button-secondary-active-background-color)
     }
 
-    &:hover {
-      background-color: var(--ods-button-secondary-hover-background-color);
-      box-shadow: 0 0 16px var(--ods-button-secondary-hover-shadow-color);
-      border-color: var(--ods-button-secondary-hover-border-color);
-      color: var(--ods-button-secondary-hover-text-color);
+    :host(:not(.is-touching)) & {
+      &:hover {
+        background-color: var(--ods-button-secondary-hover-background-color);
+        box-shadow: 0 0 16px var(--ods-button-secondary-hover-shadow-color);
+        border-color: var(--ods-button-secondary-hover-border-color);
+        color: var(--ods-button-secondary-hover-text-color);
+      }
     }
 
     &:disabled {
@@ -106,9 +129,13 @@ span {
       border-color: var(--ods-button-secondary-disabled-border-color);
       background-color: var(--ods-button-secondary-disabled-background-color);
 
-      &:hover {
-        border-color: var(--ods-button-secondary-disabled-hover-border-color);
-        background-color: var(--ods-button-secondary-disabled-hover-background-color);
+      :host(:not(.is-touching)) & {
+        &:hover {
+          border-color: var(--ods-button-secondary-disabled-hover-border-color);
+          background-color: var(--ods-button-secondary-disabled-hover-background-color);
+          color: var(--ods-button-disabled-color);
+          box-shadow: unset;
+        }
       }
     }
 
@@ -118,8 +145,12 @@ span {
         border-color: var(--ods-button-secondary-is-active-disabled-border-color);
         background-color: var(--ods-button-secondary-is-active-disabled-background-color);
 
-        &:hover {
-          background-color: var(--ods-button-secondary-is-active-disabled-hover-background-color)
+        :host(:not(.is-touching)) & {
+          &:hover {
+            background-color: var(--ods-button-secondary-is-active-disabled-hover-background-color);
+            border-color: var(--ods-button-secondary-is-active-disabled-border-color);
+            color: var(--ods-button-secondary-is-active-disabled-color);
+          }
         }
       }
     }
@@ -127,18 +158,6 @@ span {
 
   @include breakpoint-narrow {
     width: var(--ods-button-width-medium);
-  }
-}
-
-:disabled {
-  cursor: var(--ods-button-disabled-cursor);
-  color: var(--ods-button-disabled-color);
-  background-color: var(--ods-button-disabled-background-color);
-
-  &:hover {
-    background-color: var(--ods-button-disabled-hover-background-color);
-    color: var(--ods-button-disabled-color);
-    box-shadow: unset;
   }
 }
 
