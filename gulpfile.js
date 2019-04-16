@@ -4,26 +4,15 @@
   Build process API
 
   # To build resources to view the demo file, perform the following tasks
-    1. $ npm run prepare
-    2. $ gulp build
-    3. $ npm run build
-    4. $ polymer serve
-    5. Go to http://127.0.0.1:8081
+    1. $ gulp build
+    2. $ npm run build
+    3. $ polymer serve
+    4. Go to http://127.0.0.1:8081
 
   # To work within the development environment, run the following tasks
-    1. $ npm run prepare
-    2. $ gulp dev
-    3. $ npm run dev
-    4. Go to http://127.0.0.1:8081
-  
-  # To build the distribution resources locally, run the following tasks
-    1. $ npm run prepare
-    2. $ gulp dist
-    3. $ npm run dist
-    4. You can view dist version now at http://127.0.0.1:8081
-
-    To build the dist package, run
-    $ npm run buildPackage
+    1. $ gulp dev
+    2. $ npm run dev
+    3. Go to http://127.0.0.1:8081
 */
 
 // =========================================================================
