@@ -146,25 +146,25 @@ The following is a list of npm scripts as defined in `[ods-component]/package.js
 
 | Task | Description |
 |----|----|
-| set-patch | Updates the `./src` package.json semver |
-| changelog | Generates the build changelog based on Git commits |
-| copyResources | Dist build step to copy ./README.md to ./dist |
-| copyImports | Dist build step to copy alternate CSS imports to ./dist |
-| concat | Concatinates the generated changelong with the readme file | 
-| copyFonts | Copy files from npm to local resources |
+| build | Main task to run all build tasks |
 | buildTokens | Builds out CSS resources necessary for local development |
+| changelog | Generates the build changelog based on Git commits |
+| concat | Concatinates the generated changelong with the readme file |
+| copyFonts | Copy files from npm to local resources | 
+| copyImports | Dist build step to copy alternate CSS imports to ./dist |
+| copyResources | Dist build step to copy ./README.md to ./dist |
+| cssLint | CSS linter |
+| dev | Runs development environment | 
+| dist | Prepares files for packaging distribution |
+| distJS | Copies JS files from `./src` directory to `./dist` | 
 | distTokens | Builds out CSS resources based on custom Style Dictionary rules | 
+| jsonLint | JSON linter |
+| pa11y | Runs accessibility testing tool |
 | sassRender | Builds `*-css.js` files from Sass/CSS dev files | 
 | sassRender-w | Watches Sass/CSS files to re-render `*-css-js` files in dev mode |
-| cssLint | CSS linter | 
-| jsonLint | JSON linter |
-| stylefluxVariable | Processes alternate processes CSS import file with CSS Custom Properties |
+| setPatch | Updates the `./src` package.json semver |
 | stylefluxCanonical | Processes alternate processed CSS import file with canonical CSS properties |
-| pa11y | Runs accessibility testing tool |
-| build | Main task to run all build tasks |
-| dist | Prepares files for packaging distribution |
-| babel | Processes ES6 Javascript to ES5 for legacy browser support |
-| buildDist | Copies source files from `./src` directory to `./dist` | 
+| stylefluxVariable | Processes alternate processes CSS import file with CSS Custom Properties |
 | sweep | Removes all dynamic build resources from local repo | 
 
 ## 

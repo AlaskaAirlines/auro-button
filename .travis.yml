@@ -3,7 +3,7 @@ node_js:
  - "node"
 script:
   - npm run buildTokens
-  - npm run set-patch $TRAVIS_BUILD_ID
+  - npm run setPatch $TRAVIS_BUILD_ID
 branches:
   only:
     - master
@@ -15,7 +15,7 @@ before_deploy:
   - npm run stylefluxVariable
   - npm run distTokens
   - npm run sassRender
-  - npm run babel
+  - npm run distJS
   - npm run copyResources
   - npm run copyImports
   - npm run changelog
