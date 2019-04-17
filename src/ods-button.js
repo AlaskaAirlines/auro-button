@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------------
 
 import { LitElement, html } from "lit-element";
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 import buttonProperties from './tokens/componentProperties-css.js';
 import dotsProperties from './tokens/dotsProperties-css.js';
 import styleCss from "./style-css.js";
@@ -11,12 +12,11 @@ import styleCss from "./style-css.js";
 class OdsButton extends LitElement {
   constructor() {
     super();
-    this.string = "";
-    this.type = "primary";
-    this.context = "false";
-    this.disabled = "false";
-    this.active = "false";
-    this.getButtonType = this.getButtonType.bind(this);
+    this.buttontype = "primary";
+    this.outercontext = false;
+    this.disabled = false;
+    this.isactive = false;
+    this.getButtontype = this.getButtontype.bind(this);
     this.getButtonState = this.getButtonState.bind(this);
     this.getButtonContext = this.getButtonContext.bind(this);
     
@@ -28,38 +28,38 @@ class OdsButton extends LitElement {
 
   static get properties() {
     return {
-      string: {
-        type: String
-      },
-      type: {
-        type: String
-      },
-      disabled: {
-        type: String
-      },
-      active: {
-        type: String
-      },
-      context: {
-        type: String
-      }
+      autofocus:        { type: Boolean },
+      disabled:         { type: Boolean },
+      formnovalidate:   { type: Boolean },
+      isactive:         { type: Boolean },
+      outercontext:     { type: Boolean },
+      buttontype:       { type: String },
+      form:             { type: String },
+      formaction:       { type: String },
+      formenctype:      { type: String },
+      formmethod:       { type: String },
+      formtarget:       { type: String },
+      name:             { type: String },
+      title:            { type: String },
+      type:             { type: String },
+      value:            { type: String }
     };
   }
 
-  getButtonType(type) {
-    return type === "secondary" ? "button--secondary" : "";
+  getButtontype(type) {
+    return type === "secondary" ? "button--secondary" : ''
   }
 
-  getButtonState(active) {
-    return active === "true" ? "is-active" : "";
+  getButtonState(isactive) {
+    return isactive ? "is-active" : ''
   }
 
-  getButtonContext(context) {
-    return context === "true" ? "button--enclosed" : "";
+  getButtonContext(outercontext) {
+    return outercontext ? "button--enclosed" : ''
   }
 
-  isDisabled(disabled, active) {
-    return disabled === "true" || active === "true";
+  isDisabled(disabled, isactive) {
+    return disabled || isactive;
   }
 
   render() {
@@ -69,17 +69,25 @@ class OdsButton extends LitElement {
       ${styleCss}
 
       <button
-        aria-labelledby='odsButtonString'
-        aria-label='${this.string}'
-        title='${this.string}'
-        class="button ${this.getButtonType(this.type)} ${this.getButtonState(this.active)} ${this.getButtonContext(this.context)}"
-        ?disabled="${this.isDisabled(this.disabled, this.active)}"
+        aria-labelledby="odsButtonString"
+        aria-label="${this.title}"
+        ?autofocus="${this.autofocus}"
+        class="button ${this.getButtontype(this.buttontype)} ${this.getButtonState(this.isactive)} ${this.getButtonContext(this.outercontext)}"
+        ?disabled="${this.isDisabled(this.disabled, this.isactive)}"
+        form="${ifDefined(this.form ? this.form : undefined)}"
+        formaction="${ifDefined(this.formaction ? this.formaction : undefined)}"
+        formenctype="${ifDefined(this.formenctype ? this.formenctype : undefined)}"
+        formmethod="${ifDefined(this.formmethod ? this.formmethod : undefined)}"
+        ?formnovalidate="${this.formnovalidate}"
+        formtarget="${ifDefined(this.formtarget ? this.formtarget : undefined)}"
+        title="${ifDefined(this.title ? this.title : undefined)}"
+        name="${ifDefined(this.name ? this.name : undefined)}"
+        type="${ifDefined(this.type ? this.type : undefined)}"
+        .value="${ifDefined(this.value ? this.value : undefined)}"
       >
-        <span id='odsButtonString'>
-          ${this.string}
-        </span>
+        <slot></slot>
 
-        <span class="dancingDots ${this.getButtonState(this.active)}">
+        <span class="dancingDots ${this.getButtonState(this.isactive)}">
           <div class="dots">
             <div class="block">
               <div></div>

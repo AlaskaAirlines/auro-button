@@ -65,7 +65,7 @@ span {
     cursor: var(--ods-button-disabled-cursor);
     color: var(--ods-button-disabled-color);
     background-color: var(--ods-button-disabled-background-color);
-  
+
     :host(:not(.is-touching)) & {
       &:hover {
         background-color: var(--ods-button-disabled-hover-background-color);
@@ -78,7 +78,7 @@ span {
       background-color: var(--ods-button-disabled-background-color);
     }
   }
-  
+
   &:active {
     background-color: var(--ods-button-active-background-color);
   }

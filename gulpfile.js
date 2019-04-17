@@ -12,7 +12,8 @@
   # To work within the development environment, run the following tasks
     1. $ gulp dev
     2. $ npm run dev
-    3. Go to http://127.0.0.1:8081
+    3. $ polymer serve
+    4. Go to http://127.0.0.1:8081
 */
 
 // =========================================================================

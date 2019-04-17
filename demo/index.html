@@ -46,45 +46,43 @@
 
       <demo-snippet>
         <template>
-          <ods-button string="Default state"></ods-button>
+          <ods-button title="Default state">Default state</ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button string="Default state; context true" context="true"></ods-button>
+          <ods-button title="Default state; context true" outercontext>Default state; context true</ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button disabled="true" string="Disabled state"></ods-button>
+          <ods-button disabled title="Disabled state">Disabled state</ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button active="true" string="Active state"></ods-button>
+          <ods-button isactive title="Active state">Active state</ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button type="secondary" string="Secondary type"></ods-button>
+          <ods-button buttontype="secondary" title="Secondary type">Secondary type</ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button type="secondary" disabled="true" string="Secondary type; disabled state"
-          ></ods-button>
+          <ods-button buttontype="secondary" disabled title="Secondary type; disabled state">Secondary type; disabled state</ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button active="true" type="secondary" string="Secondary type; active state"
-          ></ods-button>
+          <ods-button isactive buttontype="secondary" title="Secondary type; active state">Secondary type; active state</ods-button>
         </template>
       </demo-snippet>
 
@@ -97,22 +95,6 @@
 
       <h3>Responsive state:</h3>
       <p>The <code>ods-button</code> element will respond without context settings as expected. Within context of another component, set <code>context</code> flag to <code>true</code> and <code>ods-button</code> will adapt to contextual shape.</p>
-
-      <h3>Properties:</h3>
-      <code><strong>string:</strong> string</code>
-      <p>Value entered as string will be displayed as string value within the button element.</p>
-
-      <code><strong>context:</strong> boolean = false</code>
-      <p>Context defines responsiveness of element. Set to <code>true</code>, element will always be <code>100%</code> and respond to parent context shape.</p>
-
-      <code><strong>type:</strong> string = primary</code>
-      <p>Type of button defines the visual styling. Option: <code>secondary</code>.</p>
-
-      <code><strong>disabled:</strong> boolean = false</code>
-      <p>If set to <code>true</code> button will become disabled and not allow for interactions.</p>
-
-      <code><strong>active:</strong> boolean = false</code>
-      <p>If set to <code>true</code> button will appear in active state.</p>
     </div>
   </body>
 </html>

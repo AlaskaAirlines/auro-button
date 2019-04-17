@@ -1,4 +1,4 @@
-<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" style="padding-left: 10px" /> 
+<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" style="padding-left: 10px" />
 
 # Project Setup
 
@@ -24,15 +24,15 @@ $ npm i
 
 Prior to starting the server, UI dependencies must be built.
 
-To validate all packages are up to date, please run: 
+To validate all packages are up to date, please run:
 
 ```
 $ npm outdated
 ```
 
-If there are packages that require updating, update accordingly. 
+If there are packages that require updating, update accordingly.
 
-Once completed, run the following commands to render a version of the component. 
+Once completed, run the following commands to render a version of the component.
 
 ```
 $ gulp build  // builds font, tokens and initial Sass resources
@@ -53,13 +53,14 @@ When actively developing component resources, there are a series of watchers to 
 To ensure that you have the project resources properly prepared, run:
 
 ```
-$ npm run prepare
+$ gulp build
+$ npm run build
 ```
 
-If there are packages that require updating, run the following command:
+To see if there are packages that require updating, run the following command:
 
 ```
-$ npm run npmOutdatedUpdate
+$ npm run outdated
 ```
 
 Once completed, run the following.
@@ -67,6 +68,7 @@ Once completed, run the following.
 ```
 $ gulp dev // watches and rebuilds development resources
 $ npm run dev // watches token resources and starts server
+$ polymer serve
 ```
 
 Once the server is loaded, it will be viewable at:
@@ -74,7 +76,7 @@ Once the server is loaded, it will be viewable at:
 ```
 http://127.0.0.1:8081
 ```
-## 
+##
 
 Alaska Airlines Orion Design System<br>
 Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
