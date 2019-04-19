@@ -1,5 +1,4 @@
 const StyleDictionary = require('style-dictionary');
-const fs = require('fs');
 const _ = require('lodash');
 
 function variablesWithPrefix(prefix, properties) {

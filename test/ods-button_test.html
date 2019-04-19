@@ -37,8 +37,7 @@
         });
         test("instantiating the element with default properties works", () => {
           const element = fixture("BasicTestFixture");
-          assert.equal(element.string, "");
-          assert.equal(element.type, "primary");
+          assert.equal(element.buttontype, "primary");
           assert.equal(element.disabled, "false");
           assert.equal(element.active, "false");
         });
@@ -46,7 +45,7 @@
         test("setting a property on the element works", () => {
           // Create a test fixture
           const element = fixture("ChangedPropertyTestFixture");
-          assert.equal(element.string, "foo");
+          assert.equal(element.buttontype, "primary");
         });
       });
     </script>

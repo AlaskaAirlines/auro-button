@@ -1,4 +1,4 @@
-<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" /> 
+<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" />
 
 [![Build Status](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button)
 ![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-button.svg?color=orange)
@@ -10,7 +10,7 @@
 
 ## Docs
 
-All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the [./docs](/docs/) directory of this repository. 
+All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the [./docs](/docs/) directory of this repository.
 
 ## Install
 
@@ -26,9 +26,9 @@ For additional details in regards to using Orion Design Tokens with components, 
 
 ### CSS Custom Property fallbacks
 
-CSS Custom Properties are not supported in older browsers. For this, fallback properties are pre-generated and included with the npm. Any update to the Orion Design Tokens will be immediately reflected with browsers that support CSS Custom Properties, legacy browsers will require updated components with pre-generated fallback properties. 
+CSS Custom Properties are not supported in older browsers. For this, fallback properties are pre-generated and included with the npm. Any update to the Orion Design Tokens will be immediately reflected with browsers that support CSS Custom Properties, legacy browsers will require updated components with pre-generated fallback properties.
 
-### Define dependency in project component 
+### Define dependency in project component
 
 Define the component dependency within each component that is using the \<ods-button> component.
 
@@ -73,48 +73,58 @@ The \<ods-button> element will respond without context settings as expected. Wit
 
 | Attribute | value type | Description |
 |----|----|----|
-| string | string | Value entered as string will be displayed as string value within the button element |
-| context | boolean | Context defines responsiveness of element. Set to true, element will always be 100% and respond to parent context shape. <br/>Default value is `false`. |
-| type | string | Type of button defines the visual styling. <br/>Option(s): `primary`, `secondary`. Default value is `primary`.  |
+| autofocus | boolean | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it |
+| buttontype | string | Type of button defines the visual styling. <br/>Option(s): `primary`, `secondary`. Default value is `primary`.  |
 | disabled | boolean | If set to true button will become disabled and not allow for interactions. <br/>Default value is `false`.  |
-| active | boolean | If set to true button will appear in active state. <br/>Default value is `false`. |
+| form | string | The form element that the button is associated with (its form owner). The value of the attribute must be the id attribute of a `<form>` element in the same document |
+| formaction | string | Specifies the URL of the file that will process the input control when the form is submitted. The formaction attribute overrides the `action` attribute of the `<form>` element |
+| formenctype| string | If the button is a submit button, this attribute specifies the type of content that is used to submit the form to the server. |
+| formmethod | string | If the button is a submit button, this attribute specifies the HTTP method that the browser uses to submit the form. |
+| formnovalidate | boolean | If the button is a submit button, this Boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner. |
+| formtarget | string | If the button is a submit button, this attribute is a name or keyword indicating where to display the response that is received after submitting the form. Options: `_self`, `_blank`, `_parent`, `_top:` |
+| isactive | boolean | If set to true button will appear in active state. <br/>Default value is `false`. |
+| name | string | The name of the button, which is submitted with the form data. |
+| outercontext | boolean | Context defines responsiveness of element. Set to true, element will always be 100% and respond to parent context shape. <br/>Default value is `false`. |
+| title | string | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
+| type | string | The type of the button. Possible values are: `submit`, `reset`, `button` |
+| value | string | Defines the value associated with the button which is submitted with the form data. |
 
 ### API Code Examples
 
 Default button
 
 ```
-<ods-button string="hello world"></ods-button>
+<ods-button>Hello World</ods-button>
 ```
 
 Default button with disabled state set to `true`
 
 ```
-<ods-button disabled="true" string="hello world"></ods-button>
+<ods-button disabled>hello world</ods-button>
 ```
 
 Default button with active state set to `true`
 
 ```
-<ods-button active="true" string="hello world"></ods-button>
+<ods-button isactive>hello world</ods-button>
 ```
 
 Secondary button
 
 ```
-<ods-button type="secondary" string="hello world"></ods-button>
+<ods-button buttontype="secondary">hello world</ods-button>
 ```
 
 Secondary button with disabled state set to `true`
 
 ```
-<ods-button type="secondary" disabled="true" string="hello world"></ods-button>
+<ods-button buttontype="secondary" disabled>hello world</ods-button>
 ```
 
 Secondary button with active state set to `true`
 
 ```
-<ods-button active="true" type="secondary" string="hello world"></ods-button>
+<ods-button active buttontype="secondary">hello world</ods-button>
 ```
 
 #### Contextual component
@@ -127,7 +137,7 @@ In this scenario, simply set the `context` of the element to be `true`.
 <ods-button string="Default state; context true" context="true"></ods-button>
 ```
 
-## Alternate build solutions 
+## Alternate build solutions
 
 Included with the distributed npm are two additional directories, `./altImportsCanonical` and `./altImportsVariable`.
 
@@ -157,7 +167,7 @@ These files can be imported directly into the scope of your project's CSS. It is
 }
 ```
 
-This pattern will produce all the selectors within `style_clean.scss` with the prefixed selector. 
+This pattern will produce all the selectors within `style_clean.scss` with the prefixed selector.
 
 ```
 .ods-button .button {
@@ -165,9 +175,9 @@ This pattern will produce all the selectors within `style_clean.scss` with the p
 }
 ```
 
-**Warning!** Using the canonical CSS will break the chain of using Design Tokens. If Tokens are updated, this will require the update of the components and their canonical output. Use with caution. 
+**Warning!** Using the canonical CSS will break the chain of using Design Tokens. If Tokens are updated, this will require the update of the components and their canonical output. Use with caution.
 
-## 
+##
 
 Alaska Airlines Orion Design System<br>
 Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
