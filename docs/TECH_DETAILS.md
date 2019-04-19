@@ -1,4 +1,4 @@
-<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" style="padding-left: 10px" /> 
+<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" style="padding-left: 10px" />
 
 # ODS Stateless Component Development Details
 
@@ -34,7 +34,7 @@ Building components requires local access to custom web fonts. After installing 
 $ npm run copyfiles
 ```
 
-| Dependency | Info | Project | 
+| Dependency | Info | Project |
 |---|---|---|
 | Orion Web Core Stylesheets | `npm i @alaskaairux/orion-web-core-style-sheets` | [npm](https://www.npmjs.com/package/@alaskaairux/orion-web-core-style-sheets) |
 | copyfiles | `npm i copyfiles` | [npm](https://www.npmjs.com/package/copyfiles) |
@@ -61,7 +61,7 @@ Building out Sass Variables and CSS Custom Properties from Design Token JSON fil
 
 † Function is included as part of the `gulp build` and `gulp watch` processes.
 
-| Dependency | Info | Project | 
+| Dependency | Info | Project |
 |---|---|---|
 | Orion Design Tokens | `npm i @alaskaairux/orion-design-tokens` | [npm](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens) |
 | Style Dictionary | `npm i style-dictionary` | [npm](https://www.npmjs.com/package/style-dictionary) |
@@ -72,9 +72,9 @@ lit-element components are JavaScript modules that produce HTML Web Components. 
 
 Using Sass and other techniques makes this undesirable to edit directly within the scope of the component JS file. To assist with this, the following script will process CSS resources into a JavaScript module that can be imported into the component.
 
-| Dependency | Info | Project | 
+| Dependency | Info | Project |
 |---|---|---|
-| WC Sass Render | `npm i wc-sass-render` | [npm](https://www.npmjs.com/package/wc-sass-render) | 
+| WC Sass Render | `npm i wc-sass-render` | [npm](https://www.npmjs.com/package/wc-sass-render) |
 
 | Command | Description |
 |----|----|
@@ -84,27 +84,11 @@ Using Sass and other techniques makes this undesirable to edit directly within t
 
 Development of components requires a fine attention to details in regards to conforming to accessibility regulations. For more information on how to best use Aria rules, please be sure to review this document by the [Google Chrome team](https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules).
 
-### Testing w/pa11y
+### Google Chrome Inspector
 
-When building new components, it is required that the component be reviewed using the latest tooling to assess accessibility compliance.
+Built within Google's Chrome inspector is an **audit** tab that will run the Lighthouse performance tool. Uncheck all the audits except for **Accessbility**, choose either Desktop or Mobile and run the audit. Lighthouse will return a detailed report about the accessibility performance of the component.
 
-Each project component is set up to use [pa11y](https://www.npmjs.com/package/pa11y) during the development process. 
-
-| Dependency | Info | Project | 
-|---|---|---|
-| pa11y | `npm i pa11y` | [npm](https://www.npmjs.com/package/pa11y) | 
-
-| Command | Description |
-|----|----|
-| `$ npm run dev` | Runs `npm-watch pa11y` |
-
-The `pa11y` script will output an error report to `./pa11yReport.json` if detected.
-
-### Google Chrome Inspector 
-
-Built within Google's Chrome inspector is an **audit** tab that will run the Lighthouse performance tool. Uncheck all the audits except for **Accessbility**, choose either Desktop or Mobile and run the audit. Lighthouse will return a detailed report about the accessibility performance of the component. 
-
-Also within Google's Chrome inspector is the **Accessibility** tab. This view will give individual results on the accessibility of the element you have selected. 
+Also within Google's Chrome inspector is the **Accessibility** tab. This view will give individual results on the accessibility of the element you have selected.
 
 ## Component Demo
 
@@ -130,7 +114,7 @@ The following is a list of Gulp tasks as defined in `[ods-component]/gulpfile.js
 |----|----|
 | copyFonts | Copy files from npm to local resources |
 | buildTokens | Builds out CSS resources necessary for local development |
-| distTokens | Builds Design Tokens to meet dist spec | 
+| distTokens | Builds Design Tokens to meet dist spec |
 | processDemo | Build CSS from Sass for component demo |
 | processSrc | Build all CSS resources needed for production deployment and browser testing |
 | processImportsCanonical | Process Sass to create canonical resource |
@@ -150,24 +134,25 @@ The following is a list of npm scripts as defined in `[ods-component]/package.js
 | buildTokens | Builds out CSS resources necessary for local development |
 | changelog | Generates the build changelog based on Git commits |
 | concat | Concatinates the generated changelong with the readme file |
-| copyFonts | Copy files from npm to local resources | 
+| copyFonts | Copy files from npm to local resources |
 | copyImports | Dist build step to copy alternate CSS imports to ./dist |
 | copyResources | Dist build step to copy ./README.md to ./dist |
 | cssLint | CSS linter |
-| dev | Runs development environment | 
+| dev | Runs development environment |
 | dist | Prepares files for packaging distribution |
-| distJS | Copies JS files from `./src` directory to `./dist` | 
-| distTokens | Builds out CSS resources based on custom Style Dictionary rules | 
+| distJS | Copies JS files from `./src` directory to `./dist` |
+| distTokens | Builds out CSS resources based on custom Style Dictionary rules |
 | jsonLint | JSON linter |
-| pa11y | Runs accessibility testing tool |
-| sassRender | Builds `*-css.js` files from Sass/CSS dev files | 
+| sassRender | Builds `*-css.js` files from Sass/CSS dev files |
 | sassRender-w | Watches Sass/CSS files to re-render `*-css-js` files in dev mode |
 | setPatch | Updates the `./src` package.json semver |
 | stylefluxCanonical | Processes alternate processed CSS import file with canonical CSS properties |
 | stylefluxVariable | Processes alternate processes CSS import file with CSS Custom Properties |
-| sweep | Removes all dynamic build resources from local repo | 
+| sweep | Removes all dynamic build resources from local repo |
 
-## 
+
+
+##
 
 Alaska Airlines Orion Design System<br>
 Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.

@@ -54,6 +54,7 @@
     "lodash": "^4.17.11",
     "mocha": "^6.1.4",
     "npm-watch": "^0.6.0",
+    "postcss": "^7.0.14",
     "postcss-custom-properties": "^8.0.10",
     "postcss-remove-selectors": "^2.0.0",
     "styleflux": "^1.2.0",

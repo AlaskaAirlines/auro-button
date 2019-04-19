@@ -1,4 +1,4 @@
-<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" style="padding-left: 10px" /> 
+<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" style="padding-left: 10px" />
 
 # ODS Stateless Components
 
@@ -19,9 +19,9 @@ The difference between an element or a component is mainly for semantics and ref
 
 For install and setup instructions, please see `PROJECT_SETUP` and `TECH_DETAILS` documents per each individual component within this repository.
 
-## Component directory structure 
+## Component directory structure
 
-The following boilerplate directory structure will be found in the [component boilerplate](https://github.com/AlaskaAirlines/OrionStatelessComponents__boilerplate) project. Be sure to read all the setup instructions in README.md prior to any development. 
+The following boilerplate directory structure will be found in the [component boilerplate](https://github.com/AlaskaAirlines/OrionStatelessComponents__boilerplate) project. Be sure to read all the setup instructions in README.md prior to any development.
 
 ```
 ~/ ... /statelessComponents/ods-[name]
@@ -66,7 +66,7 @@ One of the main goals of the ODS Stateless Components project is to not only pro
 
 Within the `./src/` directory for each component there will be a `shape.json` file. It is the intent of this file to describe the shape of the component and in turn it will define the variables to be used when building the Sass for the component itself.
 
-Please refer to all notes and examples contained within this file for any questions. 
+Please refer to all notes and examples contained within this file for any questions.
 
 ```
 /OrionStatelessComponents
@@ -74,7 +74,9 @@ Please refer to all notes and examples contained within this file for any questi
 |  └── shape.json
 ```
 
-## 
+
+
+##
 
 Alaska Airlines Orion Design System<br>
 Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.

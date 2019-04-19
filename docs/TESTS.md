@@ -1,4 +1,4 @@
-<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" style="padding-left: 10px" /> 
+<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" style="padding-left: 10px" />
 
 # Running Tests
 
@@ -29,11 +29,11 @@ $ npm run cssLint
 $ npm run jsonLint
 ```
 
-These are not set up as watcher tasks as if there is an error in any of these files when build, the cascading effect of the error will be very noticeable. 
+These are not set up as watcher tasks as if there is an error in any of these files when build, the cascading effect of the error will be very noticeable.
 
 Their primary use is within the build/dist scripts to ensure that the coded files are correct at the time of build.
 
-## 
+##
 
 Alaska Airlines Orion Design System<br>
 Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
