@@ -85,6 +85,7 @@ The \<ods-button> element will respond without context settings as expected. Wit
 | formmethod | string | If the button is a submit button, this attribute specifies the HTTP method that the browser uses to submit the form. |
 | formnovalidate | boolean | If the button is a submit button, this Boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner. |
 | formtarget | string | If the button is a submit button, this attribute is a name or keyword indicating where to display the response that is received after submitting the form. Options: `_self`, `_blank`, `_parent`, `_top:` |
+| id | string | Set the unique ID of an element. This ID is also used to address the `aria-labelledby` attribute in the context of a \<button> HTML element. |
 | isactive | boolean | If set to true button will appear in active state. <br/>Default value is `false`. |
 | name | string | The name of the button, which is submitted with the form data. |
 | outercontext | boolean | Context defines responsiveness of element. Set to true, element will always be 100% and respond to parent context shape. <br/>Default value is `false`. |
@@ -128,6 +129,12 @@ Secondary button with active state set to `true`
 
 ```html
 <ods-button active buttontype="secondary">hello world</ods-button>
+```
+
+Button(React support) with `ref` reference for passing in an event, [see notes](/docs/CALLBACK.md)
+
+```
+<ods-button ref={this.event}>hello world</ods-button>
 ```
 
 #### Contextual component
