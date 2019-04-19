@@ -42,10 +42,12 @@ class OdsButton extends LitElement {
       formenctype:      { type: String },
       formmethod:       { type: String },
       formtarget:       { type: String },
+      id:               { type: String },
       name:             { type: String },
       title:            { type: String },
       type:             { type: String },
-      value:            { type: String }
+      value:            { type: String },
+      buttonCallback:   { type: Function }
     };
   }
 
@@ -69,6 +71,10 @@ class OdsButton extends LitElement {
     return disabled || isactive;
   }
 
+  buttonCallback() {
+    alert('Alert: Event not bound to button')
+  }
+
   render() {
     return html`
       ${buttonProperties}
@@ -87,8 +93,10 @@ class OdsButton extends LitElement {
         formmethod="${ifDefined(this.formmethod ? this.formmethod : undefined)}"
         ?formnovalidate="${this.formnovalidate}"
         formtarget="${ifDefined(this.formtarget ? this.formtarget : undefined)}"
+        id="${ifDefined(this.id ? this.id : undefined)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
+        @click=${this.buttonCallback}
         type="${ifDefined(this.type ? this.type : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
       >
