@@ -143,8 +143,10 @@ Included with the distributed npm are two additional directories, `./altImportsC
 
 | directory | description |
 |---|---|
-| altImportsCanonical | Sass/CSS is using canonical values within the scope of the file |
-| altImportsVariable* | Sass/CSS is using CSS Custom Properties within the scope of the file |
+| altImportsCanonical† | Sass using canonical values within the scope of the file |
+| altImportsVariable* | Sass using CSS Custom Properties within the scope of the file |
+
+† Using canonical CSS properties breaks inheritance chain from Orion Design Tokens
 
 \* Orion Design Tokens are required to import any file using CSS Custom Properties. Also see Orion Design Tokens [pre-processed resources](https://github.com/AlaskaAirlines/OrionDesignTokens#install-pre-processed-resources). PostCSS using `postcss-custom-properties` will need to be added to your project if you are supporting legacy browsers.
 
@@ -152,10 +154,8 @@ Within the respective directories are two files, `style.css` and `style_clean.sc
 
 ```
 ├── altImportsCanonical
-|  ├── style.css
 |  └── style_clean.scss
 ├── altImportsVariable
-|  ├── style.css
 |  └── style_clean.scss
 ```
 
@@ -163,7 +163,7 @@ These files can be imported directly into the scope of your project's CSS. It is
 
 ```
 .ods-button {
-  @import "~@alaskaairux/ods-button/altImportsVariable/style_clean.scss";
+  @import "./node_modules/@alaskaairux/ods-button/altImportsCanonical/style_clean.scss";
 }
 ```
 
@@ -171,6 +171,10 @@ This pattern will produce all the selectors within `style_clean.scss` with the p
 
 ```
 .ods-button .button {
+  display: var(--ods-button-display);
+  font-family: var(--ods-button-font-family);
+  border-width: var(--ods-button-border-width);
+  border-radius: var(--ods-button-border-radius);
   ...
 }
 ```

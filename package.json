@@ -57,6 +57,7 @@
     "postcss": "^7.0.14",
     "postcss-custom-properties": "^8.0.10",
     "postcss-remove-selectors": "^2.0.0",
+    "postcss-selector-replace": "^1.0.2",
     "styleflux": "^1.2.0",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.3.0",
@@ -74,7 +75,6 @@
     "changelog": "auto-changelog --template ./template.hbs --output ./dist/CHANGELOG.md -p -b 5",
     "concat": "concat -o ./dist/README.md ./dist/README.md ./dist/CHANGELOG.md",
     "copyFonts": "copyfiles -f ./node_modules/@alaskaairux/orion-web-core-style-sheets/fonts/*.* ./demo/fonts/",
-    "copyImports": "copyfiles -u 1 -V './src/altImportsVariable/*.*' './src/altImportsCanonical/*.*' ./dist/",
     "copyResources": "copyfiles -f -V './package.json' './README.md' './NOTICE' './LICENSE' ./dist",
     "cssLint": "stylelint './src/*.css'",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w",
@@ -85,9 +85,9 @@
     "sassRender": "sass-render src/*.css src/tokens/*.scss",
     "sassRender-w": "sass-render -w src/**/*.{scss,css}",
     "setPatch": "versiony ./package.json --patch",
-    "stylefluxCanonical": "styleflux -o ./src/altImportsCanonical/*.css",
-    "stylefluxVariable": "styleflux -o ./src/altImportsVariable/*.css",
-    "sweep": "rm -rf ./demo/css ./demo/fonts ./dist ./src/tokens ./src/altImportsVariable ./src/altImportsCanonical | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js"
+    "stylefluxCanonical": "styleflux -o ./temp/altImportsCanonical/*.css",
+    "stylefluxVariable": "styleflux -o ./temp/altImportsVariable/*.css",
+    "sweep": "rm -rf ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js"
   },
   "publishConfig": {
     "access": "public"

@@ -120,6 +120,7 @@ The following is a list of Gulp tasks as defined in `[ods-component]/gulpfile.js
 | processImportsCanonical | Process Sass to create canonical resource |
 | processImportsVariable | Process Sass to create variable resource |
 | processDev | Build minimal CSS resources needed for local development |
+| reprocessClean | Re-processes style_clean.scss file to replace `:host` with `&` for static output |
 | sassWatch | Watcher for building CSS resources from Sass files |
 | build | Main task to run all build tasks |
 | dev | Main task to run all development tasks |
@@ -135,7 +136,6 @@ The following is a list of npm scripts as defined in `[ods-component]/package.js
 | changelog | Generates the build changelog based on Git commits |
 | concat | Concatinates the generated changelong with the readme file |
 | copyFonts | Copy files from npm to local resources |
-| copyImports | Dist build step to copy alternate CSS imports to ./dist |
 | copyResources | Dist build step to copy ./README.md to ./dist |
 | cssLint | CSS linter |
 | dev | Runs development environment |
