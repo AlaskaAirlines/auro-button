@@ -69,7 +69,7 @@ span {
     :host(:not(.is-touching)) & {
       &:hover {
         background-color: var(--ods-button-disabled-hover-background-color);
-        box-shadow: unset;
+        box-shadow: 0 0 0 transparent;
       }
     }
 
@@ -134,7 +134,7 @@ span {
           border-color: var(--ods-button-secondary-disabled-hover-border-color);
           background-color: var(--ods-button-secondary-disabled-hover-background-color);
           color: var(--ods-button-disabled-color);
-          box-shadow: unset;
+          box-shadow: 0 0 0 transparent;
         }
       }
     }
