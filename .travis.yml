@@ -10,14 +10,14 @@ branches:
 before_deploy:
   - gulp processSrc
   - gulp processImportsCanonical
-  - npm run stylefluxCanonical
   - gulp processImportsVariable
+  - npm run stylefluxCanonical
   - npm run stylefluxVariable
+  - gulp reprocessClean
   - npm run distTokens
   - npm run sassRender
   - npm run distJS
   - npm run copyResources
-  - npm run copyImports
   - npm run changelog
   - npm run concat
   - cd dist

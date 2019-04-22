@@ -8,6 +8,7 @@ tokens/
 demo/css
 demo/sass/tokenProperties.scss
 src/style.css
+temp/
 
 ## *-css built from sass-render process
 *-css.js

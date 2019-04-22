@@ -26,6 +26,7 @@ const gulp = require('gulp'),
   removeSelectors = require("postcss-remove-selectors"),
   StyleDictionary = require('style-dictionary'),
   copyfiles = require('copyfiles');
+  selectorReplace = require('postcss-selector-replace');
 
 // task to copy font files from the OWCSS npm to the local project
 // resources are NOT to be committed to version control
@@ -108,9 +109,6 @@ gulp.task('processImportsCanonical', function() {
       outputStyle: 'compressed', //alt options: nested, compact, compressed, expanded
     }))
 
-    // Post Sass to CSS process for addressing proprietary prefixes
-    //.pipe(gulpautoprefixer({ browsers: ['last 4 versions'], cascade: false }))
-
     // PostCss polyfill pipeline for CSS Custom Properties (CSS variables)
     .pipe(postcss([
 
@@ -126,7 +124,7 @@ gulp.task('processImportsCanonical', function() {
     ]))
 
     // Output final CSS in destination
-    .pipe(gulp.dest('./src/altImportsCanonical/'));
+    .pipe(gulp.dest('./temp/altImportsCanonical/'));
 });
 
 // task for Production Sass processing and legacy support
@@ -140,9 +138,6 @@ gulp.task('processImportsVariable', function() {
       outputStyle: 'compressed', //alt options: nested, compact, compressed, expanded
     }))
 
-    // Post Sass to CSS process for addressing proprietary prefixes
-    //.pipe(gulpautoprefixer({ browsers: ['last 4 versions'], cascade: false }))
-
     // PostCss polyfill pipeline for CSS Custom Properties (CSS variables)
     .pipe(postcss([
 
@@ -152,7 +147,7 @@ gulp.task('processImportsVariable', function() {
     ]))
 
     // Output final CSS in destination
-    .pipe(gulp.dest('./src/altImportsVariable/'));
+    .pipe(gulp.dest('./temp/altImportsVariable/'));
 });
 
 // task for Development Sass processing
@@ -176,6 +171,24 @@ gulp.task('processDev', function() {
 
     // Output final CSS in destination
     .pipe(gulp.dest('./src/'));
+});
+
+// task for Development Sass processing
+gulp.task('reprocessClean', function() {
+  // set path to where Sass files are located to be processed
+  return gulp.src('./temp/**/*.scss')
+
+    // PostCss polyfill pipeline for CSS Custom Properties (CSS variables)
+    .pipe(postcss([
+
+      selectorReplace({
+        before: [":host", "&(:not(.is-touching))"],
+        after: ["&", "&:not(.is-touching)"],
+      })
+    ]))
+
+    // Output final CSS in destination
+    .pipe(gulp.dest('./dist/'));
 });
 
 // Sass watcher
