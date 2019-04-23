@@ -45,12 +45,19 @@ span {
   font-size: var(--ods-button-font-size);
   font-weight: var(--ods-button-font-weight);
   line-height: var(--ods-button-height);
-  padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding);
+  padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding-narrow);
   width: var(--ods-button-width-narrow);
   background-color: var(--ods-button-background-color);
   color: var(--ods-button-text-color);
-  white-space: var(--ods-button-white-space);
   cursor: var(--ods-button-cursor);
+
+  white-space: var(--ods-button-white-space);
+  overflow: var(--ods-button-overflow);
+  text-overflow: var(--ods-button-text-overflow);
+
+  @include breakpoint-narrow {
+    padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding-medium);
+  }
 
   // refeerence :host selector for .is-touching state selector
   // only use hover UI if non-touch scenario
@@ -164,7 +171,6 @@ span {
 // dancing dots
 .dancingDots {
   display: var(--dancingdots-display);
-  margin-left: var(--dancingdots-offset);
 
   &.is-active {
     display: var(--dancingdots-is-active-display);
