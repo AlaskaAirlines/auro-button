@@ -5,7 +5,6 @@
   ],
   "dancingdots": {
     "display": {"value": "none"},
-    "offset": {"value": "-2px"},
     "is-active": {
       "display": {"value": "inline-block"}
     },

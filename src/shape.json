@@ -22,9 +22,14 @@
     "fontWeight": {"value": "var(--weight-book)"},
     "height": {"value": 3.2},
     "verticalPadding": {"value": 0},
-    "horizontalPadding": {"value": "3.2rem"},
+    "horizontalPadding": {
+      "narrow": {"value": "1rem"},
+      "medium": {"value": "3.2rem"}
+    },
+    "white-space": {"value": "nowrap"},
+    "overflow": {"value": "hidden"},
+    "text-overflow": {"value": "ellipsis"},
     "textColor": {"value": "var(--color-type-theme-dark-primary)"},
-    "whiteSpace": {"value": "nowrap"},
     "background": {
       "color": {"value": "var(--color-brand-blue-atlas-base)"}
     },
