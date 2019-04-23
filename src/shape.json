@@ -3,7 +3,7 @@
     "Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license",
     "See LICENSE in the project root for license information."
   ],
-  
+
   "host": {
     "display": {"value": "flex"},
     "flex-direction": {
@@ -55,7 +55,7 @@
 
     "width": {
       "narrow": {"value": "100%"},
-      "medium": {"value": "unset"}
+      "medium": {"value": "auto"}
     },
 
 
