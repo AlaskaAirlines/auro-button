@@ -67,7 +67,7 @@ In cases were the action of the button would not fit the criteria above, it is m
 
 ### Responsive state:
 
-The \<ods-button> element will respond without context settings as expected. Within context of another component, set `context` flag to `true` and \<ods-button> will adapt to contextual shape.
+The \<ods-button> element will respond without context settings as expected. Within context of another component, set `context` flag to `true` and \<ods-button> will adapt to contextual shape. By default,  \<ods-button> will constrain visible characters when text exceeds available visual space.
 
 ### Properties:
 
@@ -75,6 +75,7 @@ The \<ods-button> element will respond without context settings as expected. Wit
 |----|----|----|
 | autofocus | boolean | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it |
 | buttontype | string | Type of button defines the visual styling. <br/>Option(s): `primary`, `secondary`. Default value is `primary`.  |
+| condensed | boolean | Reduces left/right padding to fit button in condensed spaces |
 | disabled | boolean | If set to true button will become disabled and not allow for interactions. <br/>Default value is `false`.  |
 | form | string | The form element that the button is associated with (its form owner). The value of the attribute must be the id attribute of a `<form>` element in the same document |
 | formaction | string | Specifies the URL of the file that will process the input control when the form is submitted. The formaction attribute overrides the `action` attribute of the `<form>` element |

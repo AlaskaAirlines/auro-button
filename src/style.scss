@@ -104,6 +104,10 @@ span {
     }
   }
 
+  &--condensed {
+    padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding-narrow);
+  }
+
   &--enclosed {
     @include breakpoint-narrow {
       width: var(--ods-button-width-narrow) !important;

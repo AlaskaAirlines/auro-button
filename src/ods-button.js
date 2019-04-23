@@ -19,7 +19,7 @@ class OdsButton extends LitElement {
     this.getButtontype = this.getButtontype.bind(this);
     this.getButtonState = this.getButtonState.bind(this);
     this.getButtonContext = this.getButtonContext.bind(this);
-    
+
     // adds event based on activelly being touched
     this.addEventListener('touchstart', function() {
       this.classList.add('is-touching');
@@ -29,6 +29,7 @@ class OdsButton extends LitElement {
   static get properties() {
     return {
       autofocus:        { type: Boolean },
+      condensed:        { type: Boolean },
       disabled:         { type: Boolean },
       formnovalidate:   { type: Boolean },
       isactive:         { type: Boolean },
@@ -54,6 +55,10 @@ class OdsButton extends LitElement {
     return isactive ? "is-active" : ''
   }
 
+  getButtonApperance(condensed) {
+    return condensed ? "button--condensed" : ''
+  }
+
   getButtonContext(outercontext) {
     return outercontext ? "button--enclosed" : ''
   }
@@ -72,7 +77,7 @@ class OdsButton extends LitElement {
         aria-labelledby="odsButtonString"
         aria-label="${this.title}"
         ?autofocus="${this.autofocus}"
-        class="button ${this.getButtontype(this.buttontype)} ${this.getButtonState(this.isactive)} ${this.getButtonContext(this.outercontext)}"
+        class="button ${this.getButtontype(this.buttontype)} ${this.getButtonState(this.isactive)} ${this.getButtonContext(this.outercontext)} ${this.getButtonApperance(this.condensed)}"
         ?disabled="${this.isDisabled(this.disabled, this.isactive)}"
         form="${ifDefined(this.form ? this.form : undefined)}"
         formaction="${ifDefined(this.formaction ? this.formaction : undefined)}"
