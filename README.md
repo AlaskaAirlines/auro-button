@@ -39,7 +39,7 @@ import "@alaskaairux/ods-button/ods-button";
 **Reference component in HTML**
 
 ```
-<ods-button string="hello world" />
+<ods-button>Hello World</ods-button>
 ```
 
 ## Element \<ods-button>
