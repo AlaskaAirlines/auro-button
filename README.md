@@ -14,7 +14,7 @@ All information regarding Project Setup, Technical Details, Tests and informatio
 
 ## Install
 
-```
+```shell
 $ npm i @alaskaairux/ods-button
 ```
 
@@ -32,19 +32,19 @@ CSS Custom Properties are not supported in older browsers. For this, fallback pr
 
 Define the component dependency within each component that is using the \<ods-button> component.
 
-```
+```javascript
 import "@alaskaairux/ods-button/ods-button";
 ```
 
 **Reference component in HTML**
 
-```
+```html
 <ods-button>Hello World</ods-button>
 ```
 
 ## Element \<ods-button>
 
-```
+```javascript
 class OdsButton extends LitElement
 ```
 
@@ -94,37 +94,37 @@ The \<ods-button> element will respond without context settings as expected. Wit
 
 Default button
 
-```
+```html
 <ods-button>Hello World</ods-button>
 ```
 
 Default button with disabled state set to `true`
 
-```
+```html
 <ods-button disabled>hello world</ods-button>
 ```
 
 Default button with active state set to `true`
 
-```
+```html
 <ods-button isactive>hello world</ods-button>
 ```
 
 Secondary button
 
-```
+```html
 <ods-button buttontype="secondary">hello world</ods-button>
 ```
 
 Secondary button with disabled state set to `true`
 
-```
+```html
 <ods-button buttontype="secondary" disabled>hello world</ods-button>
 ```
 
 Secondary button with active state set to `true`
 
-```
+```html
 <ods-button active buttontype="secondary">hello world</ods-button>
 ```
 
@@ -134,7 +134,7 @@ A special case scenario for responsiveness. The \<ods-button> element is built t
 
 In this scenario, simply set the `context` of the element to be `true`.
 
-```
+```html
 <ods-button string="Default state; context true" context="true"></ods-button>
 ```
 
@@ -162,7 +162,7 @@ Within the respective directories are two files, `style.css` and `style_clean.sc
 
 These files can be imported directly into the scope of your project's CSS. It is highly recommended that you use the `style_clean.scss` file and import this into a name-space as not to create style collisions. For example:
 
-```
+```scss
 .ods-button {
   @import "./node_modules/@alaskaairux/ods-button/altImportsCanonical/style_clean.scss";
 }
@@ -170,7 +170,7 @@ These files can be imported directly into the scope of your project's CSS. It is
 
 This pattern will produce all the selectors within `style_clean.scss` with the prefixed selector.
 
-```
+```scss
 .ods-button .button {
   display: var(--ods-button-display);
   font-family: var(--ods-button-font-family);
