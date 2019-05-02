@@ -1,6 +1,6 @@
 # Component JavaScript Callback
 
-When building custom elements with litElement, use lit-html's `@event` binding in the custom element's template, inside the `render()` function to add an event listener.
+When building custom elements with lit-element, use lit-html's `@event` binding in the custom element's template, inside the `render()` function to add an event listener.
 
 ```javascript
 render() {
@@ -14,7 +14,7 @@ render() {
 }
 ```
 
-When using LlitElement custom elements, an event can be bound to the outer component itself, as shown in this React example.
+When using lit-element custom elements, an event can be bound to the outer component itself, as shown in this React example.
 
 ```js
 <my-element onClick={() => console.log(`I am bound to the element`)}"></my-element>
@@ -24,7 +24,7 @@ Used this way, the event will only be bound to the outer HTML container of the c
 
 ## Passing event into shadowDOM w/React
 
-When using custom elements in React, the component's API needs to allow for any external event to be bound to the appropiate HTML element contained within the custom element.
+When using custom elements in React, the component's API needs to allow for any external event to be bound to the appropriate HTML element contained within the custom element.
 
 React, specifically JSX, will not allow for a string to be passed into the scope fo an `onClick` event, so a reference will need to be created to pass the event into the custom element's `@click` event binding.
 
