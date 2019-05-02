@@ -85,7 +85,7 @@ The \<ods-button> element will respond without context settings as expected. Wit
 | formmethod | string | If the button is a submit button, this attribute specifies the HTTP method that the browser uses to submit the form. |
 | formnovalidate | boolean | If the button is a submit button, this Boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner. |
 | formtarget | string | If the button is a submit button, this attribute is a name or keyword indicating where to display the response that is received after submitting the form. Options: `_self`, `_blank`, `_parent`, `_top:` |
-| id | string | Set the unique ID of an element. This ID is also used to address the `aria-labelledby` attribute in the context of a \<button> HTML element. |
+| id | string | Set the unique ID of an element. |
 | isactive | boolean | If set to true button will appear in active state. <br/>Default value is `false`. |
 | name | string | The name of the button, which is submitted with the form data. |
 | outercontext | boolean | Context defines responsiveness of element. Set to true, element will always be 100% and respond to parent context shape. <br/>Default value is `false`. |
@@ -131,20 +131,22 @@ Secondary button with active state set to `true`
 <ods-button active buttontype="secondary">hello world</ods-button>
 ```
 
-Button(React support) with `ref` reference for passing in an event, [see notes](/docs/CALLBACK.md)
+### Custom callbacks
 
-```
+Button(React support) with `ref` for passing in an event, [see notes](/docs/CALLBACK.md)
+
+```html
 <ods-button ref={this.event}>hello world</ods-button>
 ```
 
-#### Contextual component
+### Contextual component
 
 A special case scenario for responsiveness. The \<ods-button> element is built to handle responsive situations when it is the only element within a block. If the \<ods-button> element is used within context of another element, then it's the responsibility of the parent element to dictate the responsiveness of the \<ods-element>.
 
 In this scenario, simply set the `context` of the element to be `true`.
 
 ```html
-<ods-button string="Default state; context true" context="true"></ods-button>
+<ods-button context="true">Default state; context true</ods-button>
 ```
 
 ## Alternate build solutions
@@ -160,7 +162,7 @@ Included with the distributed npm are two additional directories, `./altImportsC
 
 \* Orion Design Tokens are required to import any file using CSS Custom Properties. Also see Orion Design Tokens [pre-processed resources](https://github.com/AlaskaAirlines/OrionDesignTokens#install-pre-processed-resources). PostCSS using `postcss-custom-properties` will need to be added to your project if you are supporting legacy browsers.
 
-Within the respective directories are two files, `style.css` and `style_clean.scss`
+Within the respective directories is the `style_clean.scss` file.
 
 ```
 ├── altImportsCanonical
@@ -169,11 +171,11 @@ Within the respective directories are two files, `style.css` and `style_clean.sc
 |  └── style_clean.scss
 ```
 
-These files can be imported directly into the scope of your project's CSS. It is highly recommended that you use the `style_clean.scss` file and import this into a name-space as not to create style collisions. For example:
+It is highly recommended that you import the `style_clean.scss` this into a name-space as not to create style collisions. For example:
 
 ```scss
 .ods-button {
-  @import "./node_modules/@alaskaairux/ods-button/altImportsCanonical/style_clean.scss";
+  @import "./node_modules/@alaskaairux/ods-button/altImportsVariable/style_clean.scss";
 }
 ```
 
