@@ -34,6 +34,8 @@ class OdsButton extends LitElement {
       formnovalidate:   { type: Boolean },
       isactive:         { type: Boolean },
       outercontext:     { type: Boolean },
+      arialabel:        { type: String },
+      arialabelledby:   { type: String },
       buttontype:       { type: String },
       form:             { type: String },
       formaction:       { type: String },
@@ -74,8 +76,8 @@ class OdsButton extends LitElement {
       ${styleCss}
 
       <button
-        aria-labelledby="odsButtonString"
-        aria-label="${this.title}"
+        aria-label="${ifDefined(this.arialabel ? this.arialabel : undefined)}"
+        aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         ?autofocus="${this.autofocus}"
         class="button ${this.getButtontype(this.buttontype)} ${this.getButtonState(this.isactive)} ${this.getButtonContext(this.outercontext)} ${this.getButtonApperance(this.condensed)}"
         ?disabled="${this.isDisabled(this.disabled, this.isactive)}"
