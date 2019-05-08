@@ -33,8 +33,8 @@
     "lit-element": "^2.1.0"
   },
   "devDependencies": {
-    "@alaskaairux/orion-design-tokens": "^1.1.0",
-    "@alaskaairux/orion-web-core-style-sheets": "^0.3.521926582",
+    "@alaskaairux/orion-design-tokens": "^2.0.526637919",
+    "@alaskaairux/orion-web-core-style-sheets": "^0.4.528912477",
     "@polymer/iron-demo-helpers": "^3.1.0",
     "@polymer/iron-icons": "^3.0.1",
     "@polymer/polymer": "^3.2.0",
