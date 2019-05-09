@@ -18,6 +18,7 @@ before_deploy:
   - npm run sassRender
   - npm run distJS
   - npm run copyResources
+  - npm run copyDocs
   - npm run changelog
   - npm run concat
   - cd dist
