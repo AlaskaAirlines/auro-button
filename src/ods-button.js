@@ -7,6 +7,7 @@ import { LitElement, html } from "lit-element";
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import buttonProperties from './tokens/componentProperties-css.js';
 import dotsProperties from './tokens/dotsProperties-css.js';
+import 'focus-visible/dist/focus-visible.min.js';
 import styleCss from "./style-css.js";
 
 class OdsButton extends LitElement {
