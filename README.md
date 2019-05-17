@@ -48,9 +48,13 @@ import "@alaskaairux/ods-button/ods-button";
 class OdsButton extends LitElement
 ```
 
-### Styling:
+### Styling
 
-There are no styling modification options for this element.
+Option(s) for component customization
+
+| Selector | Type | State | Description |
+|----|----|----|---|
+| ::part() | pseudo-element | experimental | Update shadowDOM CSS from outside the component; see [./docs/customization.md](/docs/customization.md) |
 
 ### Button use cases
 
@@ -71,7 +75,7 @@ The \<ods-button> element will respond without context settings as expected. Wit
 
 ### Properties:
 
-| Attribute | value type | Description |
+| Attribute | Value type | Description |
 |----|----|----|
 | arialabel | string | Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead. |
 | arialabelledby | string | Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion. |

@@ -97,6 +97,7 @@ class OdsButton extends LitElement {
         id="${ifDefined(this.id ? this.id : undefined)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
+        part="button--modifier"
         @click=${this.buttonCallback}
         type="${ifDefined(this.type ? this.type : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
@@ -105,14 +106,14 @@ class OdsButton extends LitElement {
 
         <span class="dancingDots ${this.getButtonState(this.isactive)}">
           <div class="dots">
-            <div class="block">
+            <div class="block" part="dots--modifier">
               <div></div>
             </div>
-            <div class="block">
+            <div class="block" part="dots--modifier">
               <div></div>
               <div></div>
             </div>
-            <div class="block">
+            <div class="block" part="dots--modifier">
               <div></div>
               <div></div>
               <div></div>
