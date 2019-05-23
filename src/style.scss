@@ -14,9 +14,9 @@
 @import "./tokens/componentProperties";
 @import "./tokens/dotsProperties";
 
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/breakpoints";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/baselineLTE";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/animation";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baselineLTE";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
 
 // container
 :host {

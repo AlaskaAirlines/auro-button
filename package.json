@@ -20,7 +20,7 @@
     "================================================================================"
   ],
   "name": "@alaskaairux/ods-button",
-  "version": "2.5.0",
+  "version": "2.5.6",
   "description": "Orion Design System Button element",
   "author": "Product design and research",
   "repository": {
@@ -33,17 +33,22 @@
     "lit-element": "^2.1.0"
   },
   "peerDependencies": {
-    "@alaskaairux/orion-design-tokens": "^2.0.526637919",
+    "@alaskaairux/orion-design-tokens": "^2.1.0",
     "@webcomponents/webcomponentsjs": "^2.2.9",
     "focus-visible": "^4.1.5"
   },
   "devDependencies": {
-    "@alaskaairux/orion-design-tokens": "^2.0.526637919",
-    "@alaskaairux/orion-web-core-style-sheets": "^0.5.532515462",
+    "@alaskaairux/orion-design-tokens": "^2.1.0",
+    "@alaskaairux/orion-web-core-style-sheets": "^2.0.0",
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^7.6.0",
     "@polymer/iron-demo-helpers": "^3.1.0",
     "@polymer/iron-icons": "^3.0.1",
     "@polymer/polymer": "^3.2.0",
     "@polymer/test-fixture": "^4.0.2",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/npm": "^5.1.7",
     "@webcomponents/webcomponentsjs": "^2.2.9",
     "auto-changelog": "^1.13.0",
     "autoprefixer": "^9.5.1",
@@ -56,6 +61,7 @@
     "gulp-autoprefixer": "^6.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
+    "husky": "^2.3.0",
     "jsonlint": "^1.6.3",
     "lodash": "^4.17.11",
     "mocha": "^6.1.4",
@@ -64,6 +70,7 @@
     "postcss-custom-properties": "^8.0.10",
     "postcss-remove-selectors": "^2.0.0",
     "postcss-selector-replace": "^1.0.2",
+    "semantic-release": "^15.13.12",
     "styleflux": "^1.2.0",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
@@ -78,8 +85,6 @@
   "scripts": {
     "build": "npm run sassRender | npm run cssLint | npm run jsonLint",
     "buildTokens": "node scripts/tokenScript.js",
-    "changelog": "auto-changelog --template ./template.hbs --output ./dist/CHANGELOG.md -p -b 5",
-    "concat": "concat -o ./dist/README.md ./dist/README.md ./dist/CHANGELOG.md",
     "copyFonts": "copyfiles -f ./node_modules/@alaskaairux/orion-web-core-style-sheets/fonts/*.* ./demo/fonts/",
     "copyResources": "copyfiles -f -V './docs/**/*' './package.json' './README.md' './NOTICE' './LICENSE' ./dist",
     "copyDocs": "copyfiles -V './docs/**/*' ./dist",
@@ -88,13 +93,49 @@
     "dist": "npm run distTokens | npm run sassRender | npm run cssLint | npm run jsonLint",
     "distJS": "copyfiles -u 1 -V './src/**/*.js' ./dist",
     "distTokens": "node scripts/tokenScriptCustom.js",
-    "jsonLint": "jsonlint -q ./src/*.json",
+    "jsonLint": "jsonlint -q ./src/shape.json",
     "sassRender": "sass-render src/*.css src/tokens/*.scss",
     "sassRender-w": "sass-render -w src/**/*.{scss,css}",
-    "setPatch": "versiony ./package.json --patch",
     "stylefluxCanonical": "styleflux -o ./temp/altImportsCanonical/*.css",
     "stylefluxVariable": "styleflux -o ./temp/altImportsVariable/*.css",
-    "sweep": "rm -rf ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js"
+    "sweep": "rm -rf ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js",
+    "test": "npm run cssLint | npm run jsonLint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "release": {
+    "branch": "master",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "./CHANGELOG.md",
+          "changelogTitle": "# Semantic Release Automated Changelog"
+        }
+      ],
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "./CHANGELOG.md",
+            "package.json"
+          ]
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "publishConfig": {
     "access": "public"
