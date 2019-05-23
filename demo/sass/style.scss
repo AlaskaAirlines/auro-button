@@ -5,15 +5,15 @@
 
 // Import baseline library dependencies
 // Mixins
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/breakpoints";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 
 // Creates baseline output in CSS
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/fonts";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/normalize";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/baseline";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baseline";
 
 // Import Utility classes (will produce CSS in output)
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/utilityClasses";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses";
 
 
 
