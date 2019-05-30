@@ -182,7 +182,7 @@ It is highly recommended that you import the `style_clean.scss` this into a name
 
 ```scss
 .ods-button {
-  @import "./node_modules/@alaskaairux/ods-button/altImportsVariable/style_clean.scss";
+  @import "./node_modules/@alaskaairux/ods-button/altImports/variable/style_clean.scss";
 }
 ```
 
