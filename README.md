@@ -6,7 +6,7 @@
 
 # \<ods-button>
 
-\<ods-button> is a wrapper component for a HTML \<button> element containing styling and behavior. The content of a button is to be passed in via the `string` attribute. See below for examples of use.
+\<ods-button> is a wrapper component for a HTML \<button> element containing styling and behavior.
 
 ## Docs
 
@@ -33,7 +33,7 @@ CSS Custom Properties are not supported in older browsers. For this, fallback pr
 Define the component dependency within each component that is using the \<ods-button> component.
 
 ```javascript
-import "@alaskaairux/ods-button/ods-button";
+import "@alaskaairux/ods-button/dist/ods-button";
 ```
 
 **Reference component in HTML**
@@ -168,11 +168,14 @@ Included with the distributed npm are two additional directories, `./altImportsC
 
 Within the respective directories is the `style_clean.scss` file.
 
-```
-├── altImportsCanonical
-|  └── style_clean.scss
-├── altImportsVariable
-|  └── style_clean.scss
+```bash
+├── altImports
+|  ├── canonical
+|  |  ├── style.css
+|  |  └── style_clean.scss
+|  └── variable
+|     ├── style.css
+|     └── style_clean.scss
 ```
 
 It is highly recommended that you import the `style_clean.scss` this into a name-space as not to create style collisions. For example:

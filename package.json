@@ -86,9 +86,7 @@
   "scripts": {
     "build": "npm run sassRender | npm run cssLint | npm run jsonLint",
     "buildTokens": "node scripts/tokenScript.js",
-    "copyFonts": "copyfiles -f ./node_modules/@alaskaairux/orion-web-core-style-sheets/fonts/*.* ./demo/fonts/",
-    "copyResources": "copyfiles -f -V './docs/**/*' './package.json' './README.md' './NOTICE' './LICENSE' ./dist",
-    "copyDocs": "copyfiles -V './docs/**/*' ./dist",
+    "copyFonts": "copyfiles -f ./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts/*.* ./demo/fonts/",
     "cssLint": "stylelint './src/*.css'",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w",
     "dist": "npm run distTokens | npm run sassRender | npm run cssLint | npm run jsonLint",
@@ -97,9 +95,9 @@
     "jsonLint": "jsonlint -q ./src/shape.json",
     "sassRender": "sass-render src/*.css src/tokens/*.scss",
     "sassRender-w": "sass-render -w src/**/*.{scss,css}",
-    "stylefluxCanonical": "styleflux -o ./temp/altImportsCanonical/*.css",
-    "stylefluxVariable": "styleflux -o ./temp/altImportsVariable/*.css",
-    "sweep": "rm -rf ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js",
+    "stylefluxCanonical": "styleflux -o ./altImports/canonical/*.css",
+    "stylefluxVariable": "styleflux -o ./altImports/variable/*.css",
+    "sweep": "rm -rf ./altImportsCanonical ./altImportsVariable ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js",
     "test": "npm run cssLint | npm run jsonLint | yamllint .travis.yml"
   },
   "husky": {

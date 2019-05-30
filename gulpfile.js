@@ -31,7 +31,7 @@ const gulp = require('gulp'),
 // task to copy font files from the OWCSS npm to the local project
 // resources are NOT to be committed to version control
 gulp.task('copyFonts', function(cb) {
-  copyfiles(['./node_modules/@alaskaairux/orion-web-core-style-sheets/fonts/*.*', './demo/fonts/'], true, cb);
+  copyfiles(['./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts/*.*', './demo/fonts/'], true, cb);
   cb();
 });
 
@@ -124,7 +124,7 @@ gulp.task('processImportsCanonical', function() {
     ]))
 
     // Output final CSS in destination
-    .pipe(gulp.dest('./temp/altImportsCanonical/'));
+    .pipe(gulp.dest('./altImports/canonical/'));
 });
 
 // task for Production Sass processing and legacy support
@@ -147,7 +147,7 @@ gulp.task('processImportsVariable', function() {
     ]))
 
     // Output final CSS in destination
-    .pipe(gulp.dest('./temp/altImportsVariable/'));
+    .pipe(gulp.dest('./altImports/variable/'));
 });
 
 // task for Development Sass processing
@@ -176,19 +176,19 @@ gulp.task('processDev', function() {
 // task for Development Sass processing
 gulp.task('reprocessClean', function() {
   // set path to where Sass files are located to be processed
-  return gulp.src('./temp/**/*.scss')
+  return gulp.src('./altImports/**/*.scss')
 
     // PostCss polyfill pipeline for CSS Custom Properties (CSS variables)
     .pipe(postcss([
 
       selectorReplace({
-        before: [":host", "&(:not(.is-touching))"],
-        after: ["&", "&:not(.is-touching)"],
+        before: [":host", "&(:not(.is-touching))", "&(.focus-visible)"],
+        after: ["&", "&:not(.is-touching)", "&.focus-visible"],
       })
     ]))
 
     // Output final CSS in destination
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./altImports/'));
 });
 
 // Sass watcher
