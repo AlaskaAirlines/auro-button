@@ -20,11 +20,11 @@
     "borderWidth": {"value": 0},
     "cursor": {"value": "pointer"},
     "fontWeight": {"value": "var(--weight-book)"},
-    "height": {"value": 3.2},
+    "height": {"value": "var(--unitless-scale-xxl)"},
     "verticalPadding": {"value": 0},
     "horizontalPadding": {
-      "narrow": {"value": "1rem"},
-      "medium": {"value": "3.2rem"}
+      "narrow": {"value": "var(--size-scale-med)"},
+      "medium": {"value": "var(--size-scale-max)"}
     },
     "white-space": {"value": "nowrap"},
     "overflow": {"value": "hidden"},
