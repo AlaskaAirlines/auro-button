@@ -10,7 +10,7 @@
 
 ## Docs
 
-All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the [./docs](/docs/) directory of this repository.
+All information regarding Project Setup, Technical Details, Tests and information regarding ODS Stateless Components can be found in the [./docs](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs) directory of this repository.
 
 ## Install
 
@@ -22,7 +22,7 @@ $ npm i @alaskaairux/ods-button
 
 The use of any ODS Component has a dependency on the [ODS Design Tokens](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens). See repository and API information [here](https://github.com/AlaskaAirlines/OrionDesignTokens).
 
-For additional details in regards to using Orion Design Tokens with components, please see [./docs/TECH_DETAILS.md](/docs/TECH_DETAILS.md)
+For additional details in regards to using Orion Design Tokens with components, please see [./docs/TECH_DETAILS.md](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs/blob/master/docs/TECH_DETAILS.md)
 
 ### CSS Custom Property fallbacks
 
@@ -54,7 +54,7 @@ Option(s) for component customization
 
 | Selector | Type | State | Description |
 |----|----|----|---|
-| ::part() | pseudo-element | experimental | Update shadowDOM CSS from outside the component; see [./docs/customization.md](/docs/customization.md) |
+| ::part() | pseudo-element | experimental | Update shadowDOM CSS from outside the component; see [./docs/customization.md](/docs/CSS_CUSTOMIZATION.md) |
 
 ### Button use cases
 
@@ -137,7 +137,7 @@ Secondary button with active state set to `true`
 
 ### Custom callbacks
 
-Button(React support) with `ref` for passing in an event, [see notes](/docs/CALLBACK.md)
+Button(React support) with `ref` for passing in an event, [see notes](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/blob/master/docs/CALLBACK.md)
 
 ```html
 <ods-button ref={this.event}>hello world</ods-button>
