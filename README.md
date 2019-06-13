@@ -54,7 +54,7 @@ Option(s) for component customization
 
 | Selector | Type | State | Description |
 |----|----|----|---|
-| ::part() | pseudo-element | experimental | Update shadowDOM CSS from outside the component; see [./docs/customization.md](/docs/CSS_CUSTOMIZATION.md) |
+| ::part() | pseudo-element | experimental | Update shadowDOM CSS from outside the component; see [./docs/CSS_CUSTOMIZATION.md](/docs/CSS_CUSTOMIZATION.md) |
 
 ### Button use cases
 
