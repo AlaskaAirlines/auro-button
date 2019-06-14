@@ -78,7 +78,7 @@ gulp.task('processSrc', function() {
     }))
 
     // Post Sass to CSS process for addressing proprietary prefixes
-    .pipe(gulpautoprefixer({ browsers: ['last 4 versions'], cascade: false }))
+    .pipe(gulpautoprefixer({ overrideBrowserslist: ['last 4 versions'], cascade: false }))
 
     // PostCss polyfill pipeline for CSS Custom Properties (CSS variables)
     .pipe(postcss([
