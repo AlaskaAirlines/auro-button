@@ -137,7 +137,7 @@ Secondary button with active state set to `true`
 
 ### Custom callbacks
 
-Button(React support) with `ref` for passing in an event, [see notes](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/blob/master/docs/CALLBACK.md)
+Button(React support) with `ref` for passing in an event, [see notes](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs/blob/master/docs/CALLBACK.md)
 
 ```html
 <ods-button ref={this.event}>hello world</ods-button>
