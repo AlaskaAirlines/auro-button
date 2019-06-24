@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.7.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.6.2...v2.7.0) (2019-06-24)
+
+
+### Features
+
+* add support for new a11y ui ([5c5c1f8](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/5c5c1f8))
+
 ## [2.6.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.6.1...v2.6.2) (2019-06-07)
 
 
