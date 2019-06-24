@@ -14,11 +14,18 @@
 @import "./tokens/componentProperties";
 @import "./tokens/dotsProperties";
 
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baselineLTE";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
 
 // container
+:host(.focus-visible) {
+  .button {
+    @include focus-button(sass);
+  }
+}
+
 :host {
   display: $host-display;
   flex-direction: $host-flex-direction-mobile;
@@ -41,6 +48,8 @@ span {
   display: var(--ods-button-display);
   font-family: var(--ods-button-font-family);
   border-width: var(--ods-button-border-width);
+  border-style: var(--ods-button-border-style);
+  border-color: var(--ods-button-border-color);
   border-radius: var(--ods-button-border-radius);
   font-size: var(--ods-button-font-size);
   font-weight: var(--ods-button-font-weight);
@@ -63,6 +72,7 @@ span {
   // only use hover UI if non-touch scenario
   :host(:not(.is-touching)) & {
     &:hover {
+      color: var(--ods-button-hover-color);
       background-color: var(--ods-button-hover-background-color);
       box-shadow: 0 0 16px var(--ods-button-hover-shadow-color);
     }
@@ -71,6 +81,7 @@ span {
   &:disabled {
     cursor: var(--ods-button-disabled-cursor);
     color: var(--ods-button-disabled-color);
+    border-color: var(--ods-button-disabled-border-color);
     background-color: var(--ods-button-disabled-background-color);
 
     :host(:not(.is-touching)) & {
