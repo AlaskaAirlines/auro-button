@@ -88,6 +88,7 @@ span {
       &:hover {
         background-color: var(--ods-button-disabled-hover-background-color);
         box-shadow: 0 0 0 transparent;
+        color: var(--ods-button-disabled-hover-color);
       }
     }
 

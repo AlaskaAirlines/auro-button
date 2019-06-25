@@ -131,6 +131,7 @@
         "color": {"value": "var(--color-base-cloud)"}
       },
       "hover": {
+        "color": {"value": "var(--color-base-shark)"},
         "background": {
           "color": {"value": "var(--color-base-cloud)"}
         }
