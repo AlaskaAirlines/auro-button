@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.7.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.7.0...v2.7.1) (2019-06-25)
+
+
+### Bug Fixes
+
+* address issue with disabled hover color ([c2f5ee5](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/c2f5ee5))
+
 # [2.7.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.6.2...v2.7.0) (2019-06-24)
 
 
