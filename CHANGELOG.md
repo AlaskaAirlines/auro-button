@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.7.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.7.1...v2.7.2) (2019-06-25)
+
+
+### Bug Fixes
+
+* update package versions ([85f58bb](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/85f58bb))
+
 ## [2.7.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.7.0...v2.7.1) (2019-06-25)
 
 
