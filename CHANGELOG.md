@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.7.3](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.7.2...v2.7.3) (2019-06-28)
+
+
+### Bug Fixes
+
+* address is-active disabled button hover state ([0f5994f](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/0f5994f))
+
 ## [2.7.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.7.1...v2.7.2) (2019-06-25)
 
 
