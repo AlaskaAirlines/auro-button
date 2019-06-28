@@ -111,6 +111,7 @@ span {
       :host(:not(.is-touching)) & {
         &:hover {
           background-color: var(--ods-button-is-active-disabled-background-color);
+          color: var(--ods-button-is-active-disabled-color);
         }
       }
     }
