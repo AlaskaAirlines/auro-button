@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.7.4](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.7.3...v2.7.4) (2019-07-09)
+
+
+### Bug Fixes
+
+* address font-size reference in shape.json ([5c71d1c](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/5c71d1c))
+
 ## [2.7.3](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.7.2...v2.7.3) (2019-06-28)
 
 
