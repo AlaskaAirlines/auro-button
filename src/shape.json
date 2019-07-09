@@ -15,7 +15,7 @@
   "ods-button": {
     "display": {"value": "inline-block"},
     "fontFamily": {"value": "var(--font-family-base)"},
-    "fontSize": {"value": "var(--size-breakpoint-all-med)"},
+    "fontSize": {"value": "var(--size-font-breakpoint-all-med)"},
     "borderRadius": {"value": "var(--size-border-radius-default)"},
     "borderWidth": {"value": "1px"},
     "borderStyle": {"value": "solid"},
