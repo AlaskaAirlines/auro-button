@@ -73,7 +73,7 @@ class OdsButton extends LitElement {
   }
 
   buttonCallback() {
-    alert('Alert: Event not bound to button')
+    console.log('Alert: Event not bound to button')
   }
 
   render() {
