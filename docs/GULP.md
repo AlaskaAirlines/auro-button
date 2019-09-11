@@ -16,3 +16,10 @@ The following is a list of Gulp tasks as defined in `[ods-component]/gulpfile.js
 | sassWatch | Watcher for building CSS resources from Sass files |
 | build | Main task to run all build tasks |
 | dev | Main task to run all development tasks |
+
+##
+
+<footer>
+Alaska Airlines Orion Design System<br>
+Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
+</footer>

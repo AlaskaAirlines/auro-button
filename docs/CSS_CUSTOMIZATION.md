@@ -33,3 +33,10 @@ ods-button::part(dots--modifier) {
 ```
 
 Using this method would give the developer full access to the scope of the button writing any CSS necessary to address customization needs within the scope of project.
+
+##
+
+<footer>
+Alaska Airlines Orion Design System<br>
+Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
+</footer>

@@ -19,3 +19,10 @@ The following is a list of npm scripts as defined in `[ods-component]/package.js
 | stylefluxCanonical | Processes alternate processed CSS import file with canonical CSS properties |
 | stylefluxVariable | Processes alternate processes CSS import file with CSS Custom Properties |
 | sweep | Removes all dynamic build resources from local repo |
+
+##
+
+<footer>
+Alaska Airlines Orion Design System<br>
+Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
+</footer>

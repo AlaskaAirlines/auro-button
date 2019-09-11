@@ -202,5 +202,7 @@ This pattern will produce all the selectors within `style_clean.scss` with the p
 
 ##
 
+<footer>
 Alaska Airlines Orion Design System<br>
 Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
+</footer>
