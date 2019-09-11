@@ -127,6 +127,19 @@ span {
     }
   }
 
+  &--complete {
+    background-color: var(--ods-button-complete-background-color);
+    color: var(--ods-button-complete-color);
+    border-color: var(--ods-button-complete-background-color);
+
+    :host(:not(.is-touching)) & {
+      &:hover {
+        background-color: var(--ods-button-complete-hover-background-color);
+        color: var(--ods-button-complete-color);
+      }
+    }
+  }
+
   &--secondary {
     background-color: var(--ods-button-secondary-background-color);
     border: var(--ods-button-secondary-border-width) var(--ods-button-secondary-border-style) var(--ods-button-secondary-border-color);

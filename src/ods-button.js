@@ -38,6 +38,7 @@ class OdsButton extends LitElement {
       arialabel:        { type: String },
       arialabelledby:   { type: String },
       buttontype:       { type: String },
+      flowtype:         { type: String },
       form:             { type: String },
       formaction:       { type: String },
       formenctype:      { type: String },
@@ -54,6 +55,10 @@ class OdsButton extends LitElement {
 
   getButtontype(type) {
     return type === "secondary" ? "button--secondary" : ''
+  }
+
+  getButtonFlowtype(flowtype) {
+    return flowtype === "complete" ? "button--complete" : ''
   }
 
   getButtonState(isactive) {
@@ -86,7 +91,7 @@ class OdsButton extends LitElement {
         aria-label="${ifDefined(this.arialabel ? this.arialabel : undefined)}"
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         ?autofocus="${this.autofocus}"
-        class="button ${this.getButtontype(this.buttontype)} ${this.getButtonState(this.isactive)} ${this.getButtonContext(this.outercontext)} ${this.getButtonApperance(this.condensed)}"
+        class="button ${this.getButtontype(this.buttontype)} ${this.getButtonState(this.isactive)} ${this.getButtonContext(this.outercontext)} ${this.getButtonApperance(this.condensed)} ${this.getButtonFlowtype(this.flowtype)}"
         ?disabled="${this.isDisabled(this.disabled, this.isactive)}"
         form="${ifDefined(this.form ? this.form : undefined)}"
         formaction="${ifDefined(this.formaction ? this.formaction : undefined)}"
