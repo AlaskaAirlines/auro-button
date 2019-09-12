@@ -22,10 +22,12 @@
 // container
 :host(.focus-visible) {
   .button {
-    @include focus-button(sass);
+    @include focus-button(css);
   }
 }
 
+// Properties in :host require Sass variables
+// CSS custom properties are not loaded where the :host selector can see them.
 :host {
   display: $host-display;
   flex-direction: $host-flex-direction-mobile;

@@ -83,6 +83,7 @@ The \<ods-button> element will respond without context settings as expected. Wit
 | buttontype | string | Type of button defines the visual styling. <br/>Option(s): `primary`, `secondary`. Default value is `primary`. |
 | condensed | boolean | Reduces left/right padding to fit button in condensed spaces |
 | disabled | boolean | If set to true button will become disabled and not allow for interactions. <br/>Default value is `false`. |
+| flowtype | string | Sets display type to represent the flow options. Options: `complete`
 | form | string | The form element that the button is associated with (its form owner). The value of the attribute must be the id attribute of a `<form>` element in the same document |
 | formaction | string | Specifies the URL of the file that will process the input control when the form is submitted. The formaction attribute overrides the `action` attribute of the `<form>` element |
 | formenctype| string | If the button is a submit button, this attribute specifies the type of content that is used to submit the form to the server. |
