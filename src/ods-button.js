@@ -91,7 +91,15 @@ class OdsButton extends LitElement {
         aria-label="${ifDefined(this.arialabel ? this.arialabel : undefined)}"
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         ?autofocus="${this.autofocus}"
-        class="button ${this.getButtontype(this.buttontype)} ${this.getButtonState(this.isactive)} ${this.getButtonContext(this.outercontext)} ${this.getButtonApperance(this.condensed)} ${this.getButtonFlowtype(this.flowtype)}"
+
+        class="button
+          ${this.getButtontype(this.buttontype)}
+          ${this.getButtonFlowtype(this.flowtype)}
+          ${this.getButtonState(this.isactive)}
+          ${this.getButtonContext(this.outercontext)}
+          ${this.getButtonApperance(this.condensed)}
+          "
+
         ?disabled="${this.isDisabled(this.disabled, this.isactive)}"
         form="${ifDefined(this.form ? this.form : undefined)}"
         formaction="${ifDefined(this.formaction ? this.formaction : undefined)}"

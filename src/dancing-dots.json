@@ -19,6 +19,9 @@
       "background": {
         "color": {"value": "var(--color-base-white)"}
       },
+      "complete": {
+        "backgroundColor": { "value": "var(--color-base-orca)" }
+      },
       "secondary": {
         "background": {
           "color": {"value": "var(--color-brand-blue-atlas-base)"}
