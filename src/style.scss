@@ -56,6 +56,10 @@ span {
     padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding-medium);
   }
 
+  &:first-letter {
+    text-transform: uppercase;
+  }
+
   user-select: none;
   display: var(--ods-button-display);
   font-family: var(--ods-button-font-family);
@@ -250,7 +254,7 @@ span {
 
         &.is-active {
           &:disabled {
-            background-color: inherit;
+            background-color: $color-base-white;
             border-color: inherit;
 
             :host(:not(.is-touching)) & {
