@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.8.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.8.0...v2.8.1) (2019-09-21)
+
+
+### Bug Fixes
+
+* missed background color; set first letter to uppercase ([92980ab](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/92980ab))
+
 # [2.8.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.7.10...v2.8.0) (2019-09-21)
 
 
