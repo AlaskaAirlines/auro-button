@@ -73,6 +73,10 @@ In cases were the action of the button would not fit the criteria above, it is m
 
 The \<ods-button> element will respond without context settings as expected. Within context of another component, set `context` flag to `true` and \<ods-button> will adapt to contextual shape. By default,  \<ods-button> will constrain visible characters when text exceeds available visual space.
 
+### Theme support 
+
+\<ods-button> supports both Orion and Classic themes. Default, and secondary type, and disabled state supports the Classic theme. Flow type options are NOT supported by the Classic theme. 
+
 ### Properties:
 
 | Attribute | Value type | Description |
@@ -95,6 +99,7 @@ The \<ods-button> element will respond without context settings as expected. Wit
 | name | string | The name of the button, which is submitted with the form data. |
 | outercontext | boolean | Context defines responsiveness of element. Set to true, element will always be 100% and respond to parent context shape. <br/>Default value is `false`. |
 | title | string | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
+| theme | string | Sets theme of element; option: `classic` |
 | type | string | The type of the button. Possible values are: `submit`, `reset`, `button` |
 | value | string | Defines the value associated with the button which is submitted with the form data. |
 
@@ -104,6 +109,12 @@ Default button
 
 ```html
 <ods-button>Hello World</ods-button>
+```
+
+Classic default button
+
+```html
+<ods-button theme="classic">Hello World</ods-button>
 ```
 
 Default button with disabled state set to `true`

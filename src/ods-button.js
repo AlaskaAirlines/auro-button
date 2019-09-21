@@ -46,6 +46,7 @@ class OdsButton extends LitElement {
       formtarget:       { type: String },
       id:               { type: String },
       name:             { type: String },
+      theme:            { type: String },
       title:            { type: String },
       type:             { type: String },
       value:            { type: String },
@@ -54,23 +55,27 @@ class OdsButton extends LitElement {
   }
 
   getButtontype(type) {
-    return type === "secondary" ? "button--secondary" : ''
+    return type === "secondary" ? "button--secondary" : ""
   }
 
   getButtonFlowtype(flowtype) {
-    return flowtype === "complete" ? "button--complete" : ''
+    return flowtype === "complete" ? "button--complete" : ""
+  }
+
+  getTheme(theme) {
+    return theme === "classic" ? "button--classic" : "button--orion"
   }
 
   getButtonState(isactive) {
-    return isactive ? "is-active" : ''
+    return isactive ? "is-active" : ""
   }
 
   getButtonApperance(condensed) {
-    return condensed ? "button--condensed" : ''
+    return condensed ? "button--condensed" : ""
   }
 
   getButtonContext(outercontext) {
-    return outercontext ? "button--enclosed" : ''
+    return outercontext ? "button--enclosed" : ""
   }
 
   isDisabled(disabled, isactive) {
@@ -93,6 +98,7 @@ class OdsButton extends LitElement {
         ?autofocus="${this.autofocus}"
 
         class="button
+          ${this.getTheme(this.theme)}
           ${this.getButtontype(this.buttontype)}
           ${this.getButtonFlowtype(this.flowtype)}
           ${this.getButtonState(this.isactive)}
