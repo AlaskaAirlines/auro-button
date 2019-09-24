@@ -225,6 +225,8 @@ span {
   }
 
   &--classic {
+    $classShadow: 0 0 3px 0 rgba(0,0,0,.35);
+
     display: inline-block;
     text-transform: uppercase;
     font-size: $size-scale-classic;
@@ -233,13 +235,12 @@ span {
     border-width: 2px;
     background-color: $color-classic-cta-green;
     border-color: $color-classic-cta-green;
-    box-shadow: 0 0 3px 0 rgba(0,0,0,.35);
+    box-shadow: $classShadow;
 
     &.button {
       &--secondary {
         background-color: $color-base-white;
-        border-color: inherit;
-        box-shadow: inherit;
+        border-color: var(--ods-button-secondary-border-color);
 
         &:disabled {
           border-color: var(--ods-button-disabled-border-color);
@@ -247,7 +248,7 @@ span {
           :host(:not(.is-touching)) & {
             &:hover {
               background-color: inherit;
-              color: var(--ods-button-disabled-color);;
+              color: var(--ods-button-disabled-color);
             }
           }
         }
@@ -255,7 +256,7 @@ span {
         &.is-active {
           &:disabled {
             background-color: $color-base-white;
-            border-color: inherit;
+            border-color: var(--ods-button-secondary-border-color);
 
             :host(:not(.is-touching)) & {
               &:hover {
@@ -278,7 +279,7 @@ span {
     }
 
     &:disabled {
-      box-shadow: inherit;
+      box-shadow: none;
 
       :host(:not(.is-touching)) & {
         &:hover {
@@ -291,11 +292,13 @@ span {
       &:disabled {
         background-color: $color-classic-cta-green;
         border-color: $color-classic-cta-green;
+        box-shadow: $classShadow;
 
         :host(:not(.is-touching)) & {
           &:hover {
             background-color: $color-classic-cta-green;
             border-color: $color-classic-cta-green;
+            box-shadow: $classShadow;
           }
         }
       }
@@ -305,7 +308,7 @@ span {
       &:hover {
         background-color: $color-classic-cta-green-hover;
         border-color: $color-classic-cta-green-hover;
-        box-shadow: inherit;
+        box-shadow: $classShadow;
       }
     }
   }
