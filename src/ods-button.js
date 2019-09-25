@@ -46,6 +46,8 @@ class OdsButton extends LitElement {
       formtarget:       { type: String },
       id:               { type: String },
       name:             { type: String },
+      svgIconLeft:      { type: String },
+      svgIconRight:     { type: String },
       theme:            { type: String },
       title:            { type: String },
       type:             { type: String },
@@ -56,6 +58,13 @@ class OdsButton extends LitElement {
 
   getButtontype(type) {
     return type === "secondary" ? "button--secondary" : ""
+  }
+
+  getIcon(svgIcon) {
+    this.dom = new DOMParser().parseFromString(svgIcon, 'text/html');
+    this.svg = this.dom.body.firstChild;
+
+    return this.svg;
   }
 
   getButtonFlowtype(flowtype) {
@@ -121,7 +130,12 @@ class OdsButton extends LitElement {
         type="${ifDefined(this.type ? this.type : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
       >
+
+        ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
+
         <slot></slot>
+
+        ${ifDefined(this.svgIconRight ? this.getIcon(this.svgIconRight) : undefined)}
 
         <span class="dancingDots ${this.getButtonState(this.isactive)}">
           <div class="dots">

@@ -98,6 +98,8 @@ The \<ods-button> element will respond without context settings as expected. Wit
 | isactive | boolean | If set to true button will appear in active state. <br/>Default value is `false`. |
 | name | string | The name of the button, which is submitted with the form data. |
 | outercontext | boolean | Context defines responsiveness of element. Set to true, element will always be 100% and respond to parent context shape. <br/>Default value is `false`. |
+| svgIconLeft | string | Pass in SVG string for icon to appear on the LEFT |
+| svgIconRight | string | Pass in SVG string for icon to appear on the RIGHT |
 | title | string | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
 | theme | string | Sets theme of element; option: `classic` |
 | type | string | The type of the button. Possible values are: `submit`, `reset`, `button` |

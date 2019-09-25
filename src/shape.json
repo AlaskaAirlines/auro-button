@@ -125,7 +125,8 @@
       "backgroundColor": { "value": "var(--color-background-complete-button)" },
       "color": { "value": "var(--color-type-theme-light-primary)" },
       "hover": {
-        "background-color": { "value": "var(--color-background-hover-complete-button)" }
+        "backgroundColor": { "value": "var(--color-background-hover-complete-button)" },
+        "shadowColor": { "value": "var(--color-brand-green-tropical-darken)" }
       }
     },
 
