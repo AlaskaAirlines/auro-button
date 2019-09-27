@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [2.9.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.8.1...v2.9.0) (2019-09-27)
+
+
+### Bug Fixes
+
+* address issues with Classic button look ([d04126e](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/d04126e))
+
+
+### Features
+
+* add icon support ([526988c](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/526988c))
+
 ## [2.8.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.8.0...v2.8.1) (2019-09-21)
 
 
