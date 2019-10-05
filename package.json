@@ -89,7 +89,7 @@
     "cssLint": "stylelint './src/*.css'",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w",
     "dist": "npm run distTokens | npm run sassRender | npm run cssLint | npm run jsonLint",
-    "distJS": "copyfiles -u 1 -V './src/**/*.js' ./dist",
+    "distJS": "copyfiles -u 1 -V -e './src/**/shared_*.js' './src/**/*.js' './src/**/shared_*.scss' ./dist",
     "distTokens": "node scripts/tokenScriptCustom.js",
     "jsonLint": "jsonlint -q ./src/shape.json",
     "sassRender": "sass-render src/*.css src/tokens/*.scss",

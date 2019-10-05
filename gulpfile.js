@@ -69,7 +69,7 @@ gulp.task('processDemo', function() {
 // task for Production Sass processing and legacy support
 gulp.task('processSrc', function() {
   // set path to where Sass files are located to be processed
-  return gulp.src('./src/*.scss')
+  return gulp.src('./src/style.scss')
 
     // Sass pipeline
     .pipe(gulpSass({
@@ -101,7 +101,7 @@ gulp.task('processSrc', function() {
 // task for Production Sass processing and legacy support
 gulp.task('processImportsCanonical', function() {
   // set path to where Sass files are located to be processed
-  return gulp.src('./src/*.scss')
+  return gulp.src('./src/style.scss')
 
     // Sass pipeline
     .pipe(gulpSass({
@@ -130,7 +130,7 @@ gulp.task('processImportsCanonical', function() {
 // task for Production Sass processing and legacy support
 gulp.task('processImportsVariable', function() {
   // set path to where Sass files are located to be processed
-  return gulp.src('./src/*.scss')
+  return gulp.src('./src/style.scss')
 
     // Sass pipeline
     .pipe(gulpSass({
