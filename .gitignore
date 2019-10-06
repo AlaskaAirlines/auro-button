@@ -10,6 +10,7 @@ altImports/
 demo/css
 demo/sass/tokenProperties.scss
 src/style.css
+src/shared_style.css
 temp/
 
 ## *-css built from sass-render process
