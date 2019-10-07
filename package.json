@@ -64,6 +64,7 @@
     "jsonlint": "^1.6.3",
     "lodash": "^4.17.15",
     "mocha": "^6.1.4",
+    "npm-run-all": "^4.1.5",
     "npm-watch": "^0.6.0",
     "postcss": "^7.0.17",
     "postcss-custom-properties": "^8.0.10",
@@ -80,15 +81,16 @@
   },
   "watch": {
     "buildTokens": "./src/*.json",
-    "sassRender-w": ".src/**/*.scss"
+    "sassRender-w": ".src/**/*.scss",
+    "npmDevBuild": "./src/**/*.{scss,js}"
   },
   "scripts": {
-    "build": "npm run sassRender | npm run cssLint | npm run jsonLint",
+    "build": "npm-run-all sassRender cssLint jsonLint",
     "buildTokens": "node scripts/tokenScript.js",
     "copyFonts": "copyfiles -f ./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts/*.* ./demo/fonts/",
-    "cssLint": "stylelint './src/*.css'",
-    "dev": "npm-watch buildTokens | npm-watch sassRender-w",
-    "dist": "npm run distTokens | npm run sassRender | npm run cssLint | npm run jsonLint",
+    "cssLint": "stylelint './src/style.css'",
+    "dev": "npm-watch buildTokens | npm-watch sassRender-w | npm-watch devBuild",
+    "dist": "npm-run-all distTokens sassRender cssLint jsonLint",
     "distJS": "copyfiles -u 1 -V -e './src/**/shared_*.js' './src/**/*.js' './src/**/shared_*.scss' ./dist",
     "distTokens": "node scripts/tokenScriptCustom.js",
     "jsonLint": "jsonlint -q ./src/shape.json",
@@ -97,7 +99,15 @@
     "stylefluxCanonical": "styleflux -o ./altImports/canonical/*.css",
     "stylefluxVariable": "styleflux -o ./altImports/variable/*.css",
     "sweep": "rm -rf ./altImports ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js",
-    "test": "npm run cssLint | npm run jsonLint | yamllint .travis.yml"
+    "yamltest": "yamllint .travis.yml",
+    "test": "npm-run-all cssLint jsonLint yamltest",
+    "processSrc": "gulp processSrc",
+    "processImportsCanonical": "gulp processImportsCanonical",
+    "processImportsVariable": "gulp processImportsVariable",
+    "reprocessClean": "gulp reprocessClean",
+    "ciBuild": "npm-run-all buildTokens processSrc processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean distTokens sassRender distJS",
+    "devBuild": "npm-run-all buildTokens processSrc distTokens sassRender distJS",
+    "npmDevBuild": "npm-run-all distTokens sassRender distJS"
   },
   "husky": {
     "hooks": {
