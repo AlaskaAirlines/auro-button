@@ -21,37 +21,41 @@
 
 @import "./shared_style.scss";
 
-// container
+// Properties in :host require Sass variables
+// CSS custom properties are not loaded where the :host selector can see them.
+:host {
+  -webkit-tap-highlight-color: transparent;
+}
+
 :host(.focus-visible) {
   .button {
     @include focus-button(css);
 
     &.button--classic:not(.button--secondary) {
-      box-shadow: inset 0 0 0 5px $color-base-white;
+      box-shadow: inset 0 0 0 $host-focus-visible-box-shadow-inset $host-focus-visible-box-shadow-color;
     }
   }
 }
 
-// Properties in :host require Sass variables
-// CSS custom properties are not loaded where the :host selector can see them.
-:host {
-  display: $host-display;
-  flex-direction: $host-flex-direction-mobile;
-  -webkit-tap-highlight-color: transparent;
+:host([responsive]) {
+  display: $host-responsive-display;
+  flex-direction: $host-responsive-flex-direction;
 
   @include breakpoint-narrow {
-    flex-direction: $host-flex-direction-phone-large-and-above;
+    flex-direction: $host-responsive-breakpoint-narrow-flex-direction;
+  }
+}
+
+:host([reverse]) {
+  @include breakpoint-narrow {
+    flex-direction: $host-reverse-breakpoint-narrow-flex-direction;
   }
 }
 
 // layout
-span {
-  display: inline-block;
-}
-
 svg {
-  vertical-align: middle;
-  margin-top: -4px;
+  vertical-align: var(--svg-vertical-align);
+  margin-top: var(--svg-margin-top);
 }
 
 // button shape
@@ -68,7 +72,7 @@ svg {
     :host(:not(.is-touching)) & {
       &:hover {
         background-color: var(--ods-button-disabled-hover-background-color);
-        box-shadow: 0 0 0 transparent;
+        box-shadow: 0 0 0 var(--ods-button-disabled-host-not-touching-hover-box-shadow-color);
         color: var(--ods-button-disabled-hover-color);
       }
     }
@@ -102,9 +106,9 @@ svg {
     padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding-narrow);
   }
 
-  &--enclosed {
-    @include breakpoint-narrow {
-      width: var(--ods-button-width-narrow) !important;
+  &--responsive {
+    @include breakpoint-medium {
+      width: var(--ods-button-width-medium);
     }
   }
 
@@ -172,7 +176,7 @@ svg {
           border-color: var(--ods-button-secondary-disabled-hover-border-color);
           background-color: var(--ods-button-secondary-disabled-hover-background-color);
           color: var(--ods-button-disabled-color);
-          box-shadow: 0 0 0 transparent;
+          box-shadow: 0 0 0 var(--ods-button-disabled-host-not-touching-hover-box-shadow-color);
         }
       }
     }
@@ -209,7 +213,7 @@ svg {
 
     &.button {
       &--secondary {
-        background-color: $color-base-white;
+        background-color: var(--color-base-white);
         border-color: var(--ods-button-secondary-border-color);
 
         &:disabled {
@@ -217,7 +221,7 @@ svg {
 
           :host(:not(.is-touching)) & {
             &:hover {
-              background-color: inherit;
+              background-color: var(--color-base-white);
               color: var(--ods-button-disabled-color);
             }
           }
@@ -225,12 +229,12 @@ svg {
 
         &.is-active {
           &:disabled {
-            background-color: $color-base-white;
+            background-color: var(--color-base-white);
             border-color: var(--ods-button-secondary-border-color);
 
             :host(:not(.is-touching)) & {
               &:hover {
-                background-color: $color-base-white;
+                background-color: var(--color-base-white);
                 color: var(--ods-button-secondary-is-active-disabled-color);
                 border-color: var(--ods-button-secondary-is-active-disabled-color);
               }

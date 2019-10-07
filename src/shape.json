@@ -5,15 +5,30 @@
   ],
 
   "host": {
-    "display": {"value": "flex"},
-    "flex-direction": {
-      "mobile": {"value": "column"},
-      "phone-large-and-above": {"value": "row-reverse"}
+    "responsive": {
+      "display": { "value": "flex" },
+      "flexDirection": { "value": "column" },
+      "breakpointNarrow": {
+        "flexDirection": { "value": "row" }
+      }
+    },
+    "reverse": {
+      "breakpointNarrow": {
+        "flexDirection": { "value": "row-reverse" }
+      }
+    },
+    "focusVisible": {
+      "boxShadowColor": { "value": "$color-base-white" },
+      "boxShadowInset": { "value": "5px" }
     }
   },
 
+  "svg": {
+    "verticalAlign": { "value": "middle" },
+    "marginTop": { "value": "-4px" }
+  },
+
   "ods-button": {
-    "display": {"value": "inline-block"},
     "fontFamily": {"value": "var(--font-family-base)"},
     "fontSize": {"value": "var(--size-font-breakpoint-all-med)"},
     "borderRadius": {"value": "var(--size-border-radius-default)"},
@@ -143,6 +158,11 @@
         "color": {"value": "var(--color-base-shark)"},
         "background": {
           "color": {"value": "var(--color-background-disabled-button)"}
+        }
+      },
+      "hostNotTouching": {
+        "hover": {
+          "boxShadowColor": { "value": "transparent" }
         }
       }
     }

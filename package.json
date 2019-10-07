@@ -38,8 +38,8 @@
     "focus-visible": "^4.1.5"
   },
   "devDependencies": {
-    "@alaskaairux/orion-design-tokens": "^2.7.2",
-    "@alaskaairux/orion-web-core-style-sheets": "^2.6.11",
+    "@alaskaairux/orion-design-tokens": "^2.7.3",
+    "@alaskaairux/orion-web-core-style-sheets": "^2.6.12",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^7.6.0",
     "@polymer/iron-demo-helpers": "^3.1.0",
@@ -81,8 +81,7 @@
   },
   "watch": {
     "buildTokens": "./src/*.json",
-    "sassRender-w": ".src/**/*.scss",
-    "npmDevBuild": "./src/**/*.{scss,js}"
+    "sassRender-w": ".src/**/*.scss"
   },
   "scripts": {
     "build": "npm-run-all sassRender cssLint jsonLint",
@@ -106,8 +105,7 @@
     "processImportsVariable": "gulp processImportsVariable",
     "reprocessClean": "gulp reprocessClean",
     "ciBuild": "npm-run-all buildTokens processSrc processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean distTokens sassRender distJS",
-    "devBuild": "npm-run-all buildTokens processSrc distTokens sassRender distJS",
-    "npmDevBuild": "npm-run-all distTokens sassRender distJS"
+    "devBuild": "npm-run-all buildTokens processSrc distTokens sassRender distJS"
   },
   "husky": {
     "hooks": {

@@ -69,9 +69,37 @@ The \<ods-button> element should be used in situations where users may:
 
 In cases were the action of the button would not fit the criteria above, it is most likely a Hyperlink. In that situation it is recommended that the \<ods-hyperlink> element be used with options of `role=button` configuration for visual appearance over functional use.
 
-### Responsive state:
+### Responsive support
 
-The \<ods-button> element will respond without context settings as expected. Within context of another component, set `context` flag to `true` and \<ods-button> will adapt to contextual shape. By default,  \<ods-button> will constrain visible characters when text exceeds available visual space.
+The \<ods-button> element by default will fill 100% of the space given within an outer element. 
+
+If the desired appearance of the \<ods-button> is to responsive within a given space, then the use of the `responsive` attribute is required on the \<ods-element>. 
+
+If the desired appearance of the \<ods-button> is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the \<ods-button> element. 
+
+### Multiple buttons
+
+When the UI requires the use of multiple buttons within the same space, with the use of the [Orion Web Core Style Sheets](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#ods-utility-css-.ods-containedButtons), and the `ods-containedButtons` selector will lay out the buttons in the space without any additional effort. 
+
+```html
+<div className="ods-containedButtons">
+  <ods-button>Default</ods-button>
+  <ods-button condensed>Condensed</ods-button>
+  <ods-button isactive>Active</ods-button>
+  <ods-button disabled>Disabled</ods-button>
+</div>
+```
+
+In addition, using the `ods-containedButtons--reverse` selector will move the layout of the buttons to the opposite side of the view. 
+
+```html
+<div className="ods-containedButtons ods-containedButtons--reverse">
+  <ods-button>Default</ods-button>
+  <ods-button condensed>Condensed</ods-button>
+  <ods-button isactive>Active</ods-button>
+  <ods-button disabled>Disabled</ods-button>
+</div>
+```
 
 ### Theme support 
 
@@ -97,7 +125,8 @@ The \<ods-button> element will respond without context settings as expected. Wit
 | id | string | Set the unique ID of an element. |
 | isactive | boolean | If set to true button will appear in active state. <br/>Default value is `false`. |
 | name | string | The name of the button, which is submitted with the form data. |
-| outercontext | boolean | Context defines responsiveness of element. Set to true, element will always be 100% and respond to parent context shape. <br/>Default value is `false`. |
+| responsive | boolean | Sets the UI of the button to be responsive within its given container. |
+| reverse | boolean | Required to be paired with `responsive`, but sets the placement in the reverse direction of natural content. |
 | svgIconLeft | string | Pass in SVG string for icon to appear on the LEFT |
 | svgIconRight | string | Pass in SVG string for icon to appear on the RIGHT |
 | title | string | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
@@ -107,47 +136,54 @@ The \<ods-button> element will respond without context settings as expected. Wit
 
 ### API Code Examples
 
-Default button
+![](./assets/default.png)
 
 ```html
-<ods-button>Hello World</ods-button>
+<ods-button>default</ods-button>
 ```
 
-Classic default button
+![](./assets/secondary.png)
 
 ```html
-<ods-button theme="classic">Hello World</ods-button>
+<ods-button buttontype="secondary">secondary</ods-button>
 ```
 
-Default button with disabled state set to `true`
+![](./assets/isactive.png)
 
 ```html
-<ods-button disabled>hello world</ods-button>
+<ods-button isactive>is active</ods-button>
 ```
 
-Default button with active state set to `true`
+![](./assets/complete.png)
 
 ```html
-<ods-button isactive>hello world</ods-button>
+<ods-button flowtype="complete"> complete </ods-button>
 ```
 
-Secondary button
+![](./assets/disabled.png)
 
 ```html
-<ods-button buttontype="secondary">hello world</ods-button>
+<ods-button disabled>disabled</ods-button>
 ```
 
-Secondary button with disabled state set to `true`
+![](./assets/classic.png)
 
 ```html
-<ods-button buttontype="secondary" disabled>hello world</ods-button>
+<ods-button theme="classic">classic default</ods-button>
 ```
 
-Secondary button with active state set to `true`
+![](./assets/classicSecondary.png)
 
 ```html
-<ods-button active buttontype="secondary">hello world</ods-button>
+<ods-button buttontype="secondary" theme="classic">classic secondary</ods-button>
 ```
+
+![](./assets/classicSecondaryDisabled.png)
+
+```html
+<ods-button disabled buttontype="secondary" theme="classic">disabled classic secondary</ods-button>
+```
+
 
 ### Custom callbacks
 

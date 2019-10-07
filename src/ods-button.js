@@ -14,12 +14,12 @@ class OdsButton extends LitElement {
   constructor() {
     super();
     this.buttontype = "primary";
-    this.outercontext = false;
+    this.responsive = false;
     this.disabled = false;
     this.isactive = false;
     this.getButtontype = this.getButtontype.bind(this);
     this.getButtonState = this.getButtonState.bind(this);
-    this.getButtonContext = this.getButtonContext.bind(this);
+    this.getButtonResponsive = this.getButtonResponsive.bind(this);
 
     // adds event based on activelly being touched
     this.addEventListener('touchstart', function() {
@@ -34,7 +34,8 @@ class OdsButton extends LitElement {
       disabled:         { type: Boolean },
       formnovalidate:   { type: Boolean },
       isactive:         { type: Boolean },
-      outercontext:     { type: Boolean },
+      responsive:       { type: Boolean },
+      reverse:          { type: Boolean },
       arialabel:        { type: String },
       arialabelledby:   { type: String },
       buttontype:       { type: String },
@@ -83,8 +84,8 @@ class OdsButton extends LitElement {
     return condensed ? "button--condensed" : ""
   }
 
-  getButtonContext(outercontext) {
-    return outercontext ? "button--enclosed" : ""
+  getButtonResponsive(responsive) {
+    return responsive ? "button--responsive" : ""
   }
 
   isDisabled(disabled, isactive) {
@@ -111,7 +112,7 @@ class OdsButton extends LitElement {
           ${this.getButtontype(this.buttontype)}
           ${this.getButtonFlowtype(this.flowtype)}
           ${this.getButtonState(this.isactive)}
-          ${this.getButtonContext(this.outercontext)}
+          ${this.getButtonResponsive(this.responsive)}
           ${this.getButtonApperance(this.condensed)}
           "
 

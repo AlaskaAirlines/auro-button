@@ -14,7 +14,6 @@
   @include transition;
 
   @include breakpoint-narrow {
-    width: var(--ods-button-width-medium);
     padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding-medium);
   }
 
@@ -23,7 +22,6 @@
   }
 
   user-select: none;
-  display: var(--ods-button-display);
   font-family: var(--ods-button-font-family);
   border-width: var(--ods-button-border-width);
   border-style: var(--ods-button-border-style);
@@ -37,6 +35,10 @@
   background-color: var(--ods-button-background-color);
   color: var(--ods-button-text-color);
   cursor: var(--ods-button-cursor);
+
+  white-space: var(--ods-button-white-space);
+  overflow: var(--ods-button-overflow);
+  text-overflow: var(--ods-button-text-overflow);
 
   @if $cta {
     text-align: center;
