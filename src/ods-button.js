@@ -92,7 +92,20 @@ class OdsButton extends LitElement {
   }
 
   buttonCallback() {
-    console.log('Alert: Event not bound to button')
+    if (this.form) {
+      this.formSubmitCallback(this.form);
+    } else {
+      console.log('Alert: Event not bound to button');
+    }    
+  }
+
+  formSubmitCallback(formId) {
+    let formElement = document.getElementById(formId);
+    if (formElement) {
+      formElement.submit();
+    } else {
+      console.log(`Alert: Form with ID "${formId}" does not exist`);
+    }
   }
 
   render() {
