@@ -1,5 +1,25 @@
 # Semantic Release Automated Changelog
 
+# [3.0.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.9.2...v3.0.0) (2019-10-11)
+
+
+### Bug Fixes
+
+* add ciBuild and devBuild scripts for dev purposes ([da0ff0e](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/da0ff0e))
+
+
+### Performance Improvements
+
+* update responsive button support ([de7131f](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/de7131f))
+
+
+### BREAKING CHANGES
+
+* the responsive behavior of ods-button has changed
+'outercontext' has been removed and followed by 'responsive'
+
+ods-button no longer expects full context and responsive behavior by default.
+
 ## [2.9.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.9.1...v2.9.2) (2019-10-06)
 
 
