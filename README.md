@@ -33,7 +33,7 @@ CSS Custom Properties are not supported in older browsers. For this, fallback pr
 Define the component dependency within each component that is using the \<ods-button> component.
 
 ```javascript
-import "@alaskaairux/ods-button/dist/ods-button";
+import "@alaskaairux/ods-button";
 ```
 
 **Reference component in HTML**
@@ -71,15 +71,15 @@ In cases were the action of the button would not fit the criteria above, it is m
 
 ### Responsive support
 
-The \<ods-button> element by default will fill 100% of the space given within an outer element. 
+The \<ods-button> element by default will fill 100% of the space given within an outer element.
 
-If the desired appearance of the \<ods-button> is to responsive within a given space, then the use of the `responsive` attribute is required on the \<ods-element>. 
+If the desired appearance of the \<ods-button> is to responsive within a given space, then the use of the `responsive` attribute is required on the \<ods-element>.
 
-If the desired appearance of the \<ods-button> is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the \<ods-button> element. 
+If the desired appearance of the \<ods-button> is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the \<ods-button> element.
 
 ### Multiple buttons
 
-When the UI requires the use of multiple buttons within the same space, with the use of the [Orion Web Core Style Sheets](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#ods-utility-css-.ods-containedButtons), and the `ods-containedButtons` selector will lay out the buttons in the space without any additional effort. 
+When the UI requires the use of multiple buttons within the same space, with the use of the [Orion Web Core Style Sheets](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#ods-utility-css-.ods-containedButtons), and the `ods-containedButtons` selector will lay out the buttons in the space without any additional effort.
 
 ```html
 <div className="ods-containedButtons">
@@ -90,7 +90,7 @@ When the UI requires the use of multiple buttons within the same space, with the
 </div>
 ```
 
-In addition, using the `ods-containedButtons--reverse` selector will move the layout of the buttons to the opposite side of the view. 
+In addition, using the `ods-containedButtons--reverse` selector will move the layout of the buttons to the opposite side of the view.
 
 ```html
 <div className="ods-containedButtons ods-containedButtons--reverse">
@@ -101,9 +101,9 @@ In addition, using the `ods-containedButtons--reverse` selector will move the la
 </div>
 ```
 
-### Theme support 
+### Theme support
 
-\<ods-button> supports both Orion and Classic themes. Default, and secondary type, and disabled state supports the Classic theme. Flow type options are NOT supported by the Classic theme. 
+\<ods-button> supports both Orion and Classic themes. Default, and secondary type, and disabled state supports the Classic theme. Flow type options are NOT supported by the Classic theme.
 
 ### Properties:
 
