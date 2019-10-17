@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.0.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v3.0.0...v3.0.1) (2019-10-17)
+
+
+### Bug Fixes
+
+* add barrel file to simplify import statements ([c8dacaf](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/c8dacaf))
+
 # [3.0.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v2.9.2...v3.0.0) (2019-10-11)
 
 
