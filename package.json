@@ -104,7 +104,8 @@
     "processImportsCanonical": "gulp processImportsCanonical",
     "processImportsVariable": "gulp processImportsVariable",
     "reprocessClean": "gulp reprocessClean",
-    "ciBuild": "npm-run-all buildTokens processSrc processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean distTokens sassRender distJS",
+    "preserveTokens": "copyfiles -u 1 -V './src/**/componentProperties.scss' ./dist",
+    "ciBuild": "npm-run-all buildTokens processSrc processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean preserveTokens distTokens sassRender distJS",
     "devBuild": "npm-run-all buildTokens processSrc distTokens sassRender distJS"
   },
   "husky": {

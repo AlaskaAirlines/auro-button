@@ -17,6 +17,7 @@ before_script:
   - npm run stylefluxCanonical
   - npm run stylefluxVariable
   - gulp reprocessClean
+  - npm run preserveTokens
   - npm run distTokens
   - npm run sassRender
   - npm run distJS

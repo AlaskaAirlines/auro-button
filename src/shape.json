@@ -18,7 +18,7 @@
       }
     },
     "focusVisible": {
-      "boxShadowColor": { "value": "$color-base-white" },
+      "boxShadowColor": { "value": "var(--color-base-white)" },
       "boxShadowInset": { "value": "5px" }
     }
   },
