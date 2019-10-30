@@ -110,7 +110,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
+      "pre-commit": "npm-run-all buildTokens processSrc test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
