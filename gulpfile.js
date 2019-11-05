@@ -176,7 +176,7 @@ gulp.task('processDev', function() {
 // task for Development Sass processing
 gulp.task('reprocessClean', function() {
   // set path to where Sass files are located to be processed
-  return gulp.src('./altImports/**/*.scss')
+  return gulp.src('./altImports/**/style.scss')
 
     // PostCss polyfill pipeline for CSS Custom Properties (CSS variables)
     .pipe(postcss([

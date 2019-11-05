@@ -167,6 +167,22 @@
         </template>
       </demo-snippet>
 
+      <demo-snippet>
+        <template>
+          <ods-button id="message-button">Click For Message</ods-button>
+          <ods-button id="change-button" buttontype="secondary" >Change Message</ods-button>
+          <script>
+            const mbutton = document.querySelector('#message-button');
+            mbutton.buttonCallback = () => alert('Hello!');
+
+            const cbutton = document.querySelector('#change-button');
+            cbutton.buttonCallback = () => {
+              mbutton.buttonCallback = () => alert('goodbye!');
+            }
+          </script>
+        </template>
+      </demo-snippet>
+
       <h2>Element &#60;ods-button&#62;</h2>
 
       <pre><code>class OdsButton extends LitElement</code></pre>

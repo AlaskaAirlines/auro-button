@@ -127,7 +127,7 @@ class OdsButton extends LitElement {
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
         part="button--modifier"
-        @click=${this.buttonCallback}
+        @click=${() => this.buttonCallback()}
         type="${ifDefined(this.type ? this.type : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
       >
