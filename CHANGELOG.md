@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.0.3](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v3.0.2...v3.0.3) (2019-11-05)
+
+
+### Bug Fixes
+
+* click handler can now change dynamically ([#35](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/issues/35)) ([abce11d](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/abce11dea083f969d420895943dda0104b11071d))
+
 ## [3.0.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v3.0.1...v3.0.2) (2019-10-28)
 
 
