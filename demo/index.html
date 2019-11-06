@@ -173,12 +173,25 @@
           <ods-button id="change-button" buttontype="secondary" >Change Message</ods-button>
           <script>
             const mbutton = document.querySelector('#message-button');
-            mbutton.buttonCallback = () => alert('Hello!');
+            const originalHandler = () => alert('Hello!');
+            mbutton.addEventListener('click', originalHandler);
 
             const cbutton = document.querySelector('#change-button');
-            cbutton.buttonCallback = () => {
-              mbutton.buttonCallback = () => alert('goodbye!');
-            }
+            cbutton.addEventListener('click', () => {
+              mbutton.removeEventListener('click', originalHandler, false);
+              mbutton.addEventListener('click', () => alert('goodbye!'));
+            });
+          </script>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <ods-button id="message-button-2" disabled>Click For Message</ods-button>
+          <script>
+            const mbutton2 = document.querySelector('#message-button-2');
+            const originalHandler2 = () => alert('Hello!');
+            mbutton2.addEventListener('click', originalHandler2);
           </script>
         </template>
       </demo-snippet>

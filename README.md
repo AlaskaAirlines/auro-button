@@ -184,15 +184,6 @@ In addition, using the `ods-containedButtons--reverse` selector will move the la
 <ods-button disabled buttontype="secondary" theme="classic">disabled classic secondary</ods-button>
 ```
 
-
-### Custom callbacks
-
-Button(React support) with `ref` for passing in an event, [see notes](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs/blob/master/docs/CALLBACK.md)
-
-```html
-<ods-button ref={this.event}>hello world</ods-button>
-```
-
 ### Contextual component
 
 A special case scenario for responsiveness. The \<ods-button> element is built to handle responsive situations when it is the only element within a block. If the \<ods-button> element is used within context of another element, then it's the responsibility of the parent element to dictate the responsiveness of the \<ods-element>.

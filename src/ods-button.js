@@ -53,7 +53,6 @@ class OdsButton extends LitElement {
       title:            { type: String },
       type:             { type: String },
       value:            { type: String },
-      buttonCallback:   { type: Function }
     };
   }
 
@@ -92,9 +91,6 @@ class OdsButton extends LitElement {
     return disabled || isactive;
   }
 
-  buttonCallback() {
-    console.log('Alert: Event not bound to button')
-  }
 
   render() {
     return html`
@@ -127,14 +123,13 @@ class OdsButton extends LitElement {
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
         part="button--modifier"
-        @click=${() => this.buttonCallback()}
         type="${ifDefined(this.type ? this.type : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
       >
 
         ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
-
-        <slot></slot>
+        <!--Slot still clickabled when button disabled for some reason-->
+        <slot @click=${e => {if(this.disabled) e.stopPropagation()}}></slot>
 
         ${ifDefined(this.svgIconRight ? this.getIcon(this.svgIconRight) : undefined)}
 
