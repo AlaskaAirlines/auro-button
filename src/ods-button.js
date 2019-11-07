@@ -128,8 +128,7 @@ class OdsButton extends LitElement {
       >
 
         ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
-        <!--Slot still clickabled when button disabled for some reason-->
-        <slot @click=${e => {if(this.disabled) e.stopPropagation()}}></slot>
+        <slot></slot>
 
         ${ifDefined(this.svgIconRight ? this.getIcon(this.svgIconRight) : undefined)}
 
