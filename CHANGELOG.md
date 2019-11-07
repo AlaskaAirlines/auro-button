@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [4.0.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v3.0.3...v4.0.0) (2019-11-07)
+
+
+### Code Refactoring
+
+* remove `buttonCallback` prop ([65ce293](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/65ce293a276eceef299ec2107faea3aeef3a6d53))
+
+
+### BREAKING CHANGES
+
+* updates ods-button public api
+
 ## [3.0.3](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v3.0.2...v3.0.3) (2019-11-05)
 
 
