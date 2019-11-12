@@ -10,7 +10,7 @@ import dotsProperties from './tokens/dotsProperties-css.js';
 import 'focus-visible/dist/focus-visible.min.js';
 import styleCss from "./style-css.js";
 
-class OdsButton extends LitElement {
+export default class OdsButton extends LitElement {
   constructor() {
     super();
     this.buttontype = "primary";
@@ -91,6 +91,9 @@ class OdsButton extends LitElement {
     return disabled || isactive;
   }
 
+  getButtonContent() {
+    return html`<slot></slot>`;
+  }
 
   render() {
     return html`
@@ -128,7 +131,7 @@ class OdsButton extends LitElement {
       >
 
         ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
-        <slot></slot>
+        ${this.getButtonContent()}
 
         ${ifDefined(this.svgIconRight ? this.getIcon(this.svgIconRight) : undefined)}
 
