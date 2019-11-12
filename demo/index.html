@@ -13,6 +13,7 @@
       import "@polymer/iron-demo-helpers/demo-snippet";
     </script>
     <script type="module" src="../src/ods-button.js"></script>
+    <script type="module" src="../src/ods-button-light.js"></script>
     <script src="../demo/alert.js"></script>
     <script type="module">
       import '../node_modules/@polymer/iron-icons/hardware-icons.js';
@@ -43,6 +44,12 @@
           <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tv'></iron-icon>
         </span>
       </p>
+
+      <demo-snippet>
+        <template>
+          <ods-button-light content="Light dom default state" arialabel="submit">default state</ods-button>
+        </template>
+      </demo-snippet>
 
       <demo-snippet>
         <template>
