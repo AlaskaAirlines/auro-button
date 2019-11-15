@@ -5,9 +5,9 @@
 
 import { LitElement, html } from "lit-element";
 import { ifDefined } from 'lit-html/directives/if-defined.js';
+import 'focus-visible/dist/focus-visible.min.js';
 import buttonProperties from './tokens/componentProperties-css.js';
 import dotsProperties from './tokens/dotsProperties-css.js';
-import 'focus-visible/dist/focus-visible.min.js';
 import styleCss from "./style-css.js";
 
 export default class OdsButton extends LitElement {
@@ -57,7 +57,7 @@ export default class OdsButton extends LitElement {
   }
 
   getButtontype(type) {
-    return type === "secondary" ? "button--secondary" : ""
+    return type === "secondary" ? "ods-button--secondary" : ""
   }
 
   getIcon(svgIcon) {
@@ -68,11 +68,11 @@ export default class OdsButton extends LitElement {
   }
 
   getButtonFlowtype(flowtype) {
-    return flowtype === "complete" ? "button--complete" : ""
+    return flowtype === "complete" ? "ods-button--complete" : ""
   }
 
   getTheme(theme) {
-    return theme === "classic" ? "button--classic" : "button--orion"
+    return theme === "classic" ? "ods-button--classic" : "button--orion"
   }
 
   getButtonState(isactive) {
@@ -80,11 +80,11 @@ export default class OdsButton extends LitElement {
   }
 
   getButtonApperance(condensed) {
-    return condensed ? "button--condensed" : ""
+    return condensed ? "ods-button--condensed" : ""
   }
 
   getButtonResponsive(responsive) {
-    return responsive ? "button--responsive" : ""
+    return responsive ? "ods-button--responsive" : ""
   }
 
   isDisabled(disabled, isactive) {
@@ -95,18 +95,24 @@ export default class OdsButton extends LitElement {
     return html`<slot></slot>`;
   }
 
-  render() {
-    return html`
+  getButtonStyles() {
+    return html `
       ${buttonProperties}
       ${dotsProperties}
       ${styleCss}
+    `
+  }
+
+  render() {
+    return html`
+      ${this.getButtonStyles()}
 
       <button
         aria-label="${ifDefined(this.arialabel ? this.arialabel : undefined)}"
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         ?autofocus="${this.autofocus}"
 
-        class="button
+        class="ods-button
           ${this.getTheme(this.theme)}
           ${this.getButtontype(this.buttontype)}
           ${this.getButtonFlowtype(this.flowtype)}
@@ -131,6 +137,7 @@ export default class OdsButton extends LitElement {
       >
 
         ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
+
         ${this.getButtonContent()}
 
         ${ifDefined(this.svgIconRight ? this.getIcon(this.svgIconRight) : undefined)}

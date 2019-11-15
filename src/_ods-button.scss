@@ -1,0 +1,355 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Creates ods-button base UI definition
+
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baselineLTE";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
+@import "./shared_style";
+@import "./shared_style--secondary";
+
+// Properties in :host require Sass variables
+// CSS custom properties are not loaded where the :host selector can see them.
+:host {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// code reuse selector for focus-visible use
+%button-focus {
+  @include focus-button(css);
+
+  &.button--classic:not(.button--secondary) {
+    box-shadow: inset 0 0 0 $host-focus-visible-box-shadow-inset $host-focus-visible-box-shadow-color;
+  }
+}
+
+// seletor for use wish shadow DOM element
+:host(.focus-visible) {
+  .ods-button {
+    @extend %button-focus;
+  }
+}
+
+:host(.focus-visible) {
+  .ods-button--complete {
+    box-shadow: inset 0 0 0 2px var(--ods-button-complete-background-color),inset 0 0 0 7px var(--color-base-white);
+  }
+}
+
+// seletor for use wish light DOM element
+.ods-button.focus-visible {
+  @extend %button-focus;
+}
+
+.ods-button[responsive],
+:host([responsive]) {
+  display: $host-responsive-display;
+  flex-direction: $host-responsive-flex-direction;
+
+  @include breakpoint-narrow {
+    flex-direction: $host-responsive-breakpoint-narrow-flex-direction;
+  }
+}
+
+.ods-button[reverse],
+:host([reverse]) {
+  @include breakpoint-narrow {
+    flex-direction: $host-reverse-breakpoint-narrow-flex-direction;
+  }
+}
+
+slot {
+  pointer-events: none;
+}
+
+// layout
+svg {
+  vertical-align: var(--svg-vertical-align);
+  margin-top: var(--svg-margin-top);
+}
+
+// button shape
+.ods-button {
+
+  @include sharedButton();
+
+  &:disabled {
+    cursor: var(--ods-button-disabled-cursor);
+    color: var(--ods-button-disabled-color);
+    border-color: var(--ods-button-disabled-border-color);
+    background-color: var(--ods-button-disabled-background-color);
+
+    :host(:not(.is-touching)) & {
+      &:hover {
+        @include disabledHover;
+      }
+    }
+
+    &:active {
+      color: var(--ods-button-disabled-color);
+      background-color: var(--ods-button-disabled-background-color);
+    }
+  }
+
+  &:active {
+    background-color: var(--ods-button-active-background-color);
+  }
+
+  &.is-active {
+    &:disabled {
+      cursor: var(--ods-button-disabled-cursor);
+      color: var(--ods-button-is-active-disabled-color);
+      background-color: var(--ods-button-is-active-disabled-background-color);
+
+
+      :host(:not(.is-touching)) & {
+        &:hover {
+          @include isActiveHover;
+        }
+      }
+    }
+  }
+
+  &--condensed {
+    padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding-narrow);
+  }
+
+  &--responsive {
+    @include breakpoint-medium {
+      width: var(--ods-button-width-medium);
+    }
+  }
+
+  &--complete {
+    background-color: var(--ods-button-complete-background-color);
+    color: var(--ods-button-complete-color);
+    border-color: var(--ods-button-complete-background-color);
+
+    .block {
+      background-color: var(--dancingdots-block-complete-background-color);
+    }
+
+    &.is-active {
+      &:disabled {
+        background-color: var(--ods-button-complete-background-color);
+        color: var(--ods-button-complete-color);
+        border-color: var(--ods-button-complete-background-color);
+
+
+        :host(:not(.is-touching)) & {
+          &:hover {
+            @include completeActiveHover;
+          }
+        }
+      }
+    }
+
+    :host(:not(.is-touching)) & {
+      &:hover {
+        @include completeHover;
+      }
+    }
+  }
+
+  &--secondary {
+    @include sharedButtonSecondary();
+
+    &:active {
+      color: var(--ods-button-secondary-active-color);
+      border-color: var(--ods-button-secondary-active-border-color);
+      background-color: var(--ods-button-secondary-active-background-color)
+    }
+
+    &:disabled {
+      cursor: var(--ods-button-disabled-cursor);
+      color: var(--ods-button-disabled-color);
+      border-color: var(--ods-button-secondary-disabled-border-color);
+      background-color: var(--ods-button-secondary-disabled-background-color);
+
+
+      :host(:not(.is-touching)) & {
+        &:hover {
+          @include secondaryDisabledHover;
+        }
+      }
+
+      &.is-active {
+        &:disabled {
+          color: var(--ods-button-secondary-is-active-disabled-color);
+          border-color: var(--ods-button-secondary-is-active-disabled-border-color);
+          background-color: var(--ods-button-secondary-is-active-disabled-background-color);
+
+
+          :host(:not(.is-touching)) & {
+            &:hover {
+              @include secondaryIsActiveDisabledHover;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--classic {
+    $classShadow: 0 0 3px 0 rgba(0,0,0,.35);
+
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: $size-scale-classic;
+    font-weight: 700;
+    border-radius: 0;
+    border-width: 2px;
+    background-color: $color-classic-cta-green;
+    border-color: $color-classic-cta-green;
+    box-shadow: $classShadow;
+
+    &.ods-button {
+      &--secondary {
+        background-color: var(--color-base-white);
+        border-color: var(--ods-button-secondary-border-color);
+
+        &:disabled {
+          border-color: var(--ods-button-disabled-border-color);
+
+
+          :host(:not(.is-touching)) & {
+            &:hover {
+              background-color: var(--color-base-white);
+              color: var(--ods-button-disabled-color);
+            }
+          }
+        }
+
+        &.is-active {
+          &:disabled {
+            background-color: var(--color-base-white);
+            border-color: var(--ods-button-secondary-border-color);
+
+
+            :host(:not(.is-touching)) & {
+              &:hover {
+                background-color: var(--color-base-white);
+                color: var(--ods-button-secondary-is-active-disabled-color);
+                border-color: var(--ods-button-secondary-is-active-disabled-color);
+              }
+            }
+          }
+        }
+
+
+        :host(:not(.is-touching)) & {
+          &:hover {
+            color: $color-brand-blue-midnight-base;
+            background-color: $color-base-cloud;
+            border-color: var(--ods-button-secondary-border-color);
+          }
+        }
+      }
+    }
+
+    &:disabled {
+      box-shadow: none;
+
+
+      :host(:not(.is-touching)) & {
+        &:hover {
+          border-color: var(--ods-button-disabled-background-color);
+        }
+      }
+    }
+
+    &.is-active {
+      &:disabled {
+        background-color: $color-classic-cta-green;
+        border-color: $color-classic-cta-green;
+        box-shadow: $classShadow;
+
+
+        :host(:not(.is-touching)) & {
+          &:hover {
+            background-color: $color-classic-cta-green;
+            border-color: $color-classic-cta-green;
+            box-shadow: $classShadow;
+          }
+        }
+      }
+    }
+
+    :host(:not(.is-touching)) & {
+      &:hover {
+        background-color: $color-classic-cta-green-hover;
+        border-color: $color-classic-cta-green-hover;
+        box-shadow: $classShadow;
+      }
+    }
+  }
+}
+
+// dancing dots
+.dancingDots {
+  display: var(--dancingdots-display);
+
+  &.is-active {
+    display: var(--dancingdots-is-active-display);
+  }
+}
+
+.dots {
+  display: var(--dancingdots-dots-display);
+}
+
+.block {
+  display: var(--dancingdots-dots-display);
+  width: var(--dancingdots-block-width);
+  height: var(--dancingdots-block-height);
+  margin: var(--dancingdots-block-margin);
+  opacity: var(--dancingdots-block-opacity);
+  background-color: var(--dancingdots-block-background-color);
+
+  .ods-button--secondary & {
+    background-color: var(--dancingdots-block-secondary-background-color);
+  }
+
+  &:nth-child(1) {
+    animation: var(--dancingdots-animation-name)
+      var(--dancingdots-animation-duration)
+      var(--dancingdots-animation-timing-function)
+      var(--dancingdots-animation-iteration-count);
+  }
+  &:nth-child(2) {
+    animation: var(--dancingdots-animation-name)
+      var(--dancingdots-animation-duration)
+      var(--dancingdots-animation-delay-child-two)
+      var(--dancingdots-animation-timing-function)
+      var(--dancingdots-animation-iteration-count);
+  }
+  &:nth-child(3) {
+    animation: var(--dancingdots-animation-name)
+      var(--dancingdots-animation-duration)
+      var(--dancingdots-animation-delay-child-three)
+      var(--dancingdots-animation-timing-function)
+      var(--dancingdots-animation-iteration-count);
+  }
+}
+
+@keyframes #{$dancingdots-animation-name} {
+  #{$dancingdots-keyframe-step-1-name}% {
+    transform: var(--dancingdots-keyframe-step-1-transform);
+    opacity: var(--dancingdots-keyframe-step-1-opacity);
+  }
+  #{$dancingdots-keyframe-step-2-name}% {
+    transform: var(--dancingdots-keyframe-step-2-transform);
+    opacity: var(--dancingdots-keyframe-step-2-opacity);
+  }
+  #{$dancingdots-keyframe-step-3-name}% {
+    transform: var(--dancingdots-keyframe-step-3-transform);
+    opacity: var(--dancingdots-keyframe-step-3-opacity);
+  }
+  #{$dancingdots-keyframe-step-4-name}% {
+    opacity: var(--dancingdots-keyframe-step-4-opacity);
+  }
+}

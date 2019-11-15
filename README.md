@@ -194,11 +194,13 @@ In this scenario, simply set the `context` of the element to be `true`.
 <ods-button context="true">Default state; context true</ods-button>
 ```
 
-## Alternate build solutions
+## Alternate build solutions <span style="color: red">(deprecated)</span>
 
 Why would you need this? With all Orion custom elements the CSS for the element is embedded within the shadow DOM of the custom element. If your development environment is not allowing for the use of shadow DOM elements, the CSS for each element is distributed via additional resources within the npm package.
 
-[Read more about how to use alternate CSS build resources](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs/blob/master/docs/ALT_BUILD.md)
+[Read more about how to use alternate CSS build resources](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs/blob/master/src/ALT_BUILD.md)
+
+**THIS PROCESS IS DEPRECATED! ALL SUPPORT WILL BE REMOVED WITH NEXT MAJOR RELEASE!**
 
 ## Development
 

@@ -3,10 +3,9 @@
 
 // ---------------------------------------------------------------------
 
-// Creates ods-button shape
+// Import file of custom element required CSS custom properties
 
-@import "./variables.scss";
-@import "./properties.scss";
-@import "./shared_style.scss";
 
-@import "./ods-button";
+@import "./tokens/tokenProperties";
+@import "./tokens/componentProperties";
+@import "./tokens/dotsProperties";

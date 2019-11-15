@@ -45,87 +45,158 @@
         </span>
       </p>
 
+      <!-- examples for shadow DOM element -->
+
+      <h3>Shadow DOM element examples</h3>
+      <demo-snippet>
+          <template>
+            <ods-button arialabel="submit">Default state</ods-button>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button responsive>Responsive true</ods-button>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button-light responsive content="Responsive true"></ods-button-light>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button responsive reverse>Responsive true</ods-button>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button responsive condensed reverse>Responsive, condensed</ods-button>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button responsive condensed>Responsive, condensed</ods-button>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button disabled>Disabled state</ods-button>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button isactive>Active state</ods-button>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button buttontype="secondary">Secondary type</ods-button>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button buttontype="secondary" disabled>Secondary type; disabled state</ods-button>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button isactive buttontype="secondary">Secondary type; active state</ods-button>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button arialabel="submit" flowtype="complete">Process flow type complete</ods-button>
+          </template>
+        </demo-snippet>
+
+        <demo-snippet>
+          <template>
+            <ods-button arialabel="submit" isactive flowtype="complete">Process flow type complete (active state)</ods-button>
+          </template>
+        </demo-snippet>
+
+
+      <!-- examples for light DOM buttons -->
+      <h3>Light DOM element examples</h3>
       <demo-snippet>
         <template>
-          <ods-button-light content="Light dom default state" arialabel="submit">default state</ods-button>
+          <!-- The class of ods-button is scoped to the ods-button-light element -->
+          <!-- ods-button-light does not support <slot>  -->
+          <ods-button-light>
+            <button class="ods-button">standard button</button>
+          </ods-button-light>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button arialabel="submit">default state</ods-button>
+          <!-- The class of ods-button is scoped to the ods-button-light element -->
+          <button class="ods-button">standard button</button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button responsive>Responsive true</ods-button>
+          <ods-button-light content="Light dom default state" arialabel="submit"></ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button responsive reverse>Responsive true</ods-button>
+          <ods-button-light disabled content="Light dom disabled state" arialabel="submit"></ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button responsive condensed reverse>Responsive, condensed</ods-button>
+          <ods-button-light isactive content="Light dom active state" arialabel="submit"></ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button responsive condensed>Responsive, condensed</ods-button>
+          <ods-button-light buttontype="secondary" content="Light dom secondary type" arialabel="submit"></ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button disabled>Disabled state</ods-button>
+          <ods-button-light buttontype="secondary" disabled content="Light dom disabled secondary type" arialabel="submit"></ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button isactive>Active state</ods-button>
+          <ods-button-light buttontype="secondary" isactive content="Light dom active secondary type" arialabel="submit"></ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button buttontype="secondary">Secondary type</ods-button>
+          <ods-button-light flowtype="complete" content="Light dom flowtype complete" arialabel="submit"></ods-button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
-          <ods-button buttontype="secondary" disabled>Secondary type; disabled state</ods-button>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <ods-button isactive buttontype="secondary">Secondary type; active state</ods-button>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <ods-button arialabel="submit" flowtype="complete">Process flow type complete</ods-button>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <ods-button arialabel="submit" isactive flowtype="complete">Process flow type complete (active state)</ods-button>
+          <ods-button-light flowtype="complete" isactive content="Light dom active flowtype complete" arialabel="submit"></ods-button>
         </template>
       </demo-snippet>
 
 
 
-
+      <!-- examples for classic theme buttons -->
       <demo-snippet>
         <template>
           <ods-button arialabel="submit" theme="classic">Default state</ods-button>
@@ -174,6 +245,7 @@
         </template>
       </demo-snippet>
 
+      <!-- JavaScript function examples -->
       <demo-snippet>
         <template>
           <ods-button id="message-button">Click For Message</ods-button>
@@ -203,6 +275,7 @@
         </template>
       </demo-snippet>
 
+      <!-- docs support -->
       <h2>Element &#60;ods-button&#62;</h2>
 
       <pre><code>class OdsButton extends LitElement</code></pre>

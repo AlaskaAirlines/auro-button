@@ -11,6 +11,7 @@ demo/css
 demo/sass/tokenProperties.scss
 src/style.css
 src/shared_style.css
+src/style-ld.css
 temp/
 
 ## *-css built from sass-render process

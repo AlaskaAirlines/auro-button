@@ -11,12 +11,12 @@ notifactions:
 
 before_script:
   - npm run buildTokens
-  - gulp processSrc
+  - npm run processSrc
   - gulp processImportsCanonical
   - gulp processImportsVariable
   - npm run stylefluxCanonical
   - npm run stylefluxVariable
-  - gulp reprocessClean
+  - npm run sassRenderLightDomCSS
   - npm run preserveTokens
   - npm run distTokens
   - npm run sassRender

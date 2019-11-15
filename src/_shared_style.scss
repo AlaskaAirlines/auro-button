@@ -5,6 +5,8 @@
 
 // Creates shared ods-button CSS UI definition of shape
 
+@import "./hoverMixins";
+
 @mixin sharedButton($cta: null) {
 
   @if $cta {
@@ -15,10 +17,6 @@
 
   @include breakpoint-narrow {
     padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding-medium);
-  }
-
-  &:first-letter {
-    text-transform: uppercase;
   }
 
   user-select: none;
@@ -54,12 +52,7 @@
   // only use hover UI if non-touch scenario
   :host(:not(.is-touching)) & {
     &:hover {
-      color: var(--ods-button-hover-color) $cta;
-      background-color: var(--ods-button-hover-background-color);
-      box-shadow: 0 0 var(--size-scale-med) var(--ods-button-hover-shadow-color);
-      @if $cta {
-        text-decoration: none $cta;
-      }
+      @include buttonHover($cta);
     }
   }
 }
