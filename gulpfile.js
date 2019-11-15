@@ -69,7 +69,7 @@ gulp.task('processDemo', function() {
 // task for Production Sass processing and legacy support
 gulp.task('processSrc', function() {
   // set path to where Sass files are located to be processed
-  return gulp.src('./src/style.scss')
+  return gulp.src('./src/*.scss')
 
     // Sass pipeline
     .pipe(gulpSass({

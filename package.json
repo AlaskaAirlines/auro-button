@@ -86,27 +86,28 @@
   "scripts": {
     "build": "npm-run-all sassRender cssLint jsonLint",
     "buildTokens": "node scripts/tokenScript.js",
+    "ciBuild": "npm-run-all buildTokens processSrc sassRenderLightDomCSS processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean preserveTokens distTokens sassRender distJS",
     "copyFonts": "copyfiles -f ./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts/*.* ./demo/fonts/",
     "cssLint": "stylelint './src/style.css'",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w | npm-watch devBuild",
+    "devBuild": "npm-run-all buildTokens processSrc distTokens sassRender distJS",
     "dist": "npm-run-all distTokens sassRender cssLint jsonLint",
     "distJS": "copyfiles -u 1 -V -e './src/**/shared_*.js' './src/**/*.js' './src/**/shared_*.scss' ./dist",
     "distTokens": "node scripts/tokenScriptCustom.js",
     "jsonLint": "jsonlint -q ./src/shape.json",
     "sassRender": "sass-render src/*.css src/tokens/*.scss",
     "sassRender-w": "sass-render -w src/**/*.{scss,css}",
+    "sassRenderLightDomCSS": "sass-render --suffix='-ld-css.js' src/tokens/componentProperties.scss src/tokens/dotsProperties.scss",
     "stylefluxCanonical": "styleflux -o ./altImports/canonical/*.css",
     "stylefluxVariable": "styleflux -o ./altImports/variable/*.css",
     "sweep": "rm -rf ./altImports ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./demo/sass/*token*.scss ./src/*.css ./src/*-css.js",
-    "yamltest": "yamllint .travis.yml",
     "test": "npm-run-all cssLint jsonLint yamltest",
+    "yamltest": "yamllint .travis.yml",
     "processSrc": "gulp processSrc",
     "processImportsCanonical": "gulp processImportsCanonical",
     "processImportsVariable": "gulp processImportsVariable",
     "reprocessClean": "gulp reprocessClean",
-    "preserveTokens": "copyfiles -u 1 -V './src/**/componentProperties.scss' ./dist",
-    "ciBuild": "npm-run-all buildTokens processSrc processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean preserveTokens distTokens sassRender distJS",
-    "devBuild": "npm-run-all buildTokens processSrc distTokens sassRender distJS"
+    "preserveTokens": "copyfiles -u 1 -V './src/**/componentProperties.scss' ./dist"
   },
   "husky": {
     "hooks": {
