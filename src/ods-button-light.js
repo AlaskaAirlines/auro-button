@@ -17,15 +17,20 @@ class OdsButtonLight extends ComponentBase {
     };
   }
 
+  /*
+   * Render template without shadow DOM. Note that shadow DOM features like
+   * encapsulated CSS and slots are unavailable.
+   */
   createRenderRoot() {
     return this;
   }
 
+  // Returns string from content prop as slots are not supported
   getButtonContent() {
     return html`${this.content}`;
   }
 
-  // override of base element function for importing light DOM specific styles
+  // Adds styled for light DOM element; styles not defined in base class
   getButtonStyles() {
     return html`
       ${buttonProperties}

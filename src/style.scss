@@ -7,9 +7,9 @@
 
 
 // import variable resources from Style Dictionary generated code
-@import "./variables.scss";
-@import "./properties.scss";
-@import "./shared_style.scss";
+@import "./sassPartials/variables.scss";
+@import "./sassPartials/properties.scss";
+@import "./sassPartials/shared_style.scss";
 
 // import button styles into document
-@import "./ods-button";
+@import "./sassPartials/ods-button";

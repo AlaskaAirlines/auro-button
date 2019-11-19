@@ -7,14 +7,14 @@
 
 
 // import variable resources from Style Dictionary generated code
-@import "./variables";
-@import "./properties";
-@import "./hoverMixins";
+@import "./sassPartials/variables";
+@import "./sassPartials/properties";
+@import "./sassPartials/hoverMixins";
 
 
 // import button styles into element namespaced wrapper
 ods-button-light {
-  @import './ods-button';
+  @import './sassPartials/ods-button';
 }
 
 // light DOM support for hover states
