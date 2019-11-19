@@ -5,10 +5,14 @@
 
 // Creates ods-button CSS UI definition of shape
 
+
+// import variable resources from Style Dictionary generated code
 @import "./variables";
 @import "./properties";
 @import "./hoverMixins";
 
+
+// import button styles into element namespaced wrapper
 ods-button-light {
   @import './ods-button';
 }
