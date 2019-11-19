@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.1.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.0.0...v4.1.0) (2019-11-19)
+
+
+### Features
+
+* add light dom button ([4a8f893](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/4a8f893cf070380fd6536e4e36669a2eb8e73d5f))
+
 # [4.0.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v3.0.3...v4.0.0) (2019-11-07)
 
 
