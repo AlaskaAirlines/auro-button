@@ -11,6 +11,8 @@ import dotsProperties from './tokens/dotsProperties-css.js';
 import styleCss from "./style-css.js";
 
 class OdsButton extends ComponentBase {
+
+  // Adds styled for light DOM element; styles not defined in base class
   getButtonStyles() {
     return html`
       ${buttonProperties}
