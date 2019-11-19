@@ -1,10 +1,10 @@
 import { html } from "lit-element";
-import OdsButton from './ods-button';
+import ComponentBase from './component-base';
 import buttonProperties from './tokens/componentProperties-ld-css.js';
 import dotsProperties from './tokens/dotsProperties-ld-css.js';
 import styleCss from "./style-ld-css.js";
 
-class OdsButtonLight extends OdsButton {
+class OdsButtonLight extends ComponentBase {
   static get properties() {
     return {
       ...super.properties,
