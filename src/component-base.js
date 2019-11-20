@@ -123,6 +123,8 @@ export default class ComponentBase extends LitElement {
         part="button--modifier"
         type="${ifDefined(this.type ? this.type : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
+
+        @click="${() => {}}"
       >
 
         ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
