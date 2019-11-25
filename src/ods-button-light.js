@@ -30,7 +30,7 @@ class OdsButtonLight extends ComponentBase {
     return html`${this.content}`;
   }
 
-  // Adds styled for light DOM element; styles not defined in base class
+  // Adds styles for light DOM element; styles not defined in base class
   getButtonStyles() {
     return html`
       ${buttonProperties}
