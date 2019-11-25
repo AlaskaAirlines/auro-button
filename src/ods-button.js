@@ -12,7 +12,7 @@ import styleCss from "./style-css.js";
 
 class OdsButton extends ComponentBase {
 
-  // Adds styled for light DOM element; styles not defined in base class
+  // Adds styles for light DOM element; styles not defined in base class
   getButtonStyles() {
     return html`
       ${buttonProperties}
