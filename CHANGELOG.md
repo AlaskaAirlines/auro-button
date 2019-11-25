@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.1.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.1.0...v4.1.1) (2019-11-25)
+
+
+### Bug Fixes
+
+* allow button to be clicked in React with IE11 ([f6558f6](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/f6558f6ec061057de1a2d2558c5105802865e7e5))
+
 # [4.1.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.0.0...v4.1.0) (2019-11-19)
 
 
