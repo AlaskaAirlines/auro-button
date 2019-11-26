@@ -32,17 +32,47 @@
   .ods-button {
     @extend %button-focus;
   }
-}
 
-:host(.focus-visible) {
+  // REFACTOR: this is duplicated from OWCSS to support non-component use
+  .ods-button--secondary {
+    box-shadow: inset 0 0 0 2px var(--color-brand-blue-atlas-base), inset 0 0 0 5px var(--color-base-white), inset 0 0 0 8px var(--color-brand-blue-atlas-base);
+  }
+
+  // REFACTOR: this is duplicated from OWCSS to support non-component use
   .ods-button--complete {
     box-shadow: inset 0 0 0 2px var(--ods-button-complete-background-color),inset 0 0 0 7px var(--color-base-white);
+  }
+
+  // REFACTOR: better support classic UIs
+  .ods-button--classic {
+    @include transition(all, 0.3s, ease);
+    box-shadow: unset;
+    background-color: var(--color-classic-cta-green-hover);
+  }
+
+  // REFACTOR: better support classic UIs
+  .ods-button--classic.ods-button--secondary {
+    @include transition(all, 0.3s, ease);
+    box-shadow: unset;
+    color: var(--color-brand-classic-atlas);
+    background-color: var(--color-base-cloud);
+    border-color: #269; // non-standard color
   }
 }
 
 // seletor for use wish light DOM element
 .ods-button.focus-visible {
   @extend %button-focus;
+}
+
+// REFACTOR: this is duplicated from OWCSS to support non-component use
+.ods-button--secondary.focus-visible {
+  box-shadow: inset 0 0 0 2px var(--color-brand-blue-atlas-base), inset 0 0 0 5px var(--color-base-white), inset 0 0 0 8px var(--color-brand-blue-atlas-base);
+}
+
+// REFACTOR: this is duplicated from OWCSS to support non-component use
+.ods-button--complete.focus-visible {
+  box-shadow: inset 0 0 0 2px var(--ods-button-complete-background-color), inset 0 0 0 7px var(--color-base-white),
 }
 
 .ods-button[responsive],
@@ -203,8 +233,8 @@ svg {
     font-weight: 700;
     border-radius: 0;
     border-width: 2px;
-    background-color: $color-classic-cta-green;
-    border-color: $color-classic-cta-green;
+    background-color: var(--color-classic-cta-green);
+    border-color: var(--color-classic-cta-green);
     box-shadow: $classShadow;
 
     &.ods-button {
@@ -240,12 +270,12 @@ svg {
           }
         }
 
-
         :host(:not(.is-touching)) & {
           &:hover {
-            color: $color-brand-blue-midnight-base;
-            background-color: $color-base-cloud;
-            border-color: var(--ods-button-secondary-border-color);
+            @include transition(all, 0.3s, ease);
+            color: var(--color-classic-atlas);
+            background-color: var(--color-base-cloud);
+            border-color: var(--color-classic-atlas);
           }
         }
       }
