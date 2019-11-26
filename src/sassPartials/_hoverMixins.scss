@@ -36,11 +36,11 @@
   box-shadow: 0 0 var(--size-scale-med) var(--ods-button-complete-hover-shadow-color);
 }
 
-@mixin secondaryHover {
+@mixin secondaryHover( $cta: null ) {
   background-color: var(--ods-button-secondary-hover-background-color);
   box-shadow: 0 0 16px var(--ods-button-secondary-hover-shadow-color);
   border-color: var(--ods-button-secondary-hover-border-color);
-  color: var(--ods-button-secondary-hover-text-color);
+  color: var(--ods-button-secondary-hover-text-color) $cta;
 }
 
 @mixin secondaryDisabledHover {

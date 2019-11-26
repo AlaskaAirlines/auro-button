@@ -13,6 +13,12 @@
     $cta: !important;
   }
 
+  @if $cta {
+    &:visited {
+      color: var(--ods-button-secondary-color) $cta;
+    }
+  }
+
   background-color: var(--ods-button-secondary-background-color);
   border: var(--ods-button-secondary-border-width) var(--ods-button-secondary-border-style) var(--ods-button-secondary-border-color);
   color: var(--ods-button-secondary-color);
@@ -23,7 +29,7 @@
 
   :host(:not(.is-touching)) & {
     &:hover {
-      @include secondaryHover;
+      @include secondaryHover($cta);
     }
   }
 }
