@@ -94,7 +94,7 @@
     "dev": "npm-watch buildTokens | npm-watch sassRender-w | npm-watch devBuild",
     "devBuild": "npm-run-all buildTokens processSrc distTokens sassRender distJS",
     "dist": "npm-run-all distTokens sassRender cssLint jsonLint",
-    "distJS": "copyfiles -u 1 -V -e './src/**/shared_*.js' './src/**/*.js' './src/**/shared_*.scss' ./dist",
+    "distJS": "copyfiles -u 1 -V './src/**/*.js' './src/sassPartials/*.scss' ./dist",
     "distTokens": "node scripts/tokenScriptCustom.js",
     "esLint": "./node_modules/.bin/eslint src/*.js",
     "jsonLint": "jsonlint -q ./src/shape.json",
