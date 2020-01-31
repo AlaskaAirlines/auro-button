@@ -5,6 +5,9 @@
 
 // Creates ods-button base UI definition
 
+// Import Auro Design Token variables
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/baselineLTE";
