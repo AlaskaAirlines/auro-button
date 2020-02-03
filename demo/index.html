@@ -14,6 +14,8 @@
     </script>
     <script type="module" src="../src/ods-button.js"></script>
     <script type="module" src="../src/ods-button-light.js"></script>
+    <script type="module" src="../src/auro-button.js"></script>
+    <script type="module" src="../src/auro-button-light.js"></script>
     <script src="../demo/alert.js"></script>
     <script type="module">
       import '../node_modules/@polymer/iron-icons/hardware-icons.js';
@@ -285,6 +287,71 @@
 
       <h3>Responsive state:</h3>
       <p>The <code>ods-button</code> element will respond without context settings as expected. Within context of another component, set <code>context</code> flag to <code>true</code> and <code>ods-button</code> will adapt to contextual shape.</p>
+    </div>
+    <div class="vertical-section-container">
+      <h1>auro-button</h1>
+
+      <p>The HTML <code>button</code> element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.</p>
+
+      <p class='ironIcons'>
+        <span class='util_floatLeft util_marginRight--med'>Narrow
+          <iron-icon class='util_marginAuto util_displayBlock' icon="hardware:phone-iphone"></iron-icon>
+        </span>
+        <span class='util_is-narrowAppears util_floatLeft util_marginRight--med'>Medium
+          <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tablet-android'></iron-icon>
+        </span>
+        <span class='util_is-tabletAppears util_floatLeft util_marginRight--med'>Wide
+          <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tablet'></iron-icon>
+        </span>
+        <span class='util_is-desktopOnly util_floatLeft util_marginRight--med'>Max
+          <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tv'></iron-icon>
+        </span>
+      </p>
+
+      <!-- examples for shadow DOM element -->
+
+      <h3>Shadow DOM element examples</h3>
+      <demo-snippet>
+          <template>
+            <auro-button>Default state</auro-button>
+          </template>
+        </demo-snippet>
+        <demo-snippet>
+          <template>
+            <auro-button isactive>Active state</auro-button>
+          </template>
+        </demo-snippet>
+        <demo-snippet>
+          <template>
+            <auro-button class="focus-visible">Focus-visible state</auro-button>
+          </template>
+        </demo-snippet>
+        <demo-snippet>
+          <template>
+            <auro-button buttontype="secondary">Secondary Default state</auro-button>
+          </template>
+        </demo-snippet>
+        <demo-snippet>
+          <template>
+            <auro-button buttontype="secondary" isactive>Secondary Active state</auro-button>
+          </template>
+        </demo-snippet>
+        <demo-snippet>
+          <template>
+            <auro-button buttontype="secondary" class="focus-visible">Focus-visible state</auro-button>
+          </template>
+        </demo-snippet>
+        
+      <!-- docs support -->
+      <h2>Element &#60;auro-button&#62;</h2>
+
+      <pre><code>class AuroButton extends LitElement</code></pre>
+
+      <h3>Styling:</h3>
+      <p>There are no styling options for this element.</p>
+
+      <h3>Responsive state:</h3>
+      <p>The <code>auro-button</code> element will respond without context settings as expected. Within context of another component, set <code>context</code> flag to <code>true</code> and <code>ods-button</code> will adapt to contextual shape.</p>
     </div>
   </body>
 </html>
