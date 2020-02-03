@@ -74,7 +74,13 @@ export default class AuroComponentBase extends LitElement {
   }
 
   getButtonType(type) {
-    return type === "secondary" ? "secondary" : ""
+    const validTypes = [
+      "primary",
+     "secondary",
+     "tertiary"
+    ];
+
+    return validTypes.indexOf(type) ? type : ""
   }
 
   render() {
