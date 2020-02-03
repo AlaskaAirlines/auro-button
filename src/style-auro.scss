@@ -30,6 +30,11 @@
           background-color: $auro-color-background-lighter;
           box-shadow: inset 0 0 0 3px $auro-color-ui-default-on-light;
       }
+
+      &.tertiary {
+        background-color: $auro-color-background-lighter;
+        box-shadow: inset 0 0 0 3px $auro-color-border-primary-on-light;
+      }
     }
 }
 
@@ -56,7 +61,7 @@
         box-shadow: inset 0 0 0 1px $auro-color-ui-hover-on-light;
       }
 
-      &:isactive {
+      &.is-active {
         @include auro_transition(transform, 150ms, ease-in-out);
         background-color: $auro-color-ui-active-on-light;
         box-shadow: inset 0 0 0 1px $auro-color-ui-active-on-light;
@@ -74,11 +79,26 @@
             box-shadow: inset 0 0 0 1px $auro-color-ui-default-on-light;
           }
 
-          &:isactive {
+          &.is-active {
             @include auro_transition(transform, 150ms, ease-in-out);
             background-color: $auro-color-background-lighter;
             box-shadow: inset 0 0 0 1px $auro-color-ui-default-on-light;
             transform: scale(0.98);
           }
+      }
+
+      &.tertiary {
+        background-color: transparent;
+        color: $auro-color-text-link-on-light;
+        box-shadow: none;
+        border-color: transparent;
+
+        &:hover {
+          background-color: $auro-color-background-lighter;
+        }
+
+        &.is-active {
+          background-color: $auro-color-background-lighter;
+        }
       }
   }
