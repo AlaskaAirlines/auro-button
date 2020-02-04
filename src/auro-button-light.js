@@ -5,7 +5,7 @@
 
 import { html } from "lit-element";
 import AuroComponentBase from './auro-component-base';
-import styleCss from "./style-ld-css.js";
+import styleAuroCss from "./style-auro-ld-css.js";
 
 class AuroButtonLight extends AuroComponentBase {
   static get properties() {
@@ -31,7 +31,7 @@ class AuroButtonLight extends AuroComponentBase {
   // Adds styles for light DOM element; styles not defined in base class
   getButtonStyles() {
     return html`
-      ${styleCss}
+      ${styleAuroCss}
     `
   }
 }
