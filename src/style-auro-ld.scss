@@ -1,0 +1,105 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Creates ods-hyperlink CSS UI definition of shape
+
+// Import Auro CSS Properties as Sass file
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/CSSCustomProperties";
+
+// general WCSS imports
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/anchor-roleButton";
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
+
+// Import Auro CSS variables
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+
+
+:host(.focus-visible) {
+  .auro-button {
+      @include auro_focus-button(css);
+      background-color: $auro-color-ui-default-on-dark;
+      box-shadow: inset 0 0 0 1px $auro-color-border-focus-on-dark, inset 0 0 0 3px $auro-color-background-lightest;
+
+      &.secondary {
+          background-color: rgba(255, 255, 255, 0.15);
+          box-shadow: inset 0 0 0 3px $auro-color-ui-default-on-light;
+      }
+
+      &.tertiary {
+        background-color: rgba(255, 255, 255, 0.15);
+        box-shadow: inset 0 0 0 3px $auro-color-ui-active-on-dark;
+      }
+    }
+}
+
+  .auro-button {
+      @include auro_inset("--squish", lg);
+      background-color: $auro-color-ui-default-on-dark;
+      box-shadow: inset 0 0 0 1px $auro-color-ui-default-on-dark;
+      border-radius: 6px;
+      color: $auro-color-text-primary-on-light;
+      height: 4rem;
+      font-family: $auro-font-family-default;
+      font-size: $auro-text-body-size-default;
+      cursor: pointer;
+      font-weight: $auro-text-body-default-weight;
+      padding: 0px $auro-size-xxl;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+
+      &:hover {
+        @include auro_transition(background-color, 300ms, ease-in-out);
+        background-color: $auro-color-ui-hover-on-dark;
+        box-shadow: inset 0 0 0 1px $auro-color-ui-hover-on-dark;
+      }
+
+      &.is-active {
+        @include auro_transition(transform, 150ms, ease-in-out);
+        background-color: $auro-color-ui-active-on-dark;
+        box-shadow: inset 0 0 0 1px $auro-color-ui-active-on-dark;
+        transform: scale(0.98);
+      }
+      
+      &.secondary {
+          background-color: transparent;
+          box-shadow: inset 0 0 0 1px $auro-color-ui-default-on-dark;
+          color: $auro-color-text-primary-on-dark;
+
+          &:hover {
+            @include auro_transition(background-color, 300ms, ease-in-out);
+            background-color: rgba(255, 255, 255, 0.15);
+            box-shadow: inset 0 0 0 1px $auro-color-ui-active-on-dark;
+          }
+
+          &.is-active {
+            @include auro_transition(transform, 150ms, ease-in-out);
+            background-color: rgba(255, 255, 255, 0.15);
+            box-shadow: inset 0 0 0 1px $auro-color-ui-active-on-dark;
+            transform: scale(0.98);
+          }
+      }
+
+      &.tertiary {
+        background-color: transparent;
+        color: $auro-color-text-link-on-light;
+        box-shadow: none;
+        border-color: transparent;
+
+        &:hover {
+          background-color: $auro-color-background-lighter;
+        }
+
+        &.is-active {
+          background-color: $auro-color-background-lighter;
+        }
+      }
+  }
