@@ -12,6 +12,8 @@ demo/sass/tokenProperties.scss
 src/style.css
 src/shared_style.css
 src/style-ld.css
+src/style-auro-ld.css
+src/style-auro.css
 temp/
 
 ## *-css built from sass-render process
