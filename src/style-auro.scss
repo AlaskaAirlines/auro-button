@@ -18,8 +18,9 @@
 
 $auro-inset-spacing-options: lg;
 $auro-inset-directions:'--squish';
-$color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
+
+$color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
 
 // handle focus-visible state
 :host(.focus-visible) {
@@ -89,7 +90,6 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
     // auro-buttonOndark is-touching
     :host(:not(.is-touching)) & {
       &:hover {
-        @include auro_transition(all, 150ms, ease-in-out);
         background-color: var(--auro-color-ui-hover-on-dark);
         border: none;
       }
@@ -153,8 +153,6 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
 
     :host(:not(.is-touching)) & {
       &:hover {
-        @include auro_transition();
-
         background-color: var(--auro-color-background-lighter);
         border: 1px solid var(--auro-color-ui-default-on-light);
       }
@@ -169,7 +167,6 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
 
     :host(:not(.is-touching)) & {
       &:hover {
-        @include auro_transition();
         background-color: var(--auro-color-background-lighter);
         border-color: transparent;
       }
