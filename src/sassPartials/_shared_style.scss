@@ -13,7 +13,7 @@
     $cta: !important;
   }
 
-  @include auro_transition;
+  @include transition;
 
   @include breakpoint-narrow {
     padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding-medium);
