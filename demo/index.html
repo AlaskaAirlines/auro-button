@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
     />
-    <title>Orion Design System | button</title>
+    <title>Auro Design System | button</title>
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script type="module">
       import "@polymer/iron-demo-helpers/demo-pages-shared-styles";
@@ -27,6 +27,52 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
+      <div class="vertical-section-container">
+          <h1>auro-button</h1>
+    
+          <!-- examples for shadow DOM element -->
+    
+          <h3>Shadow DOM element examples</h3>
+          <demo-snippet>
+            <template>
+              <auro-button>Default state</auro-button>
+              <auro-button secondary>Secondary Default state</auro-button>
+              <auro-button tertiary>Tertiary default state</auro-button>
+            </template>
+          </demo-snippet>
+    
+          <demo-snippet class="dark">
+            <template>
+              <auro-button ondark>Default state</auro-button>
+              <auro-button secondary ondark>Secondary Default state</auro-button>
+              <auro-button tertiary ondark>Tertiary default state</auro-button>
+            </template>
+          </demo-snippet>
+        </div>
+        <div class="vertical-section-container">
+          <h1>auro-button-light</h1>
+    
+          <p>The HTML <code>button</code> element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.</p>
+    
+          <!-- examples for light DOM element -->
+    
+          <h3>Light DOM element examples</h3>
+          <demo-snippet>
+            <template>
+              <auro-button-light content="Default state">Default state</auro-button-light>
+              <auro-button-light secondary content="Secondary default state">Secondary Default state</auro-button-light>
+              <auro-button-light tertiary content="Tertiary default state">Tertiary default state</auro-button-light>
+            </template>
+          </demo-snippet>
+    
+          <demo-snippet>
+            <template>
+              <auro-button-light ondark content="Default state">Default state</auro-button-light>
+              <auro-button-light secondary ondark content="Secondary default state">Secondary Default state</auro-button-light>
+              <auro-button-light tertiary ondark content="Tertiary default state">Tertiary default state</auro-button-light>
+            </template>
+          </demo-snippet>
+        </div>
     <div class="vertical-section-container">
       <h1>ods-button</h1>
 
@@ -274,85 +320,6 @@
             const originalHandler2 = () => alert('Hello!');
             mbutton2.addEventListener('click', originalHandler2);
           </script>
-        </template>
-      </demo-snippet>
-    </div>
-    <div class="vertical-section-container">
-      <h1>auro-button</h1>
-
-      <!-- examples for shadow DOM element -->
-
-      <h3>Shadow DOM element examples</h3>
-      <demo-snippet>
-        <template>
-          <auro-button>Default state</auro-button>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-button secondary>Secondary Default state</auro-button>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-button tertiary>Tertiary default state</auro-button>
-        </template>
-      </demo-snippet>
-
-    </div>
-    <div class="vertical-section-container">
-      <h1>auro-button-light</h1>
-
-      <p>The HTML <code>button</code> element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.</p>
-
-      <!-- examples for shadow DOM element -->
-
-      <h3>Light DOM element examples</h3>
-      <demo-snippet>
-        <template>
-          <auro-button-light content="Default state"></auro-button>
-        </template>
-      </demo-snippet>
-      <demo-snippet>
-        <template>
-          <auro-button-light isactive content="Active state"></auro-button>
-        </template>
-      </demo-snippet>
-      <demo-snippet>
-        <template>
-          <auro-button-light class="focus-visible" content="Focus-visible state"></auro-button>
-        </template>
-      </demo-snippet>
-      <demo-snippet>
-        <template>
-          <auro-button-light buttontype="secondary" content="Secondary Default state"></auro-button>
-        </template>
-      </demo-snippet>
-      <demo-snippet>
-        <template>
-          <auro-button-light buttontype="secondary" isactive content="Secondary Active state"></auro-button>
-        </template>
-      </demo-snippet>
-      <demo-snippet>
-        <template>
-          <auro-button-light buttontype="secondary" class="focus-visible" content="Focus-visible state"></auro-button>
-        </template>
-      </demo-snippet>
-      <demo-snippet>
-        <template>
-          <auro-button-light buttontype="tertiary" content="Tertiary default state"></auro-button>
-        </template>
-      </demo-snippet>
-      <demo-snippet>
-        <template>
-          <auro-button-light buttontype="tertiary" isactive content="Tertiary active state"></auro-button>
-        </template>
-      </demo-snippet>
-      <demo-snippet>
-        <template>
-          <auro-button-light buttontype="tertiary" class="focus-visible" content="Tertiary focus-visible state"></auro-button>
         </template>
       </demo-snippet>
     </div>
