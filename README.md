@@ -1,17 +1,26 @@
-<img src="https://resource.alaskaair.net/-/media/2C1969F8FB244C919205CD48429C13AC" alt="Orion Design System Logo" title="Be the change you want to see" width="125" align="right" />
+# ods-button / auro-button
 
 [![Build Status](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button)
 ![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-button.svg?color=orange)
 ![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-button.svg?color=blue)
 
-# \<auro-button>
-\<auro-button> is a wrapper component for an HTML \<button> element containing styling and behavior.
+`<ods-button>` and `<auro-button>` are wrapper components for an HTML `<button>` element containing styling and behavior.
 
 ## Docs
 
 All information regarding Project Setup, Technical Details, Tests and information regarding Auro Stateless Components can be found in the [./docs](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs) repository.
 
-\<ods-button> docs are located in the ```./docs/ODS_README.md``` file.
+## Deprecated
+
+During the transition from Orion to Auro, there will be specific actions taken to address a clean transition and proper deprecation of Orion resources.
+
+1. `<ods-button>` will continue to be supported until an official EOL has been communicated
+1. [Alternate build solutions](#alternate-build-solutions) are no longer supported and will be removed with next MAJOR release
+
+# New features
+
+1. A new component `<auro-hyperlink>` is available that only consumes Auro resources to ensure a minimum weight and clean transition process for engineers
+1. See [Auro API](#auro-properties) for new Auro component
 
 ## Install
 
@@ -29,27 +38,32 @@ For additional details in regards to using Auro Design Tokens with components, p
 
 CSS Custom Properties are not supported in older browsers. For this, fallback properties are pre-generated and included with the npm. Any update to the Auro Design Tokens will be immediately reflected with browsers that support CSS Custom Properties, legacy browsers will require updated components with pre-generated fallback properties.
 
+
 ### Define dependency in project component
 
-Define the component dependency within each component that is using the \<auro-button> component.
+Define the component dependency within each component that is using the `<ods-button>` or `<auro-button>` components.
 
 ```javascript
-import "@alaskaairux/ods-button/auro-button";
+import "@alaskaairux/ods-button";
+
+or
+
+import "@alaskaairux/ods-button/dist/auro-button";
 ```
 
 **Reference component in HTML**
 
 ```html
-<auro-button>Hello World</auro-button>
+<ods-button>Hello World!</ods-button>
+
+<auro-button>Hello World!</auro-button>
 ```
 
-## Element \<auro-button>
-
-```javascript
-class AuroButton extends LitElement
-```
+## Element ods-button / auro-button
 
 ### Styling
+
+<span style="color: red"><b>DEPRECATED: only available on ods-button</b></span>
 
 Option(s) for component customization
 
@@ -59,7 +73,7 @@ Option(s) for component customization
 
 ### Button use cases
 
-The \<auro-button> element should be used in situations where users may:
+The `<ods-button>` or `<auro-button>` elements should be used in situations where users may:
 
 * submit a form
 * begin a new task
@@ -68,26 +82,34 @@ The \<auro-button> element should be used in situations where users may:
 
 ### Buttons are not Hyperlinks
 
-In cases were the action of the button would not fit the criteria above, it is most likely a Hyperlink. In that situation it is recommended that the \<auro-hyperlink> element be used with options of `role=button` configuration for visual appearance over functional use.
+In cases were the action of the button would not fit the criteria above, it is most likely a Hyperlink. In that situation it is recommended that the `<auro-hyperlink>` element be used.
+
+`<ods-hypelrink>` supports the options of `role=button`. This has been __deprecated__ and is not supported with `<auro-hyperlink>`.
 
 ### Responsive support
 
-The \<auro-button> element by default will pad its content with `calc(1.5rem / 2) 1.5rem`.
+`<auro-button>` is responsive by default. The button will assume 100% of the width of its container for views less than [auro_breakpoint--sm](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#responsive-mixin-auro_breakpoint--sm). 
 
-If the desired appearance of the \<auro-button> is to responsive within a given space, then the use of the `responsive` attribute is required on the \<auro-element>.
+Beyond that breakpoint `<auro-button>` will assume the width of the content or a min-width of 8.75rem, which ever is greater. 
+
+<span style="color: red"><b>Only supported with ods-button</b></span>
+
+If the desired appearance of the `<ods-button>` is to responsive within a given space, then the use of the `responsive` attribute is required on the `<ods-element>`.
 
 If the desired appearance of the \<auro-button> is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the \<auro-button> element.
 
 ### Multiple buttons
 
-When the UI requires the use of multiple buttons within the same space, with the use of the [Auro Web Core Style Sheets](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#ods-utility-css-.ods-containedButtons), and the `auro-containedButtons` selector will lay out the buttons in the space without any additional effort.
+<span style="color: red"><b>Support for auro-button not verified</b></span>
+
+When the UI requires the use of multiple buttons within the same space, with the use of the [Auro Web Core Style Sheets](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#ods-utility-css-.ods-containedButtons), and the `ods-containedButtons` selector will lay out the buttons in the space without any additional effort.
 
 ```html
-<div className="auro-containedButtons">
-  <auro-button>Default</auro-button>
-  <auro-button condensed>Condensed</auro-button>
-  <auro-button isactive>Active</auro-button>
-  <auro-button disabled>Disabled</auro-button>
+<div className="ods-containedButtons">
+  <ods-button>Default</ods-button>
+  <ods-button condensed>Condensed</ods-button>
+  <ods-button isactive>Active</ods-button>
+  <ods-button disabled>Disabled</ods-button>
 </div>
 ```
 
@@ -95,34 +117,39 @@ In addition, using the `ods-containedButtons--reverse` selector will move the la
 
 ```html
 <div className="ods-containedButtons ods-containedButtons--reverse">
-  <auro-button>Default</auro-button>
-  <auro-button condensed>Condensed</auro-button>
-  <auro-button isactive>Active</auro-button>
-  <auro-button disabled>Disabled</auro-button>
+  <ods-button>Default</ods-button>
+  <ods-button condensed>Condensed</ods-button>
+  <ods-button isactive>Active</ods-button>
+  <ods-button disabled>Disabled</ods-button>
 </div>
 ```
 
 ### Light DOM Support
-\<auro-button-light> is included in this package for [light DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom#lightdom) support.
+`<ods-button-light>` and `<auro-button-light>` are included in this package for [light DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom#lightdom) support.
 
 To pass content to the \<auro-button-light>, use the content prop.
+
+```html
+<ods-button-light content="Default value"></ods-button-light>
+```
+
+or 
+
 ```html
 <auro-button-light content="Default value"></auro-button-light>
 ```
 
-### Theme support
-
-\<auro-button> does not support themes.
-
-\<ods-button> <span style="color: red">(deprecated)</span> supports both Orion and Classic themes. Default, and secondary type, and disabled state supports the Classic theme. Flow type options are NOT supported by the Classic theme.
-
-### Properties:
+### Orion Properties:
 
 | Attribute | Value type | Description |
 |----|----|----|
 | arialabel | string | Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead. |
 | arialabelledby | string | Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion. |
 | autofocus | boolean | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it |
+| buttontype | string | Type of button defines the visual styling. <br/>Option(s): `primary`, `secondary`. Default value is `primary`. |
+| condensed | boolean | Reduces left/right padding to fit button in condensed spaces |
+| disabled | boolean | If set to true button will become disabled and not allow for interactions. <br/>Default value is `false`. |
+| flowtype | string | Sets display type to represent the flow options. Options: `complete`
 | form | string | The form element that the button is associated with (its form owner). The value of the attribute must be the id attribute of a `<form>` element in the same document |
 | formaction | string | Specifies the URL of the file that will process the input control when the form is submitted. The formaction attribute overrides the `action` attribute of the `<form>` element |
 | formenctype| string | If the button is a submit button, this attribute specifies the type of content that is used to submit the form to the server. |
@@ -134,11 +161,37 @@ To pass content to the \<auro-button-light>, use the content prop.
 | name | string | The name of the button, which is submitted with the form data. |
 | responsive | boolean | Sets the UI of the button to be responsive within its given container. |
 | reverse | boolean | Required to be paired with `responsive`, but sets the placement in the reverse direction of natural content. |
+| svgIconLeft | string | Pass in SVG string for icon to appear on the LEFT |
+| svgIconRight | string | Pass in SVG string for icon to appear on the RIGHT |
+| title | string | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
+| theme | string | Sets theme of element; option: `classic` |
+| type | string | The type of the button. Possible values are: `submit`, `reset`, `button` |
+| value | string | Defines the value associated with the button which is submitted with the form data. |
+
+### Auro Properties:
+
+| Attribute | Value type | Description |
+|----|----|----|
+| autofocus | boolean | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it |
+| formnovalidate | boolean |If the button is a submit button, this Boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner. |
+| ondark | boolean | Set value for on-dark version of auro-button |
+| secondary | boolean | Set value for secondary version of auro-button |
+| tertiary | boolean | Set value for tertiary version of auro-button |
+| arialabel | string | Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead. |
+| arialabelledby | string | Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion. |
+| form | string | The form element that the button is associated with (its form owner). The value of the attribute must be the id attribute of a `<form>` element in the same document |
+| formaction | string | Specifies the URL of the file that will process the input control when the form is submitted. The formaction attribute overrides the `action` attribute of the `<form>` element |
+| formenctype | string | If the button is a submit button, this attribute specifies the type of content that is used to submit the form to the server. |
+| formmethod | string | If the button is a submit button, this attribute specifies the HTTP method that the browser uses to submit the form. |
+| formtarget | string | If the button is a submit button, this attribute is a name or keyword indicating where to display the response that is received after submitting the form. Options: `_self`, `_blank`, `_parent`, `_top:` |
+| id | string | Set the unique ID of an element. |
+| name | string | The name of the button, which is submitted with the form data. |
 | title | string | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
 | type | string | The type of the button. Possible values are: `submit`, `reset`, `button` |
 | value | string | Defines the value associated with the button which is submitted with the form data. |
 
-### API Code Examples
+
+### API Code Examples for auro-button
 
 ![](./assets/auro-button.png)
 
@@ -149,20 +202,73 @@ To pass content to the \<auro-button-light>, use the content prop.
 ```
 
 ![](./assets/auro-buttonOndark.png)
+
 ```html
 <auro-button ondark>Default state</auro-button>
 <auro-button secondary ondark>Secondary Default state</auro-button>
 <auro-button tertiary ondark>Tertiary default state</auro-button>
 ```
 
-### Contextual component
+### API Code Examples for ods-button
 
-A special case scenario for responsiveness. The \<auro-button> element is built to handle responsive situations when it is the only element within a block. If the \<auro-button> element is used within context of another element, then it's the responsibility of the parent element to dictate the responsiveness of the \<auro-element>.
-
-In this scenario, simply set the `context` of the element to be `true`.
+![](./assets/default.png)
 
 ```html
-<auro-button context="true">Default state; context true</auro-button>
+<ods-button>default</ods-button>
+```
+
+![](./assets/secondary.png)
+
+```html
+<ods-button buttontype="secondary">secondary</ods-button>
+```
+
+![](./assets/isactive.png)
+
+```html
+<ods-button isactive>is active</ods-button>
+```
+
+![](./assets/complete.png)
+
+```html
+<ods-button flowtype="complete"> complete </ods-button>
+```
+
+![](./assets/disabled.png)
+
+```html
+<ods-button disabled>disabled</ods-button>
+```
+
+![](./assets/classic.png)
+
+```html
+<ods-button theme="classic">classic default</ods-button>
+```
+
+![](./assets/classicSecondary.png)
+
+```html
+<ods-button buttontype="secondary" theme="classic">classic secondary</ods-button>
+```
+
+![](./assets/classicSecondaryDisabled.png)
+
+```html
+<ods-button disabled buttontype="secondary" theme="classic">disabled classic secondary</ods-button>
+```
+
+### Contextual component
+
+<span style="color: red"><b>Only supported with ods-button</b></span>
+
+A special case scenario for responsiveness. The `<ods-button>` element is built to handle responsive situations when it is the only element within a block. If the `<ods-button>` element is used within context of another element, then it's the responsibility of the parent element to dictate the responsiveness of the `<ods-button>`.
+
+In this scenario, set the `context` of the element to be `true`.
+
+```html
+<ods-button context="true">Default state; context true</ods-button>
 ```
 
 ## Alternate build solutions <span style="color: red">(deprecated)</span>
@@ -171,7 +277,7 @@ Why would you need this? With all Auro custom elements the CSS for the element i
 
 [Read more about how to use alternate CSS build resources](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs/blob/master/src/ALT_BUILD.md)
 
-**THIS PROCESS IS DEPRECATED! ALL SUPPORT WILL BE REMOVED WITH NEXT MAJOR RELEASE!**
+<span style="color: red"><b>THIS PROCESS IS DEPRECATED! ALL SUPPORT WILL BE REMOVED WITH NEXT MAJOR RELEASE!</b></span>
 
 ## Development
 
