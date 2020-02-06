@@ -49,12 +49,14 @@ auro-button-light:not(.is-touching) {
       &--secondary {
         &:hover {
           background-color: rgba(99, 95, 95, 0.15);
+          border: none;
         }
       }
 
       &--tertiary {
         &:hover {
           background-color: $color-base-black-opacity-15;
+          border: none;
         }
       }
     }

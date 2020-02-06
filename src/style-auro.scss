@@ -82,6 +82,49 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
     }
   }
 
+
+  // handle active state
+  &:active {
+    transform: scale(0.93);
+
+    &Ondark {
+      background-color: var(--auro-color-ui-active-on-dark);
+    }
+  }
+
+  @include auro_breakpoint--sm {
+    min-width: 8.75rem;
+    width: auto;
+  }
+
+  // auro-button--secondary
+  &--secondary {
+    background-color: var(--auro-color-background-lightest);
+    border: 1px solid var(--auro-color-ui-default-on-light);
+    color: var(--auro-color-text-link-on-light);
+
+    :host(:not(.is-touching)) & {
+      &:hover {
+        background-color: var(--auro-color-background-lighter);
+        border: 1px solid var(--auro-color-ui-default-on-light);
+      }
+    }
+  }
+  
+  // auro-button--tertiary
+  &--tertiary {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--auro-color-text-link-on-light);
+
+    :host(:not(.is-touching)) & {
+      &:hover {
+        background-color: var(--auro-color-background-lighter);
+        border-color: transparent;
+      }
+    }
+  }
+
   &Ondark {
     background-color: var(--auro-color-ui-default-on-dark);
     border: none;
@@ -127,48 +170,6 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
         &:hover {
           background-color: $color-base-black-opacity-15;
         }
-      }
-    }
-  }
-
-  // handle active state
-  &:active {
-    transform: scale(0.93);
-
-    &Ondark {
-      background-color: var(--auro-color-ui-active-on-dark);
-    }
-  }
-
-  @include auro_breakpoint--sm {
-    min-width: 8.75rem;
-    width: auto;
-  }
-
-  // auro-button--secondary
-  &--secondary {
-    background-color: var(--auro-color-background-lightest);
-    border: 1px solid var(--auro-color-ui-default-on-light);
-    color: var(--auro-color-text-link-on-light);
-
-    :host(:not(.is-touching)) & {
-      &:hover {
-        background-color: var(--auro-color-background-lighter);
-        border: 1px solid var(--auro-color-ui-default-on-light);
-      }
-    }
-  }
-  
-  // auro-button--tertiary
-  &--tertiary {
-    background-color: transparent;
-    border-color: transparent;
-    color: var(--auro-color-text-link-on-light);
-
-    :host(:not(.is-touching)) & {
-      &:hover {
-        background-color: var(--auro-color-background-lighter);
-        border-color: transparent;
       }
     }
   }
