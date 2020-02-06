@@ -22,10 +22,7 @@ export default class AuroComponentBase extends LitElement {
     return {
       autofocus:        { type: Boolean },
       formnovalidate:   { type: Boolean },
-      isactive:         { type: Boolean },
       ondark:           { type: Boolean },
-      responsive:       { type: Boolean },
-      reverse:          { type: Boolean },
       secondary:        { type: Boolean },
       tertiary:         { type: Boolean },
       arialabel:        { type: String },
@@ -61,9 +58,9 @@ export default class AuroComponentBase extends LitElement {
       'util_insetLg--squish': true,
       'auro-button': true,
       'auro-buttonOndark': this.ondark,
-      'auro-button--secondary': this.secondary && !this.ondark,
+      'auro-button--secondary': this.secondary,
       'auro-buttonOndark--secondary': this.secondary && this.ondark,
-      'auro-button--tertiary': this.tertiary && !this.ondark,
+      'auro-button--tertiary': this.tertiary,
       'auro-buttonOndark--tertiary': this.tertiary && this.ondark,
     };
 
