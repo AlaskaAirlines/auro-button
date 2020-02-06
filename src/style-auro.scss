@@ -3,8 +3,6 @@
 
 // ---------------------------------------------------------------------
 
-// Creates ods-hyperlink CSS UI definition of shape
-
 // Import Auro CSS Properties as Sass file
 @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties";
 
@@ -22,15 +20,36 @@ $auro-inset-spacing-options: lg;
 $auro-inset-directions:'--squish';
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
 
+// handle focus-visible state
 :host(.focus-visible) {
   .auro-button {
     box-shadow: inset 0 0 0 1px var(--auro-color-border-focus-on-dark), inset 0 0 0 3px var(--auro-color-background-lightest);
 
+    // auro-buttonOndark
+    &Ondark {
+      background-color: var(--auro-color-ui-default-on-dark);
+      box-shadow: inset 0 0 0 1px var(--auro-color-ui-active-on-dark), inset 0 0 0 3px transparent;
+      
+      // auro-buttonOndark--secondary
+      &--secondary {
+        background-color: rgba(255, 255, 255, 0.15);
+        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
+      }
+
+      // auro-buttonOndark--tretiary
+      &--tertiary {
+        background-color: rgba(255, 255, 255, 0.15);
+        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
+      }
+    }
+
+    // auro-button--secondary
     &--secondary {
       background-color: var(--auro-color-background-lighter);
       box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
     }
 
+    // auro-button--tretiary
     &--tertiary {
       background-color: var(--auro-color-background-lighter);
       box-shadow: inset 0 0 0 3px var(--auro-color-border-primary-on-light);
@@ -39,8 +58,8 @@ $auro-inset-directions:'--squish';
 }
 
 .auro-button {
-  width: 100%;
   color: var(--auro-color-text-primary-on-dark);
+  cursor: pointer;
   background-color: var(--auro-color-ui-default-on-light);
   border: 1px solid var(--auro-color-ui-default-on-light);
   border-radius: 6px;
@@ -48,27 +67,84 @@ $auro-inset-directions:'--squish';
   font-size: var(--auro-text-body-size-default);
   font-weight: var(--auro-text-body-default-weight);
   line-height: var(--auro-text-body-height-default);
-  cursor: pointer;
+  width: 100%;
   -webkit-tap-highlight-color: transparent;
 
+  // handle hover state auro-button
   :host(:not(.is-touching)) & {
     &:hover {
-      @include auro_transition();
-
+      @include auro_transition(all, 150ms, ease-in-out);
+      
       background-color: var(--auro-color-ui-hover-on-light);
       border: 1px solid var(--auro-color-ui-hover-on-light);
     }
   }
 
+  &Ondark {
+    background-color: var(--auro-color-ui-default-on-dark);
+    border: none;
+    color: var(--auro-color-text-primary-on-dark);
+    
+    // auro-buttonOndark is-touching
+    :host(:not(.is-touching)) & {
+      &:hover {
+        @include auro_transition(all, 150ms, ease-in-out);
+        background-color: var(--auro-color-ui-hover-on-dark);
+        border: none;
+      }
+    }
+
+    // auro-buttonOndark--secondary
+    &--secondary {
+      background-color: transparent;
+      box-shadow: inset 0 0 0 1px var(--auro-color-ui-default-on-dark);
+      color: var(--auro-color-ui-default-on-dark);
+  
+      &:active {
+        background-color: rgba(255, 255, 255, 0.15);
+        box-shadow: inset 0 0 0 1px var(--auro-color-ui-hover-on-dark);
+      }
+
+      :host(:not(.is-touching)) & {
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.15);
+        }
+      }
+    }
+
+    // auro-button--tretiary
+    &--tertiary {
+      background-color: transparent;
+      color: var(--auro-color-ui-default-on-dark);
+  
+      &:active {
+        background-color: rgba(255, 255, 255, 0.15);
+        box-shadow: none;
+      }
+      
+      :host(:not(.is-touching)) & {
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.15);
+        }
+      }
+    }
+  }
+
+  // handle active state
   &:active {
-    transform: scale(0.98);
+    transform: scale(0.93);
+
+    &Ondark {
+      background-color: var(--auro-color-ui-active-on-dark);
+    }
   }
 
   @include auro_breakpoint--sm {
-    width: auto;
     min-width: 8.75rem;
+    width: auto;
   }
 
+  // auro-button--secondary
   &--secondary {
     background-color: var(--auro-color-background-lightest);
     border: 1px solid var(--auro-color-ui-default-on-light);
@@ -83,11 +159,12 @@ $auro-inset-directions:'--squish';
       }
     }
   }
-
+  
+  // auro-button--tretiary
   &--tertiary {
     background-color: transparent;
-    color: var(--auro-color-text-link-on-light);
     border-color: transparent;
+    color: var(--auro-color-text-link-on-light);
 
     :host(:not(.is-touching)) & {
       &:hover {
