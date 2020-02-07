@@ -79,7 +79,7 @@ auro-button-light .focus-visible.auro-button {
 
     &Ondark {
       background-color: var(--auro-color-ui-default-on-dark);
-      box-shadow: inset 0 0 0 1px var(--auro-color-ui-active-on-dark), inset 0 0 0 3px transparent;
+      box-shadow: inset 0 0 0 1px var(--auro-color-ui-active-on-dark), inset 0 0 0 3px #222222;
       
       &--secondary {
         background-color: $color-base-black-opacity-15;

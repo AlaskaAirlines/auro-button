@@ -41,7 +41,7 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
     // auro-buttonOndark
     &Ondark {
       background-color: var(--auro-color-ui-default-on-dark);
-      box-shadow: inset 0 0 0 1px var(--auro-color-ui-active-on-dark), inset 0 0 0 3px transparent;
+      box-shadow: inset 0 0 0 1px var(--auro-color-ui-active-on-dark), inset 0 0 0 3px #222222;
           
       // auro-buttonOndark--secondary
       &--secondary {
@@ -59,6 +59,8 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
 }
 
 .auro-button {
+  -webkit-transition: transform 150ms ease;
+  @include auro_transition(transform, 150ms, ease);
   color: var(--auro-color-text-primary-on-dark);
   cursor: pointer;
   background-color: var(--auro-color-ui-default-on-light);
@@ -68,14 +70,15 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
   font-size: var(--auro-text-body-size-default);
   font-weight: var(--auro-text-body-default-weight);
   line-height: var(--auro-text-body-height-default);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 100%;
   -webkit-tap-highlight-color: transparent;
 
   // handle hover state auro-button
   :host(:not(.is-touching)) & {
     &:hover {
-      @include auro_transition(all, 150ms, ease-in-out);
-      
       background-color: var(--auro-color-ui-hover-on-light);
       border: 1px solid var(--auro-color-ui-hover-on-light);
     }
@@ -84,7 +87,8 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
 
   // handle active state
   &:active {
-    transform: scale(0.93);
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
 
     &Ondark {
       background-color: var(--auro-color-ui-active-on-dark);
