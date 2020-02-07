@@ -67,6 +67,16 @@ auro-button-light:not(.is-touching) {
 auro-button-light .focus-visible.auro-button {
     box-shadow: inset 0 0 0 1px var(--auro-color-border-focus-on-dark), inset 0 0 0 3px var(--auro-color-background-lightest);
 
+    &--secondary {
+      background-color: var(--auro-color-background-lighter);
+      box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
+    }
+
+    &--tertiary {
+      background-color: var(--auro-color-background-lighter);
+      box-shadow: inset 0 0 0 3px var(--auro-color-border-primary-on-light);
+    }
+
     &Ondark {
       background-color: var(--auro-color-ui-default-on-dark);
       box-shadow: inset 0 0 0 1px var(--auro-color-ui-active-on-dark), inset 0 0 0 3px transparent;
@@ -80,15 +90,5 @@ auro-button-light .focus-visible.auro-button {
         background-color: $color-base-black-opacity-15;
         box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
       }
-    }
-
-    &--secondary {
-      background-color: var(--auro-color-background-lighter);
-      box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
-    }
-
-    &--tertiary {
-      background-color: var(--auro-color-background-lighter);
-      box-shadow: inset 0 0 0 3px var(--auro-color-border-primary-on-light);
     }
 }

@@ -27,24 +27,6 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
   .auro-button {
     box-shadow: inset 0 0 0 1px var(--auro-color-border-focus-on-dark), inset 0 0 0 3px var(--auro-color-background-lightest);
 
-    // auro-buttonOndark
-    &Ondark {
-      background-color: var(--auro-color-ui-default-on-dark);
-      box-shadow: inset 0 0 0 1px var(--auro-color-ui-active-on-dark), inset 0 0 0 3px transparent;
-      
-      // auro-buttonOndark--secondary
-      &--secondary {
-        background-color: $color-base-black-opacity-15;
-        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
-      }
-
-      // auro-buttonOndark--tertiary
-      &--tertiary {
-        background-color: $color-base-black-opacity-15;
-        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
-      }
-    }
-
     // auro-button--secondary
     &--secondary {
       background-color: var(--auro-color-background-lighter);
@@ -55,6 +37,23 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
     &--tertiary {
       background-color: var(--auro-color-background-lighter);
       box-shadow: inset 0 0 0 3px var(--auro-color-border-primary-on-light);
+    }
+    // auro-buttonOndark
+    &Ondark {
+      background-color: var(--auro-color-ui-default-on-dark);
+      box-shadow: inset 0 0 0 1px var(--auro-color-ui-active-on-dark), inset 0 0 0 3px transparent;
+          
+      // auro-buttonOndark--secondary
+      &--secondary {
+        background-color: $color-base-black-opacity-15;
+        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
+      }
+    
+      // auro-buttonOndark--tertiary
+      &--tertiary {
+        background-color: $color-base-black-opacity-15;
+        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
+      }
     }
   }
 }
