@@ -41,7 +41,7 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
     // auro-buttonOndark
     &Ondark {
       background-color: var(--auro-color-ui-default-on-dark);
-      box-shadow: inset 0 0 0 1px var(--auro-color-ui-active-on-dark), inset 0 0 0 3px #222222;
+      box-shadow: inset 0 0 0 1px var(--auro-color-ui-default-on-dark), inset 0 0 0 3px #222222;
           
       // auro-buttonOndark--secondary
       &--secondary {
@@ -69,12 +69,16 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
   font-family: var(--auro-font-family-default);
   font-size: var(--auro-text-body-size-default);
   font-weight: var(--auro-text-body-default-weight);
-  line-height: var(--auro-text-body-height-default);
+  line-height: var(--auro-unitless-scale-140);
+  -ms-user-select: none;
   overflow: hidden;
   text-overflow: ellipsis;
+  user-select: none;
   white-space: nowrap;
   width: 100%;
   -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 
   // handle hover state auro-button
   :host(:not(.is-touching)) & {
@@ -87,12 +91,10 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
 
   // handle active state
   &:active {
+    background-color: var(--auro-color-ui-hover-on-light);
+    border: 1px solid var(--auro-color-ui-hover-on-light);
     transform: scale(0.95);
     -webkit-transform: scale(0.95);
-
-    &Ondark {
-      background-color: var(--auro-color-ui-active-on-dark);
-    }
   }
 
   @include auro_breakpoint--sm {
@@ -112,6 +114,11 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
         border: 1px solid var(--auro-color-ui-default-on-light);
       }
     }
+
+    &:active {
+      background-color: var(--auro-color-background-lighter);
+      border: 1px solid var(--auro-color-ui-default-on-light);
+    }
   }
   
   // auro-button--tertiary
@@ -126,6 +133,11 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
         border-color: transparent;
       }
     }
+
+    &:active {
+      background-color: var(--auro-color-background-lighter);
+      border-color: transparent;
+    }
   }
 
   &Ondark {
@@ -139,6 +151,10 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
         background-color: var(--auro-color-ui-hover-on-dark);
         border: none;
       }
+    }
+
+    &:active {
+      background-color: var(--auro-color-ui-active-on-dark);
     }
 
     // auro-buttonOndark--secondary
