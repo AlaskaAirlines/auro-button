@@ -88,11 +88,15 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
     }
   }
 
+  &:active, &:hover {
+    background-color: var(--auro-color-ui-hover-on-light);
+    border: 1px solid var(--auro-color-ui-hover-on-light);
+  }
 
   // handle active state
   &:active {
-    background-color: var(--auro-color-ui-hover-on-light);
-    border: 1px solid var(--auro-color-ui-hover-on-light);
+    background-color: var(--auro-color-ui-active-on-light);
+    border: 1px solid var(--auro-color-ui-active-on-light);
     transform: scale(0.95);
     -webkit-transform: scale(0.95);
   }
@@ -142,19 +146,25 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
 
   &Ondark {
     background-color: var(--auro-color-ui-default-on-dark);
-    border: none;
+    border: 1px solid var(--auro-color-ui-default-on-dark);
     color: var(--auro-color-text-primary-on-dark);
     
     // auro-buttonOndark is-touching
     :host(:not(.is-touching)) & {
       &:hover {
         background-color: var(--auro-color-ui-hover-on-dark);
-        border: none;
+        border: 1px solid var(--auro-color-ui-default-on-dark);
       }
+    }
+
+    &:active, &:hover {
+      background-color: var(--auro-color-ui-hover-on-dark);
+      border: 1px solid var(--auro-color-ui-default-on-dark);
     }
 
     &:active {
       background-color: var(--auro-color-ui-active-on-dark);
+      border: 1px solid var(--auro-color-ui-default-on-dark);
     }
 
     // auro-buttonOndark--secondary
@@ -178,16 +188,19 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
     // auro-button--tertiary
     &--tertiary {
       background-color: transparent;
+      border: none;
       color: var(--auro-color-ui-default-on-dark);
   
       &:active {
         background-color: $color-base-black-opacity-15;
+        border: none;
         box-shadow: none;
       }
       
       :host(:not(.is-touching)) & {
         &:hover {
           background-color: $color-base-black-opacity-15;
+          border: none;
         }
       }
     }
