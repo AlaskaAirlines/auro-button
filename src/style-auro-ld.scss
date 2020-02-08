@@ -57,6 +57,7 @@ auro-button-light:not(.is-touching) {
         &:hover {
           background-color: $color-base-black-opacity-15;
           border: none;
+          box-shadow: none;
         }
       }
     }
