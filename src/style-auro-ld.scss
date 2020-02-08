@@ -43,13 +43,13 @@ auro-button-light:not(.is-touching) {
     &Ondark {
       &:hover {
         background-color: var(--auro-color-ui-hover-on-dark);
-        border: none;
+        border: 1px solid var(--auro-color-ui-default-on-dark);
       }
 
       &--secondary {
         &:hover {
-          background-color: rgba(99, 95, 95, 0.15);
-          border: none;
+          background-color: $color-base-black-opacity-15;
+          border: 1px solid var(--auro-color-ui-default-on-dark);
         }
       }
 
