@@ -74,6 +74,7 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
   user-select: none;
   white-space: nowrap;
   width: 100%;
+  -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 
@@ -159,24 +160,24 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
     :host(:not(.is-touching)) & {
       &:hover {
         background-color: var(--auro-color-ui-hover-on-dark);
-        border: 1px solid var(--auro-color-ui-default-on-dark);
+        border: 1px solid var(--auro-color-ui-hover-on-dark);
       }
     }
 
     &:active, &:hover {
       background-color: var(--auro-color-ui-hover-on-dark);
-      border: 1px solid var(--auro-color-ui-default-on-dark);
+      border: 1px solid var(--auro-color-ui-hover-on-dark);
     }
 
     &:active {
       background-color: var(--auro-color-ui-active-on-dark);
-      border: 1px solid var(--auro-color-ui-default-on-dark);
+      border: 1px solid var(--auro-color-ui-active-on-dark);
     }
 
     // auro-buttonOndark--secondary
     &--secondary {
       background-color: transparent;
-      box-shadow: inset 0 0 0 1px var(--auro-color-ui-default-on-dark);
+      border: 1px solid var(--auro-color-ui-default-on-dark);
       color: var(--auro-color-ui-default-on-dark);
   
       &:active, &:hover {
@@ -185,7 +186,7 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
 
       &:active {
         background-color: $color-base-black-opacity-15;
-        box-shadow: inset 0 0 0 1px var(--auro-color-ui-hover-on-dark);
+        border: 1px solid var(--auro-color-ui-hover-on-dark);
       }
 
       :host(:not(.is-touching)) & {
