@@ -59,7 +59,6 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
 }
 
 .auro-button {
-  -webkit-transition: transform 150ms ease;
   @include auro_transition(transform, 150ms, ease);
   color: var(--auro-color-text-primary-on-dark);
   cursor: pointer;
@@ -96,7 +95,6 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
     background-color: var(--auro-color-ui-active-on-light);
     border: 1px solid var(--auro-color-ui-active-on-light);
     transform: scale(0.95);
-    -webkit-transform: scale(0.95);
   }
 
   @include auro_breakpoint--sm {
