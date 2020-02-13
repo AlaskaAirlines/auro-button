@@ -20,8 +20,6 @@ $auro-inset-spacing-options: lg;
 $auro-inset-directions:'--squish';
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
 
-$color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
-
 // handle focus-visible state
 :host(.focus-visible) {
   .auro-button {
@@ -36,22 +34,24 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
     // auro-button--tertiary
     &--tertiary {
       background-color: var(--auro-color-background-lighter);
-      box-shadow: inset 0 0 0 3px var(--auro-color-border-primary-on-light);
+      border-color: var(--auro-color-ui-default-on-light);
+      box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
     }
     // auro-buttonOndark
     &Ondark {
       background-color: var(--auro-color-ui-default-on-dark);
-      box-shadow: inset 0 0 0 1px var(--auro-color-ui-default-on-dark), inset 0 0 0 3px #222222;
+      box-shadow: inset 0 0 0 1px var(--auro-color-ui-default-on-dark), inset 0 0 0 3px var(--auro-color-border-focus-on-dark);
           
       // auro-buttonOndark--secondary
       &--secondary {
-        background-color: $color-base-black-opacity-15;
+        background-color: var(--auro-color-black-opacity-15);
         box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
       }
     
       // auro-buttonOndark--tertiary
       &--tertiary {
-        background-color: $color-base-black-opacity-15;
+        background-color: rgba(var(--auro-color-black), 0.15);
+        border-color: var(--auro-color-ui-active-on-dark);
         box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
       }
     }
@@ -59,7 +59,7 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
 }
 
 .auro-button {
-  @include auro_transition(transform, 150ms, ease);
+  @include auro_transition(all, 0.15s, ease);
   color: var(--auro-color-text-primary-on-dark);
   cursor: pointer;
   background-color: var(--auro-color-ui-default-on-light);
@@ -154,7 +154,7 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
   &Ondark {
     background-color: var(--auro-color-ui-default-on-dark);
     border: 1px solid var(--auro-color-ui-default-on-dark);
-    color: var(--auro-color-text-primary-on-dark);
+    color: var(--auro-color-text-primary-on-light);
     
     // auro-buttonOndark is-touching
     :host(:not(.is-touching)) & {
@@ -181,17 +181,17 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
       color: var(--auro-color-ui-default-on-dark);
   
       &:active, &:hover {
-        background-color: $color-base-black-opacity-15;
+        background-color: var(--auro-color-black-opacity-15);
       }
 
       &:active {
-        background-color: $color-base-black-opacity-15;
+        background-color: var(--auro-color-black-opacity-15);
         border: 1px solid var(--auro-color-ui-hover-on-dark);
       }
 
       :host(:not(.is-touching)) & {
         &:hover {
-          background-color: $color-base-black-opacity-15;
+          background-color: var(--auro-color-black-opacity-15);
         }
       }
     }
@@ -199,25 +199,25 @@ $color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
     // auro-button--tertiary
     &--tertiary {
       background-color: transparent;
-      border: none;
+      border: 1px solid transparent;
       color: var(--auro-color-ui-default-on-dark);
   
       &:active, &:hover {
-        background-color: $color-base-black-opacity-15;
-        border: none;
+        background-color: var(--auro-color-black-opacity-15);
+        border: 1px solid transparent;
         box-shadow: none;
       }
 
       &:active {
-        background-color: $color-base-black-opacity-15;
-        border: none;
+        background-color: var(--auro-color-black-opacity-15);
+        border: 1px solid transparent;
         box-shadow: none;
       }
       
       :host(:not(.is-touching)) & {
         &:hover {
-          background-color: $color-base-black-opacity-15;
-          border: none;
+          background-color: var(--auro-color-black-opacity-15);
+          border: 1px solid transparent;
           box-shadow: none;
         }
       }
