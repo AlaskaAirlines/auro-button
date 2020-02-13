@@ -10,8 +10,6 @@
 // Import Auro SCSS variables
 @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
 
-$color-base-black-opacity-15: rgba(255, 255, 255, 0.15);
-
 // import button styles into element namespaced wrapper
 auro-button-light {
   @import './style-auro.scss';
@@ -43,20 +41,19 @@ auro-button-light:not(.is-touching) {
     &Ondark {
       &:hover {
         background-color: var(--auro-color-ui-hover-on-dark);
-        border: 1px solid var(--auro-color-ui-default-on-dark);
+        border: 1px solid var(--auro-color-ui-hover-on-dark);
       }
 
       &--secondary {
         &:hover {
-          background-color: $color-base-black-opacity-15;
-          border: 1px solid var(--auro-color-ui-default-on-dark);
+          background-color: var(--auro-color-black-opacity-15);
         }
       }
 
       &--tertiary {
         &:hover {
-          background-color: $color-base-black-opacity-15;
-          border: none;
+          background-color: var(--auro-color-black-opacity-15);
+          border: 1px solid transparent;
           box-shadow: none;
         }
       }
@@ -75,20 +72,22 @@ auro-button-light .focus-visible.auro-button {
 
     &--tertiary {
       background-color: var(--auro-color-background-lighter);
-      box-shadow: inset 0 0 0 3px var(--auro-color-border-primary-on-light);
+      border-color: var(--auro-color-ui-default-on-light);
+      box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
     }
 
     &Ondark {
       background-color: var(--auro-color-ui-default-on-dark);
-      box-shadow: inset 0 0 0 1px var(--auro-color-ui-default-on-dark), inset 0 0 0 3px #222222;
-      
+      box-shadow: inset 0 0 0 1px var(--auro-color-ui-default-on-dark), inset 0 0 0 3px var(--auro-color-border-focus-on-dark);
+       
       &--secondary {
-        background-color: $color-base-black-opacity-15;
+        background-color: var(--auro-color-black-opacity-15);
         box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
       }
 
       &--tertiary {
-        background-color: $color-base-black-opacity-15;
+        background-color: rgba(var(--auro-color-black), 0.15);
+        border-color: var(--auro-color-ui-active-on-dark);
         box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
       }
     }
