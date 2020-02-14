@@ -9,14 +9,6 @@ import { classMap } from 'lit-html/directives/class-map';
 import 'focus-visible/dist/focus-visible.min.js';
 
 export default class AuroComponentBase extends LitElement {
-  constructor() {
-    super();
-
-    // adds event based on actively being touched
-    this.addEventListener('touchstart', function() {
-      this.classList.add('is-touching');
-    });
-  }
 
   static get properties() {
     return {

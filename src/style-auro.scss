@@ -80,13 +80,6 @@ $auro-inset-directions:'--squish';
   -webkit-user-select: none;
 
   // handle hover state auro-button
-  :host(:not(.is-touching)) & {
-    &:hover {
-      background-color: var(--auro-color-ui-hover-on-light);
-      border: 1px solid var(--auro-color-ui-hover-on-light);
-    }
-  }
-
   @media (hover: hover) {
     &:active, 
     &:hover {
@@ -114,13 +107,6 @@ $auro-inset-directions:'--squish';
     border: 1px solid var(--auro-color-ui-default-on-light);
     color: var(--auro-color-text-link-on-light);
 
-    :host(:not(.is-touching)) & {
-      &:hover {
-        background-color: var(--auro-color-background-lighter);
-        border: 1px solid var(--auro-color-ui-default-on-light);
-      }
-    }
-
     @media (hover: hover) {
       &:active, 
       &:hover {
@@ -141,13 +127,6 @@ $auro-inset-directions:'--squish';
     border-color: transparent;
     color: var(--auro-color-text-link-on-light);
 
-    :host(:not(.is-touching)) & {
-      &:hover {
-        background-color: var(--auro-color-background-lighter);
-        border-color: transparent;
-      }
-    }
-
     @media (hover: hover) {
       &:active, 
       &:hover {
@@ -167,14 +146,7 @@ $auro-inset-directions:'--squish';
     border: 1px solid var(--auro-color-ui-default-on-dark);
     color: var(--auro-color-text-primary-on-light);
     
-    // auro-buttonOndark is-touching
-    :host(:not(.is-touching)) & {
-      &:hover {
-        background-color: var(--auro-color-ui-hover-on-dark);
-        border: 1px solid var(--auro-color-ui-hover-on-dark);
-      }
-    }
-
+    // auro-buttonOndark hover
     @media (hover: hover) {
       &:active, 
       &:hover {
@@ -205,12 +177,6 @@ $auro-inset-directions:'--squish';
         background-color: var(--auro-color-base-black-opacity-15);
         border: 1px solid var(--auro-color-ui-hover-on-dark);
       }
-
-      :host(:not(.is-touching)) & {
-        &:hover {
-          background-color: var(--auro-color-base-black-opacity-15);
-        }
-      }
     }
 
     // auro-button--tertiary
@@ -232,14 +198,6 @@ $auro-inset-directions:'--squish';
         background-color: var(--auro-color-base-black-opacity-15);
         border: 1px solid transparent;
         box-shadow: none;
-      }
-      
-      :host(:not(.is-touching)) & {
-        &:hover {
-          background-color: var(--auro-color-base-black-opacity-15);
-          border: 1px solid transparent;
-          box-shadow: none;
-        }
       }
     }
   }

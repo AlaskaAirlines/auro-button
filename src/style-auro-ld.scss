@@ -16,7 +16,7 @@ auro-button-light {
 }
 
 // light DOM support for hover states
-auro-button-light:not(.is-touching) {
+@media (hover: hover) {
   .auro-button {
     &:hover {    
       @include auro_transition();  
