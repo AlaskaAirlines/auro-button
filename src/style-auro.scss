@@ -86,10 +86,13 @@ $auro-inset-directions:'--squish';
     }
   }
 
-  &:active, &:hover {
-    background-color: var(--auro-color-ui-hover-on-light);
-    border: 1px solid var(--auro-color-ui-hover-on-light);
+  @media (hover: hover) {
+    &:active, &:hover {
+      background-color: var(--auro-color-ui-hover-on-light);
+      border: 1px solid var(--auro-color-ui-hover-on-light);
+    }
   }
+
 
   // handle active state
   &:active {
@@ -116,9 +119,11 @@ $auro-inset-directions:'--squish';
       }
     }
 
-    &:active, &:hover {
-      background-color: var(--auro-color-background-lighter);
-      border: 1px solid var(--auro-color-ui-default-on-light);
+    @media (hover: hover) {
+      &:active, &:hover {
+        background-color: var(--auro-color-background-lighter);
+        border: 1px solid var(--auro-color-ui-default-on-light);
+      }
     }
 
     &:active {
@@ -140,9 +145,11 @@ $auro-inset-directions:'--squish';
       }
     }
 
-    &:active, &:hover {
-      background-color: var(--auro-color-background-lighter);
-      border-color: transparent;
+    @media (hover: hover) {
+      &:active, &:hover {
+        background-color: var(--auro-color-background-lighter);
+        border-color: transparent;
+      }
     }
 
     &:active {
@@ -164,9 +171,11 @@ $auro-inset-directions:'--squish';
       }
     }
 
-    &:active, &:hover {
-      background-color: var(--auro-color-ui-hover-on-dark);
-      border: 1px solid var(--auro-color-ui-hover-on-dark);
+    @media (hover: hover) {
+      &:active, &:hover {
+        background-color: var(--auro-color-ui-hover-on-dark);
+        border: 1px solid var(--auro-color-ui-hover-on-dark);
+      }
     }
 
     &:active {
@@ -180,8 +189,10 @@ $auro-inset-directions:'--squish';
       border: 1px solid var(--auro-color-ui-default-on-dark);
       color: var(--auro-color-ui-default-on-dark);
   
-      &:active, &:hover {
-        background-color: var(--auro-color-black-opacity-15);
+      @media (hover: hover) {
+        &:active, &:hover {
+          background-color: var(--auro-color-black-opacity-15);
+        }
       }
 
       &:active {
@@ -202,10 +213,12 @@ $auro-inset-directions:'--squish';
       border: 1px solid transparent;
       color: var(--auro-color-ui-default-on-dark);
   
-      &:active, &:hover {
-        background-color: var(--auro-color-black-opacity-15);
-        border: 1px solid transparent;
-        box-shadow: none;
+      @media (hover: hover) {
+        &:active, &:hover {
+          background-color: var(--auro-color-black-opacity-15);
+          border: 1px solid transparent;
+          box-shadow: none;
+        }
       }
 
       &:active {
