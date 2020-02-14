@@ -88,7 +88,8 @@ $auro-inset-directions:'--squish';
   }
 
   @media (hover: hover) {
-    &:active, &:hover {
+    &:active, 
+    &:hover {
       background-color: var(--auro-color-ui-hover-on-light);
       border: 1px solid var(--auro-color-ui-hover-on-light);
     }
@@ -121,7 +122,8 @@ $auro-inset-directions:'--squish';
     }
 
     @media (hover: hover) {
-      &:active, &:hover {
+      &:active, 
+      &:hover {
         background-color: var(--auro-color-background-lighter);
         border: 1px solid var(--auro-color-ui-default-on-light);
       }
@@ -147,7 +149,8 @@ $auro-inset-directions:'--squish';
     }
 
     @media (hover: hover) {
-      &:active, &:hover {
+      &:active, 
+      &:hover {
         background-color: var(--auro-color-background-lighter);
         border-color: transparent;
       }
@@ -173,7 +176,8 @@ $auro-inset-directions:'--squish';
     }
 
     @media (hover: hover) {
-      &:active, &:hover {
+      &:active, 
+      &:hover {
         background-color: var(--auro-color-ui-hover-on-dark);
         border: 1px solid var(--auro-color-ui-hover-on-dark);
       }
@@ -191,7 +195,8 @@ $auro-inset-directions:'--squish';
       color: var(--auro-color-ui-default-on-dark);
   
       @media (hover: hover) {
-        &:active, &:hover {
+        &:active, 
+        &:hover {
           background-color: var(--auro-color-base-black-opacity-15);
         }
       }
@@ -215,7 +220,8 @@ $auro-inset-directions:'--squish';
       color: var(--auro-color-ui-default-on-dark);
   
       @media (hover: hover) {
-        &:active, &:hover {
+        &:active, 
+        &:hover {
           background-color: var(--auro-color-base-black-opacity-15);
           border: 1px solid transparent;
           box-shadow: none;
