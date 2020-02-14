@@ -46,13 +46,13 @@ auro-button-light:not(.is-touching) {
 
       &--secondary {
         &:hover {
-          background-color: var(--auro-color-black-opacity-15);
+          background-color: var(--auro-color-base-black-opacity-15);
         }
       }
 
       &--tertiary {
         &:hover {
-          background-color: var(--auro-color-black-opacity-15);
+          background-color: var(--auro-color-base-black-opacity-15);
           border: 1px solid transparent;
           box-shadow: none;
         }
@@ -63,7 +63,7 @@ auro-button-light:not(.is-touching) {
 
 // light DOM support for focus-visible
 auro-button-light .focus-visible.auro-button {
-    box-shadow: inset 0 0 0 1px var(--auro-color-border-focus-on-dark), inset 0 0 0 3px var(--auro-color-background-lightest);
+      box-shadow: inset 0 0 0 3px var(--auro-color-border-focus-on-dark);
 
     &--secondary {
       background-color: var(--auro-color-background-lighter);
@@ -78,15 +78,16 @@ auro-button-light .focus-visible.auro-button {
 
     &Ondark {
       background-color: var(--auro-color-ui-default-on-dark);
-      box-shadow: inset 0 0 0 1px var(--auro-color-ui-default-on-dark), inset 0 0 0 3px var(--auro-color-border-focus-on-dark);
+      box-shadow: inset 0 0 0 3px var(--auro-color-border-focus-on-dark);
        
       &--secondary {
-        background-color: var(--auro-color-black-opacity-15);
+        background-color: var(--auro-color-base-black-opacity-15);
         box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
+        border: 1px solid var(--auro-color-ui-active-on-dark);
       }
 
       &--tertiary {
-        background-color: rgba(var(--auro-color-black), 0.15);
+        background-color: var(--auro-color-base-black-opacity-15);
         border-color: var(--auro-color-ui-active-on-dark);
         box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
       }
