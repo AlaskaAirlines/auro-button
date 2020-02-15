@@ -1,5 +1,21 @@
 # Semantic Release Automated Changelog
 
+# [4.3.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.2.0...v4.3.0) (2020-02-15)
+
+
+### Bug Fixes
+
+* :active sticking on responsive ([57cde75](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/57cde7548dc2147d3647b10b4bf170b786d9d4b3))
+* remove vendor prefix ([551556f](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/551556f6f85eb24fac00ce085052cb4f8ebe613d))
+
+
+### Features
+
+* add Auro button ([f8b97fa](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/f8b97fa3d8ec786dbde5fa4e527f02dbcfde8987))
+* add dark buttons ([fec9d4e](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/fec9d4e280ab6287fa720e51a8b1be35bed4110d))
+* add tertiary button ([6cc86bb](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/6cc86bbc4a8e9784e990f26d5bfa762d804868ca))
+* update button for Auro support ([bd8dc79](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/bd8dc79c29d7ca18a334214d0fa3ccf2188497f5))
+
 # [4.2.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.1.1...v4.2.0) (2019-11-27)
 
 
