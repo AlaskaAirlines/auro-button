@@ -96,7 +96,7 @@ Beyond that breakpoint `<auro-button>` will assume the width of the content or a
 
 If the desired appearance of the `<ods-button>` is to responsive within a given space, then the use of the `responsive` attribute is required on the `<ods-element>`.
 
-If the desired appearance of the \<auro-button> is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the \<auro-button> element.
+If the desired appearance of the `<auro-button>` is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the `<auro-button>` element.
 
 ### Multiple buttons
 
@@ -193,7 +193,7 @@ or
 
 ### API Code Examples for auro-button
 
-![](./assets/auro-button.png)
+![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/auro-button.png)
 
 ```html
 <auro-button>Default state</auro-button>
@@ -201,7 +201,7 @@ or
 <auro-button tertiary>Tertiary default state</auro-button>
 ```
 
-![](./assets/auro-buttonOndark.png)
+![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/auro-buttonOndark.png)
 
 ```html
 <auro-button ondark>Default state</auro-button>
@@ -211,49 +211,49 @@ or
 
 ### API Code Examples for ods-button
 
-![](./assets/default.png)
+![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master/assets/default.png)
 
 ```html
 <ods-button>default</ods-button>
 ```
 
-![](./assets/secondary.png)
+![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/secondary.png)
 
 ```html
 <ods-button buttontype="secondary">secondary</ods-button>
 ```
 
-![](./assets/isactive.png)
+![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/isactive.png)
 
 ```html
 <ods-button isactive>is active</ods-button>
 ```
 
-![](./assets/complete.png)
+![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/complete.png)
 
 ```html
 <ods-button flowtype="complete"> complete </ods-button>
 ```
 
-![](./assets/disabled.png)
+![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/disabled.png)
 
 ```html
 <ods-button disabled>disabled</ods-button>
 ```
 
-![](./assets/classic.png)
+![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/classic.png)
 
 ```html
 <ods-button theme="classic">classic default</ods-button>
 ```
 
-![](./assets/classicSecondary.png)
+![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/classicSecondary.png)
 
 ```html
 <ods-button buttontype="secondary" theme="classic">classic secondary</ods-button>
 ```
 
-![](./assets/classicSecondaryDisabled.png)
+![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/classicSecondaryDisabled.png)
 
 ```html
 <ods-button disabled buttontype="secondary" theme="classic">disabled classic secondary</ods-button>
