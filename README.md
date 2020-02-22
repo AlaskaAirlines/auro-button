@@ -1,9 +1,5 @@
 # ods-button / auro-button
 
-[![Build Status](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button)
-![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-button.svg?color=orange)
-![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-button.svg?color=blue)
-
 `<ods-button>` and `<auro-button>` are wrapper components for an HTML `<button>` element containing styling and behavior.
 
 ## Docs
@@ -88,9 +84,9 @@ In cases were the action of the button would not fit the criteria above, it is m
 
 ### Responsive support
 
-`<auro-button>` is responsive by default. The button will assume 100% of the width of its container for views less than [auro_breakpoint--sm](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#responsive-mixin-auro_breakpoint--sm). 
+`<auro-button>` is responsive by default. The button will assume 100% of the width of its container for views less than [auro_breakpoint--sm](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#responsive-mixin-auro_breakpoint--sm).
 
-Beyond that breakpoint `<auro-button>` will assume the width of the content or a min-width of 8.75rem, which ever is greater. 
+Beyond that breakpoint `<auro-button>` will assume the width of the content or a min-width of 8.75rem, which ever is greater.
 
 <span style="color: red"><b>Only supported with ods-button</b></span>
 
@@ -133,7 +129,7 @@ To pass content to the \<auro-button-light>, use the content prop.
 <ods-button-light content="Default value"></ods-button-light>
 ```
 
-or 
+or
 
 ```html
 <auro-button-light content="Default value"></auro-button-light>
@@ -300,9 +296,10 @@ $ npm run dev
 polymer serve
 ```
 
-##
+------
 
-<footer>
-Alaska Airlines Auro Design System<br>
-Copyright 2020 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
-</footer>
+#### Status badges
+
+[![Build Status](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button)
+![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-button.svg?color=orange)
+![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-button.svg?color=blue)
