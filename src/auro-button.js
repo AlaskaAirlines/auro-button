@@ -18,4 +18,6 @@ class AuroButton extends AuroComponentBase {
   }
 }
 
-customElements.define("auro-button", AuroButton);
+if (!customElements.get("auro-button")) {
+  customElements.define("auro-button", AuroButton);
+}
