@@ -22,4 +22,6 @@ class OdsButton extends ComponentBase {
   }
 }
 
-customElements.define("ods-button", OdsButton);
+if (!customElements.get("ods-button")) {
+  customElements.define("ods-button", OdsButton);
+}
