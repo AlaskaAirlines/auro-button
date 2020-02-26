@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.3.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.3.0...v4.3.1) (2020-02-26)
+
+
+### Bug Fixes
+
+* recognize if a custom element has already been registered ([3c8118c](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/3c8118c1c03739a6c2f331a0579f71c8f608bcfe))
+
 # [4.3.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.2.0...v4.3.0) (2020-02-15)
 
 
