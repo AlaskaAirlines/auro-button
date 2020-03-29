@@ -28,7 +28,7 @@ $ npm i @alaskaairux/ods-button
 
 The use of any Auro Component has a dependency on the [Auro Design Tokens (npm install)](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens). See repository and API information [here](https://github.com/AlaskaAirlines/OrionDesignTokens).
 
-For additional details in regards to using Auro Design Tokens with components, please see [./docs/TECH_DETAILS.md](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs/blob/master/docs/TECH_DETAILS.md)
+For additional details in regards to using Auro Design Tokens with components, please see [./docs/TECH_DETAILS.md](https://github.com/AlaskaAirlines/auro_docs/blob/master/src/TECH_DETAILS.md)
 
 ### CSS Custom Property fallbacks
 
@@ -65,7 +65,7 @@ Option(s) for component customization
 
 | Selector | Type | State | Description |
 |----|----|----|---|
-| ::part() | pseudo-element | experimental | Update shadowDOM CSS from outside the component; see [./docs/CSS_CUSTOMIZATION.md](/docs/CSS_CUSTOMIZATION.md) |
+| ::part() | pseudo-element | experimental | Update shadowDOM CSS from outside the component |
 
 ### Button use cases
 
