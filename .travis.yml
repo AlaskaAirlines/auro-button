@@ -21,6 +21,7 @@ before_script:
   - npm run distTokens
   - npm run sassRender
   - npm run distJS
+  - npm run bundler
 
 after_success:
   - npx semantic-release

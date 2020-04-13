@@ -38,36 +38,6 @@ StyleDictionary.registerFormat({
 console.log('')
 console.log('Build started...');
 
-console.log('')
-console.log('         .         . ')
-console.log('               *       *')
-console.log('')
-console.log('                 * * *')
-console.log('                    !')
-console.log('               *       * ')
-console.log('')
-console.log(" ██████╗ ██████╗ ██╗ ██████╗ ███╗   ██╗")
-console.log("██╔═══██╗██╔══██╗██║██╔═══██╗████╗  ██║")
-console.log("██║   ██║██████╔╝██║██║   ██║██╔██╗ ██║")
-console.log("██║   ██║██╔══██╗██║██║   ██║██║╚██╗██║")
-console.log("╚██████╔╝██║  ██║██║╚██████╔╝██║ ╚████║")
-console.log(" ╚═════╝ ╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝")
-console.log('')
-console.log("██████╗ ███████╗███████╗██╗ ██████╗ ███╗   ██╗")
-console.log("██╔══██╗██╔════╝██╔════╝██║██╔════╝ ████╗  ██║")
-console.log("██║  ██║█████╗  ███████╗██║██║  ███╗██╔██╗ ██║")
-console.log("██║  ██║██╔══╝  ╚════██║██║██║   ██║██║╚██╗██║")
-console.log("██████╔╝███████╗███████║██║╚██████╔╝██║ ╚████║")
-console.log("╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝")
-console.log('')
-console.log("███████╗██╗   ██╗███████╗████████╗███████╗███╗   ███╗")
-console.log("██╔════╝╚██╗ ██╔╝██╔════╝╚══██╔══╝██╔════╝████╗ ████║")
-console.log("███████╗ ╚████╔╝ ███████╗   ██║   █████╗  ██╔████╔██║")
-console.log("╚════██║  ╚██╔╝  ╚════██║   ██║   ██╔══╝  ██║╚██╔╝██║")
-console.log("███████║   ██║   ███████║   ██║   ███████╗██║ ╚═╝ ██║")
-console.log("╚══════╝   ╚═╝   ╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚═╝")
-console.log('')
-
 // FINALLY, BUILD ALL THE PLATFORMS
 const componentConfig = StyleDictionary.extend('./scripts/componentConfigDist.json');
 const dotsConfig = StyleDictionary.extend('./scripts/dotsConfigDist.json');
