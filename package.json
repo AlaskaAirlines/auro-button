@@ -39,7 +39,11 @@
   },
   "devDependencies": {
     "@alaskaairux/orion-design-tokens": "^2.10.9",
-    "@alaskaairux/orion-web-core-style-sheets": "^2.8.10",
+    "@alaskaairux/orion-web-core-style-sheets": "^2.9.0",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/runtime": "^7.9.2",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^7.6.0",
     "@polymer/iron-demo-helpers": "^3.1.0",
@@ -49,17 +53,19 @@
     "@semantic-release/changelog": "^3.0.5",
     "@semantic-release/git": "^7.0.17",
     "@semantic-release/npm": "^5.3.1",
-    "@webcomponents/webcomponentsjs": "^2.3.0",
-    "autoprefixer": "^9.7.0",
+    "@webcomponents/webcomponentsjs": "^2.4.3",
+    "autoprefixer": "^9.7.6",
     "chai": "^4.2.0",
+    "chalk": "^4.0.0",
     "concat": "^1.0.3",
-    "copyfiles": "^2.1.1",
+    "copyfiles": "^2.2.0",
+    "core-js": "^3.6.5",
     "css-byebye": "^2.0.0",
-    "eslint": "^6.7.1",
+    "eslint": "^6.8.0",
     "eslint-plugin-lit": "^1.2.0",
     "focus-visible": "^4.1.5",
     "gulp": "^4.0.1",
-    "gulp-autoprefixer": "^6.0.0",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "husky": "^2.7.0",
@@ -68,7 +74,9 @@
     "mocha": "^6.2.2",
     "npm-run-all": "^4.1.5",
     "npm-watch": "^0.6.0",
-    "postcss": "^7.0.21",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-compress": "^1.1.0",
+    "postcss": "^7.0.27",
     "postcss-custom-properties": "^8.0.11",
     "postcss-remove-selectors": "^2.0.0",
     "postcss-selector-replace": "^1.0.2",
@@ -87,8 +95,15 @@
   },
   "scripts": {
     "build": "npm-run-all sassRender cssLint jsonLint",
+    "postinstall": "node packageScripts/postinstall.js",
+    "auroButtonBundled": "NODE_ENV=production parcel build ./src/auro-button.js -o ./dist/auro-button__bundled.js",
+    "odsButtonBundled": "NODE_ENV=production parcel build ./src/ods-button.js -o ./dist/ods-button__bundled.js",
+    "auroButtonLightBundled": "NODE_ENV=production parcel build ./src/auro-button-light.js -o ./dist/auro-button-light__bundled.js",
+    "polyfillsBundled": "NODE_ENV=production parcel build ./scripts/polyfills.js",
+    "testBundle": "parcel ./test/testBundle/index.html --port 3000",
+    "bundler": "npm-run-all auroButtonBundled auroButtonLightBundled odsButtonBundled polyfillsBundled",
     "buildTokens": "node scripts/tokenScript.js",
-    "ciBuild": "npm-run-all buildTokens processSrc sassRenderLightDomCSS processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean preserveTokens distTokens sassRender distJS",
+    "ciBuild": "npm-run-all buildTokens processSrc sassRenderLightDomCSS processImportsCanonical processImportsVariable stylefluxCanonical stylefluxVariable reprocessClean preserveTokens distTokens sassRender distJS bundler postinstall",
     "copyFonts": "copyfiles -f ./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts/*.* ./demo/fonts/",
     "cssLint": "stylelint './src/style.css'",
     "dev": "npm-watch buildTokens | npm-watch sassRender-w | npm-watch devBuild",
@@ -114,7 +129,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all buildTokens processSrc test",
+      "pre-commit": "npm-run-all buildTokens processSrc test bundler postinstall",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -150,6 +165,25 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "entry",
+          "corejs": "3.0.0"
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "regenerator": true
+        }
+      ]
+    ]
   },
   "contributors": [
     {

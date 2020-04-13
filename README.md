@@ -55,6 +55,37 @@ import "@alaskaairux/ods-button/dist/auro-button";
 <auro-button>Hello World!</auro-button>
 ```
 
+## Install bundled assets from CDN
+
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use. 
+
+**NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want. 
+
+### Using Orion assets
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/essentials.css" />
+
+<script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/polyfills.js"></script>
+<script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/ods-button__bundled.js"></script>
+```
+
+### Using Auro assets
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSTokenProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/baseline.css" />
+
+<script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/polyfills.js"></script>
+<script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/auro-button__bundled.js"></script>
+```
+
+### polyfills.js
+
+The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project. 
+      
+
 ## Element ods-button / auro-button
 
 ### Styling
@@ -96,29 +127,8 @@ If the desired appearance of the `<auro-button>` is to be placed in the reverse 
 
 ### Multiple buttons
 
-<span style="color: red"><b>Support for auro-button not verified</b></span>
+When the UI requires the use of multiple buttons within the same space, with the use of the [Auro Web Core Style Sheets](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-auro-css-#{$scope}.auro_containedButtons), and the `auro_containedButtons` .
 
-When the UI requires the use of multiple buttons within the same space, with the use of the [Auro Web Core Style Sheets](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#ods-utility-css-.ods-containedButtons), and the `ods-containedButtons` selector will lay out the buttons in the space without any additional effort.
-
-```html
-<div className="ods-containedButtons">
-  <ods-button>Default</ods-button>
-  <ods-button condensed>Condensed</ods-button>
-  <ods-button isactive>Active</ods-button>
-  <ods-button disabled>Disabled</ods-button>
-</div>
-```
-
-In addition, using the `ods-containedButtons--reverse` selector will move the layout of the buttons to the opposite side of the view.
-
-```html
-<div className="ods-containedButtons ods-containedButtons--reverse">
-  <ods-button>Default</ods-button>
-  <ods-button condensed>Condensed</ods-button>
-  <ods-button isactive>Active</ods-button>
-  <ods-button disabled>Disabled</ods-button>
-</div>
-```
 
 ### Light DOM Support
 `<ods-button-light>` and `<auro-button-light>` are included in this package for [light DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom#lightdom) support.
@@ -300,6 +310,6 @@ polymer serve
 
 #### Status badges
 
-[![Build Status](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/OrionStatelessComponents__ods-button)
+[![Build Status](https://travis-ci.org/AlaskaAirlines/ods-button.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/ods-button)
 ![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-button.svg?color=orange)
 ![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-button.svg?color=blue)
