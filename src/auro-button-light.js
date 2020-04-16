@@ -36,4 +36,7 @@ class AuroButtonLight extends AuroComponentBase {
   }
 }
 
-customElements.define("auro-button-light", AuroButtonLight);
+if (!customElements.get("auro-button-light")) {
+  customElements.define("auro-button-light", AuroButtonLight);
+}
+
