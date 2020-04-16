@@ -10,17 +10,17 @@ notifactions:
   email: false
 
 before_script:
-  - npm run buildTokens
+  - npm run tokens:build
   - npm run processSrc
-  - gulp processImportsCanonical
-  - gulp processImportsVariable
-  - npm run stylefluxCanonical
-  - npm run stylefluxVariable
-  - npm run sassRenderLightDomCSS
-  - npm run preserveTokens
-  - npm run distTokens
+  - npm run processImports:canonical
+  - npm run processImports:variable
+  - npm run styleflux:canonical
+  - npm run styleflux:variable
+  - npm run sassRender:lightDomCSS
+  - npm run tokens:preserve
+  - npm run tokens:distBuild
   - npm run sassRender
-  - npm run distJS
+  - npm run dist:js
   - npm run bundler
 
 after_success:
