@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.4.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.3.1...v4.4.0) (2020-04-17)
+
+
+### Features
+
+* update WC to support CDN components ([93659ac](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/93659ac4c7a253828e2171490a57a1cd126ab180))
+
 ## [4.3.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.3.0...v4.3.1) (2020-02-26)
 
 
