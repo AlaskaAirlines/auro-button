@@ -99,7 +99,7 @@
     "bundle:auroButton": "NODE_ENV=production parcel build ./src/auro-button.js -o ./dist/auro-button__bundled.js",
     "bundle:odsButton": "NODE_ENV=production parcel build ./src/ods-button.js -o ./dist/ods-button__bundled.js",
     "bundle:auroButtonLight": "NODE_ENV=production parcel build ./src/auro-button-light.js -o ./dist/auro-button-light__bundled.js",
-    "bundle:test": "parcel ./test/testBundle/index.html --port 3000",
+    "bundle:test": "parcel ./docs/index.html --port 3000",
     "bundle:polyfills": "NODE_ENV=production parcel build ./scripts/polyfills.js",
     "bundler": "npm-run-all bundle:auroButton bundle:auroButtonLight bundle:odsButton bundle:polyfills",
     "tokens:build": "node scripts/tokenScript.js",
