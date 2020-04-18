@@ -131,6 +131,7 @@ When the UI requires the use of multiple buttons within the same space, with the
 
 
 ### Light DOM Support
+
 `<ods-button-light>` and `<auro-button-light>` are included in this package for [light DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom#lightdom) support.
 
 To pass content to the \<auro-button-light>, use the content prop.
@@ -197,73 +198,9 @@ or
 | value | string | Defines the value associated with the button which is submitted with the form data. |
 
 
-### API Code Examples for auro-button
+### API Code Examples
 
-![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/auro-button.png)
-
-```html
-<auro-button>Default state</auro-button>
-<auro-button secondary>Secondary Default state</auro-button>
-<auro-button tertiary>Tertiary default state</auro-button>
-```
-
-![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/auro-buttonOndark.png)
-
-```html
-<auro-button ondark>Default state</auro-button>
-<auro-button secondary ondark>Secondary Default state</auro-button>
-<auro-button tertiary ondark>Tertiary default state</auro-button>
-```
-
-### API Code Examples for ods-button
-
-![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master/assets/default.png)
-
-```html
-<ods-button>default</ods-button>
-```
-
-![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/secondary.png)
-
-```html
-<ods-button buttontype="secondary">secondary</ods-button>
-```
-
-![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/isactive.png)
-
-```html
-<ods-button isactive>is active</ods-button>
-```
-
-![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/complete.png)
-
-```html
-<ods-button flowtype="complete"> complete </ods-button>
-```
-
-![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/disabled.png)
-
-```html
-<ods-button disabled>disabled</ods-button>
-```
-
-![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/classic.png)
-
-```html
-<ods-button theme="classic">classic default</ods-button>
-```
-
-![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/classicSecondary.png)
-
-```html
-<ods-button buttontype="secondary" theme="classic">classic secondary</ods-button>
-```
-
-![](https://raw.githubusercontent.com/AlaskaAirlines/OrionStatelessComponents__ods-button/master//assets/classicSecondaryDisabled.png)
-
-```html
-<ods-button disabled buttontype="secondary" theme="classic">disabled classic secondary</ods-button>
-```
+For full API examples, see the [ods-button demo page](https://alaskaairlines.github.io/ods-button/).
 
 ### Contextual component
 
