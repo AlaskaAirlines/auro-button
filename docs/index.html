@@ -8,7 +8,8 @@
     <style>
       main {
         width: 80%;
-        margin: 0 auto 200px;
+        margin: var(--auro-size-xl) auto var(--auro-size-xxxl);
+        padding-bottom: var(--auro-size-xxxl);
       }
 
       @media(min-width: 1024px) {
@@ -46,7 +47,7 @@
 
     <script>
       function escapeHTML(str) {
-        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/['"]/g,'') ;
+        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/[']/g,'') ;
       }
 
       const ods = [
@@ -88,7 +89,7 @@
           <code>
             <script>
               for (i = 0; i < auro.length; i++) {
-                document.write(`<p>` + escapeHTML(auro[i]) + `</p>`);
+                document.write(`<p> ${escapeHTML(auro[i])} </p>`);
               }
             </script>
           </code>
@@ -105,7 +106,7 @@
           <code>
             <script>
               for (i = 0; i < auroDark.length; i++) {
-                document.write(`<p>` + escapeHTML(auroDark[i]) + `</p>`);
+                document.write(`<p> ${escapeHTML(auroDark[i])} </p>`);
               }
             </script>
           </code>
@@ -122,7 +123,7 @@
           <code>
             <script>
               for (i = 0; i < ods.length; i++) {
-                document.write(`<p>` + escapeHTML(ods[i]) + `</p>`);
+                document.write(`<p> ${escapeHTML(ods[i])} </p>`);
               }
             </script>
           </code>
@@ -135,6 +136,7 @@
 
       <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@2.10.9/dist/tokens/CSSTokenProperties.css" />
       <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@2.9.1/dist/bundled/baseline.css" />
+
       <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.0/dist/polyfills.js"></script>
       <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.0/dist/auro-button__bundled.js"></script>
       <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.0/dist/ods-button__bundled.js"></script>
