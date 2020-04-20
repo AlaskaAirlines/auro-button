@@ -3,21 +3,25 @@
 
 // ---------------------------------------------------------------------
 
-import { html } from 'lit-element';
+import { css, html } from 'lit-element';
 import 'focus-visible/dist/focus-visible.min.js';
 import AuroComponentBase from './auro-component-base';
-import styleAuroCss from "./style-auro-css.js";
+import styleAuroCss from "./style-auro_beta-css.js";
 
 class AuroButton extends AuroComponentBase {
 
+  static get styles() {
+    return css`
+      ${styleAuroCss}
+    `;
+  }
+
   // Adds styles for light DOM element; styles not defined in base class
   getButtonStyles() {
-    return html`
-      ${styleAuroCss}
-    `
+    return html``
   }
 }
 
-if (!customElements.get("auro-button")) {
-  customElements.define("auro-button", AuroButton);
+if (!customElements.get("auro-button-beta")) {
+  customElements.define("auro-button-beta", AuroButton);
 }

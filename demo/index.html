@@ -1,327 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
-    />
-    <title>Auro Design System | button</title>
-    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script type="module">
-      import "@polymer/iron-demo-helpers/demo-pages-shared-styles";
-      import "@polymer/iron-demo-helpers/demo-snippet";
-    </script>
-    <script type="module" src="../src/ods-button.js"></script>
-    <script type="module" src="../src/ods-button-light.js"></script>
-    <script type="module" src="../src/auro-button.js"></script>
-    <script type="module" src="../src/auro-button-light.js"></script>
-    <script src="../demo/alert.js"></script>
-    <script type="module">
-      import '../node_modules/@polymer/iron-icons/hardware-icons.js';
-    </script>
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles"></style>
-    </custom-style>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-  </head>
-  <body>
-      <div class="vertical-section-container">
-          <h1>auro-button</h1>
-    
-          <!-- examples for shadow DOM element -->
-    
-          <h3>Shadow DOM element examples</h3>
-          <demo-snippet>
-            <template>
-              <auro-button>Default state</auro-button>
-              <auro-button secondary>Secondary Default state</auro-button>
-              <auro-button tertiary>Tertiary default state</auro-button>
-            </template>
-          </demo-snippet>
-    
-          <demo-snippet>
-            <template>
-              <auro-button ondark>Default state</auro-button>
-              <auro-button secondary ondark>Secondary Default state</auro-button>
-              <auro-button tertiary ondark>Tertiary default state</auro-button>
-            </template>
-          </demo-snippet>
-        </div>
-        <div class="vertical-section-container">
-          <h1>auro-button-light</h1>
-    
-          <p>The HTML <code>button</code> element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.</p>
-    
-          <!-- examples for light DOM element -->
-    
-          <h3>Light DOM element examples</h3>
-          <demo-snippet>
-            <template>
-              <auro-button-light content="Default state">Default state</auro-button-light>
-              <auro-button-light secondary content="Secondary default state">Secondary Default state</auro-button-light>
-              <auro-button-light tertiary content="Tertiary default state">Tertiary default state</auro-button-light>
-            </template>
-          </demo-snippet>
-    
-          <demo-snippet>
-            <template>
-              <auro-button-light ondark content="Default state">Default state</auro-button-light>
-              <auro-button-light secondary ondark content="Secondary default state">Secondary Default state</auro-button-light>
-              <auro-button-light tertiary ondark content="Tertiary default state">Tertiary default state</auro-button-light>
-            </template>
-          </demo-snippet>
-        </div>
-    <div class="vertical-section-container">
-      <h1>ods-button</h1>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
+  <title>Auro Design System | button</title>
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script type="module">
+    import "@polymer/iron-demo-helpers/demo-pages-shared-styles";
+    import "@polymer/iron-demo-helpers/demo-snippet";
+  </script>
+  <script type="module" src="../src/ods-button.js"></script>
+  <script type="module" src="../src/ods-button-light.js"></script>
+  <script type="module" src="../src/auro-button.js"></script>
+  <script type="module" src="../src/auro-button-beta.js"></script>
+  <script type="module" src="../src/auro-button-light-beta.js"></script>
+  <script type="module" src="../src/auro-button-light.js"></script>
+  <script src="../demo/alert.js"></script>
+  <script type="module">
+    import '../node_modules/@polymer/iron-icons/hardware-icons.js';
+  </script>
+  <custom-style>
+    <style is="custom-style" include="demo-pages-shared-styles"></style>
+  </custom-style>
 
-      <p>The HTML <code>button</code> element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.</p>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 
-      <p class='ironIcons'>
-        <span class='util_floatLeft util_marginRight--med'>Narrow
-          <iron-icon class='util_marginAuto util_displayBlock' icon="hardware:phone-iphone"></iron-icon>
-        </span>
-        <span class='util_is-narrowAppears util_floatLeft util_marginRight--med'>Medium
-          <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tablet-android'></iron-icon>
-        </span>
-        <span class='util_is-tabletAppears util_floatLeft util_marginRight--med'>Wide
-          <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tablet'></iron-icon>
-        </span>
-        <span class='util_is-desktopOnly util_floatLeft util_marginRight--med'>Max
-          <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tv'></iron-icon>
-        </span>
-      </p>
+<body>
+  <div class="vertical-section-container">
+    <h1>auro-button</h1>
+    <!-- examples for shadow DOM element -->
 
-      <!-- examples for shadow DOM element -->
+    <h3>Shadow DOM element examples</h3>
+    <demo-snippet>
+      <template>
+        <auro-button>Default state</auro-button>
+        <auro-button secondary>Secondary Default state</auro-button>
+        <auro-button tertiary>Tertiary default state</auro-button>
+      </template>
+    </demo-snippet>
 
-      <h3>Shadow DOM element examples</h3>
-      <demo-snippet>
-          <template>
-            <ods-button arialabel="submit">Default state</ods-button>
-          </template>
-        </demo-snippet>
+    <demo-snippet>
+      <template>
+        <auro-button ondark>Default state</auro-button>
+        <auro-button secondary ondark>Secondary Default state</auro-button>
+        <auro-button tertiary ondark>Tertiary default state</auro-button>
+      </template>
+    </demo-snippet>
 
-        <demo-snippet>
-          <template>
-            <ods-button responsive>Responsive true</ods-button>
-          </template>
-        </demo-snippet>
+    <h3>Beta CSS Example</h3>
+    <demo-snippet>
+      <template>
+        <auro-button-beta>Default state</auro-button-beta>
+        <auro-button-beta secondary>Secondary Default state</auro-button-beta>
+        <auro-button-beta tertiary>Tertiary default state</auro-button-beta>
+      </template>
+    </demo-snippet>
+  </div>
 
-        <demo-snippet>
-          <template>
-            <ods-button-light responsive content="Responsive true"></ods-button-light>
-          </template>
-        </demo-snippet>
+  <div class="vertical-section-container">
+    <h1>auro-button-light</h1>
 
-        <demo-snippet>
-          <template>
-            <ods-button responsive reverse>Responsive true</ods-button>
-          </template>
-        </demo-snippet>
+    <p>The HTML <code>button</code> element represents a clickable button, which can be used in forms or anywhere in a
+      document that needs simple, standard button functionality.</p>
 
-        <demo-snippet>
-          <template>
-            <ods-button responsive condensed reverse>Responsive, condensed</ods-button>
-          </template>
-        </demo-snippet>
+    <!-- examples for light DOM element -->
 
-        <demo-snippet>
-          <template>
-            <ods-button responsive condensed>Responsive, condensed</ods-button>
-          </template>
-        </demo-snippet>
+    <h3>Light DOM element examples</h3>
+    <demo-snippet>
+      <template>
+        <auro-button-light content="Default state">Default state</auro-button-light>
+        <auro-button-light secondary content="Secondary default state">Secondary Default state</auro-button-light>
+        <auro-button-light tertiary content="Tertiary default state">Tertiary default state</auro-button-light>
+      </template>
+    </demo-snippet>
 
-        <demo-snippet>
-          <template>
-            <ods-button disabled>Disabled state</ods-button>
-          </template>
-        </demo-snippet>
+    <demo-snippet>
+      <template>
+        <auro-button-light ondark content="Default state">Default state</auro-button-light>
+        <auro-button-light secondary ondark content="Secondary default state">Secondary Default state
+        </auro-button-light>
+        <auro-button-light tertiary ondark content="Tertiary default state">Tertiary default state</auro-button-light>
+      </template>
+    </demo-snippet>
+  </div>
+  <div class="vertical-section-container">
+    <h1>auro-button-light-beta</h1>
 
-        <demo-snippet>
-          <template>
-            <ods-button isactive>Active state</ods-button>
-          </template>
-        </demo-snippet>
+    <p>The HTML <code>button</code> element represents a clickable button, which can be used in forms or anywhere in a
+      document that needs simple, standard button functionality.</p>
 
-        <demo-snippet>
-          <template>
-            <ods-button buttontype="secondary">Secondary type</ods-button>
-          </template>
-        </demo-snippet>
+    <!-- examples for light DOM element -->
 
-        <demo-snippet>
-          <template>
-            <ods-button buttontype="secondary" disabled>Secondary type; disabled state</ods-button>
-          </template>
-        </demo-snippet>
+    <h3>Light DOM beta example</h3>
+    <demo-snippet>
+      <template>
+        <auro-button-light-beta content="Default state">Default state</auro-button-light-beta>
+        <auro-button-light-beta secondary content="Secondary default state">Secondary Default state</auro-button-light-beta>
+        <auro-button-light-beta tertiary content="Tertiary default state">Tertiary default state</auro-button-light-beta>
+      </template>
+    </demo-snippet>
+  </div>
+  <div class="vertical-section-container">
+    <h1>ods-button</h1>
 
-        <demo-snippet>
-          <template>
-            <ods-button isactive buttontype="secondary">Secondary type; active state</ods-button>
-          </template>
-        </demo-snippet>
+    <p>The HTML <code>button</code> element represents a clickable button, which can be used in forms or anywhere in a
+      document that needs simple, standard button functionality.</p>
 
-        <demo-snippet>
-          <template>
-            <ods-button arialabel="submit" flowtype="complete">Process flow type complete</ods-button>
-          </template>
-        </demo-snippet>
+    <p class='ironIcons'>
+      <span class='util_floatLeft util_marginRight--med'>Narrow
+        <iron-icon class='util_marginAuto util_displayBlock' icon="hardware:phone-iphone"></iron-icon>
+      </span>
+      <span class='util_is-narrowAppears util_floatLeft util_marginRight--med'>Medium
+        <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tablet-android'></iron-icon>
+      </span>
+      <span class='util_is-tabletAppears util_floatLeft util_marginRight--med'>Wide
+        <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tablet'></iron-icon>
+      </span>
+      <span class='util_is-desktopOnly util_floatLeft util_marginRight--med'>Max
+        <iron-icon class='util_marginAuto util_displayBlock' icon='hardware:tv'></iron-icon>
+      </span>
+    </p>
 
-        <demo-snippet>
-          <template>
-            <ods-button arialabel="submit" isactive flowtype="complete">Process flow type complete (active state)</ods-button>
-          </template>
-        </demo-snippet>
+    <!-- examples for shadow DOM element -->
+
+    <h3>Shadow DOM element examples</h3>
+    <demo-snippet>
+      <template>
+        <ods-button arialabel="submit">Default state</ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button responsive>Responsive true</ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button-light responsive content="Responsive true"></ods-button-light>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button responsive reverse>Responsive true</ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button responsive condensed reverse>Responsive, condensed</ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button responsive condensed>Responsive, condensed</ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button disabled>Disabled state</ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button isactive>Active state</ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button buttontype="secondary">Secondary type</ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button buttontype="secondary" disabled>Secondary type; disabled state</ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button isactive buttontype="secondary">Secondary type; active state</ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button arialabel="submit" flowtype="complete">Process flow type complete</ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button arialabel="submit" isactive flowtype="complete">Process flow type complete (active state)
+        </ods-button>
+      </template>
+    </demo-snippet>
 
 
-      <!-- examples for light DOM buttons -->
-      <h3>Light DOM element examples</h3>
-      <demo-snippet>
-        <template>
-          <!-- The class of ods-button is scoped to the ods-button-light element -->
-          <!-- ods-button-light does not support <slot>  -->
-          <ods-button-light>
-            <button class="ods-button">standard button</button>
-          </ods-button-light>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <!-- The class of ods-button is scoped to the ods-button-light element -->
+    <!-- examples for light DOM buttons -->
+    <h3>Light DOM element examples</h3>
+    <demo-snippet>
+      <template>
+        <!-- The class of ods-button is scoped to the ods-button-light element -->
+        <!-- ods-button-light does not support <slot>  -->
+        <ods-button-light>
           <button class="ods-button">standard button</button>
-        </template>
-      </demo-snippet>
+        </ods-button-light>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button-light content="Light dom default state" arialabel="submit"></ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <!-- The class of ods-button is scoped to the ods-button-light element -->
+        <button class="ods-button">standard button</button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button-light disabled content="Light dom disabled state" arialabel="submit"></ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button-light content="Light dom default state" arialabel="submit">
+          </ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button-light isactive content="Light dom active state" arialabel="submit"></ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button-light disabled content="Light dom disabled state" arialabel="submit">
+          </ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button-light buttontype="secondary" content="Light dom secondary type" arialabel="submit"></ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button-light isactive content="Light dom active state" arialabel="submit">
+          </ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button-light buttontype="secondary" disabled content="Light dom disabled secondary type" arialabel="submit"></ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button-light buttontype="secondary" content="Light dom secondary type" arialabel="submit">
+          </ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button-light buttontype="secondary" isactive content="Light dom active secondary type" arialabel="submit"></ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button-light buttontype="secondary" disabled content="Light dom disabled secondary type"
+          arialabel="submit">
+          </ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button-light flowtype="complete" content="Light dom flowtype complete" arialabel="submit"></ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button-light buttontype="secondary" isactive content="Light dom active secondary type" arialabel="submit">
+          </ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button-light flowtype="complete" isactive content="Light dom active flowtype complete" arialabel="submit"></ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button-light flowtype="complete" content="Light dom flowtype complete" arialabel="submit">
+          </ods-button>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <ods-button-light flowtype="complete" isactive content="Light dom active flowtype complete" arialabel="submit">
+          </ods-button>
+      </template>
+    </demo-snippet>
 
 
 
-      <!-- examples for classic theme buttons -->
-      <demo-snippet>
-        <template>
-          <ods-button arialabel="submit" theme="classic">Default state</ods-button>
-        </template>
-      </demo-snippet>
+    <!-- examples for classic theme buttons -->
+    <demo-snippet>
+      <template>
+        <ods-button arialabel="submit" theme="classic">Default state</ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button theme="classic" condensed>Default state; condensed true</ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button theme="classic" condensed>Default state; condensed true</ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button theme="classic" outercontext>Default state; context true</ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button theme="classic" outercontext>Default state; context true</ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button disabled theme="classic">Disabled state</ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button disabled theme="classic">Disabled state</ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button isactive theme="classic">Active state</ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button isactive theme="classic">Active state</ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button buttontype="secondary" theme="classic">Secondary type</ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button buttontype="secondary" theme="classic">Secondary type</ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button buttontype="secondary" disabled theme="classic">Secondary type; disabled state</ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button buttontype="secondary" disabled theme="classic">Secondary type; disabled state</ods-button>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button isactive buttontype="secondary" title="Secondary type; active state" theme="classic">Secondary type; active state</ods-button>
-        </template>
-      </demo-snippet>
+    <demo-snippet>
+      <template>
+        <ods-button isactive buttontype="secondary" title="Secondary type; active state" theme="classic">Secondary type;
+          active state</ods-button>
+      </template>
+    </demo-snippet>
 
-      <!-- JavaScript function examples -->
-      <demo-snippet>
-        <template>
-          <ods-button id="message-button">Click For Message</ods-button>
-          <ods-button id="change-button" buttontype="secondary" >Change Message</ods-button>
-          <script>
-            const mbutton = document.querySelector('#message-button');
-            const originalHandler = () => alert('Hello!');
-            mbutton.addEventListener('click', originalHandler);
+    <!-- JavaScript function examples -->
+    <demo-snippet>
+      <template>
+        <ods-button id="message-button">Click For Message</ods-button>
+        <ods-button id="change-button" buttontype="secondary">Change Message</ods-button>
+        <script>
+          const mbutton = document.querySelector('#message-button');
+          const originalHandler = () => alert('Hello!');
+          mbutton.addEventListener('click', originalHandler);
 
-            const cbutton = document.querySelector('#change-button');
-            cbutton.addEventListener('click', () => {
-              mbutton.removeEventListener('click', originalHandler, false);
-              mbutton.addEventListener('click', () => alert('goodbye!'));
-            });
-          </script>
-        </template>
-      </demo-snippet>
+          const cbutton = document.querySelector('#change-button');
+          cbutton.addEventListener('click', () => {
+            mbutton.removeEventListener('click', originalHandler, false);
+            mbutton.addEventListener('click', () => alert('goodbye!'));
+          });
+        </script>
+      </template>
+    </demo-snippet>
 
-      <demo-snippet>
-        <template>
-          <ods-button id="message-button-2" disabled>Click For Message</ods-button>
-          <script>
-            const mbutton2 = document.querySelector('#message-button-2');
-            const originalHandler2 = () => alert('Hello!');
-            mbutton2.addEventListener('click', originalHandler2);
-          </script>
-        </template>
-      </demo-snippet>
-    </div>
-  </body>
+    <demo-snippet>
+      <template>
+        <ods-button id="message-button-2" disabled>Click For Message</ods-button>
+        <script>
+          const mbutton2 = document.querySelector('#message-button-2');
+          const originalHandler2 = () => alert('Hello!');
+          mbutton2.addEventListener('click', originalHandler2);
+        </script>
+      </template>
+    </demo-snippet>
+  </div>
+</body>
+
 </html>
