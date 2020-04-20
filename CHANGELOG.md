@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.4.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.0...v4.4.1) (2020-04-20)
+
+
+### Bug Fixes
+
+* bundled output does not support IE11 [#61](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/issues/61) ([c936ec3](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/c936ec32b9224b041e2c6ee7cbea2677ecc3f9e1))
+
 # [4.4.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.3.1...v4.4.0) (2020-04-17)
 
 
