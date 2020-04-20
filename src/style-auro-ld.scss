@@ -3,93 +3,11 @@
 
 // ---------------------------------------------------------------------
 
-// general WCSS imports
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/focusVisible";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
-
-// Import Auro SCSS variables
-@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
-
 // import button styles into element namespaced wrapper
 auro-button-light {
   @import './style-auro.scss';
-}
 
-// light DOM support for hover states
-@media (hover: hover) {
-  .auro-button {
-    &:hover {    
-      @include auro_transition();  
-      background-color: var(--auro-color-ui-hover-on-light);
-      border: 1px solid var(--auro-color-ui-hover-on-light);
-    }
-
-    &--secondary {
-      &:hover {
-        background-color: var(--auro-color-background-lighter);
-        border: 1px solid var(--auro-color-ui-default-on-light);
-      }
-    }
-
-    &--tertiary {
-      &:hover {
-        background-color: var(--auro-color-background-lighter);
-        border-color: transparent;
-      }
-    }
-
-    &Ondark {
-      &:hover {
-        background-color: var(--auro-color-ui-hover-on-dark);
-        border: 1px solid var(--auro-color-ui-hover-on-dark);
-      }
-
-      &--secondary {
-        &:hover {
-          background-color: var(--auro-color-base-black-opacity-15);
-        }
-      }
-
-      &--tertiary {
-        &:hover {
-          background-color: var(--auro-color-base-black-opacity-15);
-          border: 1px solid transparent;
-          box-shadow: none;
-        }
-      }
-    }
+  .focus-visible.auro-button {
+    @include focus-visible;
   }
-}
-
-// light DOM support for focus-visible
-auro-button-light .focus-visible.auro-button {
-      box-shadow: inset 0 0 0 3px var(--auro-color-border-focus-on-dark);
-
-    &--secondary {
-      background-color: var(--auro-color-background-lighter);
-      box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
-    }
-
-    &--tertiary {
-      background-color: var(--auro-color-background-lighter);
-      border-color: var(--auro-color-ui-default-on-light);
-      box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
-    }
-
-    &Ondark {
-      background-color: var(--auro-color-ui-default-on-dark);
-      box-shadow: inset 0 0 0 3px var(--auro-color-border-focus-on-dark);
-       
-      &--secondary {
-        background-color: var(--auro-color-base-black-opacity-15);
-        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
-        border: 1px solid var(--auro-color-ui-active-on-dark);
-      }
-
-      &--tertiary {
-        background-color: var(--auro-color-base-black-opacity-15);
-        border-color: var(--auro-color-ui-active-on-dark);
-        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
-      }
-    }
 }
