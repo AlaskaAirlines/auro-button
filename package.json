@@ -20,7 +20,7 @@
     "================================================================================"
   ],
   "name": "@alaskaairux/ods-button",
-  "version": "4.4.1",
+  "version": "4.4.2",
   "description": "Orion Design System Button element",
   "author": "Product design and research",
   "repository": {
@@ -136,7 +136,10 @@
     }
   },
   "release": {
-    "branches": ["master", "next"],
+    "branches": [
+      "master",
+      "next"
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",

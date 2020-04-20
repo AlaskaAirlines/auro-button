@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.4.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.1...v4.4.2) (2020-04-20)
+
+
+### Bug Fixes
+
+* using css static properties ([8fedb4c](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/8fedb4c70684365692b0a507a3e1f2539b9f2c12))
+
 ## [4.4.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.0...v4.4.1) (2020-04-20)
 
 
