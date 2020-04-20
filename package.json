@@ -166,6 +166,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "browserslist": [
+    "last 4 version",
+    "> 1%",
+    "IE 11"
+  ],
   "babel": {
     "presets": [
       [
