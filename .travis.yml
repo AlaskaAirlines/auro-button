@@ -20,6 +20,7 @@ before_script:
   - npm run tokens:preserve
   - npm run tokens:distBuild
   - npm run sassRender
+  - npm run sassRender:css
   - npm run dist:js
   - npm run bundler
 

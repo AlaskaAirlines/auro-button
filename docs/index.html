@@ -67,6 +67,12 @@
         `<auro-button tertiary>Tertiary</auro-button>`
       ]
 
+      const auroBeta = [
+        `<auro-button-beta>Default</auro-button-beta>`,
+        `<auro-button-beta secondary>Secondary</auro-button-beta>`,
+        `<auro-button-beta tertiary>Tertiary</auro-button-beta>`
+      ]
+
       const auroDark = [
         `<auro-button ondark>Default</auro-button>`,
         `<auro-button ondark secondary>Secondary</auro-button>`,
@@ -95,6 +101,23 @@
           </code>
         </div>
       </section>
+      <section class="wc-wrapper">
+          <h3>Auro Buttons: beta</h3>
+          <script>
+            for (i = 0; i < auroBeta.length; i++) {
+              document.write(auroBeta[i])
+            }
+          </script>
+          <div class="codeWrapper margin">
+            <code>
+              <script>
+                for (i = 0; i < auroBeta.length; i++) {
+                  document.write(`<p> ${escapeHTML(auroBeta[i])} </p>`);
+                }
+              </script>
+            </code>
+          </div>
+        </section>
       <section class="wc-wrapper">
         <h3>Auro Buttons: on-dark</h3>
         <script>
@@ -137,9 +160,10 @@
       <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@2.10.9/dist/tokens/CSSTokenProperties.css" />
       <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@2.9.1/dist/bundled/baseline.css" />
 
-      <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.0/dist/polyfills.js"></script>
-      <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.0/dist/auro-button__bundled.js"></script>
-      <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.0/dist/ods-button__bundled.js"></script>
+      <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.2/dist/polyfills.js"></script>
+      <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.2/dist/auro-button__bundled.js"></script>
+      <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.2/dist/auro-button-beta__bundled.js"></script>
+      <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.2/dist/ods-button__bundled.js"></script>
     </div>
   </body>
 </html>

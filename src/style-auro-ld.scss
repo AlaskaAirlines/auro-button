@@ -11,3 +11,11 @@ auro-button-light {
     @include focus-visible;
   }
 }
+
+auro-button-light-beta {
+  @import './style-auro.scss';
+
+  .focus-visible.auro-button {
+    @include focus-visible;
+  }
+}
