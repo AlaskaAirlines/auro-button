@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.4.3](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.2...v4.4.3) (2020-04-23)
+
+
+### Bug Fixes
+
+* update dependency ([73d670e](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/73d670ee1bda5c64a3e482e7405ecf118723ba88))
+
 ## [4.4.2](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.1...v4.4.2) (2020-04-20)
 
 
