@@ -57,9 +57,9 @@ import "@alaskaairux/ods-button/dist/auro-button";
 
 ## Install bundled assets from CDN
 
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use. 
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
 
-**NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want. 
+**NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want. The first fully stable version is v4.4.4.
 
 ### Using Orion assets
 
@@ -83,8 +83,8 @@ In cases where the project is not able to process JS assets, there are pre-proce
 
 ### polyfills.js
 
-The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project. 
-      
+The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
+
 
 ## Element ods-button / auro-button
 

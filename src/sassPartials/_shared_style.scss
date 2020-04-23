@@ -29,7 +29,7 @@
   font-weight: var(--ods-button-font-weight);
   line-height: var(--ods-button-height);
   padding: var(--ods-button-vertical-padding) var(--ods-button-horizontal-padding-narrow);
-  width: var(--ods-button-width-narrow);
+  min-width: var(--ods-button-width-narrow);
   background-color: var(--ods-button-background-color);
   color: var(--ods-button-text-color);
   cursor: var(--ods-button-cursor);
