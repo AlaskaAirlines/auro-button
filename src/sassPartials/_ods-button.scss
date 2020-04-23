@@ -153,7 +153,8 @@ svg {
 
   &--responsive {
     @include breakpoint-medium {
-      width: var(--ods-button-width-medium);
+      min-width: 8.75rem;
+      width: auto;
     }
   }
 
