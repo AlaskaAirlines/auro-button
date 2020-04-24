@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [4.4.4](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.3...v4.4.4) (2020-04-24)
+
+
+### Bug Fixes
+
+* no horizontal padding in IE11 [#32](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/issues/32) ([b3dd630](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/b3dd6301be4bb1f229f5254667ee97a7ab003f4a))
+* pre-bundled components fail in IE [#64](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/issues/64) ([b7635c6](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/b7635c652828e10a110d234a99cc0eb8960fb34d))
+
 ## [4.4.3](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.2...v4.4.3) (2020-04-23)
 
 
