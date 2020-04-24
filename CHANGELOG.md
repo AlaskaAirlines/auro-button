@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.4.5](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.4...v4.4.5) (2020-04-24)
+
+
+### Bug Fixes
+
+* error caused by unneeded postinstall script ([157a650](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/157a65081a7e9900dbac7d77152f096f13ef166f))
+
 ## [4.4.4](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.3...v4.4.4) (2020-04-24)
 
 
