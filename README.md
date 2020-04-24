@@ -64,8 +64,8 @@ In cases where the project is not able to process JS assets, there are pre-proce
 ### Using Orion assets
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/essentials.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSTokenProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/baseline.css" />
 
 <script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/polyfills.js"></script>
 <script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/ods-button__bundled.js"></script>
@@ -74,8 +74,8 @@ In cases where the project is not able to process JS assets, there are pre-proce
 ### Using Auro assets
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSTokenProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/baseline.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/essentials.css" />
 
 <script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/polyfills.js"></script>
 <script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/auro-button__bundled.js"></script>
