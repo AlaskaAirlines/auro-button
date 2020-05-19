@@ -20,10 +20,19 @@
     }
 
     .wc-wrapper ods-button,
-    .wc-wrapper auro-button {
-      display: inline-block;
+    .wc-wrapper auro-button,
+    .wc-wrapper auro-button-beta {
+      display: block;
       margin-bottom: var(--auro-size-md);
       margin-right: var(--auro-size-md);
+    }
+
+    @media(min-width: 1024px) {
+      .wc-wrapper ods-button,
+      .wc-wrapper auro-button,
+      .wc-wrapper auro-button-beta {
+        display: inline-block;
+      }
     }
 
     .codeWrapper {
