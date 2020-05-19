@@ -2,23 +2,11 @@
 
 `<ods-button>` and `<auro-button>` are wrapper components for an HTML `<button>` element containing styling and behavior.
 
-## Docs
-
-All information regarding Project Setup, Technical Details, Tests and information regarding Auro Stateless Components can be found in the [./docs](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs) repository.
-
-## Deprecated
-
-During the transition from Orion to Auro, there will be specific actions taken to address a clean transition and proper deprecation of Orion resources.
-
-1. `<ods-button>` will continue to be supported until an official EOL has been communicated
-1. [Alternate build solutions](#alternate-build-solutions) are no longer supported and will be removed with next MAJOR release
-
-# New features
-
-1. A new component `<auro-hyperlink>` is available that only consumes Auro resources to ensure a minimum weight and clean transition process for engineers
-1. See [Auro API](#auro-properties) for new Auro component
-
 ## Install
+
+[![Build Status](https://img.shields.io/travis/AlaskaAirlines/ods-button.svg?branch=master&style=for-the-badge)](https://travis-ci.org/github/AlaskaAirlines/ods-button)
+[![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/ods-button.svg?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/ods-button)
+[![License](https://img.shields.io/npm/l/@alaskaairux/orion-design-tokens.svg?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
 $ npm i @alaskaairux/ods-button
@@ -85,6 +73,17 @@ In cases where the project is not able to process JS assets, there are pre-proce
 
 The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
 
+
+## Docs
+
+All information regarding Project Setup, Technical Details, Tests and information regarding Auro Stateless Components can be found in the [./docs](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs) repository.
+
+## Deprecated
+
+During the transition from Orion to Auro, there will be specific actions taken to address a clean transition and proper deprecation of Orion resources.
+
+1. `<ods-button>` will continue to be supported until an official EOL has been communicated
+1. [Alternate build solutions](#alternate-build-solutions) are no longer supported and will be removed with next MAJOR release
 
 ## Element ods-button / auro-button
 
@@ -240,13 +239,7 @@ $ gulp dev
 $ npm run dev
 
 // shell terminal three
-polymer serve
+$ npm run serve
 ```
 
-------
-
-#### Status badges
-
-[![Build Status](https://travis-ci.org/AlaskaAirlines/ods-button.svg?branch=master)](https://travis-ci.org/AlaskaAirlines/ods-button)
-![npm (scoped)](https://img.shields.io/npm/v/@alaskaairux/ods-button.svg?color=orange)
-![NPM](https://img.shields.io/npm/l/@alaskaairux/ods-button.svg?color=blue)
+Open [localhost:3001](http://localhost:3001/)
