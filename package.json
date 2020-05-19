@@ -99,7 +99,6 @@
     "bundler": "webpack --mode=production",
     "bundle:test": "webpack-dev-server --host 0.0.0.0",
     "postinstall": "node packageScripts/postinstall.js",
-    "postinstall:lit": "node scripts/postinstall.js",
     "tokens:build": "node scripts/tokenScript.js",
     "tokens:distBuild": "node scripts/tokenScriptCustom.js",
     "ciBuild": "npm-run-all tokens:build processSrc sassRender:lightDomCSS processImports:canonical processImports:variable styleflux:canonical styleflux:variable reprocessClean tokens:preserve tokens:distBuild sassRender sassRender:css dist:js bundler postinstall",
