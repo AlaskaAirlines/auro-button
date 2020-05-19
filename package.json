@@ -97,7 +97,7 @@
   "scripts": {
     "build": "npm run ciBuild",
     "bundler": "webpack --mode=production",
-    "bundle:test": "webpack-dev-server",
+    "bundle:test": "webpack-dev-server --host 0.0.0.0",
     "postinstall": "node packageScripts/postinstall.js",
     "postinstall:lit": "node scripts/postinstall.js",
     "tokens:build": "node scripts/tokenScript.js",
