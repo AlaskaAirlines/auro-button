@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.4.6](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.5...v4.4.6) (2020-05-20)
+
+
+### Bug Fixes
+
+* [#66](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/issues/66) move litElement to polyfill.js ([9e4ddb1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/9e4ddb16d28e2954217db7dae68fc8d571721d93))
+
 ## [4.4.5](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.4...v4.4.5) (2020-04-24)
 
 
