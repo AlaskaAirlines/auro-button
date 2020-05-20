@@ -73,6 +73,9 @@ In cases where the project is not able to process JS assets, there are pre-proce
 
 The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
 
+### IE11 Support
+
+**Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11. 
 
 ## Docs
 
