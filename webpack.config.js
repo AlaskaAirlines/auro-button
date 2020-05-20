@@ -33,10 +33,9 @@ const config = {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /node_modules/,
+          test: /[\\/]node_modules[\\/]/,
           chunks: 'all',
-          name: 'polyfills',
-          enforce: true
+          name: 'polyfills'
         },
       },
     },
