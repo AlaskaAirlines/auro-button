@@ -21,6 +21,7 @@ const config = {
           path.resolve(__dirname, 'node_modules/lit-element'),
           path.resolve(__dirname, 'node_modules/lit-html'),
           path.resolve(__dirname, 'node_modules/@alaskaairux'),
+          path.resolve(__dirname, 'node_modules/focus-visible'),
         ],
         use: {
           loader: 'babel-loader',
@@ -32,9 +33,10 @@ const config = {
     splitChunks: {
       cacheGroups: {
         vendor: {
+          test: /node_modules/,
           chunks: 'all',
-          test: /([\\/]node_modules[\\/])/,
           name: 'polyfills',
+          enforce: true
         },
       },
     },
