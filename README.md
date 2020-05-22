@@ -18,11 +18,6 @@ The use of any Auro Component has a dependency on the [Auro Design Tokens (npm i
 
 For additional details in regards to using Auro Design Tokens with components, please see [./docs/TECH_DETAILS.md](https://github.com/AlaskaAirlines/auro_docs/blob/master/src/TECH_DETAILS.md)
 
-### CSS Custom Property fallbacks
-
-CSS Custom Properties are not supported in older browsers. For this, fallback properties are pre-generated and included with the npm. Any update to the Auro Design Tokens will be immediately reflected with browsers that support CSS Custom Properties, legacy browsers will require updated components with pre-generated fallback properties.
-
-
 ### Define dependency in project component
 
 Define the component dependency within each component that is using the `<ods-button>` or `<auro-button>` components.
@@ -77,10 +72,6 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 
 **Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11. 
 
-## Docs
-
-All information regarding Project Setup, Technical Details, Tests and information regarding Auro Stateless Components can be found in the [./docs](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs) repository.
-
 ## Deprecated
 
 During the transition from Orion to Auro, there will be specific actions taken to address a clean transition and proper deprecation of Orion resources.
@@ -88,51 +79,24 @@ During the transition from Orion to Auro, there will be specific actions taken t
 1. `<ods-button>` will continue to be supported until an official EOL has been communicated
 1. [Alternate build solutions](#alternate-build-solutions) are no longer supported and will be removed with next MAJOR release
 
-## Element ods-button / auro-button
+## Responsive support
 
-### Styling
+`<auro-button>` is responsive by default. The button will assume 100% of the width of its container for views less than [auro_breakpoint--sm](https://alaskaairlines.github.io/WebCoreStyleSheets/#responsive-mixin-auro_breakpoint--sm).
 
-<span style="color: red"><b>DEPRECATED: only available on ods-button</b></span>
+Beyond that breakpoint `<auro-button>` will assume the width of the content or a min-width of `8.75rem`, which ever is greater.
 
-Option(s) for component customization
-
-| Selector | Type | State | Description |
-|----|----|----|---|
-| ::part() | pseudo-element | experimental | Update shadowDOM CSS from outside the component |
-
-### Button use cases
-
-The `<ods-button>` or `<auro-button>` elements should be used in situations where users may:
-
-* submit a form
-* begin a new task
-* trigger a new UI element to appear on the page
-* specify a new or next step in a process
-
-### Buttons are not Hyperlinks
-
-In cases were the action of the button would not fit the criteria above, it is most likely a Hyperlink. In that situation it is recommended that the `<auro-hyperlink>` element be used.
-
-`<ods-hypelrink>` supports the options of `role=button`. This has been __deprecated__ and is not supported with `<auro-hyperlink>`.
-
-### Responsive support
-
-`<auro-button>` is responsive by default. The button will assume 100% of the width of its container for views less than [auro_breakpoint--sm](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#responsive-mixin-auro_breakpoint--sm).
-
-Beyond that breakpoint `<auro-button>` will assume the width of the content or a min-width of 8.75rem, which ever is greater.
-
-<span style="color: red"><b>Only supported with ods-button</b></span>
+<span style="color: #df0b37"><b>Only supported with ods-button</b></span>
 
 If the desired appearance of the `<ods-button>` is to responsive within a given space, then the use of the `responsive` attribute is required on the `<ods-element>`.
 
 If the desired appearance of the `<auro-button>` is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the `<auro-button>` element.
 
-### Multiple buttons
+## Multiple buttons
 
 When the UI requires the use of multiple buttons within the same space, with the use of the [Auro Web Core Style Sheets](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-auro-css-#{$scope}.auro_containedButtons), and the `auro_containedButtons` .
 
 
-### Light DOM Support
+## Light DOM Support
 
 `<ods-button-light>` and `<auro-button-light>` are included in this package for [light DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom#lightdom) support.
 
@@ -148,63 +112,19 @@ or
 <auro-button-light content="Default value"></auro-button-light>
 ```
 
-### Orion Properties:
+## Orion Button Properties:
 
-| Attribute | Value type | Description |
-|----|----|----|
-| arialabel | string | Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead. |
-| arialabelledby | string | Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion. |
-| autofocus | boolean | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it |
-| buttontype | string | Type of button defines the visual styling. <br/>Option(s): `primary`, `secondary`. Default value is `primary`. |
-| condensed | boolean | Reduces left/right padding to fit button in condensed spaces |
-| disabled | boolean | If set to true button will become disabled and not allow for interactions. <br/>Default value is `false`. |
-| flowtype | string | Sets display type to represent the flow options. Options: `complete`
-| form | string | The form element that the button is associated with (its form owner). The value of the attribute must be the id attribute of a `<form>` element in the same document |
-| formaction | string | Specifies the URL of the file that will process the input control when the form is submitted. The formaction attribute overrides the `action` attribute of the `<form>` element |
-| formenctype| string | If the button is a submit button, this attribute specifies the type of content that is used to submit the form to the server. |
-| formmethod | string | If the button is a submit button, this attribute specifies the HTTP method that the browser uses to submit the form. |
-| formnovalidate | boolean | If the button is a submit button, this Boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner. |
-| formtarget | string | If the button is a submit button, this attribute is a name or keyword indicating where to display the response that is received after submitting the form. Options: `_self`, `_blank`, `_parent`, `_top:` |
-| id | string | Set the unique ID of an element. |
-| isactive | boolean | If set to true button will appear in active state. <br/>Default value is `false`. |
-| name | string | The name of the button, which is submitted with the form data. |
-| responsive | boolean | Sets the UI of the button to be responsive within its given container. |
-| reverse | boolean | Required to be paired with `responsive`, but sets the placement in the reverse direction of natural content. |
-| svgIconLeft | string | Pass in SVG string for icon to appear on the LEFT |
-| svgIconRight | string | Pass in SVG string for icon to appear on the RIGHT |
-| title | string | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
-| theme | string | Sets theme of element; option: `classic` |
-| type | string | The type of the button. Possible values are: `submit`, `reset`, `button` |
-| value | string | Defines the value associated with the button which is submitted with the form data. |
+For a full listing of the [Orion Button API](https://auro.alaskaair.com/components/ods/button/api)
 
-### Auro Properties:
+## Auro Button Properties:
 
-| Attribute | Value type | Description |
-|----|----|----|
-| autofocus | boolean | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it |
-| formnovalidate | boolean |If the button is a submit button, this Boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner. |
-| ondark | boolean | Set value for on-dark version of auro-button |
-| secondary | boolean | Set value for secondary version of auro-button |
-| tertiary | boolean | Set value for tertiary version of auro-button |
-| arialabel | string | Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead. |
-| arialabelledby | string | Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion. |
-| form | string | The form element that the button is associated with (its form owner). The value of the attribute must be the id attribute of a `<form>` element in the same document |
-| formaction | string | Specifies the URL of the file that will process the input control when the form is submitted. The formaction attribute overrides the `action` attribute of the `<form>` element |
-| formenctype | string | If the button is a submit button, this attribute specifies the type of content that is used to submit the form to the server. |
-| formmethod | string | If the button is a submit button, this attribute specifies the HTTP method that the browser uses to submit the form. |
-| formtarget | string | If the button is a submit button, this attribute is a name or keyword indicating where to display the response that is received after submitting the form. Options: `_self`, `_blank`, `_parent`, `_top:` |
-| id | string | Set the unique ID of an element. |
-| name | string | The name of the button, which is submitted with the form data. |
-| title | string | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
-| type | string | The type of the button. Possible values are: `submit`, `reset`, `button` |
-| value | string | Defines the value associated with the button which is submitted with the form data. |
+For a full listing of the [Auro Button API](https://auro.alaskaair.com/components/auro/button/api)
 
-
-### API Code Examples
+## API Code Examples
 
 For full API examples, see the [ods-button demo page](https://alaskaairlines.github.io/ods-button/).
 
-### Contextual component
+## Contextual component
 
 <span style="color: red"><b>Only supported with ods-button</b></span>
 
