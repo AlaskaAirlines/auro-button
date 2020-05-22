@@ -1,6 +1,6 @@
 # Auro Button API
 
-| Attribute | Value type | Description |
+| Attribute | Type | Description |
 |----|----|----|
 | autofocus | boolean | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it |
 | formnovalidate | boolean |If the button is a submit button, this Boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner. |
