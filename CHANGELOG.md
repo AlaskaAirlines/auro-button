@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.4.7](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.6...v4.4.7) (2020-05-22)
+
+
+### Bug Fixes
+
+* address polymer vs webpack issue ([7c1c6fd](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/7c1c6fda90a009089a31654da5876dad5e94d458))
+
 ## [4.4.6](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.5...v4.4.6) (2020-05-20)
 
 
