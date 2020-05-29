@@ -6,17 +6,17 @@
 
 [![Build Status](https://img.shields.io/travis/AlaskaAirlines/ods-button.svg?branch=master&style=for-the-badge)](https://travis-ci.org/github/AlaskaAirlines/ods-button)
 [![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/ods-button.svg?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/ods-button)
-[![License](https://img.shields.io/npm/l/@alaskaairux/orion-design-tokens.svg?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![License](https://img.shields.io/npm/l/@alaskaairux/ods-button.svg?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![issues](https://img.shields.io/github/issues-raw/AlaskaAirlines/ods-button?style=for-the-badge)](https://github.com/AlaskaAirlines/ods-button/issues)
+
 
 ```shell
 $ npm i @alaskaairux/ods-button
 ```
 
-### Design Token CSS Custom Property dependency
+### Dependencies
 
-The use of any Auro Component has a dependency on the [Auro Design Tokens (npm install)](https://www.npmjs.com/package/@alaskaairux/orion-design-tokens). See repository and API information [here](https://github.com/AlaskaAirlines/OrionDesignTokens).
-
-For additional details in regards to using Auro Design Tokens with components, please see [./docs/TECH_DETAILS.md](https://github.com/AlaskaAirlines/auro_docs/blob/master/src/TECH_DETAILS.md)
+The use of any Auro Component has a dependency on the [Auro Design Tokens](http://auro.alaskaair.com/getting-started/developers/design-tokens). Be sure to read through all the [install instructions](http://auro.alaskaair.com/getting-started/developers/design-tokens/install) to ensure the best results. 
 
 ### Define dependency in project component
 
@@ -24,9 +24,10 @@ Define the component dependency within each component that is using the `<ods-bu
 
 ```javascript
 import "@alaskaairux/ods-button";
-
+```
 or
 
+```javascript
 import "@alaskaairux/ods-button/dist/auro-button";
 ```
 
@@ -34,7 +35,10 @@ import "@alaskaairux/ods-button/dist/auro-button";
 
 ```html
 <ods-button>Hello World!</ods-button>
+```
+or
 
+```html
 <auro-button>Hello World!</auro-button>
 ```
 
@@ -91,7 +95,7 @@ If the desired appearance of the `<ods-button>` is to responsive within a given 
 
 If the desired appearance of the `<auro-button>` is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the `<auro-button>` element.
 
-## Multiple buttons
+## Multi button support
 
 When the UI requires the use of multiple buttons within the same space, with the use of the [Auro Web Core Style Sheets](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-auro-css-#{$scope}.auro_containedButtons), and the `auro_containedButtons` .
 
@@ -112,19 +116,19 @@ or
 <auro-button-light content="Default value"></auro-button-light>
 ```
 
+## Auro Button Properties:
+
+For a full listing of the [Auro Button API](http://auro.alaskaair.com/components/auro/button/api)
+
 ## Orion Button Properties:
 
 For a full listing of the [Orion Button API](https://auro.alaskaair.com/components/ods/button/api)
-
-## Auro Button Properties:
-
-For a full listing of the [Auro Button API](https://auro.alaskaair.com/components/auro/button/api)
 
 ## API Code Examples
 
 For full API examples, see the [ods-button demo page](https://alaskaairlines.github.io/ods-button/).
 
-## Contextual component
+## Contextual component (deprecated)
 
 <span style="color: red"><b>Only supported with ods-button</b></span>
 
@@ -136,19 +140,11 @@ In this scenario, set the `context` of the element to be `true`.
 <ods-button context="true">Default state; context true</ods-button>
 ```
 
-## Alternate build solutions <span style="color: red">(deprecated)</span>
-
-Why would you need this? With all Auro custom elements the CSS for the element is embedded within the shadow DOM of the custom element. If your development environment is not allowing for the use of shadow DOM elements, the CSS for each element is distributed via additional resources within the npm package.
-
-[Read more about how to use alternate CSS build resources](https://github.com/AlaskaAirlines/OrionStatelessComponents__docs/blob/master/src/ALT_BUILD.md)
-
-<span style="color: red"><b>THIS PROCESS IS DEPRECATED! ALL SUPPORT WILL BE REMOVED WITH NEXT MAJOR RELEASE!</b></span>
-
 ## Development
 
-In order to develop against this project, if you are not part of the core team, you will be required to fork the project prior to submitting a pull request.
+Developers, if you are not part of the core team, you will be required to fork the project prior to submitting a pull request.
 
-Please be sure to review the [contribution guidelines](.github/CONTRIBUTING.md) for this project. Please make sure to **pay special attention** to the [conventional commits](.github/CONTRIBUTING.md#conventional-commits) section of the document.
+Please be sure to review the [contribution guidelines](http://auro.alaskaair.com/getting-started/developers/contributing) for this project. Please make sure to **pay special attention** to the [conventional commits](http://auro.alaskaair.com/getting-started/developers/contributing#conventional-commits) section of the document.
 
 ### Start development environment
 
