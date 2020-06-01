@@ -1,4 +1,4 @@
-# ods-button / auro-button
+# Button
 
 `<ods-button>` and `<auro-button>` are wrapper components for an HTML `<button>` element containing styling and behavior.
 
@@ -16,7 +16,7 @@ $ npm i @alaskaairux/ods-button
 
 ### Dependencies
 
-The use of any Auro Component has a dependency on the [Auro Design Tokens](http://auro.alaskaair.com/getting-started/developers/design-tokens). Be sure to read through all the [install instructions](http://auro.alaskaair.com/getting-started/developers/design-tokens/install) to ensure the best results. 
+The use of any Auro Component has a dependency on the [Auro Design Tokens](http://auro.alaskaair.com/getting-started/developers/design-tokens). Be sure to read through all the [install instructions](http://auro.alaskaair.com/getting-started/developers/design-tokens/install) to ensure the best results.
 
 ### Define dependency in project component
 
@@ -74,7 +74,7 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 
 ### IE11 Support
 
-**Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11. 
+**Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11.
 
 ## Deprecated
 
