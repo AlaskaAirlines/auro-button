@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.5.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.7...v4.5.0) (2020-06-11)
+
+
+### Features
+
+* allow focus() on auro- and ods-button [#72](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/issues/72) ([bcb927e](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/bcb927e246eeb2e000404052afdb5b056300ce63))
+
 ## [4.4.7](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.6...v4.4.7) (2020-05-22)
 
 
