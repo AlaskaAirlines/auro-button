@@ -53,6 +53,10 @@ export default class ComponentBase extends LitElement {
     };
   }
 
+  focus() {
+    this.renderRoot.querySelector('button').focus();
+  }
+
   getButtontype(type) {
     return type === "secondary" ? "ods-button--secondary" : ""
   }

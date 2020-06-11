@@ -32,6 +32,9 @@ export default class AuroComponentBase extends LitElement {
     };
   }
 
+  focus() {
+    this.renderRoot.querySelector('button').focus();
+  }
 
   getIcon(svgIcon) {
     this.dom = new DOMParser().parseFromString(svgIcon, 'text/html');
@@ -53,7 +56,7 @@ export default class AuroComponentBase extends LitElement {
       'auro-button--secondary': this.secondary,
       'auro-buttonOndark--secondary': this.secondary && this.ondark,
       'auro-button--tertiary': this.tertiary,
-      'auro-buttonOndark--tertiary': this.tertiary && this.ondark,
+      'auro-buttonOndark--tertiary': this.tertiary && this.ondark
     };
 
     return html`
