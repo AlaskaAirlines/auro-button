@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.6.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.5.0...v4.6.0) (2020-06-12)
+
+
+### Features
+
+* [#57](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/issues/57) add support for disabled button ([854784c](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/854784c888768e4ba091e6ecd51ee6d05a4cce65))
+
 # [4.5.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.4.7...v4.5.0) (2020-06-11)
 
 
