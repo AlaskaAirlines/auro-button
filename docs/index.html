@@ -77,12 +77,6 @@
       '<auro-button tertiary>Tertiary</auro-button>'
     ]
 
-    var auroBeta = [
-      '<auro-button-beta>Default</auro-button-beta>',
-      '<auro-button-beta secondary>Secondary</auro-button-beta>',
-      '<auro-button-beta tertiary>Tertiary</auro-button-beta>'
-    ]
-
     var auroDark = [
       '<auro-button ondark>Default</auro-button>',
       '<auro-button ondark secondary>Secondary</auro-button>',
@@ -107,23 +101,6 @@
           <script>
             for (i = 0; i < auro.length; i++) {
               document.write("<p> ".concat(escapeHTML(auro[i]), " </p>"));
-            }
-          </script>
-        </code>
-      </div>
-    </section>
-    <section class="wc-wrapper">
-      <h3>Auro Buttons: beta</h3>
-      <script>
-        for (i = 0; i < auroBeta.length; i++) {
-          document.write(auroBeta[i])
-        }
-      </script>
-      <div class="codeWrapper margin">
-        <code>
-          <script>
-            for (i = 0; i < auroBeta.length; i++) {
-              document.write("<p> ".concat(escapeHTML(auroBeta[i]), " </p>"));
             }
           </script>
         </code>
@@ -175,15 +152,15 @@
     <link rel="stylesheet"
       href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@2.9.1/dist/bundled/baseline.css" />
 
-    <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.6/dist/polyfills.js"></script>
+    <!-- <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.6/dist/polyfills.js"></script>
     <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.6/dist/auro-button__bundled.js"></script>
     <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.6/dist/auro-button-beta__bundled.js"></script>
-    <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.6/dist/ods-button__bundled.js"></script>
+    <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.6/dist/ods-button__bundled.js"></script> -->
 
-    <!-- <script src="./polyfills.js"></script>
+    <script src="./polyfills.js"></script>
     <script src="./ods-button__bundled.js" defer></script>
     <script src="./auro-button__bundled.js" defer></script>
-    <script src="./auro-button-beta__bundled.js" defer></script> -->
+    <script src="./auro-button-beta__bundled.js" defer></script>
 
   </div>
 </body>

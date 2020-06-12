@@ -4,8 +4,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const config = {
   entry: {
     ['auro-button__bundled']: './src/auro-button.js',
-    ['ods-button__bundled']: './src/ods-button.js',
-    ['auro-button-beta__bundled']: './src/auro-button-beta.js'
+    ['ods-button__bundled']: './src/ods-button.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
