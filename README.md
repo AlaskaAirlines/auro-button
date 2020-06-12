@@ -16,11 +16,11 @@ $ npm i @alaskaairux/ods-button
 
 ### Dependencies
 
-The use of any Auro Component has a dependency on the [Auro Design Tokens](http://auro.alaskaair.com/getting-started/developers/design-tokens). Be sure to read through all the [install instructions](http://auro.alaskaair.com/getting-started/developers/design-tokens/install) to ensure the best results.
+The use of any Auro Component has a dependency on the [Auro Design Tokens](https://auro.alaskaair.com/getting-started/developers/design-tokens). Be sure to read through all the [install instructions](https://auro.alaskaair.com/getting-started/developers/design-tokens/install) to ensure the best results.
 
-### Define dependency in project component
+### Defining a dependency
 
-Define the component dependency within each component that is using the `<ods-button>` or `<auro-button>` components.
+Define the component dependency within the project using either the `<ods-button>` or `<auro-button>` web components.
 
 ```javascript
 import "@alaskaairux/ods-button";
@@ -31,7 +31,7 @@ or
 import "@alaskaairux/ods-button/dist/auro-button";
 ```
 
-**Reference component in HTML**
+**Reference web component in HTML**
 
 ```html
 <ods-button>Hello World!</ods-button>
@@ -48,16 +48,6 @@ In cases where the project is not able to process JS assets, there are pre-proce
 
 **NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want. The first fully stable version is v4.4.4.
 
-### Using Orion assets
-
-```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSTokenProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/baseline.css" />
-
-<script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/polyfills.js"></script>
-<script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/ods-button__bundled.js"></script>
-```
-
 ### Using Auro assets
 
 ```html
@@ -68,6 +58,16 @@ In cases where the project is not able to process JS assets, there are pre-proce
 <script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/auro-button__bundled.js"></script>
 ```
 
+### Using Orion assets
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSTokenProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/baseline.css" />
+
+<script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/polyfills.js"></script>
+<script src="https://unpkg.com/@alaskaairux/ods-button@:version/dist/ods-button__bundled.js"></script>
+```
+
 ### polyfills.js
 
 The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
@@ -75,13 +75,6 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 ### IE11 Support
 
 **Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11.
-
-## Deprecated
-
-During the transition from Orion to Auro, there will be specific actions taken to address a clean transition and proper deprecation of Orion resources.
-
-1. `<ods-button>` will continue to be supported until an official EOL has been communicated
-1. [Alternate build solutions](#alternate-build-solutions) are no longer supported and will be removed with next MAJOR release
 
 ## Responsive support
 
@@ -118,17 +111,24 @@ or
 
 ## Auro Button Properties:
 
-For a full listing of the [Auro Button API](http://auro.alaskaair.com/components/auro/button/api)
+For a full listing of the [Auro Button API](https://auro.alaskaair.com/components/auro/button/api)
 
 ## Orion Button Properties:
 
-For a full listing of the [Orion Button API](https://auro.alaskaair.com/components/ods/button/api)
+For a full listing of the [Orion Button API](https://auro.alaskaair.com/components/auro/button/api)
 
 ## API Code Examples
 
-For full API examples, see the [ods-button demo page](https://alaskaairlines.github.io/ods-button/).
+For full API examples, see the [ods-button demo page](https://auro.alaskaair.com/components/auro/button).
 
-## Contextual component (deprecated)
+## Deprecated
+
+During the transition from Orion to Auro, there will be specific actions taken to address a clean transition and proper deprecation of Orion resources.
+
+1. `<ods-button>` will continue to be supported until an official EOL has been communicated
+1. [Alternate build solutions](#alternate-build-solutions) are no longer supported and will be removed with next MAJOR release
+
+### Contextual component (deprecated)
 
 <span style="color: red"><b>Only supported with ods-button</b></span>
 
