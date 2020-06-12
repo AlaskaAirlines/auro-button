@@ -3,6 +3,7 @@
 | Attribute | Type | Description |
 |----|----|----|
 | autofocus | boolean | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it |
+| disabled | boolean | If set to true button will become disabled and not allow for interactions. Default value is `false`. |
 | formnovalidate | boolean |If the button is a submit button, this Boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner. |
 | ondark | boolean | Set value for on-dark version of auro-button |
 | secondary | boolean | Set value for secondary version of auro-button |

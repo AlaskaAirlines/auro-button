@@ -64,14 +64,20 @@ $auro-inset-directions:'--squish';
   }
 }
 
+// Note: without this, events on a disabled element will still fire
+slot {
+  pointer-events: none;
+}
+
 // Button styles
 .auro-button {
   @include auro_transition(all, 0.15s, ease);
+
   color: var(--auro-color-text-primary-on-dark);
   cursor: pointer;
   background-color: var(--auro-color-ui-default-on-light);
   border: 1px solid var(--auro-color-ui-default-on-light);
-  border-radius: 6px;
+  border-radius: var(--auro-border-radius);
   font-family: var(--auro-font-family-default);
   font-size: var(--auro-text-body-size-default);
   font-weight: var(--auro-text-body-default-weight);
@@ -81,6 +87,11 @@ $auro-inset-directions:'--squish';
   user-select: none;
   white-space: nowrap;
   width: 100%;
+
+  // removes margind around button in Safari
+  margin: 0;
+
+  // macOS / iOS agents
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -107,6 +118,17 @@ $auro-inset-directions:'--squish';
     width: auto;
   }
 
+  &:disabled {
+    cursor: not-allowed;
+    transform: unset;
+    opacity: .4;
+
+    &:hover {
+      background-color: var(--auro-color-ui-default-on-light);
+      border-color: var(--auro-color-ui-default-on-light);
+    }
+  }
+
   // auro-button--secondary
   &--secondary {
     background-color: var(--auro-color-background-lightest);
@@ -124,6 +146,13 @@ $auro-inset-directions:'--squish';
     &:active {
       background-color: var(--auro-color-background-lighter);
       border: 1px solid var(--auro-color-ui-default-on-light);
+    }
+
+    &:disabled {
+      &:hover {
+        background-color: var(--auro-color-background-lightest);
+        border-color: var(--auro-color-ui-default-on-light);
+      }
     }
   }
 
@@ -144,6 +173,13 @@ $auro-inset-directions:'--squish';
     &:active {
       background-color: var(--auro-color-background-lighter);
       border-color: transparent;
+    }
+
+    &:disabled {
+      &:hover {
+        background-color: transparent;
+        border-color: transparent;
+      }
     }
   }
 
@@ -166,6 +202,13 @@ $auro-inset-directions:'--squish';
       border: 1px solid var(--auro-color-ui-active-on-dark);
     }
 
+    &:disabled {
+      &:hover {
+        background-color: var(--auro-color-ui-default-on-dark);
+        border-color: var(--auro-color-ui-default-on-dark);
+      }
+    }
+
     // auro-buttonOndark--secondary
     &--secondary {
       background-color: transparent;
@@ -182,6 +225,13 @@ $auro-inset-directions:'--squish';
       &:active {
         background-color: var(--auro-color-base-black-opacity-15);
         border: 1px solid var(--auro-color-ui-hover-on-dark);
+      }
+
+      &:disabled {
+        &:hover {
+          background-color: transparent;
+          border: 1px solid var(--auro-color-ui-default-on-dark);
+        }
       }
     }
 
@@ -204,6 +254,13 @@ $auro-inset-directions:'--squish';
         background-color: var(--auro-color-base-black-opacity-15);
         border: 1px solid transparent;
         box-shadow: none;
+      }
+
+      &:disabled {
+        &:hover {
+          background-color: transparent;
+          border-color: transparent;
+        }
       }
     }
   }

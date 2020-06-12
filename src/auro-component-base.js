@@ -13,6 +13,7 @@ export default class AuroComponentBase extends LitElement {
   static get properties() {
     return {
       autofocus:        { type: Boolean },
+      disabled:         { type: Boolean },
       formnovalidate:   { type: Boolean },
       ondark:           { type: Boolean },
       secondary:        { type: Boolean },
@@ -67,6 +68,7 @@ export default class AuroComponentBase extends LitElement {
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
+        ?disabled="${this.disabled}"
         form="${ifDefined(this.form ? this.form : undefined)}"
         formaction="${ifDefined(this.formaction ? this.formaction : undefined)}"
         formenctype="${ifDefined(this.formenctype ? this.formenctype : undefined)}"
