@@ -105,6 +105,10 @@ slot {
     }
   }
 
+  // remove Firefox-only focus outline
+  &::-moz-focus-inner {
+    border: none;
+  }
 
   // handle active state
   &:active {
