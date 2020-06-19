@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.6.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.6.0...v4.6.1) (2020-06-19)
+
+
+### Bug Fixes
+
+* update disabled hover events to not fire on mobile ([072992b](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/072992b77d632f92ec3131ae2afa9242e006f2ae))
+
 # [4.6.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.5.0...v4.6.0) (2020-06-12)
 
 
