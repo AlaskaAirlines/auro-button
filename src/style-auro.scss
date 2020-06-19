@@ -61,6 +61,10 @@ $auro-inset-directions:'--squish';
 :host(.focus-visible) {
   .auro-button {
     @include focus-visible;
+
+    &::-moz-focus-inner {
+      border: none;
+    }
   }
 }
 
@@ -127,9 +131,11 @@ slot {
     transform: unset;
     opacity: .4;
 
-    &:hover {
-      background-color: var(--auro-color-ui-default-on-light);
-      border-color: var(--auro-color-ui-default-on-light);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--auro-color-ui-default-on-light);
+        border-color: var(--auro-color-ui-default-on-light);
+      }
     }
   }
 
@@ -180,9 +186,11 @@ slot {
     }
 
     &:disabled {
-      &:hover {
-        background-color: transparent;
-        border-color: transparent;
+      @media (hover: hover) {
+        &:hover {
+          background-color: transparent;
+          border-color: transparent;
+        }
       }
     }
   }
@@ -207,9 +215,11 @@ slot {
     }
 
     &:disabled {
-      &:hover {
-        background-color: var(--auro-color-ui-default-on-dark);
-        border-color: var(--auro-color-ui-default-on-dark);
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--auro-color-ui-default-on-dark);
+          border-color: var(--auro-color-ui-default-on-dark);
+        }
       }
     }
 
@@ -232,9 +242,11 @@ slot {
       }
 
       &:disabled {
-        &:hover {
-          background-color: transparent;
-          border: 1px solid var(--auro-color-ui-default-on-dark);
+        @media (hover: hover) {
+          &:hover {
+            background-color: transparent;
+            border: 1px solid var(--auro-color-ui-default-on-dark);
+          }
         }
       }
     }
@@ -261,9 +273,11 @@ slot {
       }
 
       &:disabled {
-        &:hover {
-          background-color: transparent;
-          border-color: transparent;
+        @media (hover: hover) {
+          &:hover {
+            background-color: transparent;
+            border-color: transparent;
+          }
         }
       }
     }
