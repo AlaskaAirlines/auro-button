@@ -1,4 +1,4 @@
-# Button
+# Auro-button web component
 
 `<ods-button>` and `<auro-button>` are wrapper components for an HTML `<button>` element containing styling and behavior.
 
