@@ -10,6 +10,7 @@
 | tertiary | boolean | Set value for tertiary version of auro-button |
 | arialabel | string | Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead. |
 | arialabelledby | string | Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion. |
+| fluid | boolean | Update shape of auro-button to take on the full width of it's parent | 
 | form | string | The form element that the button is associated with (its form owner). The value of the attribute must be the id attribute of a `<form>` element in the same document |
 | formaction | string | Specifies the URL of the file that will process the input control when the form is submitted. The formaction attribute overrides the `action` attribute of the `<form>` element |
 | formenctype | string | If the button is a submit button, this attribute specifies the type of content that is used to submit the form to the server. |

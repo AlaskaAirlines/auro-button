@@ -64,7 +64,14 @@ $auro-inset-directions:'--squish';
 
     &::-moz-focus-inner {
       border: none;
+      width: 100%;
     }
+  }
+}
+
+:host([fluid]) {
+  .auro-button {
+    min-width: auto;
   }
 }
 
