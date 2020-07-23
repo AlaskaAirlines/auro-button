@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.7.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.6.1...v4.7.0) (2020-07-23)
+
+
+### Features
+
+* add fluid property to support full width shape ([c0c13cb](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/c0c13cb7ac868424891c6a870c09d67f2e0aa010))
+
 ## [4.6.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.6.0...v4.6.1) (2020-06-19)
 
 
