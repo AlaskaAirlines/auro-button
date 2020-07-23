@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.7.1](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.7.0...v4.7.1) (2020-07-23)
+
+
+### Bug Fixes
+
+* address missed property in style ([6913420](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/commit/691342068fcb24e3427204bc6777ddf3fff211e6))
+
 # [4.7.0](https://github.com/AlaskaAirlines/OrionStatelessComponents__ods-button/compare/v4.6.1...v4.7.0) (2020-07-23)
 
 
