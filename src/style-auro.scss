@@ -69,9 +69,11 @@ $auro-inset-directions:'--squish';
   }
 }
 
-:host([fluid]) {
+:host([fluid]),
+:host([fluid=true]) {
   .auro-button {
     min-width: auto;
+    width: 100%;
   }
 }
 
