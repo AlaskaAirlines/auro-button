@@ -1,10 +1,6 @@
-// Import Auro Design Token variables
+// Import Auro tokens
 @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
 @import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties";
-
-// Import legacy Design Token variables
-@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/tokenVariables";
-@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/tokenProperties";
 
 // Import baseline library dependencies
 // Mixins
@@ -13,22 +9,22 @@
 // Creates baseline output in CSS
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/fonts";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
-
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
 
 // Import Utility classes (will produce CSS in output)
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses";
-
-
-
+$layout-properties: margin;
+$layout-extensions: Right;
+$layout-modifiers: (
+  "md": $auro-size-md
+);
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/layoutPropertiesGenerator";
 
 // Custom styles per demo pages
 code {
-  color: var(--color-base-chili);
+  color: var(--auro-color-base-crimson-500);
 }
 
 .vertical-section-container {
   margin: 0 auto;
-  max-width: var(--size-width-max);
+  max-width: 	82.5rem;
 }

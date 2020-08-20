@@ -3,13 +3,292 @@
 
 // ---------------------------------------------------------------------
 
-// Creates ods-button shape
+// Import Auro CSS Properties as Sass file
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties";
 
+// Import Auro Sass variables
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
 
-// import variable resources from Style Dictionary generated code
-@import "./sassPartials/variables.scss";
-@import "./sassPartials/properties.scss";
-@import "./sassPartials/shared_style.scss";
+// general WCSS imports
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/animation";
 
-// import button styles into document
-@import "./sassPartials/ods-button";
+@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariableMap";
+
+$auro-inset-spacing-options: lg;
+$auro-inset-directions:'--squish';
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityMixins/insetUtility";
+
+// focus-visible mixin
+@mixin focus-visible {
+  box-shadow: inset 0 0 0 1px var(--auro-color-border-focus-on-dark), inset 0 0 0 3px var(--auro-color-background-lightest);
+
+  // auro-button--secondary
+  &--secondary {
+    background-color: var(--auro-color-background-lighter);
+    box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
+  }
+
+  // auro-button--tertiary
+  &--tertiary {
+    background-color: var(--auro-color-background-lighter);
+    border-color: var(--auro-color-ui-default-on-light);
+    box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
+  }
+  // auro-buttonOndark
+  &Ondark {
+    background-color: var(--auro-color-ui-default-on-dark);
+    box-shadow: inset 0 0 0 3px var(--auro-color-border-focus-on-dark);
+
+    // auro-buttonOndark--secondary
+    &--secondary {
+      background-color: var(--auro-color-base-black-opacity-15);
+      box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
+      border: 1px solid var(--auro-color-ui-active-on-dark);
+    }
+
+    // auro-buttonOndark--tertiary
+    &--tertiary {
+      background-color: var(--auro-color-base-black-opacity-15);
+      border-color: var(--auro-color-ui-active-on-dark);
+      box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
+    }
+  }
+}
+
+// handle focus-visible state
+:host(.focus-visible) {
+  .auro-button {
+    @include focus-visible;
+
+    &::-moz-focus-inner {
+      border: none;
+      width: 100%;
+    }
+  }
+}
+
+:host([fluid]),
+:host([fluid=true]) {
+  .auro-button {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+// Note: without this, events on a disabled element will still fire
+slot {
+  pointer-events: none;
+}
+
+// Button styles
+.auro-button {
+  @include auro_transition(all, 0.15s, ease);
+
+  color: var(--auro-color-text-primary-on-dark);
+  cursor: pointer;
+  background-color: var(--auro-color-ui-default-on-light);
+  border: 1px solid var(--auro-color-ui-default-on-light);
+  border-radius: var(--auro-border-radius);
+  font-family: var(--auro-font-family-default);
+  font-size: var(--auro-text-body-size-default);
+  font-weight: var(--auro-text-body-default-weight);
+  line-height: var(--auro-unitless-scale-140);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+  width: 100%;
+
+  // removes margind around button in Safari
+  margin: 0;
+
+  // macOS / iOS agents
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+
+  // handle hover state auro-button
+  @media (hover: hover) {
+    &:active,
+    &:hover {
+      background-color: var(--auro-color-ui-hover-on-light);
+      border: 1px solid var(--auro-color-ui-hover-on-light);
+    }
+  }
+
+  // remove Firefox-only focus outline
+  &::-moz-focus-inner {
+    border: none;
+  }
+
+  // handle active state
+  &:active {
+    background-color: var(--auro-color-ui-active-on-light);
+    border: 1px solid var(--auro-color-ui-active-on-light);
+    transform: scale(0.95);
+  }
+
+  @include auro_breakpoint--sm {
+    min-width: 8.75rem;
+    width: auto;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    transform: unset;
+    opacity: .4;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--auro-color-ui-default-on-light);
+        border-color: var(--auro-color-ui-default-on-light);
+      }
+    }
+  }
+
+  // auro-button--secondary
+  &--secondary {
+    background-color: var(--auro-color-background-lightest);
+    border: 1px solid var(--auro-color-ui-default-on-light);
+    color: var(--auro-color-text-link-on-light);
+
+    @media (hover: hover) {
+      &:active,
+      &:hover {
+        background-color: var(--auro-color-background-lighter);
+        border: 1px solid var(--auro-color-ui-default-on-light);
+      }
+    }
+
+    &:active {
+      background-color: var(--auro-color-background-lighter);
+      border: 1px solid var(--auro-color-ui-default-on-light);
+    }
+
+    &:disabled {
+      &:hover {
+        background-color: var(--auro-color-background-lightest);
+        border-color: var(--auro-color-ui-default-on-light);
+      }
+    }
+  }
+
+  // auro-button--tertiary
+  &--tertiary {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--auro-color-text-link-on-light);
+
+    @media (hover: hover) {
+      &:active,
+      &:hover {
+        background-color: var(--auro-color-background-lighter);
+        border-color: transparent;
+      }
+    }
+
+    &:active {
+      background-color: var(--auro-color-background-lighter);
+      border-color: transparent;
+    }
+
+    &:disabled {
+      @media (hover: hover) {
+        &:hover {
+          background-color: transparent;
+          border-color: transparent;
+        }
+      }
+    }
+  }
+
+  &Ondark {
+    background-color: var(--auro-color-ui-default-on-dark);
+    border: 1px solid var(--auro-color-ui-default-on-dark);
+    color: var(--auro-color-text-primary-on-light);
+
+    // auro-buttonOndark hover
+    @media (hover: hover) {
+      &:active,
+      &:hover {
+        background-color: var(--auro-color-ui-hover-on-dark);
+        border: 1px solid var(--auro-color-ui-hover-on-dark);
+      }
+    }
+
+    &:active {
+      background-color: var(--auro-color-ui-active-on-dark);
+      border: 1px solid var(--auro-color-ui-active-on-dark);
+    }
+
+    &:disabled {
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--auro-color-ui-default-on-dark);
+          border-color: var(--auro-color-ui-default-on-dark);
+        }
+      }
+    }
+
+    // auro-buttonOndark--secondary
+    &--secondary {
+      background-color: transparent;
+      border: 1px solid var(--auro-color-ui-default-on-dark);
+      color: var(--auro-color-ui-default-on-dark);
+
+      @media (hover: hover) {
+        &:active,
+        &:hover {
+          background-color: var(--auro-color-base-black-opacity-15);
+        }
+      }
+
+      &:active {
+        background-color: var(--auro-color-base-black-opacity-15);
+        border: 1px solid var(--auro-color-ui-hover-on-dark);
+      }
+
+      &:disabled {
+        @media (hover: hover) {
+          &:hover {
+            background-color: transparent;
+            border: 1px solid var(--auro-color-ui-default-on-dark);
+          }
+        }
+      }
+    }
+
+    // auro-button--tertiary
+    &--tertiary {
+      background-color: transparent;
+      border: 1px solid transparent;
+      color: var(--auro-color-ui-default-on-dark);
+
+      @media (hover: hover) {
+        &:active,
+        &:hover {
+          background-color: var(--auro-color-base-black-opacity-15);
+          border: 1px solid transparent;
+          box-shadow: none;
+        }
+      }
+
+      &:active {
+        background-color: var(--auro-color-base-black-opacity-15);
+        border: 1px solid transparent;
+        box-shadow: none;
+      }
+
+      &:disabled {
+        @media (hover: hover) {
+          &:hover {
+            background-color: transparent;
+            border-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

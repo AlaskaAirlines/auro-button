@@ -11,22 +11,15 @@ altImports/
 demo/css
 demo/sass/tokenProperties.scss
 src/style.css
-src/shared_style.css
-src/style-ld.css
-src/style-auro-ld.css
-src/style-auro.css
-temp/
 
 ## *-css built from sass-render process
 *-css.js
-
-## *_clean.scss built from styleflux process
-*_clean.scss
 
 ## Build on demand from npm
 demo/fonts
 
 ## dist files
 dist/
-altImportsCanonical/
-altImportsVariable/
+
+## Karma code coverage reports
+coverage/

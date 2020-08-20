@@ -1,0 +1,519 @@
+auro-button-light {
+  /**
+ * Do not edit directly
+ * Generated on Fri, 17 Jul 2020 22:51:32 GMT
+ */
+  /*
+  Do not edit directly
+  Generated on Fri, 17 Jul 2020 22:51:31 GMT
+*/ }
+  auro-button-light :root {
+    --auro-animation-default-property: all;
+    --auro-animation-default-duration: 0.3s;
+    --auro-animation-default-timing: ease-out;
+    --auro-asset-font-circular-family-name: "AS Circular";
+    --auro-asset-font-circular-filename: "ASCircularWeb";
+    --auro-asset-font-circular-weight-light: "-Light";
+    --auro-asset-font-circular-weight-medium: "-Medium";
+    --auro-asset-font-circular-weight-book: "-Book";
+    --auro-breakpoint-sm: 660px;
+    --auro-breakpoint-md: 1024px;
+    --auro-breakpoint-lg: 1232px;
+    --auro-color-background-lightest: #ffffff;
+    --auro-color-background-lighter: #f8f8f8;
+    --auro-color-background-darker: #01426a;
+    --auro-color-background-darkest: #00274a;
+    --auro-color-base-white: #ffffff;
+    /* 
+  // Base value for token support; should not use in code! */
+    --auro-color-base-white-opacity-40: rgba(255, 255, 255, 0.4);
+    /* white @ 40% */
+    --auro-color-base-black: #000000;
+    /* 
+  // Base value for token support; should not use in code! */
+    --auro-color-base-black-opacity-15: rgba(0, 0, 0, 0.15);
+    /* black @ 15% */
+    --auro-color-base-gray-100: #f8f8f8;
+    --auro-color-base-gray-200: #dbdbdb;
+    --auro-color-base-gray-300: #b2b2b2;
+    --auro-color-base-gray-400: #767676;
+    --auro-color-base-gray-500: #222222;
+    --auro-color-base-neutral-400: #9fabbb;
+    /* 
+  // Base value for token support; should not use in code! */
+    --auro-color-base-neutral-500: #626b79;
+    /* 
+  // Base value for token support; should not use in code! */
+    --auro-color-border-primary-on-light: rgba(0, 0, 0, 0.15);
+    --auro-color-border-primary-on-dark: rgba(255, 255, 255, 0.4);
+    --auro-color-border-active-on-light: #0074cb;
+    --auro-color-border-active-on-dark: #00cff0;
+    --auro-color-border-error-on-light: #df0b37;
+    --auro-color-border-error-on-dark: #ff999b;
+    --auro-color-border-disabled-on-light: #dbdbdb;
+    --auro-color-border-disabled-on-dark: #dbdbdb;
+    --auro-color-border-focus-on-light: #222222;
+    --auro-color-border-focus-on-dark: #ffffff;
+    --auro-color-brand-midnight-100: #c1daf0;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-midnight-200: #569ed7;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-midnight-300: #156fad;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-midnight-400: #01426a;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-midnight-500: #00274a;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-atlas-100: #cde6ff;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-atlas-200: #6bb7fb;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-atlas-300: #2492eb;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-atlas-400: #0074cb;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-atlas-500: #054687;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-breeze-100: #c0f7ff;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-breeze-200: #5de3f7;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-breeze-300: #00cff0;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-breeze-400: #099dc5;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-breeze-500: #0b5575;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-tropical-100: #e2ffcd;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-tropical-200: #d0fba6;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-tropical-300: #c0e585;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-tropical-400: #91be62;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-tropical-500: #5e8741;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-alpine-100: #bcaae6;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-alpine-200: #9e73ea;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-alpine-300: #8439ef;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-alpine-400: #631db8;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-alpine-500: #39115c;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-flamingo-100: #ffebee;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-flamingo-200: #ffc0ca;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-flamingo-300: #ff94a7;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-flamingo-400: #f65b7b;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-flamingo-500: #b82b47;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-canyon-100: #ffcab6;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-canyon-200: #f99574;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-canyon-300: #f26135;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-canyon-400: #de3e09;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-canyon-500: #b83302;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-goldcoast-100: #fff0cd;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-goldcoast-200: #ffdb67;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-goldcoast-300: #ffd200;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-goldcoast-400: #e5ad07;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-brand-goldcoast-500: #b88624;
+    /* 
+  // Please consider descriptive token prior to using brand token */
+    --auro-color-alert-notification-on-light: #0074cb;
+    --auro-color-alert-notification-on-dark: #00cff0;
+    --auro-color-alert-warning-on-light: #de750c;
+    --auro-color-alert-error-on-light: #df0b37;
+    --auro-color-alert-error-on-dark: #ff999b;
+    --auro-color-alert-success-on-light: #00805d;
+    --auro-color-alert-success-on-dark: #69cf96;
+    --auro-color-alert-advisory-on-light: #fff0cd;
+    --auro-color-alert-advisory-on-dark: #fff0cd;
+    --auro-color-state-error-100: #ff999b;
+    --auro-color-state-error-500: #df0b37;
+    --auro-color-state-success-100: #69cf96;
+    --auro-color-state-success-500: #00805d;
+    --auro-color-state-warning-500: #de750c;
+    --auro-color-icon-primary-on-light: #626b79;
+    --auro-color-icon-primary-on-dark: #9fabbb;
+    --auro-color-icon-emphasis-on-light: #222222;
+    --auro-color-icon-emphasis-on-dark: #ffffff;
+    --auro-color-icon-accent-on-light: #0074cb;
+    --auro-color-icon-accent-on-dark: #00cff0;
+    --auro-color-icon-disabled-on-light: rgba(0, 0, 0, 0.15);
+    --auro-color-icon-disabled-on-dark: rgba(255, 255, 255, 0.4);
+    --auro-color-text-primary-on-light: #222222;
+    --auro-color-text-primary-on-dark: #ffffff;
+    --auro-color-text-secondary-on-light: #626b79;
+    --auro-color-text-secondary-on-dark: #9fabbb;
+    --auro-color-text-link-on-light: #0074cb;
+    --auro-color-text-link-on-dark: #00cff0;
+    --auro-color-text-error-on-light: #df0b37;
+    --auro-color-text-error-on-dark: #ff999b;
+    --auro-color-text-disabled-on-light: #dbdbdb;
+    --auro-color-text-disabled-on-dark: #dbdbdb;
+    --auro-color-ui-default-on-light: #0074cb;
+    --auro-color-ui-default-on-dark: #00cff0;
+    --auro-color-ui-hover-on-light: #054687;
+    --auro-color-ui-hover-on-dark: #5de3f7;
+    --auro-color-ui-active-on-light: #054687;
+    --auro-color-ui-active-on-dark: #5de3f7;
+    --auro-color-ui-disabled-on-light: rgba(0, 116, 203, 0.2);
+    --auro-color-ui-disabled-on-dark: rgba(0, 207, 240, 0.3);
+    --auro-depth-dialog: 100;
+    --auro-depth-overlay: 200;
+    --auro-depth-modal: 300;
+    --auro-depth-tooltip: 300;
+    --auro-size-none: 0rem;
+    /* style guide value 0 */
+    --auro-size-xxxs: 0.125rem;
+    /* style guide value 2px */
+    --auro-size-xxs: 0.25rem;
+    /* style guide value 4px */
+    --auro-size-xs: 0.5rem;
+    /* style guide value 8px */
+    --auro-size-sm: 0.75rem;
+    /* style guide value 12px */
+    --auro-size-md: 1rem;
+    /* style guide value 16px */
+    --auro-size-lg: 1.5rem;
+    /* style guide value 24px */
+    --auro-size-xl: 2rem;
+    /* style guide value 32px */
+    --auro-size-xxl: 3rem;
+    /* style guide value 48px */
+    --auro-size-xxxl: 4rem;
+    /* style guide value 64px */
+    --auro-border-radius: 0.375rem;
+    --auro-border-width-thin: 1px;
+    /* 
+  // Deprecated, no replacement; token to be REMOVED in next MAJOR release */
+    --auro-border-width-thick: 2px;
+    /* 
+  // Deprecated, no replacement; token to be REMOVED in next MAJOR release */
+    --auro-unitless-scale-20: 0.25;
+    --auro-unitless-scale-50: 0.5;
+    --auro-unitless-scale-100: 1;
+    --auro-unitless-scale-140: 1.4;
+    --auro-unitless-scale-150: 1.5;
+    --auro-unitless-scale-200: 2;
+    --auro-unitless-scale-300: 3;
+    --auro-unitless-scale-350: 3.5;
+    --auro-font-family-default: 'AS Circular', Helvetica Neue, Arial, sans-serif;
+    --auro-font-family-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    --auro-text-heading-300-px: 18px;
+    --auro-text-heading-300-size: 1.125rem;
+    --auro-text-heading-300-height: 1.625rem;
+    --auro-text-heading-300-height-px: 26px;
+    --auro-text-heading-400-px: 20px;
+    --auro-text-heading-400-size: 1.25rem;
+    --auro-text-heading-400-height: 1.625rem;
+    --auro-text-heading-400-height-px: 26px;
+    --auro-text-heading-500-px-breakpoint-sm: 22px;
+    --auro-text-heading-500-px-breakpoint-md: 24px;
+    --auro-text-heading-500-px-breakpoint-lg: 24px;
+    --auro-text-heading-500-size-breakpoint-sm: 1.375rem;
+    --auro-text-heading-500-size-breakpoint-md: 1.5rem;
+    --auro-text-heading-500-size-breakpoint-lg: 1.5rem;
+    --auro-text-heading-500-height-breakpoint-sm: 1.625rem;
+    --auro-text-heading-500-height-breakpoint-px-sm: 26px;
+    --auro-text-heading-500-height-breakpoint-md: 1.875rem;
+    --auro-text-heading-500-height-breakpoint-px-md: 30px;
+    --auro-text-heading-500-height-breakpoint-lg: 2rem;
+    --auro-text-heading-500-height-breakpoint-px-lg: 32px;
+    --auro-text-heading-600-px-breakpoint-sm: 26px;
+    --auro-text-heading-600-px-breakpoint-md: 28px;
+    --auro-text-heading-600-px-breakpoint-lg: 28px;
+    --auro-text-heading-600-size-breakpoint-sm: 1.625rem;
+    --auro-text-heading-600-size-breakpoint-md: 1.75rem;
+    --auro-text-heading-600-size-breakpoint-lg: 1.75rem;
+    --auro-text-heading-600-height-breakpoint-sm: 1.875rem;
+    --auro-text-heading-600-height-breakpoint-px-sm: 30px;
+    --auro-text-heading-600-height-breakpoint-md: 2.125rem;
+    --auro-text-heading-600-height-breakpoint-px-md: 34px;
+    --auro-text-heading-600-height-breakpoint-lg: 2.25rem;
+    --auro-text-heading-600-height-breakpoint-px-lg: 36px;
+    --auro-text-heading-700-weight: 300;
+    --auro-text-heading-700-px-breakpoint-sm: 28px;
+    --auro-text-heading-700-px-breakpoint-md: 32px;
+    --auro-text-heading-700-px-breakpoint-lg: 36px;
+    --auro-text-heading-700-size-breakpoint-sm: 1.75rem;
+    --auro-text-heading-700-size-breakpoint-md: 2rem;
+    --auro-text-heading-700-size-breakpoint-lg: 2.25rem;
+    --auro-text-heading-700-height-breakpoint-sm: 2.125rem;
+    --auro-text-heading-700-height-breakpoint-px-sm: 34px;
+    --auro-text-heading-700-height-breakpoint-md: 2.375rem;
+    --auro-text-heading-700-height-breakpoint-px-md: 38px;
+    --auro-text-heading-700-height-breakpoint-lg: 2.75rem;
+    --auro-text-heading-700-height-breakpoint-px-lg: 44px;
+    --auro-text-heading-800-weight: 300;
+    --auro-text-heading-800-px-breakpoint-sm: 32px;
+    --auro-text-heading-800-px-breakpoint-md: 36px;
+    --auro-text-heading-800-px-breakpoint-lg: 40px;
+    --auro-text-heading-800-size-breakpoint-sm: 2rem;
+    --auro-text-heading-800-size-breakpoint-md: 2.25rem;
+    --auro-text-heading-800-size-breakpoint-lg: 2.5rem;
+    --auro-text-heading-800-height-breakpoint-sm: 2.375rem;
+    --auro-text-heading-800-height-breakpoint-px-sm: 38px;
+    --auro-text-heading-800-height-breakpoint-md: 2.625rem;
+    --auro-text-heading-800-height-breakpoint-px-md: 42px;
+    --auro-text-heading-800-height-breakpoint-lg: 3rem;
+    --auro-text-heading-800-height-breakpoint-px-lg: 48px;
+    --auro-text-heading-default-weight: 500;
+    --auro-text-heading-default-margin: 0;
+    --auro-text-heading-default-spacing: -0.2px;
+    --auro-text-heading-medium-weight: 300;
+    --auro-text-heading-display-weight: 100;
+    --auro-text-heading-display-px-breakpoint-sm: 44px;
+    --auro-text-heading-display-px-breakpoint-md: 48px;
+    --auro-text-heading-display-px-breakpoint-lg: 56px;
+    --auro-text-heading-display-size-breakpoint-sm: 2.75rem;
+    --auro-text-heading-display-size-breakpoint-md: 3rem;
+    --auro-text-heading-display-size-breakpoint-lg: 3.5rem;
+    --auro-text-heading-display-height-breakpoint-sm: 3.375rem;
+    --auro-text-heading-display-height-breakpoint-px-sm: 54px;
+    --auro-text-heading-display-height-breakpoint-md: 3.75rem;
+    --auro-text-heading-display-height-breakpoint-px-md: 60px;
+    --auro-text-heading-display-height-breakpoint-lg: 4.25rem;
+    --auro-text-heading-display-height-breakpoint-px-lg: 68px;
+    --auro-text-body-default-weight: 500;
+    --auro-text-body-size-xs: 0.75rem;
+    --auro-text-body-size-sm: 0.875rem;
+    --auro-text-body-size-default: 1rem;
+    --auro-text-body-size-lg: 1.125rem;
+    --auro-text-body-height-xs: 1rem;
+    --auro-text-body-height-sm: 1.25rem;
+    --auro-text-body-height-default: 1.5rem;
+    --auro-text-body-height-lg: 1.625rem; }
+  auro-button-light *, auro-button-light *:before, auro-button-light *:after {
+    box-sizing: border-box; }
+    @media (prefers-reduced-motion: reduce) {
+      auro-button-light *, auro-button-light *:before, auro-button-light *:after {
+        animation: none !important;
+        transition: none !important; } }
+  auro-button-light *:focus {
+    outline: none; }
+  auro-button-light .js-focus-visible :focus:not(.focus-visible) {
+    outline: none; }
+  auro-button-light .util_insetLg--squish {
+    padding: calc(1.5rem / 2) 1.5rem; }
+  auro-button-light :host(.focus-visible) .auro-button {
+    box-shadow: inset 0 0 0 1px var(--auro-color-border-focus-on-dark), inset 0 0 0 3px var(--auro-color-background-lightest); }
+    auro-button-light :host(.focus-visible) .auro-button--secondary {
+      background-color: var(--auro-color-background-lighter);
+      box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light); }
+    auro-button-light :host(.focus-visible) .auro-button--tertiary {
+      background-color: var(--auro-color-background-lighter);
+      border-color: var(--auro-color-ui-default-on-light);
+      box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light); }
+    auro-button-light :host(.focus-visible) .auro-buttonOndark {
+      background-color: var(--auro-color-ui-default-on-dark);
+      box-shadow: inset 0 0 0 3px var(--auro-color-border-focus-on-dark); }
+      auro-button-light :host(.focus-visible) .auro-buttonOndark--secondary {
+        background-color: var(--auro-color-base-black-opacity-15);
+        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
+        border: 1px solid var(--auro-color-ui-active-on-dark); }
+      auro-button-light :host(.focus-visible) .auro-buttonOndark--tertiary {
+        background-color: var(--auro-color-base-black-opacity-15);
+        border-color: var(--auro-color-ui-active-on-dark);
+        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark); }
+    auro-button-light :host(.focus-visible) .auro-button::-moz-focus-inner {
+      border: none;
+      width: 100%; }
+  auro-button-light :host([fluid]) .auro-button,
+  auro-button-light :host([fluid=true]) .auro-button {
+    min-width: auto;
+    width: 100%; }
+  auro-button-light slot {
+    pointer-events: none; }
+  auro-button-light .auro-button {
+    transition: all 0.15s ease;
+    color: var(--auro-color-text-primary-on-dark);
+    cursor: pointer;
+    background-color: var(--auro-color-ui-default-on-light);
+    border: 1px solid var(--auro-color-ui-default-on-light);
+    border-radius: var(--auro-border-radius);
+    font-family: var(--auro-font-family-default);
+    font-size: var(--auro-text-body-size-default);
+    font-weight: var(--auro-text-body-default-weight);
+    line-height: var(--auro-unitless-scale-140);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; }
+    @media (hover: hover) {
+      auro-button-light .auro-button:active, auro-button-light .auro-button:hover {
+        background-color: var(--auro-color-ui-hover-on-light);
+        border: 1px solid var(--auro-color-ui-hover-on-light); } }
+    auro-button-light .auro-button::-moz-focus-inner {
+      border: none; }
+    auro-button-light .auro-button:active {
+      background-color: var(--auro-color-ui-active-on-light);
+      border: 1px solid var(--auro-color-ui-active-on-light);
+      transform: scale(0.95); }
+    @media screen and (min-width: 660px) {
+      auro-button-light .auro-button {
+        min-width: 8.75rem;
+        width: auto; } }
+    auro-button-light .auro-button:disabled {
+      cursor: not-allowed;
+      transform: unset;
+      opacity: .4; }
+      @media (hover: hover) {
+        auro-button-light .auro-button:disabled:hover {
+          background-color: var(--auro-color-ui-default-on-light);
+          border-color: var(--auro-color-ui-default-on-light); } }
+    auro-button-light .auro-button--secondary {
+      background-color: var(--auro-color-background-lightest);
+      border: 1px solid var(--auro-color-ui-default-on-light);
+      color: var(--auro-color-text-link-on-light); }
+      @media (hover: hover) {
+        auro-button-light .auro-button--secondary:active, auro-button-light .auro-button--secondary:hover {
+          background-color: var(--auro-color-background-lighter);
+          border: 1px solid var(--auro-color-ui-default-on-light); } }
+      auro-button-light .auro-button--secondary:active {
+        background-color: var(--auro-color-background-lighter);
+        border: 1px solid var(--auro-color-ui-default-on-light); }
+      auro-button-light .auro-button--secondary:disabled:hover {
+        background-color: var(--auro-color-background-lightest);
+        border-color: var(--auro-color-ui-default-on-light); }
+    auro-button-light .auro-button--tertiary {
+      background-color: transparent;
+      border-color: transparent;
+      color: var(--auro-color-text-link-on-light); }
+      @media (hover: hover) {
+        auro-button-light .auro-button--tertiary:active, auro-button-light .auro-button--tertiary:hover {
+          background-color: var(--auro-color-background-lighter);
+          border-color: transparent; } }
+      auro-button-light .auro-button--tertiary:active {
+        background-color: var(--auro-color-background-lighter);
+        border-color: transparent; }
+      @media (hover: hover) {
+        auro-button-light .auro-button--tertiary:disabled:hover {
+          background-color: transparent;
+          border-color: transparent; } }
+    auro-button-light .auro-buttonOndark {
+      background-color: var(--auro-color-ui-default-on-dark);
+      border: 1px solid var(--auro-color-ui-default-on-dark);
+      color: var(--auro-color-text-primary-on-light); }
+      @media (hover: hover) {
+        auro-button-light .auro-buttonOndark:active, auro-button-light .auro-buttonOndark:hover {
+          background-color: var(--auro-color-ui-hover-on-dark);
+          border: 1px solid var(--auro-color-ui-hover-on-dark); } }
+      auro-button-light .auro-buttonOndark:active {
+        background-color: var(--auro-color-ui-active-on-dark);
+        border: 1px solid var(--auro-color-ui-active-on-dark); }
+      @media (hover: hover) {
+        auro-button-light .auro-buttonOndark:disabled:hover {
+          background-color: var(--auro-color-ui-default-on-dark);
+          border-color: var(--auro-color-ui-default-on-dark); } }
+      auro-button-light .auro-buttonOndark--secondary {
+        background-color: transparent;
+        border: 1px solid var(--auro-color-ui-default-on-dark);
+        color: var(--auro-color-ui-default-on-dark); }
+        @media (hover: hover) {
+          auro-button-light .auro-buttonOndark--secondary:active, auro-button-light .auro-buttonOndark--secondary:hover {
+            background-color: var(--auro-color-base-black-opacity-15); } }
+        auro-button-light .auro-buttonOndark--secondary:active {
+          background-color: var(--auro-color-base-black-opacity-15);
+          border: 1px solid var(--auro-color-ui-hover-on-dark); }
+        @media (hover: hover) {
+          auro-button-light .auro-buttonOndark--secondary:disabled:hover {
+            background-color: transparent;
+            border: 1px solid var(--auro-color-ui-default-on-dark); } }
+      auro-button-light .auro-buttonOndark--tertiary {
+        background-color: transparent;
+        border: 1px solid transparent;
+        color: var(--auro-color-ui-default-on-dark); }
+        @media (hover: hover) {
+          auro-button-light .auro-buttonOndark--tertiary:active, auro-button-light .auro-buttonOndark--tertiary:hover {
+            background-color: var(--auro-color-base-black-opacity-15);
+            border: 1px solid transparent;
+            box-shadow: none; } }
+        auro-button-light .auro-buttonOndark--tertiary:active {
+          background-color: var(--auro-color-base-black-opacity-15);
+          border: 1px solid transparent;
+          box-shadow: none; }
+        @media (hover: hover) {
+          auro-button-light .auro-buttonOndark--tertiary:disabled:hover {
+            background-color: transparent;
+            border-color: transparent; } }
+  auro-button-light .focus-visible.auro-button {
+    box-shadow: inset 0 0 0 1px var(--auro-color-border-focus-on-dark), inset 0 0 0 3px var(--auro-color-background-lightest); }
+    auro-button-light .focus-visible.auro-button--secondary {
+      background-color: var(--auro-color-background-lighter);
+      box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light); }
+    auro-button-light .focus-visible.auro-button--tertiary {
+      background-color: var(--auro-color-background-lighter);
+      border-color: var(--auro-color-ui-default-on-light);
+      box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light); }
+    auro-button-light .focus-visible.auro-buttonOndark {
+      background-color: var(--auro-color-ui-default-on-dark);
+      box-shadow: inset 0 0 0 3px var(--auro-color-border-focus-on-dark); }
+      auro-button-light .focus-visible.auro-buttonOndark--secondary {
+        background-color: var(--auro-color-base-black-opacity-15);
+        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
+        border: 1px solid var(--auro-color-ui-active-on-dark); }
+      auro-button-light .focus-visible.auro-buttonOndark--tertiary {
+        background-color: var(--auro-color-base-black-opacity-15);
+        border-color: var(--auro-color-ui-active-on-dark);
+        box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark); }

@@ -3,72 +3,11 @@
 
 // ---------------------------------------------------------------------
 
-// Creates ods-button CSS UI definition of shape
-
-
-// import variable resources from Style Dictionary generated code
-@import "./sassPartials/variables";
-@import "./sassPartials/properties";
-@import "./sassPartials/hoverMixins";
-
-
 // import button styles into element namespaced wrapper
-ods-button-light {
-  @import './sassPartials/ods-button';
-}
+auro-button-light {
+  @import './style.scss';
 
-// light DOM support for hover states
-ods-button-light:not(.is-touching) {
-  .ods-button {
-    &:hover {
-      @include buttonHover(null);
-    }
-
-    &:disabled {
-      &:hover {
-        @include disabledHover
-      }
-    }
-
-    &.is-active {
-      &:disabled {
-        &:hover {
-          @include isActiveHover;
-        }
-      }
-    }
-
-    &--complete {
-      &:hover {
-        @include completeHover;
-      }
-      &.is-active {
-        &:disabled {
-          &:hover {
-            @include completeActiveHover;
-          }
-        }
-      }
-    }
-
-    &--secondary {
-      &:hover {
-        @include secondaryHover;
-      }
-
-      &:disabled {
-        &:hover {
-          @include secondaryDisabledHover;
-        }
-      }
-
-      &.is-active {
-        &:disabled {
-          &:hover {
-            @include secondaryIsActiveDisabledHover;
-          }
-        }
-      }
-    }
+  .focus-visible.auro-button {
+    @include focus-visible;
   }
 }
