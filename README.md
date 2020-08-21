@@ -1,6 +1,6 @@
 ## auro-button
 
-`<auro-button>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of ...
+`<auro-button>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of containing styling and behavior.
 
 ## UI development browser support
 
@@ -65,20 +65,57 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 **Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11.
 
 
+## Responsive support
+
+`<auro-button>` is responsive by default. The button will assume 100% of the width of its container for views less than [auro_breakpoint--sm](https://alaskaairlines.github.io/WebCoreStyleSheets/#responsive-mixin-auro_breakpoint--sm).	
+
+Beyond that breakpoint `<auro-button>` will assume the width of the content or a min-width of `8.75rem`, which ever is greater.	
+
+<span style="color: #df0b37"><b>Only supported with ods-button</b></span>	
+
+If the desired appearance of the `<ods-button>` is to responsive within a given space, then the use of the `responsive` attribute is required on the `<ods-element>`.	
+
+If the desired appearance of the `<auro-button>` is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the `<auro-button>` element.	
+
+## Multi button support	
+
+When the UI requires the use of multiple buttons within the same space, with the use of the [Auro Web Core Style Sheets](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-auro-css-#{$scope}.auro_containedButtons), and the `auro_containedButtons` .
+
+## Light DOM Support
+`<auro-button-light>` are included in this package for [light DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom#lightdom) support.
+
+To pass content to the <auro-button-light>, use the content prop.
+
+```html	
+<auro-button-light content="Default value"></auro-button-light>	
+```	
+
 ## auro-button use cases
 
 The `<auro-button>` element should be used in situations where users may:
 
-* ...
-* ...
-* ...
+* submit a form
+* begin a new task
+* trigger a new UI element to appear on the page
+* specify a new or next step in a process
 
 ## API Code Examples
 
 Default auro-button
 
 ```html
-<auro-button>Hello World</auro-button>
+<auro-button>Primary</auro-button>
+<auro-button disabled>Primary</auro-button>
+```
+
+```html
+<auro-button secondary>Secondary</auro-button>
+<auro-button secondary disabled>Secondary</auro-button>
+```
+
+```html
+<auro-button tertiary>Tertiary</auro-button>
+<auro-button tertiary disabled>Tertiary</auro-button>
 ```
 
 ## Development
