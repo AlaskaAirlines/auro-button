@@ -13,7 +13,7 @@ For the most up to date information on [UI development browser support](https://
 [![License](https://img.shields.io/npm/l/@alaskaairux/auro-button?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
-$ npm i @alaskaairuxauro-button
+$ npm i @alaskaairux/auro-button
 ```
 
 Installing as a direct, dev or peer dependency is up to the user installing the package. If you are unsure as to what type of dependency you should use, consider reading this [stack overflow](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies) answer.
@@ -33,7 +33,7 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 Defining the component dependency within each component that is using the `<auro-button>` component.
 
 ```javascript
-import "@alaskaairuxauro-button";
+import "@alaskaairux/auro-button";
 ```
 
 **Reference component in HTML**
@@ -71,9 +71,7 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 
 Beyond that breakpoint `<auro-button>` will assume the width of the content or a min-width of `8.75rem`, which ever is greater.	
 
-<span style="color: #df0b37"><b>Only supported with ods-button</b></span>	
-
-If the desired appearance of the `<ods-button>` is to responsive within a given space, then the use of the `responsive` attribute is required on the `<ods-element>`.	
+<span style="color: #df0b37"><b>Only supported with ods-button</b></span>
 
 If the desired appearance of the `<auro-button>` is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the `<auro-button>` element.	
 
