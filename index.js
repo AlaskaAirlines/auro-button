@@ -1,1 +1,1 @@
-export * from './dist/ods-button';
+export * from './dist/auro-button';

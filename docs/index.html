@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Auro button API examples and bundled install support</title>
+  <title>auro-button API examples and bundled install support</title>
   <style>
     main {
       width: 80%;
@@ -19,20 +19,10 @@
       }
     }
 
-    .wc-wrapper ods-button,
-    .wc-wrapper auro-button,
-    .wc-wrapper auro-button-beta {
-      display: block;
+    .wc-wrapper auro-button {
+      display: inline-block;
       margin-bottom: var(--auro-size-md);
       margin-right: var(--auro-size-md);
-    }
-
-    @media(min-width: 1024px) {
-      .wc-wrapper ods-button,
-      .wc-wrapper auro-button,
-      .wc-wrapper auro-button-beta {
-        display: inline-block;
-      }
     }
 
     .codeWrapper {
@@ -60,108 +50,50 @@
       return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/[']/g, '');
     }
 
-    var ods = [
-      '<ods-button responsive>Default</ods-button>',
-      '<ods-button responsive isactive>Active</ods-button>',
-      '<ods-button responsive disabled>Disabled</ods-button>',
-      '<ods-button responsive buttontype="secondary">Secondary</ods-button>',
-      '<ods-button responsive condensed>Condensed</ods-button>',
-      '<ods-button responsive flowtype="complete">Complete</ods-button>',
-      '<ods-button responsive theme="classic">Classic</ods-button>',
-      '<ods-button responsive theme="classic" buttontype="secondary">Classic</ods-button>'
-    ]
-
-    var auro = [
-      '<auro-button>Default</auro-button>',
-      '<auro-button secondary>Secondary</auro-button>',
-      '<auro-button tertiary>Tertiary</auro-button>'
-    ]
-
-    var auroDark = [
-      '<auro-button ondark>Default</auro-button>',
-      '<auro-button ondark secondary>Secondary</auro-button>',
-      '<auro-button ondark tertiary>Tertiary</auro-button>'
+    var auroButton = [
+      '<auro-button cssClass="testClass">Hello World</auro-button>'
     ]
   </script>
 </head>
 
 <body>
   <main>
-    <h1>Auro Button API examples</h1>
-    <p>The following examples illustrate the ods-button and auro-button APIs used within any web app.</p>
+    <h1>auro-button API examples</h1>
+    <p>The following examples illustrate the auro-button APIs used within any web app.</p>
     <section class="wc-wrapper">
-      <h3>Auro Buttons: default</h3>
+      <h3>auro-button: default</h3>
       <script>
-        for (i = 0; i < auro.length; i++) {
-          document.write(auro[i])
+        for (i = 0; i < auroButton.length; i++) {
+          document.write(auroButton[i])
         }
       </script>
       <div class="codeWrapper margin">
         <code>
           <script>
-            for (i = 0; i < auro.length; i++) {
-              document.write("<p> ".concat(escapeHTML(auro[i]), " </p>"));
+            for (i = 0; i < auroButton.length; i++) {
+              document.write("<p> ".concat(escapeHTML(auroButton[i]), " </p>"));
             }
           </script>
         </code>
       </div>
     </section>
-    <section class="wc-wrapper">
-      <h3>Auro Buttons: on-dark</h3>
-      <script>
-        for (i = 0; i < auroDark.length; i++) {
-          document.write(auroDark[i])
-        }
-      </script>
-      <div class="codeWrapper margin">
-        <code>
-          <script>
-            for (i = 0; i < auroDark.length; i++) {
-              document.write("<p> ".concat(escapeHTML(auroDark[i]), " </p>"));
-            }
-          </script>
-        </code>
-      </div>
-    </section>
-    <section class="wc-wrapper">
-      <h3>Orion Buttons</h3>
-      <script>
-        for (i = 0; i < ods.length; i++) {
-          document.write(ods[i])
-        }
-      </script>
-      <div class="codeWrapper margin">
-        <code>
-          <script>
-            for (i = 0; i < ods.length; i++) {
-              document.write("<p> ".concat(escapeHTML(ods[i]), " </p>"));
-            }
-          </script>
-        </code>
-      </div>
-    </section>
+
   </main>
   <div id="assets">
     <link rel="stylesheet"
-      href="https://unpkg.com/@alaskaairux/orion-design-tokens@2.10.9/dist/tokens/CSSCustomProperties.css" />
+      href="https://unpkg.com/@alaskaairux/orion-design-tokens@2.12.1/dist/tokens/CSSCustomProperties.css" />
     <link rel="stylesheet"
-      href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@2.9.1/dist/bundled/essentials.css" />
+      href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@2.10.3/dist/bundled/essentials.css" />
 
-    <link rel="stylesheet"
-      href="https://unpkg.com/@alaskaairux/orion-design-tokens@2.10.9/dist/tokens/CSSTokenProperties.css" />
-    <link rel="stylesheet"
-      href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@2.9.1/dist/bundled/baseline.css" />
 
-    <!-- <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.6/dist/polyfills.js"></script>
-    <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.6/dist/auro-button__bundled.js"></script>
-    <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.6/dist/auro-button-beta__bundled.js"></script>
-    <script src="https://unpkg.com/@alaskaairux/ods-button@4.4.6/dist/ods-button__bundled.js"></script> -->
-
+    <!-- for initial build and test only -->
     <script src="./polyfills.js"></script>
-    <script src="./ods-button__bundled.js" defer></script>
-    <script src="./auro-button__bundled.js" defer></script>
-    <script src="./auro-button-beta__bundled.js" defer></script>
+    <script src="./auro-button__bundled.js"></script>
 
+    <!-- once first build has been released, update with the links below -->
+    <!-- Be sure to update the :version number -->
+    <!-- <script src="https://unpkg.com/@alaskaairux/auro-button@:version/dist/polyfills.js"></script>
+    <script src="https://unpkg.com/@alaskaairux/auro-button@:version/dist/auro-button__bundled.js"></script> -->
   </div>
 </body>
 
