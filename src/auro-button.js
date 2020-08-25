@@ -20,17 +20,11 @@ class AuroButton extends LitElement {
     return {
       autofocus:        { type: Boolean },
       disabled:         { type: Boolean },
-      formnovalidate:   { type: Boolean },
       ondark:           { type: Boolean },
       secondary:        { type: Boolean },
       tertiary:         { type: Boolean },
       arialabel:        { type: String },
       arialabelledby:   { type: String },
-      form:             { type: String },
-      formaction:       { type: String },
-      formenctype:      { type: String },
-      formmethod:       { type: String },
-      formtarget:       { type: String },
       id:               { type: String },
       name:             { type: String },
       title:            { type: String },
@@ -44,13 +38,6 @@ class AuroButton extends LitElement {
   focus() {
     this.renderRoot.querySelector('button').focus();
   }
-
-  // getIcon(svgIcon) {
-  //   this.dom = new DOMParser().parseFromString(svgIcon, 'text/html');
-  //   this.svg = this.dom.body.firstChild;
-
-  //   return this.svg;
-  // }
 
   render() {
 
@@ -71,12 +58,12 @@ class AuroButton extends LitElement {
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
         ?disabled="${this.disabled}"
-        form="${ifDefined(this.form ? this.form : undefined)}"
-        formaction="${ifDefined(this.formaction ? this.formaction : undefined)}"
-        formenctype="${ifDefined(this.formenctype ? this.formenctype : undefined)}"
-        formmethod="${ifDefined(this.formmethod ? this.formmethod : undefined)}"
-        ?formnovalidate="${this.formnovalidate}"
-        formtarget="${ifDefined(this.formtarget ? this.formtarget : undefined)}"
+
+
+
+
+
+
         id="${ifDefined(this.id ? this.id : undefined)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
