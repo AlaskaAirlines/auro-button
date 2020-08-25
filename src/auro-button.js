@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html, css, TemplateResult } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { classMap } from 'lit-html/directives/class-map';
 import 'focus-visible/dist/focus-visible.min.js';
@@ -59,6 +59,11 @@ class AuroButton extends LitElement {
     this.renderRoot.querySelector('button').focus();
   }
 
+  /**
+   * Internal method to parse svgIcon
+   * @param {String} svgIcon - The SVG value of the ES6.js version of the icon
+   * @returns {ChildNode} - The SVG node
+   */
   getIcon(svgIcon) {
     this.dom = new DOMParser().parseFromString(svgIcon, 'text/html');
     this.svg = this.dom.body.firstChild;

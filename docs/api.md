@@ -20,9 +20,10 @@
 
 ## Methods
 
-| Method  | Type        | Description                    |
-|---------|-------------|--------------------------------|
-| `focus` | `(): Array` | Internal method to apply focus |
+| Method    | Type                           | Description                                      |
+|-----------|--------------------------------|--------------------------------------------------|
+| `focus`   | `(): Array`                    | Internal method to apply focus                   |
+| `getIcon` | `(svgIcon: string): ChildNode` | Internal method to parse svgIcon<br /><br />**svgIcon**: The SVG value of the ES6.js version of the icon |
 
 ## Slots
 
