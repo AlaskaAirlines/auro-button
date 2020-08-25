@@ -8,7 +8,7 @@ For the most up to date information on [UI development browser support](https://
 
 ## Install
 
-[![Build Status](https://img.shields.io/travis/AlaskaAirlines/auro-button?branch=master&style=for-the-badge)](https://travis-ci.org/github/AlaskaAirlines/auro-button)
+[![Build Status](https://img.shields.io/travis/AlaskaAirlines/ods-button?branch=master&style=for-the-badge)](https://travis-ci.org/github/AlaskaAirlines/auro-button)
 [![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/auro-button?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/auro-button)
 [![License](https://img.shields.io/npm/l/@alaskaairux/auro-button?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
