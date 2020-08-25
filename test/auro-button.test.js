@@ -23,14 +23,8 @@ describe('auro-button', () => {
     expect(button.getAttribute('aria-labelledby')).to.be.null;
     expect(button.getAttribute('autofocus')).to.be.null;
     expect(button.getAttribute('disabled')).to.be.null;
-    expect(button.getAttribute('form')).to.be.null;
-    expect(button.getAttribute('formaction')).to.be.null;
-    expect(button.getAttribute('formenctype')).to.be.null;
-    expect(button.getAttribute('formmethod')).to.be.null;
     expect(button.getAttribute('formnovalidate')).to.be.null;
-    expect(button.getAttribute('formtarget')).to.be.null;
     expect(button.getAttribute('id')).to.be.null;
-    expect(button.getAttribute('name')).to.be.null;
     expect(button.getAttribute('value')).to.be.null;
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
@@ -56,17 +50,6 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
 
     expect(button.getAttribute('disabled')).to.equal('');
-  });
-
-  it('tests setting formnovalidate', async () => {
-    const el = await fixture(html`
-      <auro-button formnovalidate>Click Me!</auro-button>
-    `);
-
-    const root = el.shadowRoot;
-    const button = root.querySelector('button');
-
-    expect(button.getAttribute('formnovalidate')).to.equal('');
   });
 
   it('tests setting ondark', async () => {
@@ -165,61 +148,6 @@ describe('auro-button', () => {
     expect(button.getAttribute('aria-labelledby')).to.equal('me');
   });
 
-  it('tests setting form', async () => {
-    const el = await fixture(html`
-      <auro-button form='me'>Click Me!</auro-button>
-    `);
-
-    const root = el.shadowRoot;
-    const button = root.querySelector('button');
-
-    expect(button.getAttribute('form')).to.equal('me');
-  });
-
-  it('tests setting formaction', async () => {
-    const el = await fixture(html`
-      <auro-button formaction='me'>Click Me!</auro-button>
-    `);
-
-    const root = el.shadowRoot;
-    const button = root.querySelector('button');
-
-    expect(button.getAttribute('formaction')).to.equal('me');
-  });
-
-  it('tests setting formenctype', async () => {
-    const el = await fixture(html`
-      <auro-button formenctype='me'>Click Me!</auro-button>
-    `);
-
-    const root = el.shadowRoot;
-    const button = root.querySelector('button');
-
-    expect(button.getAttribute('formenctype')).to.equal('me');
-  });
-
-  it('tests setting formmethod', async () => {
-    const el = await fixture(html`
-      <auro-button formmethod='me'>Click Me!</auro-button>
-    `);
-
-    const root = el.shadowRoot;
-    const button = root.querySelector('button');
-
-    expect(button.getAttribute('formmethod')).to.equal('me');
-  });
-
-  it('tests setting formtarget', async () => {
-    const el = await fixture(html`
-      <auro-button formtarget='me'>Click Me!</auro-button>
-    `);
-
-    const root = el.shadowRoot;
-    const button = root.querySelector('button');
-
-    expect(button.getAttribute('formtarget')).to.equal('me');
-  });
-
   it('tests setting id', async () => {
     const el = await fixture(html`
       <auro-button id='me'>Click Me!</auro-button>
@@ -240,17 +168,6 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
 
     expect(button.getAttribute('title')).to.equal('me');
-  });
-
-  it('tests setting name', async () => {
-    const el = await fixture(html`
-      <auro-button name='me'>Click Me!</auro-button>
-    `);
-
-    const root = el.shadowRoot;
-    const button = root.querySelector('button');
-
-    expect(button.getAttribute('name')).to.equal('me');
   });
 
   it('tests setting type', async () => {
