@@ -9,6 +9,23 @@ import { classMap } from 'lit-html/directives/class-map';
 import 'focus-visible/dist/focus-visible.min.js';
 import styleCss from "./style-css.js";
 
+/**
+ * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it
+ * @attr {Boolean} disabled - If set to true button will become disabled and not allow for interactions. Default value is `false`.
+ * @attr {Boolean} ondark - Set value for on-dark version of auro-button
+ * @attr {Boolean} secondary - Set value for secondary version of auro-button
+ * @attr {Boolean} tertiary - Set value for tertiary version of auro-button
+ * @attr {Boolean} arialabel - Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead.
+ * @attr {Boolean} arialabelledby - Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion.
+ * @attr {Boolean} id - Set the unique ID of an element.
+ * @attr {Boolean} title - Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
+ * @attr {Boolean} type - The type of the button. Possible values are: `submit`, `reset`, `button`
+ * @attr {Boolean} value - Defines the value associated with the button which is submitted with the form data.
+ * @attr {Boolean} svgIconLeft - Pass in SVG string for icon to appear on the LEFT
+ * @attr {Boolean} svgIconRight - Pass in SVG string for icon to appear on the RIGHT
+ *
+ * @slot - Provide text for the button.
+ */
 class AuroButton extends LitElement {
   static get styles() {
     return css`
@@ -26,7 +43,6 @@ class AuroButton extends LitElement {
       arialabel:        { type: String },
       arialabelledby:   { type: String },
       id:               { type: String },
-      name:             { type: String },
       title:            { type: String },
       type:             { type: String },
       value:            { type: String },
@@ -35,6 +51,10 @@ class AuroButton extends LitElement {
     };
   }
 
+  /**
+   * Internal method to apply focus
+   * @returns {Array} - The DOM node for the button element
+   */
   focus() {
     this.renderRoot.querySelector('button').focus();
   }
@@ -58,18 +78,11 @@ class AuroButton extends LitElement {
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
         ?disabled="${this.disabled}"
-
-
-
-
-
-
         id="${ifDefined(this.id ? this.id : undefined)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
         type="${ifDefined(this.type ? this.type : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
-
         @click="${() => {}}"
       >
         <slot></slot>
