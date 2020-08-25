@@ -86,6 +86,8 @@ slot {
 .auro-button {
   @include auro_transition(all, 0.15s, ease);
 
+  padding: var(--auro-size-sm) var(--auro-size-lg);
+
   color: var(--auro-color-text-primary-on-dark);
   cursor: pointer;
   background-color: var(--auro-color-ui-default-on-light);
@@ -290,5 +292,16 @@ slot {
         }
       }
     }
+  }
+}
+
+.icon {
+
+  svg {
+    vertical-align: middle;
+  }
+
+  slot {
+    vertical-align: middle;
   }
 }
