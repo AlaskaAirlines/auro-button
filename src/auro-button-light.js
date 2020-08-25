@@ -40,12 +40,12 @@ class AuroButtonLight extends LitElement {
     this.renderRoot.querySelector('button').focus();
   }
 
-  // getIcon(svgIcon) {
-  //   this.dom = new DOMParser().parseFromString(svgIcon, 'text/html');
-  //   this.svg = this.dom.body.firstChild;
+  getIcon(svgIcon) {
+    this.dom = new DOMParser().parseFromString(svgIcon, 'text/html');
+    this.svg = this.dom.body.firstChild;
 
-  //   return this.svg;
-  // }
+    return this.svg;
+  }
 
   /*
    * Render template without shadow DOM. Note that shadow DOM features like
@@ -90,7 +90,9 @@ class AuroButtonLight extends LitElement {
 
         @click="${() => {}}"
       >
+        ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
         ${this.content}
+        ${ifDefined(this.svgIconRight ? this.getIcon(this.svgIconRight) : undefined)}
       </button>
     `;
   }

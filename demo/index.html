@@ -68,6 +68,21 @@
 
         </template>
       </demo-snippet>
+      
+      <h3>Icon Examples</h3>
+      <demo-snippet>
+        <template>
+          <auro-button id="svgLeftButton">Previous Step</auro-button>
+          <auro-button id="svgRightButton">Next Step</auro-button>
+          <script type="module">
+            import chevronright from '../node_modules/@alaskaairux/icons/dist/icons/interface/chevron-right_es6.js';
+            import chevronleft from '../node_modules/@alaskaairux/icons/dist/icons/interface/chevron-left_es6.js';
+
+            document.getElementById("svgLeftButton").svgIconLeft = chevronleft.svg;
+            document.getElementById("svgRightButton").svgIconRight = chevronright.svg;
+          </script>
+        </template>
+      </demo-snippet>
 
       <h3>Shadow DOM element examples</h3>
       <demo-snippet>

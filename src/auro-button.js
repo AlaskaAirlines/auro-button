@@ -59,6 +59,13 @@ class AuroButton extends LitElement {
     this.renderRoot.querySelector('button').focus();
   }
 
+  getIcon(svgIcon) {
+    this.dom = new DOMParser().parseFromString(svgIcon, 'text/html');
+    this.svg = this.dom.body.firstChild;
+
+    return this.svg;
+  }
+
   render() {
 
     const classes = {
@@ -68,7 +75,8 @@ class AuroButton extends LitElement {
       'auro-button--secondary': this.secondary,
       'auro-buttonOndark--secondary': this.secondary && this.ondark,
       'auro-button--tertiary': this.tertiary,
-      'auro-buttonOndark--tertiary': this.tertiary && this.ondark
+      'auro-buttonOndark--tertiary': this.tertiary && this.ondark,
+      'icon': this.svgIconLeft || this.svgIconRight
     };
 
     return html`
@@ -85,7 +93,9 @@ class AuroButton extends LitElement {
         .value="${ifDefined(this.value ? this.value : undefined)}"
         @click="${() => {}}"
       >
+        ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
         <slot></slot>
+        ${ifDefined(this.svgIconRight ? this.getIcon(this.svgIconRight) : undefined)}
       </button>
     `;
   }
