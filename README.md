@@ -8,7 +8,7 @@ For the most up to date information on [UI development browser support](https://
 
 ## Install
 
-[![Build Status](https://img.shields.io/travis/AlaskaAirlines/ods-button?branch=master&style=for-the-badge)](https://travis-ci.org/github/AlaskaAirlines/auro-button)
+[![Build Status](https://img.shields.io/travis/AlaskaAirlines/auro-button?branch=master&style=for-the-badge)](https://travis-ci.org/github/AlaskaAirlines/auro-button)
 [![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/auro-button?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/auro-button)
 [![License](https://img.shields.io/npm/l/@alaskaairux/auro-button?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
@@ -70,8 +70,6 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 `<auro-button>` is responsive by default. The button will assume 100% of the width of its container for views less than [auro_breakpoint--sm](https://alaskaairlines.github.io/WebCoreStyleSheets/#responsive-mixin-auro_breakpoint--sm).
 
 Beyond that breakpoint `<auro-button>` will assume the width of the content or a min-width of `8.75rem`, which ever is greater.
-
-<span style="color: #df0b37"><b>Only supported with ods-button</b></span>
 
 If the desired appearance of the `<auro-button>` is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the `<auro-button>` element.
 
