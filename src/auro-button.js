@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html, css, TemplateResult } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { classMap } from 'lit-html/directives/class-map';
 import 'focus-visible/dist/focus-visible.min.js';
