@@ -67,15 +67,15 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 
 ## Responsive support
 
-`<auro-button>` is responsive by default. The button will assume 100% of the width of its container for views less than [auro_breakpoint--sm](https://alaskaairlines.github.io/WebCoreStyleSheets/#responsive-mixin-auro_breakpoint--sm).	
+`<auro-button>` is responsive by default. The button will assume 100% of the width of its container for views less than [auro_breakpoint--sm](https://alaskaairlines.github.io/WebCoreStyleSheets/#responsive-mixin-auro_breakpoint--sm).
 
-Beyond that breakpoint `<auro-button>` will assume the width of the content or a min-width of `8.75rem`, which ever is greater.	
+Beyond that breakpoint `<auro-button>` will assume the width of the content or a min-width of `8.75rem`, which ever is greater.
 
 <span style="color: #df0b37"><b>Only supported with ods-button</b></span>
 
-If the desired appearance of the `<auro-button>` is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the `<auro-button>` element.	
+If the desired appearance of the `<auro-button>` is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the `<auro-button>` element.
 
-## Multi button support	
+## Multi button support
 
 When the UI requires the use of multiple buttons within the same space, with the use of the [Auro Web Core Style Sheets](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-auro-css-#{$scope}.auro_containedButtons), and the `auro_containedButtons` .
 
@@ -84,9 +84,20 @@ When the UI requires the use of multiple buttons within the same space, with the
 
 To pass content to the <auro-button-light>, use the content prop.
 
-```html	
-<auro-button-light content="Default value"></auro-button-light>	
-```	
+```html
+<auro-button-light content="Default value"></auro-button-light>
+```
+
+### Native form attribute support
+
+The auro-button shadow DOM web component does not support all the native form attributes that a `<button>` element would. But the light DOM version does. These attributes require access to the full light DOM.
+
+* form
+* formaction
+* formenctype
+* formmethod
+* formtarget
+* formnovalidate
 
 ## auro-button use cases
 
