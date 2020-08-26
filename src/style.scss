@@ -77,6 +77,11 @@ $auro-inset-directions:'--squish';
   }
 }
 
+// adjust alignment for slotted SVG icon
+::slotted(svg) {
+  vertical-align: middle;
+}
+
 // Note: without this, events on a disabled element will still fire
 slot {
   pointer-events: none;
