@@ -35,17 +35,47 @@ class AuroButton extends LitElement {
 
   static get properties() {
     return {
-      autofocus:        { type: Boolean },
-      disabled:         { type: Boolean },
-      ondark:           { type: Boolean },
-      secondary:        { type: Boolean },
-      tertiary:         { type: Boolean },
-      arialabel:        { type: String },
-      arialabelledby:   { type: String },
+      autofocus:        {
+        type: Boolean,
+        reflect: true
+      },
+      disabled:         {
+        type: Boolean,
+        reflect: true
+      },
+      ondark:           {
+        type: Boolean,
+        reflect: true
+      },
+      secondary:        {
+        type: Boolean,
+        reflect: true
+      },
+      tertiary:         {
+        type: Boolean,
+        reflect: true
+      },
+      arialabel:        {
+        type: String,
+        reflect: true
+      },
+      arialabelledby:   {
+        type: String,
+        reflect: true
+      },
+      title:            {
+        type: String,
+        reflect: true
+      },
+      type:             {
+        type: String,
+        reflect: true
+      },
+      value:            {
+        type: String,
+        reflect: true
+      },
       id:               { type: String },
-      title:            { type: String },
-      type:             { type: String },
-      value:            { type: String },
       svgIconLeft:      { type: String },
       svgIconRight:     { type: String },
     };
