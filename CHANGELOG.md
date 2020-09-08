@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.1.2](https://github.com/AlaskaAirlines/auro-button/compare/v5.1.1...v5.1.2) (2020-09-08)
+
+
+### Bug Fixes
+
+* add reflect to properties ([3e2df64](https://github.com/AlaskaAirlines/auro-button/commit/3e2df6409070b4334a80249aee937244d90fcdf5))
+
 ## [5.1.1](https://github.com/AlaskaAirlines/auro-button/compare/v5.1.0...v5.1.1) (2020-08-26)
 
 
