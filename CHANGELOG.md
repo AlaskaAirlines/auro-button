@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [5.2.0](https://github.com/AlaskaAirlines/auro-button/compare/v5.1.2...v5.2.0) (2020-10-31)
+
+
+### Features
+
+* move from travis to GHA ([39294af](https://github.com/AlaskaAirlines/auro-button/commit/39294af55f4a61f24a5202a809d8b429e96dfc27))
+
 ## [5.1.2](https://github.com/AlaskaAirlines/auro-button/compare/v5.1.1...v5.1.2) (2020-09-08)
 
 
