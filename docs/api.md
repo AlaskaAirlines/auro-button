@@ -11,19 +11,12 @@
 | `id`             | `id`             | `Boolean` | Set the unique ID of an element.                 |
 | `ondark`         | `ondark`         | `Boolean` | Set value for on-dark version of auro-button     |
 | `secondary`      | `secondary`      | `Boolean` | Set value for secondary version of auro-button   |
-| `svgIconLeft`    | `svgIconLeft`    | `Boolean` | Pass in SVG string for icon to appear on the LEFT |
-| `svgIconRight`   | `svgIconRight`   | `Boolean` | Pass in SVG string for icon to appear on the RIGHT |
+| `svgIconLeft`    | `svgIconLeft`    | `Boolean` | **DEPRECATED** Use auro-icon                     |
+| `svgIconRight`   | `svgIconRight`   | `Boolean` | **DEPRECATED** Use auro-icon                     |
 | `tertiary`       | `tertiary`       | `Boolean` | Set value for tertiary version of auro-button    |
 | `title`          | `title`          | `Boolean` | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
 | `type`           | `type`           | `Boolean` | The type of the button. Possible values are: `submit`, `reset`, `button` |
 | `value`          | `value`          | `Boolean` | Defines the value associated with the button which is submitted with the form data. |
-
-## Methods
-
-| Method    | Type                           | Description                                      |
-|-----------|--------------------------------|--------------------------------------------------|
-| `focus`   | `(): Array`                    | Internal method to apply focus                   |
-| `getIcon` | `(svgIcon: string): ChildNode` | Internal method to parse svgIcon<br /><br />**svgIcon**: The SVG value of the ES6.js version of the icon |
 
 ## Slots
 

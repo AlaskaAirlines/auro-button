@@ -21,8 +21,8 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} title - Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
  * @attr {Boolean} type - The type of the button. Possible values are: `submit`, `reset`, `button`
  * @attr {Boolean} value - Defines the value associated with the button which is submitted with the form data.
- * @attr {Boolean} svgIconLeft - Pass in SVG string for icon to appear on the LEFT
- * @attr {Boolean} svgIconRight - Pass in SVG string for icon to appear on the RIGHT
+ * @attr {Boolean} svgIconLeft - **DEPRECATED** Use auro-icon
+ * @attr {Boolean} svgIconRight - **DEPRECATED** Use auro-icon
  *
  * @slot - Provide text for the button.
  */
@@ -82,7 +82,7 @@ class AuroButton extends LitElement {
   }
 
   /**
-   * Internal method to apply focus
+   * @private Internal method to apply focus
    * @returns {Array} - The DOM node for the button element
    */
   focus() {
@@ -90,7 +90,8 @@ class AuroButton extends LitElement {
   }
 
   /**
-   * Internal method to parse svgIcon
+   * @private Internal method to parse svgIcon
+   * @deprecated
    * @param {String} svgIcon - The SVG value of the ES6.js version of the icon
    * @returns {ChildNode} - The SVG node
    */
