@@ -79,8 +79,7 @@
     "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.3.0",
-    "yaml-lint": "^1.2.4"
+    "webpack-merge": "^5.3.0"
   },
   "browserslist": [
     "last 4 version",
@@ -101,11 +100,10 @@
     "sassRender:lightDomCSS": "sass-render src/*-ld.scss",
     "sweep": "rm -rf ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./src/*.css ./src/*-css.js",
     "esLint": "./node_modules/.bin/eslint src/auro-*.js",
-    "lint": "npm-run-all cssLint test:yaml esLint",
+    "lint": "npm-run-all cssLint esLint",
     "test": "karma start --coverage",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:ci": "npm-run-all test lint",
-    "test:yaml": "yamllint .travis.yml",
     "ciBuild": "npm-run-all sassBuild sassRender cssLint distJS bundler postinstall apiBuild",
     "sassBuild": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
     "sassBuild:dev": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
