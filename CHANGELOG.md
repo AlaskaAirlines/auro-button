@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [5.3.0](https://github.com/AlaskaAirlines/auro-button/compare/v5.2.0...v5.3.0) (2020-11-04)
+
+
+### Features
+
+* add fixed feature ([5ed6c27](https://github.com/AlaskaAirlines/auro-button/commit/5ed6c279995661678985bf0df694a006da5cf855))
+
 # [5.2.0](https://github.com/AlaskaAirlines/auro-button/compare/v5.1.2...v5.2.0) (2020-10-31)
 
 
