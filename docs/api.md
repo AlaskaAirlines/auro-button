@@ -1,5 +1,11 @@
 # auro-button
 
+## Attributes
+
+| Attribute | Type      | Description                   |
+|-----------|-----------|-------------------------------|
+| `fixed`   | `Boolean` | uses px values instead of rem |
+
 ## Properties
 
 | Property         | Attribute        | Type      | Description                                      |

@@ -3,13 +3,15 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { classMap } from 'lit-html/directives/class-map';
 import 'focus-visible/dist/focus-visible.min.js';
 import styleCss from "./style-css.js";
+import styleCssFixed from './style-fixed-css.js';
 
 /**
+ * @attr {Boolean} fixed - uses px values instead of rem
  * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it
  * @attr {Boolean} disabled - If set to true button will become disabled and not allow for interactions. Default value is `false`.
  * @attr {Boolean} ondark - Set value for on-dark version of auro-button
@@ -28,9 +30,10 @@ import styleCss from "./style-css.js";
  */
 class AuroButton extends LitElement {
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
+    return [
+      styleCss,
+      styleCssFixed
+    ];
   }
 
   static get properties() {

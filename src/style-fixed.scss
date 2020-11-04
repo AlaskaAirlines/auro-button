@@ -1,0 +1,5 @@
+@import './node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties';
+
+:host([fixed]) {
+    @import './style.scss';
+}
