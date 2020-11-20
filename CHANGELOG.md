@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [5.3.1](https://github.com/AlaskaAirlines/auro-button/compare/v5.3.0...v5.3.1) (2020-11-20)
+
+
+### Bug Fixes
+
+* [#89](https://github.com/AlaskaAirlines/auro-button/issues/89) add missing HCM focus outline ([e070f42](https://github.com/AlaskaAirlines/auro-button/commit/e070f425997a2684d0a3f53842a9ad6da22360b4))
+* update to 3.0 core packages ([37704b4](https://github.com/AlaskaAirlines/auro-button/commit/37704b408434f2421bda49c4f8b1d53bb47f73c0))
+
 # [5.3.0](https://github.com/AlaskaAirlines/auro-button/compare/v5.2.0...v5.3.0) (2020-11-04)
 
 
