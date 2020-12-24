@@ -51,7 +51,7 @@
     }
 
     var auroButton = [
-      '<auro-button cssClass="testClass">Hello World</auro-button>'
+      '<auro-button>Hello World</auro-button>'
     ]
   </script>
 </head>
@@ -81,19 +81,19 @@
   </main>
   <div id="assets">
     <link rel="stylesheet"
-      href="https://unpkg.com/@alaskaairux/orion-design-tokens@2.12.1/dist/tokens/CSSCustomProperties.css" />
+    href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
     <link rel="stylesheet"
-      href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@2.10.3/dist/bundled/essentials.css" />
+      href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
 
     <!-- for initial build and test only -->
-    <script src="./polyfills.js"></script>
-    <script src="./auro-button__bundled.js"></script>
+    <script src="/dist/auro-button__bundled.js" type="module"></script>
+    <script src="/dist/auro-button__bundled.es5.js" nomodule></script>
 
     <!-- once first build has been released, update with the links below -->
-    <!-- Be sure to update the :version number -->
-    <!-- <script src="https://unpkg.com/@alaskaairux/auro-button@:version/dist/polyfills.js"></script>
-    <script src="https://unpkg.com/@alaskaairux/auro-button@:version/dist/auro-button__bundled.js"></script> -->
+    <!-- Be sure to update the @latest number -->
+    <!-- <script src="https://unpkg.com/@alaskaairux/auro-button@latest/dist/auro-button__bundled.es5.js" nomodule></script>
+    <script src="https://unpkg.com/@alaskaairux/auro-button@latest/dist/auro-button__bundled.js" type="module"></script> -->
   </div>
 </body>
 

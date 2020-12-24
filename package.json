@@ -44,10 +44,14 @@
     "@open-wc/testing-karma": "^4.0.9",
     "@polymer/iron-demo-helpers": "^3.1.0",
     "@polymer/iron-icons": "^3.0.1",
-    "@polymer/polymer": "^3.3.1",
+    "@rollup/plugin-alias": "^3.1.1",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/npm": "^7.0.8",
+    "@web/dev-server": "^0.1.0",
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "autoprefixer": "^10.0.2",
     "babel-loader": "^8.2.1",
@@ -70,28 +74,33 @@
     "postcss-rem-to-pixel": "^4.1.2",
     "postcss-remove-rules": "^1.0.0",
     "postcss-selector-replace": "^1.0.2",
+    "rollup": "^2.35.1",
+    "rollup-plugin-minify-html-literals": "^1.2.5",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2",
     "semantic-release": "^17.2.4",
     "sinon": "^9.2.1",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0",
     "wc-sass-render": "^1.2.3",
     "web-component-analyzer": "^1.1.6",
-    "webpack": "^5.6.0",
-    "webpack-bundle-analyzer": "^3.9.0",
-    "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.4.0"
+    "webpack-merge": "^5.4.0",
+    "whatwg-fetch": "^3.5.0"
   },
   "browserslist": [
-    "last 4 version",
-    "> 1%",
-    "IE 11"
+    "last 2 Chrome versions",
+    "last 2 iOS major versions",
+    "ie 11",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "last 2 Safari major versions"
   ],
   "scripts": {
     "build": "npm run ciBuild",
     "apiBuild": "wca analyze 'src/auro-button.js' --outFiles docs/api.md",
-    "bundler": "webpack --mode=production",
-    "bundle:test": "webpack-dev-server --host 0.0.0.0",
+    "bundler": "rollup -c",
+    "bundle:test": "rollup -c -w",
+    "serve": "web-dev-server --open demo/ --node-resolve --watch",
     "postinstall": "node packageScripts/postinstall.js",
     "cssLint": "stylelint './src/*.css'",
     "dev": "npm run sassBuild:watch",
@@ -111,34 +120,13 @@
     "sassBuild:demo": "node-sass ./demo/sass/ --output ./demo/css/",
     "sassBuild:component": "node-sass ./src/ --output ./src/",
     "sassBuild:watch": "nodemon -e scss --watch src --exec npm run sassBuild:dev",
-    "postCss:component": "node ./scripts/postCss.js",
-    "serve": "polymer serve --port 3001 --hostname 0.0.0.0"
+    "postCss:component": "node ./scripts/postCss.js"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm-run-all test lint bundler postinstall",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "useBuiltIns": "entry",
-          "corejs": "3.0.0"
-        }
-      ]
-    ],
-    "plugins": [
-      "@babel/plugin-syntax-dynamic-import",
-      [
-        "@babel/plugin-transform-runtime",
-        {
-          "regenerator": true
-        }
-      ]
-    ]
   },
   "release": {
     "branch": "master",
