@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+# [6.0.0](https://github.com/AlaskaAirlines/auro-button/compare/v5.3.1...v6.0.0) (2020-12-24)
+
+
+### Features
+
+* add support for rollup bundle ([3c4ff2e](https://github.com/AlaskaAirlines/auro-button/commit/3c4ff2e608c63ee6a6a6aa04b6c14f63147ea25f))
+
+
+### BREAKING CHANGES
+
+* This update will update how bundled resources
+are used, removing support for pollyfill.js
+
 ## [5.3.1](https://github.com/AlaskaAirlines/auro-button/compare/v5.3.0...v5.3.1) (2020-11-20)
 
 
