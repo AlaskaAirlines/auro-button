@@ -1,139 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auro Web Component Generator | [namespace]-[name] custom element</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../node_modules/prismjs/themes/prism.css"
     />
-    <title>Auro Web Component Generator | auro-button custom element</title>
-    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script type="module">
-      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
-      import '@polymer/iron-demo-helpers/demo-snippet';
-    </script>
-    <script type="module" src="../src/auro-button.js"></script>
-    <script type="module" src="../src/auro-button-light.js"></script>
-    <script src="../demo/alert.js"></script>
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles"></style>
-    </custom-style>
-
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
-    <div class="vertical-section-container">
-      <h1>auro-button</h1>
+    <main></main>
 
-      <h3>Fluid</h3>
-      <demo-snippet>
-        <template>
-          <auro-button fluid>Default state</auro-button>
-
-        </template>
-      </demo-snippet>
-
-      <h3>Fixed</h3>
-      <demo-snippet>
-        <template>
-          <auro-button fixed>Default state</auro-button>
-        </template>
-      </demo-snippet>
-
-      <h3>Icon Examples</h3>
-      <demo-snippet>
-        <template>
-          <auro-button id="svgLeftButton">Previous Step</auro-button>
-          <auro-button id="svgRightButton">Next Step</auro-button>
-          <script type="module">
-            import chevronright from '../node_modules/@alaskaairux/icons/dist/icons/interface/chevron-right_es6.js';
-            import chevronleft from '../node_modules/@alaskaairux/icons/dist/icons/interface/chevron-left_es6.js';
-
-            document.getElementById("svgLeftButton").svgIconLeft = chevronleft.svg;
-            document.getElementById("svgRightButton").svgIconRight = chevronright.svg;
-          </script>
-        </template>
-      </demo-snippet>
-
-      <h3>Shadow DOM element examples</h3>
-      <demo-snippet>
-        <template>
-          <auro-button id="active-button">Default state</auro-button>
-          <auro-button secondary>Secondary Default state</auro-button>
-          <auro-button tertiary>Tertiary default state</auro-button>
-
-          <script>
-            const activeButton = document.querySelector('#active-button');
-            const activeHandler = () => alert('Hello!');
-            activeButton.addEventListener('click', activeHandler);
-          </script>
-
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-button disabled id="disabled-button">Default state</auro-button>
-          <auro-button disabled secondary>Secondary Default state</auro-button>
-          <auro-button disabled tertiary>Tertiary default state</auro-button>
-
-          <script>
-            const disabledButton = document.querySelector('#disabled-button');
-            const disabledHandler = () => alert('You should not see me!');
-            disabledButton.addEventListener('click', disabledHandler);
-          </script>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-button ondark>Default state</auro-button>
-          <auro-button secondary ondark>Secondary Default state</auro-button>
-          <auro-button tertiary ondark>Tertiary default state</auro-button>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-button ondark disabled>Default state</auro-button>
-          <auro-button secondary ondark disabled>Secondary Default state</auro-button>
-          <auro-button tertiary ondark disabled>Tertiary default state</auro-button>
-        </template>
-      </demo-snippet>
-
-      <!-- examples for light DOM element -->
-
-      <h3>Light DOM element examples</h3>
-      <demo-snippet>
-        <template>
-          <auro-button-light content="Default state">Default state</auro-button-light>
-          <auro-button-light secondary content="Secondary default state">Secondary Default state</auro-button-light>
-          <auro-button-light tertiary content="Tertiary default state">Tertiary default state</auro-button-light>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-button-light ondark content="Default state">Default state</auro-button-light>
-          <auro-button-light secondary ondark content="Secondary default state">Secondary Default state
-          </auro-button-light>
-          <auro-button-light tertiary ondark content="Tertiary default state">Tertiary default state</auro-button-light>
-        </template>
-      </demo-snippet>
-
-      <h2>Element &#60;auro-button&#62;</h2>
-
-      <pre><code>class AuroButton extends LitElement</code></pre>
-
-      <h3>Styling:</h3>
-      <p>Info ...</p>
-
-      <h3>Responsive state:</h3>
-      <p>Info ...</p>
-
-      <h3>Properties:</h3>
-      <code><strong>string:</strong> string</code>
-      <p>Info ...</p>
-    </div>
+    <script type="module">
+      import 'marked/marked.min.js';
+      import 'prismjs';
+      fetch('/demo/demo.md')
+        .then((response) => response.text())
+        .then((text) => {
+          const rawHtml = marked(text);
+          document.querySelector('main').innerHTML = rawHtml;
+          Prism.highlightAll();
+        });
+    </script>
+    <script type="module" src="../src/auro-button.js"></script>
+    <script type="module" src="../src/auro-button-light.js"></script>
+    <script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
+    <script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
+    <script type="text/javascript">
+      console.log('hello');
+    </script>
   </body>
 </html>
