@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.0.1](https://github.com/AlaskaAirlines/auro-button/compare/v6.0.0...v6.0.1) (2021-01-30)
+
+
+### Bug Fixes
+
+* [#95](https://github.com/AlaskaAirlines/auro-button/issues/95) Missing conditional check ([2fb749d](https://github.com/AlaskaAirlines/auro-button/commit/2fb749d981744664b3ba3ccf626a7770fdcdc5f4))
+
 # [6.0.0](https://github.com/AlaskaAirlines/auro-button/compare/v5.3.1...v6.0.0) (2020-12-24)
 
 
