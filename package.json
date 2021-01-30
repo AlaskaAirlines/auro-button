@@ -117,7 +117,13 @@
     "sassBuild:demo": "node-sass ./demo/sass/ --output ./demo/css/",
     "sassBuild:component": "node-sass ./src/ --output ./src/",
     "sassBuild:watch": "nodemon -e scss --watch src --exec npm run sassBuild:dev",
-    "postCss:component": "node ./scripts/postCss.js"
+    "postCss:component": "node ./scripts/postCss.js",
+    "demo:rmBuild": "rm -rf ./build",
+    "demo:newBuild": "mkdir ./build && mkdir ./build/css && mkdir ./build/demo",
+    "demo:copyDemo": "copyfiles -u 1 -V './demo/demo.md' ./build/demo",
+    "demo:copyIndex": "copyfiles -u 1 -V './demo/index.html' ./build",
+    "demo:updateIndex": "node ./scripts/prepForBuild",
+    "demo:build": "npm-run-all ciBuild demo:rmBuild demo:newBuild demo:copyIndex demo:copyDemo demo:updateIndex"
   },
   "husky": {
     "hooks": {
