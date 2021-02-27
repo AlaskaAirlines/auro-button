@@ -90,6 +90,9 @@ slot {
 // Button styles
 .auro-button {
   @include auro_transition(all, 0.15s, ease);
+  $disabledOPacity: .4;
+
+  position: relative;
 
   padding: var(--auro-size-sm) var(--auro-size-lg);
 
@@ -137,6 +140,24 @@ slot {
     transform: scale(0.95);
   }
 
+  &.loading {
+    cursor: not-allowed;
+
+    *:not(auro-loader) {
+      visibility: hidden;
+    }
+
+    auro-loader {
+      color: var(--auro-color-background-darkest);
+    }
+
+    &.auro-buttonOndark {
+      auro-loader {
+        color: var(--auro-color-text-primary-on-dark);
+      }
+    }
+  }
+
   @include auro_breakpoint--sm {
     min-width: 8.75rem;
     width: auto;
@@ -145,12 +166,14 @@ slot {
   &:disabled {
     cursor: not-allowed;
     transform: unset;
-    opacity: .4;
+
+    background-color: rgba($auro-color-ui-default-on-light, $disabledOPacity);
+    border: 1px solid rgba($auro-color-ui-default-on-light, 0);
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--auro-color-ui-default-on-light);
-        border-color: var(--auro-color-ui-default-on-light);
+        background-color: rgba($auro-color-ui-default-on-light, $disabledOPacity);
+        border: 1px solid rgba($auro-color-ui-default-on-light, 0);
       }
     }
   }
@@ -175,9 +198,19 @@ slot {
     }
 
     &:disabled {
-      &:hover {
-        background-color: var(--auro-color-background-lightest);
-        border-color: var(--auro-color-ui-default-on-light);
+      cursor: not-allowed;
+      transform: unset;
+
+      color: rgba($auro-color-text-link-on-light, $disabledOPacity);
+      background-color: rgba($auro-color-background-lightest, $disabledOPacity);
+      border: 1px solid rgba($auro-color-ui-default-on-light, $disabledOPacity);
+
+      @media (hover: hover) {
+        &:hover {
+          color: rgba($auro-color-text-link-on-light, $disabledOPacity);
+          background-color: rgba($auro-color-background-lightest, $disabledOPacity);
+          border: 1px solid rgba($auro-color-ui-default-on-light, $disabledOPacity);
+        }
       }
     }
   }
@@ -202,10 +235,18 @@ slot {
     }
 
     &:disabled {
+      cursor: not-allowed;
+      transform: unset;
+
+      color: rgba($auro-color-text-link-on-light, $disabledOPacity);
+      background-color: transparent;
+      border: transparent;
+
       @media (hover: hover) {
         &:hover {
+          color: rgba($auro-color-text-link-on-light, $disabledOPacity);
           background-color: transparent;
-          border-color: transparent;
+          border: 1px solid transparent;
         }
       }
     }
@@ -231,10 +272,18 @@ slot {
     }
 
     &:disabled {
+      cursor: not-allowed;
+      transform: unset;
+
+      color: rgba($auro-color-text-primary-on-light, $disabledOPacity);
+      background-color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+      border: 1px solid rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+
       @media (hover: hover) {
         &:hover {
-          background-color: var(--auro-color-ui-default-on-dark);
-          border-color: var(--auro-color-ui-default-on-dark);
+          color: rgba($auro-color-text-primary-on-light, $disabledOPacity);
+          background-color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+          border: 1px solid rgba($auro-color-ui-default-on-dark, $disabledOPacity);
         }
       }
     }
@@ -265,6 +314,23 @@ slot {
           }
         }
       }
+
+      &:disabled {
+        cursor: not-allowed;
+        transform: unset;
+
+        color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+        background-color: transparent;
+        border: 1px solid rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+
+        @media (hover: hover) {
+          &:hover {
+            color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+            background-color: transparent;
+            border: 1px solid rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+          }
+        }
+      }
     }
 
     // auro-button--tertiary
@@ -289,10 +355,16 @@ slot {
       }
 
       &:disabled {
+        cursor: not-allowed;
+        transform: unset;
+        background-color: transparent;
+        border: transparent;
+
         @media (hover: hover) {
           &:hover {
+            color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
             background-color: transparent;
-            border-color: transparent;
+            border: transparent;
           }
         }
       }
@@ -308,4 +380,12 @@ slot {
   slot {
     vertical-align: middle;
   }
+}
+
+auro-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }

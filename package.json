@@ -18,6 +18,7 @@
   "main": "index.js",
   "license": "Apache-2.0",
   "dependencies": {
+    "@alaskaairux/auro-loader": "^1.0.1",
     "chalk": "^4.1.0",
     "lit-element": "^2.4.0"
   },
@@ -25,6 +26,7 @@
     "@alaskaairux/design-tokens": "^3.0.0",
     "@alaskaairux/webcorestylesheets": "^3.0.0",
     "@alaskaairux/icons": "^4.0.3",
+    "@alaskaairux/auro-button": "^6.0.0",
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "focus-visible": "^5.2.0"
   },

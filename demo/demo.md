@@ -152,6 +152,34 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 </auro-accordion>
 
+## Auro Button - Loading State
+
+<div class="exampleWrapper auro_containedButtons">
+  <auro-button loading>Primary</auro-button>
+  <auro-button secondary loading>Secondary</auro-button>
+  <auro-button tertiary loading>Tertiary</auro-button>
+</div>
+
+<div class="exampleWrapper--ondark auro_containedButtons">
+  <auro-button ondark loading>Primary</auro-button>
+  <auro-button ondark secondary loading>Secondary</auro-button>
+  <auro-button ondark tertiary loading>Tertiary</auro-button>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-button loading>Primary</auro-button>
+  <auro-button secondary loading>Secondary</auro-button>
+  <auro-button tertiary loading>Tertiary</auro-button>
+  <auro-button ondark loading>Primary</auro-button>
+  <auro-button ondark secondary loading>Secondary</auro-button>
+  <auro-button ondark tertiary loading>Tertiary</auro-button>
+  ```
+
+</auro-accordion>
+
 ## Auro Button - onDark
 
 <div class="exampleWrapper--ondark auro_containedButtons">
@@ -201,11 +229,12 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 </auro-accordion>
 
-## Auro Button - pass function to button
+## Auro Button - pass a function to button
 
 <div class="exampleWrapper auro_containedButtons">
   <auro-button onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
   <auro-button disabled onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
+  <auro-button loading onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
 </div>
 
 <auro-accordion lowProfile justifyRight>
@@ -214,7 +243,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
   ```html
   <auro-button onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
   <auro-button disabled onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
+  <auro-button loading onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
 
   ```
 
+</auro-accordion>
+
+## Do's and don'ts
+
+Don't combine `disabled` and `loading` attributes on any single instance of `auro-button`. An `auro-button` with `loading` *is* affectively a disabled instance. There is no need for both.
+
+<auro-alerts error noIcon>
+
+  <div class="exampleWrapper">
+    <auro-button loading disabled>Primary</auro-button>
+  </div>
+
+</auro-alerts>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+```html
+<auro-button loading disabled>Primary</auro-button>
+```
+</auro-accordion>
+
+<auro-alerts success noIcon>
+  <div class="exampleWrapper">
+    <auro-button loading>Primary</auro-button>
+  </div>
+</auro-alerts>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+```html
+<auro-button loading>Primary</auro-button>
+```
 </auro-accordion>

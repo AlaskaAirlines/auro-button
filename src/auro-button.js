@@ -9,11 +9,13 @@ import { classMap } from 'lit-html/directives/class-map';
 import 'focus-visible/dist/focus-visible.min.js';
 import styleCss from "./style-css.js";
 import styleCssFixed from './style-fixed-css.js';
+import "@alaskaairux/auro-loader";
 
 /**
  * @attr {Boolean} fixed - uses px values instead of rem
  * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it
  * @attr {Boolean} disabled - If set to true button will become disabled and not allow for interactions. Default value is `false`.
+ * @attr {Boolean} loader - If set to true button text will be replaced with auro-loader, become disabled and not allow for interactions. Default value is `false`.
  * @attr {Boolean} ondark - Set value for on-dark version of auro-button
  * @attr {Boolean} secondary - Set value for secondary version of auro-button
  * @attr {Boolean} tertiary - Set value for tertiary version of auro-button
@@ -43,6 +45,10 @@ class AuroButton extends LitElement {
         reflect: true
       },
       disabled:         {
+        type: Boolean,
+        reflect: true
+      },
+      loading:          {
         type: Boolean,
         reflect: true
       },
@@ -115,7 +121,8 @@ class AuroButton extends LitElement {
       'auro-buttonOndark--secondary': this.secondary && this.ondark,
       'auro-button--tertiary': this.tertiary,
       'auro-buttonOndark--tertiary': this.tertiary && this.ondark,
-      'icon': this.svgIconLeft || this.svgIconRight
+      'icon': this.svgIconLeft || this.svgIconRight,
+      'loading': this.loading
     };
 
     return html`
@@ -124,7 +131,7 @@ class AuroButton extends LitElement {
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
-        ?disabled="${this.disabled}"
+        ?disabled="${this.disabled || this.loading}"
         id="${ifDefined(this.id ? this.id : undefined)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
@@ -133,6 +140,7 @@ class AuroButton extends LitElement {
         @click="${() => {}}"
       >
         ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
+        ${ifDefined(this.loading ? html`<auro-loader pulse></auro-loader>` : undefined)}
         <slot></slot>
         ${ifDefined(this.svgIconRight ? this.getIcon(this.svgIconRight) : undefined)}
       </button>
