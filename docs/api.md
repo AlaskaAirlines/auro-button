@@ -2,9 +2,10 @@
 
 ## Attributes
 
-| Attribute | Type      | Description                   |
-|-----------|-----------|-------------------------------|
-| `fixed`   | `Boolean` | uses px values instead of rem |
+| Attribute | Type      | Description                                      |
+|-----------|-----------|--------------------------------------------------|
+| `fixed`   | `Boolean` | uses px values instead of rem                    |
+| `loader`  | `Boolean` | If set to true button text will be replaced with auro-loader, become disabled and not allow for interactions. Default value is `false`. |
 
 ## Properties
 
@@ -15,6 +16,7 @@
 | `autofocus`      | `autofocus`      | `Boolean` | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it |
 | `disabled`       | `disabled`       | `Boolean` | If set to true button will become disabled and not allow for interactions. Default value is `false`. |
 | `id`             | `id`             | `Boolean` | Set the unique ID of an element.                 |
+| `loading`        | `loading`        | `boolean` |                                                  |
 | `ondark`         | `ondark`         | `Boolean` | Set value for on-dark version of auro-button     |
 | `secondary`      | `secondary`      | `Boolean` | Set value for secondary version of auro-button   |
 | `svgIconLeft`    | `svgIconLeft`    | `Boolean` | **DEPRECATED** Use auro-icon                     |
