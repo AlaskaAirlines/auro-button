@@ -13,9 +13,9 @@ import "@alaskaairux/auro-loader";
 
 /**
  * @attr {Boolean} fixed - uses px values instead of rem
- * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it
- * @attr {Boolean} disabled - If set to true button will become disabled and not allow for interactions. Default value is `false`.
- * @attr {Boolean} loader - If set to true button text will be replaced with auro-loader, become disabled and not allow for interactions. Default value is `false`.
+ * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user
+ * @attr {Boolean} disabled - If set to true button will become disabled and not allow for interactions
+ * @attr {Boolean} loading - If set to true button text will be replaced with `auro-loader` and become disabled
  * @attr {Boolean} ondark - Set value for on-dark version of auro-button
  * @attr {Boolean} secondary - Set value for secondary version of auro-button
  * @attr {Boolean} tertiary - Set value for tertiary version of auro-button
