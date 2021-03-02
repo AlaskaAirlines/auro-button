@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [6.1.0](https://github.com/AlaskaAirlines/auro-button/compare/v6.0.1...v6.1.0) (2021-03-02)
+
+
+### Features
+
+* add new loading state ([ebe9afe](https://github.com/AlaskaAirlines/auro-button/commit/ebe9afee6642c3d4054e121a3d8e538135260487))
+
 ## [6.0.1](https://github.com/AlaskaAirlines/auro-button/compare/v6.0.0...v6.0.1) (2021-01-30)
 
 
