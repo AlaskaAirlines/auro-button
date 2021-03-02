@@ -133,7 +133,7 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 </auro-accordion>
 
-## Auro Button - fluid
+## Fluid
 
 <div class="exampleWrapper">
   <auro-button fluid>Primary</auro-button>
@@ -152,7 +152,7 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 </auro-accordion>
 
-## Auro Button - Loading State
+## Loading State
 
 <div class="exampleWrapper auro_containedButtons">
   <auro-button loading>Primary</auro-button>
@@ -160,12 +160,6 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
   <auro-button tertiary loading>Tertiary</auro-button>
 </div>
 
-<div class="exampleWrapper--ondark auro_containedButtons">
-  <auro-button ondark loading>Primary</auro-button>
-  <auro-button ondark secondary loading>Secondary</auro-button>
-  <auro-button ondark tertiary loading>Tertiary</auro-button>
-</div>
-
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
@@ -173,6 +167,20 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
   <auro-button loading>Primary</auro-button>
   <auro-button secondary loading>Secondary</auro-button>
   <auro-button tertiary loading>Tertiary</auro-button>
+  ```
+
+</auro-accordion>
+
+<div class="exampleWrapper--ondark auro_containedButtons">
+  <auro-button ondark loading>Primary</auro-button>
+  <auro-button ondark secondary loading>Secondary</auro-button>
+  <auro-button ondark tertiary loading>Tertiary</auro-button>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
   <auro-button ondark loading>Primary</auro-button>
   <auro-button ondark secondary loading>Secondary</auro-button>
   <auro-button ondark tertiary loading>Tertiary</auro-button>
@@ -180,7 +188,7 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 </auro-accordion>
 
-## Auro Button - onDark
+## onDark
 
 <div class="exampleWrapper--ondark auro_containedButtons">
   <auro-button ondark>Primary</auro-button>
@@ -229,7 +237,7 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 </auro-accordion>
 
-## Auro Button - pass a function to button
+## Pass a function to button
 
 <div class="exampleWrapper auro_containedButtons">
   <auro-button onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
