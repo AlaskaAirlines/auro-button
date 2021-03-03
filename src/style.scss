@@ -163,7 +163,7 @@ slot {
     width: auto;
   }
 
-  &:disabled {
+  &[aria-disabled="true"] {
     cursor: not-allowed;
     transform: unset;
 
@@ -197,7 +197,7 @@ slot {
       border: 1px solid var(--auro-color-ui-default-on-light);
     }
 
-    &:disabled {
+    &[aria-disabled="true"] {
       cursor: not-allowed;
       transform: unset;
 
@@ -234,7 +234,7 @@ slot {
       border-color: transparent;
     }
 
-    &:disabled {
+    &[aria-disabled="true"] {
       cursor: not-allowed;
       transform: unset;
 
@@ -271,7 +271,7 @@ slot {
       border: 1px solid var(--auro-color-ui-active-on-dark);
     }
 
-    &:disabled {
+    &[aria-disabled="true"] {
       cursor: not-allowed;
       transform: unset;
 
@@ -306,7 +306,7 @@ slot {
         border: 1px solid var(--auro-color-ui-hover-on-dark);
       }
 
-      &:disabled {
+      &[aria-disabled="true"] {
         @media (hover: hover) {
           &:hover {
             background-color: transparent;
@@ -315,7 +315,7 @@ slot {
         }
       }
 
-      &:disabled {
+      &[aria-disabled="true"] {
         cursor: not-allowed;
         transform: unset;
 
@@ -354,7 +354,7 @@ slot {
         box-shadow: none;
       }
 
-      &:disabled {
+      &[aria-disabled="true"] {
         cursor: not-allowed;
         transform: unset;
         background-color: transparent;

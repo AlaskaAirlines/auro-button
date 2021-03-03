@@ -25,6 +25,12 @@
 | `type`           | `type`           | `Boolean` | The type of the button. Possible values are: `submit`, `reset`, `button` |
 | `value`          | `value`          | `Boolean` | Defines the value associated with the button which is submitted with the form data. |
 
+## Methods
+
+| Method         | Type          |
+|----------------|---------------|
+| `ariaDisabled` | `(): boolean` |
+
 ## Slots
 
 | Name | Description                  |

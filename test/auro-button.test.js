@@ -41,6 +41,18 @@ describe('auro-button', () => {
     expect(button.getAttribute('autofocus')).to.equal('');
   });
 
+
+  it('tests -not- setting disabled', async () => {
+    const el = await fixture(html`
+      <auro-button>Click Me!</auro-button>
+    `);
+
+    const root = el.shadowRoot;
+    const button = root.querySelector('button');
+
+    expect(button.getAttribute('aria-disabled')).to.equal('false');
+  });
+
   it('tests setting disabled', async () => {
     const el = await fixture(html`
       <auro-button disabled>Click Me!</auro-button>
@@ -49,7 +61,7 @@ describe('auro-button', () => {
     const root = el.shadowRoot;
     const button = root.querySelector('button');
 
-    expect(button.getAttribute('disabled')).to.equal('');
+    expect(button.getAttribute('aria-disabled')).to.equal('true');
   });
 
   it('tests setting ondark', async () => {

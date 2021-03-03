@@ -111,6 +111,14 @@ class AuroButton extends LitElement {
     return this.svg;
   }
 
+  ariaDisabled() {
+    if (this.disabled || this.loading) {
+      return true;
+    }
+
+    return false;
+  }
+
   render() {
 
     const classes = {
@@ -131,7 +139,7 @@ class AuroButton extends LitElement {
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
-        ?disabled="${this.disabled || this.loading}"
+        aria-disabled="${this.ariaDisabled()}"
         id="${ifDefined(this.id ? this.id : undefined)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
