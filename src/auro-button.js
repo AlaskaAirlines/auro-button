@@ -9,7 +9,8 @@ import { classMap } from 'lit-html/directives/class-map';
 import 'focus-visible/dist/focus-visible.min.js';
 import styleCss from "./style-css.js";
 import styleCssFixed from './style-fixed-css.js';
-import "@alaskaairux/auro-loader";
+import '@alaskaairux/auro-loader';
+import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util';
 
 /**
  * @attr {Boolean} fixed - uses px values instead of rem
@@ -31,6 +32,13 @@ import "@alaskaairux/auro-loader";
  * @slot - Provide text for the button.
  */
 class AuroButton extends LitElement {
+  constructor() {
+    super();
+    if (!isFocusVisibleSupported() && isFocusVisiblePolyfillAvailable()) {
+      window.applyFocusVisiblePolyfill(this.shadowRoot);
+    }
+  }
+
   static get styles() {
     return [
       styleCss,

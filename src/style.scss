@@ -22,6 +22,7 @@ $auro-inset-directions:'--squish';
 
 // focus-visible mixin
 @mixin focus-visible {
+  outline: 3px solid transparent;
   box-shadow: inset 0 0 0 1px var(--auro-color-border-focus-on-dark), inset 0 0 0 3px var(--auro-color-background-lightest);
 
   // auro-button--secondary
@@ -57,16 +58,12 @@ $auro-inset-directions:'--squish';
   }
 }
 
-// handle focus-visible state
-:host(.focus-visible) {
-  .auro-button {
-    @include focus-visible;
+:focus-visible.auro-button {
+  @include focus-visible;
+}
 
-    &::-moz-focus-inner {
-      border: none;
-      width: 100%;
-    }
-  }
+.focus-visible.auro-button {
+  @include focus-visible;
 }
 
 :host([fluid]),
@@ -126,11 +123,6 @@ slot {
       background-color: var(--auro-color-ui-hover-on-light);
       border: 1px solid var(--auro-color-ui-hover-on-light);
     }
-  }
-
-  // remove Firefox-only focus outline
-  &::-moz-focus-inner {
-    border: none;
   }
 
   // handle active state

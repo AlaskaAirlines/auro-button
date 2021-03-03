@@ -6,8 +6,4 @@
 // import button styles into element namespaced wrapper
 auro-button-light {
   @import './style.scss';
-
-  .focus-visible.auro-button {
-    @include focus-visible;
-  }
 }
