@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [6.2.0](https://github.com/AlaskaAirlines/auro-button/compare/v6.1.0...v6.2.0) (2021-03-05)
+
+
+### Features
+
+* apply focus-visible polyfill to shadow root ([0ffcb44](https://github.com/AlaskaAirlines/auro-button/commit/0ffcb443c8a0329070dd5de7b2e5f74944d605fa))
+
 # [6.1.0](https://github.com/AlaskaAirlines/auro-button/compare/v6.0.1...v6.1.0) (2021-03-02)
 
 
