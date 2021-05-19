@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [6.3.0](https://github.com/AlaskaAirlines/auro-button/compare/v6.2.0...v6.3.0) (2021-05-19)
+
+
+### Features
+
+* **version:** add support to display version in element [#114](https://github.com/AlaskaAirlines/auro-button/issues/114) ([9f3fbdf](https://github.com/AlaskaAirlines/auro-button/commit/9f3fbdf52152b4db1a1e59b10d637e13e0bd71c3))
+
 # [6.2.0](https://github.com/AlaskaAirlines/auro-button/compare/v6.1.0...v6.2.0) (2021-03-05)
 
 
