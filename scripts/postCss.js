@@ -1,3 +1,8 @@
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
 const autoprefixer = require('autoprefixer');
 const postcss = require('postcss');
 const remToPx = require('postcss-rem-to-pixel');

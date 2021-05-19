@@ -96,6 +96,7 @@
   ],
   "scripts": {
     "build": "npm run ciBuild",
+    "version": "node scripts/version.js",
     "apiBuild": "wca analyze 'src/auro-button.js' --outFiles docs/api.md",
     "bundler": "rollup -c",
     "bundle:test": "rollup -c -w",
@@ -113,7 +114,7 @@
     "test": "karma start --coverage",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:ci": "npm-run-all test lint",
-    "ciBuild": "npm-run-all sassBuild sassRender cssLint distJS bundler postinstall apiBuild",
+    "ciBuild": "npm-run-all version sassBuild sassRender cssLint distJS bundler postinstall apiBuild",
     "sassBuild": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
     "sassBuild:dev": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
     "sassBuild:demo": "node-sass ./demo/sass/ --output ./demo/css/",
@@ -151,7 +152,8 @@
         {
           "assets": [
             "./CHANGELOG.md",
-            "package.json"
+            "package.json",
+            "src/version.js"
           ]
         }
       ],

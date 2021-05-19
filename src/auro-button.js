@@ -11,6 +11,7 @@ import styleCss from "./style-css.js";
 import styleCssFixed from './style-fixed-css.js';
 import '@alaskaairux/auro-loader';
 import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util';
+import version from './version';
 
 /**
  * @attr {Boolean} fixed - uses px values instead of rem
@@ -146,6 +147,7 @@ class AuroButton extends LitElement {
         type="${ifDefined(this.type ? this.type : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
         @click="${() => {}}"
+        version="${version}"
       >
         ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
         ${ifDefined(this.loading ? html`<auro-loader pulse></auro-loader>` : undefined)}
