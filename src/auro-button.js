@@ -33,6 +33,16 @@ import version from './version';
  * @slot - Provide text for the button.
  */
 class AuroButton extends LitElement {
+  constructor() {
+    super();
+    this.autofocus = false;
+    this.disabled = false;
+    this.loading = false;
+    this.ondark = false;
+    this.secondary = false;
+    this.tertiary = false;
+  }
+
   connectedCallback() {
     super.connectedCallback();
     if (!isFocusVisibleSupported() && isFocusVisiblePolyfillAvailable()) {
