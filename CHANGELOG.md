@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.3.2](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.1...v6.3.2) (2021-05-27)
+
+
+### Bug Fixes
+
+* default boolean props to false [#121](https://github.com/AlaskaAirlines/auro-button/issues/121) ([0e19faf](https://github.com/AlaskaAirlines/auro-button/commit/0e19fafbe0aaa3ce7fcfb5b6e09921b2a59711dd))
+
 ## [6.3.1](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.0...v6.3.1) (2021-05-24)
 
 
