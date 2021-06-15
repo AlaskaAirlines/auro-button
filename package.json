@@ -20,7 +20,8 @@
   "dependencies": {
     "@alaskaairux/auro-loader": "^1.0.1",
     "chalk": "^4.1.0",
-    "lit-element": "^2.4.0"
+    "lit-element": "^2.4.0",
+    "lit-html": "^1.4.1"
   },
   "peerDependencies": {
     "@alaskaairux/design-tokens": "^3.0.0",
