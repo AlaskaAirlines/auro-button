@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.3.3](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.2...v6.3.3) (2021-06-15)
+
+
+### Bug Fixes
+
+* **build:** add lit-help as dependency [#108](https://github.com/AlaskaAirlines/auro-button/issues/108) ([da4edec](https://github.com/AlaskaAirlines/auro-button/commit/da4edec51e7cb1d50f7d6a2f09f60144960f1b07))
+
 ## [6.3.2](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.1...v6.3.2) (2021-05-27)
 
 
