@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.3.5](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.4...v6.3.5) (2021-08-17)
+
+
+### Bug Fixes
+
+* **notice:** update packing postinistall to alert users of next MAJOR release ([f0a6103](https://github.com/AlaskaAirlines/auro-button/commit/f0a610381001a79fb06695de0f6c3baef7c77d72))
+
 ## [6.3.4](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.3...v6.3.4) (2021-06-23)
 
 
