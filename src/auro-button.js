@@ -103,7 +103,10 @@ class AuroButton extends LitElement {
         type: String,
         reflect: true
       },
-      id:               { type: String },
+      id:               {
+        type: String,
+        reflect: true
+       },
       svgIconLeft:      { type: String },
       svgIconRight:     { type: String },
     };
