@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.3.6](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.5...v6.3.6) (2021-08-26)
+
+
+### Bug Fixes
+
+* **notice:** update postinstall message to communicate deprecation of id prop ([fceb348](https://github.com/AlaskaAirlines/auro-button/commit/fceb348036d76f471c26576b2356d83905edbb91))
+
 ## [6.3.5](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.4...v6.3.5) (2021-08-17)
 
 
