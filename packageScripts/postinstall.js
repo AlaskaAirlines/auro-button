@@ -28,6 +28,15 @@ console.log(chalk.hex('#f26135')(`
         removed with the release of
         `) + chalk.hex('#ffd200').bold(`@aurodesignsystem/auro-button v7.0`) + chalk.hex('#f26135')(`.
 
+        =>  DEPRECATION ALERT! DEPRECATION ALERT! <=`) + chalk.hex('#f26135')(`
+
+        With this release, the `) + chalk.hex('#ffd200').bold(`ID property`) + chalk.hex('#f26135')(` of
+        auro-button is `) + chalk.hex('#ffd200').bold(`deprecated`) + chalk.hex('#f26135')(`. This feature will be
+        removed with the release of
+        `) + chalk.hex('#ffd200').bold(`@aurodesignsystem/auro-button v7.0`) + chalk.hex('#f26135')(`.
+
+        See issue https://git.io/JEEYZ
+
 ╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
 `)
 );
