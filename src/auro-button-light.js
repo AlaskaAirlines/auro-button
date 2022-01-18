@@ -87,7 +87,6 @@ class AuroButtonLight extends LitElement {
         name="${ifDefined(this.name ? this.name : undefined)}"
         type="${ifDefined(this.type ? this.type : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
-
         @click="${() => {}}"
       >
         ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
