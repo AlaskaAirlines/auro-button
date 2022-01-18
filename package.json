@@ -97,7 +97,6 @@
   ],
   "scripts": {
     "build": "npm run ciBuild",
-    "version": "node scripts/version.js",
     "apiBuild": "wca analyze 'src/auro-button.js' --outFiles docs/api.md",
     "bundler": "rollup -c",
     "bundle:test": "rollup -c -w",
