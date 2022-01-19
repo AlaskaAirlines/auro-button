@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.3.7](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.6...v6.3.7) (2022-01-19)
+
+
+### Bug Fixes
+
+* **version:** remove version from DOM ([d91e614](https://github.com/AlaskaAirlines/auro-button/commit/d91e614f1e0b5018279522432619cb39df9f366b))
+
 ## [6.3.6](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.5...v6.3.6) (2021-08-26)
 
 
