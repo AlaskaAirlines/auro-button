@@ -179,13 +179,13 @@ slot {
     @media (hover: hover) {
       &:active,
       &:hover {
-        background-color: var(--auro-color-background-lighter);
+        background-color: var(--auro-color-ui-bkg-hover-on-light);
         border: 1px solid var(--auro-color-ui-default-on-light);
       }
     }
 
     &:active {
-      background-color: var(--auro-color-background-lighter);
+      background-color: var(--auro-color-ui-bkg-hover-on-light);
       border: 1px solid var(--auro-color-ui-default-on-light);
     }
 
@@ -216,13 +216,13 @@ slot {
     @media (hover: hover) {
       &:active,
       &:hover {
-        background-color: var(--auro-color-background-lighter);
+        background-color: var(--auro-color-ui-bkg-hover-on-light);
         border-color: transparent;
       }
     }
 
     &:active {
-      background-color: var(--auro-color-background-lighter);
+      background-color: var(--auro-color-ui-bkg-hover-on-light);
       border-color: transparent;
     }
 

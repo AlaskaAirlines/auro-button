@@ -17,6 +17,9 @@
   },
   "main": "index.js",
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=14"
+  },
   "dependencies": {
     "@alaskaairux/auro-loader": "^1.1.1",
     "chalk": "^4.1.2",
@@ -24,15 +27,15 @@
     "lit-html": "^1.0.0"
   },
   "peerDependencies": {
-    "@alaskaairux/design-tokens": "^3.0.0",
-    "@alaskaairux/webcorestylesheets": "^3.0.0",
-    "@alaskaairux/icons": "^4.0.3",
     "@alaskaairux/auro-button": "^6.0.0",
+    "@alaskaairux/design-tokens": "^3.0.0",
+    "@alaskaairux/icons": "^4.0.3",
+    "@alaskaairux/webcorestylesheets": "^3.0.0",
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "focus-visible": "^5.2.0"
   },
   "devDependencies": {
-    "@alaskaairux/design-tokens": "^3.3.0",
+    "@alaskaairux/design-tokens": "^3.7.0",
     "@alaskaairux/icons": "^4.8.3",
     "@alaskaairux/webcorestylesheets": "^3.6.2",
     "@babel/core": "^7.15.0",
@@ -130,7 +133,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all test lint bundler apiBuild postinstall",
+      "pre-commit": "npm-run-all test esLint bundler apiBuild postinstall",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
