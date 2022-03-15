@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.3.8](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.7...v6.3.8) (2022-03-15)
+
+
+### Bug Fixes
+
+* **token:** update element to support new hover color [#153](https://github.com/AlaskaAirlines/auro-button/issues/153) ([5282bd7](https://github.com/AlaskaAirlines/auro-button/commit/5282bd74dd9c075463881bb765a5ebdf5d994134))
+
 ## [6.3.7](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.6...v6.3.7) (2022-01-19)
 
 
