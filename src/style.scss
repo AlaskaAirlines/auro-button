@@ -18,6 +18,9 @@
 
 $auro-inset-spacing-options: lg;
 $auro-inset-directions:'--squish';
+$auro-rgb-color-base-black-03: rgba(0, 0, 0, .03);
+$auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
+
 @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/insetUtility";
 
 // focus-visible mixin
@@ -209,7 +212,7 @@ slot {
 
   // auro-button--tertiary
   &--tertiary {
-    background-color: transparent;
+    background-color: $auro-rgb-color-base-black-03;
     border-color: transparent;
     color: var(--auro-color-text-link-on-light);
 
@@ -230,14 +233,14 @@ slot {
       cursor: not-allowed;
       transform: unset;
 
-      color: rgba($auro-color-text-link-on-light, $disabledOPacity);
-      background-color: transparent;
-      border: transparent;
+      color: rgba(var(-auro-color-base-black), $disabledOPacity);
+      background-color: $auro-rgb-color-base-black-03;
+      border: 1px solid transparent;
 
       @media (hover: hover) {
         &:hover {
-          color: rgba($auro-color-text-link-on-light, $disabledOPacity);
-          background-color: transparent;
+          color: rgba($auro-rgb-color-base-black-03, $disabledOPacity);
+          background-color: $auro-rgb-color-base-black-03;
           border: 1px solid transparent;
         }
       }
@@ -327,7 +330,7 @@ slot {
 
     // auro-button--tertiary
     &--tertiary {
-      background-color: transparent;
+      background-color: $auro-rgb-color-base-white-03;
       border: 1px solid transparent;
       color: var(--auro-color-ui-default-on-dark);
 
@@ -349,13 +352,13 @@ slot {
       &:disabled {
         cursor: not-allowed;
         transform: unset;
-        background-color: transparent;
+        background-color: $auro-rgb-color-base-white-03;
         border: transparent;
 
         @media (hover: hover) {
           &:hover {
             color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
-            background-color: transparent;
+            background-color: $auro-rgb-color-base-white-03;
             border: transparent;
           }
         }
