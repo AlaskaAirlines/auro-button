@@ -233,13 +233,12 @@ slot {
       cursor: not-allowed;
       transform: unset;
 
-      color: rgba(var(-auro-color-base-black), $disabledOPacity);
+      color: rgba($auro-color-text-link-on-light, $disabledOPacity);
       background-color: $auro-rgb-color-base-black-03;
       border: 1px solid transparent;
 
       @media (hover: hover) {
         &:hover {
-          color: rgba($auro-rgb-color-base-black-03, $disabledOPacity);
           background-color: $auro-rgb-color-base-black-03;
           border: 1px solid transparent;
         }
@@ -354,10 +353,10 @@ slot {
         transform: unset;
         background-color: $auro-rgb-color-base-white-03;
         border: transparent;
+        color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
 
         @media (hover: hover) {
           &:hover {
-            color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
             background-color: $auro-rgb-color-base-white-03;
             border: transparent;
           }
