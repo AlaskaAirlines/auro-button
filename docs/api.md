@@ -18,6 +18,7 @@
 | `loading`        | `loading`        | `Boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled |
 | `ondark`         | `ondark`         | `Boolean` | false   | Set value for on-dark version of auro-button     |
 | `secondary`      | `secondary`      | `Boolean` | false   | Set value for secondary version of auro-button   |
+| `slim`           | `slim`           | `Boolean` | false   | Set value for slim version of auro-button        |
 | `svgIconLeft`    | `svgIconLeft`    | `String`  |         | **DEPRECATED** Use auro-icon                     |
 | `svgIconRight`   | `svgIconRight`   | `String`  |         | **DEPRECATED** Use auro-icon                     |
 | `tertiary`       | `tertiary`       | `Boolean` | false   | Set value for tertiary version of auro-button    |

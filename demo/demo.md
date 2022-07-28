@@ -87,6 +87,88 @@ For default spacing of elements in a row, use the [.auro_containedButtons](https
 
 </auro-accordion>
 
+## Slim style
+
+Use the `slim` attribute with the `auro-button` element for a slim style with less padding. The slim style is used to establish the lowest level of hierarchy. Slim buttons have the least emphasis and significance on a page.
+
+<div class="exampleWrapper auro_containedButtons">
+  <auro-button slim>Primary</auro-button>
+  <auro-button slim secondary>Secondary</auro-button>
+  <auro-button slim tertiary>Tertiary</auro-button>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <div class="exampleWrapper auro_containedButtons">
+    <auro-button slim>Primary</auro-button>
+    <auro-button slim secondary>Secondary</auro-button>
+    <auro-button slim tertiary>Tertiary</auro-button>
+  </div>
+  ```
+
+</auro-accordion>
+
+<div class="exampleWrapper auro_containedButtons">
+  <auro-button slim>
+    Activate WiFi
+    <auro-icon style="width: var(--auro-size-md)"
+      customSize
+      customcolor
+      category="in-flight" name="wifi">
+    </auro-icon>
+  </auro-button>
+
+  <auro-button slim secondary>
+    <auro-icon style="width: var(--auro-size-md)"
+      customSize
+      customcolor
+      category="interface" name="arrow-left"></auro-icon>
+    Previous action
+  </auro-button>
+
+  <auro-button slim tertiary>
+    Love this ...
+    <auro-icon style="width: var(--auro-size-md)"
+      customSize
+      customcolor
+      category="interface" name="heart-filled"></auro-icon>
+  </auro-button>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-button slim>
+    Activate WiFi
+    <auro-icon style="width: var(--auro-size-md)"
+      customSize
+      customcolor
+      category="in-flight" name="wifi">
+    </auro-icon>
+  </auro-button>
+
+  <auro-button slim secondary>
+    <auro-icon style="width: var(--auro-size-md)"
+      customSize
+      customcolor
+      category="interface" name="arrow-left"></auro-icon>
+    Previous action
+  </auro-button>
+
+  <auro-button slim tertiary>
+    Love this ...
+    <auro-icon style="width: var(--auro-size-md)"
+      customSize
+      customcolor
+      category="interface" name="heart-filled"></auro-icon>
+  </auro-button>
+  ```
+
+</auro-accordion>
+
 ## Icon support
 
 Adding icons to the auro-button component is as easy as nesting any other HTML. The [auro-icon component](https://www.alaskaair.com/components/auro/icon) has access to all the icons listed in the [Auro Icons library](https://www.alaskaair.com/icons/usage) for quick and easy use.
@@ -289,4 +371,6 @@ Don't combine `disabled` and `loading` attributes on any single instance of `aur
 ```html
 <auro-button loading>Primary</auro-button>
 ```
+</auro-accordion>
+
 </auro-accordion>
