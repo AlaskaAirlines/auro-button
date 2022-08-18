@@ -358,6 +358,7 @@ slot {
         @media (hover: hover) {
           &:hover {
             background-color: $auro-rgb-color-base-white-03;
+            color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
             border: transparent;
           }
         }
