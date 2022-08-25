@@ -86,6 +86,10 @@ $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
   vertical-align: middle;
 }
 
+::slotted(auro-icon) {
+  padding: 0 4px;
+}
+
 // Note: without this, events on a disabled element will still fire
 slot {
   pointer-events: none;
@@ -98,7 +102,7 @@ slot {
 
   position: relative;
 
-  padding: var(--auro-size-sm) var(--auro-size-lg);
+  padding: 0 var(--auro-size-lg);
 
   color: var(--auro-color-text-primary-on-dark);
   cursor: pointer;
@@ -108,12 +112,19 @@ slot {
   font-family: var(--auro-font-family-default);
   font-size: var(--auro-text-body-size-default);
   font-weight: var(--auro-text-body-default-weight);
-  line-height: var(--auro-unitless-scale-140);
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
-  width: 100%;
+
+  min-height: var(--auro-size-xxl);
+  max-height: var(--auro-size-xxl);
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--auro-size-xxs);
 
   // removes margins around button in Safari
   margin: 0;
