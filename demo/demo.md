@@ -217,6 +217,8 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 ## Fluid
 
+In the following example see how the `fluid` attributes alters the shape of the button to be full width of its parent container.
+
 <div class="exampleWrapper">
   <auro-button fluid>Primary</auro-button>
   <auro-button secondary fluid>Secondary</auro-button>
@@ -235,6 +237,8 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 </auro-accordion>
 
 ## Loading State
+
+Use the `loading` attribute to alter the content to teh shimmering dots to alert the user that the button/form is in an active state. The `loading` attribute will also place the element in a disabled state to keep the user from re-submitting an action.
 
 <div class="exampleWrapper auro_containedButtons">
   <auro-button loading>Primary</auro-button>
@@ -271,6 +275,8 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 </auro-accordion>
 
 ## onDark
+
+These examples illustrate the core button types and a `disabled` state on dark backgrounds using the `onDark` attribute.
 
 <div class="exampleWrapper--ondark auro_containedButtons">
   <auro-button ondark>Primary</auro-button>
@@ -320,6 +326,8 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 </auro-accordion>
 
 ## Pass a function to button
+
+These examples illustrate a common use case where a user will want to pass a function into a button to support a click event. See the code examples for how this is achieved.
 
 <div class="exampleWrapper auro_containedButtons">
   <auro-button onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
