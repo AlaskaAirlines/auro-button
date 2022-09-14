@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+# [6.4.0](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.8...v6.4.0) (2022-09-14)
+
+
+### Bug Fixes
+
+* **inline:** update to better center content within button [#164](https://github.com/AlaskaAirlines/auro-button/issues/164) ([4335b6d](https://github.com/AlaskaAirlines/auro-button/commit/4335b6d7004e9042aba6b45cd657bc0abd64a89a))
+
+
+### Features
+
+* **css:** update tertiary background color ([615d5d6](https://github.com/AlaskaAirlines/auro-button/commit/615d5d6606e3325e6b254911a3fe1ff6aed5d371))
+* **slim:** add new feature attribute [#159](https://github.com/AlaskaAirlines/auro-button/issues/159) ([ef661ac](https://github.com/AlaskaAirlines/auro-button/commit/ef661ac375fbf054e4df39e0110b2cfde377219b))
+
 ## [6.3.8](https://github.com/AlaskaAirlines/auro-button/compare/v6.3.7...v6.3.8) (2022-03-15)
 
 
