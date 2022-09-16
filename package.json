@@ -37,7 +37,7 @@
   "devDependencies": {
     "@alaskaairux/design-tokens": "^3.9.1",
     "@alaskaairux/icons": "^4.8.3",
-    "@alaskaairux/webcorestylesheets": "^3.6.2",
+    "@alaskaairux/webcorestylesheets": "^3.7.3",
     "@babel/core": "^7.15.0",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.15.0",
