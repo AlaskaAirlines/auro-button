@@ -22,7 +22,7 @@ In cases were the action of the button would not fit the criteria above, it is m
 ## Default types
 
 <div class="exampleWrapper">
-  <auro-button>Primary</auro-button>
+  <my-button>Primary</my-button>
   <auro-button disabled>Primary</auro-button>
 </div>
 
