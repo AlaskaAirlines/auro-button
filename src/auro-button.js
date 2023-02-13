@@ -27,6 +27,8 @@ import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util
  * @attr {String} title - Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
  * @attr {String} type - The type of the button. Possible values are: `submit`, `reset`, `button`
  * @attr {String} value - Defines the value associated with the button which is submitted with the form data.
+ * @prop {Boolean} ready - When false the component API should not be called.
+ * @fires auroButton-ready - Notifies that the component has finished initializing.
  * @attr {String} svgIconLeft - **DEPRECATED** Use auro-icon
  * @attr {String} svgIconRight - **DEPRECATED** Use auro-icon
  *
@@ -39,6 +41,7 @@ class AuroButton extends LitElement {
     this.disabled = false;
     this.loading = false;
     this.ondark = false;
+    this.ready = false;
     this.secondary = false;
     this.tertiary = false;
     this.slim = false;
@@ -111,6 +114,7 @@ class AuroButton extends LitElement {
       id:               { type: String },
       svgIconLeft:      { type: String },
       svgIconRight:     { type: String },
+      ready:            { type: Boolean },
     };
   }
 
@@ -133,6 +137,24 @@ class AuroButton extends LitElement {
     this.svg = this.dom.body.firstChild;
 
     return this.svg;
+  }
+
+  /**
+   * @private
+   * @returns {void} Marks the component as ready and sends event.
+   */
+  notifyReady() {
+    this.ready = true;
+
+    this.dispatchEvent(new CustomEvent('auroButton-ready', {
+      bubbles: true,
+      cancelable: false,
+      composed: true,
+    }));
+  }
+
+  firstUpdated() {
+    this.notifyReady();
   }
 
   render() {
