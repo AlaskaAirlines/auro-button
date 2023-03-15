@@ -4,17 +4,17 @@
 // ---------------------------------------------------------------------
 
 // Import Auro CSS Properties as Sass file
-@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
+@import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
 
 // Import Auro Sass variables
-@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
 
 // general WCSS imports
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/animation";
+@import "./../node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
+@import "./../node_modules/@alaskaairux/webcorestylesheets/dist/core";
+@import "./../node_modules/@alaskaairux/webcorestylesheets/dist/animation";
 
-@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
+@import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariableMap";
 
 $auro-inset-spacing-options: lg;
 $auro-inset-directions:'--squish';
@@ -25,7 +25,7 @@ $auro-inset-directions:'--squish';
 $auro-rgb-color-base-black-03: rgba(0, 0, 0, .03);
 $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
 
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/insetUtility";
+@import "./../node_modules/@alaskaairux/webcorestylesheets/dist/utilityMixins/insetUtility";
 
 // focus-visible mixin
 @mixin focus-visible {
