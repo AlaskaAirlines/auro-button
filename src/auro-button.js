@@ -21,7 +21,6 @@ import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util
  * @attr {Boolean} slim - Set value for slim version of auro-button
  * @attr {String} arialabel - Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead.
  * @attr {String} arialabelledby - Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion.
- * @attr {String} id - Set the unique ID of an element.
  * @attr {String} title - Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
  * @attr {String} type - The type of the button. Possible values are: `submit`, `reset`, `button`
  * @attr {String} value - Defines the value associated with the button which is submitted with the form data.
@@ -106,7 +105,6 @@ class AuroButton extends LitElement {
         type: String,
         reflect: true
       },
-      id:               { type: String },
       svgIconLeft:      { type: String },
       svgIconRight:     { type: String },
       ready:            { type: Boolean },
@@ -174,7 +172,6 @@ class AuroButton extends LitElement {
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
         ?disabled="${this.disabled || this.loading}"
-        id="${ifDefined(this.id ? this.id : undefined)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
         type="${ifDefined(this.type ? this.type : undefined)}"

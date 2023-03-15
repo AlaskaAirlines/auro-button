@@ -8,7 +8,6 @@
 | `arialabelledby` | `arialabelledby` | `String`  |         | Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion. |
 | `autofocus`      | `autofocus`      | `Boolean` | false   | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user |
 | `disabled`       | `disabled`       | `Boolean` | false   | If set to true button will become disabled and not allow for interactions |
-| `id`             | `id`             | `String`  |         | Set the unique ID of an element.                 |
 | `loading`        | `loading`        | `Boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled |
 | `ondark`         | `ondark`         | `Boolean` | false   | Set value for on-dark version of auro-button     |
 | `ready`          | `ready`          | `Boolean` | false   | When false the component API should not be called. |
