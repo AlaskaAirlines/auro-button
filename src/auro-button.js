@@ -31,7 +31,7 @@ import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util
  *
  * @slot - Provide text for the button.
  */
-class AuroButton extends LitElement {
+export class AuroButton extends LitElement {
   constructor() {
     super();
     this.autofocus = false;
@@ -185,8 +185,4 @@ class AuroButton extends LitElement {
       </button>
     `;
   }
-}
-
-if (!customElements.get("auro-button")) {
-  customElements.define("auro-button", AuroButton);
 }
