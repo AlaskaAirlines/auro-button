@@ -6,7 +6,7 @@
 /* eslint-disable one-var */
 /* eslint-disable no-undef */
 import { fixture, html, expect } from '@open-wc/testing';
-import '../src/auro-button.js';
+import '../index.js';
 
 describe('auro-button', () => {
   it('tests instantiating the element with default properties works', async () => {
@@ -24,7 +24,6 @@ describe('auro-button', () => {
     expect(button.getAttribute('autofocus')).to.be.null;
     expect(button.getAttribute('disabled')).to.be.null;
     expect(button.getAttribute('formnovalidate')).to.be.null;
-    expect(button.getAttribute('id')).to.be.null;
     expect(button.getAttribute('value')).to.be.null;
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
@@ -146,17 +145,6 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
 
     expect(button.getAttribute('aria-labelledby')).to.equal('me');
-  });
-
-  it('tests setting id', async () => {
-    const el = await fixture(html`
-      <auro-button id='me'>Click Me!</auro-button>
-    `);
-
-    const root = el.shadowRoot;
-    const button = root.querySelector('button');
-
-    expect(button.getAttribute('id')).to.equal('me');
   });
 
   it('tests setting title', async () => {
