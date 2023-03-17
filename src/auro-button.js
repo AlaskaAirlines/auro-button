@@ -3,9 +3,9 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html } from 'lit-element';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { classMap } from 'lit-html/directives/class-map';
+import { LitElement, html } from "lit";
+import { ifDefined } from 'lit/directives/if-defined.js';
+import { classMap } from 'lit/directives/class-map.js';
 import 'focus-visible/dist/focus-visible.min.js';
 import styleCss from "./style-css.js";
 import '@alaskaairux/auro-loader';
