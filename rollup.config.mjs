@@ -5,7 +5,7 @@ const production = !process.env.ROLLUP_WATCH;
 
 const modernConfig = {
   input: {
-    ['auro-badge__bundled']: './index.js',
+    ['auro-button__bundled']: './index.js',
   },
   output: {
     format: 'esm',
