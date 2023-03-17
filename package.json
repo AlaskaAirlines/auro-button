@@ -72,6 +72,7 @@
     "sinon": "^9.2.4",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^20.0.0",
+    "typescript": "^5.0.2",
     "wc-sass-render": "^1.4.0",
     "web-component-analyzer": "^1.1.6",
     "webpack-merge": "^5.8.0",
@@ -92,7 +93,7 @@
     ]
   },
   "scripts": {
-    "build": "npm-run-all build:sass sass:render dist:js bundler postinstall build:api",
+    "build": "npm-run-all build:sass sass:render dist:js bundler postinstall build:api types",
     "build:dev:assets": "npm-run-all build:sass:component postCss:component sass:render",
     "build:ci": "npm-run-all sweep build",
     "build:api": "wca analyze 'src/auro-button.js' --outFiles docs/api.md",
@@ -119,7 +120,8 @@
     "demo:copyDemo": "copyfiles -u 1 -V './demo/demo.md' ./build/demo",
     "demo:copyIndex": "copyfiles -u 1 -V './demo/index.html' ./build",
     "demo:updateIndex": "node ./scripts/prepForBuild",
-    "demo:build": "npm-run-all ciBuild demo:rmBuild demo:newBuild demo:copyIndex demo:copyDemo demo:updateIndex"
+    "demo:build": "npm-run-all ciBuild demo:rmBuild demo:newBuild demo:copyIndex demo:copyDemo demo:updateIndex",
+    "types": "tsc"
   },
   "husky": {
     "hooks": {
