@@ -385,6 +385,30 @@ slot {
     min-height: 2.25rem;
     max-height: 2.25rem;
   }
+
+  &--iconOnly {
+    ::slotted(auro-icon) {
+      width: var(--auro-size-300, 24px);
+      height: var(--auro-size-300, 24px);
+    }
+
+    padding-left: calc(var(--auro-size-100, 8px) - 2px);
+    padding-right: calc(var(--auro-size-100, 8px) - 2px);
+
+    border-radius: 100px;
+    
+    min-width: unset;
+  }
+
+  &--iconOnlySlim {
+    ::slotted(auro-icon) {
+      width: calc(var(--auro-size-300, 24px) - 4px);
+      height: calc(var(--auro-size-300, 24px) - 4px);
+    }
+
+    padding-left: var(--auro-size-50, 4px);
+    padding-right: var(--auro-size-50, 4px);
+  }
 }
 
 .icon {
