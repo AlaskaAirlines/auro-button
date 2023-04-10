@@ -16,6 +16,7 @@ import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util
  * @attr {Boolean} fixed - uses px values instead of rem
  * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user
  * @attr {Boolean} disabled - If set to true button will become disabled and not allow for interactions
+ * @attr {Boolean} iconOnly - If set to true, the button will contain an icon with no additional content
  * @attr {Boolean} loading - If set to true button text will be replaced with `auro-loader` and become disabled
  * @attr {Boolean} ondark - Set value for on-dark version of auro-button
  * @attr {Boolean} secondary - Set value for secondary version of auro-button
@@ -39,6 +40,7 @@ class AuroButton extends LitElement {
     super();
     this.autofocus = false;
     this.disabled = false;
+    this.iconOnly = false;
     this.loading = false;
     this.ondark = false;
     this.ready = false;
@@ -68,6 +70,10 @@ class AuroButton extends LitElement {
         reflect: true
       },
       disabled:         {
+        type: Boolean,
+        reflect: true
+      },
+      iconOnly: {
         type: Boolean,
         reflect: true
       },
@@ -168,6 +174,8 @@ class AuroButton extends LitElement {
       'auro-button--tertiary': this.tertiary,
       'auro-buttonOndark--tertiary': this.tertiary && this.ondark,
       'auro-button--slim': this.slim,
+      'auro-button--iconOnly': this.iconOnly,
+      'auro-button--iconOnlySlim': this.iconOnly && this.slim,
       'icon': this.svgIconLeft || this.svgIconRight,
       'loading': this.loading
     };
