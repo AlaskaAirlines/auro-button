@@ -175,7 +175,6 @@ Adding icons to the auro-button component is as easy as nesting any other HTML. 
 
 Be sure to use the `customColor` attribute on the auro-icon component to allow colors set in your parent element to pass through to the icon.
 
-
 <div class="exampleWrapper auro_containedButtons">
   <auro-button>
     Activate WiFi
@@ -214,6 +213,146 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
   ```
 
 </auro-accordion>
+
+#### Icon only button
+
+Use the `iconOnly` attribute with the `auro-button` element for a style specific to having only an `auro-icon` as the button's content. 
+
+Be sure to also use the `customColor` and `customSize` attributes on the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
+
+
+**Recommended**: We strongly encourage the users of the icon only `auro-button` to use the `aria-label` attribute. Without this attribute, the screenreaders will not properly describe the button content to it's users.
+
+<div class="exampleWrapper auro_containedButtons">
+  <auro-button aria-label="home-filled" iconOnly>
+    <auro-icon
+      customColor 
+      customSize
+      category="interface" 
+      name="home-filled">
+    </auro-icon>
+  </auro-button>
+
+  <auro-button aria-label="arrow-left" iconOnly secondary>
+    <auro-icon 
+      customColor 
+      customSize
+      category="interface" 
+      name="arrow-left">
+    </auro-icon>
+  </auro-button>
+
+  <auro-button aria-label="heart-filled" iconOnly tertiary>
+    <auro-icon
+      customColor 
+      customSize
+      category="interface" 
+      name="heart-filled">
+    </auro-icon>
+  </auro-button>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-button aria-label="home-filled" iconOnly>
+    <auro-icon
+      customColor 
+      customSize
+      category="interface" 
+      name="home-filled">
+    </auro-icon>
+  </auro-button>
+
+  <auro-button aria-label="arrow-left" iconOnly secondary>
+    <auro-icon 
+      customColor 
+      customSize
+      category="interface" 
+      name="arrow-left">
+    </auro-icon>
+  </auro-button>
+
+  <auro-button aria-label="heart-filled" iconOnly tertiary>
+    <auro-icon
+      customColor 
+      customSize
+      category="interface" 
+      name="heart-filled">
+    </auro-icon>
+  </auro-button>
+  ```
+
+</auro-accordion>
+
+#### Icon only button - Slim
+
+Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` element for a slimmer icon only button with less padding.
+
+<div class="exampleWrapper auro_containedButtons">
+  <auro-button aria-label="home-filled" iconOnly slim>
+    <auro-icon
+      customColor 
+      customSize
+      category="interface" 
+      name="home-filled">
+    </auro-icon>
+  </auro-button>
+
+  <auro-button aria-label="arrow-left" iconOnly secondary slim>
+    <auro-icon 
+      customColor 
+      customSize
+      category="interface" 
+      name="arrow-left">
+    </auro-icon>
+  </auro-button>
+
+  <auro-button aria-label="heart-filled" iconOnly tertiary slim>
+    <auro-icon
+      customColor 
+      customSize
+      category="interface" 
+      name="heart-filled">
+    </auro-icon>
+  </auro-button>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-button aria-label="home-filled" iconOnly slim>
+    <auro-icon
+      customColor 
+      customSize
+      category="interface" 
+      name="home-filled">
+    </auro-icon>
+  </auro-button>
+
+  <auro-button aria-label="arrow-left" iconOnly secondary slim>
+    <auro-icon 
+      customColor 
+      customSize
+      category="interface" 
+      name="arrow-left">
+    </auro-icon>
+  </auro-button>
+
+  <auro-button aria-label="heart-filled" iconOnly tertiary slim>
+    <auro-icon
+      customColor 
+      customSize
+      category="interface" 
+      name="heart-filled">
+    </auro-icon>
+  </auro-button>
+  ```
+
+</auro-accordion>
+
 
 ## Fluid
 
