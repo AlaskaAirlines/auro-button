@@ -4,6 +4,7 @@
 karma.conf.js
 rollup.config.js
 babel.config.js
+.husky/
 .github/
 index.html
 scripts/
