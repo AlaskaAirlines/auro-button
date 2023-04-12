@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [6.6.0](https://github.com/AlaskaAirlines/auro-button/compare/v6.5.0...v6.6.0) (2023-04-12)
+
+
+### Features
+
+* **icononly:** add icon only version of component [#199](https://github.com/AlaskaAirlines/auro-button/issues/199) ([69be06f](https://github.com/AlaskaAirlines/auro-button/commit/69be06f4a3aa77117ae4ba5d37120dc4229f7c57))
+
 # [6.5.0](https://github.com/AlaskaAirlines/auro-button/compare/v6.4.0...v6.5.0) (2023-02-13)
 
 
