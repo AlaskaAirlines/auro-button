@@ -8,7 +8,7 @@ For the most up to date information on [UI development browser support](https://
 
 ## Install
 
-[![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/auro-button/Test%20and%20publish?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-button/actions?query=workflow%3A%22test+and+publish%22)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-button/testPublish.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/auro-button/actions/workflows/testPublish.yml)
 [![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/auro-button?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/auro-button)
 [![License](https://img.shields.io/npm/l/@alaskaairux/auro-button?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
@@ -42,30 +42,22 @@ import "@alaskaairux/auro-button";
 <auro-button>Hello World</auro-button>
 ```
 
-## Install bundled assets from CDN
+## CDN Use
 
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Two bundles are available -- `auro-button__bundled.js` for modern browsers and `auro-button__bundled.es5.js` for legacy browsers (including IE11).
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
 
-Since the legacy bundle includes many polyfills that are not needed by modern browsers, we recommend you load these bundles using [differential serving](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) so that the browser only loads the bundle it needs. To accomplish this, the script tag for the modern bundle should have `type="module"` and the script tag for the legacy bundle should have the `nomodule` attribute. See the example below.
+### Install
 
-**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
+Include the following example HTML code in the `<head>` element of your page.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
-<script src="https://unpkg.com/@alaskaairux/auro-button@latest/dist/auro-button__bundled.js" type="module"></script>
-<script src="https://unpkg.com/@alaskaairux/auro-button@latest/dist/auro-button__bundled.es5.js" nomodule></script>
+<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-button@latest/dist/auro-button__bundled.js" type="module"></script>
 ```
 
-### polyfills.js
-
-The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
-
-### IE11 Support
-
-**Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11.
-
+**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
 
 ## Responsive support
 
