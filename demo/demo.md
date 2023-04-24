@@ -1,3 +1,29 @@
+<style>
+  .auro_containedButtons {
+    display: flex;
+    flex-direction: column;
+  }
+  .auro_containedButtons > * {
+    margin-bottom: 1rem;
+  }
+  .auro_containedButtons > *:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .auro_containedButtons {
+      flex-direction: row;
+    }
+    .auro_containedButtons > * {
+      margin-bottom: 0;
+      margin-left: 1rem;
+    }
+    .auro_containedButtons > *:first-child {
+      margin-left: 0;
+    }
+  }
+</style>
+
 # Button
 
 The Auro Design System fully supports a wide range of buttons styles and use cases. The following examples illustrate common button uses followed up by code examples.
@@ -219,7 +245,7 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 #### Icon only button
 
-Use the `iconOnly` attribute with the `auro-button` element for a style specific to having only an `auro-icon` as the button's content. 
+Use the `iconOnly` attribute with the `auro-button` element for a style specific to having only an `auro-icon` as the button's content.
 
 Be sure to also use the `customColor` and `customSize` attributes on the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
 
@@ -228,27 +254,27 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
 <div class="exampleWrapper auro_containedButtons">
   <auro-button aria-label="home-filled" iconOnly>
     <auro-icon
-      customColor 
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="home-filled">
     </auro-icon>
   </auro-button>
 
   <auro-button aria-label="arrow-left" iconOnly secondary>
-    <auro-icon 
-      customColor 
+    <auro-icon
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="arrow-left">
     </auro-icon>
   </auro-button>
 
   <auro-button aria-label="heart-filled" iconOnly tertiary>
     <auro-icon
-      customColor 
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="heart-filled">
     </auro-icon>
   </auro-button>
@@ -260,27 +286,27 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
   ```html
   <auro-button aria-label="home-filled" iconOnly>
     <auro-icon
-      customColor 
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="home-filled">
     </auro-icon>
   </auro-button>
 
   <auro-button aria-label="arrow-left" iconOnly secondary>
-    <auro-icon 
-      customColor 
+    <auro-icon
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="arrow-left">
     </auro-icon>
   </auro-button>
 
   <auro-button aria-label="heart-filled" iconOnly tertiary>
     <auro-icon
-      customColor 
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="heart-filled">
     </auro-icon>
   </auro-button>
@@ -295,27 +321,27 @@ Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` el
 <div class="exampleWrapper auro_containedButtons">
   <auro-button aria-label="home-filled" iconOnly slim>
     <auro-icon
-      customColor 
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="home-filled">
     </auro-icon>
   </auro-button>
 
   <auro-button aria-label="arrow-left" iconOnly secondary slim>
-    <auro-icon 
-      customColor 
+    <auro-icon
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="arrow-left">
     </auro-icon>
   </auro-button>
 
   <auro-button aria-label="heart-filled" iconOnly tertiary slim>
     <auro-icon
-      customColor 
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="heart-filled">
     </auro-icon>
   </auro-button>
@@ -327,27 +353,27 @@ Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` el
   ```html
   <auro-button aria-label="home-filled" iconOnly slim>
     <auro-icon
-      customColor 
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="home-filled">
     </auro-icon>
   </auro-button>
 
   <auro-button aria-label="arrow-left" iconOnly secondary slim>
-    <auro-icon 
-      customColor 
+    <auro-icon
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="arrow-left">
     </auro-icon>
   </auro-button>
 
   <auro-button aria-label="heart-filled" iconOnly tertiary slim>
     <auro-icon
-      customColor 
+      customColor
       customSize
-      category="interface" 
+      category="interface"
       name="heart-filled">
     </auro-icon>
   </auro-button>
