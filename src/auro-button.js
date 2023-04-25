@@ -18,6 +18,7 @@ import '@alaskaairux/auro-loader';
  * @attr {Boolean} secondary - Set value for secondary version of auro-button
  * @attr {Boolean} tertiary - Set value for tertiary version of auro-button
  * @attr {Boolean} slim - Set value for slim version of auro-button
+ * @attr {Boolean} fluid - Alters the shape of the button to be full width of its parent container
  * @attr {String} arialabel - Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead.
  * @attr {String} arialabelledby - Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion.
  * @attr {String} id - Set the unique ID of an element.
@@ -41,6 +42,7 @@ class AuroButton extends LitElement {
     this.secondary = false;
     this.tertiary = false;
     this.slim = false;
+    this.fluid = false;
   }
 
   static get styles() {
@@ -54,6 +56,10 @@ class AuroButton extends LitElement {
         reflect: true
       },
       disabled:         {
+        type: Boolean,
+        reflect: true
+      },
+      fluid:         {
         type: Boolean,
         reflect: true
       },
