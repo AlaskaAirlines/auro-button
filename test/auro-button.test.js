@@ -148,17 +148,6 @@ describe('auro-button', () => {
     expect(button.getAttribute('aria-labelledby')).to.equal('me');
   });
 
-  it('tests setting id', async () => {
-    const el = await fixture(html`
-      <auro-button id='me'>Click Me!</auro-button>
-    `);
-
-    const root = el.shadowRoot;
-    const button = root.querySelector('button');
-
-    expect(button.getAttribute('id')).to.equal('me');
-  });
-
   it('tests setting title', async () => {
     const el = await fixture(html`
       <auro-button title='me'>Click Me!</auro-button>

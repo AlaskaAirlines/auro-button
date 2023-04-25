@@ -112,7 +112,6 @@ class AuroButton extends LitElement {
         type: String,
         reflect: true
       },
-      id:               { type: String },
       svgIconLeft:      { type: String },
       svgIconRight:     { type: String },
       ready:            { type: Boolean },
@@ -182,7 +181,6 @@ class AuroButton extends LitElement {
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
         ?disabled="${this.disabled || this.loading}"
-        id="${ifDefined(this.id ? this.id : undefined)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
         type="${ifDefined(this.type ? this.type : undefined)}"
