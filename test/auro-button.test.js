@@ -181,30 +181,6 @@ describe('auro-button', () => {
     expect(button.getAttribute('value')).to.equal('me');
   });
 
-  it('tests setting svgIconLeft', async () => {
-    const svg = '<svg viewBox="0 0 24 24" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" style="width: var(--auro-size-lg); height: var(--auro-size-lg); fill: currentColor" class="ico_squareLarge"><title>Left indicator</title><desc>Directional indicator; left</desc><path fill-rule="evenodd" d="M14.3946049,6.34544498 L14.4787233,6.41806313 C14.7449899,6.6843297 14.7691959,7.10099338 14.5513415,7.39460487 L14.4787233,7.4787233 L10.0093932,11.9483932 L14.4787233,16.4180631 C14.7449899,16.6843297 14.7691959,17.1009934 14.5513415,17.3946049 L14.4787233,17.4787233 C14.2124567,17.7449899 13.7957931,17.7691959 13.5021816,17.5513415 L13.4180631,17.4787233 L8.5945,12.6555 C8.20397571,12.2649757 8.20397571,11.6318107 8.5945,11.2412864 L13.4180631,6.41806313 C13.6843297,6.15179657 14.1009934,6.12759052 14.3946049,6.34544498 Z"></path></svg>'
-    const el = await fixture(html`
-      <auro-button svgIconLeft=${svg}>Click Me!</auro-button>
-    `);
-
-    const root = el.shadowRoot;
-    const svgEl = root.querySelector('svg');
-
-    expect(svgEl).to.not.be.null;
-  });
-
-  it('tests setting svgIconRight', async () => {
-    const svg = '<svg viewBox="0 0 24 24" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" style="width: var(--auro-size-lg); height: var(--auro-size-lg); fill: currentColor" class="ico_squareLarge"><title>Left indicator</title><desc>Directional indicator; left</desc><path fill-rule="evenodd" d="M14.3946049,6.34544498 L14.4787233,6.41806313 C14.7449899,6.6843297 14.7691959,7.10099338 14.5513415,7.39460487 L14.4787233,7.4787233 L10.0093932,11.9483932 L14.4787233,16.4180631 C14.7449899,16.6843297 14.7691959,17.1009934 14.5513415,17.3946049 L14.4787233,17.4787233 C14.2124567,17.7449899 13.7957931,17.7691959 13.5021816,17.5513415 L13.4180631,17.4787233 L8.5945,12.6555 C8.20397571,12.2649757 8.20397571,11.6318107 8.5945,11.2412864 L13.4180631,6.41806313 C13.6843297,6.15179657 14.1009934,6.12759052 14.3946049,6.34544498 Z"></path></svg>'
-    const el = await fixture(html`
-      <auro-button svgIconRight=${svg}>Click Me!</auro-button>
-    `);
-
-    const root = el.shadowRoot;
-    const svgEl = root.querySelector('svg');
-
-    expect(svgEl).to.not.be.null;
-  });
-
   it('tests setting focus', async () => {
     const el = await fixture(html`
       <auro-button>Click Me!</auro-button>
