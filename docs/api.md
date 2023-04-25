@@ -20,8 +20,6 @@
 | `ready`          | `ready`          | `Boolean` | false   | When false the component API should not be called. |
 | `secondary`      | `secondary`      | `Boolean` | false   | Set value for secondary version of auro-button   |
 | `slim`           | `slim`           | `Boolean` | false   | Set value for slim version of auro-button        |
-| `svgIconLeft`    | `svgIconLeft`    | `String`  |         | **DEPRECATED** Use auro-icon                     |
-| `svgIconRight`   | `svgIconRight`   | `String`  |         | **DEPRECATED** Use auro-icon                     |
 | `tertiary`       | `tertiary`       | `Boolean` | false   | Set value for tertiary version of auro-button    |
 | `title`          | `title`          | `String`  |         | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
 | `type`           | `type`           | `String`  |         | The type of the button. Possible values are: `submit`, `reset`, `button` |
