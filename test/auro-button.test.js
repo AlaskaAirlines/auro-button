@@ -6,7 +6,7 @@
 /* eslint-disable one-var */
 /* eslint-disable no-undef */
 import { fixture, html, expect } from '@open-wc/testing';
-import '../src/auro-button.js';
+import '../index.js';
 
 describe('auro-button', () => {
   it('tests instantiating the element with default properties works', async () => {

@@ -30,7 +30,9 @@ import '@alaskaairux/auro-loader';
  *
  * @slot - Provide text for the button.
  */
-class AuroButton extends LitElement {
+export class AuroButton extends LitElement {
+
+  /* eslint max-statements: ["error", 11] */
   constructor() {
     super();
     this.autofocus = false;
@@ -173,6 +175,7 @@ class AuroButton extends LitElement {
   }
 }
 
+// default internal definition
 if (!customElements.get("auro-button")) {
   customElements.define("auro-button", AuroButton);
 }
