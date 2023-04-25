@@ -2,9 +2,9 @@
 
 ## Attributes
 
-| Attribute | Type      | Description                   |
-|-----------|-----------|-------------------------------|
-| `fixed`   | `Boolean` | uses px values instead of rem |
+| Attribute | Type     | Description                      |
+|-----------|----------|----------------------------------|
+| `id`      | `String` | Set the unique ID of an element. |
 
 ## Properties
 
@@ -15,7 +15,6 @@
 | `autofocus`      | `autofocus`      | `Boolean` | false   | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user |
 | `disabled`       | `disabled`       | `Boolean` | false   | If set to true button will become disabled and not allow for interactions |
 | `iconOnly`       | `iconOnly`       | `Boolean` | false   | If set to true, the button will contain an icon with no additional content |
-| `id`             | `id`             | `String`  |         | Set the unique ID of an element.                 |
 | `loading`        | `loading`        | `Boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled |
 | `ondark`         | `ondark`         | `Boolean` | false   | Set value for on-dark version of auro-button     |
 | `ready`          | `ready`          | `Boolean` | false   | When false the component API should not be called. |
