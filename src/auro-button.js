@@ -26,8 +26,6 @@ import '@alaskaairux/auro-loader';
  * @attr {String} value - Defines the value associated with the button which is submitted with the form data.
  * @prop {Boolean} ready - When false the component API should not be called.
  * @fires auroButton-ready - Notifies that the component has finished initializing.
- * @attr {String} svgIconLeft - **DEPRECATED** Use auro-icon
- * @attr {String} svgIconRight - **DEPRECATED** Use auro-icon
  *
  * @slot - Provide text for the button.
  */
@@ -103,8 +101,6 @@ class AuroButton extends LitElement {
         type: String,
         reflect: true
       },
-      svgIconLeft:      { type: String },
-      svgIconRight:     { type: String },
       ready:            { type: Boolean },
     };
   }
@@ -115,19 +111,6 @@ class AuroButton extends LitElement {
    */
   focus() {
     this.renderRoot.querySelector('button').focus();
-  }
-
-  /**
-   * @private Internal method to parse svgIcon
-   * @deprecated
-   * @param {String} svgIcon - The SVG value of the ES6.js version of the icon
-   * @returns {ChildNode} - The SVG node
-   */
-  getIcon(svgIcon) {
-    this.dom = new DOMParser().parseFromString(svgIcon, 'text/html');
-    this.svg = this.dom.body.firstChild;
-
-    return this.svg;
   }
 
   /**
@@ -161,7 +144,6 @@ class AuroButton extends LitElement {
       'auro-button--slim': this.slim,
       'auro-button--iconOnly': this.iconOnly,
       'auro-button--iconOnlySlim': this.iconOnly && this.slim,
-      'icon': this.svgIconLeft || this.svgIconRight,
       'loading': this.loading
     };
 
@@ -178,10 +160,8 @@ class AuroButton extends LitElement {
         .value="${ifDefined(this.value ? this.value : undefined)}"
         @click="${() => {}}"
       >
-        ${ifDefined(this.svgIconLeft ? this.getIcon(this.svgIconLeft) : undefined)}
         ${ifDefined(this.loading ? html`<auro-loader pulse></auro-loader>` : undefined)}
         <slot></slot>
-        ${ifDefined(this.svgIconRight ? this.getIcon(this.svgIconRight) : undefined)}
       </button>
     `;
   }
