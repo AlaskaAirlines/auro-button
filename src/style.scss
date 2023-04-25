@@ -70,10 +70,6 @@ $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
   @include focus-visible;
 }
 
-.focus-visible.auro-button {
-  @include focus-visible;
-}
-
 :host([fluid]),
 :host([fluid=true]) {
   .auro-button {
