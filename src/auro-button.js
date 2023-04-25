@@ -6,10 +6,8 @@
 import { LitElement, html } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { classMap } from 'lit-html/directives/class-map';
-import 'focus-visible/dist/focus-visible.min.js';
 import styleCss from "./style-css.js";
 import '@alaskaairux/auro-loader';
-import { isFocusVisibleSupported, isFocusVisiblePolyfillAvailable } from './util';
 
 /**
  * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user
@@ -45,13 +43,6 @@ class AuroButton extends LitElement {
     this.secondary = false;
     this.tertiary = false;
     this.slim = false;
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    if (!isFocusVisibleSupported() && isFocusVisiblePolyfillAvailable()) {
-      window.applyFocusVisiblePolyfill(this.shadowRoot);
-    }
   }
 
   static get styles() {
