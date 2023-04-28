@@ -3,9 +3,6 @@
 
 // ---------------------------------------------------------------------
 
-// Import Auro CSS Properties as Sass file
-@import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
-
 // Import Auro Sass variables
 @import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
 
@@ -33,12 +30,14 @@ $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
   box-shadow: inset 0 0 0 1px var(--auro-color-border-focus-on-dark), inset 0 0 0 3px var(--auro-color-background-lightest);
 
   // auro-button--secondary
+  &[variant='secondary'],
   &--secondary {
     background-color: var(--auro-color-background-lighter);
     box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
   }
 
   // auro-button--tertiary
+  &[variant='tertiary'],
   &--tertiary {
     background-color: var(--auro-color-background-lighter);
     border-color: var(--auro-color-ui-default-on-light);
@@ -51,6 +50,7 @@ $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
     box-shadow: inset 0 0 0 3px var(--auro-color-border-focus-on-dark);
 
     // auro-buttonOndark--secondary
+    &[variant='secondary'],
     &--secondary {
       background-color: var(--auro-color-base-black-opacity-15);
       box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
@@ -58,6 +58,7 @@ $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
     }
 
     // auro-buttonOndark--tertiary
+    &[variant='tertiary'],
     &--tertiary {
       background-color: var(--auro-color-base-black-opacity-15);
       border-color: var(--auro-color-ui-active-on-dark);
@@ -182,6 +183,7 @@ slot {
   }
 
   // auro-button--secondary
+  &[variant='secondary'],
   &--secondary {
     background-color: var(--auro-color-background-lightest);
     border: 1px solid var(--auro-color-ui-default-on-light);
@@ -219,6 +221,7 @@ slot {
   }
 
   // auro-button--tertiary
+  &[variant='tertiary'],
   &--tertiary {
     background-color: $auro-rgb-color-base-black-03;
     border-color: transparent;
@@ -291,6 +294,7 @@ slot {
     }
 
     // auro-buttonOndark--secondary
+    &[variant='secondary'],
     &--secondary {
       background-color: transparent;
       border: 1px solid var(--auro-color-ui-default-on-dark);
@@ -336,6 +340,7 @@ slot {
     }
 
     // auro-button--tertiary
+    &[variant='tertiary'],
     &--tertiary {
       background-color: $auro-rgb-color-base-white-03;
       border: 1px solid transparent;

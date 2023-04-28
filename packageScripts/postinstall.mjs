@@ -23,6 +23,13 @@ console.log(chalk.hex('#f26135')(`
         Thanks for installing the latest version
                 of `) + chalk.hex('#ffd200').bold(`auro-button v${pjson.version}.`) + chalk.hex('#f26135')(`
 
+      =>  DEPRECATION ALERT! DEPRECATION ALERT! <=`) + chalk.hex('#f26135')(`
+
+            With this release, the attributes`) + chalk.hex('#ffd200').bold(`
+          {secondary, tertiary} `) + chalk.hex('#f26135')(`are `) + chalk.hex('#ffd200').bold(`deprecated`) + chalk.hex('#f26135')(`.
+        These attributes will be REMOVED with the
+      release of `) + chalk.hex('#ffd200').bold(`@aurodesignsystem/auro-button v8.0`) + chalk.hex('#f26135')(`.
+
 ╰─────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─╯
 `)
 );
