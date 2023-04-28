@@ -63,31 +63,31 @@ In cases were the action of the button would not fit the criteria above, it is m
 </auro-accordion>
 
 <div class="exampleWrapper">
-  <auro-button secondary>Secondary</auro-button>
-  <auro-button secondary disabled>Secondary</auro-button>
+  <auro-button variant="secondary">Secondary</auro-button>
+  <auro-button variant="secondary" disabled>Secondary</auro-button>
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-button secondary>Secondary</auro-button>
-  <auro-button secondary disabled>Secondary</auro-button>
+  <auro-button variant="secondary">Secondary</auro-button>
+  <auro-button variant="secondary" disabled>Secondary</auro-button>
   ```
 
 </auro-accordion>
 
 <div class="exampleWrapper">
-  <auro-button tertiary>Tertiary</auro-button>
-  <auro-button tertiary disabled>Tertiary</auro-button>
+  <auro-button variant="tertiary">Tertiary</auro-button>
+  <auro-button variant="tertiary" disabled>Tertiary</auro-button>
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-button tertiary>Tertiary</auro-button>
-  <auro-button tertiary disabled>Tertiary</auro-button>
+  <auro-button variant="tertiary">Tertiary</auro-button>
+  <auro-button variant="tertiary" disabled>Tertiary</auro-button>
   ```
 
 </auro-accordion>
@@ -96,8 +96,8 @@ For default spacing of elements in a row, use the [.auro_containedButtons](https
 
 <div class="exampleWrapper auro_containedButtons">
   <auro-button>Primary</auro-button>
-  <auro-button secondary>Secondary</auro-button>
-  <auro-button tertiary>Tertiary</auro-button>
+  <auro-button variant="secondary">Secondary</auro-button>
+  <auro-button variant="tertiary">Tertiary</auro-button>
 </div>
 
 <auro-accordion lowProfile justifyRight>
@@ -106,8 +106,8 @@ For default spacing of elements in a row, use the [.auro_containedButtons](https
   ```html
   <div class="exampleWrapper auro_containedButtons">
     <auro-button>Primary</auro-button>
-    <auro-button secondary>Secondary</auro-button>
-    <auro-button tertiary>Tertiary</auro-button>
+    <auro-button variant="secondary">Secondary</auro-button>
+    <auro-button variant="tertiary">Tertiary</auro-button>
   </div>
   ```
 
@@ -119,8 +119,8 @@ Use the `slim` attribute with the `auro-button` element for a slim style with le
 
 <div class="exampleWrapper auro_containedButtons">
   <auro-button slim>Primary</auro-button>
-  <auro-button slim secondary>Secondary</auro-button>
-  <auro-button slim tertiary>Tertiary</auro-button>
+  <auro-button slim variant="secondary">Secondary</auro-button>
+  <auro-button slim variant="tertiary">Tertiary</auro-button>
 </div>
 
 <auro-accordion lowProfile justifyRight>
@@ -129,8 +129,8 @@ Use the `slim` attribute with the `auro-button` element for a slim style with le
   ```html
   <div class="exampleWrapper auro_containedButtons">
     <auro-button slim>Primary</auro-button>
-    <auro-button slim secondary>Secondary</auro-button>
-    <auro-button slim tertiary>Tertiary</auro-button>
+    <auro-button slim variant="secondary">Secondary</auro-button>
+    <auro-button slim variant="tertiary">Tertiary</auro-button>
   </div>
   ```
 
@@ -146,7 +146,7 @@ Use the `slim` attribute with the `auro-button` element for a slim style with le
     </auro-icon>
   </auro-button>
 
-  <auro-button slim secondary>
+  <auro-button slim variant="secondary">
     <auro-icon style="width: var(--auro-size-md)"
       customSize
       customcolor
@@ -154,7 +154,7 @@ Use the `slim` attribute with the `auro-button` element for a slim style with le
     Previous action
   </auro-button>
 
-  <auro-button slim tertiary>
+  <auro-button slim variant="tertiary">
     Love this ...
     <auro-icon style="width: var(--auro-size-md)"
       customSize
@@ -176,7 +176,7 @@ Use the `slim` attribute with the `auro-button` element for a slim style with le
     </auro-icon>
   </auro-button>
 
-  <auro-button slim secondary>
+  <auro-button slim variant="secondary">
     <auro-icon style="width: var(--auro-size-md)"
       customSize
       customcolor
@@ -184,7 +184,7 @@ Use the `slim` attribute with the `auro-button` element for a slim style with le
     Previous action
   </auro-button>
 
-  <auro-button slim tertiary>
+  <auro-button slim variant="tertiary">
     Love this ...
     <auro-icon style="width: var(--auro-size-md)"
       customSize
@@ -208,12 +208,12 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
     <auro-icon customColor category="in-flight" name="wifi"></auro-icon>
   </auro-button>
 
-  <auro-button secondary>
+  <auro-button variant="secondary">
     <auro-icon customcolor category="interface" name="arrow-left"></auro-icon>
     Previous action
   </auro-button>
 
-  <auro-button tertiary>
+  <auro-button variant="tertiary">
     Love this ...
     <auro-icon customcolor category="interface" name="heart-filled"></auro-icon>
   </auro-button>
@@ -228,12 +228,12 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
     <auro-icon customColor category="in-flight" name="wifi"></auro-icon>
   </auro-button>
 
-  <auro-button secondary>
+  <auro-button variant="secondary">
     <auro-icon customcolor category="interface" name="arrow-left"></auro-icon>
     Previous action
   </auro-button>
 
-  <auro-button tertiary>
+  <auro-button variant="tertiary">
     Love this ...
     <auro-icon customcolor category="interface" name="heart-filled"></auro-icon>
   </auro-button>
@@ -261,7 +261,7 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
     </auro-icon>
   </auro-button>
 
-  <auro-button aria-label="arrow-left" iconOnly secondary>
+  <auro-button aria-label="arrow-left" variant="secondary" iconOnly>
     <auro-icon
       customColor
       customSize
@@ -270,7 +270,7 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
     </auro-icon>
   </auro-button>
 
-  <auro-button aria-label="heart-filled" iconOnly tertiary>
+  <auro-button aria-label="heart-filled" variant="tertiary" iconOnly>
     <auro-icon
       customColor
       customSize
@@ -293,7 +293,7 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
     </auro-icon>
   </auro-button>
 
-  <auro-button aria-label="arrow-left" iconOnly secondary>
+  <auro-button aria-label="arrow-left" variant="secondary" iconOnly>
     <auro-icon
       customColor
       customSize
@@ -302,7 +302,7 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
     </auro-icon>
   </auro-button>
 
-  <auro-button aria-label="heart-filled" iconOnly tertiary>
+  <auro-button aria-label="heart-filled" variant="tertiary" iconOnly>
     <auro-icon
       customColor
       customSize
@@ -328,7 +328,7 @@ Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` el
     </auro-icon>
   </auro-button>
 
-  <auro-button aria-label="arrow-left" iconOnly secondary slim>
+  <auro-button aria-label="arrow-left" variant="secondary" iconOnly slim>
     <auro-icon
       customColor
       customSize
@@ -337,7 +337,7 @@ Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` el
     </auro-icon>
   </auro-button>
 
-  <auro-button aria-label="heart-filled" iconOnly tertiary slim>
+  <auro-button aria-label="heart-filled" variant="tertiary" iconOnly slim>
     <auro-icon
       customColor
       customSize
@@ -360,7 +360,7 @@ Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` el
     </auro-icon>
   </auro-button>
 
-  <auro-button aria-label="arrow-left" iconOnly secondary slim>
+  <auro-button aria-label="arrow-left" variant="secondary" iconOnly slim>
     <auro-icon
       customColor
       customSize
@@ -369,7 +369,7 @@ Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` el
     </auro-icon>
   </auro-button>
 
-  <auro-button aria-label="heart-filled" iconOnly tertiary slim>
+  <auro-button aria-label="heart-filled" variant="tertiary" iconOnly slim>
     <auro-icon
       customColor
       customSize
@@ -387,8 +387,8 @@ In the following example see how the `fluid` attributes alters the shape of the 
 
 <div class="exampleWrapper">
   <auro-button fluid>Primary</auro-button>
-  <auro-button secondary fluid>Secondary</auro-button>
-  <auro-button tertiary fluid>Tertiary</auro-button>
+  <auro-button variant="secondary" fluid>Secondary</auro-button>
+  <auro-button variant="tertiary" fluid>Tertiary</auro-button>
 </div>
 
 <auro-accordion lowProfile justifyRight>
@@ -396,8 +396,8 @@ In the following example see how the `fluid` attributes alters the shape of the 
 
   ```html
   <auro-button fluid>Primary</auro-button>
-  <auro-button secondary fluid>Secondary</auro-button>
-  <auro-button tertiary fluid>Tertiary</auro-button>
+  <auro-button variant="secondary" fluid>Secondary</auro-button>
+  <auro-button variant="tertiary" fluid>Tertiary</auro-button>
   ```
 
 </auro-accordion>
@@ -408,8 +408,8 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
 
 <div class="exampleWrapper auro_containedButtons">
   <auro-button loading>Primary</auro-button>
-  <auro-button secondary loading>Secondary</auro-button>
-  <auro-button tertiary loading>Tertiary</auro-button>
+  <auro-button variant="secondary" loading>Secondary</auro-button>
+  <auro-button variant="tertiary" loading>Tertiary</auro-button>
 </div>
 
 <auro-accordion lowProfile justifyRight>
@@ -417,16 +417,16 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
 
   ```html
   <auro-button loading>Primary</auro-button>
-  <auro-button secondary loading>Secondary</auro-button>
-  <auro-button tertiary loading>Tertiary</auro-button>
+  <auro-button variant="secondary" loading>Secondary</auro-button>
+  <auro-button variant="tertiary" loading>Tertiary</auro-button>
   ```
 
 </auro-accordion>
 
 <div class="exampleWrapper--ondark auro_containedButtons">
   <auro-button ondark loading>Primary</auro-button>
-  <auro-button ondark secondary loading>Secondary</auro-button>
-  <auro-button ondark tertiary loading>Tertiary</auro-button>
+  <auro-button variant="secondary" ondark loading>Secondary</auro-button>
+  <auro-button variant="tertiary" ondark loading>Tertiary</auro-button>
 </div>
 
 <auro-accordion lowProfile justifyRight>
@@ -434,8 +434,8 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
 
   ```html
   <auro-button ondark loading>Primary</auro-button>
-  <auro-button ondark secondary loading>Secondary</auro-button>
-  <auro-button ondark tertiary loading>Tertiary</auro-button>
+  <auro-button variant="secondary" ondark loading>Secondary</auro-button>
+  <auro-button variant="tertiary" ondark loading>Tertiary</auro-button>
   ```
 
 </auro-accordion>
@@ -460,32 +460,32 @@ These examples illustrate the core button types and a `disabled` state on dark b
 </auro-accordion>
 
 <div class="exampleWrapper--ondark auro_containedButtons">
-  <auro-button secondary ondark>Secondary</auro-button>
-  <auro-button secondary ondark disabled>Secondary</auro-button>
+  <auro-button variant="secondary" ondark>Secondary</auro-button>
+  <auro-button variant="secondary" ondark disabled>Secondary</auro-button>
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-button secondary ondark>Secondary</auro-button>
-  <auro-button secondary ondark disabled>Secondary</auro-button>
+  <auro-button variant="secondary" ondark>Secondary</auro-button>
+  <auro-button variant="secondary" ondark disabled>Secondary</auro-button>
 
   ```
 
 </auro-accordion>
 
 <div class="exampleWrapper--ondark auro_containedButtons">
-  <auro-button tertiary ondark>Tertiary</auro-button>
-  <auro-button tertiary ondark disabled>Tertiary</auro-button>
+  <auro-button variant="tertiary" ondark>Tertiary</auro-button>
+  <auro-button variant="tertiary" ondark disabled>Tertiary</auro-button>
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-button tertiary ondark>Tertiary</auro-button>
-  <auro-button tertiary ondark disabled>Tertiary</auro-button>
+  <auro-button variant="tertiary" ondark>Tertiary</auro-button>
+  <auro-button variant="tertiary" ondark disabled>Tertiary</auro-button>
 
   ```
 
