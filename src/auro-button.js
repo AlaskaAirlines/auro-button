@@ -15,8 +15,8 @@ import '@alaskaairux/auro-loader';
  * @attr {Boolean} iconOnly - If set to true, the button will contain an icon with no additional content
  * @attr {Boolean} loading - If set to true button text will be replaced with `auro-loader` and become disabled
  * @attr {Boolean} ondark - Set value for on-dark version of auro-button
- * @attr {Boolean} secondary - Set value for secondary version of auro-button
- * @attr {Boolean} tertiary - Set value for tertiary version of auro-button
+ * @attr {Boolean} secondary - DEPRECATED
+ * @attr {Boolean} tertiary - DEPRECATED
  * @attr {Boolean} slim - Set value for slim version of auro-button
  * @attr {Boolean} fluid - Alters the shape of the button to be full width of its parent container
  * @attr {String} arialabel - Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead.
@@ -25,6 +25,7 @@ import '@alaskaairux/auro-loader';
  * @attr {String} title - Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
  * @attr {String} type - The type of the button. Possible values are: `submit`, `reset`, `button`
  * @attr {String} value - Defines the value associated with the button which is submitted with the form data.
+ * @attr {String} variant - Sets button variant option. Possible values are: `secondary`, `tertiary`
  * @prop {Boolean} ready - When false the component API should not be called.
  * @fires auroButton-ready - Notifies that the component has finished initializing.
  *
@@ -61,6 +62,14 @@ export class AuroButton extends LitElement {
         type: Boolean,
         reflect: true
       },
+      secondary:         {
+        type: Boolean,
+        reflect: true
+      },
+      tertiary:         {
+        type: Boolean,
+        reflect: true
+      },
       fluid:         {
         type: Boolean,
         reflect: true
@@ -74,14 +83,6 @@ export class AuroButton extends LitElement {
         reflect: true
       },
       ondark:           {
-        type: Boolean,
-        reflect: true
-      },
-      secondary:        {
-        type: Boolean,
-        reflect: true
-      },
-      tertiary:         {
         type: Boolean,
         reflect: true
       },
@@ -109,7 +110,11 @@ export class AuroButton extends LitElement {
         type: String,
         reflect: true
       },
-      ready:            { type: Boolean },
+      variant:        {
+        type: String,
+        reflect: true
+      },
+      ready: { type: Boolean },
     };
   }
 
@@ -141,6 +146,11 @@ export class AuroButton extends LitElement {
 
   render() {
 
+    // deprecated options - maintaining for backwards compatibility
+    // auro-button--secondary
+    // auro-buttonOndark--secondary
+    // auro-button--tertiary
+    // auro-buttonOndark--tertiary
     const classes = {
       'util_insetLg--squish': true,
       'auro-button': true,
@@ -165,6 +175,7 @@ export class AuroButton extends LitElement {
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
         type="${ifDefined(this.type ? this.type : undefined)}"
+        variant="${ifDefined(this.variant ? this.variant : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
         @click="${() => {}}"
       >
