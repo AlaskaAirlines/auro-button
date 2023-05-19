@@ -296,14 +296,14 @@ slot {
     // auro-buttonOndark--secondary
     &[variant='secondary'],
     &--secondary {
-      background-color: transparent;
+      background-color: var(--auro-color-background-darker);
       border: 1px solid var(--auro-color-ui-default-on-dark);
       color: var(--auro-color-ui-default-on-dark);
 
       @media (hover: hover) {
         &:active,
         &:hover {
-          background-color: var(--auro-color-base-black-opacity-15);
+          background-color: var(--auro-color-background-darkest);
         }
       }
 
@@ -315,7 +315,7 @@ slot {
       &:disabled {
         @media (hover: hover) {
           &:hover {
-            background-color: transparent;
+            background-color: var(--auro-color-background-darker);
             border: 1px solid var(--auro-color-ui-default-on-dark);
           }
         }
@@ -326,13 +326,13 @@ slot {
         transform: unset;
 
         color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
-        background-color: transparent;
+        background-color: var(--auro-color-background-darker);
         border: 1px solid rgba($auro-color-ui-default-on-dark, $disabledOPacity);
 
         @media (hover: hover) {
           &:hover {
             color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
-            background-color: transparent;
+            background-color: var(--auro-color-background-darker);
             border: 1px solid rgba($auro-color-ui-default-on-dark, $disabledOPacity);
           }
         }
