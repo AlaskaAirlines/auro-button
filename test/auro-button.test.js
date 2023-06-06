@@ -5,7 +5,7 @@
 /* eslint-disable lit/attribute-value-entities */
 /* eslint-disable one-var */
 /* eslint-disable no-undef */
-import { fixture, html, expect } from '@open-wc/testing';
+import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import '../index.js';
 
 describe('auro-button', () => {
@@ -203,4 +203,18 @@ describe('auro-button', () => {
 
     await expect(el).to.be.true;
   });
+
+  it('toggleText event toggles value of hideText attribute', async () => {
+    const el = await fixture(html`
+      <auro-button>Click Me!</auro-button>
+    `);
+
+    await expect(el.hideText).to.be.false;
+
+    el.dispatchEvent(new CustomEvent('auroButton-toggleText'));
+
+    await elementUpdated(el);
+
+    await expect(el.hideText).to.be.true;
+  })
 });
