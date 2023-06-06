@@ -9,11 +9,11 @@ For the most up to date information on [UI development browser support](https://
 ## Install
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-button/testPublish.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/auro-button/actions/workflows/testPublish.yml)
-[![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/auro-button?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/auro-button)
-[![License](https://img.shields.io/npm/l/@alaskaairux/auro-button?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-button?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-button)
+[![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-button?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
-$ npm i @alaskaairux/auro-button
+$ npm i @aurodesignsystem/auro-button
 ```
 
 Installing as a direct, dev or peer dependency is up to the user installing the package. If you are unsure as to what type of dependency you should use, consider reading this [stack overflow](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies) answer.
@@ -33,7 +33,7 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 Defining the component dependency within each component that is using the `<auro-button>` component.
 
 ```javascript
-import "@alaskaairux/auro-button";
+import "@aurodesignsystem/auro-button";
 ```
 
 **Reference component in HTML**
@@ -51,10 +51,10 @@ In cases where the project is not able to process JS assets, there are pre-proce
 Include the following example HTML code in the `<head>` element of your page.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
-<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-button@latest/dist/auro-button__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-button@latest/dist/auro-button__bundled.js" type="module"></script>
 ```
 
 **NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
