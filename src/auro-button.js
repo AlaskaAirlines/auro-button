@@ -12,11 +12,13 @@ import '@alaskaairux/auro-loader';
 /**
  * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user
  * @attr {Boolean} disabled - If set to true button will become disabled and not allow for interactions
+ * @attr {Boolean} hideText - If set to true, hides default slot content
  * @attr {Boolean} iconOnly - If set to true, the button will contain an icon with no additional content
  * @attr {Boolean} loading - If set to true button text will be replaced with `auro-loader` and become disabled
  * @attr {Boolean} ondark - Set value for on-dark version of auro-button
  * @attr {Boolean} secondary - DEPRECATED
  * @attr {Boolean} tertiary - DEPRECATED
+ * @attr {Boolean} rounded - If set to true, the button will have a rounded shape
  * @attr {Boolean} slim - Set value for slim version of auro-button
  * @attr {Boolean} fluid - Alters the shape of the button to be full width of its parent container
  * @attr {String} arialabel - Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead.
@@ -28,22 +30,26 @@ import '@alaskaairux/auro-loader';
  * @attr {String} variant - Sets button variant option. Possible values are: `secondary`, `tertiary`
  * @prop {Boolean} ready - When false the component API should not be called.
  * @fires auroButton-ready - Notifies that the component has finished initializing.
+ * @fires auroButton-toggleText - Hides/shows default slot content.
  *
  * @slot - Provide text for the button.
  */
+
+/* eslint-disable max-statements, no-negated-condition */
 export class AuroButton extends LitElement {
 
-  /* eslint max-statements: ["error", 11] */
   constructor() {
     super();
     this.autofocus = false;
     this.disabled = false;
+    this.hideText = false;
     this.iconOnly = false;
     this.loading = false;
     this.ondark = false;
     this.ready = false;
     this.secondary = false;
     this.tertiary = false;
+    this.rounded = false;
     this.slim = false;
     this.fluid = false;
   }
@@ -74,6 +80,10 @@ export class AuroButton extends LitElement {
         type: Boolean,
         reflect: true
       },
+      hideText: {
+        type: Boolean,
+        reflect: true
+      },
       iconOnly: {
         type: Boolean,
         reflect: true
@@ -83,6 +93,10 @@ export class AuroButton extends LitElement {
         reflect: true
       },
       ondark:           {
+        type: Boolean,
+        reflect: true
+      },
+      rounded: {
         type: Boolean,
         reflect: true
       },
@@ -142,6 +156,10 @@ export class AuroButton extends LitElement {
 
   firstUpdated() {
     this.notifyReady();
+
+    this.addEventListener('auroButton-toggleText', () => {
+      this.hideText = !this.hideText;
+    });
   }
 
   render() {
@@ -159,9 +177,11 @@ export class AuroButton extends LitElement {
       'auro-buttonOndark--secondary': this.secondary && this.ondark,
       'auro-button--tertiary': this.tertiary,
       'auro-buttonOndark--tertiary': this.tertiary && this.ondark,
+      'auro-button--rounded': this.rounded,
       'auro-button--slim': this.slim,
       'auro-button--iconOnly': this.iconOnly,
       'auro-button--iconOnlySlim': this.iconOnly && this.slim,
+      'auro-button--hideText': this.rounded && this.hideText,
       'loading': this.loading
     };
 
@@ -180,7 +200,9 @@ export class AuroButton extends LitElement {
         @click="${() => {}}"
       >
         ${ifDefined(this.loading ? html`<auro-loader pulse></auro-loader>` : undefined)}
-        <slot></slot>
+
+        ${!this.hideText ? html` <slot></slot>` : undefined}
+        <slot name="icon"></slot>
       </button>
     `;
   }

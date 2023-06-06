@@ -15,10 +15,12 @@
 | `autofocus`      | `autofocus`      | `Boolean` | false   | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user |
 | `disabled`       | `disabled`       | `Boolean` | false   | If set to true button will become disabled and not allow for interactions |
 | `fluid`          | `fluid`          | `Boolean` | false   | Alters the shape of the button to be full width of its parent container |
+| `hideText`       | `hideText`       | `Boolean` | false   | If set to true, hides default slot content       |
 | `iconOnly`       | `iconOnly`       | `Boolean` | false   | If set to true, the button will contain an icon with no additional content |
 | `loading`        | `loading`        | `Boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled |
 | `ondark`         | `ondark`         | `Boolean` | false   | Set value for on-dark version of auro-button     |
 | `ready`          | `ready`          | `Boolean` | false   | When false the component API should not be called. |
+| `rounded`        | `rounded`        | `Boolean` | false   | If set to true, the button will have a rounded shape |
 | `secondary`      | `secondary`      | `Boolean` | false   | DEPRECATED                                       |
 | `slim`           | `slim`           | `Boolean` | false   | Set value for slim version of auro-button        |
 | `tertiary`       | `tertiary`       | `Boolean` | false   | DEPRECATED                                       |
@@ -29,9 +31,10 @@
 
 ## Events
 
-| Event              | Type               | Description                                      |
-|--------------------|--------------------|--------------------------------------------------|
-| `auroButton-ready` | `CustomEvent<any>` | Notifies that the component has finished initializing. |
+| Event                   | Type               | Description                                      |
+|-------------------------|--------------------|--------------------------------------------------|
+| `auroButton-ready`      | `CustomEvent<any>` | Notifies that the component has finished initializing. |
+| `auroButton-toggleText` |                    | Hides/shows default slot content.                |
 
 ## Slots
 

@@ -381,6 +381,62 @@ Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` el
 
 </auro-accordion>
 
+## Rounded
+
+<div class="exampleWrapper">
+  <auro-button aria-label="in-flight" rounded>
+    Activate WiFi
+    <auro-icon customSize customcolor category="in-flight" name="wifi" slot="icon"></auro-icon>
+  </auro-button>
+</div>
+
+<div class="exampleWrapper" style="padding-top: 8px">
+  <auro-button aria-label="in-flight" rounded hideText>
+    Activate WiFi
+    <auro-icon customSize customcolor category="in-flight" name="wifi" slot="icon"></auro-icon>
+  </auro-button>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-button aria-label="in-flight" rounded>
+    Activate WiFi
+    <auro-icon customSize customcolor category="in-flight" name="wifi" slot="icon"></auro-icon>
+  </auro-button>
+
+  <auro-button aria-label="in-flight" rounded hideText>
+    Activate WiFi
+    <auro-icon customSize customcolor category="in-flight" name="wifi" slot="icon"></auro-icon>
+  </auro-button>
+  ```
+
+</auro-accordion>
+
+### Hide/Show Text Event
+
+A `rounded` button gives the user ability to hide and show the default slot content with an event called `auroButton-toggleText`. In this example, the event is used to hide/show the text by clicking on the `auro-button`. This event is intended to be used when `auro-button` has text in the default slot and an `auro-icon` in the icon slot. 
+
+<div class="exampleWrapper">
+  <auro-button aria-label="in-flight" id="targetButton" rounded>
+    Click me to hide/show text
+    <auro-icon customSize customcolor category="in-flight" name="wifi" slot="icon"></auro-icon>
+  </auro-button>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-button aria-label="in-flight" id="targetButton" rounded>
+    Activate WiFi
+    <auro-icon customSize customcolor category="in-flight" name="wifi" slot="icon"></auro-icon>
+  </auro-button>
+  ```
+
+</auro-accordion>
+
 ## Fluid
 
 In the following example see how the `fluid` attributes alters the shape of the button to be full width of its parent container.

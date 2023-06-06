@@ -378,6 +378,7 @@ slot {
       }
     }
   }
+
   // auro-button--slim
   &--slim {
     padding: var(--auro-size-xs) var(--auro-size-md);
@@ -395,6 +396,7 @@ slot {
 
     padding-left: calc(var(--auro-size-100, 8px) - 2px);
     padding-right: calc(var(--auro-size-100, 8px) - 2px);
+
     border-radius: 100px;
     min-width: unset;
   }
@@ -408,7 +410,36 @@ slot {
     padding-left: var(--auro-size-50, 4px);
     padding-right: var(--auro-size-50, 4px);
   }
+
+  // auro-button--rounded
+  &--rounded {
+    border-radius: 100px;
+    box-shadow: var(--auro-elevation-300);
+
+    height: var(--auro-size-500, 40px);
+
+    ::slotted(auro-icon) {
+      width: var(--auro-size-300, 24px);
+      height: var(--auro-size-300, 24px);
+    }
+  }
+
+  // auro-button--hideText
+  &--hideText {
+    min-width: unset;
+    padding: unset;
+
+    width: 48px;
+  }
 }
+
+:host([hideText][rounded]) {
+  ::slotted(*):not(auro-icon) {
+    display: none;
+  }
+}
+
+
 
 auro-loader {
   position: absolute;

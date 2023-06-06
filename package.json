@@ -53,7 +53,7 @@
     "postcss": "^8.3.6",
     "postcss-discard-comments": "^6.0.0",
     "postcss-selector-replace": "^1.0.2",
-    "rollup": "^3.22.0",
+    "rollup": "^3.23.0",
     "rollup-plugin-serve": "^2.0.2",
     "semantic-release": "^21.0.2",
     "sinon": "^15.1.0",

@@ -25,6 +25,13 @@
           const rawHtml = marked.parse(text);
           document.querySelector('main').innerHTML = rawHtml;
           Prism.highlightAll();
+        })
+        .then(() => {
+          const targetButton = document.getElementById('targetButton');
+
+          targetButton.addEventListener('click', () => {
+            targetButton.dispatchEvent(new CustomEvent('auroButton-toggleText'));
+          });
         });
     </script>
     <script type="module" src="../src/auro-button.js"></script>
