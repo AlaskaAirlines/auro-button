@@ -1,5 +1,95 @@
 # Semantic Release Automated Changelog
 
+# [7.0.0](https://github.com/AlaskaAirlines/auro-button/compare/v6.6.0...v7.0.0) (2023-06-06)
+
+
+### Code Refactoring
+
+* **es5:** remove legacy features and build support [#204](https://github.com/AlaskaAirlines/auro-button/issues/204) ([c0348c4](https://github.com/AlaskaAirlines/auro-button/commit/c0348c46f5b06d35d7417f4fff61a37d32b89340))
+* **id:** remove internal ID support [#130](https://github.com/AlaskaAirlines/auro-button/issues/130) ([1d8d16c](https://github.com/AlaskaAirlines/auro-button/commit/1d8d16ceb179c88fe67f9c1057cd424155f5f2d9))
+
+
+### Features
+
+* add multiple updates [#206](https://github.com/AlaskaAirlines/auro-button/issues/206) ([449c0c4](https://github.com/AlaskaAirlines/auro-button/commit/449c0c4b78450358e676cd87a84c0b7518091a18))
+* **enum:** add variants support [#160](https://github.com/AlaskaAirlines/auro-button/issues/160) ([05509b8](https://github.com/AlaskaAirlines/auro-button/commit/05509b8bfcfe931118eeae97afe8f749af77645b))
+* **ondark:** update background values [#156](https://github.com/AlaskaAirlines/auro-button/issues/156) ([b6ef5f8](https://github.com/AlaskaAirlines/auro-button/commit/b6ef5f8216b2d2bdba438d8bc052d64db882e72c))
+
+
+### Performance Improvements
+
+* **focus-visible:** remove support for polyfill [#208](https://github.com/AlaskaAirlines/auro-button/issues/208) ([5f0f8d1](https://github.com/AlaskaAirlines/auro-button/commit/5f0f8d1f339168011166f4fa1eceb0fcc56d7ca2))
+* **icon:** remove internal icon placement support [#209](https://github.com/AlaskaAirlines/auro-button/issues/209) ([eec81f6](https://github.com/AlaskaAirlines/auro-button/commit/eec81f674e964f2b220748143dcd3f70df1f4a03))
+
+
+### BREAKING CHANGES
+
+* This commit includes an update to the
+npm namespace to @aurodesignsystem.
+
+Changes to be committed:
+new file:   .github/CODEOWNERS
+deleted:    .github/ISSUE_TEMPLATE/audit.md
+deleted:    .github/ISSUE_TEMPLATE/bug_report.md
+new file:   .github/ISSUE_TEMPLATE/bug_report.yml
+deleted:    .github/ISSUE_TEMPLATE/develop-design-story.md
+deleted:    .github/ISSUE_TEMPLATE/feature_request.md
+new file:   .github/ISSUE_TEMPLATE/feature_request.yml
+deleted:    .github/ISSUE_TEMPLATE/general-support.md
+new file:   .github/ISSUE_TEMPLATE/general-support.yml
+deleted:    .github/ISSUE_TEMPLATE/new_wc.md
+deleted:    .github/ISSUE_TEMPLATE/parent-design-story.md
+deleted:    .github/ISSUE_TEMPLATE/review-design-story.md
+deleted:    .github/ISSUE_TEMPLATE/symbol-design-story.md
+deleted:    .github/ISSUE_TEMPLATE/user-story.md
+modified:   .github/settings.yml
+modified:   .github/workflows/testPublish.yml
+modified:   .gitignore
+new file:   .husky/pre-commit
+modified:   .npmignore
+modified:   index.js
+deleted:    karma.conf.js
+modified:   package-lock.json
+* **icon:** This commit will remove all legacy support
+for placement of icons within the element other than supporting
+icons as slotted content.
+
+Changes to be committed:
+modified:   docs/api.md
+modified:   src/auro-button.js
+modified:   src/style.scss
+* **id:** This commit will remove all support for
+ID attribute reflection from the parent element to the inner
+button element.
+
+Changes to be committed:
+modified:   src/auro-button.js
+modified:   test/auro-button.test.js
+modified:   packageScripts/postinstall.js
+* **es5:** This commit removes all legacy es6 build process
+including light-dom support, fixed CSS, non CSS variable support,
+and es5 bundling.
+
+Changes to be committed:
+modified:   README.md
+deleted:    babel.config.js
+deleted:    demo/alert.js
+modified:   demo/demo.md
+modified:   demo/index.html
+deleted:    demo/sass/style.scss
+deleted:    index.html
+modified:   package-lock.json
+modified:   package.json
+modified:   packageScripts/postinstall.js
+modified:   rollup.config.js
+modified:   scripts/postCss.js
+deleted:    scripts/removeNonRemPlugin.js
+deleted:    src/auro-button-light.js
+modified:   src/auro-button.js
+deleted:    src/es5.js
+deleted:    src/style-fixed.scss
+deleted:    src/style-ld.scss
+
 # [6.6.0](https://github.com/AlaskaAirlines/auro-button/compare/v6.5.0...v6.6.0) (2023-04-12)
 
 
