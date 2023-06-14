@@ -6,4 +6,4 @@ on:
 
 jobs:
   call-auro-assign-workflow:
-    uses: AlaskaAirlines/auro-library/.github/workflows/autoAssign.yml
+    uses: AlaskaAirlines/auro-library/.github/workflows/autoAssign.yml@main
