@@ -19,6 +19,7 @@
 | `loading`        | `loading`        | `Boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled |
 | `ondark`         | `ondark`         | `Boolean` | false   | Set value for on-dark version of auro-button     |
 | `ready`          | `ready`          | `Boolean` | false   | When false the component API should not be called. |
+| `rounded`        | `rounded`        | `Boolean` | false   | If set to true, the button will have a rounded shape |
 | `secondary`      | `secondary`      | `Boolean` | false   | DEPRECATED                                       |
 | `slim`           | `slim`           | `Boolean` | false   | Set value for slim version of auro-button        |
 | `tertiary`       | `tertiary`       | `Boolean` | false   | DEPRECATED                                       |
@@ -35,6 +36,7 @@
 
 ## Slots
 
-| Name | Description                  |
-|------|------------------------------|
-|      | Provide text for the button. |
+| Name   | Description                               |
+|--------|-------------------------------------------|
+|        | Default slot for the text of the button.  |
+| `icon` | Slot to provide auro-icon for the button. |
