@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@alaskaairux/webcorestylesheets@latest/dist/demoWrapper.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@alaskaairux/webcorestylesheets@latest/dist/elementDemoStyles.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/elementDemoStyles.css" />
   </head>
   <body class="auro-markdown">
     <main></main>
@@ -19,7 +19,7 @@
     <script type="module">
       import 'https://cdn.jsdelivr.net/npm/marked@latest/marked.min.js';
       import 'https://cdn.jsdelivr.net/npm/prismjs@latest/prism.js';
-      fetch('/demo/demo.md')
+      fetch('/demo/api.md')
         .then((response) => response.text())
         .then((text) => {
           const rawHtml = marked.parse(text);
@@ -28,6 +28,10 @@
         });
     </script>
     <script type="module" src="../index.js"></script>
+    <script src="./api.min.js"></script>
+    <script>
+      initButtonApiExamples();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-alerts@latest/dist/auro-alerts__bundled.js" type="module"></script>

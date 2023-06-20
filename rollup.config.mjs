@@ -21,4 +21,14 @@ const production = !process.env.ROLLUP_WATCH,
   ]
 };
 
-export default [modernConfig];
+const apiExamplesConfig = {
+  input: {
+    ['api.min']: './demo/api.js',
+  },
+  output: {
+    format: 'esm',
+    dir: 'demo/'
+  }
+};
+
+export default [modernConfig, apiExamplesConfig];
