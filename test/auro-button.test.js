@@ -5,7 +5,9 @@
 /* eslint-disable lit/attribute-value-entities */
 /* eslint-disable one-var */
 /* eslint-disable no-undef */
-import { fixture, html, expect } from '@open-wc/testing';
+import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
+import { AuroButton } from '../src/auro-button.js';
+import { registerComponent } from '../index.js';
 import '../index.js';
 
 describe('auro-button', () => {
@@ -28,6 +30,12 @@ describe('auro-button', () => {
     expect(button.getAttribute('value')).to.be.null;
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
+  });
+
+  it('successfully registers custom component', async () => {
+    registerComponent('test-button');
+
+    expect(typeof customElements.get('test-button')).to.equal(typeof AuroButton);
   });
 
   it('tests setting autofocus', async () => {
@@ -202,5 +210,17 @@ describe('auro-button', () => {
     const el = await Boolean(customElements.get("auro-button"));
 
     await expect(el).to.be.true;
+  });
+
+  it('default slot is not in DOM when iconOnly attribute is present', async () => {
+    const el = await fixture(html`
+      <auro-button rounded iconOnly>
+        <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
+      </auro-button>
+    `);
+
+    const slotElement = el.querySelector('slot:not([name])');
+
+    expect(slotElement).to.equal(null);
   });
 });
