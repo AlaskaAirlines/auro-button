@@ -348,7 +348,7 @@ A `rounded` `auro-button` with text only.
 
 #### Toggle Text
 
-The `rounded` attribute supports the ability to hide/show the text of the `auro-button`. This can be done by changing the value of the `iconOnly` attribute. In this example, the text is toggled via `mouseover` and `mouseout` events.
+The `rounded` attribute supports the ability to hide/show the text of the `auro-button`. This can be done by changing the value of the `iconOnly` attribute. In this example, the text is toggled via `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/toggledText.html) -->
@@ -378,11 +378,21 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
 export function toggledTextExample() {
   const toggledTextElem = document.querySelector('#toggledTextElem');
 
+  // The mouseover and mouseout events are to simulate toggling text for mouse users
   toggledTextElem.addEventListener('mouseover', () => {
     toggledTextElem.iconOnly = false;
   });
 
   toggledTextElem.addEventListener('mouseout', () => {
+    toggledTextElem.iconOnly = true;
+  });
+
+  // The focusin and focusout events are to simulate toggling text for keyboard users
+  toggledTextElem.addEventListener('focusin', () => {
+    toggledTextElem.iconOnly = false;
+  });
+
+  toggledTextElem.addEventListener('focusout', () => {
     toggledTextElem.iconOnly = true;
   });
 }
@@ -392,13 +402,13 @@ export function toggledTextExample() {
 
 #### Right Aligned
 
-This example shows a `rounded` `auro-button` that is right-aligned, demonstrating how the button starts from the right and grows/shrinks from right to left when using the `toggleText` attribute in conjuction with the `mouseover` and `mouseout` events.
+This example shows a `rounded` `auro-button` that is right-aligned, demonstrating how the button starts from the right and grows/shrinks from right to left when using the `toggleText` attribute in conjuction with the `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/roundedRightAlign.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/roundedRightAlign.html -->
   <auro-button aria-label="in-flight" rounded iconOnly id="rightAlignElem" style="float: right;">
-    Back to Top
+    Text is now shown!
     <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
@@ -410,7 +420,7 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 
 ```html
 <auro-button aria-label="in-flight" rounded iconOnly id="rightAlignElem" style="float: right;">
-  Back to Top
+  Text is now shown!
   <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
 </auro-button>
 ```
@@ -422,11 +432,21 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 export function roundedRightAlignExample() {
   const rightAlignElem = document.querySelector('#rightAlignElem');
 
+  // The mouseover and mouseout events are to simulate toggling text for mouse users
   rightAlignElem.addEventListener('mouseover', () => {
     rightAlignElem.iconOnly = false;
   });
 
   rightAlignElem.addEventListener('mouseout', () => {
+    rightAlignElem.iconOnly = true;
+  });
+
+  // The focusin and focusout events are to simulate toggling text for keyboard users
+  rightAlignElem.addEventListener('focusin', () => {
+    rightAlignElem.iconOnly = false;
+  });
+
+  rightAlignElem.addEventListener('focusout', () => {
     rightAlignElem.iconOnly = true;
   });
 }
