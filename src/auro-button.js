@@ -17,6 +17,7 @@ import '@alaskaairux/auro-loader';
  * @attr {Boolean} ondark - Set value for on-dark version of auro-button
  * @attr {Boolean} secondary - DEPRECATED
  * @attr {Boolean} tertiary - DEPRECATED
+ * @attr {Boolean} rounded - If set to true, the button will have a rounded shape
  * @attr {Boolean} slim - Set value for slim version of auro-button
  * @attr {Boolean} fluid - Alters the shape of the button to be full width of its parent container
  * @attr {String} arialabel - Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead.
@@ -29,11 +30,13 @@ import '@alaskaairux/auro-loader';
  * @prop {Boolean} ready - When false the component API should not be called.
  * @fires auroButton-ready - Notifies that the component has finished initializing.
  *
- * @slot - Provide text for the button.
+ * @slot - Default slot for the text of the button.
+ * @slot icon - Slot to provide auro-icon for the button.
  */
+
+/* eslint-disable max-statements, one-var, no-magic-numbers */
 export class AuroButton extends LitElement {
 
-  /* eslint max-statements: ["error", 11] */
   constructor() {
     super();
     this.autofocus = false;
@@ -44,6 +47,7 @@ export class AuroButton extends LitElement {
     this.ready = false;
     this.secondary = false;
     this.tertiary = false;
+    this.rounded = false;
     this.slim = false;
     this.fluid = false;
   }
@@ -86,6 +90,10 @@ export class AuroButton extends LitElement {
         type: Boolean,
         reflect: true
       },
+      rounded: {
+        type: Boolean,
+        reflect: true
+      },
       slim: {
         type: Boolean,
         reflect: true
@@ -110,7 +118,7 @@ export class AuroButton extends LitElement {
         type: String,
         reflect: true
       },
-      variant:        {
+      variant:          {
         type: String,
         reflect: true
       },
@@ -159,6 +167,7 @@ export class AuroButton extends LitElement {
       'auro-buttonOndark--secondary': this.secondary && this.ondark,
       'auro-button--tertiary': this.tertiary,
       'auro-buttonOndark--tertiary': this.tertiary && this.ondark,
+      'auro-button--rounded': this.rounded,
       'auro-button--slim': this.slim,
       'auro-button--iconOnly': this.iconOnly,
       'auro-button--iconOnlySlim': this.iconOnly && this.slim,
@@ -180,7 +189,9 @@ export class AuroButton extends LitElement {
         @click="${() => {}}"
       >
         ${ifDefined(this.loading ? html`<auro-loader pulse></auro-loader>` : undefined)}
-        <slot></slot>
+
+        ${this.iconOnly ? undefined : html`<slot></slot>`}
+        <slot name="icon"></slot>
       </button>
     `;
   }
