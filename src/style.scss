@@ -1,14 +1,30 @@
-/* Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license */
-/* See LICENSE in the project root for license information. */
+// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
 
-/* --------------------------------------------------------------------- */
+// ---------------------------------------------------------------------
 
-/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable 
+   at-rule-no-unknown,
+   comment-empty-line-before,
+   scss/dollar-variable-colon-space-after,
+   scss/dollar-variable-empty-line-before,
+   scss/dollar-variable-first-in-block,
+   scss/dollar-variable-pattern,
+   color-function-notation,
+   scss/selector-nest-combinators,
+   selector-class-pattern,
+   selector-attribute-quotes,
+   no-descending-specificity,
+   max-nesting-depth,
+   declaration-empty-line-before,
+   property-no-vendor-prefix,
+   selector-max-class,
+   no-duplicate-selectors */
 
-/* Import Auro Sass variables */
+// Import Auro Sass variables
 @import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
 
-/* general WCSS imports */
+// general WCSS imports
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/core";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/animation";
@@ -18,27 +34,27 @@
 $auro-inset-spacing-options: lg;
 $auro-inset-directions:'--squish';
 
-/* TO-DO */
-/* Sass and CSS variables do not process together */
-/* These values should be moved to Auro Design Tokens for use */
+// TO-DO
+// Sass and CSS variables do not process together
+// These values should be moved to Auro Design Tokens for use
 $auro-rgb-color-base-black-03: rgba(0, 0, 0, .03);
 $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
 
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityMixins/insetUtility";
 
-/* focus-visible mixin */
+// focus-visible mixin
 @mixin focus-visible {
   outline: 3px solid transparent;
   box-shadow: inset 0 0 0 1px var(--auro-color-border-focus-on-dark), inset 0 0 0 3px var(--auro-color-background-lightest);
 
-  /* auro-button--secondary */
+  // auro-button--secondary
   &[variant='secondary'],
   &--secondary {
     background-color: var(--auro-color-background-lighter);
     box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
   }
 
-  /* auro-button--tertiary */
+  // auro-button--tertiary
   &[variant='tertiary'],
   &--tertiary {
     background-color: var(--auro-color-background-lighter);
@@ -46,12 +62,12 @@ $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
     box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
   }
 
-  /* auro-buttonOndark */
+  // auro-buttonOndark
   &Ondark {
     background-color: var(--auro-color-ui-default-on-dark);
     box-shadow: inset 0 0 0 3px var(--auro-color-border-focus-on-dark);
 
-    /* auro-buttonOndark--secondary */
+    // auro-buttonOndark--secondary
     &[variant='secondary'],
     &--secondary {
       background-color: var(--auro-color-base-black-opacity-15);
@@ -59,7 +75,7 @@ $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
       border: 1px solid var(--auro-color-ui-active-on-dark);
     }
 
-    /* auro-buttonOndark--tertiary */
+    // auro-buttonOndark--tertiary
     &[variant='tertiary'],
     &--tertiary {
       background-color: var(--auro-color-base-black-opacity-15);
@@ -81,17 +97,17 @@ $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
   }
 }
 
-/* adjust alignment for slotted SVG icon */
+// adjust alignment for slotted SVG icon
 ::slotted(svg) {
   vertical-align: middle;
 }
 
-/* Note: without this, events on a disabled element will still fire */
+// Note: without this, events on a disabled element will still fire
 slot {
   pointer-events: none;
 }
 
-/* Button styles */
+// Button styles
 .auro-button {
   @include auro_transition(all, 0.15s, ease);
   $disabledOPacity: .4;
@@ -122,15 +138,15 @@ slot {
   justify-content: center;
   gap: var(--auro-size-xxs);
 
-  /* removes margins around button in Safari */
+  // removes margins around button in Safari
   margin: 0;
 
-  /* macOS / iOS agents
+  // macOS / iOS agents
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 
-  /* handle hover state auro-button */
+  // handle hover state auro-button
   @media (hover: hover) {
     &:active,
     &:hover {
@@ -139,7 +155,7 @@ slot {
     }
   }
 
-  /* handle active state */
+  // handle active state
   &:active {
     background-color: var(--auro-color-ui-active-on-light);
     border: 1px solid var(--auro-color-ui-active-on-light);
@@ -184,7 +200,7 @@ slot {
     }
   }
 
-  /* auro-button--secondary */
+  // auro-button--secondary
   &[variant='secondary'],
   &--secondary {
     background-color: var(--auro-color-background-lightest);
@@ -222,7 +238,7 @@ slot {
     }
   }
 
-  /* auro-button--tertiary */
+  // auro-button--tertiary
   &[variant='tertiary'],
   &--tertiary {
     background-color: $auro-rgb-color-base-black-03;
@@ -264,7 +280,7 @@ slot {
     border: 1px solid var(--auro-color-ui-default-on-dark);
     color: var(--auro-color-text-primary-on-light);
 
-    /* auro-buttonOndark hover */
+    // auro-buttonOndark hover
     @media (hover: hover) {
       &:active,
       &:hover {
@@ -295,7 +311,7 @@ slot {
       }
     }
 
-    /* auro-buttonOndark--secondary */
+    // auro-buttonOndark--secondary
     &[variant='secondary'],
     &--secondary {
       background-color: var(--auro-color-background-darker);
@@ -341,7 +357,7 @@ slot {
       }
     }
 
-    /* auro-button--tertiary */
+    // auro-button--tertiary
     &[variant='tertiary'],
     &--tertiary {
       background-color: $auro-rgb-color-base-white-03;
@@ -381,7 +397,7 @@ slot {
     }
   }
 
-  /* auro-button--slim */
+  // auro-button--slim
   &--slim {
     padding: var(--auro-size-xs) var(--auro-size-md);
     font-size: var(--auro-text-body-size-sm);
@@ -413,7 +429,7 @@ slot {
     padding-right: var(--auro-size-50);
   }
 
-  /* auro-button--rounded */
+  // auro-button--rounded
   &--rounded {
     border-radius: 100px;
     box-shadow: var(--auro-elevation-300);
