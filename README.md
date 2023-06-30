@@ -37,7 +37,7 @@ If the desired appearance of the `<auro-button>` is to be placed in the reverse 
 
 ## Multi button support
 
-When the UI requires the use of multiple buttons within the same space, with the use of the [Auro Web Core Style Sheets](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-auro-css-#{$scope}.auro_containedButtons), and the `auro_containedButtons` .
+When the UI requires the use of multiple buttons within the same space, with the use of the [Auro Web Core Style Sheets](https://alaskaairlines.github.io/WebCoreStyleSheets/#utility-auro-css-#{$scope}.auro_containedButtons), and the `auro_containedButtons`.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## UI development browser support
