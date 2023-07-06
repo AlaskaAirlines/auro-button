@@ -438,7 +438,6 @@ slot {
     min-width: unset;
 
     transition: all 300ms ease-out;
-    opacity: 1;
 
     ::slotted(auro-icon) {
       width: var(--auro-size-300);
@@ -447,9 +446,21 @@ slot {
   }
 }
 
+
+:host([rounded]) {
+  .textSlot {
+    transition: opacity 300ms ease-in;
+    opacity: 1;
+  }
+}
+
 :host([rounded][iconOnly]) {
-  ::slotted(*):not(auro-icon) {
+  .textSlot {
     opacity: 0;
+  }
+
+  .textWrapper {
+    display: none;
   }
 
   .auro-button {
