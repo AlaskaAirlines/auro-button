@@ -1,5 +1,22 @@
 # Semantic Release Automated Changelog
 
+# [7.1.0](https://github.com/AlaskaAirlines/auro-button/compare/v7.0.1...v7.1.0) (2023-07-11)
+
+
+### Bug Fixes
+
+* **animation:** fix hide/show text animation on rounded button ([0378046](https://github.com/AlaskaAirlines/auro-button/commit/0378046ded92cbecf2ebc86a095a52274fe4deec))
+
+
+### Features
+
+* **rounded:** implement new rounded button [#212](https://github.com/AlaskaAirlines/auro-button/issues/212) ([838a186](https://github.com/AlaskaAirlines/auro-button/commit/838a18665921f7c20a8ea43821078d8cd1b2b2c7))
+
+
+### Performance Improvements
+
+* **stylelint:** update to modern stylelint practices ([750dc5d](https://github.com/AlaskaAirlines/auro-button/commit/750dc5d11bdfd844012f15e485204d9fda36dec5))
+
 ## [7.0.1](https://github.com/AlaskaAirlines/auro-button/compare/v7.0.0...v7.0.1) (2023-06-06)
 
 
