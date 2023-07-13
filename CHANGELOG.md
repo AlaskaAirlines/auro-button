@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [7.1.1](https://github.com/AlaskaAirlines/auro-button/compare/v7.1.0...v7.1.1) (2023-07-13)
+
+
+### Bug Fixes
+
+* **lit:** update references to lit classes [#223](https://github.com/AlaskaAirlines/auro-button/issues/223) ([879ceef](https://github.com/AlaskaAirlines/auro-button/commit/879ceef67e03b4d83d3d4eaf5748ae34bb58dafc))
+
 # [7.1.0](https://github.com/AlaskaAirlines/auro-button/compare/v7.0.1...v7.1.0) (2023-07-11)
 
 
