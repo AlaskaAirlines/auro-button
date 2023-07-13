@@ -29,9 +29,12 @@ import '@alaskaairux/auro-loader';
  * @attr {String} variant - Sets button variant option. Possible values are: `secondary`, `tertiary`
  * @prop {Boolean} ready - When false the component API should not be called.
  * @fires auroButton-ready - Notifies that the component has finished initializing.
- *
  * @slot - Default slot for the text of the button.
  * @slot icon - Slot to provide auro-icon for the button.
+ * @csspart button - Apply CSS to HTML5 button.
+ * @csspart loader - Apply CSS to auro-loader.
+ * @csspart button-text - Apply CSS to text slot.
+ * @csspart button-icon - Apply CSS to icon slot.
  */
 
 /* eslint-disable max-statements, one-var, no-magic-numbers */
@@ -176,6 +179,7 @@ export class AuroButton extends LitElement {
 
     return html`
       <button
+        part="button"
         aria-label="${ifDefined(this.arialabel ? this.arialabel : undefined)}"
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         ?autofocus="${this.autofocus}"
@@ -188,13 +192,16 @@ export class AuroButton extends LitElement {
         .value="${ifDefined(this.value ? this.value : undefined)}"
         @click="${() => {}}"
       >
-        ${ifDefined(this.loading ? html`<auro-loader pulse></auro-loader>` : undefined)}
+        ${ifDefined(this.loading ? html`<auro-loader pulse part="loader"></auro-loader>` : undefined)}
 
         <span>
-          <span class="textSlot">
+          <span class="textSlot" part="button-text">
             ${this.iconOnly ? undefined : html`<slot></slot>`}
           </span>
-          <slot name="icon"></slot>
+
+          <span part="button-icon">
+            <slot name="icon"></slot>
+          </span>
         </span>
       </button>
     `;

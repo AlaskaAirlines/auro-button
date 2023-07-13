@@ -43,6 +43,15 @@
 |--------|-------------------------------------------|
 |        | Default slot for the text of the button.  |
 | [icon](#icon) | Slot to provide auro-icon for the button. |
+
+## CSS Shadow Parts
+
+| Part          | Description                |
+|---------------|----------------------------|
+| [button](#button)      | Apply CSS to HTML5 button. |
+| `button-icon` | Apply CSS to icon slot.    |
+| `button-text` | Apply CSS to text slot.    |
+| [loader](#loader)      | Apply CSS to auro-loader.  |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 # API Examples
