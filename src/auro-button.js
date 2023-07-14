@@ -33,8 +33,8 @@ import '@alaskaairux/auro-loader';
  * @slot icon - Slot to provide auro-icon for the button.
  * @csspart button - Apply CSS to HTML5 button.
  * @csspart loader - Apply CSS to auro-loader.
- * @csspart button-text - Apply CSS to text slot.
- * @csspart button-icon - Apply CSS to icon slot.
+ * @csspart text - Apply CSS to text slot.
+ * @csspart icon - Apply CSS to icon slot.
  */
 
 /* eslint-disable max-statements, one-var, no-magic-numbers */
@@ -195,11 +195,11 @@ export class AuroButton extends LitElement {
         ${ifDefined(this.loading ? html`<auro-loader pulse part="loader"></auro-loader>` : undefined)}
 
         <span>
-          <span class="textSlot" part="button-text">
+          <span class="textSlot" part="text">
             ${this.iconOnly ? undefined : html`<slot></slot>`}
           </span>
 
-          <span part="button-icon">
+          <span part="icon">
             <slot name="icon"></slot>
           </span>
         </span>

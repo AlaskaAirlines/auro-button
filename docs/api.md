@@ -43,9 +43,9 @@
 
 ## CSS Shadow Parts
 
-| Part          | Description                |
-|---------------|----------------------------|
-| `button`      | Apply CSS to HTML5 button. |
-| `button-icon` | Apply CSS to icon slot.    |
-| `button-text` | Apply CSS to text slot.    |
-| `loader`      | Apply CSS to auro-loader.  |
+| Part     | Description                |
+|----------|----------------------------|
+| `button` | Apply CSS to HTML5 button. |
+| `icon`   | Apply CSS to icon slot.    |
+| `loader` | Apply CSS to auro-loader.  |
+| `text`   | Apply CSS to text slot.    |
