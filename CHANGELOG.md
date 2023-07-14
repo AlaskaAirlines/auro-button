@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [7.2.0](https://github.com/AlaskaAirlines/auro-button/compare/v7.1.1...v7.2.0) (2023-07-14)
+
+
+### Features
+
+* **template:** use correctly named CSS part attributes [#225](https://github.com/AlaskaAirlines/auro-button/issues/225) ([a69eebc](https://github.com/AlaskaAirlines/auro-button/commit/a69eebc941fda4400102391982e1a1f8048e3078))
+
+
+### Performance Improvements
+
+* **cssparts:** add css parts to shadow DOM content [#225](https://github.com/AlaskaAirlines/auro-button/issues/225) ([312bd39](https://github.com/AlaskaAirlines/auro-button/commit/312bd39dabb26bf76a18dcb807f25dd08723b519))
+
 ## [7.1.1](https://github.com/AlaskaAirlines/auro-button/compare/v7.1.0...v7.1.1) (2023-07-13)
 
 
