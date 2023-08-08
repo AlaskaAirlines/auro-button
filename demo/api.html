@@ -17,8 +17,6 @@
     <main></main>
 
     <script type="module">
-      import 'https://cdn.jsdelivr.net/npm/marked@latest/marked.min.js';
-      import 'https://cdn.jsdelivr.net/npm/prismjs@latest/prism.js';
       fetch('/demo/api.md')
         .then((response) => response.text())
         .then((text) => {
@@ -35,5 +33,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-alerts@latest/dist/auro-alerts__bundled.js" type="module"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@latest/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/prism.js"></script>
   </body>
 </html>
