@@ -45,42 +45,42 @@ $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
 // focus-visible mixin
 @mixin focus-visible {
   outline: 3px solid transparent;
-  box-shadow: inset 0 0 0 1px var(--auro-color-border-focus-on-dark), inset 0 0 0 3px var(--auro-color-background-lightest);
+  box-shadow: inset 0 0 0 1px var(--ds-color-border-focus-on-dark), inset 0 0 0 3px var(--ds-color-background-lightest);
 
   // auro-button--secondary
   &[variant='secondary'],
   &--secondary {
-    background-color: var(--auro-color-background-lighter);
-    box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
+    background-color: var(--ds-color-background-lighter);
+    box-shadow: inset 0 0 0 3px var(--ds-color-ui-default-default);
   }
 
   // auro-button--tertiary
   &[variant='tertiary'],
   &--tertiary {
-    background-color: var(--auro-color-background-lighter);
-    border-color: var(--auro-color-ui-default-on-light);
-    box-shadow: inset 0 0 0 3px var(--auro-color-ui-default-on-light);
+    background-color: var(--ds-color-background-lighter);
+    border-color: var(--ds-color-ui-default-default);
+    box-shadow: inset 0 0 0 3px var(--ds-color-ui-default-default);
   }
 
   // auro-buttonOndark
   &Ondark {
-    background-color: var(--auro-color-ui-default-on-dark);
-    box-shadow: inset 0 0 0 3px var(--auro-color-border-focus-on-dark);
+    background-color: var(--ds-color-ui-default-on-dark);
+    box-shadow: inset 0 0 0 3px var(--ds-color-border-focus-on-dark);
 
     // auro-buttonOndark--secondary
     &[variant='secondary'],
     &--secondary {
-      background-color: var(--auro-color-base-black-opacity-15);
-      box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
-      border: 1px solid var(--auro-color-ui-active-on-dark);
+      background-color: var(--ds-color-base-black-opacity-15);
+      box-shadow: inset 0 0 0 3px var(--ds-color-ui-active-on-dark);
+      border: 1px solid var(--ds-color-ui-active-on-dark);
     }
 
     // auro-buttonOndark--tertiary
     &[variant='tertiary'],
     &--tertiary {
-      background-color: var(--auro-color-base-black-opacity-15);
-      border-color: var(--auro-color-ui-active-on-dark);
-      box-shadow: inset 0 0 0 3px var(--auro-color-ui-active-on-dark);
+      background-color: var(--ds-color-base-black-opacity-15);
+      border-color: var(--ds-color-ui-active-on-dark);
+      box-shadow: inset 0 0 0 3px var(--ds-color-ui-active-on-dark);
     }
   }
 }
@@ -114,29 +114,29 @@ slot {
 
   position: relative;
 
-  padding: 0 var(--auro-size-lg);
+  padding: 0 var(--ds-size-lg);
 
-  color: var(--auro-color-text-primary-on-dark);
+  color: var(--ds-color-text-primary-on-dark);
   cursor: pointer;
-  background-color: var(--auro-color-ui-default-on-light);
-  border: 1px solid var(--auro-color-ui-default-on-light);
-  border-radius: var(--auro-border-radius);
-  font-family: var(--auro-font-family-default);
-  font-size: var(--auro-text-body-size-default);
-  font-weight: var(--auro-text-body-default-weight);
+  background-color: var(--ds-color-ui-default-default);
+  border: 1px solid var(--ds-color-ui-default-default);
+  border-radius: var(--ds-border-radius);
+  font-family: var(--ds-font-family-default);
+  font-size: var(--ds-text-body-size-default);
+  font-weight: var(--ds-text-body-default-weight);
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
 
-  min-height: var(--auro-size-xxl);
-  max-height: var(--auro-size-xxl);
+  min-height: var(--ds-size-xxl);
+  max-height: var(--ds-size-xxl);
 
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--auro-size-xxs);
+  gap: var(--ds-size-xxs);
 
   // removes margins around button in Safari
   margin: 0;
@@ -150,15 +150,15 @@ slot {
   @media (hover: hover) {
     &:active,
     &:hover {
-      background-color: var(--auro-color-ui-hover-on-light);
-      border: 1px solid var(--auro-color-ui-hover-on-light);
+      background-color: var(--ds-color-ui-hover-default);
+      border: 1px solid var(--ds-color-ui-hover-default);
     }
   }
 
   // handle active state
   &:active {
-    background-color: var(--auro-color-ui-active-on-light);
-    border: 1px solid var(--auro-color-ui-active-on-light);
+    background-color: var(--ds-color-ui-active-default);
+    border: 1px solid var(--ds-color-ui-active-default);
     transform: scale(0.95);
   }
 
@@ -170,12 +170,12 @@ slot {
     }
 
     auro-loader {
-      color: var(--auro-color-background-darkest);
+      color: var(--ds-color-background-darkest);
     }
 
     &.auro-buttonOndark {
       auro-loader {
-        color: var(--auro-color-text-primary-on-dark);
+        color: var(--ds-color-text-primary-on-dark);
       }
     }
   }
@@ -189,13 +189,13 @@ slot {
     cursor: not-allowed;
     transform: unset;
 
-    background-color: rgba($auro-color-ui-default-on-light, $disabledOPacity);
-    border: 1px solid rgba($auro-color-ui-default-on-light, 0);
+    background-color: rgba($ds-color-ui-default-default, $disabledOPacity);
+    border: 1px solid rgba($ds-color-ui-default-default, 0);
 
     @media (hover: hover) {
       &:hover {
-        background-color: rgba($auro-color-ui-default-on-light, $disabledOPacity);
-        border: 1px solid rgba($auro-color-ui-default-on-light, 0);
+        background-color: rgba($ds-color-ui-default-default, $disabledOPacity);
+        border: 1px solid rgba($ds-color-ui-default-default, 0);
       }
     }
   }
@@ -203,36 +203,36 @@ slot {
   // auro-button--secondary
   &[variant='secondary'],
   &--secondary {
-    background-color: var(--auro-color-background-lightest);
-    border: 1px solid var(--auro-color-ui-default-on-light);
-    color: var(--auro-color-text-link-on-light);
+    background-color: var(--ds-color-background-lightest);
+    border: 1px solid var(--ds-color-ui-default-default);
+    color: var(--ds-color-text-link-default);
 
     @media (hover: hover) {
       &:active,
       &:hover {
-        background-color: var(--auro-color-ui-bkg-hover-on-light);
-        border: 1px solid var(--auro-color-ui-default-on-light);
+        background-color: var(--ds-color-ui-bkg-hover-default);
+        border: 1px solid var(--ds-color-ui-default-default);
       }
     }
 
     &:active {
-      background-color: var(--auro-color-ui-bkg-hover-on-light);
-      border: 1px solid var(--auro-color-ui-default-on-light);
+      background-color: var(--ds-color-ui-bkg-hover-default);
+      border: 1px solid var(--ds-color-ui-default-default);
     }
 
     &:disabled {
       cursor: not-allowed;
       transform: unset;
 
-      color: rgba($auro-color-text-link-on-light, $disabledOPacity);
-      background-color: rgba($auro-color-background-lightest, $disabledOPacity);
-      border: 1px solid rgba($auro-color-ui-default-on-light, $disabledOPacity);
+      color: rgba($ds-color-text-link-default, $disabledOPacity);
+      background-color: rgba($ds-color-background-lightest, $disabledOPacity);
+      border: 1px solid rgba($ds-color-ui-default-default, $disabledOPacity);
 
       @media (hover: hover) {
         &:hover {
-          color: rgba($auro-color-text-link-on-light, $disabledOPacity);
-          background-color: rgba($auro-color-background-lightest, $disabledOPacity);
-          border: 1px solid rgba($auro-color-ui-default-on-light, $disabledOPacity);
+          color: rgba($ds-color-text-link-default, $disabledOPacity);
+          background-color: rgba($ds-color-background-lightest, $disabledOPacity);
+          border: 1px solid rgba($ds-color-ui-default-default, $disabledOPacity);
         }
       }
     }
@@ -243,18 +243,18 @@ slot {
   &--tertiary {
     background-color: $auro-rgb-color-base-black-03;
     border-color: transparent;
-    color: var(--auro-color-text-link-on-light);
+    color: var(--ds-color-text-link-default);
 
     @media (hover: hover) {
       &:active,
       &:hover {
-        background-color: var(--auro-color-ui-bkg-hover-on-light);
+        background-color: var(--ds-color-ui-bkg-hover-default);
         border-color: transparent;
       }
     }
 
     &:active {
-      background-color: var(--auro-color-ui-bkg-hover-on-light);
+      background-color: var(--ds-color-ui-bkg-hover-default);
       border-color: transparent;
     }
 
@@ -262,7 +262,7 @@ slot {
       cursor: not-allowed;
       transform: unset;
 
-      color: rgba($auro-color-text-link-on-light, $disabledOPacity);
+      color: rgba($ds-color-text-link-default, $disabledOPacity);
       background-color: $auro-rgb-color-base-black-03;
       border: 1px solid transparent;
 
@@ -276,37 +276,37 @@ slot {
   }
 
   &Ondark {
-    background-color: var(--auro-color-ui-default-on-dark);
-    border: 1px solid var(--auro-color-ui-default-on-dark);
-    color: var(--auro-color-text-primary-on-light);
+    background-color: var(--ds-color-ui-default-on-dark);
+    border: 1px solid var(--ds-color-ui-default-on-dark);
+    color: var(--ds-color-text-primary-default);
 
     // auro-buttonOndark hover
     @media (hover: hover) {
       &:active,
       &:hover {
-        background-color: var(--auro-color-ui-hover-on-dark);
-        border: 1px solid var(--auro-color-ui-hover-on-dark);
+        background-color: var(--ds-color-ui-hover-on-dark);
+        border: 1px solid var(--ds-color-ui-hover-on-dark);
       }
     }
 
     &:active {
-      background-color: var(--auro-color-ui-active-on-dark);
-      border: 1px solid var(--auro-color-ui-active-on-dark);
+      background-color: var(--ds-color-ui-active-on-dark);
+      border: 1px solid var(--ds-color-ui-active-on-dark);
     }
 
     &:disabled {
       cursor: not-allowed;
       transform: unset;
 
-      color: rgba($auro-color-text-primary-on-light, $disabledOPacity);
-      background-color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
-      border: 1px solid rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+      color: rgba($ds-color-text-primary-default, $disabledOPacity);
+      background-color: rgba($ds-color-ui-default-on-dark, $disabledOPacity);
+      border: 1px solid rgba($ds-color-ui-default-on-dark, $disabledOPacity);
 
       @media (hover: hover) {
         &:hover {
-          color: rgba($auro-color-text-primary-on-light, $disabledOPacity);
-          background-color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
-          border: 1px solid rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+          color: rgba($ds-color-text-primary-default, $disabledOPacity);
+          background-color: rgba($ds-color-ui-default-on-dark, $disabledOPacity);
+          border: 1px solid rgba($ds-color-ui-default-on-dark, $disabledOPacity);
         }
       }
     }
@@ -314,27 +314,27 @@ slot {
     // auro-buttonOndark--secondary
     &[variant='secondary'],
     &--secondary {
-      background-color: var(--auro-color-background-darker);
-      border: 1px solid var(--auro-color-ui-default-on-dark);
-      color: var(--auro-color-ui-default-on-dark);
+      background-color: var(--ds-color-background-darker);
+      border: 1px solid var(--ds-color-ui-default-on-dark);
+      color: var(--ds-color-ui-default-on-dark);
 
       @media (hover: hover) {
         &:active,
         &:hover {
-          background-color: var(--auro-color-background-darkest);
+          background-color: var(--ds-color-background-darkest);
         }
       }
 
       &:active {
-        background-color: var(--auro-color-base-black-opacity-15);
-        border: 1px solid var(--auro-color-ui-hover-on-dark);
+        background-color: var(--ds-color-base-black-opacity-15);
+        border: 1px solid var(--ds-color-ui-hover-on-dark);
       }
 
       &:disabled {
         @media (hover: hover) {
           &:hover {
-            background-color: var(--auro-color-background-darker);
-            border: 1px solid var(--auro-color-ui-default-on-dark);
+            background-color: var(--ds-color-background-darker);
+            border: 1px solid var(--ds-color-ui-default-on-dark);
           }
         }
       }
@@ -343,15 +343,15 @@ slot {
         cursor: not-allowed;
         transform: unset;
 
-        color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
-        background-color: var(--auro-color-background-darker);
-        border: 1px solid rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+        color: rgba($ds-color-ui-default-on-dark, $disabledOPacity);
+        background-color: var(--ds-color-background-darker);
+        border: 1px solid rgba($ds-color-ui-default-on-dark, $disabledOPacity);
 
         @media (hover: hover) {
           &:hover {
-            color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
-            background-color: var(--auro-color-background-darker);
-            border: 1px solid rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+            color: rgba($ds-color-ui-default-on-dark, $disabledOPacity);
+            background-color: var(--ds-color-background-darker);
+            border: 1px solid rgba($ds-color-ui-default-on-dark, $disabledOPacity);
           }
         }
       }
@@ -362,19 +362,19 @@ slot {
     &--tertiary {
       background-color: $auro-rgb-color-base-white-03;
       border: 1px solid transparent;
-      color: var(--auro-color-ui-default-on-dark);
+      color: var(--ds-color-ui-default-on-dark);
 
       @media (hover: hover) {
         &:active,
         &:hover {
-          background-color: var(--auro-color-base-black-opacity-15);
+          background-color: var(--ds-color-base-black-opacity-15);
           border: 1px solid transparent;
           box-shadow: none;
         }
       }
 
       &:active {
-        background-color: var(--auro-color-base-black-opacity-15);
+        background-color: var(--ds-color-base-black-opacity-15);
         border: 1px solid transparent;
         box-shadow: none;
       }
@@ -384,12 +384,12 @@ slot {
         transform: unset;
         background-color: $auro-rgb-color-base-white-03;
         border: transparent;
-        color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+        color: rgba($ds-color-ui-default-on-dark, $disabledOPacity);
 
         @media (hover: hover) {
           &:hover {
             background-color: $auro-rgb-color-base-white-03;
-            color: rgba($auro-color-ui-default-on-dark, $disabledOPacity);
+            color: rgba($ds-color-ui-default-on-dark, $disabledOPacity);
             border: transparent;
           }
         }
@@ -399,8 +399,8 @@ slot {
 
   // auro-button--slim
   &--slim {
-    padding: var(--auro-size-xs) var(--auro-size-md);
-    font-size: var(--auro-text-body-size-sm);
+    padding: var(--ds-size-xs) var(--ds-size-md);
+    font-size: var(--ds-text-body-size-sm);
     min-width: unset;
     min-height: 2.25rem;
     max-height: 2.25rem;
@@ -408,12 +408,12 @@ slot {
 
   &--iconOnly {
     ::slotted(auro-icon) {
-      width: var(--auro-size-300);
-      height: var(--auro-size-300);
+      width: var(--ds-size-300);
+      height: var(--ds-size-300);
     }
 
-    padding-left: calc(var(--auro-size-100) - var(--auro-size-25));
-    padding-right: calc(var(--auro-size-100) - var(--auro-size-25));
+    padding-left: calc(var(--ds-size-100) - var(--ds-size-25));
+    padding-right: calc(var(--ds-size-100) - var(--ds-size-25));
 
     border-radius: 100px;
     min-width: unset;
@@ -421,27 +421,27 @@ slot {
 
   &--iconOnlySlim {
     ::slotted(auro-icon) {
-      width: calc(var(--auro-size-300) - var(--auro-size-50));
-      height: calc(var(--auro-size-300) - var(--auro-size-50));
+      width: calc(var(--ds-size-300) - var(--ds-size-50));
+      height: calc(var(--ds-size-300) - var(--ds-size-50));
     }
 
-    padding-left: var(--auro-size-50);
-    padding-right: var(--auro-size-50);
+    padding-left: var(--ds-size-50);
+    padding-right: var(--ds-size-50);
   }
 
   // auro-button--rounded
   &--rounded {
     border-radius: 100px;
-    box-shadow: var(--auro-elevation-300);
+    box-shadow: var(--ds-elevation-300);
 
-    height: var(--auro-size-500);
+    height: var(--ds-size-500);
     min-width: unset;
 
     transition: all 300ms ease-out;
 
     ::slotted(auro-icon) {
-      width: var(--auro-size-300);
-      height: var(--auro-size-300);
+      width: var(--ds-size-300);
+      height: var(--ds-size-300);
     }
   }
 }
@@ -467,7 +467,7 @@ slot {
     min-width: unset;
     padding: unset;
 
-    width: var(--auro-size-600);
+    width: var(--ds-size-600);
   }
 }
 
