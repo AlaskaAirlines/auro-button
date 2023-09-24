@@ -67,8 +67,8 @@ Use the `slim` attribute with the `auro-button` element for a slim style with le
 
 ## Icon Support
 
-Adding icons to the auro-button component is as easy as nesting any other HTML. The auro-icon component 
-has access to all the icons listed in the Auro Icons library 
+Adding icons to the auro-button component is as easy as nesting any other HTML. The auro-icon component
+has access to all the icons listed in the Auro Icons library
 for quick and easy use.
 
 Be sure to use the customColor attribute on the `auro-icon` component to allow colors set in your parent element to pass through to the icon and `slot=icon` to properly place the `auro-icon` within the button.
@@ -86,7 +86,7 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
 
 </auro-accordion>
 
-#### Icon Only Button
+### Icon Only Button
 
 Use the `iconOnly` attribute with the `auro-button` element for a style specific to having only an `auro-icon` as the button's content.
 
@@ -108,7 +108,7 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
 
 </auro-accordion>
 
-#### Icon Only Button - Slim Style
+### Icon Only Button - Slim Style
 
 Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` element for a slimmer icon only button with less padding.
 
@@ -129,7 +129,7 @@ Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` el
 
 Use the `rounded` attribute for an `auro-button` with rounded corners.
 
-#### No Text
+### No Text
 
 Use the `rounded` attribute in conjunction with the `iconOnly` attribute for an `auro-button` that has an `auro-icon` and no text.
 
@@ -146,7 +146,7 @@ Use the `rounded` attribute in conjunction with the `iconOnly` attribute for an 
 
 </auro-accordion>
 
-#### With Text
+### With Text
 
 This example demonstrates a `rounded` `auro-button` with text and an `auro-icon`.
 
@@ -163,7 +163,7 @@ This example demonstrates a `rounded` `auro-button` with text and an `auro-icon`
 
 </auro-accordion>
 
-#### Text Only
+### Text Only
 
 A `rounded` `auro-button` with text only.
 
@@ -180,7 +180,7 @@ A `rounded` `auro-button` with text only.
 
 </auro-accordion>
 
-#### Toggle Text
+### Toggle Text
 
 The `rounded` attribute supports the ability to hide/show the text of the `auro-button`. This can be done by changing the value of the `iconOnly` attribute. In this example, the text is toggled via `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
@@ -200,7 +200,7 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
 
 </auro-accordion>
 
-#### Right Aligned
+### Right Aligned
 
 This example shows a `rounded` `auro-button` that is right-aligned, demonstrating how the button starts from the right and grows/shrinks from right to left when using the `toggleText` attribute in conjuction with the `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
