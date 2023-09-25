@@ -66,8 +66,8 @@ export class AuroThemeSwitcher extends LitElement {
     this.loadedThemes = [];
     const stylesheets = document.styleSheets;
 
-    this.themes.forEach(theme => {
-      for (let i = 0; i < stylesheets.length; i++) {
+    this.themes.forEach((theme) => {
+      for (let i = 0; i < stylesheets.length; i++) { // eslint-disable-line id-length, no-plusplus
         if (stylesheets[i].href === theme.url) {
           this.loadedThemes.push(theme);
         }
@@ -76,23 +76,25 @@ export class AuroThemeSwitcher extends LitElement {
   }
 
   unloadThemes() {
-    this.themes.forEach(theme => {
-      try{
+    this.themes.forEach((theme) => {
+      try {
         const loadedTheme = document.querySelector(`link[rel=stylesheet][href='${theme.url}']`);
-        loadedTheme.parentNode.removeChild(loadedTheme);
-      }catch(err){}
 
+        loadedTheme.parentNode.removeChild(loadedTheme);
+      } catch (err) {
+        console.warn('Auro Theme Switcher - unable to remove previously loaded theme(s).'); // eslint-disable-line no-console
+      }
     })
   }
 
   loadSelectedthemes() {
-    const head = document.getElementsByTagName("head")[0];
+    const head = document.getElementsByTagName("head")[0]; // eslint-disable-line prefer-destructuring
+
     this.currentTheme = this.newTheme;
 
-
-    this.currentTheme.forEach(theme => {
-      let themeObj = JSON.parse(theme);
-      let link = document.createElement("link");
+    this.currentTheme.forEach((theme) => {
+      const themeObj = JSON.parse(theme);
+      const link = document.createElement("link");
 
       link.setAttribute('theme', themeObj.label);
       link.rel = "stylesheet";
@@ -124,27 +126,26 @@ export class AuroThemeSwitcher extends LitElement {
   handleApplyBtnState() {
     this.getLoadedThemes();
 
-    if (JSON.stringify(this.loadedThemes) !== JSON.stringify(this.newTheme)) {
-      this.disableApply = false;
-    } else {
+    if (JSON.stringify(this.loadedThemes) === JSON.stringify(this.newTheme)) {
       this.disableApply = true;
+    } else {
+      this.disableApply = false;
     }
   }
 
   applyThemes() {
     this.disableApply = true;
 
-    // this.dropdown.hide();
     this.toggleThemeSwitcher();
     this.unloadThemes();
     this.loadSelectedthemes();
   }
 
   markLoadedthemes() {
-    this.loadedThemes.forEach(theme => {
-      const checkboxes = this.shadowRoot.querySelector('auro-dialog').querySelectorAll('auro-checkbox'); // .querySelector(selector); //#${theme.label}]
+    this.loadedThemes.forEach((theme) => {
+      const checkboxes = this.shadowRoot.querySelector('auro-dialog').querySelectorAll('auro-checkbox');
 
-      checkboxes.forEach(checkbox => {
+      checkboxes.forEach((checkbox) => {
         if (checkbox.id === theme.label) {
           checkbox.setAttribute('checked', true);
 
@@ -158,28 +159,12 @@ export class AuroThemeSwitcher extends LitElement {
   }
 
   toggleThemeSwitcher() {
-    console.warn('toggleThemeSwitcher()');
+    const dialog = this.shadowRoot.querySelector('#auroThemeSwitcherDialog');
 
-    let dialog = this.shadowRoot.querySelector('#auroThemeSwitcherDialog');
-
-    // console.warn(dialog)
-
-    // const html = document.querySelector('html');
-
-    dialog.hasAttribute('open')
+    dialog.hasAttribute('open') // eslint-disable-line no-unused-expressions
     ? dialog.removeAttribute("open")
     : (dialog.removeAttribute("open"),
       dialog.setAttribute("open", true))
-  }
-
-  toggleInterruption = (elName) => {
-    let interruption = document.querySelector(elName);
-    // const html = document.querySelector('html');
-
-    interruption.hasAttribute('open')
-    ? interruption.removeAttribute("open")
-    : (interruption.removeAttribute("open"),
-      interruption.setAttribute("open", true))
   }
 
   firstUpdated() {
@@ -204,15 +189,14 @@ export class AuroThemeSwitcher extends LitElement {
               </span>
               <auro-checkbox-group required>
                 ${this.themes.map((theme) => html`
-                <auro-checkbox
-                  value="${JSON.stringify(theme)}"
-                  name="${theme.label}"
-                  id="${theme.label}"
-                  @auroCheckbox-input="${this.handleCheckboxSelection}">
-                  ${theme.label}
-                </auro-checkbox>
-                `
-                )}
+                  <auro-checkbox
+                    value="${JSON.stringify(theme)}"
+                    name="${theme.label}"
+                    id="${theme.label}"
+                    @auroCheckbox-input="${this.handleCheckboxSelection}">
+                    ${theme.label}
+                  </auro-checkbox>
+                `)}
               </auro-checkbox-group>
             </div>
             ${this.disableApply ? undefined : html`
