@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [7.2.1](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.0...v7.2.1) (2023-10-02)
+
+
+### Performance Improvements
+
+* **class:** add class to span wrapping around content [#233](https://github.com/AlaskaAirlines/auro-button/issues/233) ([43436b2](https://github.com/AlaskaAirlines/auro-button/commit/43436b29f1bd36e1bc7bc753e55c0e6a9257afc6))
+
 # [7.2.0](https://github.com/AlaskaAirlines/auro-button/compare/v7.1.1...v7.2.0) (2023-07-14)
 
 
