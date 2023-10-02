@@ -194,7 +194,7 @@ export class AuroButton extends LitElement {
       >
         ${ifDefined(this.loading ? html`<auro-loader pulse part="loader"></auro-loader>` : undefined)}
 
-        <span>
+        <span class="contentWrapper">
           <span class="textSlot" part="text">
             ${this.iconOnly ? undefined : html`<slot></slot>`}
           </span>
