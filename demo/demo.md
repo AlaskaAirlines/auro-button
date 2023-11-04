@@ -197,12 +197,12 @@ Don't combine `disabled` and `loading` attributes on any single instance of `aur
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/doAndDont.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/doAndDont.html -->
-  <auro-alerts error noIcon>
+  <auro-alert type="error" noIcon>
     <auro-button loading disabled>Primary</auro-button>
-  </auro-alerts>
-  <auro-alerts success noIcon style="padding-top: 5px;">
+  </auro-alert>
+  <auro-alert type="success" noIcon style="padding-top: 5px;">
     <auro-button loading>Primary</auro-button>
-  </auro-alerts>
+  </auro-alert>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion lowProfile justifyRight>
@@ -211,12 +211,12 @@ Don't combine `disabled` and `loading` attributes on any single instance of `aur
 <!-- The below code snippet is automatically added from ./../../apiExamples/doAndDont.html -->
 
 ```html
-<auro-alerts error noIcon>
+<auro-alert type="error" noIcon>
   <auro-button loading disabled>Primary</auro-button>
-</auro-alerts>
-<auro-alerts success noIcon style="padding-top: 5px;">
+</auro-alert>
+<auro-alert type="success" noIcon style="padding-top: 5px;">
   <auro-button loading>Primary</auro-button>
-</auro-alerts>
+</auro-alert>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
