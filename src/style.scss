@@ -210,7 +210,7 @@ slot {
     @media (hover: hover) {
       &:active,
       &:hover {
-        background-color: var(--ds-color-ui-bkg-hover-default);
+        background-image: linear-gradient(var(--ds-color-ui-bkg-hover-default), var(--ds-color-ui-bkg-hover-default));
         border: 1px solid var(--ds-color-ui-default-default);
       }
     }
