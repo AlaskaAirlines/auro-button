@@ -66,7 +66,7 @@
   <auro-button variant="tertiary">Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
@@ -91,7 +91,7 @@ This example demonstrates `auro-button` in it's `disabled` state.
   <auro-button variant="tertiary" disabled>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabled.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/disabled.html -->
@@ -111,7 +111,7 @@ This example demonstrates `auro-button` in it's `disabled` state.
   <auro-button variant="tertiary" disabled ondark>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabledOnDark.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/disabledOnDark.html -->
@@ -136,7 +136,7 @@ Use the `slim` attribute with the `auro-button` element for a slim style with le
   <auro-button slim variant="tertiary">Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/slim.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/slim.html -->
@@ -174,7 +174,7 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/icon.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/icon.html -->
@@ -218,7 +218,7 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconOnly.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/iconOnly.html -->
@@ -255,7 +255,7 @@ Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` el
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconOnlySlim.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/iconOnlySlim.html -->
@@ -290,7 +290,7 @@ Use the `rounded` attribute in conjunction with the `iconOnly` attribute for an 
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/rounded.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/rounded.html -->
@@ -316,7 +316,7 @@ This example demonstrates a `rounded` `auro-button` with text and an `auro-icon`
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedTextWithIcon.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/roundedTextWithIcon.html -->
@@ -342,7 +342,7 @@ A `rounded` `auro-button` with text only.
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedTextOnly.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/roundedTextOnly.html -->
@@ -368,7 +368,7 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/toggledText.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/toggledText.html -->
@@ -422,7 +422,7 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedRightAlign.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/roundedRightAlign.html -->
@@ -475,7 +475,7 @@ In the following example see how the `fluid` attributes alters the shape of the 
   <auro-button variant="tertiary" fluid>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/fluid.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/fluid.html -->
@@ -500,7 +500,7 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
   <auro-button variant="tertiary" loading>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loading.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/loading.html -->
@@ -520,7 +520,7 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
   <auro-button variant="tertiary" ondark loading>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alightRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loadingOnDark.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/loadingOnDark.html -->
