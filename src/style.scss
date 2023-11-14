@@ -150,7 +150,7 @@ slot {
   @media (hover: hover) {
     &:active,
     &:hover {
-      background-color: var(--ds-color-ui-hover-default);
+      background-image: linear-gradient(var(--ds-color-ui-hover-default), var(--ds-color-ui-hover-default));
       border: 1px solid var(--ds-color-ui-hover-default);
     }
   }
@@ -248,7 +248,7 @@ slot {
     @media (hover: hover) {
       &:active,
       &:hover {
-        background-color: var(--ds-color-ui-bkg-hover-default);
+        background-image: linear-gradient(var(--ds-color-ui-bkg-hover-default), var(--ds-color-ui-bkg-hover-default));
         border-color: transparent;
       }
     }
@@ -284,7 +284,7 @@ slot {
     @media (hover: hover) {
       &:active,
       &:hover {
-        background-color: var(--ds-color-ui-hover-inverse);
+        background-image: linear-gradient(var(--ds-color-ui-hover-inverse), var(--ds-color-ui-hover-inverse));
         border: 1px solid var(--ds-color-ui-hover-inverse);
       }
     }
@@ -321,7 +321,7 @@ slot {
       @media (hover: hover) {
         &:active,
         &:hover {
-          background-color: var(--ds-color-background-darkest);
+          background-image: linear-gradient(var(--ds-color-background-darkest), var(--ds-color-background-darkest));
         }
       }
 
@@ -367,7 +367,7 @@ slot {
       @media (hover: hover) {
         &:active,
         &:hover {
-          background-color: var(--ds-color-base-black-opacity-15);
+          background-image: linear-gradient(var(--ds-color-base-black-opacity-15), var(--ds-color-base-black-opacity-15));
           border: 1px solid transparent;
           box-shadow: none;
         }
