@@ -37,7 +37,7 @@ In cases were the action of the button would not fit the criteria above, it is m
   <auro-button variant="tertiary">Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
@@ -62,7 +62,7 @@ These examples illustrate the core button types and a `disabled` state on dark b
   <auro-button variant="tertiary" ondark>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/onDark.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/onDark.html -->
@@ -87,7 +87,7 @@ This example demonstrates `auro-button` in it's `disabled` state.
   <auro-button variant="tertiary" disabled>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabled.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/disabled.html -->
@@ -107,7 +107,7 @@ This example demonstrates `auro-button` in it's `disabled` state.
   <auro-button variant="tertiary" disabled ondark>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabledOnDark.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/disabledOnDark.html -->
@@ -143,7 +143,7 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/icon.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/icon.html -->
@@ -177,7 +177,7 @@ These examples illustrate a common use case where a user will want to pass a fun
   <auro-button loading onclick="alert('YOU CLICKED ME!');">Primary</auro-button
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/passFunction.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/passFunction.html -->
@@ -205,7 +205,7 @@ Don't combine `disabled` and `loading` attributes on any single instance of `aur
   </auro-alert>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/doAndDont.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/doAndDont.html -->
