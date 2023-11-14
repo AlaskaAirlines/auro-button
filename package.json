@@ -17,7 +17,7 @@
   "main": "index.js",
   "license": "Apache-2.0",
   "engines": {
-    "node": ">=18"
+    "node": "^18 || ^20"
   },
   "dependencies": {
     "@alaskaairux/auro-loader": "^1.1.1",
