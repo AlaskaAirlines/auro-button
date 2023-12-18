@@ -367,7 +367,7 @@ slot {
       @media (hover: hover) {
         &:active,
         &:hover {
-          background-image: linear-gradient(var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15), var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15));
+          background-image: linear-gradient(var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse), var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse));
           border: 1px solid transparent;
           box-shadow: none;
         }
