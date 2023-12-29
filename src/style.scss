@@ -42,53 +42,6 @@ $auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
 
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
 
-// focus-visible mixin
-@mixin focus-visible {
-  outline: 3px solid transparent;
-  box-shadow: inset 0 0 0 1px var(--ds-color-base-white, $ds-color-base-white), inset 0 0 0 3px var(--ds-color-background-lightest, $ds-color-background-lightest);
-
-  // auro-button--secondary
-  &[variant='secondary'],
-  &--secondary {
-    background-color: var(--ds-color-background-lighter, $ds-color-background-lighter);
-    box-shadow: inset 0 0 0 3px var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-  }
-
-  // auro-button--tertiary
-  &[variant='tertiary'],
-  &--tertiary {
-    background-color: var(--ds-color-background-lighter, $ds-color-background-lighter);
-    border-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-    box-shadow: inset 0 0 0 3px var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-  }
-
-  // auro-buttonOndark
-  &Ondark {
-    background-color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-    box-shadow: inset 0 0 0 3px var(--ds-color-base-white, $ds-color-base-white);
-
-    // auro-buttonOndark--secondary
-    &[variant='secondary'],
-    &--secondary {
-      background-color: var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15);
-      box-shadow: inset 0 0 0 3px var(--ds-color-ui-active-inverse, $ds-color-ui-active-inverse);
-      border: 1px solid var(--ds-color-ui-active-inverse, $ds-color-ui-active-inverse);
-    }
-
-    // auro-buttonOndark--tertiary
-    &[variant='tertiary'],
-    &--tertiary {
-      background-color: var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15);
-      border-color: var(--ds-color-ui-active-inverse, $ds-color-ui-active-inverse);
-      box-shadow: inset 0 0 0 3px var(--ds-color-ui-active-inverse, $ds-color-ui-active-inverse);
-    }
-  }
-}
-
-:focus-visible.auro-button {
-  @include focus-visible;
-}
-
 :host([fluid]),
 :host([fluid=true]) {
   .auro-button {
