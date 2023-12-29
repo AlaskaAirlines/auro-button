@@ -130,16 +130,18 @@ export class AuroButton extends LitElement {
   }
 
   /**
-   * @private Internal method to apply focus
-   * @returns {Array} - The DOM node for the button element
+   * Internal method to apply focus to the HTML5 button.
+   * @private
+   * @returns {void}
    */
   focus() {
     this.renderRoot.querySelector('button').focus();
   }
 
   /**
+   *  Marks the component as ready and sends event.
    * @private
-   * @returns {void} Marks the component as ready and sends event.
+   * @returns {void}
    */
   notifyReady() {
     this.ready = true;
