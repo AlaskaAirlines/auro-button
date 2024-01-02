@@ -1,5 +1,30 @@
 # Semantic Release Automated Changelog
 
+## [7.2.2](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.1...v7.2.2) (2024-01-02)
+
+
+### Bug Fixes
+
+* **demo:** update surge demo branch ([5393ed9](https://github.com/AlaskaAirlines/auro-button/commit/5393ed910993367821755f86992b5b8934e1f6bf))
+* **marked:** update marked package to script ([9ad605c](https://github.com/AlaskaAirlines/auro-button/commit/9ad605cb9692c62ea3e8316582767171a539afd2))
+* **tokens:** replace invalid tokens [#229](https://github.com/AlaskaAirlines/auro-button/issues/229) ([7652913](https://github.com/AlaskaAirlines/auro-button/commit/76529134ead49c665518f4466d67c7c1eafa7c45))
+
+
+### Performance Improvements
+
+* **accordion:** use new version of accordion ([eba6c1e](https://github.com/AlaskaAirlines/auro-button/commit/eba6c1ea0a465f3bf3dddce759a57e5c426d27c2))
+* **alert:** update to use auro-alert ([e18015c](https://github.com/AlaskaAirlines/auro-button/commit/e18015c6bab2257735779bd83147d6899bb8eaa8))
+* **deps:** update dependencies ([7daaf28](https://github.com/AlaskaAirlines/auro-button/commit/7daaf28390f087294df95dcb35f945d5228901ff))
+* **eslint:** install auro eslint rules ([d9fd3ed](https://github.com/AlaskaAirlines/auro-button/commit/d9fd3ed7f433934d3dab5f854c11d34c31c0acf7))
+* **focus:** remove focus-visible support ([c0511e5](https://github.com/AlaskaAirlines/auro-button/commit/c0511e5ed3f43b847f761a088918f07f14f89057))
+* **hover:** update hover css rules ([f64446d](https://github.com/AlaskaAirlines/auro-button/commit/f64446d555f138eb795b6641433fc5891812ba1f))
+* **hover:** update secondary hover color [#227](https://github.com/AlaskaAirlines/auro-button/issues/227) ([1eff68d](https://github.com/AlaskaAirlines/auro-button/commit/1eff68d28089c0f83d6d25a732fc5e8d9f8692b2))
+* **hover:** update tertiary hover color [#236](https://github.com/AlaskaAirlines/auro-button/issues/236) ([2d346fa](https://github.com/AlaskaAirlines/auro-button/commit/2d346fa931391c8acdfcaa54c91549982351dd2d))
+* **jsdocs:** update jsdocs ([ebec779](https://github.com/AlaskaAirlines/auro-button/commit/ebec779f8069e521690bdaca623003a81d085e00))
+* **node:** update to support node 20 ([816d29e](https://github.com/AlaskaAirlines/auro-button/commit/816d29e6f46d6718f5ff61588edd6baed3da5561))
+* **tokens:** add css fallbacks for tokens [#229](https://github.com/AlaskaAirlines/auro-button/issues/229) ([423502b](https://github.com/AlaskaAirlines/auro-button/commit/423502be316e9b595790c006eae2c2fbb9acc291))
+* **token:** update design token names [#229](https://github.com/AlaskaAirlines/auro-button/issues/229) ([f94ab5d](https://github.com/AlaskaAirlines/auro-button/commit/f94ab5dfd58c789efd3b4818b36af47cfa918fcc))
+
 ## [7.2.1](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.0...v7.2.1) (2023-10-02)
 
 
