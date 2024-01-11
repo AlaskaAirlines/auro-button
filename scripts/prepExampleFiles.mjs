@@ -1,4 +1,4 @@
-let fs = require('fs');
+import fs from 'fs';
 
 function removeExport(path, type) {
   fs.readFile(path, type, function(err, data) {

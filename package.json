@@ -14,6 +14,7 @@
     "type": "git",
     "url": "https://github.com/AlaskaAirlines/auro-button"
   },
+  "type": "module",
   "main": "index.js",
   "license": "Apache-2.0",
   "engines": {
@@ -29,6 +30,7 @@
     "@aurodesignsystem/webcorestylesheets": "^5.0.0"
   },
   "devDependencies": {
+    "@aurodesignsystem/auro-library": "^2.2.4",
     "@aurodesignsystem/design-tokens": "^4.3.0",
     "@aurodesignsystem/eslint-config": "^1.3.0",
     "@aurodesignsystem/webcorestylesheets": "^5.0.0",
@@ -87,10 +89,11 @@
   },
   "scripts": {
     "build": "npm-run-all build:sass sass:render scssLint dist:js build:docs bundler postinstall build:api build:demoScripts types",
+    "build:ci": "npm-run-all sweep build",
     "build:dev:assets": "npm-run-all build:sass:component postCss:component sass:render",
     "build:api": "wca analyze 'src/auro-button.js' --outFiles docs/api.md",
-    "build:docs": "node scripts/generateDocs.js",
-    "build:demoScripts": "node scripts/prepExampleFiles.js",
+    "build:docs": "node scripts/generateDocs.mjs",
+    "build:demoScripts": "node scripts/prepExampleFiles.mjs",
     "build:watch": "nodemon -e scss,js --watch src --exec npm run build:dev:assets",
     "bundler": "rollup -c",
     "bundle:test": "rollup -c -w",
@@ -99,14 +102,15 @@
     "dist:js": "copyfiles -u 1 -V './src/**/*.js' ./dist",
     "sass:render": "sass-render src/*.css -t ./scripts/staticStyles-template.js",
     "sweep": "rm -rf ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./src/*.css ./src/*-css.js",
-    "esLint": "./node_modules/.bin/eslint src/auro-*.js",
+    "esLint": "eslint src/auro-*.js",
     "linters": "npm-run-all scssLint esLint",
+    "preCommit": "node scripts/pre-commit.mjs",
     "test": "wtr --coverage",
     "test:watch": "wtr --watch",
     "build:sass": "npm-run-all build:sass:component postCss:component sass:render",
     "build:sass:component": "sass --no-source-map src:src",
     "postinstall": "node packageScripts/postinstall.mjs",
-    "postCss:component": "node ./scripts/postCss.js",
+    "postCss:component": "node scripts/postCss.mjs",
     "serve": "web-dev-server --open demo/ --node-resolve --watch",
     "prepare": "husky install",
     "types": "tsc"
