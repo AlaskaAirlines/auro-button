@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-./node_modules/.bin/npm-run-all linters test
+./node_modules/.bin/npm-run-all preCommit linters test
