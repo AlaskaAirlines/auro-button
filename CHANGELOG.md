@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [7.2.3](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.2...v7.2.3) (2024-01-11)
+
+
+### Performance Improvements
+
+* update repo to support SSR ([cfab5ea](https://github.com/AlaskaAirlines/auro-button/commit/cfab5ea7521b2a9b862b2f4e3a49f2e27de89b5e))
+
 ## [7.2.2](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.1...v7.2.2) (2024-01-02)
 
 
