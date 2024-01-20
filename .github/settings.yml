@@ -1,5 +1,6 @@
 repository:
   # See https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#edit for all available settings.
+  # See https://github.com/apps/settings for app settings
 
   # A short description of the repository that will show up on GitHub
   description: HTML custom element represents a clickable button, used to submit forms or anywhere in a document for accessible, standard button functionality
@@ -21,6 +22,9 @@ repository:
 
   # Updates the default branch for this repository.
   default_branch: main
+
+  # Either `true` to enable automatic deletion of branches on merge, or `false` to disable
+  delete_branch_on_merge: true
 
   # Either `true` to allow squash-merging pull requests, or `false` to prevent
   # squash-merging.
@@ -46,7 +50,7 @@ branches:
         # Dismiss approved reviews automatically when a new commit is pushed.
         dismiss_stale_reviews: true
         # Blocks merge until code owners have reviewed.
-        require_code_owner_reviews: false
+        require_code_owner_reviews: true
         # Required. Require status checks to pass before merging. Set to null to disable
         # Specify which users and teams can dismiss pull request reviews. Pass an empty dismissal_restrictions object to disable. User and team dismissal_restrictions are only available for organization-owned repositories. Omit this parameter for personal repositories.
         dismissal_restrictions:
@@ -61,6 +65,8 @@ branches:
       enforce_admins: false
       # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
       restrictions: null
+      # Prevent merge commits from being pushed to matching branches
+      required_linear_history: true
 
 # Labels: define labels for Issues and Pull Requests
 labels:
@@ -113,7 +119,7 @@ labels:
     - wontfix
     - invalid
   - name: 'Type: Bug'
-    color: 'df0b37'
+    color: df0b37
     description: Bug or Bug fixes
     aliases:
     - bug
@@ -124,7 +130,7 @@ labels:
     - enhancement
   - name: 'Type: Design'
     color: 'ffd200'
-    description: New Design
+    description: New or related Design work
     aliases:
     - enhancement
   - name: 'Type: Content'
