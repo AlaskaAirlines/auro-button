@@ -7,7 +7,7 @@ import { LitElement, html } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import styleCss from "./style-css.js";
-import '@alaskaairux/auro-loader';
+import '@aurodesignsystem/auro-loader';
 
 /**
  * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user
