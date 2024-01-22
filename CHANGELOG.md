@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+## [7.2.4](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.3...v7.2.4) (2024-01-22)
+
+
+### Bug Fixes
+
+* update incorrect lit-element refs ([77cb193](https://github.com/AlaskaAirlines/auro-button/commit/77cb1930268c0b3c2082f0677856986ae86a0192))
+
+
+### Performance Improvements
+
+* update dependencies ([1afa2d1](https://github.com/AlaskaAirlines/auro-button/commit/1afa2d1a8f807d3ef879aca38102e93424f20b0c))
+* update to auro-loader@latest ([89b2e57](https://github.com/AlaskaAirlines/auro-button/commit/89b2e5743584e3239c8feb77d3ba1760b00d3f29))
+
 ## [7.2.3](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.2...v7.2.3) (2024-01-11)
 
 
