@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [7.2.6](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.5...v7.2.6) (2024-02-01)
+
+
+### Performance Improvements
+
+* update auro dependencies ([b8c2884](https://github.com/AlaskaAirlines/auro-button/commit/b8c28840d4fc683805c5ec2cdadc44cd1d69e25b))
+
 ## [7.2.5](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.4...v7.2.5) (2024-01-31)
 
 
