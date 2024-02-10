@@ -49,10 +49,11 @@ For the most up to date information on [UI development browser support](https://
 
 ## Install
 
-<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentInstall.md) -->
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentInstall_esm.md) -->
 [![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-button/testPublish.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/auro-button/actions/workflows/testPublish.yml)
 [![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-button?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-button)
 [![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-button?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+![ESM supported](https://img.shields.io/badge/ESM-compatible-FFE900?style=for-the-badge)
 
 ```shell
 $ npm i @aurodesignsystem/auro-button
