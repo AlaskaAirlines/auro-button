@@ -215,7 +215,7 @@ describe('auro-button', () => {
   it('default slot is not in DOM when iconOnly attribute is present', async () => {
     const el = await fixture(html`
       <auro-button rounded iconOnly>
-        <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
+        <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
       </auro-button>
     `);
 
