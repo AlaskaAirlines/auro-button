@@ -112,6 +112,8 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
 
 Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` element for a slimmer icon only button with less padding.
 
+Be sure to also use the `customColor` and `customSize` attributes on the `auro-icon` component, as well as add `height` and `width` styles to the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
+
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconOnlySlim.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
