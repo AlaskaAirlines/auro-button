@@ -20,7 +20,7 @@
     <main></main>
 
     <script type="module">
-      fetch('/demo/demo.md')
+      fetch('/demo/index.md')
         .then((response) => response.text())
         .then((text) => {
           const rawHtml = marked.parse(text);
