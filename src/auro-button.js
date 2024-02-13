@@ -28,7 +28,7 @@ import '@aurodesignsystem/auro-loader';
  * @attr {String} value - Defines the value associated with the button which is submitted with the form data.
  * @attr {String} variant - Sets button variant option. Possible values are: `secondary`, `tertiary`
  * @prop {Boolean} ready - When false the component API should not be called.
- * @fires auroButton-ready - Notifies that the component has finished initializing.
+ * @event auroButton-ready - Notifies that the component has finished initializing.
  * @slot - Default slot for the text of the button.
  * @slot icon - Slot to provide auro-icon for the button.
  * @csspart button - Apply CSS to HTML5 button.
