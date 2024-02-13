@@ -373,11 +373,6 @@ slot {
   }
 
   &--iconOnlySlim {
-    ::slotted(auro-icon) {
-      width: calc(var(--ds-size-300, $ds-size-300) - var(--ds-size-50, $ds-size-50));
-      height: calc(var(--ds-size-300, $ds-size-300) - var(--ds-size-50, $ds-size-50));
-    }
-
     padding-left: var(--ds-size-50, $ds-size-50);
     padding-right: var(--ds-size-50, $ds-size-50);
   }
