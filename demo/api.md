@@ -247,13 +247,13 @@ Be sure to use the `customColor` and `customSize` attributes on the `auro-icon` 
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconOnlySlim.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/iconOnlySlim.html -->
   <auro-button aria-label="home-filled" iconOnly slim>
-    <auro-icon customColor customSize style="width: 20px; height: 20px;" category="interface" name="home-filled" slot="icon"></auro-icon>
+    <auro-icon customColor customSize category="interface" name="home-filled" slot="icon"></auro-icon>
   </auro-button>
   <auro-button aria-label="arrow-left" variant="secondary" iconOnly slim>
-    <auro-icon customColor customSize style="width: 20px; height: 20px;" category="interface" name="arrow-left" slot="icon"></auro-icon>
+    <auro-icon customColor customSize category="interface" name="arrow-left" slot="icon"></auro-icon>
   </auro-button>
   <auro-button aria-label="heart-filled" variant="tertiary" iconOnly slim>
-    <auro-icon customColor customSize style="width: 20px; height: 20px;" category="interface" name="heart-filled" slot="icon"></auro-icon>
+    <auro-icon customColor customSize category="interface" name="heart-filled" slot="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -264,13 +264,13 @@ Be sure to use the `customColor` and `customSize` attributes on the `auro-icon` 
 
 ```html
 <auro-button aria-label="home-filled" iconOnly slim>
-  <auro-icon customColor customSize style="width: 20px; height: 20px;" category="interface" name="home-filled" slot="icon"></auro-icon>
+  <auro-icon customColor customSize category="interface" name="home-filled" slot="icon"></auro-icon>
 </auro-button>
 <auro-button aria-label="arrow-left" variant="secondary" iconOnly slim>
-  <auro-icon customColor customSize style="width: 20px; height: 20px;" category="interface" name="arrow-left" slot="icon"></auro-icon>
+  <auro-icon customColor customSize category="interface" name="arrow-left" slot="icon"></auro-icon>
 </auro-button>
 <auro-button aria-label="heart-filled" variant="tertiary" iconOnly slim>
-  <auro-icon customColor customSize style="width: 20px; height: 20px;" category="interface" name="heart-filled" slot="icon"></auro-icon>
+  <auro-icon customColor customSize category="interface" name="heart-filled" slot="icon"></auro-icon>
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
