@@ -200,7 +200,7 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
 
 Use the `iconOnly` attribute with the `auro-button` element for a style specific to having only an `auro-icon` as the button's content.
 
-Be sure to also use the `customColor` and `customSize` attributes on the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
+Be sure to use the `customColor` attribute on the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
 
 **Recommended**: We strongly encourage the users of the icon only `auro-button` to use the `aria-label` attribute. Without this attribute, the screenreaders will not properly describe the button content to it's users.
 
@@ -208,13 +208,13 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconOnly.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/iconOnly.html -->
   <auro-button aria-label="home-filled" iconOnly>
-    <auro-icon customColor customSize category="interface" name="home-filled" slot="icon"></auro-icon>
+    <auro-icon customColor category="interface" name="home-filled" slot="icon"></auro-icon>
   </auro-button>
   <auro-button aria-label="arrow-left" variant="secondary" iconOnly>
-    <auro-icon customColor customSize category="interface" name="arrow-left" slot="icon"></auro-icon>
+    <auro-icon customColor category="interface" name="arrow-left" slot="icon"></auro-icon>
   </auro-button>
   <auro-button aria-label="heart-filled" variant="tertiary" iconOnly>
-    <auro-icon customColor customSize category="interface" name="heart-filled" slot="icon"></auro-icon>
+    <auro-icon customColor category="interface" name="heart-filled" slot="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -225,13 +225,13 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
 
 ```html
 <auro-button aria-label="home-filled" iconOnly>
-  <auro-icon customColor customSize category="interface" name="home-filled" slot="icon"></auro-icon>
+  <auro-icon customColor category="interface" name="home-filled" slot="icon"></auro-icon>
 </auro-button>
 <auro-button aria-label="arrow-left" variant="secondary" iconOnly>
-  <auro-icon customColor customSize category="interface" name="arrow-left" slot="icon"></auro-icon>
+  <auro-icon customColor category="interface" name="arrow-left" slot="icon"></auro-icon>
 </auro-button>
 <auro-button aria-label="heart-filled" variant="tertiary" iconOnly>
-  <auro-icon customColor customSize category="interface" name="heart-filled" slot="icon"></auro-icon>
+  <auro-icon customColor category="interface" name="heart-filled" slot="icon"></auro-icon>
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -241,7 +241,7 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
 
 Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` element for a slimmer icon only button with less padding.
 
-Be sure to also use the `customColor` and `customSize` attributes on the `auro-icon` component, as well as add `height` and `width` styles to the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
+Be sure to use the `customColor` and `customSize` attributes on the `auro-icon` component, as well as add `height` and `width` styles to the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconOnlySlim.html) -->
@@ -288,7 +288,7 @@ Use the `rounded` attribute in conjunction with the `iconOnly` attribute for an 
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/rounded.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/rounded.html -->
   <auro-button aria-label="arrow-up" rounded iconOnly>
-    <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
+    <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -299,7 +299,7 @@ Use the `rounded` attribute in conjunction with the `iconOnly` attribute for an 
 
 ```html
 <auro-button aria-label="arrow-up" rounded iconOnly>
-  <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
+  <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -314,7 +314,7 @@ This example demonstrates a `rounded` `auro-button` with text and an `auro-icon`
   <!-- The below content is automatically added from ./../../apiExamples/roundedTextWithIcon.html -->
   <auro-button aria-label="in-flight" rounded>
     Back to Top
-    <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
+    <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -326,7 +326,7 @@ This example demonstrates a `rounded` `auro-button` with text and an `auro-icon`
 ```html
 <auro-button aria-label="in-flight" rounded>
   Back to Top
-  <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
+  <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -366,7 +366,7 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
   <!-- The below content is automatically added from ./../../apiExamples/toggledText.html -->
   <auro-button aria-label="arrow-up" rounded iconOnly id="toggledTextElem">
     Text is now shown!
-    <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
+    <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -378,7 +378,7 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
 ```html
 <auro-button aria-label="arrow-up" rounded iconOnly id="toggledTextElem">
   Text is now shown!
-  <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
+  <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -420,7 +420,7 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
   <!-- The below content is automatically added from ./../../apiExamples/roundedRightAlign.html -->
   <auro-button aria-label="in-flight" rounded iconOnly id="rightAlignElem" style="float: right;">
     Text is now shown!
-    <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
+    <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -432,7 +432,7 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 ```html
 <auro-button aria-label="in-flight" rounded iconOnly id="rightAlignElem" style="float: right;">
   Text is now shown!
-  <auro-icon customSize customcolor category="interface" name="arrow-up" slot="icon"></auro-icon>
+  <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->

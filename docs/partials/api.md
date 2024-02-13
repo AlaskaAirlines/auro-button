@@ -90,7 +90,7 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
 
 Use the `iconOnly` attribute with the `auro-button` element for a style specific to having only an `auro-icon` as the button's content.
 
-Be sure to also use the `customColor` and `customSize` attributes on the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
+Be sure to use the `customColor` attribute on the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
 
 **Recommended**: We strongly encourage the users of the icon only `auro-button` to use the `aria-label` attribute. Without this attribute, the screenreaders will not properly describe the button content to it's users.
 
@@ -112,7 +112,7 @@ Be sure to also use the `customColor` and `customSize` attributes on the `auro-i
 
 Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` element for a slimmer icon only button with less padding.
 
-Be sure to also use the `customColor` and `customSize` attributes on the `auro-icon` component, as well as add `height` and `width` styles to the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
+Be sure to use the `customColor` and `customSize` attributes on the `auro-icon` component, as well as add `height` and `width` styles to the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconOnlySlim.html) -->
