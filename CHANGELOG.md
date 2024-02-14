@@ -1,5 +1,21 @@
 # Semantic Release Automated Changelog
 
+## [7.2.7](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.6...v7.2.7) (2024-02-14)
+
+
+### Bug Fixes
+
+* **slim:** render icon in icononly slim example [#245](https://github.com/AlaskaAirlines/auro-button/issues/245) ([380e8c0](https://github.com/AlaskaAirlines/auro-button/commit/380e8c0f073253c48af5f21995206c12f020101c))
+
+
+### Performance Improvements
+
+* **demo:** update demofile name ([f11d9c5](https://github.com/AlaskaAirlines/auro-button/commit/f11d9c5625d3ffc8087c28beec1b32052ae86337))
+* **examples:** update references to example files ([47bff95](https://github.com/AlaskaAirlines/auro-button/commit/47bff950e69fb18aa8b736ce8a57299aa8de1ecd))
+* **jsdocs:** update event jsdocs ([954dbb4](https://github.com/AlaskaAirlines/auro-button/commit/954dbb44a0e0588ca2f55e0945e7c0890c01dc43))
+* **styles:** update styles for icon only buttons ([99f5488](https://github.com/AlaskaAirlines/auro-button/commit/99f548812bebd5f56a32757fd2c1d9d4379835a9))
+* update dependencies ([83b4486](https://github.com/AlaskaAirlines/auro-button/commit/83b44863b0836b13a3ce55c5d0724c3cd4faba7a))
+
 ## [7.2.6](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.5...v7.2.6) (2024-02-01)
 
 
