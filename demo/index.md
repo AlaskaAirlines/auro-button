@@ -220,3 +220,37 @@ Don't combine `disabled` and `loading` attributes on any single instance of `aur
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
+
+## Recommended Use and Version Control
+
+There are two important parts of every Auro component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom clement. The class is exported and then used as part of defining the Web Component. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `auro-button` custom element is defined automatically.
+
+To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `registerComponent(name)` method and pass in a unique name.
+
+```js
+import './node_modules/@aurodesignsystem/auro-button';
+registerComponent('custom-button');
+```
+
+This will create a new custom element that you can use in your HTML that will function identically to the `<auro-button>` element.
+
+<div class="exampleWrapper exampleWrapper--flex">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/custom.html -->
+  <custom-button>Primary</custom-button>
+  <custom-button variant="secondary">Secondary</custom-button>
+  <custom-button variant="tertiary">Tertiary</custom-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
+
+```html
+<custom-button>Primary</custom-button>
+<custom-button variant="secondary">Secondary</custom-button>
+<custom-button variant="tertiary">Tertiary</custom-button>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
