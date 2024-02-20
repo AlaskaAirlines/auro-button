@@ -11,6 +11,3 @@ export function registerComponent(name) {
     customElements.define(name, class extends AuroButton {});
   }
 }
-
-// Example custom registration
-// registerComponent('my-button');
