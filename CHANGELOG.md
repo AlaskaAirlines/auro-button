@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [7.2.8](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.7...v7.2.8) (2024-02-20)
+
+
+### Performance Improvements
+
+* **docs:** add custom registration example to index page ([31a7bd6](https://github.com/AlaskaAirlines/auro-button/commit/31a7bd6de507d5bc6254f4b49b18a94978974d44))
+
 ## [7.2.7](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.6...v7.2.7) (2024-02-14)
 
 
