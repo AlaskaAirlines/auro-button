@@ -88,12 +88,11 @@
     ]
   },
   "scripts": {
-    "build": "npm-run-all build:sass sass:render scssLint dist:js build:docs bundler postinstall build:api build:demoScripts types",
+    "build": "npm-run-all build:sass sass:render scssLint dist:js build:docs bundler postinstall build:api types",
     "build:ci": "npm-run-all sweep build",
     "build:dev:assets": "npm-run-all build:sass:component postCss:component sass:render",
     "build:api": "wca analyze 'src/auro-button.js' --outFiles docs/api.md",
     "build:docs": "node scripts/generateDocs.mjs",
-    "build:demoScripts": "node scripts/prepExampleFiles.mjs",
     "build:watch": "nodemon -e scss,js --watch src --exec npm run build:dev:assets",
     "bundler": "rollup -c",
     "bundle:test": "rollup -c -w",
