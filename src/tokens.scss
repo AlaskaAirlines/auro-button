@@ -1,0 +1,11 @@
+:host {
+  --ds-auro-button-text-color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
+  --ds-auro-button-container-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+  --ds-auro-button-container-image: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+  --ds-auro-button-border-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+
+  // THE BELOW TOKEN SEEMS WRONG - WAITING FOR RESPONSE FROM JUNE
+  --ds-auro-button-border-inset-color: var(--ds-color-border-emphasis-inverse, $ds-color-border-emphasis-inverse);
+  --ds-auro-button-loader-color: var(--ds-color-background-darkest, $ds-color-background-darkest);
+  --ds-auro-button-tap-color: transparent;
+}
