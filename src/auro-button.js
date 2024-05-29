@@ -7,6 +7,8 @@ import { LitElement, html } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import styleCss from "./style-css.js";
+import colorsCss from "./colors-css.js";
+import tokensCss from "./tokens-css.js";
 import '@aurodesignsystem/auro-loader';
 
 /**
@@ -14,9 +16,7 @@ import '@aurodesignsystem/auro-loader';
  * @attr {Boolean} disabled - If set to true button will become disabled and not allow for interactions
  * @attr {Boolean} iconOnly - If set to true, the button will contain an icon with no additional content
  * @attr {Boolean} loading - If set to true button text will be replaced with `auro-loader` and become disabled
- * @attr {Boolean} ondark - Set value for on-dark version of auro-button
- * @attr {Boolean} secondary - DEPRECATED
- * @attr {Boolean} tertiary - DEPRECATED
+ * @attr {Boolean} onDark - Set value for on-dark version of auro-button
  * @attr {Boolean} rounded - If set to true, the button will have a rounded shape
  * @attr {Boolean} slim - Set value for slim version of auro-button
  * @attr {Boolean} fluid - Alters the shape of the button to be full width of its parent container
@@ -46,7 +46,7 @@ export class AuroButton extends LitElement {
     this.disabled = false;
     this.iconOnly = false;
     this.loading = false;
-    this.ondark = false;
+    this.onDark = false;
     this.ready = false;
     this.secondary = false;
     this.tertiary = false;
@@ -56,7 +56,11 @@ export class AuroButton extends LitElement {
   }
 
   static get styles() {
-    return [styleCss];
+    return [
+      tokensCss,
+      styleCss,
+      colorsCss
+    ];
   }
 
   static get properties() {
@@ -89,7 +93,7 @@ export class AuroButton extends LitElement {
         type: Boolean,
         reflect: true
       },
-      ondark:           {
+      onDark:           {
         type: Boolean,
         reflect: true
       },
@@ -158,20 +162,9 @@ export class AuroButton extends LitElement {
   }
 
   render() {
-
-    // deprecated options - maintaining for backwards compatibility
-    // auro-button--secondary
-    // auro-buttonOndark--secondary
-    // auro-button--tertiary
-    // auro-buttonOndark--tertiary
     const classes = {
       'util_insetLg--squish': true,
       'auro-button': true,
-      'auro-buttonOndark': this.ondark,
-      'auro-button--secondary': this.secondary,
-      'auro-buttonOndark--secondary': this.secondary && this.ondark,
-      'auro-button--tertiary': this.tertiary,
-      'auro-buttonOndark--tertiary': this.tertiary && this.ondark,
       'auro-button--rounded': this.rounded,
       'auro-button--slim': this.slim,
       'auro-button--iconOnly': this.iconOnly,
@@ -187,6 +180,9 @@ export class AuroButton extends LitElement {
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
         ?disabled="${this.disabled || this.loading}"
+        ?onDark="${this.onDark}"
+        ?secondary="${this.secondary}"
+        ?tertiary="${this.tertiary}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
         type="${ifDefined(this.type ? this.type : undefined)}"

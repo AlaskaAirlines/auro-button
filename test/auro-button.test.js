@@ -71,7 +71,7 @@ describe('auro-button', () => {
 
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
-    expect(classList.includes('auro-buttonOndark')).to.be.true;
+    expect(el.hasAttribute('ondark')).to.be.true;
   });
 
   it('tests setting secondary', async () => {
@@ -85,7 +85,7 @@ describe('auro-button', () => {
 
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
-    expect(classList.includes('auro-button--secondary')).to.be.true;
+    expect(el.hasAttribute('secondary')).to.be.true;
   });
 
   it('tests setting secondary ondark', async () => {
@@ -99,9 +99,8 @@ describe('auro-button', () => {
 
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
-    expect(classList.includes('auro-button--secondary')).to.be.true;
-    expect(classList.includes('auro-buttonOndark--secondary')).to.be.true;
-    expect(classList.includes('auro-buttonOndark')).to.be.true;
+    expect(el.hasAttribute('ondark')).to.be.true;
+    expect(el.hasAttribute('secondary')).to.be.true;
   });
 
   it('tests setting tertiary', async () => {
@@ -115,7 +114,7 @@ describe('auro-button', () => {
 
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
-    expect(classList.includes('auro-button--tertiary')).to.be.true;
+    expect(el.hasAttribute('tertiary')).to.be.true;
   });
 
   it('tests setting tertiary ondark', async () => {
@@ -129,9 +128,8 @@ describe('auro-button', () => {
 
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
-    expect(classList.includes('auro-button--tertiary')).to.be.true;
-    expect(classList.includes('auro-buttonOndark--tertiary')).to.be.true;
-    expect(classList.includes('auro-buttonOndark')).to.be.true;
+    expect(el.hasAttribute('ondark')).to.be.true;
+    expect(el.hasAttribute('tertiary')).to.be.true;
   });
 
   it('tests setting arialabel', async () => {
