@@ -90,7 +90,7 @@ auro-loader {
 
       @media (hover: hover) {
         &:active:not(:disabled),
-        &:hover:not(:disabled) {        
+        &:hover:not(:disabled) {
           --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-hover-default, #{$ds-color-container-ui-secondary-hover-default});
           --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-hover-default, #{$ds-color-container-ui-secondary-hover-default});
           --ds-auro-button-border-color: var(--ds-color-border-ui-hover-default, #{$ds-color-border-ui-hover-default});
@@ -128,7 +128,7 @@ auro-loader {
 
       @media (hover: hover) {
         &:active:not(:disabled),
-        &:hover:not(:disabled) {        
+        &:hover:not(:disabled) {
           --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-hover-default, #{$ds-color-container-ui-tertiary-hover-default});
           --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-hover-default, #{$ds-color-container-ui-tertiary-hover-default});
           --ds-auro-button-border-color: transparent;
@@ -271,7 +271,7 @@ auro-loader {
 
       @media (hover: hover) {
         &:active:not(:disabled),
-        &:hover:not(:disabled) {        
+        &:hover:not(:disabled) {
           --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-hover-inverse, #{$ds-color-container-ui-tertiary-hover-inverse});
           --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-hover-inverse, #{$ds-color-container-ui-tertiary-hover-inverse});
           --ds-auro-button-border-color: transparent;
