@@ -19,7 +19,11 @@
    declaration-empty-line-before,
    property-no-vendor-prefix,
    selector-max-class,
-   no-duplicate-selectors */
+   no-duplicate-selectors,
+   selector-max-attribute,
+   selector-max-pseudo-class,
+   selector-not-notation
+   */
 
 // Import Auro Sass variables
 @import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
@@ -33,12 +37,6 @@
 
 $auro-inset-spacing-options: lg;
 $auro-inset-directions:'--squish';
-
-// TO-DO
-// Sass and CSS variables do not process together
-// These values should be moved to Auro Design Tokens for use
-$auro-rgb-color-base-black-03: rgba(0, 0, 0, .03);
-$auro-rgb-color-base-white-03: rgba(255, 255, 255, .03);
 
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
 
@@ -62,18 +60,15 @@ slot {
 
 // Button styles
 .auro-button {
-  @include auro_transition(all, 0.15s, ease);
-  $disabledOPacity: .4;
-
   position: relative;
 
   padding: 0 var(--ds-size-300, $ds-size-300);
 
-  color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
   cursor: pointer;
-  background-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-  border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+  border-width: 1px;
+  border-style: solid;
   border-radius: var(--ds-border-radius, $ds-border-radius);
+
   font-family: var(--ds-font-family-default, $ds-font-family-default);
   font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
   font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
@@ -95,24 +90,45 @@ slot {
   margin: 0;
 
   // macOS / iOS agents
-  -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 
-  // handle hover state auro-button
-  @media (hover: hover) {
-    &:active,
-    &:hover:not(:disabled) {
-      background-image: linear-gradient(var(--ds-color-ui-hover-default, $ds-color-ui-hover-default), var(--ds-color-ui-hover-default, $ds-color-ui-hover-default));
-      border: 1px solid var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
-    }
-  }
-
   // handle active state
   &:active {
-    background-color: var(--ds-color-ui-active-default, $ds-color-ui-active-default);
-    border: 1px solid var(--ds-color-ui-active-default, $ds-color-ui-active-default);
     transform: scale(0.95);
+  }
+
+  &:focus-visible {
+    &:not([variant='secondary']):not([variant='tertiary']) {
+      &:after {
+        display: block;
+        content: '';
+        height: calc(100% - 2px);
+        width: calc(100% - 2px);
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 2px;
+      }
+    }
+
+    &[variant='secondary'],
+    &[variant='tertiary'] {
+      &:after {
+        display: block;
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: var(--ds-border-radius, $ds-border-radius);
+        border-style: solid;
+        border-width: 2px;
+      }
+    }
   }
 
   &.loading {
@@ -120,16 +136,6 @@ slot {
 
     *:not(auro-loader) {
       visibility: hidden;
-    }
-
-    auro-loader {
-      color: var(--ds-color-background-darkest, $ds-color-background-darkest, $ds-color-background-darkest);
-    }
-
-    &.auro-buttonOndark {
-      auro-loader {
-        color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
-      }
     }
   }
 
@@ -141,172 +147,50 @@ slot {
   &:disabled {
     cursor: not-allowed;
     transform: unset;
-
-    background-color: rgba($ds-color-ui-default-default, $disabledOPacity);
-    border: 1px solid rgba($ds-color-ui-default-default, 0);
   }
 
-  // auro-button--secondary
-  &[variant='secondary'],
-  &--secondary {
-    background-color: var(--ds-color-background-lightest, $ds-color-background-lightest);
-    border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-    color: var(--ds-color-text-link-default, $ds-color-text-link-default);
-
-    @media (hover: hover) {
-      &:active,
-      &:hover:not(:disabled) {
-        background-image: linear-gradient(var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default), var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default));
-        border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-      }
-    }
-
-    &:active {
-      background-color: var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default);
-      border: 1px solid var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-    }
-
+  &[variant='secondary'] {
     &:disabled {
       cursor: not-allowed;
       transform: unset;
-
-      color: rgba($ds-color-text-link-default, $disabledOPacity);
-      background-color: rgba($ds-color-background-lightest, $disabledOPacity);
-      border: 1px solid rgba($ds-color-ui-default-default, $disabledOPacity);
     }
   }
 
-  // auro-button--tertiary
-  &[variant='tertiary'],
-  &--tertiary {
-    background-color: $auro-rgb-color-base-black-03;
-    border-color: transparent;
-    color: var(--ds-color-text-link-default, $ds-color-text-link-default);
-
-    @media (hover: hover) {
-      &:active,
-      &:hover:not(:disabled) {
-        background-image: linear-gradient(var(--ds-color-ui-bkg-hover-default), var(--ds-color-ui-bkg-hover-default));
-        border-color: transparent;
-      }
-    }
-
-    &:active {
-      background-color: var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default);
-      border-color: transparent;
-    }
-
+  &[variant='tertiary'] {
     &:disabled {
       cursor: not-allowed;
       transform: unset;
-
-      color: rgba($ds-color-text-link-default, $disabledOPacity);
-      background-color: $auro-rgb-color-base-black-03;
-      border: 1px solid transparent;
     }
   }
 
-  &Ondark {
-    background-color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-    border: 1px solid var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-    color: var(--ds-color-text-primary-default);
-
-    // auro-buttonOndark hover
-    @media (hover: hover) {
-      &:active,
-      &:hover:not(:disabled) {
-        background-image: linear-gradient(var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse), var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse));
-        border: 1px solid var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
-      }
-    }
-
-    &:active {
-      background-color: var(--ds-color-ui-active-inverse, $ds-color-ui-active-inverse);
-      border: 1px solid var(--ds-color-ui-active-inverse, $ds-color-ui-active-inverse);
-    }
-
+  &[ondark] {
     &:disabled {
       cursor: not-allowed;
       transform: unset;
-
-      color: rgba($ds-color-text-primary-default, $disabledOPacity);
-      background-color: rgba($ds-color-ui-default-inverse, $disabledOPacity);
-      border: 1px solid rgba($ds-color-ui-default-inverse, $disabledOPacity);
     }
 
-    // auro-buttonOndark--secondary
-    &[variant='secondary'],
-    &--secondary {
-      background-color: var(--ds-color-background-darker, $ds-color-background-darker);
-      border: 1px solid var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-      color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-
-      @media (hover: hover) {
-        &:active,
-        &:hover:not(:disabled) {
-          background-image: linear-gradient(var(--ds-color-background-darkest, $ds-color-background-darkest), var(--ds-color-background-darkest, $ds-color-background-darkest));
-        }
-      }
-
-      &:active {
-        background-color: var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15);
-        border: 1px solid var(--ds-color-ui-hover-inverse, $ds-color-ui-hover-inverse);
-      }
-
+    &[variant='secondary'] {
       &:disabled {
         cursor: not-allowed;
         transform: unset;
-
-        color: rgba($ds-color-ui-default-inverse, $disabledOPacity);
-        background-color: var(--ds-color-background-darker, $ds-color-background-darker);
-        border: 1px solid rgba($ds-color-ui-default-inverse, $disabledOPacity);
-
-        @media (hover: hover) {
-          &:hover {
-            color: rgba($ds-color-ui-default-inverse, $disabledOPacity);
-            background-color: var(--ds-color-background-darker, $ds-color-background-darker);
-            border: 1px solid rgba($ds-color-ui-default-inverse, $disabledOPacity);
-          }
-        }
       }
     }
 
-    // auro-button--tertiary
-    &[variant='tertiary'],
-    &--tertiary {
-      background-color: $auro-rgb-color-base-white-03;
-      border: 1px solid transparent;
-      color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
-
+    &[variant='tertiary'] {
       @media (hover: hover) {
         &:active,
         &:hover {
-          background-image: linear-gradient(var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse), var(--ds-color-ui-bkg-hover-inverse, $ds-color-ui-bkg-hover-inverse));
-          border: 1px solid transparent;
           box-shadow: none;
         }
       }
 
       &:active {
-        background-color: var(--ds-color-base-black-opacity-15, $ds-color-base-black-opacity-15);
-        border: 1px solid transparent;
         box-shadow: none;
       }
 
       &:disabled {
         cursor: not-allowed;
         transform: unset;
-        background-color: $auro-rgb-color-base-white-03;
-        border: transparent;
-        color: rgba($ds-color-ui-default-inverse, $disabledOPacity);
-
-        @media (hover: hover) {
-          &:hover {
-            background-color: $auro-rgb-color-base-white-03;
-            color: rgba($ds-color-ui-default-inverse, $disabledOPacity);
-            border: transparent;
-          }
-        }
       }
     }
   }

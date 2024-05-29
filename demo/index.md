@@ -174,7 +174,7 @@ These examples illustrate a common use case where a user will want to pass a fun
   <!-- The below content is automatically added from ./../../apiExamples/passFunction.html -->
   <auro-button onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
   <auro-button disabled onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
-  <auro-button loading onclick="alert('YOU CLICKED ME!');">Primary</auro-button
+  <auro-button loading onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -185,7 +185,7 @@ These examples illustrate a common use case where a user will want to pass a fun
 ```html
 <auro-button onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
 <auro-button disabled onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
-<auro-button loading onclick="alert('YOU CLICKED ME!');">Primary</auro-button
+<auro-button loading onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
