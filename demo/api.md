@@ -66,7 +66,7 @@
   <auro-button variant="tertiary">Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
@@ -75,6 +75,26 @@
 <auro-button>Primary</auro-button>
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/onDark.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/onDark.html -->
+  <auro-button ondark>Primary</auro-button>
+  <auro-button variant="secondary" ondark>Secondary</auro-button>
+  <auro-button variant="tertiary" ondark>Tertiary</auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/onDark.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/onDark.html -->
+
+```html
+<auro-button ondark>Primary</auro-button>
+<auro-button variant="secondary" ondark>Secondary</auro-button>
+<auro-button variant="tertiary" ondark>Tertiary</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -91,7 +111,7 @@ This example demonstrates `auro-button` in it's `disabled` state.
   <auro-button variant="tertiary" disabled>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabled.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/disabled.html -->
@@ -103,7 +123,7 @@ This example demonstrates `auro-button` in it's `disabled` state.
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
-<div class="exampleWrapper">
+<div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabledOnDark.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/disabledOnDark.html -->
   <auro-button disabled ondark>Primary</auro-button>
@@ -111,7 +131,7 @@ This example demonstrates `auro-button` in it's `disabled` state.
   <auro-button variant="tertiary" disabled ondark>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabledOnDark.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/disabledOnDark.html -->
@@ -136,7 +156,7 @@ Use the `slim` attribute with the `auro-button` element for a slim style with le
   <auro-button slim variant="tertiary">Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/slim.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/slim.html -->
@@ -174,7 +194,7 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/icon.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/icon.html -->
@@ -218,7 +238,7 @@ Be sure to use the `customColor` attribute on the `auro-icon` component to allow
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconOnly.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/iconOnly.html -->
@@ -257,7 +277,7 @@ Be sure to use the `customColor` and `customSize` attributes on the `auro-icon` 
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconOnlySlim.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/iconOnlySlim.html -->
@@ -292,7 +312,7 @@ Use the `rounded` attribute in conjunction with the `iconOnly` attribute for an 
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/rounded.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/rounded.html -->
@@ -318,7 +338,7 @@ This example demonstrates a `rounded` `auro-button` with text and an `auro-icon`
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedTextWithIcon.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/roundedTextWithIcon.html -->
@@ -344,7 +364,7 @@ A `rounded` `auro-button` with text only.
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedTextOnly.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/roundedTextOnly.html -->
@@ -370,7 +390,7 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/toggledText.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/toggledText.html -->
@@ -424,7 +444,7 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedRightAlign.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/roundedRightAlign.html -->
@@ -477,7 +497,7 @@ In the following example see how the `fluid` attributes alters the shape of the 
   <auro-button variant="tertiary" fluid>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/fluid.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/fluid.html -->
@@ -502,7 +522,7 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
   <auro-button variant="tertiary" loading>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loading.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/loading.html -->
@@ -514,7 +534,7 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
-<div class="exampleWrapper">
+<div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loadingOnDark.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/loadingOnDark.html -->
   <auro-button ondark loading>Primary</auro-button>
@@ -522,7 +542,7 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
   <auro-button variant="tertiary" ondark loading>Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion alightRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loadingOnDark.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/loadingOnDark.html -->
@@ -534,3 +554,25 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
+
+## Theme Support
+
+The component may be restyled using the following code sample and changing the values of the following token(s).
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
+<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
+
+```scss
+:host {
+  --ds-auro-button-text-color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
+  --ds-auro-button-container-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+  --ds-auro-button-container-image: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+  --ds-auro-button-border-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+
+  // THE BELOW TOKEN SEEMS WRONG - WAITING FOR RESPONSE FROM JUNE
+  --ds-auro-button-border-inset-color: var(--ds-color-border-emphasis-inverse, $ds-color-border-emphasis-inverse);
+  --ds-auro-button-loader-color: var(--ds-color-background-darkest, $ds-color-background-darkest);
+  --ds-auro-button-tap-color: transparent;
+}
+```
+<!-- AURO-GENERATED-CONTENT:END -->
