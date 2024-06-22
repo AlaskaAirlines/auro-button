@@ -118,7 +118,15 @@
     "postversion": "npm-run-all build:api build:docs"
   },
   "release": {
-    "branch": "master",
+    "branches": [
+      {
+        "name": "master"
+      },
+      {
+        "name": "beta",
+        "prerelease": true
+      }
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
