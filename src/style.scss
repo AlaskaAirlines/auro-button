@@ -174,7 +174,7 @@ slot {
     padding: unset;
   }
 
-  &[ondark] {
+  &[onDark] {
     &:disabled {
       cursor: not-allowed;
       transform: unset;

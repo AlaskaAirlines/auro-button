@@ -17,7 +17,7 @@
 | `fluid`          | `fluid`          | `Boolean` | false   | Alters the shape of the button to be full width of its parent container |
 | `iconOnly`       | `iconOnly`       | `Boolean` | false   | If set to true, the button will contain an icon with no additional content |
 | `loading`        | `loading`        | `Boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled |
-| `ondark`         | `ondark`         | `Boolean` | false   | Set value for on-dark version of auro-button     |
+| `onDark`         | `onDark`         | `Boolean` | false   | Set value for on-dark version of auro-button     |
 | `ready`          | `ready`          | `Boolean` | false   | When false the component API should not be called. |
 | `rounded`        | `rounded`        | `Boolean` | false   | If set to true, the button will have a rounded shape |
 | `secondary`      | `secondary`      | `Boolean` | false   | DEPRECATED                                       |
