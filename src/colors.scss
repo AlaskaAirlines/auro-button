@@ -92,8 +92,8 @@ auro-loader {
     }
 
     /**
-    * SECONDARY VARIANT STYLES
-    */
+     * SECONDARY VARIANT STYLES
+     */
     &[variant='secondary'] {
       --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-default-default, #{$ds-color-container-ui-secondary-default-default});
       --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-default-default, #{$ds-color-container-ui-secondary-default-default});
@@ -139,8 +139,8 @@ auro-loader {
     }
 
     /**
-    * TERTIARY VARIANT STYLES
-    */
+     * TERTIARY VARIANT STYLES
+     */
     &[variant='tertiary'] {
       --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-default-default, #{$ds-color-container-ui-tertiary-default-default});
       --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-default-default, #{$ds-color-container-ui-tertiary-default-default});
@@ -181,6 +181,42 @@ auro-loader {
             --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-disabled-default, #{$ds-color-container-ui-tertiary-disabled-default});
             --ds-auro-button-border-color: transparent;
             --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-default, #{$ds-color-text-ui-disabled-default});
+          }
+        }
+      }
+    }
+
+    /**
+     * FLAT VARIANT STYLES
+     */
+    &[variant='flat'] {
+      color: var(--ds-color-icon-ui-default-default);
+      background-color: transparent;
+      background-image: none;
+      border-color: transparent;
+
+      @media (hover: hover) {
+        &:active,
+        &:hover {
+          color: var(--ds-color-icon-ui-hover-default);
+          background-color: transparent;
+          background-image: none;
+          border-color: transparent;
+        }
+      }
+
+      &:disabled {
+        color: var(--ds-color-icon-ui-disabled-default);
+        background-color: transparent;
+        background-image: none;
+        border-color: transparent;
+
+        @media (hover: hover) {
+          &:hover {
+            color: var(--ds-color-icon-ui-disabled-default);
+            background-color: transparent;
+            background-image: none;
+            border-color: transparent;
           }
         }
       }
@@ -327,6 +363,38 @@ auro-loader {
             --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-disabled-inverse, #{$ds-color-container-ui-tertiary-disabled-inverse});
             --ds-auro-button-border-color: transparent;
             --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-inverse, #{$ds-color-text-ui-disabled-inverse});
+          }
+        }
+      }
+    }
+
+    &[variant='flat'] {
+      color: var(--ds-color-icon-ui-default-default);
+      background-color: transparent;
+      border-color: transparent;
+
+      @media (hover: hover) {
+        &:active,
+        &:hover {
+          color: var(--ds-color-icon-ui-hover-default);
+          background-color: transparent;
+          background-image: none;
+          border-color: transparent;
+        }
+      }
+
+      &:disabled {
+        color: var(--ds-color-icon-ui-disabled-default);
+        background-color: transparent;
+        background-image: none;
+        border-color: transparent;
+
+        @media (hover: hover) {
+          &:hover {
+            color: var(--ds-color-icon-ui-disabled-default);
+            background-color: transparent;
+            background-image: none;
+            border-color: transparent;
           }
         }
       }
