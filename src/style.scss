@@ -134,7 +134,7 @@ slot {
   &.loading {
     cursor: not-allowed;
 
-    *:not(auro-loader) {
+    *:not([auro-loader]) {
       visibility: hidden;
     }
   }
@@ -286,7 +286,7 @@ slot {
   }
 }
 
-auro-loader {
+[auro-loader] {
   position: absolute;
   top: 50%;
   left: 50%;
