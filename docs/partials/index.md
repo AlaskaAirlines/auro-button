@@ -38,7 +38,7 @@ In cases were the action of the button would not fit the criteria above, it is m
 
 These examples illustrate the core button types and a `disabled` state on dark backgrounds using the `onDark` attribute.
 
-<div class="exampleWrapper">
+<div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/onDark.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>

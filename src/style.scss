@@ -163,6 +163,17 @@ slot {
     }
   }
 
+  &[variant='flat'] {
+    height: unset;
+    width: unset;
+    min-height: unset;
+    max-height: unset;
+    border: 0;
+    border-radius: unset;
+    gap: unset;
+    padding: unset;
+  }
+
   &[ondark] {
     &:disabled {
       cursor: not-allowed;
