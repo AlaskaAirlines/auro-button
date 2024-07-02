@@ -31,6 +31,8 @@ import loaderVersion from './loaderVersion';
  * @attr {String} type - The type of the button. Possible values are: `submit`, `reset`, `button`
  * @attr {String} value - Defines the value associated with the button which is submitted with the form data.
  * @attr {String} variant - Sets button variant option. Possible values are: `secondary`, `tertiary`
+ * @attr {Boolean} secondary - DEPRECATED
+ * @attr {Boolean} tertiary - DEPRECATED
  * @prop {Boolean} ready - When false the component API should not be called.
  * @event auroButton-ready - Notifies that the component has finished initializing.
  * @slot - Default slot for the text of the button.
@@ -63,6 +65,10 @@ export class AuroButton extends LitElement {
      * Generate unique names for dependency components.
      */
     const versioning = new AuroDependencyVersioning();
+
+    /**
+     * @private
+     */
     this.loaderTag = versioning.generateTag('auro-loader', loaderVersion, AuroLoader);
   }
 
@@ -168,6 +174,17 @@ export class AuroButton extends LitElement {
     }));
   }
 
+  updated() {
+    // support the old `secondary` and `tertiary` attributes` that are deprecated
+    if (this.secondary) {
+      this.setAttribute('variant', 'secondary');
+    }
+
+    if (this.tertiary) {
+      this.setAttribute('variant', 'tertiary');
+    }
+  }
+
   firstUpdated() {
     this.notifyReady();
   }
@@ -192,8 +209,6 @@ export class AuroButton extends LitElement {
         class="${classMap(classes)}"
         ?disabled="${this.disabled || this.loading}"
         ?onDark="${this.onDark}"
-        ?secondary="${this.secondary}"
-        ?tertiary="${this.tertiary}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
         type="${ifDefined(this.type ? this.type : undefined)}"

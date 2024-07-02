@@ -68,7 +68,7 @@ This example demonstrates `auro-button` in it's `disabled` state.
 
 </auro-accordion>
 
-<div class="exampleWrapper">
+<div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabledOnDark.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
