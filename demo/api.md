@@ -20,7 +20,7 @@
 | [fluid](#fluid)          | `fluid`          | `Boolean` | false   | Alters the shape of the button to be full width of its parent container |
 | [iconOnly](#iconOnly)       | `iconOnly`       | `Boolean` | false   | If set to true, the button will contain an icon with no additional content |
 | [loading](#loading)        | `loading`        | `Boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled |
-| [ondark](#ondark)         | `ondark`         | `Boolean` | false   | Set value for on-dark version of auro-button     |
+| [onDark](#onDark)         | `onDark`         | `Boolean` | false   | Set value for on-dark version of auro-button     |
 | [ready](#ready)          | `ready`          | `Boolean` | false   | When false the component API should not be called. |
 | [rounded](#rounded)        | `rounded`        | `Boolean` | false   | If set to true, the button will have a rounded shape |
 | [secondary](#secondary)      | `secondary`      | `Boolean` | false   | DEPRECATED                                       |
@@ -564,10 +564,10 @@ The component may be restyled using the following code sample and changing the v
 
 ```scss
 :host {
+  --ds-auro-button-border-color: var(--ds-color-container-ui-primary-active-default, $ds-color-container-ui-primary-active-default);
+  --ds-auro-button-container-color: var(--ds-color-container-ui-primary-active-default, $ds-color-container-ui-primary-active-default);
+  --ds-auro-button-container-image: var(--ds-color-container-ui-primary-active-default, $ds-color-container-ui-primary-active-default);
   --ds-auro-button-text-color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
-  --ds-auro-button-container-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-  --ds-auro-button-container-image: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-  --ds-auro-button-border-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
 
   // THE BELOW TOKEN SEEMS WRONG - WAITING FOR RESPONSE FROM JUNE
   --ds-auro-button-border-inset-color: var(--ds-color-border-emphasis-inverse, $ds-color-border-emphasis-inverse);
