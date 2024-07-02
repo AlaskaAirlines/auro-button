@@ -54,7 +54,7 @@ In cases were the action of the button would not fit the criteria above, it is m
 
 These examples illustrate the core button types and a `disabled` state on dark backgrounds using the `onDark` attribute.
 
-<div class="exampleWrapper">
+<div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/onDark.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/onDark.html -->
   <auro-button ondark>Primary</auro-button>
@@ -99,7 +99,7 @@ This example demonstrates `auro-button` in it's `disabled` state.
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
-<div class="exampleWrapper">
+<div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabledOnDark.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/disabledOnDark.html -->
   <auro-button disabled ondark>Primary</auro-button>
