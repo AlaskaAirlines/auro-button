@@ -3,13 +3,17 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html } from "lit";
+import { LitElement } from "lit";
+import { html } from 'lit/static-html.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
+import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 import styleCss from "./style-css.js";
 import colorsCss from "./colors-css.js";
 import tokensCss from "./tokens-css.js";
-import '@aurodesignsystem/auro-loader';
+
+import { AuroLoader } from '@aurodesignsystem/auro-loader/src/auro-loader.js';
+import loaderVersion from './loaderVersion';
 
 /**
  * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user
@@ -37,7 +41,8 @@ import '@aurodesignsystem/auro-loader';
  * @csspart icon - Apply CSS to icon slot.
  */
 
-/* eslint-disable max-statements, one-var, no-magic-numbers */
+/* eslint-disable max-statements, one-var, no-magic-numbers, lit/no-invalid-html, lit/binding-positions */
+
 export class AuroButton extends LitElement {
 
   constructor() {
@@ -53,6 +58,12 @@ export class AuroButton extends LitElement {
     this.rounded = false;
     this.slim = false;
     this.fluid = false;
+
+    /**
+     * Generate unique names for dependency components.
+     */
+    const versioning = new AuroDependencyVersioning();
+    this.loaderTag = versioning.generateTag('auro-loader', loaderVersion, AuroLoader);
   }
 
   static get styles() {
@@ -190,7 +201,7 @@ export class AuroButton extends LitElement {
         .value="${ifDefined(this.value ? this.value : undefined)}"
         @click="${() => {}}"
       >
-        ${ifDefined(this.loading ? html`<auro-loader pulse part="loader"></auro-loader>` : undefined)}
+        ${ifDefined(this.loading ? html`<${this.loaderTag} pulse part="loader"></${this.loaderTag}>` : undefined)}
 
         <span class="contentWrapper">
           <span class="textSlot" part="text">
