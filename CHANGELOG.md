@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+# [7.3.0-beta.1](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.9...v7.3.0-beta.1) (2024-07-03)
+
+
+### Features
+
+* **flat:** add new flat variant for use in auro-components ([49a6bcf](https://github.com/AlaskaAirlines/auro-button/commit/49a6bcf73565c6290282facd5acdb45739fcca1e))
+* **themes:** update styles to support component themes [#243](https://github.com/AlaskaAirlines/auro-button/issues/243) ([699def3](https://github.com/AlaskaAirlines/auro-button/commit/699def397a0702e1a52ccd9ebecb195dd5f5c831))
+
+
+### Performance Improvements
+
+* **loader:** use beta version of loader as direct dependency ([a7ca9de](https://github.com/AlaskaAirlines/auro-button/commit/a7ca9deb51f7742a6fadfd33679732aaad26a501))
+
 ## [7.2.9](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.8...v7.2.9) (2024-02-23)
 
 
