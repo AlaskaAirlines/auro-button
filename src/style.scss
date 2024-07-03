@@ -48,6 +48,17 @@ $auro-inset-directions:'--squish';
   }
 }
 
+:host([variant='flat']) {
+  display:inline-block; 
+  height: var(--ds-size-300, $ds-size-300);
+  width: var(--ds-size-300, $ds-size-300);
+
+  .auro-button {
+    height: 100%;
+    width: 100%;
+  }
+}
+
 // adjust alignment for slotted SVG icon
 ::slotted(svg) {
   vertical-align: middle;
@@ -168,6 +179,8 @@ slot {
     width: unset;
     min-height: unset;
     max-height: unset;
+    min-width: unset;
+    max-width: unset;
     border: 0;
     border-radius: unset;
     gap: unset;
