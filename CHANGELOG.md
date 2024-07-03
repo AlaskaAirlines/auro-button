@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [7.3.0-beta.2](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.1...v7.3.0-beta.2) (2024-07-03)
+
+
+### Bug Fixes
+
+* **flat:** change width CSS rules to 'unset' for the flat variant ([b771e7a](https://github.com/AlaskaAirlines/auro-button/commit/b771e7afc7bf5035b2bbeb07469e0d00b9711337))
+
 # [7.3.0-beta.1](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.9...v7.3.0-beta.1) (2024-07-03)
 
 
