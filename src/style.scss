@@ -110,7 +110,7 @@ slot {
   }
 
   &:focus-visible {
-    &:not([variant='secondary']):not([variant='tertiary']) {
+    &:not([variant='secondary']):not([variant='tertiary']):not([variant='flat']) {
       &:after {
         display: block;
         content: '';
