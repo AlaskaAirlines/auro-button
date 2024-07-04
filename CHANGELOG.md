@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [7.3.0-beta.3](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.2...v7.3.0-beta.3) (2024-07-04)
+
+
+### Bug Fixes
+
+* **flat:** remove focus border from flat variant ([2fc2636](https://github.com/AlaskaAirlines/auro-button/commit/2fc26362492c1e5a02846c50ce684bf6122a5fa8))
+
 # [7.3.0-beta.2](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.1...v7.3.0-beta.2) (2024-07-03)
 
 
