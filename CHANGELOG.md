@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [7.3.0-beta.4](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.3...v7.3.0-beta.4) (2024-07-06)
+
+
+### Performance Improvements
+
+* update design tokens and eslint config ([9a545a1](https://github.com/AlaskaAirlines/auro-button/commit/9a545a1452b2f530a56d400bb193111f1a6b023d))
+
 # [7.3.0-beta.3](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.2...v7.3.0-beta.3) (2024-07-04)
 
 
