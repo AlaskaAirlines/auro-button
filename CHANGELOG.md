@@ -1,52 +1,11 @@
 # Semantic Release Automated Changelog
 
-# [7.3.0-beta.6](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.5...v7.3.0-beta.6) (2024-07-08)
+## [7.2.10](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.9...v7.2.10) (2024-07-08)
 
 
 ### Bug Fixes
 
-* **flat:** correct colors in ondark flat variant ([6956baa](https://github.com/AlaskaAirlines/auro-button/commit/6956baaf64c0d25436d0fd12bbae713d6a79a1e3))
-
-# [7.3.0-beta.5](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.4...v7.3.0-beta.5) (2024-07-08)
-
-
-### Performance Improvements
-
-* **flat:** use the correct new tokens for the flat variant [#252](https://github.com/AlaskaAirlines/auro-button/issues/252) ([0e6576f](https://github.com/AlaskaAirlines/auro-button/commit/0e6576f5cb24e3dbaf903e0ef1d184a412bd9120))
-
-# [7.3.0-beta.4](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.3...v7.3.0-beta.4) (2024-07-06)
-
-
-### Performance Improvements
-
-* update design tokens and eslint config ([9a545a1](https://github.com/AlaskaAirlines/auro-button/commit/9a545a1452b2f530a56d400bb193111f1a6b023d))
-
-# [7.3.0-beta.3](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.2...v7.3.0-beta.3) (2024-07-04)
-
-
-### Bug Fixes
-
-* **flat:** remove focus border from flat variant ([2fc2636](https://github.com/AlaskaAirlines/auro-button/commit/2fc26362492c1e5a02846c50ce684bf6122a5fa8))
-
-# [7.3.0-beta.2](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.1...v7.3.0-beta.2) (2024-07-03)
-
-
-### Bug Fixes
-
-* **flat:** change width CSS rules to 'unset' for the flat variant ([b771e7a](https://github.com/AlaskaAirlines/auro-button/commit/b771e7afc7bf5035b2bbeb07469e0d00b9711337))
-
-# [7.3.0-beta.1](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.9...v7.3.0-beta.1) (2024-07-03)
-
-
-### Features
-
-* **flat:** add new flat variant for use in auro-components ([49a6bcf](https://github.com/AlaskaAirlines/auro-button/commit/49a6bcf73565c6290282facd5acdb45739fcca1e))
-* **themes:** update styles to support component themes [#243](https://github.com/AlaskaAirlines/auro-button/issues/243) ([699def3](https://github.com/AlaskaAirlines/auro-button/commit/699def397a0702e1a52ccd9ebecb195dd5f5c831))
-
-
-### Performance Improvements
-
-* **loader:** use beta version of loader as direct dependency ([a7ca9de](https://github.com/AlaskaAirlines/auro-button/commit/a7ca9deb51f7742a6fadfd33679732aaad26a501))
+* **hover:** remove disabled hover UI [#256](https://github.com/AlaskaAirlines/auro-button/issues/256) ([13fd26b](https://github.com/AlaskaAirlines/auro-button/commit/13fd26bdc068d6ee8bc35dba993bb8e400148d37))
 
 ## [7.2.9](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.8...v7.2.9) (2024-02-23)
 
