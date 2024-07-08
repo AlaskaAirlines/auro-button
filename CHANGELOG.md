@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [7.3.0-beta.6](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.5...v7.3.0-beta.6) (2024-07-08)
+
+
+### Bug Fixes
+
+* **flat:** correct colors in ondark flat variant ([6956baa](https://github.com/AlaskaAirlines/auro-button/commit/6956baaf64c0d25436d0fd12bbae713d6a79a1e3))
+
 # [7.3.0-beta.5](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.4...v7.3.0-beta.5) (2024-07-08)
 
 
