@@ -63,24 +63,12 @@ auro-loader {
       * We use the container color for the border color in this case because the border is not designed as visibly different from the container color
       */
       --ds-auro-button-border-color: var(--ds-color-container-ui-primary-disabled-default, #{$ds-color-container-ui-primary-disabled-default});
-
-      @media (hover: hover) {
-        &:hover {
-          --ds-auro-button-container-color: var(--ds-color-container-ui-primary-disabled-default, #{$ds-color-container-ui-primary-disabled-default});
-          --ds-auro-button-container-image: var(--ds-color-container-ui-primary-disabled-default, #{$ds-color-container-ui-primary-disabled-default});
-
-          /**
-          * We use the container color for the border color in this case because the border is not designed as visibly different from the container color
-          */
-          --ds-auro-button-border-color: var(--ds-color-container-ui-primary-disabled-default, #{$ds-color-container-ui-primary-disabled-default});
-        }
-      }
     }
 
     // handle hover state auro-button
     @media (hover: hover) {
-      &:active,
-      &:hover {
+      &:active:not(:disabled),
+      &:hover:not(:disabled) {
         --ds-auro-button-container-color: var(--ds-color-container-ui-primary-hover-default, #{$ds-color-container-ui-primary-hover-default});
         --ds-auro-button-container-image: var(--ds-color-container-ui-primary-hover-default, #{$ds-color-container-ui-primary-hover-default});
 
@@ -101,8 +89,8 @@ auro-loader {
       --ds-auro-button-text-color: var(--ds-color-text-ui-default-default, #{$ds-color-text-ui-default-default});
 
       @media (hover: hover) {
-        &:active,
-        &:hover {        
+        &:active:not(:disabled),
+        &:hover:not(:disabled) {        
           --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-hover-default, #{$ds-color-container-ui-secondary-hover-default});
           --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-hover-default, #{$ds-color-container-ui-secondary-hover-default});
           --ds-auro-button-border-color: var(--ds-color-border-ui-hover-default, #{$ds-color-border-ui-hover-default});
@@ -126,15 +114,6 @@ auro-loader {
         --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-disabled-default, #{$ds-color-container-ui-secondary-disabled-default});
         --ds-auro-button-border-color: var(--ds-color-border-ui-disabled-default, #{$ds-color-border-ui-disabled-default});
         --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-default, #{$ds-color-text-ui-disabled-default});
-
-        @media (hover: hover) {
-          &:hover {
-            --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-disabled-default, #{$ds-color-container-ui-secondary-disabled-default});
-            --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-disabled-default, #{$ds-color-container-ui-secondary-disabled-default});
-            --ds-auro-button-border-color: var(--ds-color-border-ui-disabled-default, #{$ds-color-border-ui-disabled-default});
-            --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-default, #{$ds-color-text-ui-disabled-default});
-          }
-        }
       }
     }
 
@@ -148,8 +127,8 @@ auro-loader {
       --ds-auro-button-text-color: var(--ds-color-text-ui-default-default, #{$ds-color-text-ui-default-default});
 
       @media (hover: hover) {
-        &:active,
-        &:hover {        
+        &:active:not(:disabled),
+        &:hover:not(:disabled) {        
           --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-hover-default, #{$ds-color-container-ui-tertiary-hover-default});
           --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-hover-default, #{$ds-color-container-ui-tertiary-hover-default});
           --ds-auro-button-border-color: transparent;
@@ -174,15 +153,6 @@ auro-loader {
         --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-disabled-default, #{$ds-color-container-ui-tertiary-disabled-default});
         --ds-auro-button-border-color: transparent;
         --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-default, #{$ds-color-text-ui-disabled-default});
-
-        @media (hover: hover) {
-          &:hover {
-            --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-disabled-default, #{$ds-color-container-ui-tertiary-disabled-default});
-            --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-disabled-default, #{$ds-color-container-ui-tertiary-disabled-default});
-            --ds-auro-button-border-color: transparent;
-            --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-default, #{$ds-color-text-ui-disabled-default});
-          }
-        }
       }
     }
 
@@ -190,15 +160,15 @@ auro-loader {
      * FLAT VARIANT STYLES
      */
     &[variant='flat'] {
-      color: var(--ds-color-icon-ui-default-default);
+      color: var(--ds-color-icon-ui-secondary-default-default);
       background-color: transparent;
       background-image: none;
       border-color: transparent;
 
       @media (hover: hover) {
-        &:active,
-        &:hover {
-          color: var(--ds-color-icon-ui-hover-default);
+        &:active:not(:disabled),
+        &:hover:not(:disabled) {
+          color: var(--ds-color-icon-ui-secondary-hover-default);
           background-color: transparent;
           background-image: none;
           border-color: transparent;
@@ -206,19 +176,10 @@ auro-loader {
       }
 
       &:disabled {
-        color: var(--ds-color-icon-ui-disabled-default);
+        color: var(--ds-color-icon-ui-secondary-disabled-default);
         background-color: transparent;
         background-image: none;
         border-color: transparent;
-
-        @media (hover: hover) {
-          &:hover {
-            color: var(--ds-color-icon-ui-disabled-default);
-            background-color: transparent;
-            background-image: none;
-            border-color: transparent;
-          }
-        }
       }
     }
   }
@@ -235,8 +196,8 @@ auro-loader {
     --ds-auro-button-loader-color: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
 
     @media (hover: hover) {
-      &:active,
-      &:hover {
+      &:active:not(:disabled),
+      &:hover:not(:disabled) {
         --ds-auro-button-container-color: var(--ds-color-container-ui-primary-hover-inverse, #{$ds-color-container-ui-primary-hover-inverse});
         --ds-auro-button-container-image: var(--ds-color-container-ui-primary-hover-inverse, #{$ds-color-container-ui-primary-hover-inverse});
 
@@ -265,18 +226,6 @@ auro-loader {
        * We use the container color for the border color in this case because the border is not designed as visibly different from the container color
        */
       --ds-auro-button-border-color: var(--ds-color-container-ui-primary-disabled-inverse, #{$ds-color-container-ui-primary-disabled-inverse});
-  
-      @media (hover: hover) {
-        &:hover {
-          --ds-auro-button-container-color: var(--ds-color-container-ui-primary-disabled-inverse, #{$ds-color-container-ui-primary-disabled-inverse});
-          --ds-auro-button-container-image: var(--ds-color-container-ui-primary-disabled-inverse, #{$ds-color-container-ui-primary-disabled-inverse});
-  
-          /**
-           * We use the container color for the border color in this case because the border is not designed as visibly different from the container color
-           */
-          --ds-auro-button-border-color: var(--ds-color-container-ui-primary-disabled-inverse, #{$ds-color-container-ui-primary-disabled-inverse});
-        }
-      }
     }
 
     &[variant='secondary'] {
@@ -311,15 +260,6 @@ auro-loader {
         --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-disabled-inverse, #{$ds-color-container-ui-secondary-disabled-inverse});
         --ds-auro-button-border-color: var(--ds-color-border-ui-disabled-inverse, #{$ds-color-border-ui-disabled-inverse});
         --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-inverse, #{$ds-color-text-ui-disabled-inverse});
-
-        @media (hover: hover) {
-          &:hover {
-            --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-disabled-inverse, #{$ds-color-container-ui-secondary-disabled-inverse});
-            --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-disabled-inverse, #{$ds-color-container-ui-secondary-disabled-inverse});
-            --ds-auro-button-border-color: var(--ds-color-border-ui-disabled-inverse, #{$ds-color-border-ui-disabled-inverse});
-            --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-inverse, #{$ds-color-text-ui-disabled-inverse});
-          }
-        }
       }
     }
 
@@ -330,8 +270,8 @@ auro-loader {
       --ds-auro-button-text-color: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
 
       @media (hover: hover) {
-        &:active,
-        &:hover {        
+        &:active:not(:disabled),
+        &:hover:not(:disabled) {        
           --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-hover-inverse, #{$ds-color-container-ui-tertiary-hover-inverse});
           --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-hover-inverse, #{$ds-color-container-ui-tertiary-hover-inverse});
           --ds-auro-button-border-color: transparent;
@@ -356,15 +296,6 @@ auro-loader {
         --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-disabled-inverse, #{$ds-color-container-ui-tertiary-disabled-inverse});
         --ds-auro-button-border-color: transparent;
         --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-inverse, #{$ds-color-text-ui-disabled-inverse});
-
-        @media (hover: hover) {
-          &:hover {
-            --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-disabled-inverse, #{$ds-color-container-ui-tertiary-disabled-inverse});
-            --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-disabled-inverse, #{$ds-color-container-ui-tertiary-disabled-inverse});
-            --ds-auro-button-border-color: transparent;
-            --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-inverse, #{$ds-color-text-ui-disabled-inverse});
-          }
-        }
       }
     }
 
@@ -374,8 +305,8 @@ auro-loader {
       border-color: transparent;
 
       @media (hover: hover) {
-        &:active,
-        &:hover {
+        &:active:not(:disabled),
+        &:hover:not(:disabled) {
           color: var(--ds-color-icon-ui-hover-default);
           background-color: transparent;
           background-image: none;
@@ -388,15 +319,6 @@ auro-loader {
         background-color: transparent;
         background-image: none;
         border-color: transparent;
-
-        @media (hover: hover) {
-          &:hover {
-            color: var(--ds-color-icon-ui-disabled-default);
-            background-color: transparent;
-            background-image: none;
-            border-color: transparent;
-          }
-        }
       }
     }
   }
