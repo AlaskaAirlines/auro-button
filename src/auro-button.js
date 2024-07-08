@@ -43,7 +43,7 @@ import loaderVersion from './loaderVersion';
  * @csspart icon - Apply CSS to icon slot.
  */
 
-/* eslint-disable max-statements, one-var, no-magic-numbers, lit/no-invalid-html, lit/binding-positions */
+/* eslint-disable lit/no-invalid-html, lit/binding-positions */
 
 export class AuroButton extends LitElement {
 
