@@ -300,14 +300,15 @@ auro-loader {
     }
 
     &[variant='flat'] {
-      color: var(--ds-color-icon-ui-default-default);
+      color: var(--ds-color-icon-ui-secondary-default-inverse);
       background-color: transparent;
+      background-image: none;
       border-color: transparent;
 
       @media (hover: hover) {
         &:active:not(:disabled),
         &:hover:not(:disabled) {
-          color: var(--ds-color-icon-ui-hover-default);
+          color: var(--ds-color-icon-ui-secondary-hover-inverse);
           background-color: transparent;
           background-image: none;
           border-color: transparent;
