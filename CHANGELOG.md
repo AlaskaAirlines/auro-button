@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [7.3.0-beta.5](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.4...v7.3.0-beta.5) (2024-07-08)
+
+
+### Performance Improvements
+
+* **flat:** use the correct new tokens for the flat variant [#252](https://github.com/AlaskaAirlines/auro-button/issues/252) ([0e6576f](https://github.com/AlaskaAirlines/auro-button/commit/0e6576f5cb24e3dbaf903e0ef1d184a412bd9120))
+
 # [7.3.0-beta.4](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.3...v7.3.0-beta.4) (2024-07-06)
 
 
