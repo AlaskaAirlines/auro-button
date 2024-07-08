@@ -49,7 +49,7 @@ $auro-inset-directions:'--squish';
 }
 
 :host([variant='flat']) {
-  display:inline-block; 
+  display:inline-block;
   height: var(--ds-size-300, $ds-size-300);
   width: var(--ds-size-300, $ds-size-300);
 
