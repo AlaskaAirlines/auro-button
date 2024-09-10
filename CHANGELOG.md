@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [7.3.0-beta.7](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0-beta.6...v7.3.0-beta.7) (2024-09-10)
+
+
+### Bug Fixes
+
+* **hover:** remove disabled hover UI [#256](https://github.com/AlaskaAirlines/auro-button/issues/256) ([a46ac93](https://github.com/AlaskaAirlines/auro-button/commit/a46ac9369e7575e0cd16640891e1693301c2a6bf))
+
+
+### Features
+
+* **themes:** update styles to support component themes [#243](https://github.com/AlaskaAirlines/auro-button/issues/243) ([f307e92](https://github.com/AlaskaAirlines/auro-button/commit/f307e9251be5fc861ec2bfc76e3e6ce4d0fc676f))
+
 ## [7.2.10](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.9...v7.2.10) (2024-07-08)
 
 
