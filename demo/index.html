@@ -29,7 +29,11 @@
         });
     </script>
     <script type="module" data-demo-script="true">
-      import { registerComponent } from '../index.js';
+      import { AuroButton } from '../src/auro-button.js';
+      import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
+      RuntimeUtils.default.prototype.registerComponent('custom-button', AuroButton);
+      
       import { initExamples } from './index.min.js'; 
 
       registerComponent('custom-button');
