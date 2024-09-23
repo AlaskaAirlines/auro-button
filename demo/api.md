@@ -563,16 +563,18 @@ The component may be restyled using the following code sample and changing the v
 <!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
 
 ```scss
-:host {
-  --ds-auro-button-border-color: var(--ds-color-container-ui-primary-active-default, $ds-color-container-ui-primary-active-default);
-  --ds-auro-button-container-color: var(--ds-color-container-ui-primary-active-default, $ds-color-container-ui-primary-active-default);
-  --ds-auro-button-container-image: var(--ds-color-container-ui-primary-active-default, $ds-color-container-ui-primary-active-default);
-  --ds-auro-button-text-color: var(--ds-color-text-primary-inverse, $ds-color-text-primary-inverse);
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
 
-  // THE BELOW TOKEN SEEMS WRONG - WAITING FOR RESPONSE FROM JUNE
-  --ds-auro-button-border-inset-color: var(--ds-color-border-emphasis-inverse, $ds-color-border-emphasis-inverse);
-  --ds-auro-button-loader-color: var(--ds-color-background-darkest, $ds-color-background-darkest);
+:host {
+  --ds-auro-button-border-color: var(--ds-color-container-ui-primary-default-default, #{$ds-color-container-ui-primary-default-default});
+  --ds-auro-button-container-color: var(--ds-color-container-ui-primary-default-default, #{$ds-color-container-ui-primary-default-default});
+  --ds-auro-button-container-image: var(--ds-color-container-ui-primary-default-default, #{$ds-color-container-ui-primary-default-default});
+  --ds-auro-button-text-color: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
   --ds-auro-button-tap-color: transparent;
+  --ds-auro-button-border-inset-color: var(--ds-color-border-emphasis-inverse, #{$ds-color-border-emphasis-inverse});
+
+  // Button Loader color is not working correctly
+  --ds-auro-button-loader-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
 }
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
