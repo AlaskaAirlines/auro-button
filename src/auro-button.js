@@ -9,11 +9,11 @@ import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 import styleCss from "./style-css.js";
-import colorsCss from "./colors-css.js";
+import colorCss from "./color-css.js";
 import tokensCss from "./tokens-css.js";
 
 import { AuroLoader } from '@aurodesignsystem/auro-loader/src/auro-loader.js';
-import loaderVersion from './loaderVersion';
+import loaderVersion from './loaderVersion.js';
 
 /**
  * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user
@@ -76,7 +76,7 @@ export class AuroButton extends LitElement {
     return [
       tokensCss,
       styleCss,
-      colorsCss
+      colorCss
     ];
   }
 
