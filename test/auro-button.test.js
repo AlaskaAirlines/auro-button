@@ -7,7 +7,7 @@
 /* eslint-disable no-undef */
 import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import { AuroButton } from '../src/auro-button.js';
-import { registerComponent } from '../index.js';
+import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 import '../index.js';
 
 describe('auro-button', () => {
@@ -33,9 +33,9 @@ describe('auro-button', () => {
   });
 
   it('successfully registers custom component', async () => {
-    registerComponent('test-button');
+    RuntimeUtils.default.prototype.registerComponent('custom-button', AuroButton);
 
-    expect(typeof customElements.get('test-button')).to.equal(typeof AuroButton);
+    expect(typeof customElements.get('custom-button')).to.equal(typeof AuroButton);
   });
 
   it('tests setting autofocus', async () => {
