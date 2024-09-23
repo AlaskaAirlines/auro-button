@@ -6,7 +6,7 @@ NOTICE
 
 .github/
 .gitignore
-.eslintrc
+eslint.config.mjs
 .stylelintrc
 
 coverage/
