@@ -1,5 +1,24 @@
 # Semantic Release Automated Changelog
 
+# [8.0.0](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0...v8.0.0) (2024-09-25)
+
+
+### Bug Fixes
+
+* resolve color theming issues [#253](https://github.com/AlaskaAirlines/auro-button/issues/253) ([2e57c03](https://github.com/AlaskaAirlines/auro-button/commit/2e57c0339e1900ec4ac0359b1465139443fdad0e))
+
+
+### Performance Improvements
+
+* refactor custom component registration config ([7ea8420](https://github.com/AlaskaAirlines/auro-button/commit/7ea8420974586375f1143c33c4715b50a9195924))
+* update file extension and names ([ca89972](https://github.com/AlaskaAirlines/auro-button/commit/ca89972a4e1bca0a772e7ac914f51cd9939f8c5b))
+* use latest versions of dependencies ([8af1108](https://github.com/AlaskaAirlines/auro-button/commit/8af1108c0532aed24945330ce2e9f65eaa912301))
+
+
+### BREAKING CHANGES
+
+* trigger major release for color theming support #229
+
 # [7.3.0](https://github.com/AlaskaAirlines/auro-button/compare/v7.2.10...v7.3.0) (2024-09-10)
 
 
