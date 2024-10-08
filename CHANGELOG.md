@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.0.1](https://github.com/AlaskaAirlines/auro-button/compare/v8.0.0...v8.0.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* make auro-library a normal dep instead of devDep ([2d8e89d](https://github.com/AlaskaAirlines/auro-button/commit/2d8e89d4ba415fe38875849df41e659bda4c8009))
+
 # [8.0.0](https://github.com/AlaskaAirlines/auro-button/compare/v7.3.0...v8.0.0) (2024-09-25)
 
 
