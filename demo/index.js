@@ -1,3 +1,6 @@
+import { AuroButton } from '../src/auro-button.js';
+
+AuroButton.register('custom-button');
 
 export function initExamples(initCount) {
   initCount = initCount || 0;
