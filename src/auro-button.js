@@ -5,9 +5,13 @@
 
 import { LitElement } from "lit";
 import { html } from 'lit/static-html.js';
+
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
+
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
+import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 import styleCss from "./style-css.js";
 import colorCss from "./color-css.js";
 import tokensCss from "./tokens-css.js";
@@ -151,6 +155,18 @@ export class AuroButton extends LitElement {
   }
 
   /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-button"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroButton.register("custom-button") // this will register this element to <custom-button/>
+   *
+   */
+  static register(name = "auro-button") {
+    RuntimeUtils.default.prototype.registerComponent(name, AuroButton);
+  }
+
+  /**
    * Internal method to apply focus to the HTML5 button.
    * @private
    * @returns {void}
@@ -230,9 +246,4 @@ export class AuroButton extends LitElement {
       </button>
     `;
   }
-}
-
-// default internal definition
-if (!customElements.get("auro-button")) {
-  customElements.define("auro-button", AuroButton);
 }
