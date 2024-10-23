@@ -1,5 +1,22 @@
 # Semantic Release Automated Changelog
 
+# [8.1.0](https://github.com/AlaskaAirlines/auro-button/compare/v8.0.1...v8.1.0) (2024-10-23)
+
+
+### Bug Fixes
+
+* added upgraded version file from build ([e36577b](https://github.com/AlaskaAirlines/auro-button/commit/e36577b4643e79f3ba7a9aedcfe0ea0c8b6df831))
+
+
+### Features
+
+* **api:** add register static method [#267](https://github.com/AlaskaAirlines/auro-button/issues/267) ([b60a17e](https://github.com/AlaskaAirlines/auro-button/commit/b60a17e3bbb49a339b53ef86ae4f072e51203daf))
+
+
+### Performance Improvements
+
+* update dependency versions ([24e654b](https://github.com/AlaskaAirlines/auro-button/commit/24e654bf4aec33ca0cd6abdd2fcaea6419be57a3))
+
 ## [8.0.1](https://github.com/AlaskaAirlines/auro-button/compare/v8.0.0...v8.0.1) (2024-10-08)
 
 
