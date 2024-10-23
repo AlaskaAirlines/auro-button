@@ -1,6 +1,8 @@
 import { toggledTextExample } from "../apiExamples/toggledText";
 import { roundedRightAlignExample } from "../apiExamples/roundedRightAlign";
 
+import '../index.js';
+
 export function initExamples(initCount) {
   initCount = initCount || 0;
 
