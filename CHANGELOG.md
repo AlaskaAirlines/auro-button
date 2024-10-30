@@ -1,5 +1,14 @@
 # Semantic Release Automated Changelog
 
+## [8.1.1](https://github.com/AlaskaAirlines/auro-button/compare/v8.1.0...v8.1.1) (2024-10-30)
+
+
+### Bug Fixes
+
+* limit auro-library version to patch updates ([e4a5bf4](https://github.com/AlaskaAirlines/auro-button/commit/e4a5bf4aaa87ee65ff49940005ca0aaaba16483d))
+* re-run build ([025974a](https://github.com/AlaskaAirlines/auro-button/commit/025974a0f77576688ed216f89c6faf777f5fdfa7))
+* rollback auro-library to fix generateDoc scripting ([dc20179](https://github.com/AlaskaAirlines/auro-button/commit/dc20179c4e0d91761c37ef5a2c53c56864cb019b))
+
 # [8.1.0](https://github.com/AlaskaAirlines/auro-button/compare/v8.0.1...v8.1.0) (2024-10-23)
 
 
