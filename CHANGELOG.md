@@ -1,5 +1,19 @@
 # Semantic Release Automated Changelog
 
+## [8.1.3](https://github.com/AlaskaAirlines/auro-button/compare/v8.1.2...v8.1.3) (2024-11-05)
+
+
+### Bug Fixes
+
+* register default component on index page [#173](https://github.com/AlaskaAirlines/auro-button/issues/173) ([fd0bc01](https://github.com/AlaskaAirlines/auro-button/commit/fd0bc017453eb12afe49b0534f2a7221513a0368))
+
+
+### Performance Improvements
+
+* update dependencies ([b1b21ea](https://github.com/AlaskaAirlines/auro-button/commit/b1b21eae9a8ec4ddb0775d85dcf203b4489b7d6a))
+* update rollup config ([37244c7](https://github.com/AlaskaAirlines/auro-button/commit/37244c7825b45c4373972a35c50177d23227b1f8))
+* update to support latest version of auro-icon ([50693bd](https://github.com/AlaskaAirlines/auro-button/commit/50693bd45bd05a4446fd337cc8c24f16cca2bdcd))
+
 ## [8.1.2](https://github.com/AlaskaAirlines/auro-button/compare/v8.1.1...v8.1.2) (2024-10-31)
 
 
