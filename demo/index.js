@@ -1,5 +1,6 @@
 import { AuroButton } from '../src/auro-button.js';
 
+AuroButton.register();
 AuroButton.register('custom-button');
 
 export function initExamples(initCount) {
