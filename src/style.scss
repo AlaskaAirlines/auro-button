@@ -230,9 +230,9 @@ slot {
 
   // auro-button--iconOnly
   &--iconOnly {
-    ::slotted(auro-icon) {
-      width: var(--ds-size-300, $ds-size-300);
-      height: var(--ds-size-300, $ds-size-300);
+    ::slotted(auro-icon),
+    ::slotted([auro-icon]) {
+      --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
     }
 
     padding: 0 var(--ds-size-100, $ds-size-100);
@@ -246,9 +246,9 @@ slot {
 
   // auro-button--iconOnlySlim
   &--iconOnlySlim {
-    ::slotted(auro-icon) {
-      width: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-50, $ds-size-50));
-      height: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-50, $ds-size-50));
+    ::slotted(auro-icon),
+    ::slotted([auro-icon]) {
+      --ds-auro-icon-size: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-50, $ds-size-50));
     }
 
     padding: 0 var(--ds-size-50, $ds-size-50);
@@ -267,9 +267,9 @@ slot {
 
     transition: all 300ms ease-out;
 
-    ::slotted(auro-icon) {
-      width: var(--ds-size-300, $ds-size-300);
-      height: var(--ds-size-300, $ds-size-300);
+    ::slotted(auro-icon),
+    ::slotted([auro-icon]) {
+      --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
     }
   }
 }
