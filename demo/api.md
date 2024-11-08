@@ -1,5 +1,5 @@
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../api.md) -->
-<!-- The below content is automatically added from ./../api.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/api.md) -->
+<!-- The below content is automatically added from ./../docs/api.md -->
 
 # auro-button
 
@@ -59,8 +59,8 @@
 ## Basic
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
   <auro-button>Primary</auro-button>
   <auro-button variant="secondary">Secondary</auro-button>
   <auro-button variant="tertiary">Tertiary</auro-button>
@@ -68,8 +68,8 @@
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
 <auro-button>Primary</auro-button>
@@ -79,8 +79,8 @@
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/onDark.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/onDark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/onDark.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/onDark.html -->
   <auro-button ondark>Primary</auro-button>
   <auro-button variant="secondary" ondark>Secondary</auro-button>
   <auro-button variant="tertiary" ondark>Tertiary</auro-button>
@@ -88,8 +88,8 @@
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/onDark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/onDark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/onDark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/onDark.html -->
 
 ```html
 <auro-button ondark>Primary</auro-button>
@@ -104,8 +104,8 @@
 This example demonstrates `auro-button` in it's `disabled` state.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabled.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/disabled.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/disabled.html -->
   <auro-button disabled>Primary</auro-button>
   <auro-button variant="secondary" disabled>Secondary</auro-button>
   <auro-button variant="tertiary" disabled>Tertiary</auro-button>
@@ -113,8 +113,8 @@ This example demonstrates `auro-button` in it's `disabled` state.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabled.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/disabled.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabled.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/disabled.html -->
 
 ```html
 <auro-button disabled>Primary</auro-button>
@@ -124,8 +124,8 @@ This example demonstrates `auro-button` in it's `disabled` state.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabledOnDark.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/disabledOnDark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledOnDark.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/disabledOnDark.html -->
   <auro-button disabled ondark>Primary</auro-button>
   <auro-button variant="secondary" disabled ondark>Secondary</auro-button>
   <auro-button variant="tertiary" disabled ondark>Tertiary</auro-button>
@@ -133,8 +133,8 @@ This example demonstrates `auro-button` in it's `disabled` state.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabledOnDark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/disabledOnDark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabledOnDark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/disabledOnDark.html -->
 
 ```html
 <auro-button disabled ondark>Primary</auro-button>
@@ -149,8 +149,8 @@ This example demonstrates `auro-button` in it's `disabled` state.
 Use the `slim` attribute with the `auro-button` element for a slim style with less padding. The slim style is used to establish the lowest level of hierarchy. Slim buttons have the least emphasis and significance on a page.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/slim.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/slim.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/slim.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/slim.html -->
   <auro-button slim>Primary</auro-button>
   <auro-button slim variant="secondary">Secondary</auro-button>
   <auro-button slim variant="tertiary">Tertiary</auro-button>
@@ -158,8 +158,8 @@ Use the `slim` attribute with the `auro-button` element for a slim style with le
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/slim.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/slim.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/slim.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/slim.html -->
 
 ```html
 <auro-button slim>Primary</auro-button>
@@ -178,8 +178,8 @@ for quick and easy use.
 Be sure to use the customColor attribute on the `auro-icon` component to allow colors set in your parent element to pass through to the icon and `slot=icon` to properly place the `auro-icon` within the button.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/icon.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/icon.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/icon.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/icon.html -->
   <auro-button aria-label="wifi">
     Activate WiFi
     <auro-icon customColor category="in-flight" name="wifi" slot="icon"></auro-icon>
@@ -196,8 +196,8 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/icon.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/icon.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/icon.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/icon.html -->
 
 ```html
 <auro-button aria-label="wifi">
@@ -225,8 +225,8 @@ Be sure to use the `customColor` attribute on the `auro-icon` component to allow
 **Recommended**: We strongly encourage the users of the icon only `auro-button` to use the `aria-label` attribute. Without this attribute, the screenreaders will not properly describe the button content to it's users.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconOnly.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/iconOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/iconOnly.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/iconOnly.html -->
   <auro-button aria-label="home-filled" iconOnly>
     <auro-icon customColor category="interface" name="home-filled" slot="icon"></auro-icon>
   </auro-button>
@@ -240,8 +240,8 @@ Be sure to use the `customColor` attribute on the `auro-icon` component to allow
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconOnly.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/iconOnly.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/iconOnly.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/iconOnly.html -->
 
 ```html
 <auro-button aria-label="home-filled" iconOnly>
@@ -264,8 +264,8 @@ Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` el
 Be sure to use the `customColor` and `customSize` attributes on the `auro-icon` component, as well as add `height` and `width` styles to the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconOnlySlim.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/iconOnlySlim.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/iconOnlySlim.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/iconOnlySlim.html -->
   <auro-button aria-label="home-filled" iconOnly slim>
     <auro-icon customColor category="interface" name="home-filled" slot="icon"></auro-icon>
   </auro-button>
@@ -279,8 +279,8 @@ Be sure to use the `customColor` and `customSize` attributes on the `auro-icon` 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconOnlySlim.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/iconOnlySlim.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/iconOnlySlim.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/iconOnlySlim.html -->
 
 ```html
 <auro-button aria-label="home-filled" iconOnly slim>
@@ -305,8 +305,8 @@ Use the `rounded` attribute for an `auro-button` with rounded corners.
 Use the `rounded` attribute in conjunction with the `iconOnly` attribute for an `auro-button` that has an `auro-icon` and no text.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/rounded.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/rounded.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/rounded.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/rounded.html -->
   <auro-button aria-label="arrow-up" rounded iconOnly>
     <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
   </auro-button>
@@ -314,8 +314,8 @@ Use the `rounded` attribute in conjunction with the `iconOnly` attribute for an 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/rounded.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/rounded.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/rounded.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/rounded.html -->
 
 ```html
 <auro-button aria-label="arrow-up" rounded iconOnly>
@@ -330,8 +330,8 @@ Use the `rounded` attribute in conjunction with the `iconOnly` attribute for an 
 This example demonstrates a `rounded` `auro-button` with text and an `auro-icon`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/roundedTextWithIcon.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/roundedTextWithIcon.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roundedTextWithIcon.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/roundedTextWithIcon.html -->
   <auro-button aria-label="in-flight" rounded>
     Back to Top
     <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
@@ -340,8 +340,8 @@ This example demonstrates a `rounded` `auro-button` with text and an `auro-icon`
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedTextWithIcon.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/roundedTextWithIcon.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roundedTextWithIcon.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/roundedTextWithIcon.html -->
 
 ```html
 <auro-button aria-label="in-flight" rounded>
@@ -357,8 +357,8 @@ This example demonstrates a `rounded` `auro-button` with text and an `auro-icon`
 A `rounded` `auro-button` with text only.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/roundedTextOnly.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/roundedTextOnly.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roundedTextOnly.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/roundedTextOnly.html -->
   <auro-button aria-label="arrow-up" rounded>
     Primary
   </auro-button>
@@ -366,8 +366,8 @@ A `rounded` `auro-button` with text only.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedTextOnly.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/roundedTextOnly.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roundedTextOnly.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/roundedTextOnly.html -->
 
 ```html
 <auro-button aria-label="arrow-up" rounded>
@@ -382,8 +382,8 @@ A `rounded` `auro-button` with text only.
 The `rounded` attribute supports the ability to hide/show the text of the `auro-button`. This can be done by changing the value of the `iconOnly` attribute. In this example, the text is toggled via `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/toggledText.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/toggledText.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggledText.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/toggledText.html -->
   <auro-button aria-label="arrow-up" rounded iconOnly id="toggledTextElem">
     Text is now shown!
     <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
@@ -392,8 +392,8 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/toggledText.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/toggledText.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/toggledText.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/toggledText.html -->
 
 ```html
 <auro-button aria-label="arrow-up" rounded iconOnly id="toggledTextElem">
@@ -402,8 +402,8 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/toggledText.js) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/toggledText.js -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/toggledText.js) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/toggledText.js -->
 
 ```js
 export function toggledTextExample() {
@@ -436,8 +436,8 @@ export function toggledTextExample() {
 This example shows a `rounded` `auro-button` that is right-aligned, demonstrating how the button starts from the right and grows/shrinks from right to left when using the `toggleText` attribute in conjuction with the `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/roundedRightAlign.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/roundedRightAlign.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roundedRightAlign.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/roundedRightAlign.html -->
   <auro-button aria-label="in-flight" rounded iconOnly id="rightAlignElem" style="float: right;">
     Text is now shown!
     <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
@@ -446,8 +446,8 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedRightAlign.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/roundedRightAlign.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roundedRightAlign.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/roundedRightAlign.html -->
 
 ```html
 <auro-button aria-label="in-flight" rounded iconOnly id="rightAlignElem" style="float: right;">
@@ -456,8 +456,8 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedRightAlign.js) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/roundedRightAlign.js -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roundedRightAlign.js) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/roundedRightAlign.js -->
 
 ```js
 export function roundedRightAlignExample() {
@@ -490,8 +490,8 @@ export function roundedRightAlignExample() {
 In the following example see how the `fluid` attributes alters the shape of the button to be full width of its parent container.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/fluid.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/fluid.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/fluid.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/fluid.html -->
   <auro-button fluid>Primary</auro-button>
   <auro-button variant="secondary" fluid>Secondary</auro-button>
   <auro-button variant="tertiary" fluid>Tertiary</auro-button>
@@ -499,8 +499,8 @@ In the following example see how the `fluid` attributes alters the shape of the 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/fluid.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/fluid.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/fluid.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/fluid.html -->
 
 ```html
 <auro-button fluid>Primary</auro-button>
@@ -515,8 +515,8 @@ In the following example see how the `fluid` attributes alters the shape of the 
 Use the `loading` attribute to alter the content to teh shimmering dots to alert the user that the button/form is in an active state. The `loading` attribute will also place the element in a disabled state to keep the user from re-submitting an action.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loading.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/loading.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loading.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/loading.html -->
   <auro-button loading>Primary</auro-button>
   <auro-button variant="secondary" loading>Secondary</auro-button>
   <auro-button variant="tertiary" loading>Tertiary</auro-button>
@@ -524,8 +524,8 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loading.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/loading.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loading.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/loading.html -->
 
 ```html
 <auro-button loading>Primary</auro-button>
@@ -535,8 +535,8 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loadingOnDark.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/loadingOnDark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loadingOnDark.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/loadingOnDark.html -->
   <auro-button ondark loading>Primary</auro-button>
   <auro-button variant="secondary" ondark loading>Secondary</auro-button>
   <auro-button variant="tertiary" ondark loading>Tertiary</auro-button>
@@ -544,8 +544,8 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loadingOnDark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/loadingOnDark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loadingOnDark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/loadingOnDark.html -->
 
 ```html
 <auro-button ondark loading>Primary</auro-button>
@@ -559,8 +559,8 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
-<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/tokens.scss) -->
+<!-- The below code snippet is automatically added from ./../src/tokens.scss -->
 
 ```scss
 @import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
