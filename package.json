@@ -21,7 +21,7 @@
     "node": "^18 || ^20"
   },
   "dependencies": {
-    "@aurodesignsystem/auro-library": "^3.0.1",
+    "@aurodesignsystem/auro-library": "^3.0.2",
     "@aurodesignsystem/auro-loader": "^3.1.1",
     "chalk": "^5.3.0",
     "lit": "^3.2.1"
