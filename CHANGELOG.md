@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [8.2.0](https://github.com/AlaskaAirlines/auro-button/compare/v8.1.3...v8.2.0) (2024-11-15)
+
+
+### Features
+
+* update auro-library to 3.0.1 ([9d58b78](https://github.com/AlaskaAirlines/auro-button/commit/9d58b787c830c947a5899b9a865c5ebbba8ac0da))
+
+
+### Performance Improvements
+
+* update library to 3.0.2 ([478b6de](https://github.com/AlaskaAirlines/auro-button/commit/478b6deb10012d0d028aa143fc2886db6d243f7c))
+
 ## [8.1.3](https://github.com/AlaskaAirlines/auro-button/compare/v8.1.2...v8.1.3) (2024-11-05)
 
 
