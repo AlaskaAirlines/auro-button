@@ -213,6 +213,7 @@ export class AuroButton extends LitElement {
       'auro-button--slim': this.slim,
       'auro-button--iconOnly': this.iconOnly,
       'auro-button--iconOnlySlim': this.iconOnly && this.slim,
+      'auro-button--iconOnlySlimRounded': this.iconOnly && this.slim && this.rounded,
       'loading': this.loading
     };
 
