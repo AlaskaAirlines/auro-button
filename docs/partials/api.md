@@ -161,6 +161,23 @@ Use the `rounded` attribute in conjunction with the `iconOnly` attribute for an 
 
 </auro-accordion>
 
+#### No Text - Slim Style
+
+Use the `rounded` attribute in conjunction with the `iconOnly` and `slim` attributes for an `auro-button` that has an `auro-icon`, no text, and a slimmer width and height.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/iconOnlySlimRounded.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/iconOnlySlimRounded.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 #### With Text
 
 This example demonstrates a `rounded` `auro-button` with text and an `auro-icon`.

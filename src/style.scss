@@ -272,6 +272,12 @@ slot {
       --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
     }
   }
+
+  // auro-button--iconOnlySlimRounded
+  &--iconOnlySlimRounded {
+    min-width: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
+    max-width: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
+  }
 }
 
 
