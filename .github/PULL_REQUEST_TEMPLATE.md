@@ -17,7 +17,6 @@ Please delete options that are not relevant.
 - [ ] Infrastructure change (automation, etc.)
 - [ ] Other (please elaborate)
 
-
 ## Checklist:
 
 - [ ] My update follows the CONTRIBUTING guidelines of this project

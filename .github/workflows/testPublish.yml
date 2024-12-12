@@ -1,12 +1,13 @@
 name: Test and publish
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+
+# events but only for the main branch
 on:
   push:
-    branches: [ master, beta ]
+    branches: [ main, beta ]
   pull_request:
-    branches: [ master, beta ]
+    branches: [ main, beta ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -15,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [ [abstractNodeVersion], [abstractNodeVersionNext] ]
 
     steps:
       - uses: actions/checkout@v4
@@ -28,8 +29,8 @@ jobs:
       - run: npm run build:test
 
   release:
-    # Only release on push to master
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master' || 'refs/heads/beta'
+    # Only release on push to main
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' || 'refs/heads/beta'
     runs-on: ubuntu-latest
     needs: test
     steps:
@@ -38,7 +39,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: [abstractNodeVersionNext]
       - run: npm ci
       - run: npm run build:release
       - uses: cycjimmy/semantic-release-action@v4

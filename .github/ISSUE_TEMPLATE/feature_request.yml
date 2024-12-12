@@ -4,7 +4,7 @@ title: 'auro-button: [feature summary]'
 labels:
   - 'Type: Feature'
   - not-reviewed
-  - auro-button
+  - 'auro-button'
 body:
   - type: textarea
     id: request
