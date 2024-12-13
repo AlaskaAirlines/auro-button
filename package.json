@@ -121,7 +121,7 @@
   "release": {
     "branches": [
       {
-        "name": "master"
+        "name": "main"
       },
       {
         "name": "beta",
