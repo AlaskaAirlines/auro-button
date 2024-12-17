@@ -50,9 +50,11 @@ import loaderVersion from './loaderVersion.js';
 /* eslint-disable lit/no-invalid-html, lit/binding-positions */
 
 export class AuroButton extends LitElement {
+  static formAssociated = true;
 
   constructor() {
     super();
+
     this.autofocus = false;
     this.disabled = false;
     this.iconOnly = false;
@@ -64,6 +66,9 @@ export class AuroButton extends LitElement {
     this.rounded = false;
     this.slim = false;
     this.fluid = false;
+
+    // Support for HTML5 forms
+    this.internals = this.attachInternals();
 
     /**
      * Generate unique names for dependency components.
@@ -205,6 +210,16 @@ export class AuroButton extends LitElement {
     this.notifyReady();
   }
 
+  surfaceSubmitEvent() {
+    if (this.internals && this.type === 'submit') {
+      this.internals.form.submit();
+    }
+  }
+
+  get form() {
+    return this.internals.form;
+  }
+
   render() {
     const classes = {
       'util_insetLg--squish': true,
@@ -231,7 +246,7 @@ export class AuroButton extends LitElement {
         type="${ifDefined(this.type ? this.type : undefined)}"
         variant="${ifDefined(this.variant ? this.variant : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
-        @click="${() => {}}"
+        @click="${() => this.surfaceSubmitEvent()}"
       >
         ${ifDefined(this.loading ? html`<${this.loaderTag} pulse part="loader"></${this.loaderTag}>` : undefined)}
 

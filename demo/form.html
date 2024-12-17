@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auro Web Component Generator | auro-button custom element</title>
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css"
+    />
+    <!-- legacy reference is still needed to support auro-accordion's use of legacy toke vales at this time -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/tokens/CSSCustomProperties.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/tokens/CSSCustomProperties.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/demoWrapper.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/elementDemoStyles.css" />
+</head>
+<body class="auro-markdown">
+<main>
+    <form method="POST">
+        <auro-button type="submit">
+            test
+        </auro-button>
+    </form>
+
+    <form action="/test">
+        <auro-button type="button">
+            should not submit this form :)
+        </auro-button>
+    </form>
+</main>
+
+<script type="module" data-demo-script="true">
+  import { initExamples } from './index.js';
+  initExamples();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-alert@latest/dist/auro-alert__bundled.js" type="module"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@latest/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@latest/prism.js"></script>
+</body>
+</html>
