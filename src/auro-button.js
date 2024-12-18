@@ -209,6 +209,7 @@ export class AuroButton extends LitElement {
     const classes = {
       'util_insetLg--squish': true,
       'auro-button': true,
+      'auroButton': true,
       'auro-button--rounded': this.rounded,
       'auro-button--slim': this.slim,
       'auro-button--iconOnly': this.iconOnly,
