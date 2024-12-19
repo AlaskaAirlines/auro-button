@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.2.1](https://github.com/AlaskaAirlines/auro-button/compare/v8.2.0...v8.2.1) (2024-12-19)
+
+
+### Performance Improvements
+
+* add class for auro-button with correct pattern auroButton [#282](https://github.com/AlaskaAirlines/auro-button/issues/282) ([6a0e67e](https://github.com/AlaskaAirlines/auro-button/commit/6a0e67ec2b06f44142a7eba2c27b3e0edbf113e4))
+
 # [8.2.0](https://github.com/AlaskaAirlines/auro-button/compare/v8.1.3...v8.2.0) (2024-11-15)
 
 
