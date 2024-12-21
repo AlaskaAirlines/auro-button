@@ -50,7 +50,10 @@ import loaderVersion from './loaderVersion.js';
 /* eslint-disable lit/no-invalid-html, lit/binding-positions */
 
 export class AuroButton extends LitElement {
-  static formAssociated = true;
+  // Uncomment this line when we are ready to use formAssociated
+  // via static properties.
+  // MDN link: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/attachInternals
+  // static formAssociated = true;
 
   constructor() {
     super();
@@ -263,3 +266,7 @@ export class AuroButton extends LitElement {
     `;
   }
 }
+
+// This is for compatibility with the old version of static properties
+// I REALLY want to use `static formAssociated = true;` but eslint doesn't like it
+AuroButton.formAssociated = true;
