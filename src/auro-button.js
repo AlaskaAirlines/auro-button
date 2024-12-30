@@ -55,6 +55,12 @@ export class AuroButton extends LitElement {
   // MDN link: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/attachInternals
   // static formAssociated = true;
 
+  // this static getter does the same thing as the commented out line above
+  // but is compatible with our current eslint rules
+  static get formAssociated() {
+    return true;
+  }
+
   constructor() {
     super();
 
@@ -266,7 +272,3 @@ export class AuroButton extends LitElement {
     `;
   }
 }
-
-// This is for compatibility with the old version of static properties
-// I REALLY want to use `static formAssociated = true;` but eslint doesn't like it
-AuroButton.formAssociated = true;
