@@ -5,6 +5,7 @@
 /* eslint-disable lit/attribute-value-entities */
 /* eslint-disable one-var */
 /* eslint-disable no-undef */
+import sinon from 'sinon';
 import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import { AuroButton } from '../src/auro-button.js';
 import '../index.js';
@@ -220,4 +221,25 @@ describe('auro-button', () => {
 
     expect(slotElement).to.equal(null);
   });
+
+  it('handles form awareness with type="submit"', async () => {
+    const el = await fixture(html`
+      <form id="test-form">
+        <auro-button type="submit">Submit</auro-button>
+      </form>
+    `);
+
+    const mockSubmit = sinon.spy();
+
+    const button = el.querySelector('auro-button');
+    expect(button.getAttribute('type')).to.equal('submit');
+    expect(button.form).not.to.be.null;
+
+    el.addEventListener('submit', mockSubmit);
+
+    button.click();
+    await elementUpdated(el);
+
+    expect(mockSubmit.calledOnce)
+  })
 });
