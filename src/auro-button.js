@@ -50,13 +50,12 @@ import loaderVersion from './loaderVersion.js';
 /* eslint-disable lit/no-invalid-html, lit/binding-positions */
 
 export class AuroButton extends LitElement {
-  // Uncomment this line when we are ready to use formAssociated
-  // via static properties.
-  // MDN link: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/attachInternals
-  // static formAssociated = true;
 
-  // this static getter does the same thing as the commented out line above
-  // but is compatible with our current eslint rules
+  /**
+   * Enables form association for this element.
+   * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/attachInternals
+   * @returns {boolean} - Returns true to enable form association.
+   */
   static get formAssociated() {
     return true;
   }
@@ -77,7 +76,14 @@ export class AuroButton extends LitElement {
     this.fluid = false;
 
     // Support for HTML5 forms
-    this.internals = this.attachInternals();
+    if (typeof this.attachInternals === 'function') {
+      this.internals = this.attachInternals();
+    } else {
+      this.internals = null;
+
+      // eslint-disable-next-line no-console
+      console.warn('This browser does not support form association features. Some form-related functionality may not work as expected. Consider using a polyfill or handling click events manually.');
+    }
 
     /**
      * Generate unique names for dependency components.
@@ -226,7 +232,7 @@ export class AuroButton extends LitElement {
   }
 
   get form() {
-    return this.internals.form;
+    return this.internals.form || null;
   }
 
   render() {
