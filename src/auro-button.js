@@ -232,7 +232,7 @@ export class AuroButton extends LitElement {
   }
 
   get form() {
-    return this.internals.form || null;
+    return this.internals ? this.internals.form : null;
   }
 
   render() {
