@@ -231,15 +231,17 @@ describe('auro-button', () => {
 
     const mockSubmit = sinon.spy();
 
-    const button = el.querySelector('auro-button');
-    expect(button.getAttribute('type')).to.equal('submit');
-    expect(button.form).not.to.be.null;
+    const auroButton = el.querySelector('auro-button')
+    // innerButton is used because the test suite does not handle clicks the same way a browser does
+    const innerButton = el.querySelector('auro-button').shadowRoot.querySelector('button');
+    expect(auroButton.form).not.to.be.null;
+    expect(innerButton.getAttribute('type')).to.equal('submit');
 
     el.addEventListener('submit', mockSubmit);
 
-    button.click();
+    innerButton.click();
     await elementUpdated(el);
 
-    expect(mockSubmit.calledOnce)
+    expect(mockSubmit.calledOnce).to.be.true;
   })
 });
