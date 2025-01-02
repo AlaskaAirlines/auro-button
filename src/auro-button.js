@@ -51,8 +51,18 @@ import loaderVersion from './loaderVersion.js';
 
 export class AuroButton extends LitElement {
 
+  /**
+   * Enables form association for this element.
+   * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/attachInternals
+   * @returns {boolean} - Returns true to enable form association.
+   */
+  static get formAssociated() {
+    return true;
+  }
+
   constructor() {
     super();
+
     this.autofocus = false;
     this.disabled = false;
     this.iconOnly = false;
@@ -64,6 +74,16 @@ export class AuroButton extends LitElement {
     this.rounded = false;
     this.slim = false;
     this.fluid = false;
+
+    // Support for HTML5 forms
+    if (typeof this.attachInternals === 'function') {
+      this.internals = this.attachInternals();
+    } else {
+      this.internals = null;
+
+      // eslint-disable-next-line no-console
+      console.warn('This browser does not support form association features. Some form-related functionality may not work as expected. Consider using a polyfill or handling click events manually.');
+    }
 
     /**
      * Generate unique names for dependency components.
@@ -205,6 +225,16 @@ export class AuroButton extends LitElement {
     this.notifyReady();
   }
 
+  surfaceSubmitEvent() {
+    if (this.form) {
+      this.form.requestSubmit();
+    }
+  }
+
+  get form() {
+    return this.internals ? this.internals.form : null;
+  }
+
   render() {
     const classes = {
       'util_insetLg--squish': true,
@@ -231,7 +261,7 @@ export class AuroButton extends LitElement {
         type="${ifDefined(this.type ? this.type : undefined)}"
         variant="${ifDefined(this.variant ? this.variant : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
-        @click="${() => {}}"
+        @click="${this.type === 'submit' ? this.surfaceSubmitEvent : undefined}"
       >
         ${ifDefined(this.loading ? html`<${this.loaderTag} pulse part="loader"></${this.loaderTag}>` : undefined)}
 

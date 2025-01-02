@@ -5,6 +5,7 @@
 /* eslint-disable lit/attribute-value-entities */
 /* eslint-disable one-var */
 /* eslint-disable no-undef */
+import sinon from 'sinon';
 import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import { AuroButton } from '../src/auro-button.js';
 import '../index.js';
@@ -220,4 +221,71 @@ describe('auro-button', () => {
 
     expect(slotElement).to.equal(null);
   });
+
+  it('handles form awareness with type="submit"', async () => {
+    const el = await fixture(html`
+      <form id="test-form">
+        <auro-button type="submit">Submit</auro-button>
+      </form>
+    `);
+
+    const mockSubmit = sinon.spy();
+
+    const auroButton = el.querySelector('auro-button')
+    // innerButton is used because the test suite does not handle clicks the same way a browser does
+    const innerButton = el.querySelector('auro-button').shadowRoot.querySelector('button');
+    expect(auroButton.form).not.to.be.null;
+    expect(innerButton.getAttribute('type')).to.equal('submit');
+
+    el.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      mockSubmit();
+    });
+
+    innerButton.click();
+    await elementUpdated(el);
+
+    expect(mockSubmit.calledOnce).to.be.true;
+  })
+
+  it('handles type=button inside of a form (does not submit)', async () => {
+    const el = await fixture(html`
+      <form id="test-form">
+        <auro-button type="button">Button</auro-button>
+      </form>
+    `);
+
+    const mockSubmit = sinon.spy();
+
+    const auroButton = el.querySelector('auro-button')
+    // innerButton is used because the test suite does not handle clicks the same way a browser does
+    const innerButton = el.querySelector('auro-button').shadowRoot.querySelector('button');
+    expect(auroButton.form).not.to.be.null;
+    expect(innerButton.getAttribute('type')).to.equal('button');
+
+    el.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      mockSubmit();
+    })
+
+    innerButton.click();
+    await elementUpdated(el);
+
+    expect(mockSubmit.calledOnce).to.be.false;
+  })
+
+  it('does not handle form association when not inside a form', async () => {
+    const el = await fixture(html`
+      <auro-button type="submit">Submit</auro-button>
+    `);
+
+    const innerButton = el.shadowRoot.querySelector('button');
+    expect(el.form).to.be.null;
+    expect(innerButton.getAttribute('type')).to.equal('submit');
+
+    innerButton.click();
+    await elementUpdated(el);
+  })
 });
