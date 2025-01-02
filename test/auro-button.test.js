@@ -237,11 +237,42 @@ describe('auro-button', () => {
     expect(auroButton.form).not.to.be.null;
     expect(innerButton.getAttribute('type')).to.equal('submit');
 
-    el.addEventListener('submit', mockSubmit);
+    el.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      mockSubmit();
+    });
 
     innerButton.click();
     await elementUpdated(el);
 
     expect(mockSubmit.calledOnce).to.be.true;
+  })
+
+  it('handles type=button inside of a form (does not submit)', async () => {
+    const el = await fixture(html`
+      <form id="test-form">
+        <auro-button type="button">Button</auro-button>
+      </form>
+    `);
+
+    const mockSubmit = sinon.spy();
+
+    const auroButton = el.querySelector('auro-button')
+    // innerButton is used because the test suite does not handle clicks the same way a browser does
+    const innerButton = el.querySelector('auro-button').shadowRoot.querySelector('button');
+    expect(auroButton.form).not.to.be.null;
+    expect(innerButton.getAttribute('type')).to.equal('button');
+
+    el.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      mockSubmit();
+    })
+
+    innerButton.click();
+    await elementUpdated(el);
+
+    expect(mockSubmit.calledOnce).to.be.false;
   })
 });
