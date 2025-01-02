@@ -275,4 +275,17 @@ describe('auro-button', () => {
 
     expect(mockSubmit.calledOnce).to.be.false;
   })
+
+  it('does not handle form association when not inside a form', async () => {
+    const el = await fixture(html`
+      <auro-button type="submit">Submit</auro-button>
+    `);
+
+    const innerButton = el.shadowRoot.querySelector('button');
+    expect(el.form).to.be.null;
+    expect(innerButton.getAttribute('type')).to.equal('submit');
+
+    innerButton.click();
+    await elementUpdated(el);
+  })
 });

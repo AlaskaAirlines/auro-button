@@ -226,8 +226,8 @@ export class AuroButton extends LitElement {
   }
 
   surfaceSubmitEvent() {
-    if (this.internals && this.type === 'submit') {
-      this.internals.form.requestSubmit();
+    if (this.form) {
+      this.form.requestSubmit();
     }
   }
 
@@ -261,7 +261,7 @@ export class AuroButton extends LitElement {
         type="${ifDefined(this.type ? this.type : undefined)}"
         variant="${ifDefined(this.variant ? this.variant : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
-        @click="${this.surfaceSubmitEvent}"
+        @click="${this.type === 'submit' ? this.surfaceSubmitEvent : undefined}"
       >
         ${ifDefined(this.loading ? html`<${this.loaderTag} pulse part="loader"></${this.loaderTag}>` : undefined)}
 
