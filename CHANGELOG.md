@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [8.2.3](https://github.com/AlaskaAirlines/auro-button/compare/v8.2.2...v8.2.3) (2025-01-14)
+
+
+### Bug Fixes
+
+* add form awareness support to button ([1cc962a](https://github.com/AlaskaAirlines/auro-button/commit/1cc962a14e1372616a3856d32e85c9513c93a88c))
+* add null handling when attachInternals is not available ([43479dd](https://github.com/AlaskaAirlines/auro-button/commit/43479dd18deffda4e05ebba65cae0483f09cd918))
+* better null handling on form ([ec6545c](https://github.com/AlaskaAirlines/auro-button/commit/ec6545c1adc67ce65ca6cc2ba815a5c88a00a002))
+* make surfaceSubmitEvent use this.form ([009d205](https://github.com/AlaskaAirlines/auro-button/commit/009d205d94a7be2b6ae4996d05947c7d973af606))
+* use older method of declaring static properties ([d6dbe17](https://github.com/AlaskaAirlines/auro-button/commit/d6dbe177addb8fb332883079466a199a58a1ecda))
+* use requestSubmit and update test ([aff2768](https://github.com/AlaskaAirlines/auro-button/commit/aff2768099bd3d492603f87a1deb57623d49edf2))
+
 ## [8.2.2](https://github.com/AlaskaAirlines/auro-button/compare/v8.2.1...v8.2.2) (2024-12-20)
 
 
