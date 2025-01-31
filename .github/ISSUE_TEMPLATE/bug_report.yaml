@@ -48,7 +48,7 @@ body:
     attributes:
       value: >
         The current released version is:<br />[![See it on
-        NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-templates?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-templates)
+        NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-button?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-button)
   - type: checkboxes
     id: repro
     attributes:
