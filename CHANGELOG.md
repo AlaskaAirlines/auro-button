@@ -1,5 +1,14 @@
 # Semantic Release Automated Changelog
 
+## [8.2.4](https://github.com/AlaskaAirlines/auro-button/compare/v8.2.3...v8.2.4) (2025-02-08)
+
+
+### Performance Improvements
+
+* update dependencies ([e1300a2](https://github.com/AlaskaAirlines/auro-button/commit/e1300a2dfdb80914bfa24ddd2117ba03517f6c66))
+* update mixin to support new WCSS spec ([a474990](https://github.com/AlaskaAirlines/auro-button/commit/a474990d50bf16effc06095b709c80573f554584))
+* update nested dep on auro loader ([77080d7](https://github.com/AlaskaAirlines/auro-button/commit/77080d79dceeda9a61109aacf0e0afcc3be90902))
+
 ## [8.2.3](https://github.com/AlaskaAirlines/auro-button/compare/v8.2.2...v8.2.3) (2025-01-14)
 
 
