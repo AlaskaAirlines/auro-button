@@ -8,7 +8,7 @@
 import sinon from 'sinon';
 import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import { AuroButton } from '../src/auro-button.js';
-import '../index.js';
+import '../src/registered.js';
 
 describe('auro-button', () => {
   it('tests instantiating the element with default properties works', async () => {
