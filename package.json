@@ -195,6 +195,12 @@
       "module": "./dist/index.js",
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./dist/auro-button__bundled.js": "./dist/registered.js",
+    "./src/auro-button.js": {
+      "module": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
   }
 }
