@@ -1,4 +1,4 @@
-import { AuroButton } from '../src/auro-button.js';
+import { AuroButton } from '../src/index.js';
 
 AuroButton.register();
 AuroButton.register('custom-button');
