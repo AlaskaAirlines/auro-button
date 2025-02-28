@@ -1,5 +1,20 @@
 # Semantic Release Automated Changelog
 
+# [9.0.0](https://github.com/AlaskaAirlines/auro-button/compare/v8.2.4...v9.0.0) (2025-02-28)
+
+
+* feat!: move peer dependencies to "real" dependencies ([20ffc3c](https://github.com/AlaskaAirlines/auro-button/commit/20ffc3ccc7995d647df43336871fcda3f472d35f))
+
+
+### BREAKING CHANGES
+
+* last change was breaking _on a patch version_ because of peer dependencies
+
+Summary:
+  Our current build process relies on peer dependencies being present, but
+  the peer dependency pipeline is causing far more issues than it's worth.
+  Why not just make them regular dependencies? This is what this PR does :)
+
 ## [8.2.4](https://github.com/AlaskaAirlines/auro-button/compare/v8.2.3...v8.2.4) (2025-02-08)
 
 
