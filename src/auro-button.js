@@ -227,6 +227,7 @@ export class AuroButton extends LitElement {
 
   surfaceSubmitEvent() {
     if (this.form) {
+      this.form.checkValidity();
       this.form.requestSubmit();
     }
   }
