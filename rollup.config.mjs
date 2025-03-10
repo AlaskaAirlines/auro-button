@@ -1,46 +1,35 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import serve from 'rollup-plugin-serve';
 
-const production = !process.env.ROLLUP_WATCH,
-
- modernConfig = {
-  input: {
-    'auro-button__bundled': './index.js',
-  },
+const createConfig = (input, output) => ({
+  input,
   output: {
     format: 'esm',
-    dir: 'dist/'
+    dir: output,
+    entryFileNames: '[name].js'
   },
   plugins: [
-    nodeResolve(),
-    !production &&
-      serve({
-        open: true,
-        openPage: '/docs/'
-      })
+    nodeResolve({
+      preferBuiltins: false,
+      moduleDirectories: ['node_modules']
+    })
   ]
-};
+});
 
-const indexExamplesConfig = {
+
+const createExampleConfig = (entryPoint) => ({
   input: {
-    ['index.min']: './demo/index.js',
+    [`${entryPoint}.min`]: `./demo/${entryPoint}.js`,
   },
   output: {
     format: 'esm',
-    dir: 'demo/'
+    dir: `./demo/`,
   },
-  plugins: [nodeResolve()]
-};
+  plugins: [nodeResolve()],
+});
 
-const apiExamplesConfig = {
-  input: {
-    ['api.min']: './demo/api.js',
-  },
-  output: {
-    format: 'esm',
-    dir: 'demo/'
-  },
-  plugins: [nodeResolve()]
-};
-
-export default [modernConfig, indexExamplesConfig, apiExamplesConfig];
+export default [
+  createConfig('./src/index.js', 'dist'),
+  createConfig('./src/registered.js', 'dist'),
+  createExampleConfig('index'),
+  createExampleConfig('api')
+];
