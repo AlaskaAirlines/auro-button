@@ -154,6 +154,10 @@ export class AuroButton extends LitElement {
         type: String,
         reflect: true
       },
+      ariaExpanded: {
+        type: String,
+        reflect: true
+      },
       title:            {
         type: String,
         reflect: true
@@ -252,6 +256,7 @@ export class AuroButton extends LitElement {
         part="button"
         aria-label="${ifDefined(this.arialabel ? this.arialabel : undefined)}"
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
+        aria-expanded="${ifDefined(this.ariaExpanded ? this.ariaExpanded : undefined)}"
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
         ?disabled="${this.disabled || this.loading}"
