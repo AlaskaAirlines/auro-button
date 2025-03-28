@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [9.1.0](https://github.com/AlaskaAirlines/auro-button/compare/v9.0.0...v9.1.0) (2025-03-28)
+
+
+### Features
+
+* add aria-expanded ([e75beaf](https://github.com/AlaskaAirlines/auro-button/commit/e75beaf8ddbc18c84e5de3b4d4cc2edec319dca5))
+
 # [9.0.0](https://github.com/AlaskaAirlines/auro-button/compare/v8.2.4...v9.0.0) (2025-02-28)
 
 
