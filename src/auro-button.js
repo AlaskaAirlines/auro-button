@@ -30,6 +30,7 @@ import loaderVersion from './loaderVersion.js';
  * @attr {Boolean} fluid - Alters the shape of the button to be full width of its parent container
  * @attr {String} arialabel - Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead.
  * @attr {String} arialabelledby - Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion.
+ * @attr {Boolean} ariaexpanded - Populates the `aria-expanded` attribute that indicates whether the element, or another grouping element it controls, is currently expanded or collapsed. This is an optional attribute for buttons.
  * @attr {String} id - Set the unique ID of an element.
  * @attr {String} title - Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
  * @attr {String} type - The type of the button. Possible values are: `submit`, `reset`, `button`
@@ -154,8 +155,8 @@ export class AuroButton extends LitElement {
         type: String,
         reflect: true
       },
-      ariaExpanded: {
-        type: String,
+      ariaexpanded: {
+        type: Boolean,
         reflect: true
       },
       title:            {
@@ -256,7 +257,7 @@ export class AuroButton extends LitElement {
         part="button"
         aria-label="${ifDefined(this.arialabel ? this.arialabel : undefined)}"
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
-        aria-expanded="${ifDefined(this.ariaExpanded ? this.ariaExpanded : undefined)}"
+        aria-expanded="${ifDefined(this.ariaexpanded)}"
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
         ?disabled="${this.disabled || this.loading}"
