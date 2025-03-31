@@ -110,34 +110,15 @@ slot {
   }
 
   &:focus-visible {
-    &:not([variant='secondary']):not([variant='tertiary']):not([variant='flat']) {
+    &:not([variant='flat']) {
       &:after {
         display: block;
         content: '';
-        height: calc(100% - 2px);
-        width: calc(100% - 2px);
         position: absolute;
-        top: 1px;
-        left: 1px;
-        border-radius: 4px;
-        border-style: solid;
-        border-width: 2px;
-      }
-    }
-
-    &[variant='secondary'],
-    &[variant='tertiary'] {
-      &:after {
-        display: block;
-        content: '';
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
         border-radius: var(--ds-border-radius, $ds-border-radius);
         border-style: solid;
-        border-width: 2px;
+        border-width: var(--ds-size-25, $ds-size-25);
       }
     }
   }
@@ -242,6 +223,14 @@ slot {
 
     height: var(--ds-size-600, $ds-size-600);
     width: var(--ds-size-500, $ds-size-500);
+    
+    &:focus-visible {
+      &:not([variant='flat']) {
+        &:after {
+          border-radius: 100px;
+        }
+      }
+    }
   }
 
   // auro-button--iconOnlySlim
@@ -270,6 +259,14 @@ slot {
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
       --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
+    }
+
+    &:focus-visible {
+      &:not([variant='flat']) {
+        &:after {
+          border-radius: 100px;
+        }
+      }
     }
   }
 }
