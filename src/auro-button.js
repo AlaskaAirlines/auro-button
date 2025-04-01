@@ -21,9 +21,10 @@ import loaderVersion from './loaderVersion.js';
 
 /**
  * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user
- * @attr {Boolean} disabled - If set to true button will become disabled and not allow for interactions
+ * @attr {Boolean} disabled - If set to true, button will become disabled and not allow for interactions
  * @attr {Boolean} iconOnly - If set to true, the button will contain an icon with no additional content
  * @attr {Boolean} loading - If set to true button text will be replaced with `auro-loader` and become disabled
+ * @attr {String} loadingText - Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value will be used.
  * @attr {Boolean} onDark - Set value for on-dark version of auro-button
  * @attr {Boolean} rounded - If set to true, the button will have a rounded shape
  * @attr {Boolean} slim - Set value for slim version of auro-button
@@ -75,6 +76,7 @@ export class AuroButton extends LitElement {
     this.rounded = false;
     this.slim = false;
     this.fluid = false;
+    this.loadingText = this.loadingText || 'Loading...';
 
     // Support for HTML5 forms
     if (typeof this.attachInternals === 'function') {
@@ -133,6 +135,10 @@ export class AuroButton extends LitElement {
       },
       loading:          {
         type: Boolean,
+        reflect: true
+      },
+      loadingText:      {
+        type: String,
         reflect: true
       },
       onDark:           {
@@ -255,7 +261,7 @@ export class AuroButton extends LitElement {
     return html`
       <button
         part="button"
-        aria-label="${ifDefined(this.arialabel ? this.arialabel : undefined)}"
+        aria-label="${ifDefined(this.loading ? this.loadingText : this.arialabel || undefined)}"
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         aria-expanded="${ifDefined(this.ariaexpanded)}"
         ?autofocus="${this.autofocus}"
