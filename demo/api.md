@@ -512,7 +512,7 @@ In the following example see how the `fluid` attributes alters the shape of the 
 
 ## Loading State
 
-Use the `loading` attribute to alter the content to teh shimmering dots to alert the user that the button/form is in an active state. The `loading` attribute will also place the element in a disabled state to keep the user from re-submitting an action.
+Use the `loading` attribute to alter the content to the shimmering dots to alert the user that the button/form is in an active state. The `loading` attribute will also place the element in a disabled state to keep the user from re-submitting an action.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loading.html) -->
@@ -551,6 +551,27 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
 <auro-button ondark loading>Primary</auro-button>
 <auro-button variant="secondary" ondark loading>Secondary</auro-button>
 <auro-button variant="tertiary" ondark loading>Tertiary</auro-button>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### Loading text
+
+To provide a custom loading message for assistive technologies, use the `loadingText` attribute. If not provided, the default message will be "Loading...".
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loadingText.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/loadingText.html -->
+  <auro-button loading loadingText="Custom loading text">Primary</auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loadingText.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/loadingText.html -->
+
+```html
+<auro-button loading loadingText="Custom loading text">Primary</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
