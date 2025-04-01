@@ -143,6 +143,28 @@ describe('auro-button', () => {
     expect(button.getAttribute('aria-label')).to.equal('label');
   });
 
+  it('tests that button in loading state has proper aria-label', async () => {
+    const el = await fixture(html`
+      <auro-button loading>Click Me!</auro-button>
+    `);
+
+    const root = el.shadowRoot;
+    const button = root.querySelector('button');
+
+    expect(button.getAttribute('aria-label')).to.equal(el.loadingText);
+  });
+
+  it('tests setting custom loading text on button in loading state', async () => {
+    const el = await fixture(html`
+      <auro-button loading loadingText="cargando">Click Me!</auro-button>
+    `);
+
+    const root = el.shadowRoot;
+    const button = root.querySelector('button');
+
+    expect(button.getAttribute('aria-label')).to.equal(el.loadingText);
+  });
+
   it('tests setting arialabelledby', async () => {
     const el = await fixture(html`
       <auro-button arialabelledby='me'>Click Me!</auro-button>
