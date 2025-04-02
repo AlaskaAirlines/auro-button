@@ -118,7 +118,7 @@ slot {
         content: '';
         position: absolute;
         inset: 0;
-        border-radius: var(--ds-border-radius, $ds-border-radius);
+        border-radius: var(--ds-size-50, $ds-size-50);
         border-style: solid;
         border-width: var(--ds-size-50, $ds-size-50);
       }
