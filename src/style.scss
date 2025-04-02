@@ -223,11 +223,11 @@ slot {
 
     height: var(--ds-size-600, $ds-size-600);
     width: var(--ds-size-500, $ds-size-500);
-    
-    &:focus-visible {
+
+    &:not(.auro-button--rounded):focus-visible {
       &:not([variant='secondary']):not([variant='tertiary']):not([variant='flat']) {
         outline-width: 1px;
-        outline-offset: -2px; // -(width + border-width)
+        outline-offset: -2px; // -(1px width + 1px border-width)
       }
     }
   }
@@ -253,7 +253,7 @@ slot {
     height: var(--ds-size-500, $ds-size-500);
     min-width: unset;
 
-    transition: all 300ms ease-out;
+    transition: all 300ms ease-out, outline 0ms, outline-offset 0ms;
 
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
