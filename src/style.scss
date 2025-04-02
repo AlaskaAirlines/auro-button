@@ -26,14 +26,14 @@
    */
 
 // Import Auro Sass variables
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
 
 // general WCSS imports
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/animation";
 
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariableMap";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariableMap";
 
 $auro-inset-spacing-options: lg;
 $auro-inset-directions:'--squish';
