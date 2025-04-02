@@ -34,9 +34,7 @@
 
   &:not([variant='secondary']):not([variant='tertiary']) {
     &:focus-visible {
-      &:after {
-        border-color: var(--ds-auro-button-border-inset-color);
-      }
+      outline-color: var(--ds-auro-button-border-inset-color);
     }
   }
 
