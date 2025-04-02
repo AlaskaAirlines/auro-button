@@ -110,6 +110,8 @@ slot {
   }
 
   &:focus-visible {
+    outline: none;
+
     &:not([variant='flat']) {
       &:after {
         display: block;
@@ -118,7 +120,7 @@ slot {
         inset: 0;
         border-radius: var(--ds-border-radius, $ds-border-radius);
         border-style: solid;
-        border-width: var(--ds-size-25, $ds-size-25);
+        border-width: var(--ds-size-50, $ds-size-50);
       }
     }
   }
@@ -225,6 +227,12 @@ slot {
     width: var(--ds-size-500, $ds-size-500);
     
     &:focus-visible {
+      &:not([variant='secondary']):not([variant='tertiary']):not([variant='flat']) {
+        &:after{
+          border-width: 1px;
+        }
+      }
+
       &:not([variant='flat']) {
         &:after {
           border-radius: 100px;
