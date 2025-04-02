@@ -113,14 +113,12 @@ slot {
     outline: none;
 
     &:not([variant='flat']) {
-      &:after {
-        display: block;
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: var(--ds-size-50, $ds-size-50);
-        border-style: solid;
-        border-width: var(--ds-size-50, $ds-size-50);
+      outline-style: solid;
+      outline-width: var(--ds-size-50, $ds-size-50);
+      outline-offset: calc(var(--ds-size-50, $ds-size-50) * -1);
+
+      &:not([variant='secondary']):not([variant='tertiary']) {
+        outline-width: calc(var(--ds-size-50, $ds-size-50) - 1px);
       }
     }
   }
@@ -228,15 +226,8 @@ slot {
     
     &:focus-visible {
       &:not([variant='secondary']):not([variant='tertiary']):not([variant='flat']) {
-        &:after{
-          border-width: 1px;
-        }
-      }
-
-      &:not([variant='flat']) {
-        &:after {
-          border-radius: 100px;
-        }
+        outline-width: 1px;
+        outline-offset: -2px; // -(width + border-width)
       }
     }
   }
