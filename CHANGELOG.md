@@ -1,5 +1,20 @@
 # Semantic Release Automated Changelog
 
+## [9.1.1](https://github.com/AlaskaAirlines/auro-button/compare/v9.1.0...v9.1.1) (2025-04-02)
+
+
+### Bug Fixes
+
+* adjust forcus-ring radius ([7742729](https://github.com/AlaskaAirlines/auro-button/commit/7742729396b83a4c44ae889d94b5aa9003474907))
+* make focus ring's position fit inside of the button ([e46930f](https://github.com/AlaskaAirlines/auro-button/commit/e46930f40d773cd8c43bc5a08793262ce0bbc046))
+* remove outline transition on rounded button ([10e8370](https://github.com/AlaskaAirlines/auro-button/commit/10e8370254eb738d04a8d8e5faa5d2ca3593a44a))
+* update focus-ring thickness per Figma, remove outline ([07f4f8b](https://github.com/AlaskaAirlines/auro-button/commit/07f4f8b78b78073258b68ffb6faf2aeee60b907b))
+
+
+### Performance Improvements
+
+* replace `:after` with `outline` due to position mismatch issue ([39630bc](https://github.com/AlaskaAirlines/auro-button/commit/39630bcbf7a841f6ec9f387b4caf1cf16ad5438b))
+
 # [9.1.0](https://github.com/AlaskaAirlines/auro-button/compare/v9.0.0...v9.1.0) (2025-03-28)
 
 
