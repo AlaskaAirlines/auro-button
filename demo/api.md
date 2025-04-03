@@ -13,13 +13,15 @@
 
 | Property         | Attribute        | Type      | Default | Description                                      |
 |------------------|------------------|-----------|---------|--------------------------------------------------|
+| [ariaexpanded](#ariaexpanded)   | `ariaexpanded`   | `Boolean` |         | Populates the `aria-expanded` attribute that indicates whether the element, or another grouping element it controls, is currently expanded or collapsed. This is an optional attribute for buttons. |
 | [arialabel](#arialabel)      | `arialabel`      | `String`  |         | Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead. |
 | [arialabelledby](#arialabelledby) | `arialabelledby` | `String`  |         | Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion. |
 | [autofocus](#autofocus)      | `autofocus`      | `Boolean` | false   | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user |
-| [disabled](#disabled)       | `disabled`       | `Boolean` | false   | If set to true button will become disabled and not allow for interactions |
+| [disabled](#disabled)       | `disabled`       | `Boolean` | false   | If set to true, button will become disabled and not allow for interactions |
 | [fluid](#fluid)          | `fluid`          | `Boolean` | false   | Alters the shape of the button to be full width of its parent container |
 | [iconOnly](#iconOnly)       | `iconOnly`       | `Boolean` | false   | If set to true, the button will contain an icon with no additional content |
 | [loading](#loading)        | `loading`        | `Boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled |
+| [loadingText](#loadingText)    | `loadingText`    | `String`  |         | Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used. |
 | [onDark](#onDark)         | `onDark`         | `Boolean` | false   | Set value for on-dark version of auro-button     |
 | [ready](#ready)          | `ready`          | `Boolean` | false   | When false the component API should not be called. |
 | [rounded](#rounded)        | `rounded`        | `Boolean` | false   | If set to true, the button will have a rounded shape |
@@ -512,7 +514,7 @@ In the following example see how the `fluid` attributes alters the shape of the 
 
 ## Loading State
 
-Use the `loading` attribute to alter the content to teh shimmering dots to alert the user that the button/form is in an active state. The `loading` attribute will also place the element in a disabled state to keep the user from re-submitting an action.
+Use the `loading` attribute to alter the content to the shimmering dots to alert the user that the button/form is in an active state. The `loading` attribute will also place the element in a disabled state to keep the user from re-submitting an action.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loading.html) -->
@@ -551,6 +553,27 @@ Use the `loading` attribute to alter the content to teh shimmering dots to alert
 <auro-button ondark loading>Primary</auro-button>
 <auro-button variant="secondary" ondark loading>Secondary</auro-button>
 <auro-button variant="tertiary" ondark loading>Tertiary</auro-button>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### Loading text
+
+To provide a custom loading message for assistive technologies, use the `loadingText` attribute. If not provided, the default message will be "Loading...".
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loadingText.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/loadingText.html -->
+  <auro-button loading loadingText="Custom loading text">Primary</auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loadingText.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/loadingText.html -->
+
+```html
+<auro-button loading loadingText="Custom loading text">Primary</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
