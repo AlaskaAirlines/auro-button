@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -24,7 +25,7 @@ import loaderVersion from './loaderVersion.js';
  * @attr {Boolean} disabled - If set to true, button will become disabled and not allow for interactions
  * @attr {Boolean} iconOnly - If set to true, the button will contain an icon with no additional content
  * @attr {Boolean} loading - If set to true button text will be replaced with `auro-loader` and become disabled
- * @attr {String} loadingText - Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value will be used.
+ * @attr {String} loadingText - Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
  * @attr {Boolean} onDark - Set value for on-dark version of auro-button
  * @attr {Boolean} rounded - If set to true, the button will have a rounded shape
  * @attr {Boolean} slim - Set value for slim version of auro-button
@@ -138,8 +139,7 @@ export class AuroButton extends LitElement {
         reflect: true
       },
       loadingText:      {
-        type: String,
-        reflect: true
+        type: String
       },
       onDark:           {
         type: Boolean,
@@ -236,12 +236,22 @@ export class AuroButton extends LitElement {
     this.notifyReady();
   }
 
+  /**
+   * Submits the form that this button is associated with.
+   * @private
+   * @returns {void}
+   */
   surfaceSubmitEvent() {
     if (this.form) {
       this.form.requestSubmit();
     }
   }
 
+  /**
+   * Returns the form element that this button is associated with.
+   * @private
+   * @returns {HTMLFormElement|null}
+   */
   get form() {
     return this.internals ? this.internals.form : null;
   }
