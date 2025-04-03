@@ -586,7 +586,7 @@ The component may be restyled using the following code sample and changing the v
 <!-- The below code snippet is automatically added from ./../src/tokens.scss -->
 
 ```scss
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
 
 :host {
   --ds-auro-button-border-color: var(--ds-color-container-ui-primary-default-default, #{$ds-color-container-ui-primary-default-default});
