@@ -89,7 +89,7 @@
     "build:release": "npm-run-all build build:test types postinstall",
     "build:ci": "npm-run-all sweep build:release",
     "build:sass": "npm-run-all build:sass:component postCss:component sass:render",
-    "build:api": "wca analyze 'src/auro-button.js' --outFiles docs/api.md",
+    "build:api": "wca analyze 'scripts/wca/*' --outFiles docs/api.md",
     "build:docs": "node ./node_modules/@aurodesignsystem/auro-library/scripts/build/generateDocs.mjs",
     "build:dev:assets": "npm-run-all build:sass:component postCss:component sass:render postversion",
     "build:watch": "nodemon -e scss,js,html --watch src --watch apiExamples --watch docs --exec npm run build:dev:assets",
