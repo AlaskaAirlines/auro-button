@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [9.2.0](https://github.com/AlaskaAirlines/auro-button/compare/v9.1.1...v9.2.0) (2025-04-07)
+
+
+### Features
+
+* add aria-label for loading state ([8a6605e](https://github.com/AlaskaAirlines/auro-button/commit/8a6605e030966ba6c3bc30fc1ae04becde85da3f))
+
 ## [9.1.1](https://github.com/AlaskaAirlines/auro-button/compare/v9.1.0...v9.1.1) (2025-04-02)
 
 
