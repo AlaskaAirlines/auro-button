@@ -27,6 +27,7 @@
 
 // Import Auro Sass variables
 @import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 // general WCSS imports
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
@@ -80,9 +81,9 @@ slot {
   border-style: solid;
   border-radius: var(--ds-border-radius, $ds-border-radius);
 
-  font-family: var(--ds-font-family-default, $ds-font-family-default);
-  font-size: var(--ds-text-body-size-default, $ds-text-body-size-default);
-  font-weight: var(--ds-text-body-default-weight, $ds-text-body-default-weight);
+  font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family);
+  font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size);
+  font-weight: var(--ds-basic-text-body-default-font-weight, $ds-basic-text-body-default-font-weight);
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
@@ -203,7 +204,7 @@ slot {
   // auro-button--slim
   &--slim {
     padding: var(--ds-size-100, $ds-size-100) var(--ds-size-200, $ds-size-200);
-    font-size: var(--ds-text-body-size-sm, $ds-text-body-size-sm);
+    font-size: var(--ds-basic-text-body-sm-font-size, $ds-basic-text-body-sm-font-size);
     min-width: unset;
     min-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
     max-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
