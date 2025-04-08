@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*.js"], // process the generated JS files from the src js files
+  "include": ["src/**/*.js"], // process the generated J
   "exclude": [],
   "compilerOptions": {
     // Tells TypeScript to read JS files, as
@@ -13,6 +13,8 @@
     "outDir": "dist",
     // go to js file when using IDE functions like
     // "Go to Definition" in VSCode
-    "declarationMap": true
+    "declarationMap": true,
+    "target": "ES2022",
+    "moduleResolution": "node"
   }
 }
