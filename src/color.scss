@@ -15,7 +15,7 @@
    custom-property-empty-line-before
    */
 
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 [auro-loader] {
   color: var(--ds-auro-button-loader-color);
@@ -43,76 +43,46 @@
     * DEFAULT / PRIMARY VARIANT STYLES
     */
 
-    // handle active state
-    &:active {
-      --ds-auro-button-container-color: var(--ds-color-container-ui-primary-active-default, #{$ds-color-container-ui-primary-active-default});
-      --ds-auro-button-container-image: var(--ds-color-container-ui-primary-active-default, #{$ds-color-container-ui-primary-active-default});
-
-      /**
-      * We use the container color for the border color in this case because the border is not designed as visibly different from the container color
-      */
-      --ds-auro-button-border-color: var(--ds-color-container-ui-primary-active-default, #{$ds-color-container-ui-primary-active-default});
+    &:active:not(:disabled),
+    &:hover:not(:disabled) {
+      --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background-hover, #{$ds-advanced-color-button-primary-background-hover});
+      --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background-hover, #{$ds-advanced-color-button-primary-background-hover});
+      --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border-hover, #{$ds-advanced-color-button-primary-border-hover});
     }
 
-    &[disabled] {
-      --ds-auro-button-container-color: var(--ds-color-container-ui-primary-disabled-default, #{$ds-color-container-ui-primary-disabled-default});
-      --ds-auro-button-container-image: var(--ds-color-container-ui-primary-disabled-default, #{$ds-color-container-ui-primary-disabled-default});
-
-      /**
-      * We use the container color for the border color in this case because the border is not designed as visibly different from the container color
-      */
-      --ds-auro-button-border-color: var(--ds-color-container-ui-primary-disabled-default, #{$ds-color-container-ui-primary-disabled-default});
-    }
-
-    // handle hover state auro-button
-    @media (hover: hover) {
-      &:active:not(:disabled),
-      &:hover:not(:disabled) {
-        --ds-auro-button-container-color: var(--ds-color-container-ui-primary-hover-default, #{$ds-color-container-ui-primary-hover-default});
-        --ds-auro-button-container-image: var(--ds-color-container-ui-primary-hover-default, #{$ds-color-container-ui-primary-hover-default});
-
-        /**
-        * We use the container color for the border color in this case because the border is not designed as visibly different from the container color
-        */
-        --ds-auro-button-border-color: var(--ds-color-container-ui-primary-hover-default, #{$ds-color-container-ui-primary-hover-default});
-      }
+    &:disabled {
+      --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background-disabled, #{$ds-advanced-color-button-primary-background-disabled});
+      --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background-disabled, #{$ds-advanced-color-button-primary-background-disabled});
+      --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border-disabled, #{$ds-advanced-color-button-primary-border-disabled});
     }
 
     /**
      * SECONDARY VARIANT STYLES
      */
     &[variant='secondary'] {
-      --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-default-default, #{$ds-color-container-ui-secondary-default-default});
-      --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-default-default, #{$ds-color-container-ui-secondary-default-default});
-      --ds-auro-button-border-color: var(--ds-color-border-ui-default-default, #{$ds-color-border-ui-default-default});
-      --ds-auro-button-text-color: var(--ds-color-text-ui-default-default, #{$ds-color-text-ui-default-default});
+      --ds-auro-button-container-color: var(--ds-advanced-color-button-secondary-background, #{$ds-advanced-color-button-secondary-background});
+      --ds-auro-button-container-image: var(--ds-advanced-color-button-secondary-background, #{$ds-advanced-color-button-secondary-background});
+      --ds-auro-button-border-color: var(--ds-advanced-color-button-secondary-border, #{$ds-advanced-color-button-secondary-border});
+      --ds-auro-button-text-color: var(--ds-advanced-color-button-secondary-text, #{$ds-advanced-color-button-secondary-text});
+      --ds-auro-button-loader-color: var(--ds-advanced-color-button-secondary-text, #{$ds-advanced-color-button-secondary-text});
 
-      @media (hover: hover) {
-        &:active:not(:disabled),
-        &:hover:not(:disabled) {        
-          --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-hover-default, #{$ds-color-container-ui-secondary-hover-default});
-          --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-hover-default, #{$ds-color-container-ui-secondary-hover-default});
-          --ds-auro-button-border-color: var(--ds-color-border-ui-hover-default, #{$ds-color-border-ui-hover-default});
-          --ds-auro-button-text-color: var(--ds-color-text-ui-hover-default, #{$ds-color-text-ui-hover-default});
-        }
+      &:active:not(:disabled),
+      &:hover:not(:disabled) {        
+        --ds-auro-button-container-color: var(--ds-advanced-color-button-secondary-background-hover, #{$ds-advanced-color-button-secondary-background-hover});
+        --ds-auro-button-container-image: var(--ds-advanced-color-button-secondary-background-hover, #{$ds-advanced-color-button-secondary-background-hover});
+        --ds-auro-button-border-color: var(--ds-advanced-color-button-secondary-border-hover, #{$ds-advanced-color-button-secondary-border-hover});
+        --ds-auro-button-text-color: var(--ds-advanced-color-button-secondary-text-hover, #{$ds-advanced-color-button-secondary-text-hover});
       }
 
       &:focus-visible {
-        --ds-auro-button-border-inset-color: var(--ds-color-border-ui-focus-default, #{$ds-color-border-ui-focus-default});
-      }
-
-      &:active {
-        --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-active-default, #{$ds-color-container-ui-secondary-active-default});
-        --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-active-default, #{$ds-color-container-ui-secondary-active-default});
-        --ds-auro-button-border-color: var(--ds-color-border-ui-active-default, #{$ds-color-border-ui-active-default});
-        --ds-auro-button-text-color: var(--ds-color-text-ui-active-default, #{$ds-color-text-ui-active-default});
+        --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused, #{$ds-advanced-color-state-focused});
       }
 
       &:disabled {
-        --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-disabled-default, #{$ds-color-container-ui-secondary-disabled-default});
-        --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-disabled-default, #{$ds-color-container-ui-secondary-disabled-default});
-        --ds-auro-button-border-color: var(--ds-color-border-ui-disabled-default, #{$ds-color-border-ui-disabled-default});
-        --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-default, #{$ds-color-text-ui-disabled-default});
+        --ds-auro-button-container-color: var(--ds-advanced-color-button-secondary-background-disabled, #{$ds-advanced-color-button-secondary-background-disabled});
+        --ds-auro-button-container-image: var(--ds-advanced-color-button-secondary-background-disabled, #{$ds-advanced-color-button-secondary-background-disabled});
+        --ds-auro-button-border-color: var(--ds-advanced-color-button-secondary-border-disabled, #{$ds-advanced-color-button-secondary-border-disabled});
+        --ds-auro-button-text-color: var(--ds-basic-color-texticon-disabled, #{$ds-basic-color-texticon-disabled});
       }
     }
 
@@ -120,38 +90,27 @@
      * TERTIARY VARIANT STYLES
      */
     &[variant='tertiary'] {
-      --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-default-default, #{$ds-color-container-ui-tertiary-default-default});
-      --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-default-default, #{$ds-color-container-ui-tertiary-default-default});
+      --ds-auro-button-container-color: var(--ds-advanced-color-button-tertiary-background, #{$ds-advanced-color-button-tertiary-background});
+      --ds-auro-button-container-image: var(--ds-advanced-color-button-tertiary-background, #{$ds-advanced-color-button-tertiary-background});
       --ds-auro-button-border-color: transparent;
-      --ds-auro-button-text-color: var(--ds-color-text-ui-default-default, #{$ds-color-text-ui-default-default});
+      --ds-auro-button-text-color: var(--ds-advanced-color-button-tertiary-text, #{$ds-advanced-color-button-tertiary-text});
+      --ds-auro-button-loader-color: var(--ds-advanced-color-button-tertiary-text, #{$ds-advanced-color-button-tertiary-text});
 
-      @media (hover: hover) {
-        &:active:not(:disabled),
-        &:hover:not(:disabled) {        
-          --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-hover-default, #{$ds-color-container-ui-tertiary-hover-default});
-          --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-hover-default, #{$ds-color-container-ui-tertiary-hover-default});
-          --ds-auro-button-border-color: transparent;
-          --ds-auro-button-text-color: var(--ds-color-text-ui-hover-default, #{$ds-color-text-ui-hover-default});
-        }
+      &:active:not(:disabled),
+      &:hover:not(:disabled) {        
+        --ds-auro-button-container-color: var(--ds-advanced-color-button-tertiary-background-hover, #{$ds-advanced-color-button-tertiary-background-hover});
+        --ds-auro-button-container-image: var(--ds-advanced-color-button-tertiary-background-hover, #{$ds-advanced-color-button-tertiary-background-hover});
+        --ds-auro-button-border-color: transparent;
       }
 
       &:focus-visible {
-        --ds-auro-button-border-color: var(--ds-color-border-ui-default-default, #{$ds-color-border-ui-default-default});
-        --ds-auro-button-border-inset-color: var(--ds-color-border-ui-default-default, #{$ds-color-border-ui-default-default});
-      }
-
-      &:active {
-        --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-active-default, #{$ds-color-container-ui-tertiary-active-default});
-        --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-active-default, #{$ds-color-container-ui-tertiary-active-default});
-        --ds-auro-button-border-color: transparent;
-        --ds-auro-button-text-color: var(--ds-color-text-ui-active-default, #{$ds-color-text-ui-active-default});
+        --ds-auro-button-border-color: var(--ds-advanced-color-state-focused, #{$ds-advanced-color-state-focused});
+        --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused, #{$ds-advanced-color-state-focused});
       }
 
       &:disabled {
-        --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-disabled-default, #{$ds-color-container-ui-tertiary-disabled-default});
-        --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-disabled-default, #{$ds-color-container-ui-tertiary-disabled-default});
         --ds-auro-button-border-color: transparent;
-        --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-default, #{$ds-color-text-ui-disabled-default});
+        --ds-auro-button-text-color: var(--ds-basic-color-texticon-disabled, #{$ds-basic-color-texticon-disabled});
       }
     }
 
@@ -159,23 +118,21 @@
      * FLAT VARIANT STYLES
      */
     &[variant='flat'] {
-      color: var(--ds-color-icon-ui-secondary-default-default);
+      color: var(--ds-advanced-color-button-flat-text, #{$ds-advanced-color-button-flat-text});
       background-color: transparent;
       background-image: none;
       border-color: transparent;
 
-      @media (hover: hover) {
-        &:active:not(:disabled),
-        &:hover:not(:disabled) {
-          color: var(--ds-color-icon-ui-secondary-hover-default);
-          background-color: transparent;
-          background-image: none;
-          border-color: transparent;
-        }
+      &:active:not(:disabled),
+      &:hover:not(:disabled) {
+        color: var(--ds-advanced-color-button-flat-text-hover, #{$ds-advanced-color-button-flat-text-hover});
+        background-color: transparent;
+        background-image: none;
+        border-color: transparent;
       }
 
       &:disabled {
-        color: var(--ds-color-icon-ui-secondary-disabled-default);
+        color: var(--ds-advanced-color-button-flat-text-disabled, #{$ds-advanced-color-button-flat-text-disabled});
         background-color: transparent;
         background-image: none;
         border-color: transparent;
@@ -184,139 +141,92 @@
   }
 
   &[ondark] {
-    --ds-auro-button-container-color: var(--ds-color-container-ui-primary-default-inverse, #{$ds-color-container-ui-primary-default-inverse});
-    --ds-auro-button-container-image: var(--ds-color-container-ui-primary-default-inverse, #{$ds-color-container-ui-primary-default-inverse});
+    --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border-inverse, #{$ds-advanced-color-button-primary-border-inverse});
+    --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background-inverse, #{$ds-advanced-color-button-primary-background-inverse});
+    --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background-inverse, #{$ds-advanced-color-button-primary-background-inverse});
+    --ds-auro-button-text-color: var(--ds-advanced-color-button-primary-text-inverse, #{$ds-advanced-color-button-primary-text-inverse});
+    --ds-auro-button-loader-color: var(--ds-advanced-color-button-primary-text-inverse, #{$ds-advanced-color-button-primary-text-inverse});
 
-    --ds-auro-button-text-color: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
-    --ds-auro-button-loader-color: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
-
-    /**
-      * We use the container color for the border color in this case because the border is not designed as visibly different from the container color
-      */
-    --ds-auro-button-border-color: var(--ds-color-container-ui-primary-default-inverse, #{$ds-color-container-ui-primary-default-inverse});
-
-    @media (hover: hover) {
-      &:active:not(:disabled),
-      &:hover:not(:disabled) {
-        --ds-auro-button-container-color: var(--ds-color-container-ui-primary-hover-inverse, #{$ds-color-container-ui-primary-hover-inverse});
-        --ds-auro-button-container-image: var(--ds-color-container-ui-primary-hover-inverse, #{$ds-color-container-ui-primary-hover-inverse});
-
-        /**
-          * We use the container color for the border color in this case because the border is not designed as visibly different from the container color
-          */
-        --ds-auro-button-border-color: var(--ds-color-container-ui-primary-hover-inverse, #{$ds-color-container-ui-primary-hover-inverse});
-      }
+    &:active:not(:disabled),
+    &:hover:not(:disabled) {
+      --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border-inverse-hover, #{$ds-advanced-color-button-primary-border-inverse-hover});
+      --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background-inverse-hover, #{$ds-advanced-color-button-primary-background-inverse-hover});
+      --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background-inverse-hover, #{$ds-advanced-color-button-primary-background-inverse-hover});
     }
 
-    &:active {
-      --ds-auro-button-container-color: var(--ds-color-container-ui-primary-active-inverse, #{$ds-color-container-ui-primary-active-inverse});
-      --ds-auro-button-container-image: var(--ds-color-container-ui-primary-active-inverse, #{$ds-color-container-ui-primary-active-inverse});
-
-      /**
-        * We use the container color for the border color in this case because the border is not designed as visibly different from the container color
-        */
-      --ds-auro-button-border-color: var(--ds-color-container-ui-primary-active-inverse, #{$ds-color-container-ui-primary-active-inverse});
+    &:focus-visible {
+      --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused, #{$ds-advanced-color-state-focused});
     }
 
-    &[disabled] {
-      --ds-auro-button-container-color: var(--ds-color-container-ui-primary-disabled-inverse, #{$ds-color-container-ui-primary-disabled-inverse});
-      --ds-auro-button-container-image: var(--ds-color-container-ui-primary-disabled-inverse, #{$ds-color-container-ui-primary-disabled-inverse});
-      --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-inverse, #{$ds-color-text-ui-disabled-inverse});
-  
-      /**
-       * We use the container color for the border color in this case because the border is not designed as visibly different from the container color
-       */
-      --ds-auro-button-border-color: var(--ds-color-container-ui-primary-disabled-inverse, #{$ds-color-container-ui-primary-disabled-inverse});
+    &:disabled {
+      --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border-inverse-disabled, #{$ds-advanced-color-button-primary-border-inverse-disabled});
+      --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background-inverse-disabled, #{$ds-advanced-color-button-primary-background-inverse-disabled});
+      --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background-inverse-disabled, #{$ds-advanced-color-button-primary-background-inverse-disabled});
+      --ds-auro-button-text-color: var(--ds-basic-color-texticon-disabled-inverse, #{$ds-basic-color-texticon-disabled-inverse});
     }
 
     &[variant='secondary'] {
-      --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-default-inverse, #{$ds-color-container-ui-secondary-default-inverse});
-      --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-default-inverse, #{$ds-color-container-ui-secondary-default-inverse});
-      --ds-auro-button-border-color: var(--ds-color-border-ui-default-inverse, #{$ds-color-border-ui-default-inverse});
-      --ds-auro-button-text-color: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+      --ds-auro-button-container-color: transparent;
+      --ds-auro-button-container-image: transparent;
+      --ds-auro-button-border-color: var(--ds-advanced-color-button-secondary-border-inverse, #{$ds-advanced-color-button-secondary-border-inverse});
+      --ds-auro-button-text-color: var(--ds-advanced-color-button-secondary-text-inverse, #{$ds-advanced-color-button-secondary-text-inverse});
+      --ds-auro-button-loader-color: var(--ds-advanced-color-button-secondary-text-inverse, #{$ds-advanced-color-button-secondary-text-inverse});
 
-      @media (hover: hover) {
-        &:hover {        
-          --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-hover-inverse, #{$ds-color-container-ui-secondary-hover-inverse});
-          --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-hover-inverse, #{$ds-color-container-ui-secondary-hover-inverse});
-          --ds-auro-button-border-color: var(--ds-color-border-ui-hover-inverse, #{$ds-color-border-ui-hover-inverse});
-          --ds-auro-button-text-color: var(--ds-color-text-ui-hover-inverse, #{$ds-color-text-ui-hover-inverse});
-        }
+      &:active:not(:disabled),
+      &:hover:not(:disabled) {     
+        --ds-auro-button-container-color: var(--ds-advanced-color-button-secondary-background-inverse-hover, #{$ds-advanced-color-button-secondary-background-inverse-hover});
+        --ds-auro-button-container-image: var(--ds-advanced-color-button-secondary-background-inverse-hover, #{$ds-advanced-color-button-secondary-background-inverse-hover});
       }
 
       &:focus-visible {
-        --ds-auro-button-border-inset-color: var(--ds-color-border-ui-focus-inverse, #{$ds-color-border-ui-focus-inverse});
-      }
-
-      &:active {
-        --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-active-inverse, #{$ds-color-container-ui-secondary-active-inverse});
-        --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-active-inverse, #{$ds-color-container-ui-secondary-active-inverse});
-        --ds-auro-button-border-color: var(--ds-color-border-ui-active-inverse, #{$ds-color-border-ui-active-inverse});
-        --ds-auro-button-text-color: var(--ds-color-text-ui-active-inverse, #{$ds-color-text-ui-active-inverse});
+        --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{$ds-advanced-color-state-focused-inverse});
       }
 
       &:disabled {
-        --ds-auro-button-container-color: var(--ds-color-container-ui-secondary-disabled-inverse, #{$ds-color-container-ui-secondary-disabled-inverse});
-        --ds-auro-button-container-image: var(--ds-color-container-ui-secondary-disabled-inverse, #{$ds-color-container-ui-secondary-disabled-inverse});
-        --ds-auro-button-border-color: var(--ds-color-border-ui-disabled-inverse, #{$ds-color-border-ui-disabled-inverse});
-        --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-inverse, #{$ds-color-text-ui-disabled-inverse});
+        --ds-auro-button-text-color: var(--ds-basic-color-texticon-disabled-inverse, #{$ds-basic-color-texticon-disabled-inverse});
+        --ds-auro-button-border-color: var(--ds-advanced-color-button-secondary-border-inverse-disabled, #{$ds-advanced-color-button-secondary-border-inverse-disabled});
       }
     }
 
     &[variant='tertiary'] {
-      --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-default-inverse, #{$ds-color-container-ui-tertiary-default-inverse});
-      --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-default-inverse, #{$ds-color-container-ui-tertiary-default-inverse});
+      --ds-auro-button-container-color: var(--ds-advanced-color-button-tertiary-background-inverse, #{$ds-advanced-color-button-tertiary-background-inverse});
+      --ds-auro-button-container-image: var(--ds-advanced-color-button-tertiary-background-inverse, #{$ds-advanced-color-button-tertiary-background-inverse});
       --ds-auro-button-border-color: transparent;
-      --ds-auro-button-text-color: var(--ds-color-text-ui-default-inverse, #{$ds-color-text-ui-default-inverse});
+      --ds-auro-button-text-color: var(--ds-advanced-color-button-tertiary-text-inverse, #{$ds-advanced-color-button-tertiary-text-inverse});
+      --ds-auro-button-loader-color: var(--ds-advanced-color-button-tertiary-text-inverse, #{$ds-advanced-color-button-tertiary-text-inverse});
 
-      @media (hover: hover) {
-        &:active:not(:disabled),
-        &:hover:not(:disabled) {        
-          --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-hover-inverse, #{$ds-color-container-ui-tertiary-hover-inverse});
-          --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-hover-inverse, #{$ds-color-container-ui-tertiary-hover-inverse});
-          --ds-auro-button-border-color: transparent;
-          --ds-auro-button-text-color: var(--ds-color-text-ui-hover-inverse, #{$ds-color-text-ui-hover-inverse});
-        }
+      &:active:not(:disabled),
+      &:hover:not(:disabled) {        
+        --ds-auro-button-container-color: var(--ds-advanced-color-button-tertiary-background-inverse-hover, #{$ds-advanced-color-button-tertiary-background-inverse-hover});
+        --ds-auro-button-container-image: var(--ds-advanced-color-button-tertiary-background-inverse-hover, #{$ds-advanced-color-button-tertiary-background-inverse-hover});
       }
 
       &:focus-visible {
-        --ds-auro-button-border-color: var(--ds-color-border-ui-default-inverse, #{$ds-color-border-ui-default-inverse});
-        --ds-auro-button-border-inset-color: var(--ds-color-border-ui-default-inverse, #{$ds-color-border-ui-default-inverse});
-      }
-
-      &:active {
-        --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-active-inverse, #{$ds-color-container-ui-tertiary-active-inverse});
-        --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-active-inverse, #{$ds-color-container-ui-tertiary-active-inverse});
-        --ds-auro-button-border-color: transparent;
-        --ds-auro-button-text-color: var(--ds-color-text-ui-active-inverse, #{$ds-color-text-ui-active-inverse});
+        --ds-auro-button-border-color: var(--ds-advanced-color-state-focused-inverse, #{$ds-advanced-color-state-focused-inverse});
+        --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{$ds-advanced-color-state-focused-inverse});
       }
 
       &:disabled {
-        --ds-auro-button-container-color: var(--ds-color-container-ui-tertiary-disabled-inverse, #{$ds-color-container-ui-tertiary-disabled-inverse});
-        --ds-auro-button-container-image: var(--ds-color-container-ui-tertiary-disabled-inverse, #{$ds-color-container-ui-tertiary-disabled-inverse});
-        --ds-auro-button-border-color: transparent;
-        --ds-auro-button-text-color: var(--ds-color-text-ui-disabled-inverse, #{$ds-color-text-ui-disabled-inverse});
+        --ds-auro-button-text-color: var(--ds-basic-color-texticon-disabled-inverse, #{$ds-basic-color-texticon-disabled-inverse});
       }
     }
 
     &[variant='flat'] {
-      color: var(--ds-color-icon-ui-secondary-default-inverse);
+      color: var(--ds-advanced-color-button-flat-text-inverse, #{$ds-advanced-color-button-flat-text-inverse});
       background-color: transparent;
       background-image: none;
       border-color: transparent;
 
-      @media (hover: hover) {
-        &:active:not(:disabled),
-        &:hover:not(:disabled) {
-          color: var(--ds-color-icon-ui-secondary-hover-inverse);
-          background-color: transparent;
-          background-image: none;
-          border-color: transparent;
-        }
+      &:active:not(:disabled),
+      &:hover:not(:disabled) {
+        color: var(--ds-advanced-color-button-flat-text-inverse-hover, #{$ds-advanced-color-button-flat-text-inverse-hover});
+        background-color: transparent;
+        background-image: none;
+        border-color: transparent;
       }
 
       &:disabled {
-        color: var(--ds-color-icon-ui-disabled-default);
+        color: var(--ds-advanced-color-button-flat-text-inverse-disabled, #{$ds-advanced-color-button-flat-text-inverse-disabled});
         background-color: transparent;
         background-image: none;
         border-color: transparent;
