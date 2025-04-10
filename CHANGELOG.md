@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [9.3.0](https://github.com/AlaskaAirlines/auro-button/compare/v9.2.0...v9.3.0) (2025-04-10)
+
+
+### Features
+
+* update to use new alaska theme tokens [#301](https://github.com/AlaskaAirlines/auro-button/issues/301) ([3841eb0](https://github.com/AlaskaAirlines/auro-button/commit/3841eb099f08122b7bb768838c7a13b022dd015a))
+
+
+### Performance Improvements
+
+* update dependencies and tsconfig ([988bcf0](https://github.com/AlaskaAirlines/auro-button/commit/988bcf03a37cc41ae5764c7ccdd58b9dad39895b))
+
 # [9.2.0](https://github.com/AlaskaAirlines/auro-button/compare/v9.1.1...v9.2.0) (2025-04-07)
 
 
