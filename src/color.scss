@@ -162,7 +162,7 @@
       --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border-inverse-disabled, #{$ds-advanced-color-button-primary-border-inverse-disabled});
       --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background-inverse-disabled, #{$ds-advanced-color-button-primary-background-inverse-disabled});
       --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background-inverse-disabled, #{$ds-advanced-color-button-primary-background-inverse-disabled});
-      --ds-auro-button-text-color: var(--ds-basic-color-texticon-disabled-inverse, #{$ds-basic-color-texticon-disabled-inverse});
+      --ds-auro-button-text-color: var(--ds-basic-color-texticon-inverse-disabled, #{$ds-basic-color-texticon-inverse-disabled});
     }
 
     &[variant='secondary'] {
@@ -183,7 +183,7 @@
       }
 
       &:disabled {
-        --ds-auro-button-text-color: var(--ds-basic-color-texticon-disabled-inverse, #{$ds-basic-color-texticon-disabled-inverse});
+        --ds-auro-button-text-color: var(--ds-basic-color-texticon-inverse-disabled, #{$ds-basic-color-texticon-inverse-disabled});
         --ds-auro-button-border-color: var(--ds-advanced-color-button-secondary-border-inverse-disabled, #{$ds-advanced-color-button-secondary-border-inverse-disabled});
       }
     }
@@ -207,7 +207,7 @@
       }
 
       &:disabled {
-        --ds-auro-button-text-color: var(--ds-basic-color-texticon-disabled-inverse, #{$ds-basic-color-texticon-disabled-inverse});
+        --ds-auro-button-text-color: var(--ds-basic-color-texticon-inverse-disabled, #{$ds-basic-color-texticon-inverse-disabled});
       }
     }
 
