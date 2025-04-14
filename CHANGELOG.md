@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [9.3.1](https://github.com/AlaskaAirlines/auro-button/compare/v9.3.0...v9.3.1) (2025-04-14)
+
+
+### Bug Fixes
+
+* use correct text token name in disabled state [#309](https://github.com/AlaskaAirlines/auro-button/issues/309) ([17834e4](https://github.com/AlaskaAirlines/auro-button/commit/17834e45c2f062a1dfe64ff2b2fb6738940c931b))
+
 # [9.3.0](https://github.com/AlaskaAirlines/auro-button/compare/v9.2.0...v9.3.0) (2025-04-10)
 
 
