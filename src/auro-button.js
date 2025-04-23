@@ -5,20 +5,20 @@
 // ---------------------------------------------------------------------
 
 import { LitElement } from "lit";
-import { html } from 'lit/static-html.js';
+import { html } from "lit/static-html.js";
 
-import { classMap } from 'lit/directives/class-map.js';
-import { ifDefined } from 'lit/directives/if-defined.js';
+import { classMap } from "lit/directives/class-map.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 
-import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
-import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
+import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 
 import styleCss from "./style-css.js";
 import colorCss from "./color-css.js";
 import tokensCss from "./tokens-css.js";
 
-import { AuroLoader } from '@aurodesignsystem/auro-loader/src/auro-loader.js';
-import loaderVersion from './loaderVersion.js';
+import { AuroLoader } from "@aurodesignsystem/auro-loader/src/auro-loader.js";
+import loaderVersion from "./loaderVersion.js";
 
 /**
  * @slot - Default slot for the text of the button.
@@ -54,16 +54,16 @@ export class AuroButton extends LitElement {
     this.rounded = false;
     this.slim = false;
     this.fluid = false;
-    this.loadingText = this.loadingText || 'Loading...';
+    this.loadingText = this.loadingText || "Loading...";
 
     // Support for HTML5 forms
-    if (typeof this.attachInternals === 'function') {
+    if (typeof this.attachInternals === "function") {
       this.internals = this.attachInternals();
     } else {
       this.internals = null;
 
       // eslint-disable-next-line no-console
-      console.warn('This browser does not support form association features. Some form-related functionality may not work as expected. Consider using a polyfill or handling click events manually.');
+      console.warn("This browser does not support form association features. Some form-related functionality may not work as expected. Consider using a polyfill or handling click events manually.");
     }
 
     /**
@@ -74,7 +74,11 @@ export class AuroButton extends LitElement {
     /**
      * @private
      */
-    this.loaderTag = versioning.generateTag('auro-loader', loaderVersion, AuroLoader);
+    this.loaderTag = versioning.generateTag(
+      "auro-loader",
+      loaderVersion,
+      AuroLoader
+    );
   }
 
   static get styles() {
@@ -91,43 +95,43 @@ export class AuroButton extends LitElement {
       /**
        * This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user.
        */
-      autofocus:        {
+      autofocus: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * If set to true, button will become disabled and not allow for interactions.
        */
-      disabled:         {
+      disabled: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * DEPRECATED.
        * @deprecated
        */
-      secondary:         {
+      secondary: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * DEPRECATED.
        * @deprecated
        */
-      tertiary:         {
+      tertiary: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * Alters the shape of the button to be full width of its parent container.
        */
-      fluid:         {
+      fluid: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -135,30 +139,30 @@ export class AuroButton extends LitElement {
        */
       iconOnly: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * If set to true button text will be replaced with `auro-loader` and become disabled.
        */
-      loading:          {
+      loading: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
        */
-      loadingText:      {
-        type: String
+      loadingText: {
+        type: String,
       },
 
       /**
        * Set value for on-dark version of auro-button.
        */
-      onDark:           {
+      onDark: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -166,7 +170,7 @@ export class AuroButton extends LitElement {
        */
       rounded: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -174,7 +178,7 @@ export class AuroButton extends LitElement {
        */
       slim: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -182,7 +186,7 @@ export class AuroButton extends LitElement {
        */
       tIndex: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -198,9 +202,9 @@ export class AuroButton extends LitElement {
        * Use it in cases where a text label is not visible on the screen.
        * If there is visible text labeling the element, use `aria-labelledby` instead.
        */
-      arialabel:        {
+      arialabel: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -208,9 +212,9 @@ export class AuroButton extends LitElement {
        * and its value should be one or more element IDs, which refer to elements that have the text needed for labeling.
        * List multiple element IDs in a space delimited fashion.
        */
-      arialabelledby:   {
+      arialabelledby: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -220,40 +224,44 @@ export class AuroButton extends LitElement {
        */
       ariaexpanded: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
        */
-      title:            {
+      title: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * The type of the button. Possible values are: `submit`, `reset`, `button`.
        */
-      type:             {
+      type: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * Defines the value associated with the button which is submitted with the form data.
        */
-      value:            {
+      value: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * Sets button variant option. Possible values are: `secondary`, `tertiary`.
        */
-      variant:          {
+      variant: {
         type: String,
-        reflect: true
+        reflect: true,
       },
+
+      /**
+       * When false the component API should not be called.
+       */
       ready: { type: Boolean },
     };
   }
@@ -276,17 +284,17 @@ export class AuroButton extends LitElement {
    * @returns {void}
    */
   focus() {
-    this.renderRoot.querySelector('button').focus();
+    this.renderRoot.querySelector("button").focus();
   }
 
   updated() {
     // support the old `secondary` and `tertiary` attributes` that are deprecated
     if (this.secondary) {
-      this.setAttribute('variant', 'secondary');
+      this.setAttribute("variant", "secondary");
     }
 
     if (this.tertiary) {
-      this.setAttribute('variant', 'tertiary');
+      this.setAttribute("variant", "tertiary");
     }
   }
 
@@ -312,14 +320,14 @@ export class AuroButton extends LitElement {
 
   render() {
     const classes = {
-      'util_insetLg--squish': true,
-      'auro-button': true,
-      'auroButton': true,
-      'auro-button--rounded': this.rounded,
-      'auro-button--slim': this.slim,
-      'auro-button--iconOnly': this.iconOnly,
-      'auro-button--iconOnlySlim': this.iconOnly && this.slim,
-      'loading': this.loading
+      "util_insetLg--squish": true,
+      "auro-button": true,
+      auroButton: true,
+      "auro-button--rounded": this.rounded,
+      "auro-button--slim": this.slim,
+      "auro-button--iconOnly": this.iconOnly,
+      "auro-button--iconOnlySlim": this.iconOnly && this.slim,
+      loading: this.loading,
     };
 
     return html`
@@ -339,7 +347,7 @@ export class AuroButton extends LitElement {
         type="${ifDefined(this.type ? this.type : undefined)}"
         variant="${ifDefined(this.variant ? this.variant : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
-        @click="${this.type === 'submit' ? this.surfaceSubmitEvent : undefined}"
+        @click="${this.type === "submit" ? this.surfaceSubmitEvent : undefined}"
       >
         ${ifDefined(this.loading ? html`<${this.loaderTag} pulse part="loader"></${this.loaderTag}>` : undefined)}
 
