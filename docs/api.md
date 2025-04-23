@@ -11,16 +11,18 @@
 | `autofocus`      | `autofocus`      | `boolean` | false   | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user. |
 | `disabled`       | `disabled`       | `boolean` | false   | If set to true, button will become disabled and not allow for interactions. |
 | `fluid`          | `fluid`          | `boolean` | false   | Alters the shape of the button to be full width of its parent container. |
-| `iconOnly`       | `iconOnly`       | `boolean` | false   | If set to true, the button will contain an icon with no additional content. |
+| `iconOnly`       | `iconOnly`       | `boolean` | false   | DEPRECATED                                       |
 | `loading`        | `loading`        | `boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled. |
 | `loadingText`    | `loadingText`    | `string`  |         | Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used. |
 | `onDark`         | `onDark`         | `boolean` | false   | Set value for on-dark version of auro-button.    |
-| `ready`          | `ready`          | `boolean` |         |                                                  |
-| `rounded`        | `rounded`        | `boolean` | false   | If set to true, the button will have a rounded shape. |
-| `secondary`      | `secondary`      | `boolean` | false   | DEPRECATED.                                      |
+| `ready`          | `ready`          | `boolean` |         | When false the component API should not be called. |
+| `rounded`        | `rounded`        | `boolean` | false   | DEPRECATED                                       |
+| `secondary`      | `secondary`      | `boolean` | false   | DEPRECATED                                       |
+| `shape`          | `shape`          | `string`  | ""      |                                                  |
+| `size`           | `size`           | `string`  | "md"    |                                                  |
 | `slim`           | `slim`           | `boolean` | false   | Set value for slim version of auro-button.       |
 | `tIndex`         | `tIndex`         | `string`  |         | Populates `tabIndex` to define the focusable sequence in keyboard navigation. |
-| `tertiary`       | `tertiary`       | `boolean` | false   | DEPRECATED.                                      |
+| `tertiary`       | `tertiary`       | `boolean` | false   | DEPRECATED                                       |
 | `title`          | `title`          | `string`  |         | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
 | `type`           | `type`           | `string`  |         | The type of the button. Possible values are: `submit`, `reset`, `button`. |
 | `value`          | `value`          | `string`  |         | Defines the value associated with the button which is submitted with the form data. |
