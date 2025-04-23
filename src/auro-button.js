@@ -58,6 +58,8 @@ export class AuroButton extends LitElement {
     this.slim = false;
     this.fluid = false;
     this.loadingText = this.loadingText || "Loading...";
+    this.shape = '';
+    this.size = 'md';
 
     // Support for HTML5 forms
     if (typeof this.attachInternals === "function") {
@@ -112,6 +114,7 @@ export class AuroButton extends LitElement {
       },
 
       /**
+       * DEPRECATED @see variant.
        * @deprecated
        */
       secondary: {
@@ -120,6 +123,7 @@ export class AuroButton extends LitElement {
       },
 
       /**
+       * DEPRECATED @see variant.
        * @deprecated
        */
       tertiary: {
@@ -136,7 +140,8 @@ export class AuroButton extends LitElement {
       },
 
       /**
-       * If set to true, the button will contain an icon with no additional content.
+       * DEPRECATED @see shape.
+       * @deprecated
        */
       iconOnly: {
         type: Boolean,
@@ -167,7 +172,8 @@ export class AuroButton extends LitElement {
       },
 
       /**
-       * If set to true, the button will have a rounded shape.
+       * DEPRECATED @see shape.
+       * @deprecated
        */
       rounded: {
         type: Boolean,
@@ -243,6 +249,16 @@ export class AuroButton extends LitElement {
         reflect: true,
       },
 
+      shape: {
+        type: String,
+        reflect: true,
+      },
+
+      size: {
+        type: String,
+        reflect: true,
+      },
+
       /**
        * When false the component API should not be called.
        */
@@ -286,14 +302,23 @@ export class AuroButton extends LitElement {
     }));
   }
 
-  updated() {
+  updated(changedProperties) {
     // support the old `secondary` and `tertiary` attributes` that are deprecated
-    if (this.secondary) {
-      this.setAttribute("variant", "secondary");
+    if (changedProperties.has("secondary") || changedProperties.has("tertiary")) {
+      if (this.secondary) {
+        this.variant = "secondary";
+      } else if (this.tertiary) {
+        this.variant = "tertiary";
+      }
     }
 
-    if (this.tertiary) {
-      this.setAttribute("variant", "tertiary");
+    // support old `rounded` and `iconOnly` attributes that are deprecated
+    if (changedProperties.has("rounded") || changedProperties.has("iconOnly")) {
+      if (this.rounded) {
+        this.shape = "rounded";
+      } else if (this.iconOnly) {
+        this.shape = "iconOnly";
+      }
     }
   }
 
@@ -326,10 +351,10 @@ export class AuroButton extends LitElement {
       "util_insetLg--squish": true,
       "auro-button": true,
       auroButton: true,
-      "auro-button--rounded": this.rounded,
+      "auro-button--rounded": this.shape === 'rounded',
       "auro-button--slim": this.slim,
-      "auro-button--iconOnly": this.iconOnly,
-      "auro-button--iconOnlySlim": this.iconOnly && this.slim,
+      "auro-button--iconOnly": this.shape === 'iconOnly',
+      "auro-button--iconOnlySlim": this.shape === 'iconOnly' && this.slim,
       loading: this.loading,
     };
 
@@ -354,7 +379,7 @@ export class AuroButton extends LitElement {
 
         <span class="contentWrapper">
           <span class="textSlot" part="text">
-            ${this.iconOnly ? undefined : html`<slot></slot>`}
+            ${this.shape === 'iconOnly' ? undefined : html`<slot></slot>`}
           </span>
 
           <span part="icon">
