@@ -3,19 +3,19 @@ export function toggledTextExample() {
 
   // The mouseover and mouseout events are to simulate toggling text for mouse users
   toggledTextElem.addEventListener('mouseover', () => {
-    toggledTextElem.iconOnly = false;
+    toggledTextElem.shape = "pill";
   });
 
   toggledTextElem.addEventListener('mouseout', () => {
-    toggledTextElem.iconOnly = true;
+    toggledTextElem.shape = "circle";
   });
 
   // The focusin and focusout events are to simulate toggling text for keyboard users
   toggledTextElem.addEventListener('focusin', () => {
-    toggledTextElem.iconOnly = false;
+    toggledTextElem.shape = "pill";
   });
 
   toggledTextElem.addEventListener('focusout', () => {
-    toggledTextElem.iconOnly = true;
+    toggledTextElem.shape = "circle";
   });
 }

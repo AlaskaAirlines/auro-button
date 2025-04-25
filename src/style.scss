@@ -107,6 +107,10 @@ slot {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 
+  .textSlot {
+    transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out;
+  }
+
   // handle active state
   &:active {
     transform: scale(0.95);
@@ -126,14 +130,6 @@ slot {
     }
   }
 
-  &.loading {
-    cursor: not-allowed;
-
-    *:not([auro-loader]) {
-      visibility: hidden;
-    }
-  }
-
   @include auro_grid-breakpoint--sm {
     min-width: 8.75rem;
     width: auto;
@@ -144,116 +140,37 @@ slot {
     transform: unset;
   }
 
-  &[variant='secondary'] {
-    &:disabled {
-      cursor: not-allowed;
-      transform: unset;
-    }
-  }
+}
 
-  &[variant='tertiary'] {
-    &:disabled {
-      cursor: not-allowed;
-      transform: unset;
-    }
-  }
 
-  &[variant='flat'] {
-    height: unset;
-    width: unset;
-    min-height: unset;
-    max-height: unset;
-    min-width: unset;
-    max-width: unset;
-    border: 0;
-    border-radius: unset;
-    gap: unset;
+/* shape */
+:host([shape="window-pane"]) {
+  .auro-button {
     padding: unset;
-  }
-
-  &[onDark] {
-    &:disabled {
-      cursor: not-allowed;
-      transform: unset;
-    }
-
-    &[variant='secondary'] {
-      &:disabled {
-        cursor: not-allowed;
-        transform: unset;
-      }
-    }
-
-    &[variant='tertiary'] {
-      @media (hover: hover) {
-        &:active,
-        &:hover {
-          box-shadow: none;
-        }
-      }
-
-      &:active {
-        box-shadow: none;
-      }
-
-      &:disabled {
-        cursor: not-allowed;
-        transform: unset;
-      }
-    }
-  }
-
-  // auro-button--slim
-  &--slim {
-    padding: var(--ds-size-100, $ds-size-100) var(--ds-size-200, $ds-size-200);
-    font-family: var(--ds-basic-text-body-sm-font-family, $ds-basic-text-body-sm-font-family);
     font-size: var(--ds-basic-text-body-sm-font-size, $ds-basic-text-body-sm-font-size);
     font-weight: var(--ds-basic-text-body-sm-font-weight, $ds-basic-text-body-sm-font-weight);
     line-height: var(--ds-basic-text-body-sm-line-height, $ds-basic-text-body-sm-line-height);
     letter-spacing: var(--ds-basic-text-body-sm-letter-spacing, $ds-basic-text-body-sm-letter-spacing);
     min-width: unset;
-    min-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
-    max-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
-  }
-
-  // auro-button--iconOnly
-  &--iconOnly {
-    ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
-      --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
-    }
-
-    padding: 0 var(--ds-size-100, $ds-size-100);
 
     border-radius: 100px;
-    min-width: unset;
 
     height: var(--ds-size-600, $ds-size-600);
     width: var(--ds-size-500, $ds-size-500);
-
-    &:not(.auro-button--rounded):focus-visible {
-      &:not([variant='secondary']):not([variant='tertiary']):not([variant='flat']) {
-        outline-width: 1px;
-        outline-offset: -2px; // -(1px width + 1px border-width)
-      }
-    }
   }
 
-  // auro-button--iconOnlySlim
-  &--iconOnlySlim {
-    ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
-      --ds-auro-icon-size: calc(var(--ds-size-200, #{$ds-size-200}) + var(--ds-size-50, #{$ds-size-50}));
-    }
-
-    padding: 0 var(--ds-size-50, $ds-size-50);
-
-    height: calc(var(--ds-size-400, $ds-size-400) + var(--ds-size-50, $ds-size-50));
-    width: calc(var(--ds-size-300, $ds-size-300) + var(--ds-size-50, $ds-size-50));
+  ::slotted(auro-icon),
+  ::slotted([auro-icon]) {
+    --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
   }
 
-  // auro-button--rounded
-  &--rounded {
+  .textSlot {
+    opacity: 0;
+   }
+}
+
+:host([shape='pill']) {
+  .auro-button {
     border-radius: 100px;
     box-shadow: var(--ds-elevation-300, $ds-elevation-300);
 
@@ -261,51 +178,91 @@ slot {
     min-width: unset;
 
     transition: all 300ms ease-out, outline 0ms, outline-offset 0ms;
+  }
 
-    ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
-      --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
-    }
-
-    &:focus-visible {
-      &:not([variant='flat']) {
-        &:after {
-          border-radius: 100px;
-        }
-      }
-    }
+  ::slotted(auro-icon),
+  ::slotted([auro-icon]) {
+    --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
   }
 }
 
-
-:host([rounded]) {
-  .textSlot {
-    transition: opacity 300ms ease-in;
-    opacity: 1;
-  }
-}
-
-:host([rounded][iconOnly]) {
+:host([shape='circle']) {
   .textSlot {
     opacity: 0;
   }
 
-  .textWrapper {
-    display: none;
-  }
-
   .auro-button {
-    min-width: unset;
+    border-radius: 100px;
+    box-shadow: var(--ds-elevation-300, $ds-elevation-300);
     padding: unset;
 
+    height: var(--ds-size-600, $ds-size-600);
     width: var(--ds-size-600, $ds-size-600);
+    min-width: unset;
+
+    transition: all 300ms ease-out, outline 0ms, outline-offset 0ms;
+  }
+
+  ::slotted(auro-icon),
+  ::slotted([auro-icon]) {
+    --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
   }
 }
 
+/* loading */
 [auro-loader] {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+}
+
+:host([loading]) {
+  cursor: not-allowed;
+
+  .contentWrapper {
+    visibility: hidden;
+  }
+}
+
+
+/* variant */
+:host([variant='secondary']) .auro-button {
+  &:disabled {
+    cursor: not-allowed;
+    transform: unset;
+  }
+}
+
+:host([variant='tertiary']) .auro-button {
+  &:disabled {
+    cursor: not-allowed;
+    transform: unset;
+  }
+}
+
+:host([variant='flat']) .auro-button {
+  height: unset;
+  width: unset;
+  min-height: unset;
+  max-height: unset;
+  min-width: unset;
+  max-width: unset;
+  border: 0;
+  border-radius: unset;
+  gap: unset;
+  padding: unset;
+}
+
+:host([onDark][variant='tertiary']) .auro-button {
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+  }
 }
