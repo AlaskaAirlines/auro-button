@@ -7,7 +7,6 @@
 import { LitElement } from "lit";
 import { html } from "lit/static-html.js";
 
-import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
@@ -20,8 +19,12 @@ import tokensCss from "./tokens-css.js";
 import { AuroLoader } from "@aurodesignsystem/auro-loader/src/auro-loader.js";
 import loaderVersion from "./loaderVersion.js";
 
+const ICON_ONLY_SHAPE = [
+  'circle',
+  'window-pane',
+];
+
 /**
- * @event auroButton-ready - Notifies that the component has finished initializing.
  * @slot - Default slot for the text of the button.
  * @slot icon - Slot to provide auro-icon for the button.
  * @csspart button - Apply CSS to HTML5 button.
@@ -51,14 +54,13 @@ export class AuroButton extends LitElement {
     this.iconOnly = false;
     this.loading = false;
     this.onDark = false;
-    this.ready = false;
     this.secondary = false;
     this.tertiary = false;
     this.rounded = false;
     this.slim = false;
     this.fluid = false;
     this.loadingText = this.loadingText || "Loading...";
-    this.shape = '';
+    this.shape = this.shape || 'rounded';
     this.size = 'md';
 
     // Support for HTML5 forms
@@ -71,19 +73,12 @@ export class AuroButton extends LitElement {
       console.warn("This browser does not support form association features. Some form-related functionality may not work as expected. Consider using a polyfill or handling click events manually.");
     }
 
-    /**
-     * Generate unique names for dependency components.
-     */
-    const versioning = new AuroDependencyVersioning();
+    RuntimeUtils.default.prototype.handleComponentTagRename(this, 'auro-button');
 
     /**
      * @private
      */
-    this.loaderTag = versioning.generateTag(
-      "auro-loader",
-      loaderVersion,
-      AuroLoader
-    );
+    this.loaderTag = AuroDependencyVersioning.prototype.generateTag("auro-loader", loaderVersion, AuroLoader);
   }
 
   static get styles() {
@@ -140,7 +135,7 @@ export class AuroButton extends LitElement {
       },
 
       /**
-       * DEPRECATED @see shape.
+       * DEPRECATED - use shape="window-shape".
        * @deprecated
        */
       iconOnly: {
@@ -172,7 +167,7 @@ export class AuroButton extends LitElement {
       },
 
       /**
-       * DEPRECATED @see shape.
+       * DEPRECATED - use shape="circle".
        * @deprecated
        */
       rounded: {
@@ -181,7 +176,8 @@ export class AuroButton extends LitElement {
       },
 
       /**
-       * Set value for slim version of auro-button.
+       * DEPRECATED
+       * @deprecated
        */
       slim: {
         type: Boolean,
@@ -242,13 +238,17 @@ export class AuroButton extends LitElement {
       },
 
       /**
-       * Sets button variant option. Possible values are: `secondary`, `tertiary`.
+       * Sets button variant option. Possible values are: `secondary`, `tertiary`, `flat`.
        */
       variant: {
         type: String,
         reflect: true,
       },
 
+      /**
+       * Sets the shape of the buttons. Possible values are: `rounded`, `circle`, `pill`, `window-pane`.
+       * @default rounded
+       */
       shape: {
         type: String,
         reflect: true,
@@ -258,11 +258,6 @@ export class AuroButton extends LitElement {
         type: String,
         reflect: true,
       },
-
-      /**
-       * When false the component API should not be called.
-       */
-      ready: { type: Boolean },
     };
   }
 
@@ -280,26 +275,11 @@ export class AuroButton extends LitElement {
 
   /**
    * Internal method to apply focus to the HTML5 button.
-   * @private
+   * @ignore
    * @returns {void}
    */
   focus() {
     this.renderRoot.querySelector("button").focus();
-  }
-
-  /**
-   *  Marks the component as ready and sends event.
-   * @private
-   * @returns {void}
-   */
-  notifyReady() {
-    this.ready = true;
-
-    this.dispatchEvent(new CustomEvent("auroButton-ready", {
-      bubbles: true,
-      cancelable: false,
-      composed: true,
-    }));
   }
 
   updated(changedProperties) {
@@ -313,17 +293,25 @@ export class AuroButton extends LitElement {
     }
 
     // support old `rounded` and `iconOnly` attributes that are deprecated
-    if (changedProperties.has("rounded") || changedProperties.has("iconOnly")) {
-      if (this.rounded) {
-        this.shape = "rounded";
-      } else if (this.iconOnly) {
-        this.shape = "iconOnly";
+    if (!changedProperties.has('shape')) {
+      if (changedProperties.has("rounded") || changedProperties.has('iconOnly') || changedProperties.has('slim')) {
+        if (this.rounded) {
+          if (this.iconOnly) {
+            this.shape = "circle";
+          } else {
+            this.shape = "pill";
+          }
+        } else if (this.iconOnly) {
+          if (this.slim) {
+            this.shape = "window-pane";
+          } else {
+            this.shape = "circle";
+          }
+        } else {
+          this.shape = "rounded";
+        }
       }
     }
-  }
-
-  firstUpdated() {
-    this.notifyReady();
   }
 
   /**
@@ -346,32 +334,27 @@ export class AuroButton extends LitElement {
     return this.internals ? this.internals.form : null;
   }
 
-  render() {
-    const classes = {
-      "util_insetLg--squish": true,
-      "auro-button": true,
-      auroButton: true,
-      "auro-button--rounded": this.shape === 'rounded',
-      "auro-button--slim": this.slim,
-      "auro-button--iconOnly": this.shape === 'iconOnly',
-      "auro-button--iconOnlySlim": this.shape === 'iconOnly' && this.slim,
-      loading: this.loading,
-    };
+  /**
+   * @private
+   * @returns {Boolean}
+   */
+  get hideText() {
+    return ICON_ONLY_SHAPE.includes(this.shape);
+  }
 
+  render() {
     return html`
       <button
+        class="auro-button util_insetLg--squish"
         part="button"
         aria-label="${ifDefined(this.loading ? this.loadingText : this.arialabel || undefined)}"
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         aria-expanded="${ifDefined(this.ariaexpanded)}"
         ?autofocus="${this.autofocus}"
-        class="${classMap(classes)}"
         ?disabled="${this.disabled || this.loading}"
-        ?onDark="${this.onDark}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
         type="${ifDefined(this.type ? this.type : undefined)}"
-        variant="${ifDefined(this.variant ? this.variant : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
         @click="${this.type === "submit" ? this.surfaceSubmitEvent : undefined}"
       >
@@ -379,7 +362,7 @@ export class AuroButton extends LitElement {
 
         <span class="contentWrapper">
           <span class="textSlot" part="text">
-            ${this.shape === 'iconOnly' ? undefined : html`<slot></slot>`}
+            ${this.hideText ? undefined : html`<slot></slot>`}
           </span>
 
           <span part="icon">
