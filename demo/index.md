@@ -35,6 +35,7 @@ In cases were the action of the button would not fit the criteria above, it is m
   <auro-button>Primary</auro-button>
   <auro-button variant="secondary">Secondary</auro-button>
   <auro-button variant="tertiary">Tertiary</auro-button>
+  <auro-button variant="flat">Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -46,6 +47,7 @@ In cases were the action of the button would not fit the criteria above, it is m
 <auro-button>Primary</auro-button>
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
+<auro-button variant="flat">Tertiary</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -701,42 +703,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
         <td>XS</td>
         <td>
           <div>
-            <auro-button size="xs" shape="circle" variant="primary"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="primary"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xs" shape="circle" variant="primary" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="xs" shape="circle" variant="secondary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="xs" shape="circle" variant="secondary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="primary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="xs" shape="circle" variant="tertiary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="secondary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xs" shape="circle" variant="tertiary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="xs" shape="circle" variant="flat"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="xs" shape="circle" variant="flat" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="secondary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="xs" shape="circle" variant="ghost"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="tertiary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xs" shape="circle" variant="ghost" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="tertiary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="xs" shape="circle" variant="flat"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="xs" shape="circle" variant="flat" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="xs" shape="circle" variant="ghost"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="xs" shape="circle" variant="ghost" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
       </tr>
@@ -745,42 +747,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
         <td>SM</td>
         <td>
           <div>
-            <auro-button size="sm" shape="circle" variant="primary"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="primary"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="sm" shape="circle" variant="primary" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="sm" shape="circle" variant="secondary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="sm" shape="circle" variant="secondary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="primary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="sm" shape="circle" variant="tertiary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="secondary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="sm" shape="circle" variant="tertiary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="sm" shape="circle" variant="flat"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="sm" shape="circle" variant="flat" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="secondary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="sm" shape="circle" variant="ghost"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="tertiary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="sm" shape="circle" variant="ghost" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="tertiary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="sm" shape="circle" variant="flat"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="sm" shape="circle" variant="flat" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="sm" shape="circle" variant="ghost"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="sm" shape="circle" variant="ghost" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
       </tr>
@@ -789,42 +791,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
         <td>MD</td>
         <td>
           <div>
-            <auro-button size="md" shape="circle" variant="primary"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="primary"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="md" shape="circle" variant="primary" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="md" shape="circle" variant="secondary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="md" shape="circle" variant="secondary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="primary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="md" shape="circle" variant="tertiary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="secondary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="md" shape="circle" variant="tertiary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="md" shape="circle" variant="flat"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="md" shape="circle" variant="flat" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="secondary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="md" shape="circle" variant="ghost"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="tertiary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="md" shape="circle" variant="ghost" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="tertiary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="md" shape="circle" variant="flat"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="md" shape="circle" variant="flat" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="md" shape="circle" variant="ghost"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="md" shape="circle" variant="ghost" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
       </tr>
@@ -833,42 +835,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
         <td>LG</td>
         <td>
           <div>
-            <auro-button size="lg" shape="circle" variant="primary"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="primary"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="lg" shape="circle" variant="primary" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="lg" shape="circle" variant="secondary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="lg" shape="circle" variant="secondary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="primary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="lg" shape="circle" variant="tertiary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="secondary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="lg" shape="circle" variant="tertiary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="lg" shape="circle" variant="flat"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="lg" shape="circle" variant="flat" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="secondary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="lg" shape="circle" variant="ghost"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="tertiary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="lg" shape="circle" variant="ghost" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="tertiary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="lg" shape="circle" variant="flat"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="lg" shape="circle" variant="flat" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="lg" shape="circle" variant="ghost"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="lg" shape="circle" variant="ghost" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
       </tr>
@@ -877,42 +879,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
         <td>XL</td>
         <td>
           <div>
-            <auro-button size="xl" shape="circle" variant="primary"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="primary"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xl" shape="circle" variant="primary" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="xl" shape="circle" variant="secondary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="xl" shape="circle" variant="secondary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="primary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="xl" shape="circle" variant="tertiary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="secondary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xl" shape="circle" variant="tertiary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="xl" shape="circle" variant="flat"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="xl" shape="circle" variant="flat" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="secondary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="xl" shape="circle" variant="ghost"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="tertiary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xl" shape="circle" variant="ghost" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="tertiary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="xl" shape="circle" variant="flat"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="xl" shape="circle" variant="flat" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="xl" shape="circle" variant="ghost"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="xl" shape="circle" variant="ghost" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
       </tr>
@@ -1446,42 +1448,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
           <td style="color: white;">XS</td>
           <td>
             <div>
-              <auro-button size="xs" shape="circle" variant="primary" ondark="true"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+              <auro-button size="xs" shape="circle" variant="primary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="xs" shape="circle" variant="primary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <auro-button size="xs" shape="circle" variant="secondary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-            <div>
-              <auro-button size="xs" shape="circle" variant="secondary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="xs" shape="circle" variant="primary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
             </div>
           </td>
           <td>
             <div>
-              <auro-button size="xs" shape="circle" variant="tertiary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="xs" shape="circle" variant="secondary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="xs" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <auro-button size="xs" shape="circle" variant="flat" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-            <div>
-              <auro-button size="xs" shape="circle" variant="flat" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="xs" shape="circle" variant="secondary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
           <td>
             <div>
-              <auro-button size="xs" shape="circle" variant="ghost" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="xs" shape="circle" variant="tertiary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="xs" shape="circle" variant="ghost" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="xs" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <auro-button size="xs" shape="circle" variant="flat" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+            <div>
+              <auro-button size="xs" shape="circle" variant="flat" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <auro-button size="xs" shape="circle" variant="ghost" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+            <div>
+              <auro-button size="xs" shape="circle" variant="ghost" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
         </tr>
@@ -1490,42 +1492,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
           <td style="color: white;">SM</td>
           <td>
             <div>
-              <auro-button size="sm" shape="circle" variant="primary" ondark="true"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+              <auro-button size="sm" shape="circle" variant="primary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="sm" shape="circle" variant="primary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <auro-button size="sm" shape="circle" variant="secondary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-            <div>
-              <auro-button size="sm" shape="circle" variant="secondary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="sm" shape="circle" variant="primary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
             </div>
           </td>
           <td>
             <div>
-              <auro-button size="sm" shape="circle" variant="tertiary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="sm" shape="circle" variant="secondary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="sm" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <auro-button size="sm" shape="circle" variant="flat" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-            <div>
-              <auro-button size="sm" shape="circle" variant="flat" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="sm" shape="circle" variant="secondary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
           <td>
             <div>
-              <auro-button size="sm" shape="circle" variant="ghost" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="sm" shape="circle" variant="tertiary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="sm" shape="circle" variant="ghost" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="sm" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <auro-button size="sm" shape="circle" variant="flat" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+            <div>
+              <auro-button size="sm" shape="circle" variant="flat" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <auro-button size="sm" shape="circle" variant="ghost" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+            <div>
+              <auro-button size="sm" shape="circle" variant="ghost" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
         </tr>
@@ -1534,42 +1536,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
           <td style="color: white;">MD</td>
           <td>
             <div>
-              <auro-button size="md" shape="circle" variant="primary" ondark="true"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+              <auro-button size="md" shape="circle" variant="primary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="md" shape="circle" variant="primary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <auro-button size="md" shape="circle" variant="secondary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-            <div>
-              <auro-button size="md" shape="circle" variant="secondary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="md" shape="circle" variant="primary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
             </div>
           </td>
           <td>
             <div>
-              <auro-button size="md" shape="circle" variant="tertiary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="md" shape="circle" variant="secondary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="md" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <auro-button size="md" shape="circle" variant="flat" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-            <div>
-              <auro-button size="md" shape="circle" variant="flat" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="md" shape="circle" variant="secondary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
           <td>
             <div>
-              <auro-button size="md" shape="circle" variant="ghost" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="md" shape="circle" variant="tertiary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="md" shape="circle" variant="ghost" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="md" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <auro-button size="md" shape="circle" variant="flat" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+            <div>
+              <auro-button size="md" shape="circle" variant="flat" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <auro-button size="md" shape="circle" variant="ghost" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+            <div>
+              <auro-button size="md" shape="circle" variant="ghost" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
         </tr>
@@ -1578,42 +1580,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
           <td style="color: white;">LG</td>
           <td>
             <div>
-              <auro-button size="lg" shape="circle" variant="primary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="lg" shape="circle" variant="primary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="lg" shape="circle" variant="primary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <auro-button size="lg" shape="circle" variant="secondary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-            <div>
-              <auro-button size="lg" shape="circle" variant="secondary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="lg" shape="circle" variant="primary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
           <td>
             <div>
-              <auro-button size="lg" shape="circle" variant="tertiary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="lg" shape="circle" variant="secondary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="lg" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <auro-button size="lg" shape="circle" variant="flat" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-            <div>
-              <auro-button size="lg" shape="circle" variant="flat" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="lg" shape="circle" variant="secondary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
           <td>
             <div>
-              <auro-button size="lg" shape="circle" variant="ghost" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="lg" shape="circle" variant="tertiary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="lg" shape="circle" variant="ghost" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="lg" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <auro-button size="lg" shape="circle" variant="flat" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+            <div>
+              <auro-button size="lg" shape="circle" variant="flat" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <auro-button size="lg" shape="circle" variant="ghost" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+            <div>
+              <auro-button size="lg" shape="circle" variant="ghost" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
         </tr>
@@ -1622,42 +1624,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
           <td style="color: white;">XL</td>
           <td>
             <div>
-              <auro-button size="xl" shape="circle" variant="primary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="xl" shape="circle" variant="primary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="xl" shape="circle" variant="primary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <auro-button size="xl" shape="circle" variant="secondary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-            <div>
-              <auro-button size="xl" shape="circle" variant="secondary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="xl" shape="circle" variant="primary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
           <td>
             <div>
-              <auro-button size="xl" shape="circle" variant="tertiary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="xl" shape="circle" variant="secondary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="xl" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <auro-button size="xl" shape="circle" variant="flat" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-            </div>
-            <div>
-              <auro-button size="xl" shape="circle" variant="flat" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="xl" shape="circle" variant="secondary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
           <td>
             <div>
-              <auro-button size="xl" shape="circle" variant="ghost" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="xl" shape="circle" variant="tertiary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
             <div>
-              <auro-button size="xl" shape="circle" variant="ghost" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+              <auro-button size="xl" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <auro-button size="xl" shape="circle" variant="flat" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+            <div>
+              <auro-button size="xl" shape="circle" variant="flat" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <auro-button size="xl" shape="circle" variant="ghost" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            </div>
+            <div>
+              <auro-button size="xl" shape="circle" variant="ghost" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
             </div>
           </td>
         </tr>
@@ -2224,42 +2226,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
       <td>XS</td>
       <td>
         <div>
-          <auro-button size="xs" shape="circle" variant="primary"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          <auro-button size="xs" shape="circle" variant="primary"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="xs" shape="circle" variant="primary" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-        </div>
-      </td>
-      <td>
-        <div>
-          <auro-button size="xs" shape="circle" variant="secondary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-        <div>
-          <auro-button size="xs" shape="circle" variant="secondary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="xs" shape="circle" variant="primary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
         </div>
       </td>
       <td>
         <div>
-          <auro-button size="xs" shape="circle" variant="tertiary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="xs" shape="circle" variant="secondary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="xs" shape="circle" variant="tertiary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-      </td>
-      <td>
-        <div>
-          <auro-button size="xs" shape="circle" variant="flat"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-        <div>
-          <auro-button size="xs" shape="circle" variant="flat" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="xs" shape="circle" variant="secondary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
       </td>
       <td>
         <div>
-          <auro-button size="xs" shape="circle" variant="ghost"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="xs" shape="circle" variant="tertiary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="xs" shape="circle" variant="ghost" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="xs" shape="circle" variant="tertiary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+      </td>
+      <td>
+        <div>
+          <auro-button size="xs" shape="circle" variant="flat"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+        <div>
+          <auro-button size="xs" shape="circle" variant="flat" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+      </td>
+      <td>
+        <div>
+          <auro-button size="xs" shape="circle" variant="ghost"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+        <div>
+          <auro-button size="xs" shape="circle" variant="ghost" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
       </td>
     </tr>
@@ -2268,42 +2270,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
       <td>SM</td>
       <td>
         <div>
-          <auro-button size="sm" shape="circle" variant="primary"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          <auro-button size="sm" shape="circle" variant="primary"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="sm" shape="circle" variant="primary" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-        </div>
-      </td>
-      <td>
-        <div>
-          <auro-button size="sm" shape="circle" variant="secondary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-        <div>
-          <auro-button size="sm" shape="circle" variant="secondary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="sm" shape="circle" variant="primary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
         </div>
       </td>
       <td>
         <div>
-          <auro-button size="sm" shape="circle" variant="tertiary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="sm" shape="circle" variant="secondary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="sm" shape="circle" variant="tertiary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-      </td>
-      <td>
-        <div>
-          <auro-button size="sm" shape="circle" variant="flat"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-        <div>
-          <auro-button size="sm" shape="circle" variant="flat" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="sm" shape="circle" variant="secondary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
       </td>
       <td>
         <div>
-          <auro-button size="sm" shape="circle" variant="ghost"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="sm" shape="circle" variant="tertiary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="sm" shape="circle" variant="ghost" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="sm" shape="circle" variant="tertiary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+      </td>
+      <td>
+        <div>
+          <auro-button size="sm" shape="circle" variant="flat"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+        <div>
+          <auro-button size="sm" shape="circle" variant="flat" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+      </td>
+      <td>
+        <div>
+          <auro-button size="sm" shape="circle" variant="ghost"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+        <div>
+          <auro-button size="sm" shape="circle" variant="ghost" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
       </td>
     </tr>
@@ -2312,42 +2314,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
       <td>MD</td>
       <td>
         <div>
-          <auro-button size="md" shape="circle" variant="primary"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          <auro-button size="md" shape="circle" variant="primary"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="md" shape="circle" variant="primary" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-        </div>
-      </td>
-      <td>
-        <div>
-          <auro-button size="md" shape="circle" variant="secondary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-        <div>
-          <auro-button size="md" shape="circle" variant="secondary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="md" shape="circle" variant="primary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
         </div>
       </td>
       <td>
         <div>
-          <auro-button size="md" shape="circle" variant="tertiary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="md" shape="circle" variant="secondary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="md" shape="circle" variant="tertiary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-      </td>
-      <td>
-        <div>
-          <auro-button size="md" shape="circle" variant="flat"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-        <div>
-          <auro-button size="md" shape="circle" variant="flat" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="md" shape="circle" variant="secondary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
       </td>
       <td>
         <div>
-          <auro-button size="md" shape="circle" variant="ghost"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="md" shape="circle" variant="tertiary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="md" shape="circle" variant="ghost" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="md" shape="circle" variant="tertiary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+      </td>
+      <td>
+        <div>
+          <auro-button size="md" shape="circle" variant="flat"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+        <div>
+          <auro-button size="md" shape="circle" variant="flat" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+      </td>
+      <td>
+        <div>
+          <auro-button size="md" shape="circle" variant="ghost"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+        <div>
+          <auro-button size="md" shape="circle" variant="ghost" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
       </td>
     </tr>
@@ -2356,42 +2358,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
       <td>LG</td>
       <td>
         <div>
-          <auro-button size="lg" shape="circle" variant="primary"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          <auro-button size="lg" shape="circle" variant="primary"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="lg" shape="circle" variant="primary" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-        </div>
-      </td>
-      <td>
-        <div>
-          <auro-button size="lg" shape="circle" variant="secondary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-        <div>
-          <auro-button size="lg" shape="circle" variant="secondary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="lg" shape="circle" variant="primary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
         </div>
       </td>
       <td>
         <div>
-          <auro-button size="lg" shape="circle" variant="tertiary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="lg" shape="circle" variant="secondary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="lg" shape="circle" variant="tertiary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-      </td>
-      <td>
-        <div>
-          <auro-button size="lg" shape="circle" variant="flat"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-        <div>
-          <auro-button size="lg" shape="circle" variant="flat" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="lg" shape="circle" variant="secondary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
       </td>
       <td>
         <div>
-          <auro-button size="lg" shape="circle" variant="ghost"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="lg" shape="circle" variant="tertiary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="lg" shape="circle" variant="ghost" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="lg" shape="circle" variant="tertiary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+      </td>
+      <td>
+        <div>
+          <auro-button size="lg" shape="circle" variant="flat"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+        <div>
+          <auro-button size="lg" shape="circle" variant="flat" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+      </td>
+      <td>
+        <div>
+          <auro-button size="lg" shape="circle" variant="ghost"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+        <div>
+          <auro-button size="lg" shape="circle" variant="ghost" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
       </td>
     </tr>
@@ -2400,42 +2402,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
       <td>XL</td>
       <td>
         <div>
-          <auro-button size="xl" shape="circle" variant="primary"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          <auro-button size="xl" shape="circle" variant="primary"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="xl" shape="circle" variant="primary" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-        </div>
-      </td>
-      <td>
-        <div>
-          <auro-button size="xl" shape="circle" variant="secondary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-        <div>
-          <auro-button size="xl" shape="circle" variant="secondary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="xl" shape="circle" variant="primary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
         </div>
       </td>
       <td>
         <div>
-          <auro-button size="xl" shape="circle" variant="tertiary"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="xl" shape="circle" variant="secondary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="xl" shape="circle" variant="tertiary" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-      </td>
-      <td>
-        <div>
-          <auro-button size="xl" shape="circle" variant="flat"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-        </div>
-        <div>
-          <auro-button size="xl" shape="circle" variant="flat" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="xl" shape="circle" variant="secondary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
       </td>
       <td>
         <div>
-          <auro-button size="xl" shape="circle" variant="ghost"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="xl" shape="circle" variant="tertiary"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
         <div>
-          <auro-button size="xl" shape="circle" variant="ghost" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+          <auro-button size="xl" shape="circle" variant="tertiary" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+      </td>
+      <td>
+        <div>
+          <auro-button size="xl" shape="circle" variant="flat"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+        <div>
+          <auro-button size="xl" shape="circle" variant="flat" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+      </td>
+      <td>
+        <div>
+          <auro-button size="xl" shape="circle" variant="ghost"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+        </div>
+        <div>
+          <auro-button size="xl" shape="circle" variant="ghost" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
         </div>
       </td>
     </tr>
@@ -2969,42 +2971,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
         <td style="color: white;">XS</td>
         <td>
           <div>
-            <auro-button size="xs" shape="circle" variant="primary" ondark="true"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="primary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xs" shape="circle" variant="primary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="xs" shape="circle" variant="secondary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="xs" shape="circle" variant="secondary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="primary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="xs" shape="circle" variant="tertiary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="secondary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xs" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="xs" shape="circle" variant="flat" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="xs" shape="circle" variant="flat" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="secondary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="xs" shape="circle" variant="ghost" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="tertiary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xs" shape="circle" variant="ghost" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xs" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="xs" shape="circle" variant="flat" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="xs" shape="circle" variant="flat" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="xs" shape="circle" variant="ghost" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="xs" shape="circle" variant="ghost" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
       </tr>
@@ -3013,42 +3015,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
         <td style="color: white;">SM</td>
         <td>
           <div>
-            <auro-button size="sm" shape="circle" variant="primary" ondark="true"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="primary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="sm" shape="circle" variant="primary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="sm" shape="circle" variant="secondary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="sm" shape="circle" variant="secondary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="primary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="sm" shape="circle" variant="tertiary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="secondary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="sm" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="sm" shape="circle" variant="flat" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="sm" shape="circle" variant="flat" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="secondary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="sm" shape="circle" variant="ghost" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="tertiary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="sm" shape="circle" variant="ghost" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="sm" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="sm" shape="circle" variant="flat" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="sm" shape="circle" variant="flat" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="sm" shape="circle" variant="ghost" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="sm" shape="circle" variant="ghost" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
       </tr>
@@ -3057,42 +3059,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
         <td style="color: white;">MD</td>
         <td>
           <div>
-            <auro-button size="md" shape="circle" variant="primary" ondark="true"><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="primary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="md" shape="circle" variant="primary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="md" shape="circle" variant="secondary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="md" shape="circle" variant="secondary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="primary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="md" shape="circle" variant="tertiary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="secondary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="md" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="md" shape="circle" variant="flat" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="md" shape="circle" variant="flat" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="secondary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="md" shape="circle" variant="ghost" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="tertiary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="md" shape="circle" variant="ghost" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="md" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="md" shape="circle" variant="flat" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="md" shape="circle" variant="flat" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="md" shape="circle" variant="ghost" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="md" shape="circle" variant="ghost" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
       </tr>
@@ -3101,42 +3103,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
         <td style="color: white;">LG</td>
         <td>
           <div>
-            <auro-button size="lg" shape="circle" variant="primary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="primary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="lg" shape="circle" variant="primary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="lg" shape="circle" variant="secondary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="lg" shape="circle" variant="secondary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="primary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="lg" shape="circle" variant="tertiary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="secondary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="lg" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="lg" shape="circle" variant="flat" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="lg" shape="circle" variant="flat" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="secondary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="lg" shape="circle" variant="ghost" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="tertiary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="lg" shape="circle" variant="ghost" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="lg" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="lg" shape="circle" variant="flat" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="lg" shape="circle" variant="flat" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="lg" shape="circle" variant="ghost" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="lg" shape="circle" variant="ghost" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
       </tr>
@@ -3145,42 +3147,42 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
         <td style="color: white;">XL</td>
         <td>
           <div>
-            <auro-button size="xl" shape="circle" variant="primary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="primary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xl" shape="circle" variant="primary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="xl" shape="circle" variant="secondary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="xl" shape="circle" variant="secondary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="primary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="xl" shape="circle" variant="tertiary" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="secondary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xl" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-        </td>
-        <td>
-          <div>
-            <auro-button size="xl" shape="circle" variant="flat" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
-          </div>
-          <div>
-            <auro-button size="xl" shape="circle" variant="flat" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="secondary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
         <td>
           <div>
-            <auro-button size="xl" shape="circle" variant="ghost" ondark="true"><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="tertiary" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
           <div>
-            <auro-button size="xl" shape="circle" variant="ghost" ondark="true" disabled><auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+            <auro-button size="xl" shape="circle" variant="tertiary" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="xl" shape="circle" variant="flat" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="xl" shape="circle" variant="flat" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <auro-button size="xl" shape="circle" variant="ghost" ondark="true"><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
+          </div>
+          <div>
+            <auro-button size="xl" shape="circle" variant="ghost" ondark="true" disabled><auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon></auro-button>
           </div>
         </td>
       </tr>
