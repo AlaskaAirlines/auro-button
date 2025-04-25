@@ -3,19 +3,19 @@ export function roundedRightAlignExample() {
 
   // The mouseover and mouseout events are to simulate toggling text for mouse users
   rightAlignElem.addEventListener('mouseover', () => {
-    rightAlignElem.iconOnly = false;
+    rightAlignElem.shape = "pill";
   });
 
   rightAlignElem.addEventListener('mouseout', () => {
-    rightAlignElem.iconOnly = true;
+    rightAlignElem.shape = "circle";
   });
 
   // The focusin and focusout events are to simulate toggling text for keyboard users
   rightAlignElem.addEventListener('focusin', () => {
-    rightAlignElem.iconOnly = false;
+    rightAlignElem.shape = "pill";
   });
 
   rightAlignElem.addEventListener('focusout', () => {
-    rightAlignElem.iconOnly = true;
+    rightAlignElem.shape = "circle";
   });
 }
