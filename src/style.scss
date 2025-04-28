@@ -41,25 +41,6 @@ $auro-inset-directions:'--squish';
 
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
 
-:host([fluid]),
-:host([fluid=true]) {
-  .auro-button {
-    min-width: auto;
-    width: 100%;
-  }
-}
-
-:host([variant='flat']) {
-  display:inline-block;
-  height: var(--ds-size-300, $ds-size-300);
-  width: var(--ds-size-300, $ds-size-300);
-
-  .auro-button {
-    height: 100%;
-    width: 100%;
-  }
-}
-
 // adjust alignment for slotted SVG icon
 ::slotted(svg) {
   vertical-align: middle;
@@ -82,17 +63,19 @@ slot {
   border-radius: var(--ds-border-radius, $ds-border-radius);
 
   font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  font-weight: var(--ds-basic-text-body-default-font-weight, $ds-basic-text-body-default-font-weight); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  line-height: var(--ds-basic-text-body-default-line-height, $ds-basic-text-body-default-line-height); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  letter-spacing: var(--ds-basic-text-body-default-letter-spacing, $ds-basic-text-body-default-letter-spacing); /* This must be declared here because the browser clients unset it in the user agent style sheet */
+
+  font-size: var(--ds-auro-button-font-size);
+  font-weight: var(--ds-auro-button-font-weight);
+  line-height: var(--ds-auro-button-line-height);
+  letter-spacing: var(--ds-auro-button-letter-spacing);
+
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
 
-  min-height: var(--ds-size-600, $ds-size-600);
-  max-height: var(--ds-size-600, $ds-size-600);
+  height: var(--ds-auro-button-height);
+  width: var(--ds-auro-button-width);
 
   display: inline-flex;
   flex-direction: row;
@@ -107,6 +90,11 @@ slot {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 
+  ::slotted(auro-icon),
+  ::slotted([auro-icon]) {
+    --ds-auro-icon-size: var(--ds-auro-button-icon-size);
+  }
+
   .textSlot {
     transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out;
   }
@@ -118,21 +106,6 @@ slot {
 
   &:focus-visible {
     outline: none;
-
-    &:not([variant='flat']) {
-      outline-style: solid;
-      outline-width: var(--ds-size-50, $ds-size-50);
-      outline-offset: calc(var(--ds-size-50, $ds-size-50) * -1);
-
-      &:not([variant='secondary']):not([variant='tertiary']) {
-        outline-width: calc(var(--ds-size-50, $ds-size-50) - 1px);
-      }
-    }
-  }
-
-  @include auro_grid-breakpoint--sm {
-    min-width: 8.75rem;
-    width: auto;
   }
 
   &:disabled {
@@ -144,24 +117,19 @@ slot {
 
 
 /* shape */
+
+:host([shape="rounded"]:not([variant="flat"])), :host([shape="pill"]:not([variant="flat"])) {
+  .auro-button {
+    @include auro_grid-breakpoint--sm {
+      min-width: 8.75rem;
+    }
+  }
+}
+
 :host([shape="window-pane"]) {
   .auro-button {
     padding: unset;
-    font-size: var(--ds-basic-text-body-sm-font-size, $ds-basic-text-body-sm-font-size);
-    font-weight: var(--ds-basic-text-body-sm-font-weight, $ds-basic-text-body-sm-font-weight);
-    line-height: var(--ds-basic-text-body-sm-line-height, $ds-basic-text-body-sm-line-height);
-    letter-spacing: var(--ds-basic-text-body-sm-letter-spacing, $ds-basic-text-body-sm-letter-spacing);
-    min-width: unset;
-
     border-radius: 100px;
-
-    height: var(--ds-size-600, $ds-size-600);
-    width: var(--ds-size-500, $ds-size-500);
-  }
-
-  ::slotted(auro-icon),
-  ::slotted([auro-icon]) {
-    --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
   }
 
   .textSlot {
@@ -169,20 +137,12 @@ slot {
    }
 }
 
-:host([shape='pill']) {
+:host([shape="pill"]) {
   .auro-button {
     border-radius: 100px;
     box-shadow: var(--ds-elevation-300, $ds-elevation-300);
 
-    height: var(--ds-size-500, $ds-size-500);
-    min-width: unset;
-
-    transition: all 300ms ease-out, outline 0ms, outline-offset 0ms;
-  }
-
-  ::slotted(auro-icon),
-  ::slotted([auro-icon]) {
-    --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
+    transition: padding 300ms ease-out, outline 0ms, outline-offset 0ms;
   }
 }
 
@@ -196,22 +156,14 @@ slot {
     box-shadow: var(--ds-elevation-300, $ds-elevation-300);
     padding: unset;
 
-    height: var(--ds-size-600, $ds-size-600);
-    width: var(--ds-size-600, $ds-size-600);
-    min-width: unset;
-
-    transition: all 300ms ease-out, outline 0ms, outline-offset 0ms;
-  }
-
-  ::slotted(auro-icon),
-  ::slotted([auro-icon]) {
-    --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
+    transition: padding 300ms ease-out, outline 0ms, outline-offset 0ms;
   }
 }
 
 /* loading */
 [auro-loader] {
   position: absolute;
+  height: unset;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -226,6 +178,13 @@ slot {
   }
 }
 
+:host(:not([variant="flat"])) {
+  .auro-button:focus-visible {
+    outline-style: solid;
+    outline-width: var(--ds-size-50, $ds-size-50);
+    outline-offset: calc(var(--ds-size-50, $ds-size-50) * -1);
+  }
+}
 
 /* variant */
 :host([variant='secondary']) .auro-button {
@@ -242,13 +201,7 @@ slot {
   }
 }
 
-:host([variant='flat']) .auro-button {
-  height: unset;
-  width: unset;
-  min-height: unset;
-  max-height: unset;
-  min-width: unset;
-  max-width: unset;
+:host([variant="flat"]) .auro-button {
   border: 0;
   border-radius: unset;
   gap: unset;
@@ -264,5 +217,11 @@ slot {
 
   &:active {
     box-shadow: none;
+  }
+}
+
+:host(:not([variant='secondary']):not([variant='tertiary'])) {
+  .auro-button:focus-visible {
+    outline-width: calc(var(--ds-size-50, $ds-size-50) - 1px);
   }
 }

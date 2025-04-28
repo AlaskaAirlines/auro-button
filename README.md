@@ -91,7 +91,6 @@ import "@aurodesignsystem/auro-button";
 <auro-button>Primary</auro-button>
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
-<auro-button variant="flat">Tertiary</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -139,7 +138,6 @@ The auro-button element should be used in situations where users may:
 <auro-button>Primary</auro-button>
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
-<auro-button variant="flat">Tertiary</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
