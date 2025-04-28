@@ -18,7 +18,7 @@
 | `rounded`        | `rounded`        | `boolean` | false     | DEPRECATED - use shape="circle".                 |
 | `secondary`      | `secondary`      | `boolean` | false     | DEPRECATED                                       |
 | `shape`          | `shape`          | `string`  | "rounded" | Sets the shape of the buttons. Possible values are: `rounded`, `circle`, `pill`, `window-pane`. |
-| `size`           | `size`           | `string`  | "md"      |                                                  |
+| `size`           | `size`           | `string`  | "md"      | Sets the size of the buttons. Possible values are: `xs`, `sm`, `md`, `lg`, `xl`. |
 | `slim`           | `slim`           | `boolean` | false     | DEPRECATED                                       |
 | `tIndex`         | `tIndex`         | `string`  |           | Populates `tabIndex` to define the focusable sequence in keyboard navigation. |
 | `tertiary`       | `tertiary`       | `boolean` | false     | DEPRECATED                                       |

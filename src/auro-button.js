@@ -14,6 +14,7 @@ import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runt
 
 import styleCss from "./style-css.js";
 import colorCss from "./color-css.js";
+import sizeCss from "./size-css.js";
 import tokensCss from "./tokens-css.js";
 
 import { AuroLoader } from "@aurodesignsystem/auro-loader/src/auro-loader.js";
@@ -84,6 +85,7 @@ export class AuroButton extends LitElement {
     return [
       tokensCss,
       styleCss,
+      sizeCss,
       colorCss
     ];
   }
@@ -270,6 +272,10 @@ export class AuroButton extends LitElement {
         reflect: true,
       },
 
+      /**
+       * Sets the size of the buttons. Possible values are: `xs`, `sm`, `md`, `lg`, `xl`.
+       * @default md
+       */
       size: {
         type: String,
         reflect: true,
@@ -300,11 +306,13 @@ export class AuroButton extends LitElement {
 
   updated(changedProperties) {
     // support the old `secondary` and `tertiary` attributes` that are deprecated
-    if (changedProperties.has("secondary") || changedProperties.has("tertiary")) {
-      if (this.secondary) {
-        this.variant = "secondary";
-      } else if (this.tertiary) {
-        this.variant = "tertiary";
+    if (!changedProperties.variant) {
+      if (changedProperties.has("secondary") || changedProperties.has("tertiary")) {
+        if (this.secondary) {
+          this.variant = "secondary";
+        } else if (this.tertiary) {
+          this.variant = "tertiary";
+        }
       }
     }
 

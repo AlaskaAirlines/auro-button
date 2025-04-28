@@ -21,7 +21,7 @@
 | [rounded](#rounded)        | `rounded`        | `boolean` | false     | DEPRECATED - use shape="circle".                 |
 | [secondary](#secondary)      | `secondary`      | `boolean` | false     | DEPRECATED                                       |
 | [shape](#shape)          | `shape`          | `string`  | "rounded" | Sets the shape of the buttons. Possible values are: `rounded`, `circle`, `pill`, `window-pane`. |
-| [size](#size)           | `size`           | `string`  | "md"      |                                                  |
+| [size](#size)           | `size`           | `string`  | "md"      | Sets the size of the buttons. Possible values are: `xs`, `sm`, `md`, `lg`, `xl`. |
 | [slim](#slim)           | `slim`           | `boolean` | false     | DEPRECATED                                       |
 | [tIndex](#tIndex)         | `tIndex`         | `string`  |           | Populates `tabIndex` to define the focusable sequence in keyboard navigation. |
 | [tertiary](#tertiary)       | `tertiary`       | `boolean` | false     | DEPRECATED                                       |
@@ -57,7 +57,6 @@
   <auro-button>Primary</auro-button>
   <auro-button variant="secondary">Secondary</auro-button>
   <auro-button variant="tertiary">Tertiary</auro-button>
-  <auro-button variant="flat">Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -69,7 +68,6 @@
 <auro-button>Primary</auro-button>
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
-<auro-button variant="flat">Tertiary</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -94,8 +92,7 @@
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Disabled
-
+## Disabled <a name="disabled"></a>
 This example demonstrates `auro-button` in it's `disabled` state.
 
 <div class="exampleWrapper">
@@ -187,7 +184,33 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
 </auro-accordion>
 
 ## Shape <a name="shape"></a>
-default - `rounded`
+You can set the button's shape using the shape attribute.
+- `rounded` is the default shape, which is a rectangle with slightly rounded corners.
+- `pill` creates a long, pill-shaped button with no corners.
+- `circle` is used for **icon-only** buttons with a circular shape.
+- `window-pane` is also for **icon-only** buttons, featuring a slightly tall, oval shape.
+
+#### rounded
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
+  <auro-button>Primary</auro-button>
+  <auro-button variant="secondary">Secondary</auro-button>
+  <auro-button variant="tertiary">Tertiary</auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
+
+```html
+<auro-button>Primary</auro-button>
+<auro-button variant="secondary">Secondary</auro-button>
+<auro-button variant="tertiary">Tertiary</auro-button>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
 
 #### window-pane
 
@@ -386,8 +409,300 @@ export function roundedRightAlignExample() {
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Fluid
+## Size <a name="size"></a>
+The size of the button can be set using the `size` attribute. There are five options available, and the default value is `md`.
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/size.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/size.html -->
+  <table>
+    <thead>
+      <tr>
+        <th>Size \ Shape</th>
+        <th>rounded</th>
+        <th>pill</th>
+        <th>circle</th>
+        <th>window-pane</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>xs</th>
+        <td><auro-button size="xs" shape="rounded">xs & rounded</auro-button></td>
+        <td><auro-button size="xs" shape="pill">xs & pill</auro-button></td>
+        <td>
+          <auro-button size="xs" shape="circle"
+            ><auro-icon
+              customcolor
+              category="interface"
+              name="heart-filled"
+              slot="icon"
+            ></auro-icon
+          ></auro-button>
+        </td>
+        <td>
+          <auro-button size="xs" shape="window-pane"
+            ><auro-icon
+              customcolor
+              category="interface"
+              name="heart-filled"
+              slot="icon"
+            ></auro-icon
+          ></auro-button>
+        </td>
+      </tr>
+      <tr>
+        <th>sm</th>
+        <td><auro-button size="sm" shape="rounded">sm & rounded</auro-button></td>
+        <td><auro-button size="sm" shape="pill">sm & pill</auro-button></td>
+        <td>
+          <auro-button size="sm" shape="circle"
+            ><auro-icon
+              customcolor
+              category="interface"
+              name="heart-filled"
+              slot="icon"
+            ></auro-icon
+          ></auro-button>
+        </td>
+        <td>
+          <auro-button size="sm" shape="window-pane"
+            ><auro-icon
+              customcolor
+              category="interface"
+              name="heart-filled"
+              slot="icon"
+            ></auro-icon
+          ></auro-button>
+        </td>
+      </tr>
+      <tr>
+        <th><b>md</b> (default)</th>
+        <td><auro-button size="md" shape="rounded">md & rounded</auro-button></td>
+        <td><auro-button size="md" shape="pill">md & pill</auro-button></td>
+        <td>
+          <auro-button size="md" shape="circle"
+            ><auro-icon
+              customcolor
+              category="interface"
+              name="heart-filled"
+              slot="icon"
+            ></auro-icon
+          ></auro-button>
+        </td>
+        <td>
+          <auro-button size="md" shape="window-pane"
+            ><auro-icon
+              customcolor
+              category="interface"
+              name="heart-filled"
+              slot="icon"
+            ></auro-icon
+          ></auro-button>
+        </td>
+      </tr>
+      <tr>
+        <th>lg</th>
+        <td><auro-button size="lg" shape="rounded">lg & rounded</auro-button></td>
+        <td><auro-button size="lg" shape="pill">lg & pill</auro-button></td>
+        <td>
+          <auro-button size="lg" shape="circle"
+            ><auro-icon
+              customcolor
+              category="interface"
+              name="heart-filled"
+              slot="icon"
+            ></auro-icon
+          ></auro-button>
+        </td>
+        <td>
+          <auro-button size="lg" shape="window-pane"
+            ><auro-icon
+              customcolor
+              category="interface"
+              name="heart-filled"
+              slot="icon"
+            ></auro-icon
+          ></auro-button>
+        </td>
+      </tr>
+      <tr>
+        <th>xl</th>
+        <td><auro-button size="xl" shape="rounded">xl & rounded</auro-button></td>
+        <td><auro-button size="xl" shape="pill">xl & pill</auro-button></td>
+        <td>
+          <auro-button size="xl" shape="circle"
+            ><auro-icon
+              customcolor
+              category="interface"
+              name="heart-filled"
+              slot="icon"
+            ></auro-icon
+          ></auro-button>
+        </td>
+        <td>
+          <auro-button size="xl" shape="window-pane"
+            ><auro-icon
+              customcolor
+              category="interface"
+              name="heart-filled"
+              slot="icon"
+            ></auro-icon
+          ></auro-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/size.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/size.html -->
 
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Size \ Shape</th>
+      <th>rounded</th>
+      <th>pill</th>
+      <th>circle</th>
+      <th>window-pane</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>xs</th>
+      <td><auro-button size="xs" shape="rounded">xs & rounded</auro-button></td>
+      <td><auro-button size="xs" shape="pill">xs & pill</auro-button></td>
+      <td>
+        <auro-button size="xs" shape="circle"
+          ><auro-icon
+            customcolor
+            category="interface"
+            name="heart-filled"
+            slot="icon"
+          ></auro-icon
+        ></auro-button>
+      </td>
+      <td>
+        <auro-button size="xs" shape="window-pane"
+          ><auro-icon
+            customcolor
+            category="interface"
+            name="heart-filled"
+            slot="icon"
+          ></auro-icon
+        ></auro-button>
+      </td>
+    </tr>
+    <tr>
+      <th>sm</th>
+      <td><auro-button size="sm" shape="rounded">sm & rounded</auro-button></td>
+      <td><auro-button size="sm" shape="pill">sm & pill</auro-button></td>
+      <td>
+        <auro-button size="sm" shape="circle"
+          ><auro-icon
+            customcolor
+            category="interface"
+            name="heart-filled"
+            slot="icon"
+          ></auro-icon
+        ></auro-button>
+      </td>
+      <td>
+        <auro-button size="sm" shape="window-pane"
+          ><auro-icon
+            customcolor
+            category="interface"
+            name="heart-filled"
+            slot="icon"
+          ></auro-icon
+        ></auro-button>
+      </td>
+    </tr>
+    <tr>
+      <th><b>md</b> (default)</th>
+      <td><auro-button size="md" shape="rounded">md & rounded</auro-button></td>
+      <td><auro-button size="md" shape="pill">md & pill</auro-button></td>
+      <td>
+        <auro-button size="md" shape="circle"
+          ><auro-icon
+            customcolor
+            category="interface"
+            name="heart-filled"
+            slot="icon"
+          ></auro-icon
+        ></auro-button>
+      </td>
+      <td>
+        <auro-button size="md" shape="window-pane"
+          ><auro-icon
+            customcolor
+            category="interface"
+            name="heart-filled"
+            slot="icon"
+          ></auro-icon
+        ></auro-button>
+      </td>
+    </tr>
+    <tr>
+      <th>lg</th>
+      <td><auro-button size="lg" shape="rounded">lg & rounded</auro-button></td>
+      <td><auro-button size="lg" shape="pill">lg & pill</auro-button></td>
+      <td>
+        <auro-button size="lg" shape="circle"
+          ><auro-icon
+            customcolor
+            category="interface"
+            name="heart-filled"
+            slot="icon"
+          ></auro-icon
+        ></auro-button>
+      </td>
+      <td>
+        <auro-button size="lg" shape="window-pane"
+          ><auro-icon
+            customcolor
+            category="interface"
+            name="heart-filled"
+            slot="icon"
+          ></auro-icon
+        ></auro-button>
+      </td>
+    </tr>
+    <tr>
+      <th>xl</th>
+      <td><auro-button size="xl" shape="rounded">xl & rounded</auro-button></td>
+      <td><auro-button size="xl" shape="pill">xl & pill</auro-button></td>
+      <td>
+        <auro-button size="xl" shape="circle"
+          ><auro-icon
+            customcolor
+            category="interface"
+            name="heart-filled"
+            slot="icon"
+          ></auro-icon
+        ></auro-button>
+      </td>
+      <td>
+        <auro-button size="xl" shape="window-pane"
+          ><auro-icon
+            customcolor
+            category="interface"
+            name="heart-filled"
+            slot="icon"
+          ></auro-icon
+        ></auro-button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Fluid <a name="fluid"></a>
 In the following example see how the `fluid` attributes alters the shape of the button to be full width of its parent container.
 
 <div class="exampleWrapper">
@@ -411,8 +726,7 @@ In the following example see how the `fluid` attributes alters the shape of the 
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Loading State
-
+## Loading State <a name="loading"></a>
 Use the `loading` attribute to alter the content to the shimmering dots to alert the user that the button/form is in an active state. The `loading` attribute will also place the element in a disabled state to keep the user from re-submitting an action.
 
 <div class="exampleWrapper">
@@ -456,8 +770,7 @@ Use the `loading` attribute to alter the content to the shimmering dots to alert
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Loading text
-
+### Loading text <a name="loadingText"></a>
 To provide a custom loading message for assistive technologies, use the `loadingText` attribute. If not provided, the default message will be "Loading...".
 
 <div class="exampleWrapper">
@@ -490,6 +803,7 @@ The component may be restyled using the following code sample and changing the v
 <!-- The below code snippet is automatically added from ./../src/tokens.scss -->
 
 ```scss
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
 @import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 :host {
@@ -501,5 +815,40 @@ The component may be restyled using the following code sample and changing the v
   --ds-auro-button-text-color: var(--ds-advanced-color-button-primary-text, #{$ds-advanced-color-button-primary-text});
   --ds-auro-button-tap-color: transparent;
 }
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/themeSupport.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/themeSupport.html -->
+  <style>
+    #restyledButton {
+      --ds-auro-button-container-image: var(--ds-advanced-color-accents-accent1);
+      --ds-auro-button-container-color: var(--ds-advanced-color-accents-accent1);
+      --ds-auro-button-border-color: var(--ds-advanced-color-accents-accent2);
+      --ds-auro-button-text-color: var(--ds-color-alert-warning-default);
+    }
+  </style>
+  <auro-button shape="pill" id="restyledButton">
+    Restyled Button
+  </auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/themeSupport.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/themeSupport.html -->
+
+```html
+<style>
+  #restyledButton {
+    --ds-auro-button-container-image: var(--ds-advanced-color-accents-accent1);
+    --ds-auro-button-container-color: var(--ds-advanced-color-accents-accent1);
+    --ds-auro-button-border-color: var(--ds-advanced-color-accents-accent2);
+    --ds-auro-button-text-color: var(--ds-color-alert-warning-default);
+  }
+</style>
+<auro-button shape="pill" id="restyledButton">
+  Restyled Button
+</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->

@@ -1,0 +1,53 @@
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
+
+// size tokens (not related to theming)
+:host {
+  --ds-auro-button-height: var(--ds-size-600, #{$ds-size-600}); // 3rem
+  --ds-auro-button-width: auto;
+  --ds-auro-button-font-size: var(--ds-basic-text-body-default-font-size, #{$ds-basic-text-body-default-font-size}); // 16px
+  --ds-auro-button-icon-size: calc(var(--ds-auro-button-height) / 2);
+}
+
+:host([shape="circle"]) {
+  --ds-auro-button-width: var(--ds-auro-button-height);
+}
+
+:host([shape="window-pane"]) {
+  --ds-auro-button-width: calc(var(--ds-auro-button-height) * 5 / 6);
+}
+
+:host([variant="flat"]) {
+  --ds-auro-button-height: unset;
+  --ds-auro-button-width: unset;
+}
+
+:host([fluid]),
+:host([fluid="true"]) {
+  --ds-auro-button-width: 100%;
+}
+
+/* xs */
+:host([size="xs"]) {
+  --ds-auro-button-height: var(--ds-size-300, #{$ds-size-300});
+  --ds-auro-button-font-size: var(--ds-basic-text-body-xs-font-size, #{$ds-basic-text-body-xs-font-size}); // 12px
+}
+
+/* sm */
+:host([size="sm"]) {
+  --ds-auro-button-height: var(--ds-size-400, $ds-size-400);
+  --ds-auro-button-font-size: var(--ds-basic-text-body-sm-font-size, #{$ds-basic-text-body-sm-font-size}); // 14px
+}
+
+/* lg */
+:host([size="lg"]) {
+  --ds-auro-button-height: var(--ds-size-700, #{$ds-size-700});
+  --ds-auro-button-font-size: var(--ds-basic-text-body-lg-font-size, #{$ds-basic-text-body-lg-font-size}); // 18px
+}
+
+/* xl */
+:host([size="xl"]) {
+  --ds-auro-button-height: var(--ds-size-900, #{$ds-size-900});
+  --ds-auro-button-font-size: var(--ds-basic-text-body-lg-font-size, #{$ds-basic-text-body-lg-font-size}); // 18px
+  --ds-auro-button-icon-size: calc(var(--ds-size-700, #{$ds-size-700}) / 2);
+}

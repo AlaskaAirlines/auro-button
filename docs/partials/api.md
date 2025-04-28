@@ -31,7 +31,7 @@
 
 </auro-accordion>
 
-## Disabled
+## Disabled <a name="disabled"></a>
 
 This example demonstrates `auro-button` in it's `disabled` state.
 
@@ -84,7 +84,24 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
 
 ## Shape <a name="shape"></a>
 
-default - `rounded`
+You can set the button's shape using the shape attribute.
+- `rounded` is the default shape, which is a rectangle with slightly rounded corners.
+- `pill` creates a long, pill-shaped button with no corners.
+- `circle` is used for **icon-only** buttons with a circular shape.
+- `window-pane` is also for **icon-only** buttons, featuring a slightly tall, oval shape.
+
+#### rounded
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
 
 #### window-pane
 
@@ -171,7 +188,22 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 
 </auro-accordion>
 
-## Fluid
+## Size <a name="size"></a>
+The size of the button can be set using the `size` attribute. There are five options available, and the default value is `md`.
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/size.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/size.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+## Fluid <a name="fluid"></a>
 
 In the following example see how the `fluid` attributes alters the shape of the button to be full width of its parent container.
 
@@ -188,7 +220,7 @@ In the following example see how the `fluid` attributes alters the shape of the 
 
 </auro-accordion>
 
-## Loading State
+## Loading State <a name="loading"></a>
 
 Use the `loading` attribute to alter the content to the shimmering dots to alert the user that the button/form is in an active state. The `loading` attribute will also place the element in a disabled state to keep the user from re-submitting an action.
 
@@ -218,7 +250,7 @@ Use the `loading` attribute to alter the content to the shimmering dots to alert
 
 </auro-accordion>
 
-### Loading text
+### Loading text <a name="loadingText"></a>
 
 To provide a custom loading message for assistive technologies, use the `loadingText` attribute. If not provided, the default message will be "Loading...".
 
@@ -248,4 +280,16 @@ For `tabindex`, use `tIndex` instead to avoid duplicated focus interaction.
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/tokens.scss) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/themeSupport.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/themeSupport.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
