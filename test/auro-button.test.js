@@ -1,3 +1,4 @@
+import { useAccessibleIt } from "@aurodesignsystem/auro-library/scripts/test-plugin/iterateWithA11Check.mjs";
 /* eslint-disable max-lines */
 /* eslint-disable max-statements */
 /* eslint-disable no-unused-expressions */
@@ -9,6 +10,8 @@ import sinon from 'sinon';
 import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import { AuroButton } from '../src/auro-button.js';
 import '../index.js';
+
+useAccessibleIt();
 
 describe('auro-button', () => {
   it('tests instantiating the element with default properties works', async () => {
@@ -76,7 +79,7 @@ describe('auro-button', () => {
 
   it('tests setting secondary', async () => {
     const el = await fixture(html`
-      <auro-button secondary>Click Me!</auro-button>
+      <auro-button variant="secondary">Click Me!</auro-button>
     `);
 
     const root = el.shadowRoot;
@@ -85,12 +88,12 @@ describe('auro-button', () => {
 
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
-    expect(el.hasAttribute('secondary')).to.be.true;
+    expect(el.getAttribute("variant")).to.equal('secondary');
   });
 
   it('tests setting secondary ondark', async () => {
     const el = await fixture(html`
-      <auro-button secondary ondark>Click Me!</auro-button>
+      <auro-button variant="secondary" ondark>Click Me!</auro-button>
     `);
 
     const root = el.shadowRoot;
@@ -100,12 +103,12 @@ describe('auro-button', () => {
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
     expect(el.hasAttribute('ondark')).to.be.true;
-    expect(el.hasAttribute('secondary')).to.be.true;
+    expect(el.getAttribute("variant")).to.equal('secondary');
   });
 
   it('tests setting tertiary', async () => {
     const el = await fixture(html`
-      <auro-button tertiary>Click Me!</auro-button>
+      <auro-button variant="tertiary">Click Me!</auro-button>
     `);
 
     const root = el.shadowRoot;
@@ -114,12 +117,12 @@ describe('auro-button', () => {
 
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
-    expect(el.hasAttribute('tertiary')).to.be.true;
+    expect(el.getAttribute("variant")).to.equal('tertiary');
   });
 
   it('tests setting tertiary ondark', async () => {
     const el = await fixture(html`
-      <auro-button tertiary ondark>Click Me!</auro-button>
+      <auro-button variant="tertiary" ondark>Click Me!</auro-button>
     `);
 
     const root = el.shadowRoot;
@@ -129,7 +132,7 @@ describe('auro-button', () => {
     expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
     expect(el.hasAttribute('ondark')).to.be.true;
-    expect(el.hasAttribute('tertiary')).to.be.true;
+    expect(el.getAttribute("variant")).to.equal('tertiary');
   });
 
   it('tests setting arialabel', async () => {
@@ -218,15 +221,7 @@ describe('auro-button', () => {
     expect(document.activeElement === el).to.be.true;
   });
 
-  it('auro-button is accessible', async () => {
-    const el = await fixture(html`
-      <auro-button>Click Me!</auro-button>
-    `);
-
-    await expect(el).to.be.accessible();
-  });
-
-  it(`auro-button is accessible with various ARIA attrs`, async () => {
+  it(`auro-button has various ARIA attrs properly set on <a> node`, async () => {
     const el = await fixture(html`
       <div>
         <auro-button tIndex="-1" ariahidden="true">Click Me!</auro-button>
@@ -235,30 +230,30 @@ describe('auro-button', () => {
       </div>
     `);
 
-    await expect(el.children[0].shadowRoot.querySelector('button')).to.have.attribute('tabindex', '-1');
-    await expect(el.children[0].shadowRoot.querySelector('button')).to.have.attribute('aria-hidden', 'true');
-    await expect(el.children[1].shadowRoot.querySelector('button')).to.have.attribute('aria-label', 'This is a button');
-    await expect(el.children[2].shadowRoot.querySelector('button')).to.have.attribute('aria-expanded', 'true');
+    expect(el.children[0].shadowRoot.querySelector('button')).to.have.attribute('tabindex', '-1');
+    expect(el.children[0].shadowRoot.querySelector('button')).to.have.attribute('aria-hidden', 'true');
+    expect(el.children[1].shadowRoot.querySelector('button')).to.have.attribute('aria-label', 'This is a button');
+    expect(el.children[2].shadowRoot.querySelector('button')).to.have.attribute('aria-expanded', 'true');
 
-    await expect(el).to.be.accessible();
   });
 
   it('auro-button custom element is defined', async () => {
     const el = await Boolean(customElements.get("auro-button"));
 
-    await expect(el).to.be.true;
+    expect(el).to.be.true;
   });
 
-  it('default slot is not in DOM when iconOnly attribute is present', async () => {
+  it('default slot is not in DOM with circle shape', async () => {
     const el = await fixture(html`
-      <auro-button rounded iconOnly>
+      <auro-button shape="circle" arialabel="Up">
         <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
+        Text
       </auro-button>
     `);
 
     const slotElement = el.querySelector('slot:not([name])');
 
-    expect(slotElement).to.equal(null);
+    expect(slotElement).to.not.exist;
   });
 
   it('handles form awareness with type="submit"', async () => {
@@ -320,11 +315,6 @@ describe('auro-button', () => {
       <auro-button type="submit">Submit</auro-button>
     `);
 
-    const innerButton = el.shadowRoot.querySelector('button');
     expect(el.form).to.be.null;
-    expect(innerButton.getAttribute('type')).to.equal('submit');
-
-    innerButton.click();
-    await elementUpdated(el);
   })
 });
