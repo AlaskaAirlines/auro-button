@@ -81,9 +81,11 @@ slot {
   border-style: solid;
   border-radius: var(--ds-border-radius, $ds-border-radius);
 
-  font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family);
-  font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size);
-  font-weight: var(--ds-basic-text-body-default-font-weight, $ds-basic-text-body-default-font-weight);
+  font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family); /* This must be declared here because the browser clients unset it in the user agent style sheet */
+  font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size); /* This must be declared here because the browser clients unset it in the user agent style sheet */
+  font-weight: var(--ds-basic-text-body-default-font-weight, $ds-basic-text-body-default-font-weight); /* This must be declared here because the browser clients unset it in the user agent style sheet */
+  line-height: var(--ds-basic-text-body-default-line-height, $ds-basic-text-body-default-line-height); /* This must be declared here because the browser clients unset it in the user agent style sheet */
+  letter-spacing: var(--ds-basic-text-body-default-letter-spacing, $ds-basic-text-body-default-letter-spacing); /* This must be declared here because the browser clients unset it in the user agent style sheet */
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
@@ -204,7 +206,11 @@ slot {
   // auro-button--slim
   &--slim {
     padding: var(--ds-size-100, $ds-size-100) var(--ds-size-200, $ds-size-200);
+    font-family: var(--ds-basic-text-body-sm-font-family, $ds-basic-text-body-sm-font-family);
     font-size: var(--ds-basic-text-body-sm-font-size, $ds-basic-text-body-sm-font-size);
+    font-weight: var(--ds-basic-text-body-sm-font-weight, $ds-basic-text-body-sm-font-weight);
+    line-height: var(--ds-basic-text-body-sm-line-height, $ds-basic-text-body-sm-line-height);
+    letter-spacing: var(--ds-basic-text-body-sm-letter-spacing, $ds-basic-text-body-sm-letter-spacing);
     min-width: unset;
     min-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
     max-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
