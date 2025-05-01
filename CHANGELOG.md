@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [9.3.2](https://github.com/AlaskaAirlines/auro-button/compare/v9.3.1...v9.3.2) (2025-05-01)
+
+
+### Bug Fixes
+
+* update SCSS token formatting ([35489ef](https://github.com/AlaskaAirlines/auro-button/commit/35489eff0fd8f7425cd0cefcf239dabdacc34856))
+
 ## [9.3.1](https://github.com/AlaskaAirlines/auro-button/compare/v9.3.0...v9.3.1) (2025-04-14)
 
 
