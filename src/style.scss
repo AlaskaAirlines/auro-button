@@ -214,7 +214,7 @@ slot {
   &--iconOnly {
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
-      --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
+      --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
     }
 
     padding: 0 var(--ds-size-100, $ds-size-100);
@@ -237,7 +237,7 @@ slot {
   &--iconOnlySlim {
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
-      --ds-auro-icon-size: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-50, $ds-size-50));
+      --ds-auro-icon-size: calc(var(--ds-size-200, #{$ds-size-200}) + var(--ds-size-50, #{$ds-size-50}));
     }
 
     padding: 0 var(--ds-size-50, $ds-size-50);
@@ -258,7 +258,7 @@ slot {
 
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
-      --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
+      --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
     }
 
     &:focus-visible {
