@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [9.3.3](https://github.com/AlaskaAirlines/auro-button/compare/v9.3.2...v9.3.3) (2025-05-02)
+
+
+### Bug Fixes
+
+* misc fix to force release font changes ([ba45cca](https://github.com/AlaskaAirlines/auro-button/commit/ba45cca27723dd524df7484f10c77d59106d6f8f))
+
 ## [9.3.2](https://github.com/AlaskaAirlines/auro-button/compare/v9.3.1...v9.3.2) (2025-05-01)
 
 
