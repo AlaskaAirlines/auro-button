@@ -250,7 +250,7 @@ export class AuroButton extends LitElement {
   /**
    * Returns the form element that this button is associated with.
    * @private
-   * @returns {HTMLFormElement|null}
+   * @returns {HTMLFormElement | null}
    */
   get form() {
     return this.internals ? this.internals.form : null;
