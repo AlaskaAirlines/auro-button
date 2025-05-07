@@ -31,7 +31,7 @@
 
 </auro-accordion>
 
-## Disabled
+## Disabled <a name="disabled"></a>
 
 This example demonstrates `auro-button` in it's `disabled` state.
 
@@ -61,23 +61,6 @@ This example demonstrates `auro-button` in it's `disabled` state.
 
 </auro-accordion>
 
-## Slim Style
-
-Use the `slim` attribute with the `auro-button` element for a slim style with less padding. The slim style is used to establish the lowest level of hierarchy. Slim buttons have the least emphasis and significance on a page.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/slim.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/slim.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
-
 ## Icon Support
 
 Adding icons to the auro-button component is as easy as nesting any other HTML. The auro-icon component 
@@ -99,98 +82,68 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
 
 </auro-accordion>
 
-#### Icon Only Button
+## Shape <a name="shape"></a>
 
-Use the `iconOnly` attribute with the `auro-button` element for a style specific to having only an `auro-icon` as the button's content.
+You can set the button's shape using the shape attribute.
+- `rounded` is the default shape, which is a rectangle with slightly rounded corners.
+- `pill` creates a long, pill-shaped button with no corners.
+- `circle` is used for **icon-only** buttons with a circular shape.
+- `window-pane` is also for **icon-only** buttons, featuring a slightly tall, oval shape.
 
-Be sure to use the `customColor` attribute on the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
-
-**Recommended**: We strongly encourage the users of the icon only `auro-button` to use the `aria-label` attribute. Without this attribute, the screenreaders will not properly describe the button content to it's users.
-
-
+#### rounded
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/iconOnly.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/iconOnly.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### window-pane
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-window-pane.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-window-pane.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
-#### Icon Only Button - Slim Style
-
-Use the `slim` attribute along with `iconOnly` attribute on the `auro-button` element for a slimmer icon only button with less padding.
-
-Be sure to use the `customColor` and `customSize` attributes on the `auro-icon` component, as well as add `height` and `width` styles to the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
+#### Circle
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/iconOnlySlim.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/iconOnlySlim.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-circle.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
-## Rounded
-
-Use the `rounded` attribute for an `auro-button` with rounded corners.
-
-#### No Text
-
-Use the `rounded` attribute in conjunction with the `iconOnly` attribute for an `auro-button` that has an `auro-icon` and no text.
+### Pill
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/rounded.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-pill.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/rounded.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
-
-#### With Text
-
-This example demonstrates a `rounded` `auro-button` with text and an `auro-icon`.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roundedTextWithIcon.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roundedTextWithIcon.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
-
-#### Text Only
-
-A `rounded` `auro-button` with text only.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roundedTextOnly.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roundedTextOnly.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-pill.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -235,7 +188,22 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 
 </auro-accordion>
 
-## Fluid
+## Size <a name="size"></a>
+The size of the button can be set using the `size` attribute. There are five options available, and the default value is `md`.
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/size.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/size.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+## Fluid <a name="fluid"></a>
 
 In the following example see how the `fluid` attributes alters the shape of the button to be full width of its parent container.
 
@@ -252,7 +220,7 @@ In the following example see how the `fluid` attributes alters the shape of the 
 
 </auro-accordion>
 
-## Loading State
+## Loading State <a name="loading"></a>
 
 Use the `loading` attribute to alter the content to the shimmering dots to alert the user that the button/form is in an active state. The `loading` attribute will also place the element in a disabled state to keep the user from re-submitting an action.
 
@@ -282,7 +250,7 @@ Use the `loading` attribute to alter the content to the shimmering dots to alert
 
 </auro-accordion>
 
-### Loading text
+### Loading text <a name="loadingText"></a>
 
 To provide a custom loading message for assistive technologies, use the `loadingText` attribute. If not provided, the default message will be "Loading...".
 
@@ -304,4 +272,16 @@ To provide a custom loading message for assistive technologies, use the `loading
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/tokens.scss) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/themeSupport.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/themeSupport.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->

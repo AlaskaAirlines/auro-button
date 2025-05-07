@@ -5,43 +5,27 @@
 // ---------------------------------------------------------------------
 
 import { LitElement } from "lit";
-import { html } from 'lit/static-html.js';
+import { html } from "lit/static-html.js";
 
-import { classMap } from 'lit/directives/class-map.js';
-import { ifDefined } from 'lit/directives/if-defined.js';
+import { ifDefined } from "lit/directives/if-defined.js";
 
-import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
-import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
+import * as RuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 
 import styleCss from "./style-css.js";
 import colorCss from "./color-css.js";
+import sizeCss from "./size-css.js";
 import tokensCss from "./tokens-css.js";
 
-import { AuroLoader } from '@aurodesignsystem/auro-loader/src/auro-loader.js';
-import loaderVersion from './loaderVersion.js';
+import { AuroLoader } from "@aurodesignsystem/auro-loader/src/auro-loader.js";
+import loaderVersion from "./loaderVersion.js";
+
+const ICON_ONLY_SHAPE = [
+  'circle',
+  'window-pane',
+];
 
 /**
- * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user
- * @attr {Boolean} disabled - If set to true, button will become disabled and not allow for interactions
- * @attr {Boolean} iconOnly - If set to true, the button will contain an icon with no additional content
- * @attr {Boolean} loading - If set to true button text will be replaced with `auro-loader` and become disabled
- * @attr {String} loadingText - Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
- * @attr {Boolean} onDark - Set value for on-dark version of auro-button
- * @attr {Boolean} rounded - If set to true, the button will have a rounded shape
- * @attr {Boolean} slim - Set value for slim version of auro-button
- * @attr {Boolean} fluid - Alters the shape of the button to be full width of its parent container
- * @attr {String} arialabel - Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead.
- * @attr {String} arialabelledby - Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion.
- * @attr {Boolean} ariaexpanded - Populates the `aria-expanded` attribute that indicates whether the element, or another grouping element it controls, is currently expanded or collapsed. This is an optional attribute for buttons.
- * @attr {String} id - Set the unique ID of an element.
- * @attr {String} title - Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
- * @attr {String} type - The type of the button. Possible values are: `submit`, `reset`, `button`
- * @attr {String} value - Defines the value associated with the button which is submitted with the form data.
- * @attr {String} variant - Sets button variant option. Possible values are: `secondary`, `tertiary`
- * @attr {Boolean} secondary - DEPRECATED
- * @attr {Boolean} tertiary - DEPRECATED
- * @prop {Boolean} ready - When false the component API should not be called.
- * @event auroButton-ready - Notifies that the component has finished initializing.
  * @slot - Default slot for the text of the button.
  * @slot icon - Slot to provide auro-icon for the button.
  * @csspart button - Apply CSS to HTML5 button.
@@ -71,117 +55,215 @@ export class AuroButton extends LitElement {
     this.iconOnly = false;
     this.loading = false;
     this.onDark = false;
-    this.ready = false;
     this.secondary = false;
     this.tertiary = false;
     this.rounded = false;
     this.slim = false;
     this.fluid = false;
-    this.loadingText = this.loadingText || 'Loading...';
+    this.loadingText = this.loadingText || "Loading...";
+    this.shape = this.shape || 'rounded';
+    this.size = 'md';
 
     // Support for HTML5 forms
-    if (typeof this.attachInternals === 'function') {
+    if (typeof this.attachInternals === "function") {
       this.internals = this.attachInternals();
     } else {
       this.internals = null;
 
       // eslint-disable-next-line no-console
-      console.warn('This browser does not support form association features. Some form-related functionality may not work as expected. Consider using a polyfill or handling click events manually.');
+      console.warn("This browser does not support form association features. Some form-related functionality may not work as expected. Consider using a polyfill or handling click events manually.");
     }
 
-    /**
-     * Generate unique names for dependency components.
-     */
-    const versioning = new AuroDependencyVersioning();
+    RuntimeUtils.default.prototype.handleComponentTagRename(this, 'auro-button');
 
     /**
      * @private
      */
-    this.loaderTag = versioning.generateTag('auro-loader', loaderVersion, AuroLoader);
+    this.loaderTag = AuroDependencyVersioning.prototype.generateTag("auro-loader", loaderVersion, AuroLoader);
   }
 
   static get styles() {
     return [
       tokensCss,
       styleCss,
+      sizeCss,
       colorCss
     ];
   }
 
   static get properties() {
     return {
-      autofocus:        {
+
+      /**
+       * This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user.
+       */
+      autofocus: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
-      disabled:         {
+
+      /**
+       * If set to true, button will become disabled and not allow for interactions.
+       */
+      disabled: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
-      secondary:         {
+
+      /**
+       * DEPRECATED @see variant.
+       * @deprecated
+       */
+      secondary: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
-      tertiary:         {
+
+      /**
+       * DEPRECATED @see variant.
+       * @deprecated
+       */
+      tertiary: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
-      fluid:         {
+
+      /**
+       * Alters the shape of the button to be full width of its parent container.
+       */
+      fluid: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
+
+      /**
+       * DEPRECATED - use shape="window-shape".
+       * @deprecated
+       */
       iconOnly: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
-      loading:          {
+
+      /**
+       * If set to true button text will be replaced with `auro-loader` and become disabled.
+       */
+      loading: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
-      loadingText:      {
-        type: String
+
+      /**
+       * Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
+       */
+      loadingText: {
+        type: String,
       },
-      onDark:           {
+
+      /**
+       * Set value for on-dark version of auro-button.
+       */
+      onDark: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
+
+      /**
+       * DEPRECATED - use shape="circle".
+       * @deprecated
+       */
       rounded: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
+
+      /**
+       * DEPRECATED
+       * @deprecated
+       */
       slim: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
-      arialabel:        {
+
+      /**
+       * Populates the `aria-label` attribute that is used to define a string that labels the current element.
+       * Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead.
+       */
+      arialabel: {
         type: String,
-        reflect: true
+        reflect: true,
       },
-      arialabelledby:   {
+
+      /**
+       * Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s),
+       * and its value should be one or more element IDs, which refer to elements that have the text needed for labeling.
+       * List multiple element IDs in a space delimited fashion.
+       */
+      arialabelledby: {
         type: String,
-        reflect: true
+        reflect: true,
       },
+
+      /**
+       * Populates the `aria-expanded` attribute that indicates whether the element,
+       * or another grouping element it controls, is currently expanded or collapsed.
+       * This is an optional attribute for buttons.
+       */
       ariaexpanded: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
-      title:            {
+
+      /**
+       * Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
+       */
+      title: {
         type: String,
-        reflect: true
+        reflect: true,
       },
-      type:             {
+
+      /**
+       * The type of the button. Possible values are: `submit`, `reset`, `button`.
+       */
+      type: {
         type: String,
-        reflect: true
+        reflect: true,
       },
-      value:            {
+
+      /**
+       * Defines the value associated with the button which is submitted with the form data.
+       */
+      value: {
         type: String,
-        reflect: true
+        reflect: true,
       },
-      variant:          {
+
+      /**
+       * Sets button variant option. Possible values are: `secondary`, `tertiary`, `flat`.
+       */
+      variant: {
         type: String,
-        reflect: true
+        reflect: true,
       },
-      ready: { type: Boolean },
+
+      /**
+       * Sets the shape of the buttons. Possible values are: `rounded`, `circle`, `pill`, `window-pane`.
+       * @default rounded
+       */
+      shape: {
+        type: String,
+        reflect: true,
+      },
+
+      /**
+       * Sets the size of the buttons. Possible values are: `xs`, `sm`, `md`, `lg`, `xl`.
+       * @default md
+       */
+      size: {
+        type: String,
+        reflect: true,
+      },
     };
   }
 
@@ -199,41 +281,45 @@ export class AuroButton extends LitElement {
 
   /**
    * Internal method to apply focus to the HTML5 button.
-   * @private
+   * @ignore
    * @returns {void}
    */
   focus() {
-    this.renderRoot.querySelector('button').focus();
+    this.renderRoot.querySelector("button").focus();
   }
 
-  /**
-   *  Marks the component as ready and sends event.
-   * @private
-   * @returns {void}
-   */
-  notifyReady() {
-    this.ready = true;
-
-    this.dispatchEvent(new CustomEvent('auroButton-ready', {
-      bubbles: true,
-      cancelable: false,
-      composed: true,
-    }));
-  }
-
-  updated() {
+  updated(changedProperties) {
     // support the old `secondary` and `tertiary` attributes` that are deprecated
-    if (this.secondary) {
-      this.setAttribute('variant', 'secondary');
+    if (!changedProperties.variant) {
+      if (changedProperties.has("secondary") || changedProperties.has("tertiary")) {
+        if (this.secondary) {
+          this.variant = "secondary";
+        } else if (this.tertiary) {
+          this.variant = "tertiary";
+        }
+      }
     }
 
-    if (this.tertiary) {
-      this.setAttribute('variant', 'tertiary');
+    // support old `rounded` and `iconOnly` attributes that are deprecated
+    if (!changedProperties.has('shape')) {
+      if (changedProperties.has("rounded") || changedProperties.has('iconOnly') || changedProperties.has('slim')) {
+        if (this.rounded) {
+          if (this.iconOnly) {
+            this.shape = "circle";
+          } else {
+            this.shape = "pill";
+          }
+        } else if (this.iconOnly) {
+          if (this.slim) {
+            this.shape = "window-pane";
+          } else {
+            this.shape = "circle";
+          }
+        } else {
+          this.shape = "rounded";
+        }
+      }
     }
-  }
-
-  firstUpdated() {
-    this.notifyReady();
   }
 
   /**
@@ -256,40 +342,35 @@ export class AuroButton extends LitElement {
     return this.internals ? this.internals.form : null;
   }
 
-  render() {
-    const classes = {
-      'util_insetLg--squish': true,
-      'auro-button': true,
-      'auroButton': true,
-      'auro-button--rounded': this.rounded,
-      'auro-button--slim': this.slim,
-      'auro-button--iconOnly': this.iconOnly,
-      'auro-button--iconOnlySlim': this.iconOnly && this.slim,
-      'loading': this.loading
-    };
+  /**
+   * @private
+   * @returns {Boolean}
+   */
+  get hideText() {
+    return ICON_ONLY_SHAPE.includes(this.shape);
+  }
 
+  render() {
     return html`
       <button
+        class="auro-button util_insetLg--squish"
         part="button"
         aria-label="${ifDefined(this.loading ? this.loadingText : this.arialabel || undefined)}"
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         aria-expanded="${ifDefined(this.ariaexpanded)}"
         ?autofocus="${this.autofocus}"
-        class="${classMap(classes)}"
         ?disabled="${this.disabled || this.loading}"
-        ?onDark="${this.onDark}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         name="${ifDefined(this.name ? this.name : undefined)}"
         type="${ifDefined(this.type ? this.type : undefined)}"
-        variant="${ifDefined(this.variant ? this.variant : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
-        @click="${this.type === 'submit' ? this.surfaceSubmitEvent : undefined}"
+        @click="${this.type === "submit" ? this.surfaceSubmitEvent : undefined}"
       >
         ${ifDefined(this.loading ? html`<${this.loaderTag} pulse part="loader"></${this.loaderTag}>` : undefined)}
 
         <span class="contentWrapper">
           <span class="textSlot" part="text">
-            ${this.iconOnly ? undefined : html`<slot></slot>`}
+            ${this.hideText ? undefined : html`<slot></slot>`}
           </span>
 
           <span part="icon">

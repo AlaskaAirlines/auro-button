@@ -41,25 +41,6 @@ $auro-inset-directions:'--squish';
 
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
 
-:host([fluid]),
-:host([fluid=true]) {
-  .auro-button {
-    min-width: auto;
-    width: 100%;
-  }
-}
-
-:host([variant='flat']) {
-  display:inline-block;
-  height: var(--ds-size-300, $ds-size-300);
-  width: var(--ds-size-300, $ds-size-300);
-
-  .auro-button {
-    height: 100%;
-    width: 100%;
-  }
-}
-
 // adjust alignment for slotted SVG icon
 ::slotted(svg) {
   vertical-align: middle;
@@ -82,17 +63,19 @@ slot {
   border-radius: var(--ds-border-radius, $ds-border-radius);
 
   font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  font-weight: var(--ds-basic-text-body-default-font-weight, $ds-basic-text-body-default-font-weight); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  line-height: var(--ds-basic-text-body-default-line-height, $ds-basic-text-body-default-line-height); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  letter-spacing: var(--ds-basic-text-body-default-letter-spacing, $ds-basic-text-body-default-letter-spacing); /* This must be declared here because the browser clients unset it in the user agent style sheet */
+
+  font-size: var(--ds-auro-button-font-size);
+  font-weight: var(--ds-auro-button-font-weight);
+  line-height: var(--ds-auro-button-line-height);
+  letter-spacing: var(--ds-auro-button-letter-spacing);
+
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
 
-  min-height: var(--ds-size-600, $ds-size-600);
-  max-height: var(--ds-size-600, $ds-size-600);
+  height: var(--ds-auro-button-height);
+  width: var(--ds-auro-button-width);
 
   display: inline-flex;
   flex-direction: row;
@@ -107,6 +90,15 @@ slot {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 
+  ::slotted(auro-icon),
+  ::slotted([auro-icon]) {
+    --ds-auro-icon-size: var(--ds-auro-button-icon-size);
+  }
+
+  .textSlot {
+    transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out;
+  }
+
   // handle active state
   &:active {
     transform: scale(0.95);
@@ -114,29 +106,6 @@ slot {
 
   &:focus-visible {
     outline: none;
-
-    &:not([variant='flat']) {
-      outline-style: solid;
-      outline-width: var(--ds-size-50, $ds-size-50);
-      outline-offset: calc(var(--ds-size-50, $ds-size-50) * -1);
-
-      &:not([variant='secondary']):not([variant='tertiary']) {
-        outline-width: calc(var(--ds-size-50, $ds-size-50) - 1px);
-      }
-    }
-  }
-
-  &.loading {
-    cursor: not-allowed;
-
-    *:not([auro-loader]) {
-      visibility: hidden;
-    }
-  }
-
-  @include auro_grid-breakpoint--sm {
-    min-width: 8.75rem;
-    width: auto;
   }
 
   &:disabled {
@@ -144,168 +113,115 @@ slot {
     transform: unset;
   }
 
-  &[variant='secondary'] {
-    &:disabled {
-      cursor: not-allowed;
-      transform: unset;
+}
+
+
+/* shape */
+
+:host([shape="rounded"]:not([variant="flat"])), :host([shape="pill"]:not([variant="flat"])) {
+  .auro-button {
+    @include auro_grid-breakpoint--sm {
+      min-width: 8.75rem;
     }
   }
+}
 
-  &[variant='tertiary'] {
-    &:disabled {
-      cursor: not-allowed;
-      transform: unset;
-    }
-  }
-
-  &[variant='flat'] {
-    height: unset;
-    width: unset;
-    min-height: unset;
-    max-height: unset;
-    min-width: unset;
-    max-width: unset;
-    border: 0;
-    border-radius: unset;
-    gap: unset;
+:host([shape="window-pane"]) {
+  .auro-button {
     padding: unset;
-  }
-
-  &[onDark] {
-    &:disabled {
-      cursor: not-allowed;
-      transform: unset;
-    }
-
-    &[variant='secondary'] {
-      &:disabled {
-        cursor: not-allowed;
-        transform: unset;
-      }
-    }
-
-    &[variant='tertiary'] {
-      @media (hover: hover) {
-        &:active,
-        &:hover {
-          box-shadow: none;
-        }
-      }
-
-      &:active {
-        box-shadow: none;
-      }
-
-      &:disabled {
-        cursor: not-allowed;
-        transform: unset;
-      }
-    }
-  }
-
-  // auro-button--slim
-  &--slim {
-    padding: var(--ds-size-100, $ds-size-100) var(--ds-size-200, $ds-size-200);
-    font-family: var(--ds-basic-text-body-sm-font-family, $ds-basic-text-body-sm-font-family);
-    font-size: var(--ds-basic-text-body-sm-font-size, $ds-basic-text-body-sm-font-size);
-    font-weight: var(--ds-basic-text-body-sm-font-weight, $ds-basic-text-body-sm-font-weight);
-    line-height: var(--ds-basic-text-body-sm-line-height, $ds-basic-text-body-sm-line-height);
-    letter-spacing: var(--ds-basic-text-body-sm-letter-spacing, $ds-basic-text-body-sm-letter-spacing);
-    min-width: unset;
-    min-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
-    max-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
-  }
-
-  // auro-button--iconOnly
-  &--iconOnly {
-    ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
-      --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
-    }
-
-    padding: 0 var(--ds-size-100, $ds-size-100);
-
     border-radius: 100px;
-    min-width: unset;
-
-    height: var(--ds-size-600, $ds-size-600);
-    width: var(--ds-size-500, $ds-size-500);
-
-    &:not(.auro-button--rounded):focus-visible {
-      &:not([variant='secondary']):not([variant='tertiary']):not([variant='flat']) {
-        outline-width: 1px;
-        outline-offset: -2px; // -(1px width + 1px border-width)
-      }
-    }
   }
 
-  // auro-button--iconOnlySlim
-  &--iconOnlySlim {
-    ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
-      --ds-auro-icon-size: calc(var(--ds-size-200, #{$ds-size-200}) + var(--ds-size-50, #{$ds-size-50}));
-    }
+  .textSlot {
+    opacity: 0;
+   }
+}
 
-    padding: 0 var(--ds-size-50, $ds-size-50);
-
-    height: calc(var(--ds-size-400, $ds-size-400) + var(--ds-size-50, $ds-size-50));
-    width: calc(var(--ds-size-300, $ds-size-300) + var(--ds-size-50, $ds-size-50));
-  }
-
-  // auro-button--rounded
-  &--rounded {
+:host([shape="pill"]) {
+  .auro-button {
     border-radius: 100px;
     box-shadow: var(--ds-elevation-300, $ds-elevation-300);
 
-    height: var(--ds-size-500, $ds-size-500);
-    min-width: unset;
-
-    transition: all 300ms ease-out, outline 0ms, outline-offset 0ms;
-
-    ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
-      --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
-    }
-
-    &:focus-visible {
-      &:not([variant='flat']) {
-        &:after {
-          border-radius: 100px;
-        }
-      }
-    }
+    transition: padding 300ms ease-out, outline 0ms, outline-offset 0ms;
   }
 }
 
-
-:host([rounded]) {
-  .textSlot {
-    transition: opacity 300ms ease-in;
-    opacity: 1;
-  }
-}
-
-:host([rounded][iconOnly]) {
+:host([shape='circle']) {
   .textSlot {
     opacity: 0;
   }
 
-  .textWrapper {
-    display: none;
-  }
-
   .auro-button {
-    min-width: unset;
+    border-radius: 100px;
+    box-shadow: var(--ds-elevation-300, $ds-elevation-300);
     padding: unset;
 
-    width: var(--ds-size-600, $ds-size-600);
+    transition: padding 300ms ease-out, outline 0ms, outline-offset 0ms;
   }
 }
 
+/* loading */
 [auro-loader] {
   position: absolute;
+  height: unset;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+}
+
+:host([loading]) {
+  cursor: not-allowed;
+
+  .contentWrapper {
+    visibility: hidden;
+  }
+}
+
+:host(:not([variant="flat"])) {
+  .auro-button:focus-visible {
+    outline-style: solid;
+    outline-width: var(--ds-size-50, $ds-size-50);
+    outline-offset: calc(var(--ds-size-50, $ds-size-50) * -1);
+  }
+}
+
+/* variant */
+:host([variant='secondary']) .auro-button {
+  &:disabled {
+    cursor: not-allowed;
+    transform: unset;
+  }
+}
+
+:host([variant='tertiary']) .auro-button {
+  &:disabled {
+    cursor: not-allowed;
+    transform: unset;
+  }
+}
+
+:host([variant="flat"]) .auro-button {
+  border: 0;
+  border-radius: unset;
+  gap: unset;
+  padding: unset;
+}
+
+:host([onDark][variant='tertiary']) .auro-button {
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+:host(:not([variant='secondary']):not([variant='tertiary'])) {
+  .auro-button:focus-visible {
+    outline-width: calc(var(--ds-size-50, $ds-size-50) - 1px);
+  }
 }
