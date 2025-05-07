@@ -1,3 +1,4 @@
+import { useAccessibleIt } from "@aurodesignsystem/auro-library/scripts/test-plugin/iterateWithA11Check.mjs";
 /* eslint-disable max-lines */
 /* eslint-disable max-statements */
 /* eslint-disable no-unused-expressions */
@@ -9,6 +10,8 @@ import sinon from 'sinon';
 import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import { AuroButton } from '../src/auro-button.js';
 import '../index.js';
+
+useAccessibleIt();
 
 describe('auro-button', () => {
   it('tests instantiating the element with default properties works', async () => {
@@ -251,7 +254,7 @@ describe('auro-button', () => {
 
   it('default slot is not in DOM when iconOnly attribute is present', async () => {
     const el = await fixture(html`
-      <auro-button rounded iconOnly>
+      <auro-button rounded iconOnly arialabel="Up">
         <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
       </auro-button>
     `);
