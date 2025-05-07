@@ -1,3 +1,4 @@
+import { aIt } from "@aurodesignsystem/auro-library/scripts/test-plugin/iterateWithA11Check.mjs";
 /* eslint-disable max-lines */
 /* eslint-disable max-statements */
 /* eslint-disable no-unused-expressions */
@@ -11,7 +12,7 @@ import { AuroButton } from '../src/auro-button.js';
 import '../index.js';
 
 describe('auro-button', () => {
-  it('tests instantiating the element with default properties works', async () => {
+  aIt('tests instantiating the element with default properties works', async () => {
     const el = await fixture(html`
       <auro-button>Click Me!</auro-button>
     `);
@@ -20,25 +21,25 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
     const classList = button.getAttribute('class').split(' ');
 
-    expect(button).to.not.be.null;
-    expect(button.getAttribute('aria-label')).to.be.null;
-    expect(button.getAttribute('aria-labelledby')).to.be.null;
-    expect(button.getAttribute('autofocus')).to.be.null;
-    expect(button.getAttribute('disabled')).to.be.null;
-    expect(button.getAttribute('formnovalidate')).to.be.null;
-    expect(button.getAttribute('id')).to.be.null;
-    expect(button.getAttribute('value')).to.be.null;
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
-    expect(classList.includes('auro-button')).to.be.true;
+    await expect(button).to.not.be.null;
+    await expect(button.getAttribute('aria-label')).to.be.null;
+    await expect(button.getAttribute('aria-labelledby')).to.be.null;
+    await expect(button.getAttribute('autofocus')).to.be.null;
+    await expect(button.getAttribute('disabled')).to.be.null;
+    await expect(button.getAttribute('formnovalidate')).to.be.null;
+    await expect(button.getAttribute('id')).to.be.null;
+    await expect(button.getAttribute('value')).to.be.null;
+    await expect(classList.includes('util_insetLg--squish')).to.be.true;
+    await expect(classList.includes('auro-button')).to.be.true;
   });
 
-  it('successfully registers custom component', async () => {
+  aIt('successfully registers custom component', async () => {
     AuroButton.register('custom-button');
 
-    expect(typeof customElements.get('custom-button')).to.equal(typeof AuroButton);
+    await expect(typeof customElements.get('custom-button')).to.equal(typeof AuroButton);
   });
 
-  it('tests setting autofocus', async () => {
+  aIt('tests setting autofocus', async () => {
     const el = await fixture(html`
       <auro-button autofocus>Click Me!</auro-button>
     `);
@@ -46,10 +47,10 @@ describe('auro-button', () => {
     const root = el.shadowRoot;
     const button = root.querySelector('button');
 
-    expect(button.getAttribute('autofocus')).to.equal('');
+    await expect(button.getAttribute('autofocus')).to.equal('');
   });
 
-  it('tests setting disabled', async () => {
+  aIt('tests setting disabled', async () => {
     const el = await fixture(html`
       <auro-button disabled>Click Me!</auro-button>
     `);
@@ -57,10 +58,10 @@ describe('auro-button', () => {
     const root = el.shadowRoot;
     const button = root.querySelector('button');
 
-    expect(button.getAttribute('disabled')).to.equal('');
+    await expect(button.getAttribute('disabled')).to.equal('');
   });
 
-  it('tests setting ondark', async () => {
+  aIt('tests setting ondark', async () => {
     const el = await fixture(html`
       <auro-button ondark>Click Me!</auro-button>
     `);
@@ -69,12 +70,12 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
     const classList = button.getAttribute('class').split(' ');
 
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
-    expect(classList.includes('auro-button')).to.be.true;
-    expect(el.hasAttribute('ondark')).to.be.true;
+    await expect(classList.includes('util_insetLg--squish')).to.be.true;
+    await expect(classList.includes('auro-button')).to.be.true;
+    await expect(el.hasAttribute('ondark')).to.be.true;
   });
 
-  it('tests setting secondary', async () => {
+  aIt('tests setting secondary', async () => {
     const el = await fixture(html`
       <auro-button secondary>Click Me!</auro-button>
     `);
@@ -83,12 +84,12 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
     const classList = button.getAttribute('class').split(' ');
 
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
-    expect(classList.includes('auro-button')).to.be.true;
-    expect(el.hasAttribute('secondary')).to.be.true;
+    await expect(classList.includes('util_insetLg--squish')).to.be.true;
+    await expect(classList.includes('auro-button')).to.be.true;
+    await expect(el.hasAttribute('secondary')).to.be.true;
   });
 
-  it('tests setting secondary ondark', async () => {
+  aIt('tests setting secondary ondark', async () => {
     const el = await fixture(html`
       <auro-button secondary ondark>Click Me!</auro-button>
     `);
@@ -97,13 +98,13 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
     const classList = button.getAttribute('class').split(' ');
 
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
-    expect(classList.includes('auro-button')).to.be.true;
-    expect(el.hasAttribute('ondark')).to.be.true;
-    expect(el.hasAttribute('secondary')).to.be.true;
+    await expect(classList.includes('util_insetLg--squish')).to.be.true;
+    await expect(classList.includes('auro-button')).to.be.true;
+    await expect(el.hasAttribute('ondark')).to.be.true;
+    await expect(el.hasAttribute('secondary')).to.be.true;
   });
 
-  it('tests setting tertiary', async () => {
+  aIt('tests setting tertiary', async () => {
     const el = await fixture(html`
       <auro-button tertiary>Click Me!</auro-button>
     `);
@@ -112,12 +113,12 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
     const classList = button.getAttribute('class').split(' ');
 
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
-    expect(classList.includes('auro-button')).to.be.true;
-    expect(el.hasAttribute('tertiary')).to.be.true;
+    await expect(classList.includes('util_insetLg--squish')).to.be.true;
+    await expect(classList.includes('auro-button')).to.be.true;
+    await expect(el.hasAttribute('tertiary')).to.be.true;
   });
 
-  it('tests setting tertiary ondark', async () => {
+  aIt('tests setting tertiary ondark', async () => {
     const el = await fixture(html`
       <auro-button tertiary ondark>Click Me!</auro-button>
     `);
@@ -126,13 +127,13 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
     const classList = button.getAttribute('class').split(' ');
 
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
-    expect(classList.includes('auro-button')).to.be.true;
-    expect(el.hasAttribute('ondark')).to.be.true;
-    expect(el.hasAttribute('tertiary')).to.be.true;
+    await expect(classList.includes('util_insetLg--squish')).to.be.true;
+    await expect(classList.includes('auro-button')).to.be.true;
+    await expect(el.hasAttribute('ondark')).to.be.true;
+    await expect(el.hasAttribute('tertiary')).to.be.true;
   });
 
-  it('tests setting arialabel', async () => {
+  aIt('tests setting arialabel', async () => {
     const el = await fixture(html`
       <auro-button arialabel='label'>Click Me!</auro-button>
     `);
@@ -140,10 +141,10 @@ describe('auro-button', () => {
     const root = el.shadowRoot;
     const button = root.querySelector('button');
 
-    expect(button.getAttribute('aria-label')).to.equal('label');
+    await expect(button.getAttribute('aria-label')).to.equal('label');
   });
 
-  it('tests that button in loading state has proper aria-label', async () => {
+  aIt('tests that button in loading state has proper aria-label', async () => {
     const el = await fixture(html`
       <auro-button loading>Click Me!</auro-button>
     `);
@@ -151,10 +152,10 @@ describe('auro-button', () => {
     const root = el.shadowRoot;
     const button = root.querySelector('button');
 
-    expect(button.getAttribute('aria-label')).to.equal(el.loadingText);
+    await expect(button.getAttribute('aria-label')).to.equal(el.loadingText);
   });
 
-  it('tests setting custom loading text on button in loading state', async () => {
+  aIt('tests setting custom loading text on button in loading state', async () => {
     const el = await fixture(html`
       <auro-button loading loadingText="cargando">Click Me!</auro-button>
     `);
@@ -162,10 +163,10 @@ describe('auro-button', () => {
     const root = el.shadowRoot;
     const button = root.querySelector('button');
 
-    expect(button.getAttribute('aria-label')).to.equal(el.loadingText);
+    await expect(button.getAttribute('aria-label')).to.equal(el.loadingText);
   });
 
-  it('tests setting arialabelledby', async () => {
+  aIt('tests setting arialabelledby', async () => {
     const el = await fixture(html`
       <auro-button arialabelledby='me'>Click Me!</auro-button>
     `);
@@ -173,10 +174,10 @@ describe('auro-button', () => {
     const root = el.shadowRoot;
     const button = root.querySelector('button');
 
-    expect(button.getAttribute('aria-labelledby')).to.equal('me');
+    await expect(button.getAttribute('aria-labelledby')).to.equal('me');
   });
 
-  it('tests setting title', async () => {
+  aIt('tests setting title', async () => {
     const el = await fixture(html`
       <auro-button title='me'>Click Me!</auro-button>
     `);
@@ -184,10 +185,10 @@ describe('auro-button', () => {
     const root = el.shadowRoot;
     const button = root.querySelector('button');
 
-    expect(button.getAttribute('title')).to.equal('me');
+    await expect(button.getAttribute('title')).to.equal('me');
   });
 
-  it('tests setting type', async () => {
+  aIt('tests setting type', async () => {
     const el = await fixture(html`
       <auro-button type='me'>Click Me!</auro-button>
     `);
@@ -195,10 +196,10 @@ describe('auro-button', () => {
     const root = el.shadowRoot;
     const button = root.querySelector('button');
 
-    expect(button.getAttribute('type')).to.equal('me');
+    await expect(button.getAttribute('type')).to.equal('me');
   });
 
-  it('tests setting value', async () => {
+  aIt('tests setting value', async () => {
     const el = await fixture(html`
       <auro-button value='me'>Click Me!</auro-button>
     `);
@@ -206,19 +207,19 @@ describe('auro-button', () => {
     const root = el.shadowRoot;
     const button = root.querySelector('button');
 
-    expect(button.getAttribute('value')).to.equal('me');
+    await expect(button.getAttribute('value')).to.equal('me');
   });
 
-  it('tests setting focus', async () => {
+  aIt('tests setting focus', async () => {
     const el = await fixture(html`
       <auro-button>Click Me!</auro-button>
     `);
 
     el.focus();
-    expect(document.activeElement === el).to.be.true;
+    await expect(document.activeElement === el).to.be.true;
   });
 
-  it('auro-button is accessible', async () => {
+  aIt('auro-button is accessible', async () => {
     const el = await fixture(html`
       <auro-button>Click Me!</auro-button>
     `);
@@ -226,13 +227,13 @@ describe('auro-button', () => {
     await expect(el).to.be.accessible();
   });
 
-  it('auro-button custom element is defined', async () => {
+  aIt('auro-button custom element is defined', async () => {
     const el = await Boolean(customElements.get("auro-button"));
 
     await expect(el).to.be.true;
   });
 
-  it('default slot is not in DOM when iconOnly attribute is present', async () => {
+  aIt('default slot is not in DOM when iconOnly attribute is present', async () => {
     const el = await fixture(html`
       <auro-button rounded iconOnly>
         <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
@@ -241,10 +242,10 @@ describe('auro-button', () => {
 
     const slotElement = el.querySelector('slot:not([name])');
 
-    expect(slotElement).to.equal(null);
+    await expect(slotElement).to.equal(null);
   });
 
-  it('handles form awareness with type="submit"', async () => {
+  aIt('handles form awareness with type="submit"', async () => {
     const el = await fixture(html`
       <form id="test-form">
         <auro-button type="submit">Submit</auro-button>
@@ -256,8 +257,8 @@ describe('auro-button', () => {
     const auroButton = el.querySelector('auro-button')
     // innerButton is used because the test suite does not handle clicks the same way a browser does
     const innerButton = el.querySelector('auro-button').shadowRoot.querySelector('button');
-    expect(auroButton.form).not.to.be.null;
-    expect(innerButton.getAttribute('type')).to.equal('submit');
+    await expect(auroButton.form).not.to.be.null;
+    await expect(innerButton.getAttribute('type')).to.equal('submit');
 
     el.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -268,10 +269,10 @@ describe('auro-button', () => {
     innerButton.click();
     await elementUpdated(el);
 
-    expect(mockSubmit.calledOnce).to.be.true;
+    await expect(mockSubmit.calledOnce).to.be.true;
   })
 
-  it('handles type=button inside of a form (does not submit)', async () => {
+  aIt('handles type=button inside of a form (does not submit)', async () => {
     const el = await fixture(html`
       <form id="test-form">
         <auro-button type="button">Button</auro-button>
@@ -283,29 +284,29 @@ describe('auro-button', () => {
     const auroButton = el.querySelector('auro-button')
     // innerButton is used because the test suite does not handle clicks the same way a browser does
     const innerButton = el.querySelector('auro-button').shadowRoot.querySelector('button');
-    expect(auroButton.form).not.to.be.null;
-    expect(innerButton.getAttribute('type')).to.equal('button');
+    await expect(auroButton.form).not.to.be.null;
+    await expect(innerButton.getAttribute('type')).to.equal('button');
 
     el.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      mockSubmit();
+      mockSubmaIt();
     })
 
     innerButton.click();
     await elementUpdated(el);
 
-    expect(mockSubmit.calledOnce).to.be.false;
+    await expect(mockSubmit.calledOnce).to.be.false;
   })
 
-  it('does not handle form association when not inside a form', async () => {
+  aIt('does not handle form association when not inside a form', async () => {
     const el = await fixture(html`
       <auro-button type="submit">Submit</auro-button>
     `);
 
     const innerButton = el.shadowRoot.querySelector('button');
-    expect(el.form).to.be.null;
-    expect(innerButton.getAttribute('type')).to.equal('submit');
+    await expect(el.form).to.be.null;
+    await expect(innerButton.getAttribute('type')).to.equal('submit');
 
     innerButton.click();
     await elementUpdated(el);
