@@ -21,8 +21,6 @@ import { AuroLoader } from '@aurodesignsystem/auro-loader/src/auro-loader.js';
 import loaderVersion from './loaderVersion.js';
 
 /**
- * @prop {Boolean} ready - When false the component API should not be called.
- * @event auroButton-ready - Notifies that the component has finished initializing.
  * @slot - Default slot for the text of the button.
  * @slot icon - Slot to provide auro-icon for the button.
  * @csspart button - Apply CSS to HTML5 button.
@@ -51,7 +49,6 @@ export class AuroButton extends LitElement {
     this.iconOnly = false;
     this.loading = false;
     this.onDark = false;
-    this.ready = false;
     this.secondary = false;
     this.tertiary = false;
     this.rounded = false;
@@ -189,14 +186,6 @@ export class AuroButton extends LitElement {
       },
 
       /**
-       * Set the unique ID of an element.
-       */
-      id: {
-        type: String,
-        reflect: true
-      },
-
-      /**
        * Populates the `aria-hidden` attribute to hide the button from a11y API.
        */
       ariahidden: {
@@ -290,21 +279,6 @@ export class AuroButton extends LitElement {
     this.renderRoot.querySelector('button').focus();
   }
 
-  /**
-   *  Marks the component as ready and sends event.
-   * @private
-   * @returns {void}
-   */
-  notifyReady() {
-    this.ready = true;
-
-    this.dispatchEvent(new CustomEvent('auroButton-ready', {
-      bubbles: true,
-      cancelable: false,
-      composed: true,
-    }));
-  }
-
   updated() {
     // support the old `secondary` and `tertiary` attributes` that are deprecated
     if (this.secondary) {
@@ -314,10 +288,6 @@ export class AuroButton extends LitElement {
     if (this.tertiary) {
       this.setAttribute('variant', 'tertiary');
     }
-  }
-
-  firstUpdated() {
-    this.notifyReady();
   }
 
   /**
@@ -355,7 +325,7 @@ export class AuroButton extends LitElement {
     return html`
       <button
         part="button"
-        aria-hidden="${ifDefined(this.ariahidden ? this.ariahidden : undefined)}"
+        aria-hidden="${ifDefined(this.ariahidden || undefined)}"
         aria-label="${ifDefined(this.loading ? this.loadingText : this.arialabel || undefined)}"
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         aria-expanded="${ifDefined(this.ariaexpanded)}"
