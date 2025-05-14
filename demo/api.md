@@ -15,11 +15,10 @@
 | [disabled](#disabled)       | `disabled`       | `boolean` | false   | If set to true, button will become disabled and not allow for interactions. |
 | [fluid](#fluid)          | `fluid`          | `boolean` | false   | Alters the shape of the button to be full width of its parent container. |
 | [iconOnly](#iconOnly)       | `iconOnly`       | `boolean` | false   | If set to true, the button will contain an icon with no additional content. |
-| [id](#id)             | `id`             | `string`  |         | Set the unique ID of an element.                 |
 | [loading](#loading)        | `loading`        | `boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled. |
 | [loadingText](#loadingText)    | `loadingText`    | `string`  |         | Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used. |
 | [onDark](#onDark)         | `onDark`         | `boolean` | false   | Set value for on-dark version of auro-button.    |
-| [ready](#ready)          | `ready`          | `Boolean` | false   | When false the component API should not be called. |
+| [ready](#ready)          | `ready`          | `boolean` |         |                                                  |
 | [rounded](#rounded)        | `rounded`        | `boolean` | false   | If set to true, the button will have a rounded shape. |
 | [secondary](#secondary)      | `secondary`      | `boolean` | false   | DEPRECATED.                                      |
 | [slim](#slim)           | `slim`           | `boolean` | false   | Set value for slim version of auro-button.       |
@@ -29,12 +28,6 @@
 | [type](#type)           | `type`           | `string`  |         | The type of the button. Possible values are: `submit`, `reset`, `button`. |
 | [value](#value)          | `value`          | `string`  |         | Defines the value associated with the button which is submitted with the form data. |
 | [variant](#variant)        | `variant`        | `string`  |         | Sets button variant option. Possible values are: `secondary`, `tertiary`. |
-
-## Events
-
-| Event              | Type               | Description                                      |
-|--------------------|--------------------|--------------------------------------------------|
-| `auroButton-ready` | `CustomEvent<any>` | Notifies that the component has finished initializing. |
 
 ## Slots
 
@@ -575,8 +568,8 @@ To provide a custom loading message for assistive technologies, use the `loading
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## ARIA tags
-Instead of using `aria-*` tag, use `aria*` (without the hyphen) to properly bind ARIA tags.
+## ARIA attributes
+Instead of using `aria-*` attributes, use `aria*` (without the hyphen) to properly bind ARIA attributes.
 
 For `tabindex`, use `tIndex` instead to avoid duplicated focus interaction.
 
