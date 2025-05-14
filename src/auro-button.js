@@ -21,25 +21,6 @@ import { AuroLoader } from '@aurodesignsystem/auro-loader/src/auro-loader.js';
 import loaderVersion from './loaderVersion.js';
 
 /**
- * @attr {Boolean} autofocus - This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user
- * @attr {Boolean} disabled - If set to true, button will become disabled and not allow for interactions
- * @attr {Boolean} iconOnly - If set to true, the button will contain an icon with no additional content
- * @attr {Boolean} loading - If set to true button text will be replaced with `auro-loader` and become disabled
- * @attr {String} loadingText - Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
- * @attr {Boolean} onDark - Set value for on-dark version of auro-button
- * @attr {Boolean} rounded - If set to true, the button will have a rounded shape
- * @attr {Boolean} slim - Set value for slim version of auro-button
- * @attr {Boolean} fluid - Alters the shape of the button to be full width of its parent container
- * @attr {String} arialabel - Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead.
- * @attr {String} arialabelledby - Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion.
- * @attr {Boolean} ariaexpanded - Populates the `aria-expanded` attribute that indicates whether the element, or another grouping element it controls, is currently expanded or collapsed. This is an optional attribute for buttons.
- * @attr {String} id - Set the unique ID of an element.
- * @attr {String} title - Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
- * @attr {String} type - The type of the button. Possible values are: `submit`, `reset`, `button`
- * @attr {String} value - Defines the value associated with the button which is submitted with the form data.
- * @attr {String} variant - Sets button variant option. Possible values are: `secondary`, `tertiary`
- * @attr {Boolean} secondary - DEPRECATED
- * @attr {Boolean} tertiary - DEPRECATED
  * @prop {Boolean} ready - When false the component API should not be called.
  * @event auroButton-ready - Notifies that the component has finished initializing.
  * @slot - Default slot for the text of the button.
@@ -65,7 +46,6 @@ export class AuroButton extends LitElement {
 
   constructor() {
     super();
-
     this.autofocus = false;
     this.disabled = false;
     this.iconOnly = false;
@@ -110,73 +90,177 @@ export class AuroButton extends LitElement {
 
   static get properties() {
     return {
+
+      /**
+       * This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user.
+       */
       autofocus:        {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * If set to true, button will become disabled and not allow for interactions.
+       */
       disabled:         {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * DEPRECATED.
+       * @deprecated
+       */
       secondary:         {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * DEPRECATED.
+       * @deprecated
+       */
       tertiary:         {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Alters the shape of the button to be full width of its parent container.
+       */
       fluid:         {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * If set to true, the button will contain an icon with no additional content.
+       */
       iconOnly: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * If set to true button text will be replaced with `auro-loader` and become disabled.
+       */
       loading:          {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
+       */
       loadingText:      {
         type: String
       },
+
+      /**
+       * Set value for on-dark version of auro-button.
+       */
       onDark:           {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * If set to true, the button will have a rounded shape.
+       */
       rounded: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Set value for slim version of auro-button.
+       */
       slim: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Populates `tabIndex` to define the focusable sequence in keyboard navigation.
+       */
+      tIndex: {
+        type: String,
+        reflect: true
+      },
+
+      /**
+       * Set the unique ID of an element.
+       */
+      id: {
+        type: String,
+        reflect: true
+      },
+
+      /**
+       * Populates the `aria-hidden` attribute to hide the button from a11y API.
+       */
+      ariahidden: {
+        type: String,
+        reflect: true,
+      },
+
+      /**
+       * Populates the `aria-label` attribute that is used to define a string that labels the current element.
+       * Use it in cases where a text label is not visible on the screen.
+       * If there is visible text labeling the element, use `aria-labelledby` instead.
+       */
       arialabel:        {
         type: String,
         reflect: true
       },
+
+      /**
+       * Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s),
+       * and its value should be one or more element IDs, which refer to elements that have the text needed for labeling.
+       * List multiple element IDs in a space delimited fashion.
+       */
       arialabelledby:   {
         type: String,
         reflect: true
       },
+
+      /**
+       * Populates the `aria-expanded` attribute that indicates whether the element,
+       * or another grouping element it controls, is currently expanded or collapsed.
+       * This is an optional attribute for buttons.
+       */
       ariaexpanded: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
+       */
       title:            {
         type: String,
         reflect: true
       },
+
+      /**
+       * The type of the button. Possible values are: `submit`, `reset`, `button`.
+       */
       type:             {
         type: String,
         reflect: true
       },
+
+      /**
+       * Defines the value associated with the button which is submitted with the form data.
+       */
       value:            {
         type: String,
         reflect: true
       },
+
+      /**
+       * Sets button variant option. Possible values are: `secondary`, `tertiary`.
+       */
       variant:          {
         type: String,
         reflect: true
@@ -271,9 +355,11 @@ export class AuroButton extends LitElement {
     return html`
       <button
         part="button"
+        aria-hidden="${ifDefined(this.ariahidden ? this.ariahidden : undefined)}"
         aria-label="${ifDefined(this.loading ? this.loadingText : this.arialabel || undefined)}"
         aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
         aria-expanded="${ifDefined(this.ariaexpanded)}"
+        tabIndex="${ifDefined(this.tIndex)}"
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
         ?disabled="${this.disabled || this.loading}"

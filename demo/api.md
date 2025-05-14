@@ -3,35 +3,32 @@
 
 # auro-button
 
-## Attributes
-
-| Attribute | Type     | Description                      |
-|-----------|----------|----------------------------------|
-| [id](#id)      | `String` | Set the unique ID of an element. |
-
 ## Properties
 
 | Property         | Attribute        | Type      | Default | Description                                      |
 |------------------|------------------|-----------|---------|--------------------------------------------------|
-| [ariaexpanded](#ariaexpanded)   | `ariaexpanded`   | `Boolean` |         | Populates the `aria-expanded` attribute that indicates whether the element, or another grouping element it controls, is currently expanded or collapsed. This is an optional attribute for buttons. |
-| [arialabel](#arialabel)      | `arialabel`      | `String`  |         | Populates the `aria-label` attribute that is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use `aria-labelledby` instead. |
-| [arialabelledby](#arialabelledby) | `arialabelledby` | `String`  |         | Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s), and its value should be one or more element IDs, which refer to elements that have the text needed for labeling. List multiple element IDs in a space delimited fashion. |
-| [autofocus](#autofocus)      | `autofocus`      | `Boolean` | false   | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user |
-| [disabled](#disabled)       | `disabled`       | `Boolean` | false   | If set to true, button will become disabled and not allow for interactions |
-| [fluid](#fluid)          | `fluid`          | `Boolean` | false   | Alters the shape of the button to be full width of its parent container |
-| [iconOnly](#iconOnly)       | `iconOnly`       | `Boolean` | false   | If set to true, the button will contain an icon with no additional content |
-| [loading](#loading)        | `loading`        | `Boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled |
-| [loadingText](#loadingText)    | `loadingText`    | `String`  |         | Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used. |
-| [onDark](#onDark)         | `onDark`         | `Boolean` | false   | Set value for on-dark version of auro-button     |
+| [ariaexpanded](#ariaexpanded)   | `ariaexpanded`   | `boolean` |         | Populates the `aria-expanded` attribute that indicates whether the element,<br />or another grouping element it controls, is currently expanded or collapsed.<br />This is an optional attribute for buttons. |
+| [ariahidden](#ariahidden)     | `ariahidden`     | `string`  |         | Populates the `aria-hidden` attribute to hide the button from a11y API. |
+| [arialabel](#arialabel)      | `arialabel`      | `string`  |         | Populates the `aria-label` attribute that is used to define a string that labels the current element.<br />Use it in cases where a text label is not visible on the screen.<br />If there is visible text labeling the element, use `aria-labelledby` instead. |
+| [arialabelledby](#arialabelledby) | `arialabelledby` | `string`  |         | Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s),<br />and its value should be one or more element IDs, which refer to elements that have the text needed for labeling.<br />List multiple element IDs in a space delimited fashion. |
+| [autofocus](#autofocus)      | `autofocus`      | `boolean` | false   | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user. |
+| [disabled](#disabled)       | `disabled`       | `boolean` | false   | If set to true, button will become disabled and not allow for interactions. |
+| [fluid](#fluid)          | `fluid`          | `boolean` | false   | Alters the shape of the button to be full width of its parent container. |
+| [iconOnly](#iconOnly)       | `iconOnly`       | `boolean` | false   | If set to true, the button will contain an icon with no additional content. |
+| [id](#id)             | `id`             | `string`  |         | Set the unique ID of an element.                 |
+| [loading](#loading)        | `loading`        | `boolean` | false   | If set to true button text will be replaced with `auro-loader` and become disabled. |
+| [loadingText](#loadingText)    | `loadingText`    | `string`  |         | Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used. |
+| [onDark](#onDark)         | `onDark`         | `boolean` | false   | Set value for on-dark version of auro-button.    |
 | [ready](#ready)          | `ready`          | `Boolean` | false   | When false the component API should not be called. |
-| [rounded](#rounded)        | `rounded`        | `Boolean` | false   | If set to true, the button will have a rounded shape |
-| [secondary](#secondary)      | `secondary`      | `Boolean` | false   | DEPRECATED                                       |
-| [slim](#slim)           | `slim`           | `Boolean` | false   | Set value for slim version of auro-button        |
-| [tertiary](#tertiary)       | `tertiary`       | `Boolean` | false   | DEPRECATED                                       |
-| [title](#title)          | `title`          | `String`  |         | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
-| [type](#type)           | `type`           | `String`  |         | The type of the button. Possible values are: `submit`, `reset`, `button` |
-| [value](#value)          | `value`          | `String`  |         | Defines the value associated with the button which is submitted with the form data. |
-| [variant](#variant)        | `variant`        | `String`  |         | Sets button variant option. Possible values are: `secondary`, `tertiary` |
+| [rounded](#rounded)        | `rounded`        | `boolean` | false   | If set to true, the button will have a rounded shape. |
+| [secondary](#secondary)      | `secondary`      | `boolean` | false   | DEPRECATED.                                      |
+| [slim](#slim)           | `slim`           | `boolean` | false   | Set value for slim version of auro-button.       |
+| [tIndex](#tIndex)         | `tIndex`         | `string`  |         | Populates `tabIndex` to define the focusable sequence in keyboard navigation. |
+| [tertiary](#tertiary)       | `tertiary`       | `boolean` | false   | DEPRECATED.                                      |
+| [title](#title)          | `title`          | `string`  |         | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
+| [type](#type)           | `type`           | `string`  |         | The type of the button. Possible values are: `submit`, `reset`, `button`. |
+| [value](#value)          | `value`          | `string`  |         | Defines the value associated with the button which is submitted with the form data. |
+| [variant](#variant)        | `variant`        | `string`  |         | Sets button variant option. Possible values are: `secondary`, `tertiary`. |
 
 ## Events
 
@@ -577,6 +574,11 @@ To provide a custom loading message for assistive technologies, use the `loading
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
+
+## ARIA tags
+Instead of using `aria-*` tag, use `aria*` (without the hyphen) to properly bind ARIA tags.
+
+For `tabindex`, use `tIndex` instead to avoid duplicated focus interaction.
 
 ## Theme Support
 
