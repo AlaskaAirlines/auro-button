@@ -299,6 +299,14 @@ To provide a custom loading message for assistive technologies, use the `loading
 
 </auro-accordion>
 
+
+## ARIA tags
+Instead of using `aria-*` tag, use `aria*` (without the hyphen) to properly bind ARIA tags.
+
+For `tabindex`, use `tIndex` instead to avoid duplicated focus interaction.
+
+
+
 ## Theme Support
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
