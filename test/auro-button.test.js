@@ -226,6 +226,23 @@ describe('auro-button', () => {
     await expect(el).to.be.accessible();
   });
 
+  it(`auro-button is accessible with various ARIA attrs`, async () => {
+    const el = await fixture(html`
+      <div>
+        <auro-button tIndex="-1" ariahidden="true">Click Me!</auro-button>
+        <auro-button arialabel="This is a button">Click Me!</auro-button>
+        <auro-button ariaexpanded="true">Click Me!</auro-button>
+      </div>
+    `);
+
+    await expect(el.children[0].shadowRoot.querySelector('button')).to.have.attribute('tabindex', '-1');
+    await expect(el.children[0].shadowRoot.querySelector('button')).to.have.attribute('aria-hidden', 'true');
+    await expect(el.children[1].shadowRoot.querySelector('button')).to.have.attribute('aria-label', 'This is a button');
+    await expect(el.children[2].shadowRoot.querySelector('button')).to.have.attribute('aria-expanded', 'true');
+
+    await expect(el).to.be.accessible();
+  });
+
   it('auro-button custom element is defined', async () => {
     const el = await Boolean(customElements.get("auro-button"));
 
