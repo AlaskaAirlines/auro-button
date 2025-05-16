@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [9.4.0](https://github.com/AlaskaAirlines/auro-button/compare/v9.3.3...v9.4.0) (2025-05-16)
+
+
+### Features
+
+* add `ariahidden` and `tIndex` attrs [#319](https://github.com/AlaskaAirlines/auro-button/issues/319) ([3a6cf30](https://github.com/AlaskaAirlines/auro-button/commit/3a6cf3097569d4f8098e2aaeddea890112d34b79))
+
 ## [9.3.3](https://github.com/AlaskaAirlines/auro-button/compare/v9.3.2...v9.3.3) (2025-05-02)
 
 
