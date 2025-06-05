@@ -1,0 +1,275 @@
+/* stylelint-disable */
+
+@use './../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables';
+
+// SIZES
+$borderSize: 2px;
+$xl: calc(72px - ($borderSize * 2));
+$lg: calc(56px - ($borderSize * 2));
+$md: calc(48px - ($borderSize * 2));
+$sm: calc(36px - ($borderSize * 2));
+$xs: calc(24px - ($borderSize * 2));
+
+// SHAPES ---------------------------------------------------
+
+.shape-snowflake-xl,
+.shape-snowflake-lg,
+.shape-snowflake-md,
+.shape-snowflake-sm,
+.shape-snowflake-xs {
+  min-height: 56px;
+  max-height: 56px;
+  border-style: solid;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.shape-box-xl {
+  min-height: $xl;
+  max-height: $xl;
+  border-style: solid;
+  overflow: hidden;
+}
+
+/* Rounded Button Sizes */
+.shape-rounded-xl {
+  min-height: $xl;
+  max-height: $xl;
+  border-style: solid;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.shape-rounded-lg {
+  min-height: $lg;
+  max-height: $lg;
+  border-style: solid;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.shape-rounded-md {
+  min-height: $md;
+  max-height: $md;
+  border-style: solid;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.shape-rounded-sm {
+  min-height: $sm;
+  max-height: $sm;
+  border-style: solid;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.shape-rounded-xs {
+  min-height: $xs;
+  max-height: $xs;
+  border-style: solid;
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 12px;
+  outline-offset: -2px;
+  outline-width: 1px;
+  
+}
+
+// Shape pill variants - XL size
+.shape-pill-xl {
+  min-height: $xl;
+  max-height: $xl;
+  border-style: solid;
+  border-radius: calc($xl / 2);
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.shape-pill-left-xl {
+  min-height: $xl;
+  max-height: $xl;
+  border-style: solid;
+  border-radius: calc($xl / 2) 0 0 calc($xl / 2);
+  overflow: hidden;
+}
+
+.shape-pill-right-xl {
+  min-height: $xl;
+  max-height: $xl;
+  border-style: solid;
+  border-radius: 0 calc($xl / 2) calc($xl / 2) 0;
+  overflow: hidden;
+}
+
+// Shape pill variants - LG size
+.shape-pill-lg {
+  min-height: $lg;
+  max-height: $lg;
+  border-style: solid;
+  border-radius: calc($lg / 2);
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.shape-pill-left-lg {
+  min-height: $lg;
+  max-height: $lg;
+  border-style: solid;
+  border-radius: calc($lg / 2) 0 0 calc($lg / 2);
+  overflow: hidden;
+}
+
+.shape-pill-right-lg {
+  min-height: $lg;
+  max-height: $lg;
+  border-style: solid;
+  border-radius: 0 calc($lg / 2) calc($lg / 2) 0;
+  overflow: hidden;
+}
+
+// Shape pill variants - MD size
+.shape-pill-md {
+  min-height: $md;
+  max-height: $md;
+  border-style: solid;
+  border-radius: calc($md / 2);
+  overflow: hidden;
+}
+
+.shape-pill-left-md {
+  min-height: $md;
+  max-height: $md;
+  border-style: solid;
+  border-radius: calc($md / 2) 0 0 calc($md / 2);
+  overflow: hidden;
+}
+
+.shape-pill-right-md {
+  min-height: $md;
+  max-height: $md;
+  border-style: solid;
+  border-radius: 0 calc($md / 2) calc($md / 2) 0;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+// Shape pill variants - SM size
+.shape-pill-sm {
+  min-height: $sm;
+  max-height: $sm;
+  border-style: solid;
+  border-radius: calc($sm / 2);
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.shape-pill-left-sm {
+  min-height: $sm;
+  max-height: $sm;
+  border-style: solid;
+  border-radius: calc($sm / 2) 0 0 calc($sm / 2);
+  overflow: hidden;
+}
+
+.shape-pill-right-sm {
+  min-height: $sm;
+  max-height: $sm;
+  border-style: solid;
+  border-radius: 0 calc($sm / 2) calc($sm / 2) 0;
+  overflow: hidden;
+}
+
+// Shape pill variants - XS size
+.shape-pill-xs {
+  min-height: $xs;
+  max-height: $xs;
+  border-style: solid;
+  border-radius: calc($xs / 2);
+  overflow: hidden;
+  font-size: 12px;
+  outline-offset: -2px;
+  outline-width: 1px;
+}
+
+.shape-pill-left-xs {
+  min-height: $xs;
+  max-height: $xs;
+  border-style: solid;
+  border-radius: calc($xs / 2) 0 0 calc($xs / 2);
+  overflow: hidden;
+  outline-offset: -2px;
+  outline-width: 1px;
+}
+
+.shape-pill-right-xs {
+  min-height: $xs;
+  max-height: $xs;
+  border-style: solid;
+  border-radius: 0 calc($xs / 2) calc($xs / 2) 0;
+  overflow: hidden;
+  outline-offset: -2px;
+  outline-width: 1px;
+}
+
+// Circle shape variants
+.shape-circle-xl {
+  min-height: $xl;
+  max-height: $xl;
+  min-width: $xl;
+  max-width: $xl;
+  border-style: solid;
+  border-radius: calc($xl / 2);
+  overflow: hidden;
+  padding: 0;
+}
+
+.shape-circle-lg {
+  min-height: $lg;
+  max-height: $lg;
+  min-width: $lg;
+  max-width: $lg;
+  border-style: solid;
+  border-radius: calc($lg / 2);
+  overflow: hidden;
+  padding: 0;
+}
+
+.shape-circle-md {
+  min-height: $md;
+  max-height: $md;
+  min-width: $md;
+  max-width: $md;
+  border-style: solid;
+  border-radius: calc($md / 2);
+  overflow: hidden;
+  padding: 0;
+}
+
+.shape-circle-sm {
+  min-height: $sm;
+  max-height: $sm;
+  min-width: $sm;
+  max-width: $sm;
+  border-style: solid;
+  border-radius: calc($sm / 2);
+  overflow: hidden;
+  padding: 0;
+}
+
+.shape-circle-xs {
+  min-height: $xs;
+  max-height: $xs;
+  min-width: $xs;
+  max-width: $xs;
+  border-style: solid;
+  border-radius: calc($xs / 2);
+  overflow: hidden;
+  padding: 0;
+  outline-offset: -2px;
+  outline-width: 1px;
+}

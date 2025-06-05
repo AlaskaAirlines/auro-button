@@ -26,6 +26,13 @@
 | `value`          | `value`          | `string`  |         | Defines the value associated with the button which is submitted with the form data. |
 | `variant`        | `variant`        | `string`  |         | Sets button variant option. Possible values are: `secondary`, `tertiary`. |
 
+## Methods
+
+| Method                | Type                 |
+|-----------------------|----------------------|
+| `renderLayout`        | `(): TemplateResult` |
+| `renderLayoutDefault` | `(): TemplateResult` |
+
 ## Slots
 
 | Name   | Description                               |

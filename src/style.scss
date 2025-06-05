@@ -26,18 +26,18 @@
    */
 
 // Import Auro Sass variables
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska";
 
 // general WCSS imports
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/animation";
 
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariableMap";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap";
 
 $auro-inset-spacing-options: lg;
-$auro-inset-directions:'--squish';
+$auro-inset-directions: '--squish';
 
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
 
@@ -50,14 +50,7 @@ $auro-inset-directions:'--squish';
 }
 
 :host([variant='flat']) {
-  display:inline-block;
-  height: var(--ds-size-300, $ds-size-300);
-  width: var(--ds-size-300, $ds-size-300);
-
-  .auro-button {
-    height: 100%;
-    width: 100%;
-  }
+  display: inline-block;
 }
 
 // adjust alignment for slotted SVG icon
@@ -80,12 +73,6 @@ slot {
   border-width: 1px;
   border-style: solid;
   border-radius: var(--ds-border-radius, $ds-border-radius);
-
-  font-family: var(--ds-basic-text-body-default-font-family, $ds-basic-text-body-default-font-family); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  font-size: var(--ds-basic-text-body-default-font-size, $ds-basic-text-body-default-font-size); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  font-weight: var(--ds-basic-text-body-default-font-weight, $ds-basic-text-body-default-font-weight); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  line-height: var(--ds-basic-text-body-default-line-height, $ds-basic-text-body-default-line-height); /* This must be declared here because the browser clients unset it in the user agent style sheet */
-  letter-spacing: var(--ds-basic-text-body-default-letter-spacing, $ds-basic-text-body-default-letter-spacing); /* This must be declared here because the browser clients unset it in the user agent style sheet */
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
@@ -112,17 +99,15 @@ slot {
     transform: scale(0.95);
   }
 
-  &:focus-visible {
+  &:focus-visible, &:focus {
     outline: none;
 
-    &:not([variant='flat']) {
-      outline-style: solid;
-      outline-width: var(--ds-size-50, $ds-size-50);
-      outline-offset: calc(var(--ds-size-50, $ds-size-50) * -1);
+    outline-style: solid;
+    outline-width: var(--ds-size-50, $ds-size-50);
+    outline-offset: calc(var(--ds-size-50, $ds-size-50) * -1);
 
-      &:not([variant='secondary']):not([variant='tertiary']) {
-        outline-width: calc(var(--ds-size-50, $ds-size-50) - 1px);
-      }
+    &:not([variant='secondary']):not([variant='tertiary']) {
+      outline-width: calc(var(--ds-size-50, $ds-size-50) - 1px);
     }
   }
 
@@ -158,17 +143,11 @@ slot {
     }
   }
 
-  &[variant='flat'] {
-    height: unset;
-    width: unset;
-    min-height: unset;
-    max-height: unset;
-    min-width: unset;
-    max-width: unset;
-    border: 0;
-    border-radius: unset;
-    gap: unset;
-    padding: unset;
+  &[variant='ghost'] {
+    &:disabled {
+      cursor: not-allowed;
+      transform: unset;
+    }
   }
 
   &[onDark] {
@@ -205,12 +184,6 @@ slot {
 
   // auro-button--slim
   &--slim {
-    padding: var(--ds-size-100, $ds-size-100) var(--ds-size-200, $ds-size-200);
-    font-family: var(--ds-basic-text-body-sm-font-family, $ds-basic-text-body-sm-font-family);
-    font-size: var(--ds-basic-text-body-sm-font-size, $ds-basic-text-body-sm-font-size);
-    font-weight: var(--ds-basic-text-body-sm-font-weight, $ds-basic-text-body-sm-font-weight);
-    line-height: var(--ds-basic-text-body-sm-line-height, $ds-basic-text-body-sm-line-height);
-    letter-spacing: var(--ds-basic-text-body-sm-letter-spacing, $ds-basic-text-body-sm-letter-spacing);
     min-width: unset;
     min-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
     max-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
@@ -231,7 +204,8 @@ slot {
     height: var(--ds-size-600, $ds-size-600);
     width: var(--ds-size-500, $ds-size-500);
 
-    &:not(.auro-button--rounded):focus-visible {
+    &:not(.auro-button--rounded):focus-visible,
+    &:not(.auro-button--rounded):focus {
       &:not([variant='secondary']):not([variant='tertiary']):not([variant='flat']) {
         outline-width: 1px;
         outline-offset: -2px; // -(1px width + 1px border-width)
@@ -267,7 +241,7 @@ slot {
       --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
     }
 
-    &:focus-visible {
+    &:focus-visible, &:focus {
       &:not([variant='flat']) {
         &:after {
           border-radius: 100px;
@@ -277,6 +251,16 @@ slot {
   }
 }
 
+// Handle outline specifically for XS sizes of button
+// Ensures that there's enough content room in XS sized buttons.
+:host([size=xs]) {
+  .wrapper {
+    &:focus-visible, &:focus {
+      outline-width: 1px;
+      outline-offset: -2px;
+    }
+  }
+}
 
 :host([rounded]) {
   .textSlot {
