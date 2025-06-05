@@ -29,6 +29,13 @@
 | [value](#value)          | `value`          | `string`  |         | Defines the value associated with the button which is submitted with the form data. |
 | [variant](#variant)        | `variant`        | `string`  |         | Sets button variant option. Possible values are: `secondary`, `tertiary`. |
 
+## Methods
+
+| Method                | Type                 |
+|-----------------------|----------------------|
+| [renderLayout](#renderLayout)        | `(): TemplateResult` |
+| [renderLayoutDefault](#renderLayoutDefault) | `(): TemplateResult` |
+
 ## Slots
 
 | Name   | Description                               |
@@ -54,7 +61,7 @@
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
   <!-- The below content is automatically added from ./../apiExamples/basic.html -->
   <auro-button>Primary</auro-button>
-  <auro-button variant="secondary">Secondary</auro-button>
+  <auro-button layout="test" variant="secondary">Secondary</auro-button>
   <auro-button variant="tertiary">Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -65,7 +72,7 @@
 
 ```html
 <auro-button>Primary</auro-button>
-<auro-button variant="secondary">Secondary</auro-button>
+<auro-button layout="test" variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -581,15 +588,25 @@ The component may be restyled using the following code sample and changing the v
 <!-- The below code snippet is automatically added from ./../src/tokens.scss -->
 
 ```scss
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
+@use "./../node_modules/@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
-:host {
-  --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border, #{$ds-advanced-color-button-primary-border});
-  --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{$ds-advanced-color-state-focused-inverse});
-  --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background, #{$ds-advanced-color-button-primary-background});
-  --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background, #{$ds-advanced-color-button-primary-background});
-  --ds-auro-button-loader-color: var(--ds-advanced-color-button-primary-text, #{$ds-advanced-color-button-primary-text});
-  --ds-auro-button-text-color: var(--ds-advanced-color-button-primary-text, #{$ds-advanced-color-button-primary-text});
+:host(:not([onDark])) {
+  --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border, #{v.$ds-advanced-color-button-primary-border});
+  --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
+  --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background, #{v.$ds-advanced-color-button-primary-background});
+  --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background, #{v.$ds-advanced-color-button-primary-background});
+  --ds-auro-button-loader-color: var(--ds-advanced-color-button-primary-text, #{v.$ds-advanced-color-button-primary-text});
+  --ds-auro-button-text-color: var(--ds-advanced-color-button-primary-text, #{v.$ds-advanced-color-button-primary-text});
+  --ds-auro-button-tap-color: transparent;
+}
+
+:host([onDark]) {
+  --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border-inverse, #{v.$ds-advanced-color-button-primary-border-inverse});
+  --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
+  --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background-inverse, #{v.$ds-advanced-color-button-primary-background-inverse});
+  --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background-inverse, #{v.$ds-advanced-color-button-primary-background-inverse});
+  --ds-auro-button-loader-color: var(--ds-advanced-color-button-primary-text-inverse, #{v.$ds-advanced-color-button-primary-text-inverse});
+  --ds-auro-button-text-color: var(--ds-advanced-color-button-primary-text-inverse, #{v.$ds-advanced-color-button-primary-text-inverse});
   --ds-auro-button-tap-color: transparent;
 }
 ```

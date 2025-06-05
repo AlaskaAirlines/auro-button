@@ -4,7 +4,7 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement } from "lit";
+import { AuroElement } from "./layoutElement/src/auroElement.js";
 import { html } from 'lit/static-html.js';
 
 import { classMap } from 'lit/directives/class-map.js';
@@ -16,6 +16,7 @@ import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runt
 import styleCss from "./style-css.js";
 import colorCss from "./color-css.js";
 import tokensCss from "./tokens-css.js";
+import shapeSize from "./shapeSize-css.js";
 
 import { AuroLoader } from '@aurodesignsystem/auro-loader/src/auro-loader.js';
 import loaderVersion from './loaderVersion.js';
@@ -31,7 +32,7 @@ import loaderVersion from './loaderVersion.js';
 
 /* eslint-disable lit/no-invalid-html, lit/binding-positions */
 
-export class AuroButton extends LitElement {
+export class AuroButton extends AuroElement {
 
   /**
    * Enables form association for this element.
@@ -81,12 +82,25 @@ export class AuroButton extends LitElement {
     return [
       tokensCss,
       styleCss,
-      colorCss
+      colorCss,
+      shapeSize
     ];
   }
 
   static get properties() {
     return {
+
+      ...super.properties,
+
+      /**
+       * Override layout since it isn't used in this component.
+       * @private
+       */
+      layout: {
+        type: Boolean,
+        attribute: false,
+        reflect: false
+      },
 
       /**
        * This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user.
@@ -279,7 +293,10 @@ export class AuroButton extends LitElement {
     this.renderRoot.querySelector('button').focus();
   }
 
-  updated() {
+  updated(changedProperties) {
+
+    super.updated(changedProperties);
+
     // support the old `secondary` and `tertiary` attributes` that are deprecated
     if (this.secondary) {
       this.setAttribute('variant', 'secondary');
@@ -310,16 +327,17 @@ export class AuroButton extends LitElement {
     return this.internals ? this.internals.form : null;
   }
 
-  render() {
+  renderLayoutDefault() {
     const classes = {
       'util_insetLg--squish': true,
       'auro-button': true,
       'auroButton': true,
+      'wrapper': true,
       'auro-button--rounded': this.rounded,
       'auro-button--slim': this.slim,
       'auro-button--iconOnly': this.iconOnly,
       'auro-button--iconOnlySlim': this.iconOnly && this.slim,
-      'loading': this.loading
+      'loading': this.loading,
     };
 
     return html`
@@ -354,5 +372,9 @@ export class AuroButton extends LitElement {
         </span>
       </button>
     `;
+  }
+
+  renderLayout() {
+    return this.renderLayoutDefault();
   }
 }
