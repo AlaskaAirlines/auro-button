@@ -33,7 +33,7 @@ In cases were the action of the button would not fit the criteria above, it is m
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
   <!-- The below content is automatically added from ./../apiExamples/basic.html -->
   <auro-button>Primary</auro-button>
-  <auro-button layout="test" variant="secondary">Secondary</auro-button>
+  <auro-button variant="secondary">Secondary</auro-button>
   <auro-button variant="tertiary">Tertiary</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -44,7 +44,7 @@ In cases were the action of the button would not fit the criteria above, it is m
 
 ```html
 <auro-button>Primary</auro-button>
-<auro-button layout="test" variant="secondary">Secondary</auro-button>
+<auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -129,15 +129,15 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/icon.html) -->
   <!-- The below content is automatically added from ./../apiExamples/icon.html -->
-  <auro-button aria-label="wifi">
+  <auro-button arialabel="wifi">
     Activate WiFi
     <auro-icon customColor category="in-flight" name="wifi" slot="icon"></auro-icon>
   </auro-button>
-  <auro-button variant="secondary" aria-label="arrow-left">
+  <auro-button variant="secondary" arialabel="arrow-left">
     Previous action
     <auro-icon customcolor category="interface" name="arrow-left" slot="icon"></auro-icon>
   </auro-button>
-  <auro-button variant="tertiary" aria-label="heart-filled">
+  <auro-button variant="tertiary" arialabel="heart-filled">
     Love this ...
     <auro-icon customcolor category="interface" name="heart-filled" slot="icon"></auro-icon>
   </auro-button>
@@ -149,15 +149,15 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 <!-- The below code snippet is automatically added from ./../apiExamples/icon.html -->
 
 ```html
-<auro-button aria-label="wifi">
+<auro-button arialabel="wifi">
   Activate WiFi
   <auro-icon customColor category="in-flight" name="wifi" slot="icon"></auro-icon>
 </auro-button>
-<auro-button variant="secondary" aria-label="arrow-left">
+<auro-button variant="secondary" arialabel="arrow-left">
   Previous action
   <auro-icon customcolor category="interface" name="arrow-left" slot="icon"></auro-icon>
 </auro-button>
-<auro-button variant="tertiary" aria-label="heart-filled">
+<auro-button variant="tertiary" arialabel="heart-filled">
   Love this ...
   <auro-icon customcolor category="interface" name="heart-filled" slot="icon"></auro-icon>
 </auro-button>

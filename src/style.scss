@@ -94,6 +94,8 @@ slot {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 
+  transition: padding 300ms ease-out;
+
   // handle active state
   &:active {
     transform: scale(0.95);
@@ -234,7 +236,7 @@ slot {
     height: var(--ds-size-500, $ds-size-500);
     min-width: unset;
 
-    transition: all 300ms ease-out, outline 0ms, outline-offset 0ms;
+    transition: padding 300ms ease-out, outline 0ms, outline-offset 0ms;
 
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
