@@ -32,6 +32,8 @@ import loaderVersion from './loaderVersion.js';
 
 /* eslint-disable lit/no-invalid-html, lit/binding-positions */
 
+const ICON_ONLY_SHAPES = ['circle'];
+
 export class AuroButton extends AuroElement {
 
   /**
@@ -47,13 +49,10 @@ export class AuroButton extends AuroElement {
     super();
     this.autofocus = false;
     this.disabled = false;
-    this.iconOnly = false;
     this.loading = false;
+    this.size = "md";
+    this.shape = "rounded";
     this.onDark = false;
-    this.secondary = false;
-    this.tertiary = false;
-    this.rounded = false;
-    this.slim = false;
     this.fluid = false;
     this.loadingText = this.loadingText || 'Loading...';
 
@@ -119,35 +118,9 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * DEPRECATED.
-       * @deprecated
-       */
-      secondary:         {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * DEPRECATED.
-       * @deprecated
-       */
-      tertiary:         {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
        * Alters the shape of the button to be full width of its parent container.
        */
       fluid:         {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * If set to true, the button will contain an icon with no additional content.
-       */
-      iconOnly: {
         type: Boolean,
         reflect: true
       },
@@ -171,22 +144,6 @@ export class AuroButton extends AuroElement {
        * Set value for on-dark version of auro-button.
        */
       onDark:           {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * If set to true, the button will have a rounded shape.
-       */
-      rounded: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * Set value for slim version of auro-button.
-       */
-      slim: {
         type: Boolean,
         reflect: true
       },
@@ -268,7 +225,6 @@ export class AuroButton extends AuroElement {
         type: String,
         reflect: true
       },
-      ready: { type: Boolean },
     };
   }
 
@@ -293,20 +249,6 @@ export class AuroButton extends AuroElement {
     this.renderRoot.querySelector('button').focus();
   }
 
-  updated(changedProperties) {
-
-    super.updated(changedProperties);
-
-    // support the old `secondary` and `tertiary` attributes` that are deprecated
-    if (this.secondary) {
-      this.setAttribute('variant', 'secondary');
-    }
-
-    if (this.tertiary) {
-      this.setAttribute('variant', 'tertiary');
-    }
-  }
-
   /**
    * Submits the form that this button is associated with.
    * @private
@@ -327,17 +269,20 @@ export class AuroButton extends AuroElement {
     return this.internals ? this.internals.form : null;
   }
 
+  /**
+   * @private
+   * @returns {Boolean}
+   */
+  get hideText() {
+    return ICON_ONLY_SHAPES.includes(this.shape);
+  }
+
   renderLayoutDefault() {
     const classes = {
-      'util_insetLg--squish': true,
-      'auro-button': true,
-      'auroButton': true,
-      'wrapper': true,
-      'auro-button--rounded': this.rounded,
-      'auro-button--slim': this.slim,
-      'auro-button--iconOnly': this.iconOnly,
-      'auro-button--iconOnlySlim': this.iconOnly && this.slim,
-      'loading': this.loading,
+      "util_insetLg--squish": true,
+      "auro-button": true,
+      wrapper: true,
+      loading: this.loading,
     };
 
     return html`
@@ -363,7 +308,7 @@ export class AuroButton extends AuroElement {
 
         <span class="contentWrapper">
           <span class="textSlot" part="text">
-            ${this.iconOnly ? undefined : html`<slot></slot>`}
+            ${this.hideText ? undefined : html`<slot></slot>`}
           </span>
 
           <span part="icon">

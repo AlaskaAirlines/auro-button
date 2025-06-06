@@ -31,7 +31,7 @@
 
 </auro-accordion>
 
-## Disabled
+## Disabled <a name="disabled"></a>
 
 This example demonstrates `auro-button` in it's `disabled` state.
 
@@ -101,11 +101,24 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
 
 #### Icon Only Button
 
-Use the `iconOnly` attribute with the `auro-button` element for a style specific to having only an `auro-icon` as the button's content.
+You can set the button's shape using the shape attribute.
+- `rounded` is the default shape, which is a rectangle with slightly rounded corners.
+- `pill` creates a long, pill-shaped button with no corners.
+- `circle` is used for **icon-only** buttons with a circular shape.
+- `window-pane` is also for **icon-only** buttons, featuring a slightly tall, oval shape.
 
-Be sure to use the `customColor` attribute on the `auro-icon` component to allow colors set in your parent element to pass through to the icon.
+#### rounded
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
 
-**Recommended**: We strongly encourage the users of the icon only `auro-button` to use the `aria-label` attribute. Without this attribute, the screenreaders will not properly describe the button content to it's users.
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
 
 
 <div class="exampleWrapper">
@@ -252,7 +265,7 @@ In the following example see how the `fluid` attributes alters the shape of the 
 
 </auro-accordion>
 
-## Loading State
+## Loading State <a name="loading"></a>
 
 Use the `loading` attribute to alter the content to the shimmering dots to alert the user that the button/form is in an active state. The `loading` attribute will also place the element in a disabled state to keep the user from re-submitting an action.
 
@@ -282,7 +295,7 @@ Use the `loading` attribute to alter the content to the shimmering dots to alert
 
 </auro-accordion>
 
-### Loading text
+### Loading text <a name="loadingText"></a>
 
 To provide a custom loading message for assistive technologies, use the `loadingText` attribute. If not provided, the default message will be "Loading...".
 
