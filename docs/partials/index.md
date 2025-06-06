@@ -100,6 +100,23 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 </auro-accordion>
 
+## Shapes and Sizes
+
+Adding icons to the auro-button component is as easy as nesting any other HTML. The [auro-icon component](https://www.alaskaair.com/components/auro/icon) has access to all the icons listed in the [Auro Icons library](https://www.alaskaair.com/icons/usage) for quick and easy use.
+
+Be sure to use the `customColor` attribute on the auro-icon component to allow colors set in your parent element to pass through to the icon.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shapeSize.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shapeSize.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
 ## Pass a Function to Button
 
 These examples illustrate a common use case where a user will want to pass a function into a button to support a click event. See the code examples for how this is achieved.

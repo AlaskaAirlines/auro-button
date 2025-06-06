@@ -1,11 +1,21 @@
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
+@use "./../node_modules/@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
-:host {
-  --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border, #{$ds-advanced-color-button-primary-border});
-  --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{$ds-advanced-color-state-focused-inverse});
-  --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background, #{$ds-advanced-color-button-primary-background});
-  --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background, #{$ds-advanced-color-button-primary-background});
-  --ds-auro-button-loader-color: var(--ds-advanced-color-button-primary-text, #{$ds-advanced-color-button-primary-text});
-  --ds-auro-button-text-color: var(--ds-advanced-color-button-primary-text, #{$ds-advanced-color-button-primary-text});
+:host(:not([onDark])) {
+  --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border, #{v.$ds-advanced-color-button-primary-border});
+  --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
+  --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background, #{v.$ds-advanced-color-button-primary-background});
+  --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background, #{v.$ds-advanced-color-button-primary-background});
+  --ds-auro-button-loader-color: var(--ds-advanced-color-button-primary-text, #{v.$ds-advanced-color-button-primary-text});
+  --ds-auro-button-text-color: var(--ds-advanced-color-button-primary-text, #{v.$ds-advanced-color-button-primary-text});
+  --ds-auro-button-tap-color: transparent;
+}
+
+:host([onDark]) {
+  --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border-inverse, #{v.$ds-advanced-color-button-primary-border-inverse});
+  --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
+  --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background-inverse, #{v.$ds-advanced-color-button-primary-background-inverse});
+  --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background-inverse, #{v.$ds-advanced-color-button-primary-background-inverse});
+  --ds-auro-button-loader-color: var(--ds-advanced-color-button-primary-text-inverse, #{v.$ds-advanced-color-button-primary-text-inverse});
+  --ds-auro-button-text-color: var(--ds-advanced-color-button-primary-text-inverse, #{v.$ds-advanced-color-button-primary-text-inverse});
   --ds-auro-button-tap-color: transparent;
 }
