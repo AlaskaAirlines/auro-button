@@ -1,4 +1,3 @@
-import { useAccessibleIt } from "@aurodesignsystem/auro-library/scripts/test-plugin/iterateWithA11Check.mjs";
 /* eslint-disable max-lines */
 /* eslint-disable max-statements */
 /* eslint-disable no-unused-expressions */
@@ -6,6 +5,8 @@ import { useAccessibleIt } from "@aurodesignsystem/auro-library/scripts/test-plu
 /* eslint-disable lit/attribute-value-entities */
 /* eslint-disable one-var */
 /* eslint-disable no-undef */
+
+import { useAccessibleIt } from "@aurodesignsystem/auro-library/scripts/test-plugin/iterateWithA11Check.mjs";
 import sinon from 'sinon';
 import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import { AuroButton } from '../src/auro-button.js';

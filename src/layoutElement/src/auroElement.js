@@ -5,7 +5,7 @@ export class AuroElement extends LitElement {
     return {
 
       /**
-       * Defines the language of an element.
+       * Defines the layout of an element.
        * @default {'default'}
        */
       layout: {
@@ -13,19 +13,33 @@ export class AuroElement extends LitElement {
         attribute: "layout",
         reflect: true
       },
-
+      
+      /**
+       * Defines the shape of an element.
+       * @property {'default', 'rounded', 'pill', 'circle'}
+       * @default {'default'}
+       */
       shape: {
         type: String,
         attribute: "shape",
         reflect: true
       },
 
+      /**
+       * Defines the size of an element.
+       * @property {'xs', 'sm', 'md', 'lg', 'xl'}
+       * @default {'md'}
+       */
       size: {
         type: String,
         attribute: "size",
         reflect: true
       },
 
+      /** 
+       * This Boolean attribute lets you specify that the element should be rendered in dark mode.
+       * @default {false}
+       */
       onDark: {
         type: Boolean,
         attribute: "ondark",
