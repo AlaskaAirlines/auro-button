@@ -290,10 +290,12 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roundedRightAlign.html) -->
   <!-- The below content is automatically added from ./../apiExamples/roundedRightAlign.html -->
-  <auro-button arialabel="in-flight" shape="circle" id="rightAlignElem" style="float: right;">
-    Text is now shown!
-    <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
-  </auro-button>
+  <div style="display: flex; justify-content: flex-end; align-items: center; width: 100%">
+    <auro-button arialabel="in-flight" shape="circle" id="rightAlignElem">
+      Text is now shown!
+      <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
+    </auro-button>
+  </div>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -302,10 +304,12 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 <!-- The below code snippet is automatically added from ./../apiExamples/roundedRightAlign.html -->
 
 ```html
-<auro-button arialabel="in-flight" shape="circle" id="rightAlignElem" style="float: right;">
-  Text is now shown!
-  <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
-</auro-button>
+<div style="display: flex; justify-content: flex-end; align-items: center; width: 100%">
+  <auro-button arialabel="in-flight" shape="circle" id="rightAlignElem">
+    Text is now shown!
+    <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
+  </auro-button>
+</div>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/roundedRightAlign.js) -->
@@ -333,6 +337,64 @@ export function roundedRightAlignExample() {
     rightAlignElem.shape = "circle";
   });
 }
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Size <a name="size"></a>
+The size of the button can be set in t-shirt sizes from "xs" to "xl"
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/size.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/size.html -->
+  <auro-button size="xs">Extra Small</auro-button>
+  <auro-button size="sm">Small</auro-button>
+  <auro-button size="md">Medium</auro-button>
+  <auro-button size="lg">Large</auro-button>
+  <auro-button size="xl">Extra Large</auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/size.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/size.html -->
+
+```html
+<auro-button size="xs">Extra Small</auro-button>
+<auro-button size="sm">Small</auro-button>
+<auro-button size="md">Medium</auro-button>
+<auro-button size="lg">Large</auro-button>
+<auro-button size="xl">Extra Large</auro-button>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Variant <a name="variant"></a>
+Auro button can use several different variants, including primary, secondary, tertiary, ghost, and flat.
+
+The flat variant should only be used for interface elements that should only have a focus style such as close buttons on dialogs and clear buttons on form elements.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/variant.html -->
+  <auro-button variant="primary">Primary</auro-button>
+  <auro-button variant="secondary">Secondary</auro-button>
+  <auro-button variant="tertiary">Tertiary</auro-button>
+  <auro-button variant="ghost">Ghost</auro-button>
+  <auro-button variant="flat">Flat</auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/variant.html -->
+
+```html
+<auro-button variant="primary">Primary</auro-button>
+<auro-button variant="secondary">Secondary</auro-button>
+<auro-button variant="tertiary">Tertiary</auro-button>
+<auro-button variant="ghost">Ghost</auro-button>
+<auro-button variant="flat">Flat</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
