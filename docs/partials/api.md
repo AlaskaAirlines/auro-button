@@ -156,6 +156,40 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 
 </auro-accordion>
 
+## Size <a name="size"></a>
+
+The size of the button can be set in t-shirt sizes from "xs" to "xl"
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/size.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/size.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Variant <a name="variant"></a>
+
+Auro button can use several different variants, including primary, secondary, tertiary, ghost, and flat.
+
+The flat variant should only be used for interface elements that should only have a focus style such as close buttons on dialogs and clear buttons on form elements.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
 ## Fluid
 
 In the following example see how the `fluid` attributes alters the shape of the button to be full width of its parent container.

@@ -100,22 +100,55 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 </auro-accordion>
 
-## Shapes and Sizes
+## Size <a name="size"></a>
 
-Adding icons to the auro-button component is as easy as nesting any other HTML. The [auro-icon component](https://www.alaskaair.com/components/auro/icon) has access to all the icons listed in the [Auro Icons library](https://www.alaskaair.com/icons/usage) for quick and easy use.
-
-Be sure to use the `customColor` attribute on the auro-icon component to allow colors set in your parent element to pass through to the icon.
+The size of the button can be set in t-shirt sizes from "xs" to "xl"
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shapeSize.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/size.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shapeSize.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/size.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Shape <a name="shape"></a>
+
+The button comes with several different shapes available, pill, rounded, and circle.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Variant <a name="variant"></a>
+
+Auro button can use several different variants, including primary, secondary, tertiary, ghost, and flat.
+
+The flat variant should only be used for interface elements that should only have a focus style such as close buttons on dialogs and clear buttons on form elements.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
 
 ## Pass a Function to Button
 
