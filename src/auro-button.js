@@ -34,6 +34,13 @@ import loaderVersion from './loaderVersion.js';
 
 const ICON_ONLY_SHAPES = ['circle'];
 
+/**
+ * AuroButton is a custom element that provides a styled, accessible button with support for various states and form association.
+ * It is designed to be flexible, supporting loading states, icon slots, and integration with HTML5 forms.
+ * @property {'default', 'rounded', 'pill', 'circle'} shape - Defines the shape of the button.
+ * @property {'xs', 'sm', 'md', 'lg', 'xl'} size - Defines the size of the button.
+ * @property {boolean} onDark - Indicates if the button is rendered in dark mode.
+ */
 export class AuroButton extends AuroElement {
 
   /**
