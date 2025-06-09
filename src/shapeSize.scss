@@ -12,25 +12,6 @@ $xs: calc(24px - ($borderSize * 2));
 
 // SHAPES ---------------------------------------------------
 
-.shape-snowflake-xl,
-.shape-snowflake-lg,
-.shape-snowflake-md,
-.shape-snowflake-sm,
-.shape-snowflake-xs {
-  min-height: 56px;
-  max-height: 56px;
-  border-style: solid;
-  border-radius: 30px;
-  overflow: hidden;
-}
-
-.shape-box-xl {
-  min-height: $xl;
-  max-height: $xl;
-  border-style: solid;
-  overflow: hidden;
-}
-
 /* Rounded Button Sizes */
 .shape-rounded-xl {
   min-height: $xl;
