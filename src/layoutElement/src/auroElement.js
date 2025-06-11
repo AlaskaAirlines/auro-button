@@ -1,5 +1,5 @@
 import { LitElement } from "lit";
-import { transportAriaAttributes } from "../a11yUtilities";
+import { transportAllA11yAttributes } from "./a11yUtilities.js";
 
 export class AuroElement extends LitElement {
   static get properties() {
@@ -109,7 +109,7 @@ export class AuroElement extends LitElement {
     this.wrapper = this.shadowRoot.querySelector('.wrapper');
 
     // Initialize the transportation of ARIA attributes to the target element and get the disconnect function for cleanup
-    this.ariaObserverDisconnect = transportAriaAttributes({ host: this, target: this.shadowRoot.querySelector('.wrapper') });
+    this.ariaObserverDisconnect = transportAllA11yAttributes({ host: this, target: this.shadowRoot.querySelector('.wrapper') });
   }
 
   disconnectedCallback() {
