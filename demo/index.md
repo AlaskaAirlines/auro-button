@@ -35,7 +35,7 @@ In cases were the action of the button would not fit the criteria above, it is m
   <auro-button>Primary</auro-button>
   <auro-button variant="secondary">Secondary</auro-button>
   <auro-button variant="tertiary">Tertiary</auro-button>
-  <auro-button variant="flat">Tertiary</auro-button>
+  <auro-button variant="flat">Flat</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -47,7 +47,7 @@ In cases were the action of the button would not fit the criteria above, it is m
 <auro-button>Primary</auro-button>
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
-<auro-button variant="flat">Tertiary</auro-button>
+<auro-button variant="flat">Flat</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
