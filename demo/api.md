@@ -24,13 +24,6 @@
 | [type](#type)           | `type`           | `string`                                 |           | The type of the button. Possible values are: `submit`, `reset`, `button`. |
 | [value](#value)          | `value`          | `string`                                 |           | Defines the value associated with the button which is submitted with the form data. |
 | [variant](#variant)        | `variant`        | `string`                                 |           | Sets button variant option. Possible values are: `secondary`, `tertiary`. |
-
-## Methods
-
-| Method                | Type                 |
-|-----------------------|----------------------|
-| [renderLayout](#renderLayout)        | `(): TemplateResult` |
-| [renderLayoutDefault](#renderLayoutDefault) | `(): TemplateResult` |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 # API Examples

@@ -284,6 +284,11 @@ export class AuroButton extends AuroElement {
     return ICON_ONLY_SHAPES.includes(this.shape);
   }
 
+  /**
+   * Renders the default layout for the button.
+   * @returns {TemplateResult}
+   * @private
+   */
   renderLayoutDefault() {
     const classes = {
       "util_insetLg--squish": true,
@@ -326,6 +331,11 @@ export class AuroButton extends AuroElement {
     `;
   }
 
+  /**
+   * Renders the layout of the button
+   * @returns {TemplateResult}
+   * @private
+   */
   renderLayout() {
     return this.renderLayoutDefault();
   }
