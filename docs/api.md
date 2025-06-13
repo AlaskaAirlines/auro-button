@@ -14,6 +14,6 @@
 | `size`        |               | `'xs', 'sm', 'md', 'lg', 'xl'`                   | "md"      | Defines the size of the button.                  |
 | `tIndex`      | `tIndex`      | `string`                                         |           | Populates `tabIndex` to define the focusable sequence in keyboard navigation. |
 | `title`       | `title`       | `string`                                         |           | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
-| `type`        | `type`        | `string`                                         |           | The type of the button. Possible values are: `submit`, `reset`, `button`. |
+| `type`        | `type`        | `'submit', 'reset', 'button'`                    |           | The type of button. Matches HTML5 Button Spec.   |
 | `value`       | `value`       | `string`                                         |           | Defines the value associated with the button which is submitted with the form data. |
-| `variant`     | `variant`     | `'primary', 'secondary', 'tertiary', 'ghost', 'flat'` |           | Sets the button variant.                         |
+| `variant`     | `variant`     | `'primary', 'secondary', 'tertiary', 'ghost', 'flat'` | "primary" | Sets the button variant.                         |

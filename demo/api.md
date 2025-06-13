@@ -17,9 +17,9 @@
 | [size](#size)        |               | `'xs', 'sm', 'md', 'lg', 'xl'`                   | "md"      | Defines the size of the button.                  |
 | [tIndex](#tIndex)      | `tIndex`      | `string`                                         |           | Populates `tabIndex` to define the focusable sequence in keyboard navigation. |
 | [title](#title)       | `title`       | `string`                                         |           | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
-| [type](#type)        | `type`        | `string`                                         |           | The type of the button. Possible values are: `submit`, `reset`, `button`. |
+| [type](#type)        | `type`        | `'submit', 'reset', 'button'`                    |           | The type of button. Matches HTML5 Button Spec.   |
 | [value](#value)       | `value`       | `string`                                         |           | Defines the value associated with the button which is submitted with the form data. |
-| [variant](#variant)     | `variant`     | `'primary', 'secondary', 'tertiary', 'ghost', 'flat'` |           | Sets the button variant.                         |
+| [variant](#variant)     | `variant`     | `'primary', 'secondary', 'tertiary', 'ghost', 'flat'` | "primary" | Sets the button variant.                         |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 # API Examples
@@ -479,8 +479,13 @@ To provide a custom loading message for assistive technologies, use the `loading
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## ARIA attributes
-Instead of using `aria-*` attributes, use `aria*` (without the hyphen) to properly bind ARIA attributes.
+## ARIA Attributes
+
+Any ARIA attributes can be applied directly to the element and will be handled internally:
+
+`<auro-button aria-label="My Button Label">Auro Button</auro-button>`
+
+## Tab Index
 
 For `tabindex`, use `tIndex` instead to avoid duplicated focus interaction.
 
