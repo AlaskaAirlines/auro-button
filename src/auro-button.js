@@ -40,6 +40,7 @@ const ICON_ONLY_SHAPES = ['circle'];
  * @property {'default', 'rounded', 'pill', 'circle'} shape - Defines the shape of the button.
  * @property {'xs', 'sm', 'md', 'lg', 'xl'} size - Defines the size of the button.
  * @property {'primary', 'secondary', 'tertiary', 'ghost', 'flat'} variant - Sets the button variant.
+ * @property {'submit', 'reset', 'button'} type - The type of button. Matches HTML5 Button Spec.
  * @property {boolean} onDark - Indicates if the button is rendered in dark mode.
  */
 export class AuroButton extends AuroElement {
@@ -182,6 +183,7 @@ export class AuroButton extends AuroElement {
 
       /**
        * Sets button variant option.
+       * @default primary
        */
       variant: {
         type: String,

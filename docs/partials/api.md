@@ -254,9 +254,15 @@ To provide a custom loading message for assistive technologies, use the `loading
 
 </auro-accordion>
 
+## ARIA Attributes
 
-## ARIA attributes
-Instead of using `aria-*` attributes, use `aria*` (without the hyphen) to properly bind ARIA attributes.
+Any ARIA attributes can be applied directly to the element and will be handled internally:
+
+`<auro-button aria-label="My Button Label">Auro Button</auro-button>`
+
+
+
+## Tab Index
 
 For `tabindex`, use `tIndex` instead to avoid duplicated focus interaction.
 
