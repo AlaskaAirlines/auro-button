@@ -100,6 +100,56 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 </auro-accordion>
 
+## Size <a name="size"></a>
+
+The size of the button can be set in t-shirt sizes from "xs" to "xl"
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/size.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/size.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Shape <a name="shape"></a>
+
+The button comes with several different shapes available, pill, rounded, and circle.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Variant <a name="variant"></a>
+
+Auro button can use several different variants, including primary, secondary, tertiary, ghost, and flat.
+
+The flat variant should only be used for interface elements that should only have a focus style such as close buttons on dialogs and clear buttons on form elements.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
 ## Pass a Function to Button
 
 These examples illustrate a common use case where a user will want to pass a function into a button to support a click event. See the code examples for how this is achieved.

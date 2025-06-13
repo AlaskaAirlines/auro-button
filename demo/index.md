@@ -35,6 +35,7 @@ In cases were the action of the button would not fit the criteria above, it is m
   <auro-button>Primary</auro-button>
   <auro-button variant="secondary">Secondary</auro-button>
   <auro-button variant="tertiary">Tertiary</auro-button>
+  <auro-button variant="flat">Flat</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -46,6 +47,7 @@ In cases were the action of the button would not fit the criteria above, it is m
 <auro-button>Primary</auro-button>
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
+<auro-button variant="flat">Flat</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -129,15 +131,15 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/icon.html) -->
   <!-- The below content is automatically added from ./../apiExamples/icon.html -->
-  <auro-button aria-label="wifi">
+  <auro-button arialabel="wifi">
     Activate WiFi
     <auro-icon customColor category="in-flight" name="wifi" slot="icon"></auro-icon>
   </auro-button>
-  <auro-button variant="secondary" aria-label="arrow-left">
+  <auro-button variant="secondary" arialabel="arrow-left">
     Previous action
     <auro-icon customcolor category="interface" name="arrow-left" slot="icon"></auro-icon>
   </auro-button>
-  <auro-button variant="tertiary" aria-label="heart-filled">
+  <auro-button variant="tertiary" arialabel="heart-filled">
     Love this ...
     <auro-icon customcolor category="interface" name="heart-filled" slot="icon"></auro-icon>
   </auro-button>
@@ -149,18 +151,104 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 <!-- The below code snippet is automatically added from ./../apiExamples/icon.html -->
 
 ```html
-<auro-button aria-label="wifi">
+<auro-button arialabel="wifi">
   Activate WiFi
   <auro-icon customColor category="in-flight" name="wifi" slot="icon"></auro-icon>
 </auro-button>
-<auro-button variant="secondary" aria-label="arrow-left">
+<auro-button variant="secondary" arialabel="arrow-left">
   Previous action
   <auro-icon customcolor category="interface" name="arrow-left" slot="icon"></auro-icon>
 </auro-button>
-<auro-button variant="tertiary" aria-label="heart-filled">
+<auro-button variant="tertiary" arialabel="heart-filled">
   Love this ...
   <auro-icon customcolor category="interface" name="heart-filled" slot="icon"></auro-icon>
 </auro-button>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Size <a name="size"></a>
+The size of the button can be set in t-shirt sizes from "xs" to "xl"
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/size.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/size.html -->
+  <auro-button size="xs">Extra Small</auro-button>
+  <auro-button size="sm">Small</auro-button>
+  <auro-button size="md">Medium</auro-button>
+  <auro-button size="lg">Large</auro-button>
+  <auro-button size="xl">Extra Large</auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/size.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/size.html -->
+
+```html
+<auro-button size="xs">Extra Small</auro-button>
+<auro-button size="sm">Small</auro-button>
+<auro-button size="md">Medium</auro-button>
+<auro-button size="lg">Large</auro-button>
+<auro-button size="xl">Extra Large</auro-button>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Shape <a name="shape"></a>
+The button comes with several different shapes available, pill, rounded, and circle.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/shape.html -->
+  <auro-button shape="rounded">Rounded Button</auro-button>
+  <auro-button shape="pill">Pill Button</auro-button>
+  <auro-button shape="circle">
+    <auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
+  </auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/shape.html -->
+
+```html
+<auro-button shape="rounded">Rounded Button</auro-button>
+<auro-button shape="pill">Pill Button</auro-button>
+<auro-button shape="circle">
+  <auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
+</auro-button>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Variant <a name="variant"></a>
+Auro button can use several different variants, including primary, secondary, tertiary, ghost, and flat.
+
+The flat variant should only be used for interface elements that should only have a focus style such as close buttons on dialogs and clear buttons on form elements.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/variant.html -->
+  <auro-button variant="primary">Primary</auro-button>
+  <auro-button variant="secondary">Secondary</auro-button>
+  <auro-button variant="tertiary">Tertiary</auro-button>
+  <auro-button variant="ghost">Ghost</auro-button>
+  <auro-button variant="flat">Flat</auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/variant.html -->
+
+```html
+<auro-button variant="primary">Primary</auro-button>
+<auro-button variant="secondary">Secondary</auro-button>
+<auro-button variant="tertiary">Tertiary</auro-button>
+<auro-button variant="ghost">Ghost</auro-button>
+<auro-button variant="flat">Flat</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

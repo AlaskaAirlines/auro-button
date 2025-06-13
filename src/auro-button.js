@@ -1,10 +1,10 @@
-/* eslint-disable max-lines */
+/* eslint-disable max-lines, curly */
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
 
-import { LitElement } from "lit";
+import { AuroElement } from "./layoutElement/src/auroElement.js";
 import { html } from 'lit/static-html.js';
 
 import { classMap } from 'lit/directives/class-map.js';
@@ -16,6 +16,7 @@ import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runt
 import styleCss from "./style-css.js";
 import colorCss from "./color-css.js";
 import tokensCss from "./tokens-css.js";
+import shapeSize from "./shapeSize-css.js";
 
 import { AuroLoader } from '@aurodesignsystem/auro-loader/src/auro-loader.js';
 import loaderVersion from './loaderVersion.js';
@@ -31,7 +32,18 @@ import loaderVersion from './loaderVersion.js';
 
 /* eslint-disable lit/no-invalid-html, lit/binding-positions */
 
-export class AuroButton extends LitElement {
+const ICON_ONLY_SHAPES = ['circle'];
+
+/**
+ * AuroButton is a custom element that provides a styled, accessible button with support for various states and form association.
+ * It is designed to be flexible, supporting loading states, icon slots, and integration with HTML5 forms.
+ * @property {'default', 'rounded', 'pill', 'circle'} shape - Defines the shape of the button.
+ * @property {'xs', 'sm', 'md', 'lg', 'xl'} size - Defines the size of the button.
+ * @property {'primary', 'secondary', 'tertiary', 'ghost', 'flat'} variant - Sets the button variant.
+ * @property {'submit', 'reset', 'button'} type - The type of button. Matches HTML5 Button Spec.
+ * @property {boolean} onDark - Indicates if the button is rendered in dark mode.
+ */
+export class AuroButton extends AuroElement {
 
   /**
    * Enables form association for this element.
@@ -46,13 +58,10 @@ export class AuroButton extends LitElement {
     super();
     this.autofocus = false;
     this.disabled = false;
-    this.iconOnly = false;
     this.loading = false;
+    this.size = "md";
+    this.shape = "rounded";
     this.onDark = false;
-    this.secondary = false;
-    this.tertiary = false;
-    this.rounded = false;
-    this.slim = false;
     this.fluid = false;
     this.loadingText = this.loadingText || 'Loading...';
 
@@ -81,17 +90,30 @@ export class AuroButton extends LitElement {
     return [
       tokensCss,
       styleCss,
-      colorCss
+      colorCss,
+      shapeSize
     ];
   }
 
   static get properties() {
     return {
 
+      ...super.properties,
+
+      /**
+       * Override layout since it isn't used in this component.
+       * @private
+       */
+      layout: {
+        type: Boolean,
+        attribute: false,
+        reflect: false
+      },
+
       /**
        * This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user.
        */
-      autofocus:        {
+      autofocus: {
         type: Boolean,
         reflect: true
       },
@@ -99,25 +121,7 @@ export class AuroButton extends LitElement {
       /**
        * If set to true, button will become disabled and not allow for interactions.
        */
-      disabled:         {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * DEPRECATED.
-       * @deprecated
-       */
-      secondary:         {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * DEPRECATED.
-       * @deprecated
-       */
-      tertiary:         {
+      disabled: {
         type: Boolean,
         reflect: true
       },
@@ -125,15 +129,7 @@ export class AuroButton extends LitElement {
       /**
        * Alters the shape of the button to be full width of its parent container.
        */
-      fluid:         {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * If set to true, the button will contain an icon with no additional content.
-       */
-      iconOnly: {
+      fluid: {
         type: Boolean,
         reflect: true
       },
@@ -141,7 +137,7 @@ export class AuroButton extends LitElement {
       /**
        * If set to true button text will be replaced with `auro-loader` and become disabled.
        */
-      loading:          {
+      loading: {
         type: Boolean,
         reflect: true
       },
@@ -149,32 +145,8 @@ export class AuroButton extends LitElement {
       /**
        * Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
        */
-      loadingText:      {
+      loadingText: {
         type: String
-      },
-
-      /**
-       * Set value for on-dark version of auro-button.
-       */
-      onDark:           {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * If set to true, the button will have a rounded shape.
-       */
-      rounded: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * Set value for slim version of auro-button.
-       */
-      slim: {
-        type: Boolean,
-        reflect: true
       },
 
       /**
@@ -186,47 +158,9 @@ export class AuroButton extends LitElement {
       },
 
       /**
-       * Populates the `aria-hidden` attribute to hide the button from a11y API.
-       */
-      ariahidden: {
-        type: String,
-        reflect: true,
-      },
-
-      /**
-       * Populates the `aria-label` attribute that is used to define a string that labels the current element.
-       * Use it in cases where a text label is not visible on the screen.
-       * If there is visible text labeling the element, use `aria-labelledby` instead.
-       */
-      arialabel:        {
-        type: String,
-        reflect: true
-      },
-
-      /**
-       * Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s),
-       * and its value should be one or more element IDs, which refer to elements that have the text needed for labeling.
-       * List multiple element IDs in a space delimited fashion.
-       */
-      arialabelledby:   {
-        type: String,
-        reflect: true
-      },
-
-      /**
-       * Populates the `aria-expanded` attribute that indicates whether the element,
-       * or another grouping element it controls, is currently expanded or collapsed.
-       * This is an optional attribute for buttons.
-       */
-      ariaexpanded: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
        * Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
        */
-      title:            {
+      title: {
         type: String,
         reflect: true
       },
@@ -234,7 +168,7 @@ export class AuroButton extends LitElement {
       /**
        * The type of the button. Possible values are: `submit`, `reset`, `button`.
        */
-      type:             {
+      type: {
         type: String,
         reflect: true
       },
@@ -242,19 +176,19 @@ export class AuroButton extends LitElement {
       /**
        * Defines the value associated with the button which is submitted with the form data.
        */
-      value:            {
+      value: {
         type: String,
         reflect: true
       },
 
       /**
-       * Sets button variant option. Possible values are: `secondary`, `tertiary`.
+       * Sets button variant option.
+       * @default primary
        */
-      variant:          {
+      variant: {
         type: String,
         reflect: true
       },
-      ready: { type: Boolean },
     };
   }
 
@@ -279,17 +213,6 @@ export class AuroButton extends LitElement {
     this.renderRoot.querySelector('button').focus();
   }
 
-  updated() {
-    // support the old `secondary` and `tertiary` attributes` that are deprecated
-    if (this.secondary) {
-      this.setAttribute('variant', 'secondary');
-    }
-
-    if (this.tertiary) {
-      this.setAttribute('variant', 'tertiary');
-    }
-  }
-
   /**
    * Submits the form that this button is associated with.
    * @private
@@ -310,25 +233,56 @@ export class AuroButton extends LitElement {
     return this.internals ? this.internals.form : null;
   }
 
-  render() {
+  /**
+   * @private
+   * @returns {Boolean}
+   */
+  get hideText() {
+    return ICON_ONLY_SHAPES.includes(this.shape);
+  }
+
+  /**
+   * Returns the current value of the projected `aria-label` attribute or undefined if not set.
+   * @returns {string | undefined}
+   * @private
+   */
+  get currentAriaLabel() {
+    if (!this.attributeWatcher) return undefined;
+
+    const ariaLabel = this.attributeWatcher.getObservedAttribute("aria-label");
+    return ariaLabel || undefined;
+  }
+
+  /**
+   * Returns the current value of the projected `aria-labelledby` attribute or undefined if not set.
+   * @returns {string | undefined}
+   * @private
+   */
+  get currentAriaLabelledBy() {
+    if (!this.attributeWatcher) return undefined;
+
+    const ariaLabelledBy = this.attributeWatcher.getObservedAttribute("aria-labelledby");
+    return ariaLabelledBy || undefined;
+  }
+
+  /**
+   * Renders the default layout for the button.
+   * @returns {TemplateResult}
+   * @private
+   */
+  renderLayoutDefault() {
     const classes = {
-      'util_insetLg--squish': true,
-      'auro-button': true,
-      'auroButton': true,
-      'auro-button--rounded': this.rounded,
-      'auro-button--slim': this.slim,
-      'auro-button--iconOnly': this.iconOnly,
-      'auro-button--iconOnlySlim': this.iconOnly && this.slim,
-      'loading': this.loading
+      "util_insetLg--squish": true,
+      "auro-button": true,
+      wrapper: true,
+      loading: this.loading,
     };
 
     return html`
       <button
         part="button"
-        aria-hidden="${ifDefined(this.ariahidden || undefined)}"
-        aria-label="${ifDefined(this.loading ? this.loadingText : this.arialabel || undefined)}"
-        aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
-        aria-expanded="${ifDefined(this.ariaexpanded)}"
+        aria-label="${ifDefined(this.loading ? this.loadingText : this.currentAriaLabel || undefined)}"
+        aria-labelledby="${ifDefined(this.loading ? undefined : this.currentAriaLabelledBy || undefined)}"
         tabIndex="${ifDefined(this.tIndex)}"
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"
@@ -345,7 +299,7 @@ export class AuroButton extends LitElement {
 
         <span class="contentWrapper">
           <span class="textSlot" part="text">
-            ${this.iconOnly ? undefined : html`<slot></slot>`}
+            ${this.hideText ? undefined : html`<slot></slot>`}
           </span>
 
           <span part="icon">
@@ -354,5 +308,14 @@ export class AuroButton extends LitElement {
         </span>
       </button>
     `;
+  }
+
+  /**
+   * Renders the layout of the button
+   * @returns {TemplateResult}
+   * @private
+   */
+  renderLayout() {
+    return this.renderLayoutDefault();
   }
 }
