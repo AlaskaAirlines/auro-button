@@ -136,9 +136,9 @@ describe('auro-button', () => {
     expect(el.getAttribute("variant")).to.equal('tertiary');
   });
 
-  it('tests setting arialabel', async () => {
+  it('tests setting aria-label', async () => {
     const el = await fixture(html`
-      <auro-button arialabel='label'>Click Me!</auro-button>
+      <auro-button aria-label='label'>Click Me!</auro-button>
     `);
 
     const root = el.shadowRoot;
@@ -169,9 +169,9 @@ describe('auro-button', () => {
     expect(button.getAttribute('aria-label')).to.equal(el.loadingText);
   });
 
-  it('tests setting arialabelledby', async () => {
+  it('tests setting aria-labelledby', async () => {
     const el = await fixture(html`
-      <auro-button arialabelledby='me'>Click Me!</auro-button>
+      <auro-button aria-labelledby='me'>Click Me!</auro-button>
     `);
 
     const root = el.shadowRoot;
@@ -225,9 +225,9 @@ describe('auro-button', () => {
   it(`auro-button has various ARIA attrs properly set on <a> node`, async () => {
     const el = await fixture(html`
       <div>
-        <auro-button tIndex="-1" ariahidden="true">Click Me!</auro-button>
-        <auro-button arialabel="This is a button">Click Me!</auro-button>
-        <auro-button ariaexpanded="true">Click Me!</auro-button>
+        <auro-button tIndex="-1" aria-hidden="true">Click Me!</auro-button>
+        <auro-button aria-label="This is a button">Click Me!</auro-button>
+        <auro-button aria-expanded="true">Click Me!</auro-button>
       </div>
     `);
 
@@ -246,7 +246,7 @@ describe('auro-button', () => {
 
   it('default slot is not in DOM with circle shape', async () => {
     const el = await fixture(html`
-      <auro-button shape="circle" arialabel="Up">
+      <auro-button shape="circle" aria-label="Up">
         <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
         Text
       </auro-button>

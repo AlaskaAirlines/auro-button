@@ -1,4 +1,4 @@
-/* eslint-disable max-lines */
+/* eslint-disable max-lines, curly */
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -39,6 +39,7 @@ const ICON_ONLY_SHAPES = ['circle'];
  * It is designed to be flexible, supporting loading states, icon slots, and integration with HTML5 forms.
  * @property {'default', 'rounded', 'pill', 'circle'} shape - Defines the shape of the button.
  * @property {'xs', 'sm', 'md', 'lg', 'xl'} size - Defines the size of the button.
+ * @property {'primary', 'secondary', 'tertiary', 'ghost', 'flat'} variant - Sets the button variant.
  * @property {boolean} onDark - Indicates if the button is rendered in dark mode.
  */
 export class AuroButton extends AuroElement {
@@ -111,7 +112,7 @@ export class AuroButton extends AuroElement {
       /**
        * This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user.
        */
-      autofocus:        {
+      autofocus: {
         type: Boolean,
         reflect: true
       },
@@ -119,7 +120,7 @@ export class AuroButton extends AuroElement {
       /**
        * If set to true, button will become disabled and not allow for interactions.
        */
-      disabled:         {
+      disabled: {
         type: Boolean,
         reflect: true
       },
@@ -127,7 +128,7 @@ export class AuroButton extends AuroElement {
       /**
        * Alters the shape of the button to be full width of its parent container.
        */
-      fluid:         {
+      fluid: {
         type: Boolean,
         reflect: true
       },
@@ -135,7 +136,7 @@ export class AuroButton extends AuroElement {
       /**
        * If set to true button text will be replaced with `auro-loader` and become disabled.
        */
-      loading:          {
+      loading: {
         type: Boolean,
         reflect: true
       },
@@ -143,16 +144,8 @@ export class AuroButton extends AuroElement {
       /**
        * Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
        */
-      loadingText:      {
+      loadingText: {
         type: String
-      },
-
-      /**
-       * Set value for on-dark version of auro-button.
-       */
-      onDark:           {
-        type: Boolean,
-        reflect: true
       },
 
       /**
@@ -164,47 +157,9 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Populates the `aria-hidden` attribute to hide the button from a11y API.
-       */
-      ariahidden: {
-        type: String,
-        reflect: true,
-      },
-
-      /**
-       * Populates the `aria-label` attribute that is used to define a string that labels the current element.
-       * Use it in cases where a text label is not visible on the screen.
-       * If there is visible text labeling the element, use `aria-labelledby` instead.
-       */
-      arialabel:        {
-        type: String,
-        reflect: true
-      },
-
-      /**
-       * Populates the `aria-labelledby` attribute that establishes relationships between objects and their label(s),
-       * and its value should be one or more element IDs, which refer to elements that have the text needed for labeling.
-       * List multiple element IDs in a space delimited fashion.
-       */
-      arialabelledby:   {
-        type: String,
-        reflect: true
-      },
-
-      /**
-       * Populates the `aria-expanded` attribute that indicates whether the element,
-       * or another grouping element it controls, is currently expanded or collapsed.
-       * This is an optional attribute for buttons.
-       */
-      ariaexpanded: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
        * Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
        */
-      title:            {
+      title: {
         type: String,
         reflect: true
       },
@@ -212,7 +167,7 @@ export class AuroButton extends AuroElement {
       /**
        * The type of the button. Possible values are: `submit`, `reset`, `button`.
        */
-      type:             {
+      type: {
         type: String,
         reflect: true
       },
@@ -220,15 +175,15 @@ export class AuroButton extends AuroElement {
       /**
        * Defines the value associated with the button which is submitted with the form data.
        */
-      value:            {
+      value: {
         type: String,
         reflect: true
       },
 
       /**
-       * Sets button variant option. Possible values are: `secondary`, `tertiary`.
+       * Sets button variant option.
        */
-      variant:          {
+      variant: {
         type: String,
         reflect: true
       },
@@ -285,6 +240,30 @@ export class AuroButton extends AuroElement {
   }
 
   /**
+   * Returns the current value of the projected `aria-label` attribute or undefined if not set.
+   * @returns {string | undefined}
+   * @private
+   */
+  get currentAriaLabel() {
+    if (!this.attributeWatcher) return undefined;
+
+    const ariaLabel = this.attributeWatcher.getObservedAttribute("aria-label");
+    return ariaLabel || undefined;
+  }
+
+  /**
+   * Returns the current value of the projected `aria-labelledby` attribute or undefined if not set.
+   * @returns {string | undefined}
+   * @private
+   */
+  get currentAriaLabelledBy() {
+    if (!this.attributeWatcher) return undefined;
+
+    const ariaLabelledBy = this.attributeWatcher.getObservedAttribute("aria-labelledby");
+    return ariaLabelledBy || undefined;
+  }
+
+  /**
    * Renders the default layout for the button.
    * @returns {TemplateResult}
    * @private
@@ -300,10 +279,8 @@ export class AuroButton extends AuroElement {
     return html`
       <button
         part="button"
-        aria-hidden="${ifDefined(this.ariahidden || undefined)}"
-        aria-label="${ifDefined(this.loading ? this.loadingText : this.arialabel || undefined)}"
-        aria-labelledby="${ifDefined(this.arialabelledby ? this.arialabelledby : undefined)}"
-        aria-expanded="${ifDefined(this.ariaexpanded)}"
+        aria-label="${ifDefined(this.loading ? this.loadingText : this.currentAriaLabel || undefined)}"
+        aria-labelledby="${ifDefined(this.loading ? undefined : this.currentAriaLabelledBy || undefined)}"
         tabIndex="${ifDefined(this.tIndex)}"
         ?autofocus="${this.autofocus}"
         class="${classMap(classes)}"

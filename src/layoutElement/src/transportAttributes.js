@@ -8,7 +8,7 @@ const _observers = new WeakMap();
  * Structure: { 
  *   host: { 
  *     matchers: Set<Function>, 
- *     targets: Map<HTMLElement, Map<Function, {removeOriginal: boolean}>> 
+ *     targets: Map<HTMLElement, Map<Function, {removeOriginal: boolean, currentAttributes: Map<string, string>}>> 
  *   } 
  * }
  */
@@ -87,7 +87,10 @@ const _registerTransport = ({ host, target, matcher, removeOriginal = true }) =>
   }
   
   // Store the matcher with its removeOriginal setting for this target
-  config.targets.get(target).set(matcher, { removeOriginal });
+  config.targets.get(target).set(matcher, { 
+    removeOriginal,
+    currentAttributes: new Map()
+  });
   
   // Perform initial attribute transport
   _transportAttributes({ host, target, matcher, removeOriginal });
@@ -95,8 +98,12 @@ const _registerTransport = ({ host, target, matcher, removeOriginal = true }) =>
   // Attach observer
   _attachObserver(host);
   
-  // Return cleanup function with simplified interface
-  return () => _cleanupTransport(host, target, matcher);
+  // Return cleanup function and utility functions
+  return {
+    cleanup: () => _cleanupTransport(host, target, matcher),
+    getObservedAttributes: () => _getObservedAttributes(host, target, matcher),
+    getObservedAttribute: (attr) => _getObservedAttribute(host, target, matcher, attr),
+  }
 };
 
 /**
@@ -164,10 +171,11 @@ const _transportAttributes = ({ host, target, matcher, removeOriginal = true }) 
 
   // Move matching attributes to the target element, removing them from the host if removeOriginal is true
   Object.entries(matchingAttributes).forEach(([key, value]) => {
+    _setObservedAttribute(host, target, matcher, key, value);
     target.setAttribute(key, value);
     if (removeOriginal) {
       host.removeAttribute(key);
-    };
+    }
   });
 };
 
@@ -243,4 +251,48 @@ const _detachObserver = (host) => {
   }
 };
 
+/**
+ * Gets the matcher configuration for a specific host, target, and matcher
+ * @param {HTMLElement} host - The host element
+ * @param {HTMLElement} target - The target element
+ * @param {Function} matcher - The matcher function
+ * @returns {Object|undefined} The matcher configuration if found
+ * @private
+ */
+const _getMatcherConfig = (host, target, matcher) => {
+  const config = _transportConfig.get(host);
+  if (!config) return undefined;
+  
+  const targetMatchers = config.targets.get(target);
+  if (!targetMatchers) return undefined;
+  
+  return targetMatchers.get(matcher);
+};
 
+/**
+ * Sets an observed attribute value
+ * @param {HTMLElement} host - The host element
+ * @param {HTMLElement} target - The target element
+ * @param {Function} matcher - The matcher function
+ * @param {string} key - The attribute name
+ * @param {string} value - The attribute value
+ * @private
+ */
+const _setObservedAttribute = (host, target, matcher, key, value) => {
+  const matcherConfig = _getMatcherConfig(host, target, matcher);
+  if (matcherConfig) {
+    matcherConfig.currentAttributes.set(key, value);
+  }
+};
+
+const _getObservedAttribute = (host, target, matcher, attr) => {
+  const matcherConfig = _getMatcherConfig(host, target, matcher);
+  if (matcherConfig) return matcherConfig.currentAttributes.get(attr);
+  return undefined;
+};
+
+const _getObservedAttributes = (host, target, matcher) => {
+  const matcherConfig = _getMatcherConfig(host, target, matcher);
+  if (matcherConfig) return Array.from(matcherConfig.currentAttributes.entries());
+  return [];
+};
