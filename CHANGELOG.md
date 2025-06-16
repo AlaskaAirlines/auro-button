@@ -1,5 +1,25 @@
 # Semantic Release Automated Changelog
 
+# [10.0.0](https://github.com/AlaskaAirlines/auro-button/compare/v9.4.0...v10.0.0) (2025-06-16)
+
+
+### Code Refactoring
+
+* deprecate some varients ([e6011e8](https://github.com/AlaskaAirlines/auro-button/commit/e6011e84612ec826ef3112f57e602f8ed755e33e))
+
+
+### Features
+
+* add ARIA attribute transport utility and integrate with AuroElement ([44501f1](https://github.com/AlaskaAirlines/auro-button/commit/44501f1f31ed271adba479e81194bdf3525a409f))
+* add layout support and new shape/size styles to button ([7b18e28](https://github.com/AlaskaAirlines/auro-button/commit/7b18e28a46a055aaaaa88d4323d72a10ce8f1a1d))
+* refactor a11yUtilities into reusable attribute transporter and implement in new a11yUtilities ([92f8d21](https://github.com/AlaskaAirlines/auro-button/commit/92f8d21de04fd262f544b0d02e47c0e8b149247b))
+* update docs, improve aria- attribute projection, and remove unnecessary aria- and role binding in the template ([60eb664](https://github.com/AlaskaAirlines/auro-button/commit/60eb66459d05eff66279e2f07f9c7ab3dd4c8df2))
+
+
+### BREAKING CHANGES
+
+* deprecate `iconOnly`, `slim`, `rounded`, `secondray`, `tertiary`, `ready`
+
 # [9.4.0](https://github.com/AlaskaAirlines/auro-button/compare/v9.3.3...v9.4.0) (2025-05-16)
 
 
