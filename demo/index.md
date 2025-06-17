@@ -35,6 +35,7 @@ In cases were the action of the button would not fit the criteria above, it is m
   <auro-button>Primary</auro-button>
   <auro-button variant="secondary">Secondary</auro-button>
   <auro-button variant="tertiary">Tertiary</auro-button>
+  <auro-button variant="ghost">Ghost</auro-button>
   <auro-button variant="flat">Flat</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -47,6 +48,7 @@ In cases were the action of the button would not fit the criteria above, it is m
 <auro-button>Primary</auro-button>
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
+<auro-button variant="ghost">Ghost</auro-button>
 <auro-button variant="flat">Flat</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -62,6 +64,8 @@ These examples illustrate the core button types and a `disabled` state on dark b
   <auro-button ondark>Primary</auro-button>
   <auro-button variant="secondary" ondark>Secondary</auro-button>
   <auro-button variant="tertiary" ondark>Tertiary</auro-button>
+  <auro-button variant="ghost" ondark>Ghost</auro-button>
+  <auro-button variant="flat" ondark>Flat</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -73,6 +77,8 @@ These examples illustrate the core button types and a `disabled` state on dark b
 <auro-button ondark>Primary</auro-button>
 <auro-button variant="secondary" ondark>Secondary</auro-button>
 <auro-button variant="tertiary" ondark>Tertiary</auro-button>
+<auro-button variant="ghost" ondark>Ghost</auro-button>
+<auro-button variant="flat" ondark>Flat</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -87,6 +93,8 @@ This example demonstrates `auro-button` in it's `disabled` state.
   <auro-button disabled>Primary</auro-button>
   <auro-button variant="secondary" disabled>Secondary</auro-button>
   <auro-button variant="tertiary" disabled>Tertiary</auro-button>
+  <auro-button variant="ghost" disabled>Ghost</auro-button>
+  <auro-button variant="flat" disabled>Flat</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -98,6 +106,8 @@ This example demonstrates `auro-button` in it's `disabled` state.
 <auro-button disabled>Primary</auro-button>
 <auro-button variant="secondary" disabled>Secondary</auro-button>
 <auro-button variant="tertiary" disabled>Tertiary</auro-button>
+<auro-button variant="ghost" disabled>Ghost</auro-button>
+<auro-button variant="flat" disabled>Flat</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -107,6 +117,8 @@ This example demonstrates `auro-button` in it's `disabled` state.
   <auro-button disabled ondark>Primary</auro-button>
   <auro-button variant="secondary" disabled ondark>Secondary</auro-button>
   <auro-button variant="tertiary" disabled ondark>Tertiary</auro-button>
+  <auro-button variant="ghost" disabled ondark>Ghost</auro-button>
+  <auro-button variant="flat" disabled ondark>Flat</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -118,6 +130,8 @@ This example demonstrates `auro-button` in it's `disabled` state.
 <auro-button disabled ondark>Primary</auro-button>
 <auro-button variant="secondary" disabled ondark>Secondary</auro-button>
 <auro-button variant="tertiary" disabled ondark>Tertiary</auro-button>
+<auro-button variant="ghost" disabled ondark>Ghost</auro-button>
+<auro-button variant="flat" disabled ondark>Flat</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -132,16 +146,16 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/icon.html) -->
   <!-- The below content is automatically added from ./../apiExamples/icon.html -->
   <auro-button arialabel="wifi">
-    Activate WiFi
-    <auro-icon customColor category="in-flight" name="wifi" slot="icon"></auro-icon>
+    <span>Activate WiFi</span>
+    <auro-icon customColor category="in-flight" name="wifi"></auro-icon>
   </auro-button>
   <auro-button variant="secondary" arialabel="arrow-left">
-    Previous action
-    <auro-icon customcolor category="interface" name="arrow-left" slot="icon"></auro-icon>
+    <span>Previous action</span>
+    <auro-icon customcolor category="interface" name="arrow-left" ></auro-icon>
   </auro-button>
   <auro-button variant="tertiary" arialabel="heart-filled">
-    Love this ...
-    <auro-icon customcolor category="interface" name="heart-filled" slot="icon"></auro-icon>
+    <span>Love this ...</span>
+    <auro-icon customcolor category="interface" name="heart-filled" ></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -152,16 +166,16 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 
 ```html
 <auro-button arialabel="wifi">
-  Activate WiFi
-  <auro-icon customColor category="in-flight" name="wifi" slot="icon"></auro-icon>
+  <span>Activate WiFi</span>
+  <auro-icon customColor category="in-flight" name="wifi"></auro-icon>
 </auro-button>
 <auro-button variant="secondary" arialabel="arrow-left">
-  Previous action
-  <auro-icon customcolor category="interface" name="arrow-left" slot="icon"></auro-icon>
+  <span>Previous action</span>
+  <auro-icon customcolor category="interface" name="arrow-left" ></auro-icon>
 </auro-button>
 <auro-button variant="tertiary" arialabel="heart-filled">
-  Love this ...
-  <auro-icon customcolor category="interface" name="heart-filled" slot="icon"></auro-icon>
+  <span>Love this ...</span>
+  <auro-icon customcolor category="interface" name="heart-filled" ></auro-icon>
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -204,7 +218,7 @@ The button comes with several different shapes available, pill, rounded, and cir
   <auro-button shape="rounded">Rounded Button</auro-button>
   <auro-button shape="pill">Pill Button</auro-button>
   <auro-button shape="circle">
-    <auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
+    <auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -217,7 +231,7 @@ The button comes with several different shapes available, pill, rounded, and cir
 <auro-button shape="rounded">Rounded Button</auro-button>
 <auro-button shape="pill">Pill Button</auro-button>
 <auro-button shape="circle">
-  <auro-icon slot="icon" customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
+  <auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
