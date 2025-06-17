@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [11.0.0](https://github.com/AlaskaAirlines/auro-button/compare/v10.0.0...v11.0.0) (2025-06-17)
+
+
+### Code Refactoring
+
+* remove `icon` slot [#325](https://github.com/AlaskaAirlines/auro-button/issues/325) ([9f7f1e6](https://github.com/AlaskaAirlines/auro-button/commit/9f7f1e6eea247501bce61a6d8a6fde6e41e62f88))
+
+
+### BREAKING CHANGES
+
+* `icon` slot is deprecated
+
 # [10.0.0](https://github.com/AlaskaAirlines/auro-button/compare/v9.4.0...v10.0.0) (2025-06-16)
 
 
