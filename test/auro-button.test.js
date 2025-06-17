@@ -244,19 +244,6 @@ describe('auro-button', () => {
     expect(el).to.be.true;
   });
 
-  it('default slot is not in DOM with circle shape', async () => {
-    const el = await fixture(html`
-      <auro-button shape="circle" aria-label="Up">
-        <auro-icon customColor category="interface" name="arrow-up" slot="icon"></auro-icon>
-        Text
-      </auro-button>
-    `);
-
-    const slotElement = el.querySelector('slot:not([name])');
-
-    expect(slotElement).to.not.exist;
-  });
-
   it('handles form awareness with type="submit"', async () => {
     const el = await fixture(html`
       <form id="test-form">

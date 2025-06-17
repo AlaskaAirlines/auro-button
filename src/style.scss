@@ -184,6 +184,12 @@ slot {
     }
   }
 
+  &.icon-only{
+    ::slotted(:not(auro-icon):not([auro-icon])) {
+      display: none;
+    }
+  }
+
   // auro-button--slim
   &--slim {
     min-width: unset;

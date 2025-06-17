@@ -23,7 +23,6 @@ import loaderVersion from './loaderVersion.js';
 
 /**
  * @slot - Default slot for the text of the button.
- * @slot icon - Slot to provide auro-icon for the button.
  * @csspart button - Apply CSS to HTML5 button.
  * @csspart loader - Apply CSS to auro-loader.
  * @csspart text - Apply CSS to text slot.
@@ -274,6 +273,7 @@ export class AuroButton extends AuroElement {
     const classes = {
       "util_insetLg--squish": true,
       "auro-button": true,
+      "icon-only": this.hideText,
       wrapper: true,
       loading: this.loading,
     };
@@ -299,11 +299,7 @@ export class AuroButton extends AuroElement {
 
         <span class="contentWrapper">
           <span class="textSlot" part="text">
-            ${this.hideText ? undefined : html`<slot></slot>`}
-          </span>
-
-          <span part="icon">
-            <slot name="icon"></slot>
+            <slot></slot>
           </span>
         </span>
       </button>
