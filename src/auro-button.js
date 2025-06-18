@@ -1,11 +1,11 @@
-/* eslint-disable max-lines, curly */
+/* eslint-disable max-lines, curly, jsdoc/no-undefined-types */
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
 
 import { AuroElement } from "./layoutElement/src/auroElement.js";
-import { html } from 'lit/static-html.js';
+import { html, literal } from 'lit/static-html.js';
 
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
@@ -83,6 +83,21 @@ export class AuroButton extends AuroElement {
      * @private
      */
     this.loaderTag = versioning.generateTag('auro-loader', loaderVersion, AuroLoader);
+
+    /**
+     *  @private
+     */
+    this.buttonHref = undefined;
+
+    /**
+     *  @private
+     */
+    this.buttonTarget = undefined;
+
+    /**
+     *  @private
+     */
+    this.buttonRel = undefined;
   }
 
   static get styles() {
@@ -188,6 +203,27 @@ export class AuroButton extends AuroElement {
         type: String,
         reflect: true
       },
+
+      /**
+       * @private
+       */
+      buttonHref: {
+        type: String,
+      },
+
+      /**
+       * @private
+       */
+      buttonTarget: {
+        type: String,
+      },
+
+      /**
+       * @private
+       */
+      buttonRel: {
+        type: String,
+      },
     };
   }
 
@@ -278,14 +314,17 @@ export class AuroButton extends AuroElement {
       loading: this.loading,
     };
 
+    const tag = this.buttonHref ? literal`a` : literal`button`;
+    const part = this.buttonHref ? 'link' : 'button';
+
     return html`
-      <button
-        part="button"
+      <${tag}
+        part="${part}"
         aria-label="${ifDefined(this.loading ? this.loadingText : this.currentAriaLabel || undefined)}"
         aria-labelledby="${ifDefined(this.loading ? undefined : this.currentAriaLabelledBy || undefined)}"
         tabIndex="${ifDefined(this.tIndex)}"
         ?autofocus="${this.autofocus}"
-        class="${classMap(classes)}"
+        class=${classMap(classes)}
         ?disabled="${this.disabled || this.loading}"
         ?onDark="${this.onDark}"
         title="${ifDefined(this.title ? this.title : undefined)}"
@@ -294,6 +333,9 @@ export class AuroButton extends AuroElement {
         variant="${ifDefined(this.variant ? this.variant : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
         @click="${this.type === 'submit' ? this.surfaceSubmitEvent : undefined}"
+        href="${ifDefined(this.buttonHref || undefined)}"
+        target="${ifDefined(this.buttonTarget || undefined)}"
+        rel="${ifDefined(this.buttonRel || undefined)}"
       >
         ${ifDefined(this.loading ? html`<${this.loaderTag} pulse part="loader"></${this.loaderTag}>` : undefined)}
 
@@ -302,12 +344,12 @@ export class AuroButton extends AuroElement {
             <slot></slot>
           </span>
         </span>
-      </button>
+      </${tag}>
     `;
   }
 
   /**
-   * Renders the layout of the button
+   * Renders the layout of the button.
    * @returns {TemplateResult}
    * @private
    */
