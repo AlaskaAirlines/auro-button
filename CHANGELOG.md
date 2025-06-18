@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [11.1.0](https://github.com/AlaskaAirlines/auro-button/compare/v11.0.0...v11.1.0) (2025-06-18)
+
+
+### Features
+
+* enhance AuroButton to support link attributes to support hyperlink cta type ([6211b5f](https://github.com/AlaskaAirlines/auro-button/commit/6211b5f490c8253c78f02e09a24e6d6aaedd7049))
+
 # [11.0.0](https://github.com/AlaskaAirlines/auro-button/compare/v10.0.0...v11.0.0) (2025-06-17)
 
 
