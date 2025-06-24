@@ -65,7 +65,6 @@ export class AuroElement extends LitElement {
        * @private
        */
       wrapper: {
-        type: HTMLElement,
         attribute: false,
         reflect: false
       }
