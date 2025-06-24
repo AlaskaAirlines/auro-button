@@ -164,11 +164,21 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Populates `tabIndex` to define the focusable sequence in keyboard navigation.
+       * Populates `tabindex` to define the focusable sequence in keyboard navigation.
        */
       tIndex: {
         type: String,
         reflect: true
+      },
+
+      /**
+       * Populates `tabindex` to define the focusable sequence in keyboard navigation.
+       * Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.
+       * Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`
+       */
+      tabindex: {
+        type: String,
+        reflect: false
       },
 
       /**
@@ -322,7 +332,7 @@ export class AuroButton extends AuroElement {
         part="${part}"
         aria-label="${ifDefined(this.loading ? this.loadingText : this.currentAriaLabel || undefined)}"
         aria-labelledby="${ifDefined(this.loading ? undefined : this.currentAriaLabelledBy || undefined)}"
-        tabIndex="${ifDefined(this.tIndex)}"
+        tabindex="${ifDefined(this.tIndex || this.tabindex)}"
         ?autofocus="${this.autofocus}"
         class=${classMap(classes)}
         ?disabled="${this.disabled || this.loading}"
