@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [11.2.0](https://github.com/AlaskaAirlines/auro-button/compare/v11.1.0...v11.2.0) (2025-06-24)
+
+
+### Features
+
+* add tabindex projection ([e99fb93](https://github.com/AlaskaAirlines/auro-button/commit/e99fb93bca4e5382b64339e64b3bf58c233ea41b))
+
 # [11.1.0](https://github.com/AlaskaAirlines/auro-button/compare/v11.0.0...v11.1.0) (2025-06-18)
 
 
