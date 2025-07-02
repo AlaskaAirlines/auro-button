@@ -19,7 +19,6 @@ $xs: calc(24px - ($borderSize * 2));
   border-style: solid;
   border-radius: 6px;
   overflow: hidden;
-  // font-size: 18px;
 }
 
 .shape-rounded-lg {
@@ -28,7 +27,6 @@ $xs: calc(24px - ($borderSize * 2));
   border-style: solid;
   border-radius: 6px;
   overflow: hidden;
-  // font-size: 18px;
 }
 
 .shape-rounded-md {
@@ -37,7 +35,6 @@ $xs: calc(24px - ($borderSize * 2));
   border-style: solid;
   border-radius: 6px;
   overflow: hidden;
-  // font-size: 16px;
 }
 
 .shape-rounded-sm {
@@ -46,7 +43,6 @@ $xs: calc(24px - ($borderSize * 2));
   border-style: solid;
   border-radius: 6px;
   overflow: hidden;
-  // font-size: 14px;
 }
 
 .shape-rounded-xs {
@@ -55,7 +51,6 @@ $xs: calc(24px - ($borderSize * 2));
   border-style: solid;
   border-radius: 4px;
   overflow: hidden;
-  // font-size: 12px;
   outline-offset: -2px;
   outline-width: 1px;
   
@@ -68,7 +63,6 @@ $xs: calc(24px - ($borderSize * 2));
   border-style: solid;
   border-radius: calc($xl / 2);
   overflow: hidden;
-  // font-size: 18px;
 }
 
 .shape-pill-left-xl {
@@ -94,7 +88,6 @@ $xs: calc(24px - ($borderSize * 2));
   border-style: solid;
   border-radius: calc($lg / 2);
   overflow: hidden;
-  // font-size: 18px;
 }
 
 .shape-pill-left-lg {
@@ -136,7 +129,6 @@ $xs: calc(24px - ($borderSize * 2));
   border-style: solid;
   border-radius: 0 calc($md / 2) calc($md / 2) 0;
   overflow: hidden;
-  // font-size: 16px;
 }
 
 // Shape pill variants - SM size
@@ -146,7 +138,6 @@ $xs: calc(24px - ($borderSize * 2));
   border-style: solid;
   border-radius: calc($sm / 2);
   overflow: hidden;
-  // font-size: 14px;
 }
 
 .shape-pill-left-sm {
@@ -172,7 +163,6 @@ $xs: calc(24px - ($borderSize * 2));
   border-style: solid;
   border-radius: calc($xs / 2);
   overflow: hidden;
-  // font-size: 12px;
   outline-offset: -2px;
   outline-width: 1px;
 }
