@@ -26,20 +26,21 @@
    */
 
 // Import Auro Sass variables
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska";
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
 // general WCSS imports
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/animation";
+@use "@aurodesignsystem/webcorestylesheets/src/breakpoints" as bp;
+@use "@aurodesignsystem/webcorestylesheets/src/core";
+@use "@aurodesignsystem/webcorestylesheets/src/animation";
 
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap";
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap";
 
 $auro-inset-spacing-options: lg;
 $auro-inset-directions: '--squish';
 
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
+@use "@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
+@use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
 
 :host([fluid]),
 :host([fluid=true]) {
@@ -67,25 +68,25 @@ slot {
 .auro-button {
   position: relative;
 
-  padding: 0 var(--ds-size-300, $ds-size-300);
+  padding: 0 var(--ds-size-300, vac.$ds-size-300);
 
   cursor: pointer;
   border-width: 1px;
   border-style: solid;
-  border-radius: var(--ds-border-radius, $ds-border-radius);
+  border-radius: var(--ds-border-radius, vac.$ds-border-radius);
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
 
-  min-height: var(--ds-size-600, $ds-size-600);
-  max-height: var(--ds-size-600, $ds-size-600);
+  min-height: var(--ds-size-600, vac.$ds-size-600);
+  max-height: var(--ds-size-600, vac.$ds-size-600);
 
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--ds-size-100, $ds-size-100);
+  gap: var(--ds-size-100, vac.$ds-size-100);
 
   // removes margins around button in Safari
   margin: 0;
@@ -105,11 +106,11 @@ slot {
     outline: none;
 
     outline-style: solid;
-    outline-width: var(--ds-size-50, $ds-size-50);
-    outline-offset: calc(var(--ds-size-50, $ds-size-50) * -1);
+    outline-width: var(--ds-size-50, vac.$ds-size-50);
+    outline-offset: calc(var(--ds-size-50, vac.$ds-size-50) * -1);
 
     &:not([variant='secondary']):not([variant='tertiary']) {
-      outline-width: calc(var(--ds-size-50, $ds-size-50) - 1px);
+      outline-width: calc(var(--ds-size-50, vac.$ds-size-50) - 1px);
     }
   }
 
@@ -121,7 +122,7 @@ slot {
     }
   }
 
-  @include auro_grid-breakpoint--sm {
+  @include bp.auro_grid-breakpoint--sm {
     min-width: 8.75rem;
     width: auto;
   }
@@ -193,24 +194,24 @@ slot {
   // auro-button--slim
   &--slim {
     min-width: unset;
-    min-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
-    max-height: calc(var(--ds-size-500, $ds-size-500) - var(--ds-size-50, $ds-size-50));
+    min-height: calc(var(--ds-size-500, vac.$ds-size-500) - var(--ds-size-50, vac.$ds-size-50));
+    max-height: calc(var(--ds-size-500, vac.$ds-size-500) - var(--ds-size-50, vac.$ds-size-50));
   }
 
   // auro-button--iconOnly
   &--iconOnly {
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
-      --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
+      --ds-auro-icon-size: var(--ds-size-300, #{vac.$ds-size-300});
     }
 
-    padding: 0 var(--ds-size-100, $ds-size-100);
+    padding: 0 var(--ds-size-100, vac.$ds-size-100);
 
     border-radius: 100px;
     min-width: unset;
 
-    height: var(--ds-size-600, $ds-size-600);
-    width: var(--ds-size-500, $ds-size-500);
+    height: var(--ds-size-600, vac.$ds-size-600);
+    width: var(--ds-size-500, vac.$ds-size-500);
 
     &:not(.auro-button--rounded):focus-visible,
     &:not(.auro-button--rounded):focus {
@@ -225,28 +226,28 @@ slot {
   &--iconOnlySlim {
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
-      --ds-auro-icon-size: calc(var(--ds-size-200, #{$ds-size-200}) + var(--ds-size-50, #{$ds-size-50}));
+      --ds-auro-icon-size: calc(var(--ds-size-200, #{vac.$ds-size-200}) + var(--ds-size-50, #{vac.$ds-size-50}));
     }
 
-    padding: 0 var(--ds-size-50, $ds-size-50);
+    padding: 0 var(--ds-size-50, vac.$ds-size-50);
 
-    height: calc(var(--ds-size-400, $ds-size-400) + var(--ds-size-50, $ds-size-50));
-    width: calc(var(--ds-size-300, $ds-size-300) + var(--ds-size-50, $ds-size-50));
+    height: calc(var(--ds-size-400, vac.$ds-size-400) + var(--ds-size-50, vac.$ds-size-50));
+    width: calc(var(--ds-size-300, vac.$ds-size-300) + var(--ds-size-50, vac.$ds-size-50));
   }
 
   // auro-button--rounded
   &--rounded {
     border-radius: 100px;
-    box-shadow: var(--ds-elevation-300, $ds-elevation-300);
+    box-shadow: var(--ds-elevation-300, vac.$ds-elevation-300);
 
-    height: var(--ds-size-500, $ds-size-500);
+    height: var(--ds-size-500, vac.$ds-size-500);
     min-width: unset;
 
     transition: padding 300ms ease-out, outline 0ms, outline-offset 0ms;
 
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
-      --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
+      --ds-auro-icon-size: var(--ds-size-300, #{vac.$ds-size-300});
     }
 
     &:focus-visible, &:focus {
@@ -290,7 +291,7 @@ slot {
     min-width: unset;
     padding: unset;
 
-    width: var(--ds-size-600, $ds-size-600);
+    width: var(--ds-size-600, vac.$ds-size-600);
   }
 }
 

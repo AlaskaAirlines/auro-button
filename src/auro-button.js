@@ -4,7 +4,7 @@
 
 // ---------------------------------------------------------------------
 
-import { AuroElement } from "./layoutElement/src/auroElement.js";
+import { AuroElement } from "./layoutElement/auroElement.js";
 import { html, literal } from 'lit/static-html.js';
 
 import { classMap } from 'lit/directives/class-map.js';
@@ -13,10 +13,10 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
-import styleCss from "./style-css.js";
-import colorCss from "./color-css.js";
-import tokensCss from "./tokens-css.js";
-import shapeSize from "./shapeSize-css.js";
+import styleCss from "./styles/style-css.js";
+import colorCss from "./styles/color-css.js";
+import tokensCss from "./styles/tokens-css.js";
+import shapeSize from "./styles/shapeSize-css.js";
 
 import { AuroLoader } from '@aurodesignsystem/auro-loader/src/auro-loader.js';
 import loaderVersion from './loaderVersion.js';
@@ -316,16 +316,26 @@ export class AuroButton extends AuroElement {
    * @private
    */
   renderLayoutDefault() {
+
+    const fontMap = new Map();
+    fontMap.set('xs', 'body-sm');
+    fontMap.set('sm', 'body-sm');
+    fontMap.set('md', 'body-default');
+    fontMap.set('lg', 'body-lg');
+    fontMap.set('xl', 'body-lg');
+
+    const fontSize = fontMap.get(this.size) || 'body-default';
+    const tag = this.buttonHref ? literal`a` : literal`button`;
+    const part = this.buttonHref ? 'link' : 'button';
+
     const classes = {
       "util_insetLg--squish": true,
       "auro-button": true,
       "icon-only": this.hideText,
       wrapper: true,
       loading: this.loading,
+      [`${fontSize}`]: true,
     };
-
-    const tag = this.buttonHref ? literal`a` : literal`button`;
-    const part = this.buttonHref ? 'link' : 'button';
 
     return html`
       <${tag}
