@@ -93,6 +93,13 @@ import "@aurodesignsystem/auro-button";
 <auro-button variant="tertiary">Tertiary</auro-button>
 <auro-button variant="ghost">Ghost</auro-button>
 <auro-button variant="flat">Flat</auro-button>
+<div id="input-test">
+  <auro-input shape="snowflake" size="lg">
+    <span slot="label">Label</span>
+    <span slot="helper-text">Helper text</span>
+  </auro-input>
+  <auro-button shape="rounded" size="lg">Button</auro-button>
+</div>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -142,6 +149,13 @@ The auro-button element should be used in situations where users may:
 <auro-button variant="tertiary">Tertiary</auro-button>
 <auro-button variant="ghost">Ghost</auro-button>
 <auro-button variant="flat">Flat</auro-button>
+<div id="input-test">
+  <auro-input shape="snowflake" size="lg">
+    <span slot="label">Label</span>
+    <span slot="helper-text">Helper text</span>
+  </auro-input>
+  <auro-button shape="rounded" size="lg">Button</auro-button>
+</div>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 

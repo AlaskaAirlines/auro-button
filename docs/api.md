@@ -10,7 +10,7 @@
 | `loading`     | `loading`     | `boolean`                                        | false     | If set to true button text will be replaced with `auro-loader` and become disabled. |
 | `loadingText` | `loadingText` | `string`                                         |           | Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used. |
 | `onDark`      |               | `boolean`                                        | false     | Indicates if the button is rendered in dark mode. |
-| `shape`       |               | `'default', 'rounded', 'pill', 'circle'`         | "rounded" | Defines the shape of the button.                 |
+| `shape`       |               | `'default', 'rounded', 'pill', 'circle', 'square'` | "rounded" | Defines the shape of the button.                 |
 | `size`        |               | `'xs', 'sm', 'md', 'lg', 'xl'`                   | "md"      | Defines the size of the button.                  |
 | `tIndex`      | `tIndex`      | `string`                                         |           | Populates `tabindex` to define the focusable sequence in keyboard navigation. |
 | `tabindex`    | `tabindex`    | `string`                                         |           | Populates `tabindex` to define the focusable sequence in keyboard navigation.<br />Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.<br />Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>` |
