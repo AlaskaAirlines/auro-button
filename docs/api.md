@@ -13,7 +13,7 @@
 | `shape`       |               | `'default', 'rounded', 'pill', 'circle', 'square'` | "rounded" | Defines the shape of the button.                 |
 | `size`        |               | `'xs', 'sm', 'md', 'lg', 'xl'`                   | "md"      | Defines the size of the button.                  |
 | `tIndex`      | `tIndex`      | `string`                                         |           | Populates `tabindex` to define the focusable sequence in keyboard navigation. |
-| `tabindex`    | `tabindex`    | `string`                                         |           | Populates `tabindex` to define the focusable sequence in keyboard navigation.<br />Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.<br />Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>` |
+| `tabindex`    | `tabindex`    | `string`                                         |           | Populates `tabindex` to define the focusable sequence in keyboard navigation.<br />Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.<br />Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`. |
 | `title`       | `title`       | `string`                                         |           | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
 | `type`        | `type`        | `'submit', 'reset', 'button'`                    |           | The type of button. Matches HTML5 Button Spec.   |
 | `value`       | `value`       | `string`                                         |           | Defines the value associated with the button which is submitted with the form data. |
