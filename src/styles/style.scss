@@ -50,6 +50,41 @@ $auro-inset-directions: '--squish';
   }
 }
 
+:host([size='xs']) {
+  ::slotted(auro-icon),
+  ::slotted([auro-icon]) {
+    --ds-auro-icon-size: var(--ds-size-100, vac.$ds-size-100);
+  }
+}
+
+:host([size='sm']) {
+  ::slotted(auro-icon),
+  ::slotted([auro-icon]) {
+    --ds-auro-icon-size: var(--ds-size-100, vac.$ds-size-100);
+  }
+}
+
+:host([size='md']) {
+  ::slotted(auro-icon),
+  ::slotted([auro-icon]) {
+    --ds-auro-icon-size: var(--ds-size-100, vac.$ds-size-100);
+  }
+}
+
+:host([size='lg']) {
+  ::slotted(auro-icon),
+  ::slotted([auro-icon]) {
+    --ds-auro-icon-size: var(--ds-size-100, vac.$ds-size-100);
+  }
+}
+
+:host([size='xl']) {
+  ::slotted(auro-icon),
+  ::slotted([auro-icon]) {
+    --ds-auro-icon-size: var(--ds-size-100, vac.$ds-size-100);
+  }
+}
+
 :host([variant='flat']) {
   display: inline-block;
 }
@@ -67,20 +102,15 @@ slot {
 // Button styles
 .auro-button {
   position: relative;
-
-  padding: 0 var(--ds-size-300, vac.$ds-size-300);
-
   cursor: pointer;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: var(--ds-border-radius, vac.$ds-border-radius);
+  padding: 0 var(--ds-size-300, vac.$ds-size-300);
+  padding-inline: 0;
+  padding-block: 0;
+  box-sizing: content-box;
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
-
-  min-height: var(--ds-size-600, vac.$ds-size-600);
-  max-height: var(--ds-size-600, vac.$ds-size-600);
 
   display: inline-flex;
   flex-direction: row;

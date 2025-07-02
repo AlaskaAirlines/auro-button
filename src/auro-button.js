@@ -174,7 +174,7 @@ export class AuroButton extends AuroElement {
       /**
        * Populates `tabindex` to define the focusable sequence in keyboard navigation.
        * Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.
-       * Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`
+       * Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`.
        */
       tabindex: {
         type: String,
@@ -312,7 +312,7 @@ export class AuroButton extends AuroElement {
 
   /**
    * Gets a class name for the font size based on the button's size and shape.
-   * @returns {string} - The font size class name
+   * @returns {string} - The font size class name.
    * @private
    */
   getFontSize() {
@@ -355,7 +355,6 @@ export class AuroButton extends AuroElement {
     const part = this.buttonHref ? 'link' : 'button';
 
     const classes = {
-      "util_insetLg--squish": true,
       "auro-button": true,
       "icon-only": this.hideText,
       wrapper: true,
