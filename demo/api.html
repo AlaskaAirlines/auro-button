@@ -25,7 +25,7 @@
     <main></main>
 
     <script type="module">
-      fetch('/demo/api.md')
+      fetch('./api.md')
         .then((response) => response.text())
         .then((text) => {
           const rawHtml = marked.parse(text);
