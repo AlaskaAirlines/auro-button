@@ -319,7 +319,7 @@ export class AuroButton extends AuroElement {
 
     // Size map for standard buttons
     const standardButtonSizeMap = {
-      xs: 'body-sm',
+      xs: 'body-xs',
       sm: 'body-sm',
       md: 'body-default',
       lg: 'body-lg',
