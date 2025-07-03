@@ -282,8 +282,8 @@ export class AuroButton extends AuroElement {
    * @private
    * @returns {Boolean}
    */
-  get hideText() {
-    return ICON_ONLY_SHAPES.includes(this.shape);
+  get showText() {
+    return !ICON_ONLY_SHAPES.includes(this.shape);
   }
 
   /**
@@ -328,7 +328,7 @@ export class AuroButton extends AuroElement {
 
     // Size map for icon-only buttons
     const iconOnlyButtonSizeMap = {
-      xs: 'heading-sm',
+      xs: 'heading-xs',
       sm: 'heading-sm',
       md: 'heading-sm',
       lg: 'heading-md',
@@ -356,7 +356,7 @@ export class AuroButton extends AuroElement {
 
     const classes = {
       "auro-button": true,
-      "icon-only": this.hideText,
+      "inset": this.showText,
       wrapper: true,
       loading: this.loading,
       [`${fontSize}`]: true,
