@@ -22,7 +22,9 @@
    no-duplicate-selectors,
    selector-max-attribute,
    selector-max-pseudo-class,
-   selector-not-notation
+   selector-not-notation,
+   scss/map-keys-quotes,
+   scss/no-global-function-names
    */
 
 // Import Auro Sass variables
@@ -62,26 +64,33 @@ $auro-inset-directions: '--squish';
   }
 }
 
-$iconSizeXs: var(--ds-size-300, #{vac.$ds-size-300});
-$paddingSizeXs: var(--ds-size-150, #{vac.$ds-size-150});
+$button-sizes: (
+  'xs': (
+    icon-size: var(--ds-size-300, #{vac.$ds-size-300}),
+    padding: var(--ds-size-150, #{vac.$ds-size-150})
+  ),
+  'sm': (
+    icon-size: var(--ds-size-300, #{vac.$ds-size-300}),
+    padding: var(--ds-size-200, #{vac.$ds-size-200})
+  ),
+  'md': (
+    icon-size: var(--ds-size-300, #{vac.$ds-size-300}),
+    padding: var(--ds-size-300, #{vac.$ds-size-300})
+  ),
+  'lg': (
+    icon-size: calc(var(--ds-size-250, #{vac.$ds-size-250}) + var(--ds-size-100, #{vac.$ds-size-100})),
+    padding: var(--ds-size-400, #{vac.$ds-size-400})
+  ),
+  'xl': (
+    icon-size: calc(var(--ds-size-250, #{vac.$ds-size-250}) + var(--ds-size-200, #{vac.$ds-size-200})),
+    padding: var(--ds-size-500, #{vac.$ds-size-500})
+  )
+);
 
-$iconSizeSm: var(--ds-size-300, #{vac.$ds-size-300});
-$paddingSizeSm: var(--ds-size-200, #{vac.$ds-size-200});
-
-$iconSizeMd: var(--ds-size-300, #{vac.$ds-size-300});
-$paddingSizeMd: var(--ds-size-300, #{vac.$ds-size-300});
-
-$iconSizeLg: calc(var(--ds-size-250, #{vac.$ds-size-250}) + var(--ds-size-100, #{vac.$ds-size-100}));
-$paddingSizeLg: var(--ds-size-400, #{vac.$ds-size-400});
-
-$iconSizeXl: calc(var(--ds-size-250, #{vac.$ds-size-250}) + var(--ds-size-200, #{vac.$ds-size-200}));
-$paddingSizeXl: var(--ds-size-500, #{vac.$ds-size-500});
-
-@include size-styles('xs', $iconSizeXs, $paddingSizeXs);
-@include size-styles('sm', $iconSizeSm, $paddingSizeSm);
-@include size-styles('md', $iconSizeMd, $paddingSizeMd);
-@include size-styles('lg', $iconSizeLg, $paddingSizeLg);
-@include size-styles('xl', $iconSizeXl, $paddingSizeXl);
+// Loop through the map to generate styles for each size
+@each $size, $values in $button-sizes {
+  @include size-styles($size, map-get($values, icon-size), map-get($values, padding));
+}
 
 :host([variant='flat']) {
   display: inline-block;
