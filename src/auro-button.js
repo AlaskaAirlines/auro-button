@@ -1,4 +1,4 @@
-/* eslint-disable max-lines, curly, jsdoc/no-undefined-types */
+/* eslint-disable max-lines, curly, jsdoc/no-undefined-types, array-element-newline */
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -31,12 +31,12 @@ import loaderVersion from './loaderVersion.js';
 
 /* eslint-disable lit/no-invalid-html, lit/binding-positions */
 
-const ICON_ONLY_SHAPES = ['circle'];
+const ICON_ONLY_SHAPES = ['circle', 'square'];
 
 /**
  * AuroButton is a custom element that provides a styled, accessible button with support for various states and form association.
  * It is designed to be flexible, supporting loading states, icon slots, and integration with HTML5 forms.
- * @property {'default', 'rounded', 'pill', 'circle'} shape - Defines the shape of the button.
+ * @property {'default', 'rounded', 'pill', 'circle', 'square'} shape - Defines the shape of the button.
  * @property {'xs', 'sm', 'md', 'lg', 'xl'} size - Defines the size of the button.
  * @property {'primary', 'secondary', 'tertiary', 'ghost', 'flat'} variant - Sets the button variant.
  * @property {'submit', 'reset', 'button'} type - The type of button. Matches HTML5 Button Spec.
@@ -174,7 +174,7 @@ export class AuroButton extends AuroElement {
       /**
        * Populates `tabindex` to define the focusable sequence in keyboard navigation.
        * Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.
-       * Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`
+       * Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`.
        */
       tabindex: {
         type: String,
@@ -282,8 +282,8 @@ export class AuroButton extends AuroElement {
    * @private
    * @returns {Boolean}
    */
-  get hideText() {
-    return ICON_ONLY_SHAPES.includes(this.shape);
+  get showText() {
+    return !ICON_ONLY_SHAPES.includes(this.shape);
   }
 
   /**
@@ -311,27 +311,52 @@ export class AuroButton extends AuroElement {
   }
 
   /**
+   * Gets a class name for the font size based on the button's size and shape.
+   * @returns {string} - The font size class name.
+   * @private
+   */
+  getFontSize() {
+
+    // Size map for standard buttons
+    const standardButtonSizeMap = {
+      xs: 'body-xs',
+      sm: 'body-sm',
+      md: 'body-default',
+      lg: 'body-lg',
+      xl: 'body-lg'
+    };
+
+    // Size map for icon-only buttons
+    const iconOnlyButtonSizeMap = {
+      xs: 'heading-xs',
+      sm: 'heading-sm',
+      md: 'heading-sm',
+      lg: 'heading-md',
+      xl: 'heading-lg'
+    };
+
+    // Determine which map to use based on the shape
+    const isIconOnly = ICON_ONLY_SHAPES.includes(this.shape);
+    const sizeMap = isIconOnly ? iconOnlyButtonSizeMap : standardButtonSizeMap;
+
+    // Return the font size based on the button size and shape
+    return sizeMap[this.size] || 'body-default';
+  }
+
+  /**
    * Renders the default layout for the button.
    * @returns {TemplateResult}
    * @private
    */
   renderLayoutDefault() {
 
-    const fontMap = new Map();
-    fontMap.set('xs', 'body-sm');
-    fontMap.set('sm', 'body-sm');
-    fontMap.set('md', 'body-default');
-    fontMap.set('lg', 'body-lg');
-    fontMap.set('xl', 'body-lg');
-
-    const fontSize = fontMap.get(this.size) || 'body-default';
+    const fontSize = this.getFontSize();
     const tag = this.buttonHref ? literal`a` : literal`button`;
     const part = this.buttonHref ? 'link' : 'button';
 
     const classes = {
-      "util_insetLg--squish": true,
       "auro-button": true,
-      "icon-only": this.hideText,
+      "inset": this.showText,
       wrapper: true,
       loading: this.loading,
       [`${fontSize}`]: true,

@@ -32,7 +32,6 @@ describe('auro-button', () => {
     expect(button.getAttribute('formnovalidate')).to.be.null;
     expect(button.getAttribute('id')).to.be.null;
     expect(button.getAttribute('value')).to.be.null;
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
   });
 
@@ -73,7 +72,6 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
     const classList = button.getAttribute('class').split(' ');
 
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
     expect(el.hasAttribute('ondark')).to.be.true;
   });
@@ -87,7 +85,6 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
     const classList = button.getAttribute('class').split(' ');
 
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
     expect(el.getAttribute("variant")).to.equal('secondary');
   });
@@ -101,7 +98,6 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
     const classList = button.getAttribute('class').split(' ');
 
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
     expect(el.hasAttribute('ondark')).to.be.true;
     expect(el.getAttribute("variant")).to.equal('secondary');
@@ -116,7 +112,6 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
     const classList = button.getAttribute('class').split(' ');
 
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
     expect(el.getAttribute("variant")).to.equal('tertiary');
   });
@@ -130,7 +125,6 @@ describe('auro-button', () => {
     const button = root.querySelector('button');
     const classList = button.getAttribute('class').split(' ');
 
-    expect(classList.includes('util_insetLg--squish')).to.be.true;
     expect(classList.includes('auro-button')).to.be.true;
     expect(el.hasAttribute('ondark')).to.be.true;
     expect(el.getAttribute("variant")).to.equal('tertiary');
