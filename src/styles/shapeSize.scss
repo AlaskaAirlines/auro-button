@@ -3,17 +3,28 @@
 @use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
 
 // SIZES/VALUES
-$defaultBorderSize: 2px;
+$defaultBorderSize: 1.5px;
 
-// MAPS
-
-// The size names and their corresponding values
+// SIZING MAPS
+// These maps define the sizes and border sizes for different button sizes
+// The keys are the size names (e.g., xl, lg, md, sm, xs)
+// When adding a new size, ensure to update all maps accordingly
 $sizeMap: ( xl: 72px, lg: 56px, md: 48px, sm: 36px, xs: 24px );
+$borderSizeMap: ( xl: 1.5px, lg: 1px, md: 1px, sm: 1px, xs: 1px );
+
+$iconOutlineSizeMap: ( xl: 3px, lg: 2.33px, md: 2px, sm: 2px, xs: 1px );
+$iconOutlineInsetMap: ( xl: -4.5px, lg: -3.33px, md: -3px, sm: -3px, xs: -2px );
+
+$buttonOutlineSizeMap: ( xl: 4px, lg: 4px, md: 4px, sm: 4px, xs: 4px );
+$buttonOutlineInsetMap: ( xl: -5px, lg: -5px, md: -5px, sm: -5px, xs: -5px );
+
+$oblongIconSizeMap: ( xl: var(--ds-size-300, #{vac.$ds-size-300}), lg: var(--ds-size-300, #{vac.$ds-size-300}), md: var(--ds-size-300, #{vac.$ds-size-300}), sm: var(--ds-size-300, #{vac.$ds-size-300}), xs: var(--ds-size-200, #{vac.$ds-size-200}) );
+$symmetricalIconSizeMap: ( xl: calc(var(--ds-size-400, #{vac.$ds-size-400}) + var(--ds-size-50, #{vac.$ds-size-50})), lg: calc(var(--ds-size-300, #{vac.$ds-size-300}) + var(--ds-size-50, #{vac.$ds-size-50})), md: var(--ds-size-300, #{vac.$ds-size-300}), sm: var(--ds-size-300, #{vac.$ds-size-300}), xs: var(--ds-size-300, #{vac.$ds-size-300}) );
 
 // LISTS
-// To add a size or shape, simply add it to the respective list
-// Oblong shapes are those that are not icon-only
-// Symmetrical shapes are those that have equal width and height (icon-only)
+// To add a new shape, simply add it to the respective list
+// Oblong shapes are those that are normal button shapes (not icon buttons)
+// Symmetrical shapes are those that have equal width and height (icon buttons)
 $oblongShapes: (rounded, pill, pill-left, pill-right);
 $symmetricalShapes: (circle, square);
 
@@ -63,6 +74,78 @@ $symmetricalShapes: (circle, square);
   @include parentBorder($size);
 }
 
+// Focus outline styles for all buttons
+@mixin focus-outline-styles ($size, $symmetrical: false) {
+  &:focus-visible,
+  &:focus {
+
+    // Ghost and flat do not follow the outline standard
+    &:not([variant='flat'],[variant='ghost']) {
+      $outlineSizeMap: if($symmetrical, $iconOutlineSizeMap, $buttonOutlineSizeMap);
+      $outlineInsetMap: if($symmetrical, $iconOutlineInsetMap, $buttonOutlineInsetMap);
+
+      outline-width: map.get($outlineSizeMap, $size);
+      outline-offset: map.get($outlineInsetMap, $size);
+    }
+
+    // Flat and ghost variants have a 1px outline with no inset
+    &[variant='flat'],
+    &[variant='ghost'] {
+      outline-width: 1px;
+      outline-offset: 0;
+    }
+  }
+}
+
+// Icon size handling for all buttons (based on symmetry for icon buttons)
+@mixin icon-sizing($size, $symmetrical: false) {
+  ::slotted(auro-icon),
+  ::slotted([auro-icon]) {
+    $iconSizeMap: if($symmetrical, $symmetricalIconSizeMap, $oblongIconSizeMap);
+    --ds-auro-icon-size: #{map.get($iconSizeMap, $size)};
+  }
+}
+
+// Helper mixin for shape-specific border-radius styling
+@mixin shape-border-radius($shape, $size, $sizeValue) {
+  // Left pill
+  @if ($shape == pill-left) {
+    border-radius: calc($sizeValue / 2) 0 0 calc($sizeValue / 2);
+  } 
+  // Right pill
+  @else if ($shape == pill-right) {
+    border-radius: 0 calc($sizeValue / 2) calc($sizeValue / 2) 0;
+  } 
+  // Full pill
+  @else if ($shape == pill) {
+    border-radius: calc($sizeValue / 2);
+  } 
+  // Rounded
+  @else if ($shape == rounded) {
+    border-radius: 6px;
+    
+    // Special case for XS size
+    @if ($size == xs) {
+      border-radius: 4px;
+    }
+  } 
+  // Circle
+  @else if ($shape == circle) {
+    border-radius: 50%;
+  }
+  // Square
+  @else if ($shape == square) {
+    border-radius: 6px;
+  }
+}
+
+// Styles for all symmetrical shapes
+@mixin symmetrical-shape-styles($calcSize) {
+  min-width: $calcSize;
+  max-width: $calcSize;
+  padding: 0;
+}
+
 // Mixin to generate shape/size styles dynamically
 @mixin shape-styles($shape, $size, $symmetrical: false) {
   
@@ -70,65 +153,32 @@ $symmetricalShapes: (circle, square);
   $sizeValue: map.get($sizeMap, $size);
   
   // Determine the size based on the size parameter
-  $calcSize: getCalculatedSize($sizeValue, $defaultBorderSize);
+  $calcSize: getCalculatedSize($sizeValue, map.get($borderSizeMap, $size));
 
   .shape-#{$shape}-#{$size} {
+    
     // Common styles for all shapes
     min-height: $calcSize;
     max-height: $calcSize;
     border-style: solid;
     overflow: hidden;
+    border-width: map.get($borderSizeMap, $size);
+
+    // Focus Outlines
+    @include focus-outline-styles($size, $symmetrical);
+
+    // Icon sizing
+    @include icon-sizing($size, $symmetrical);
+
+    // Shape-specific styles
+    @include shape-border-radius($shape, $size, $sizeValue);
 
     // Variants
     @include variants($sizeValue);
 
-    // Symmetrical shapes
-    @if ($symmetrical == true) {
-      min-width: $calcSize;
-      max-width: $calcSize;
-      padding: 0;
-    }
-
-    // Shape-specific styles
-    // Left pill
-    @if ($shape == pill-left) {
-      border-radius: calc($sizeValue / 2) 0 0 calc($sizeValue / 2);
-    } 
-
-    // Right pill
-    @if ($shape == pill-right) {
-      border-radius: 0 calc($sizeValue / 2) calc($sizeValue / 2) 0;
-    } 
-
-    // Full pill
-    @if ($shape == pill) {
-      border-radius: calc($sizeValue / 2);
-    } 
-
-    // Rounded
-    @if ($shape == rounded) {
-      border-radius: 6px;
-      
-      // Special case for XS size
-      @if ($size == xs) {
-        border-radius: 4px;
-      }
-    } 
-
-    // Circle
-    @if ($shape == circle) {
-      border-radius: 50%;
-    }
-
-    // Square
-    @if ($shape == square) {
-      border-radius: 6px;
-    }
-    
-    // Add special handling for XS size
-    @if ($size == xs) {
-      outline-offset: -2px;
-      outline-width: 1px;
+    // Symmetrical shape styles
+    @if ($symmetrical) {
+      @include symmetrical-shape-styles($calcSize);
     }
   }
 }

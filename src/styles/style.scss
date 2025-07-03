@@ -45,15 +45,10 @@ $auro-inset-directions: '--squish';
 @use "@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
 @use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
 
-@mixin size-styles($size, $iconSize, $padding) {
+@mixin size-styles($size, $padding) {
   :host([size='#{$size}']) {
     .inset {
       padding-inline: $padding;
-    }
-
-    ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
-      --ds-auro-icon-size: #{$iconSize};
     }
   }
 
@@ -67,30 +62,25 @@ $auro-inset-directions: '--squish';
 
 $button-sizes: (
   'xs': (
-    icon-size: var(--ds-size-300, #{vac.$ds-size-300}),
     padding: var(--ds-size-150, #{vac.$ds-size-150})
   ),
   'sm': (
-    icon-size: var(--ds-size-300, #{vac.$ds-size-300}),
     padding: var(--ds-size-200, #{vac.$ds-size-200})
   ),
   'md': (
-    icon-size: var(--ds-size-300, #{vac.$ds-size-300}),
     padding: var(--ds-size-300, #{vac.$ds-size-300})
   ),
   'lg': (
-    icon-size: calc(var(--ds-size-250, #{vac.$ds-size-250}) + var(--ds-size-100, #{vac.$ds-size-100})),
     padding: var(--ds-size-400, #{vac.$ds-size-400})
   ),
   'xl': (
-    icon-size: calc(var(--ds-size-250, #{vac.$ds-size-250}) + var(--ds-size-200, #{vac.$ds-size-200})),
     padding: var(--ds-size-500, #{vac.$ds-size-500})
   )
 );
 
 // Loop through the map to generate styles for each size
 @each $size, $values in $button-sizes {
-  @include size-styles($size, map.get($values, icon-size), map.get($values, padding));
+  @include size-styles($size, map.get($values, padding));
 }
 
 :host([variant='flat']) {
@@ -143,12 +133,9 @@ slot {
   &:focus-visible, &:focus {
     outline: none;
 
-    outline-style: solid;
-    outline-width: var(--ds-size-50, vac.$ds-size-50);
-    outline-offset: calc(var(--ds-size-50, vac.$ds-size-50) * -1);
-
-    &:not([variant='secondary']):not([variant='tertiary']) {
-      outline-width: calc(var(--ds-size-50, vac.$ds-size-50) - 1px);
+    &:not([variant='flat']),
+    &:not([variant='ghost']) {
+      outline-style: solid;
     }
   }
 
@@ -161,7 +148,6 @@ slot {
   }
 
   @include bp.auro_grid-breakpoint--sm {
-    // min-width: 8.75rem;
     width: auto;
   }
 
@@ -252,14 +238,6 @@ slot {
 
     height: var(--ds-size-600, vac.$ds-size-600);
     width: var(--ds-size-500, vac.$ds-size-500);
-
-    &:not(.auro-button--rounded):focus-visible,
-    &:not(.auro-button--rounded):focus {
-      &:not([variant='secondary']):not([variant='tertiary']):not([variant='flat']) {
-        outline-width: 1px;
-        outline-offset: -2px; // -(1px width + 1px border-width)
-      }
-    }
   }
 
   // auro-button--iconOnlySlim
@@ -288,25 +266,6 @@ slot {
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
       --ds-auro-icon-size: var(--ds-size-300, #{vac.$ds-size-300});
-    }
-
-    &:focus-visible, &:focus {
-      &:not([variant='flat']) {
-        &:after {
-          border-radius: 100px;
-        }
-      }
-    }
-  }
-}
-
-// Handle outline specifically for XS sizes of button
-// Ensures that there's enough content room in XS sized buttons.
-:host([size=xs]) {
-  .wrapper {
-    &:focus-visible, &:focus {
-      outline-width: 1px;
-      outline-offset: -2px;
     }
   }
 }
