@@ -28,6 +28,7 @@
    */
 
 // Import Auro Sass variables
+@use "sass:map";
 @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
 @use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
@@ -89,7 +90,7 @@ $button-sizes: (
 
 // Loop through the map to generate styles for each size
 @each $size, $values in $button-sizes {
-  @include size-styles($size, map-get($values, icon-size), map-get($values, padding));
+  @include size-styles($size, map.get($values, icon-size), map.get($values, padding));
 }
 
 :host([variant='flat']) {
