@@ -42,48 +42,46 @@ $auro-inset-directions: '--squish';
 @use "@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
 @use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
 
-:host([fluid]),
-:host([fluid=true]) {
-  .auro-button {
-    min-width: auto;
-    width: 100%;
+@mixin size-styles($size, $iconSize, $padding) {
+  :host([size='#{$size}']) {
+    .inset {
+      padding-inline: $padding;
+    }
+
+    ::slotted(auro-icon),
+    ::slotted([auro-icon]) {
+      --ds-auro-icon-size: #{$iconSize};
+    }
+  }
+
+  :host([fluid]),
+  :host([fluid=true]) {
+    .inset {
+      width: calc(100% - (#{$padding} * 2));
+    }
   }
 }
 
-:host([size='xs']) {
-  ::slotted(auro-icon),
-  ::slotted([auro-icon]) {
-    --ds-auro-icon-size: var(--ds-size-100, vac.$ds-size-100);
-  }
-}
+$iconSizeXs: var(--ds-size-300, #{vac.$ds-size-300});
+$paddingSizeXs: var(--ds-size-150, #{vac.$ds-size-150});
 
-:host([size='sm']) {
-  ::slotted(auro-icon),
-  ::slotted([auro-icon]) {
-    --ds-auro-icon-size: var(--ds-size-100, vac.$ds-size-100);
-  }
-}
+$iconSizeSm: var(--ds-size-300, #{vac.$ds-size-300});
+$paddingSizeSm: var(--ds-size-200, #{vac.$ds-size-200});
 
-:host([size='md']) {
-  ::slotted(auro-icon),
-  ::slotted([auro-icon]) {
-    --ds-auro-icon-size: var(--ds-size-100, vac.$ds-size-100);
-  }
-}
+$iconSizeMd: var(--ds-size-300, #{vac.$ds-size-300});
+$paddingSizeMd: var(--ds-size-300, #{vac.$ds-size-300});
 
-:host([size='lg']) {
-  ::slotted(auro-icon),
-  ::slotted([auro-icon]) {
-    --ds-auro-icon-size: var(--ds-size-100, vac.$ds-size-100);
-  }
-}
+$iconSizeLg: calc(var(--ds-size-250, #{vac.$ds-size-250}) + var(--ds-size-100, #{vac.$ds-size-100}));
+$paddingSizeLg: var(--ds-size-400, #{vac.$ds-size-400});
 
-:host([size='xl']) {
-  ::slotted(auro-icon),
-  ::slotted([auro-icon]) {
-    --ds-auro-icon-size: var(--ds-size-100, vac.$ds-size-100);
-  }
-}
+$iconSizeXl: calc(var(--ds-size-250, #{vac.$ds-size-250}) + var(--ds-size-200, #{vac.$ds-size-200}));
+$paddingSizeXl: var(--ds-size-500, #{vac.$ds-size-500});
+
+@include size-styles('xs', $iconSizeXs, $paddingSizeXs);
+@include size-styles('sm', $iconSizeSm, $paddingSizeSm);
+@include size-styles('md', $iconSizeMd, $paddingSizeMd);
+@include size-styles('lg', $iconSizeLg, $paddingSizeLg);
+@include size-styles('xl', $iconSizeXl, $paddingSizeXl);
 
 :host([variant='flat']) {
   display: inline-block;
@@ -104,8 +102,8 @@ slot {
   position: relative;
   cursor: pointer;
   padding: 0 var(--ds-size-300, vac.$ds-size-300);
-  padding-inline: 0;
-  padding-block: 0;
+  padding-inline: unset;
+  padding-block: unset;
   box-sizing: content-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -153,7 +151,7 @@ slot {
   }
 
   @include bp.auro_grid-breakpoint--sm {
-    min-width: 8.75rem;
+    // min-width: 8.75rem;
     width: auto;
   }
 
@@ -215,7 +213,9 @@ slot {
     }
   }
 
-  &.icon-only{
+  &:not(.inset){
+    overflow: unset;
+
     ::slotted(:not(auro-icon):not([auro-icon])) {
       display: none;
     }

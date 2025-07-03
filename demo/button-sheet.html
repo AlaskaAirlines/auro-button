@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auro Web Component Demo | auro-button</title>
+
+    <!-- Prism.js Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css"/>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Legacy reference is still needed to support auro-button's use of legacy token values at this time -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/legacy/auro-classic/CSSCustomProperties.css"/>
+
+    <!-- Design Token Alaska Theme -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/themes/alaska/CSSCustomProperties--alaska.min.css"/>
+    
+    <!-- Webcore Stylesheet Alaska Theme -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/themes/alaska.global.min.css" />
+    
+    <!-- Demo Specific Styles -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/elementDemoStyles.css" />
+</head>
+  <body class="auro-markdown">
+    <main class="flex flex-col items-center justify-center py-4 bg-gray-100 gap-4">
+        <p>Primary - Secondary - Tertiary - Ghost</p>
+
+        <div class="flex flex-row justify-between w-full">
+          <h4 class="text-3xl font-bold w-full text-center">Round</h4>
+
+          <h4 class="text-3xl font-bold w-full text-center">Pill</h4>
+        </div>
+
+        <h4 class="text-3xl font-bold w-full text-center">XL</h4>
+        <div class="grid grid-cols-2 gap-4">
+          
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button size="xl"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button size="xl" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button size="xl" shape="pill"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" shape="pill" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" shape="pill" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" shape="pill" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button size="xl" shape="pill" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" shape="pill" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" shape="pill" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xl" shape="pill" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 bg-gray-800">
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button ondark size="xl"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button ondark size="xl" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button ondark size="xl" shape="pill"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" shape="pill" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" shape="pill" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" shape="pill" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button ondark size="xl" shape="pill" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" shape="pill" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" shape="pill" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xl" shape="pill" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="text-3xl font-bold w-full text-center pt-8">LG</h4>
+        <div class="grid grid-cols-2 gap-4">
+          
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button size="lg"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button size="lg" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button size="lg" shape="pill"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" shape="pill" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" shape="pill" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" shape="pill" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button size="lg" shape="pill" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" shape="pill" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" shape="pill" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="lg" shape="pill" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 bg-gray-800">
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button ondark size="lg"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button ondark size="lg" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button ondark size="lg" shape="pill"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" shape="pill" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" shape="pill" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" shape="pill" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button ondark size="lg" shape="pill" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" shape="pill" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" shape="pill" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="lg" shape="pill" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="text-3xl font-bold w-full text-center pt-8">MD</h4>
+        <div class="grid grid-cols-2 gap-4">
+          
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button size="md"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button size="md" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button size="md" shape="pill"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" shape="pill" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" shape="pill" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" shape="pill" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button size="md" shape="pill" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" shape="pill" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" shape="pill" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="md" shape="pill" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 bg-gray-800">
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button ondark size="md"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button ondark size="md" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button ondark size="md" shape="pill"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" shape="pill" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" shape="pill" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" shape="pill" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button ondark size="md" shape="pill" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" shape="pill" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" shape="pill" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="md" shape="pill" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="text-3xl font-bold w-full text-center pt-8">SM</h4>
+        <div class="grid grid-cols-2 gap-4">
+          
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button size="sm"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button size="sm" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button size="sm" shape="pill"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" shape="pill" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" shape="pill" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" shape="pill" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button size="sm" shape="pill" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" shape="pill" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" shape="pill" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="sm" shape="pill" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 bg-gray-800">
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button ondark size="sm"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button ondark size="sm" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button ondark size="sm" shape="pill"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" shape="pill" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" shape="pill" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" shape="pill" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button ondark size="sm" shape="pill" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" shape="pill" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" shape="pill" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="sm" shape="pill" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="text-3xl font-bold w-full text-center pt-8">XS</h4>
+        <div class="grid grid-cols-2 gap-4">
+          
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button size="xs"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button size="xs" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button size="xs" shape="pill"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" shape="pill" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" shape="pill" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" shape="pill" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button size="xs" shape="pill" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" shape="pill" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" shape="pill" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button size="xs" shape="pill" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 bg-gray-800">
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button ondark size="xs"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button ondark size="xs" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button ondark size="xs" shape="pill"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" shape="pill" variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" shape="pill" variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" shape="pill" variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+            <div>
+              <auro-button ondark size="xs" shape="pill" loading><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" shape="pill" loading variant="secondary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" shape="pill" loading variant="tertiary"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+              <auro-button ondark size="xs" shape="pill" loading variant="ghost"><auro-icon customColor category="in-flight" name="wifi"></auro-icon> Button</auro-button>
+            </div>
+          </div>
+        </div>
+
+    </main>
+    <script type="module" data-demo-script="true">
+      import { initExamples } from './index.min.js';
+      initExamples();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-alert@latest/dist/auro-alert__bundled.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@latest/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/prism.js"></script>
+  </body>
+</html>
