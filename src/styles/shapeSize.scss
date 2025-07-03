@@ -3,18 +3,16 @@
 
 // SIZES/VALUES
 $defaultBorderSize: 2px;
-$xl: 72px; $lg: 56px; $md: 48px; $sm: 36px; $xs: 24px;
 
 // MAPS
 
 // The size names and their corresponding values
-$sizeMap: ( xl: $xl, lg: $lg, md: $md, sm: $sm, xs: $xs );
+$sizeMap: ( xl: 72px, lg: 56px, md: 48px, sm: 36px, xs: 24px );
 
 // LISTS
 // To add a size or shape, simply add it to the respective list
 // Oblong shapes are those that are not icon-only
 // Symmetrical shapes are those that have equal width and height (icon-only)
-$sizes: ( xl, lg, md, sm, xs );
 $oblongShapes: (rounded, pill, pill-left, pill-right);
 $symmetricalShapes: (circle, square);
 
@@ -135,7 +133,7 @@ $symmetricalShapes: (circle, square);
 }
 
 // Generate styles for each shape and size combination
-@each $size in $sizes {
+@each $size, $sizeValue in $sizeMap {
   @each $shape in $oblongShapes {
     @include shape-styles($shape, $size);
   }
