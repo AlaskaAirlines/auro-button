@@ -1,4 +1,5 @@
 /* stylelint-disable */
+@use "sass:map";
 @use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
 
 // SIZES/VALUES
@@ -66,7 +67,7 @@ $symmetricalShapes: (circle, square);
 @mixin shape-styles($shape, $size, $symmetrical: false) {
   
   // Get the actual size value from the map using the size name
-  $sizeValue: map-get($sizeMap, $size);
+  $sizeValue: map.get($sizeMap, $size);
   
   // Determine the size based on the size parameter
   $calcSize: getCalculatedSize($sizeValue, $defaultBorderSize);
