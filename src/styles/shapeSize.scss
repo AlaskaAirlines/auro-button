@@ -2,31 +2,121 @@
 @use "sass:map";
 @use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
 
-// SIZES/VALUES
-$defaultBorderSize: 1.5px;
+/**
+ * @file shapeSize.scss
+ * @description Configurable system for managing button shapes and sizes in the Auro Design System.
+ * 
+ * This file provides a flexible and extensible way to define button shapes, sizes, and their variants.
+ * The implementation is designed to be easily extended by simply modifying the configuration maps.
+ * In most cases, you only need to edit the maps and not the implementation logic.
+ * 
+ * @configuration Maps:
+ * - $sizeMap: Defines the available sizes (xs, sm, md, lg, xl) with their respective pixel values.
+ *   - To add a new size, simply add a new key-value pair to this map.
+ *   - For symmetrical shapes, the width and height will be set to this value.
+ * 
+ * - $borderSizeMap: Specifies the different border widths used for button variants.
+ *   - Currently supports: default (2px), thin (1px), and simple (0px).
+ * 
+ * - $shapeConfig: Defines the button shapes and their properties.
+ *   - For each shape, you can specify:
+ *     - type: Either 'symmetrical' (equal width and height) or 'oblong' (width based on content)
+ *     - borderRadius: Static border radius values with optional size-specific overrides
+ *     - borderRadiusFunc: Dynamic function for calculating border radius based on button size
+ * 
+ * @extension
+ * To add a new shape:
+ * 1. Add a new entry to the $shapeConfig map
+ * 2. Specify its type (symmetrical or oblong)
+ * 3. Define either:
+ *    - A borderRadius map with default and optional size-specific values, or
+ *    - A borderRadiusFunc that dynamically calculates the radius based on size
+ * 
+ * To add a new size:
+ * 1. Add a new entry to the $sizeMap with the desired height value
+ * 2. Optionally add size-specific border radius values to shapes if needed
+ * 
+ * To add a new border variant:
+ * 1. Add a new entry to the $borderSizeMap
+ * 2. Create a new mixin similar to @mixin simple() or @mixin thin()
+ * 3. Include the new mixin in the @mixin variants()
+ * 
+ * @implementation
+ * The implementation automatically generates CSS classes for all combinations
+ * of shapes and sizes, applying the appropriate styles based on the configuration.
+ * The generated classes follow the pattern: .shape-{shapeName}-{sizeName}
+ */
 
-// SIZING MAPS
-// These maps define the sizes and border sizes for different button sizes
-// The keys are the size names (e.g., xl, lg, md, sm, xs)
-// When adding a new size, ensure to update all maps accordingly
+// Default border size for calculations
+$defaultBorderSize: 2px;
+
+// Size configuration map
+// Each shape in the shape configuration will be generated for each of these sizes
 $sizeMap: ( xl: 72px, lg: 56px, md: 48px, sm: 36px, xs: 24px );
-$borderSizeMap: ( xl: 1.5px, lg: 1px, md: 1px, sm: 1px, xs: 1px );
 
-$iconOutlineSizeMap: ( xl: 3px, lg: 2.33px, md: 2px, sm: 2px, xs: 1px );
-$iconOutlineInsetMap: ( xl: -4.5px, lg: -3.33px, md: -3px, sm: -3px, xs: -2px );
+// Border sizes map
+// This map defines the different border widths used for button variants
+$borderSizeMap: ( default: $defaultBorderSize, thin: 1px, simple: 0px );
 
-$buttonOutlineSizeMap: ( xl: 4px, lg: 4px, md: 4px, sm: 4px, xs: 4px );
-$buttonOutlineInsetMap: ( xl: -5px, lg: -5px, md: -5px, sm: -5px, xs: -5px );
+// Define border radius calculation functions to be used in the shape configuration below
+// This is required because SASS does not support inline functions in maps, but does allow function references
+// If you are adding a new shape that requires a custom border radius calculation, define the function here and include it in the shapeConfig map
+@function pillRadius($sizeValue) { @return ($sizeValue / 2) };
+@function pillLeftRadius($sizeValue) { @return ($sizeValue / 2) 0 0 ($sizeValue / 2); };
+@function pillRightRadius($sizeValue) { @return 0 ($sizeValue / 2) ($sizeValue / 2) 0; };
 
-$oblongIconSizeMap: ( xl: var(--ds-size-300, #{vac.$ds-size-300}), lg: var(--ds-size-300, #{vac.$ds-size-300}), md: var(--ds-size-300, #{vac.$ds-size-300}), sm: var(--ds-size-300, #{vac.$ds-size-300}), xs: var(--ds-size-200, #{vac.$ds-size-200}) );
-$symmetricalIconSizeMap: ( xl: calc(var(--ds-size-400, #{vac.$ds-size-400}) + var(--ds-size-50, #{vac.$ds-size-50})), lg: calc(var(--ds-size-300, #{vac.$ds-size-300}) + var(--ds-size-50, #{vac.$ds-size-50})), md: var(--ds-size-300, #{vac.$ds-size-300}), sm: var(--ds-size-300, #{vac.$ds-size-300}), xs: var(--ds-size-300, #{vac.$ds-size-300}) );
-
-// LISTS
-// To add a new shape, simply add it to the respective list
-// Oblong shapes are those that are normal button shapes (not icon buttons)
-// Symmetrical shapes are those that have equal width and height (icon buttons)
-$oblongShapes: (rounded, pill, pill-left, pill-right);
-$symmetricalShapes: (circle, square);
+/**
+ * Shape Configuration Map
+ * 
+ * Each shape entry in the map contains the following properties:
+ * 
+ * @property {string} type - Defines button shape behavior
+ *   - 'symmetrical': Equal width and height (e.g., circle, square)
+ *     - For symmetrical shapes, we do not include the left and right padding
+ *   - 'oblong': Width determined by content (e.g., pill, rounded)
+ *     - For oblong shapes, we also add left and right padding to ensure proper spacing
+ * 
+ * @property {Object} borderRadius - Static border radius values with size variants
+ *   - Contains t-shirt sizes (xs, sm, md, lg, xl) with specific values
+ *   - Falls back to 'default' if no specific size is found
+ * 
+ * @property {Function} borderRadiusFunc - Function for dynamic border radius calculation
+ *   - When defined, this takes precedence over the static borderRadius map
+ *   - Accepts the size value as a parameter and returns the calculated radius
+ */
+$shapeConfig: (
+  rounded: (
+    type: oblong,
+    borderRadius: (
+      default: 6px, 
+      xs: 4px,
+    )
+  ),
+  pill: (
+    type: oblong,
+    borderRadiusFunc: pillRadius
+  ),
+  pill-left: (
+    type: oblong,
+    borderRadiusFunc: pillLeftRadius
+  ),
+  pill-right: (
+    type: oblong,
+    borderRadiusFunc: pillRightRadius
+  ),
+  circle: (
+    type: symmetrical,
+    borderRadius: (
+      default: 50%
+    )
+  ),
+  square: (
+    type: symmetrical,
+    borderRadius: (
+      default: 6px
+    )
+  )
+);
 
 // FUNCTIONS
 
@@ -35,9 +125,39 @@ $symmetricalShapes: (circle, square);
   @return calc(#{$size} - (2 * #{$borderSize}));
 }
 
+// Get border radius based on shape and size with proper fallback pattern
+@function getBorderRadius($shape, $size) {
+  $sizeValue: map.get($sizeMap, $size);
+  $shapeData: map.get($shapeConfig, $shape);
+  
+  // Check if this shape uses a function for calculating border radius
+  @if map.has-key($shapeData, borderRadiusFunc) {
+    // Call the appropriate function
+    $radiusFunc: map.get($shapeData, borderRadiusFunc);
+    @return call($radiusFunc, $sizeValue);
+  }
+  // Otherwise use the borderRadius map with fallback pattern
+  @else {
+    $borderRadiusConfig: map.get($shapeData, borderRadius);
+    
+    // If it's a map, look for specific size or fall back to default
+    @if type-of($borderRadiusConfig) == map {
+      @if map.has-key($borderRadiusConfig, $size) {
+        @return map.get($borderRadiusConfig, $size);
+      } @else {
+        @return map.get($borderRadiusConfig, default);
+      }
+    } 
+    // Direct value
+    @else {
+      @return $borderRadiusConfig;
+    }
+  }
+}
+
 // MIXINS
 @mixin simple($size) {
-  $simpleBorderSize: 0px;
+  $simpleBorderSize: map.get($borderSizeMap, simple);
 
   &.simple {
     border-width: $simpleBorderSize;
@@ -49,7 +169,7 @@ $symmetricalShapes: (circle, square);
 }
 
 @mixin thin($size) {
-  $thinBorderSize: 1px;
+  $thinBorderSize: map.get($borderSizeMap, thin);
 
   &.thin {
     border-width: $thinBorderSize;
@@ -63,8 +183,8 @@ $symmetricalShapes: (circle, square);
   &.parentBorder {
     border: 0;
     box-shadow: unset;
-    min-height: getCalculatedSize($size, 2px);
-    max-height: getCalculatedSize($size, 2px);
+    min-height: getCalculatedSize($size, map.get($borderSizeMap, default));
+    max-height: getCalculatedSize($size, map.get($borderSizeMap, default));
   }
 }
 
@@ -74,122 +194,43 @@ $symmetricalShapes: (circle, square);
   @include parentBorder($size);
 }
 
-// Focus outline styles for all buttons
-@mixin focus-outline-styles ($size, $symmetrical: false) {
-  &:focus-visible,
-  &:focus {
-
-    // Ghost and flat do not follow the outline standard
-    &:not([variant='flat'],[variant='ghost']) {
-      $outlineSizeMap: if($symmetrical, $iconOutlineSizeMap, $buttonOutlineSizeMap);
-      $outlineInsetMap: if($symmetrical, $iconOutlineInsetMap, $buttonOutlineInsetMap);
-
-      outline-width: map.get($outlineSizeMap, $size);
-      outline-offset: map.get($outlineInsetMap, $size);
-    }
-
-    // Flat and ghost variants have a 1px outline with no inset
-    &[variant='flat'],
-    &[variant='ghost'] {
-      outline-width: 1px;
-      outline-offset: 0;
-    }
-  }
-}
-
-// Icon size handling for all buttons (based on symmetry for icon buttons)
-@mixin icon-sizing($size, $symmetrical: false) {
-  ::slotted(auro-icon),
-  ::slotted([auro-icon]) {
-    $iconSizeMap: if($symmetrical, $symmetricalIconSizeMap, $oblongIconSizeMap);
-    --ds-auro-icon-size: #{map.get($iconSizeMap, $size)};
-  }
-}
-
-// Helper mixin for shape-specific border-radius styling
-@mixin shape-border-radius($shape, $size, $sizeValue) {
-  // Left pill
-  @if ($shape == pill-left) {
-    border-radius: calc($sizeValue / 2) 0 0 calc($sizeValue / 2);
-  } 
-  // Right pill
-  @else if ($shape == pill-right) {
-    border-radius: 0 calc($sizeValue / 2) calc($sizeValue / 2) 0;
-  } 
-  // Full pill
-  @else if ($shape == pill) {
-    border-radius: calc($sizeValue / 2);
-  } 
-  // Rounded
-  @else if ($shape == rounded) {
-    border-radius: 6px;
-    
-    // Special case for XS size
-    @if ($size == xs) {
-      border-radius: 4px;
-    }
-  } 
-  // Circle
-  @else if ($shape == circle) {
-    border-radius: 50%;
-  }
-  // Square
-  @else if ($shape == square) {
-    border-radius: 6px;
-  }
-}
-
-// Styles for all symmetrical shapes
-@mixin symmetrical-shape-styles($calcSize) {
-  min-width: $calcSize;
-  max-width: $calcSize;
+@mixin symmetrical-shape($size) {
+  min-width: $size;
+  max-width: $size;
   padding: 0;
 }
 
-// Mixin to generate shape/size styles dynamically
-@mixin shape-styles($shape, $size, $symmetrical: false) {
-  
+// Shape styling mixin with improved map usage
+@mixin shape-styles($shape, $size) {
   // Get the actual size value from the map using the size name
   $sizeValue: map.get($sizeMap, $size);
+  $shapeData: map.get($shapeConfig, $shape);
+  $shapeType: map.get($shapeData, type);
   
   // Determine the size based on the size parameter
-  $calcSize: getCalculatedSize($sizeValue, map.get($borderSizeMap, $size));
+  $calcSize: getCalculatedSize($sizeValue, $defaultBorderSize);
 
   .shape-#{$shape}-#{$size} {
-    
     // Common styles for all shapes
     min-height: $calcSize;
     max-height: $calcSize;
     border-style: solid;
     overflow: hidden;
-    border-width: map.get($borderSizeMap, $size);
-
-    // Focus Outlines
-    @include focus-outline-styles($size, $symmetrical);
-
-    // Icon sizing
-    @include icon-sizing($size, $symmetrical);
-
-    // Shape-specific styles
-    @include shape-border-radius($shape, $size, $sizeValue);
+    border-radius: getBorderRadius($shape, $size);
 
     // Variants
     @include variants($sizeValue);
 
-    // Symmetrical shape styles
-    @if ($symmetrical) {
-      @include symmetrical-shape-styles($calcSize);
+    // Apply symmetrical styles if needed
+    @if ($shapeType == symmetrical) {
+      @include symmetrical-shape($sizeValue);
     }
   }
 }
 
-// Generate styles for each shape and size combination
+// Simplified loop structure
 @each $size, $sizeValue in $sizeMap {
-  @each $shape in $oblongShapes {
+  @each $shape, $shapeData in $shapeConfig {
     @include shape-styles($shape, $size);
-  }
-
-  @each $shape in $symmetricalShapes {
-    @include shape-styles($shape, $size, true);
   }
 }
