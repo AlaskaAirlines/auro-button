@@ -60,7 +60,10 @@ $button-shapes: (
 $button-sizes: (
   'xs': (
     padding: var(--ds-size-150, #{vac.$ds-size-150}),
-    iconSize: var(--ds-size-300, #{vac.$ds-size-300}),
+    iconSize: (
+      symmetrical: var(--ds-size-300, #{vac.$ds-size-300}),
+      oblong: var(--ds-size-200, #{vac.$ds-size-200}),
+    ),
     outlineSizeMap: (
       oblong: (
         primary: $defaultFocusOutlineWidth,
@@ -79,7 +82,10 @@ $button-sizes: (
   ),
   'sm': (
     padding: var(--ds-size-200, #{vac.$ds-size-200}),
-    iconSize: var(--ds-size-300, #{vac.$ds-size-300}),
+    iconSize: (
+      symmetrical: (var(--ds-size-300, #{vac.$ds-size-300})),
+      oblong: (var(--ds-size-300, #{vac.$ds-size-300}))
+    ),
     outlineSizeMap: (
       oblong: (
         primary: $defaultFocusOutlineWidth,
@@ -98,7 +104,10 @@ $button-sizes: (
   ),
   'md': (
     padding: var(--ds-size-300, #{vac.$ds-size-300}),
-    iconSize: var(--ds-size-300, #{vac.$ds-size-300}),
+    iconSize: (
+      symmetrical: var(--ds-size-300, #{vac.$ds-size-300}),
+      oblong: var(--ds-size-300, #{vac.$ds-size-300})
+    ),
     outlineSizeMap: (
       oblong: (
         primary: $defaultFocusOutlineWidth,
@@ -117,7 +126,10 @@ $button-sizes: (
   ),
   'lg': (
     padding: var(--ds-size-400, #{vac.$ds-size-400}),
-    iconSize: calc(var(--ds-size-300, #{vac.$ds-size-300}) + var(--ds-size-50, #{vac.$ds-size-50})),
+    iconSize: (
+      symmetrical: calc(var(--ds-size-300, #{vac.$ds-size-300}) + var(--ds-size-50, #{vac.$ds-size-50})),
+      oblong: var(--ds-size-300, #{vac.$ds-size-300})
+    ),
     outlineSizeMap: (
       oblong: (
         primary: $defaultFocusOutlineWidth,
@@ -136,7 +148,10 @@ $button-sizes: (
   ),
   'xl': (
     padding: var(--ds-size-500, #{vac.$ds-size-500}),
-    iconSize: calc(var(--ds-size-400, #{vac.$ds-size-400}) + var(--ds-size-50, #{vac.$ds-size-50})),
+    iconSize: (
+      symmetrical: calc(var(--ds-size-400, #{vac.$ds-size-400}) + var(--ds-size-50, #{vac.$ds-size-50})),
+      oblong: var(--ds-size-300, #{vac.$ds-size-300})
+    ),
     outlineSizeMap: (
       oblong: (
         primary: $defaultFocusOutlineWidth,
@@ -156,25 +171,24 @@ $button-sizes: (
 );
 
 @mixin size-based-styles($size, $shape) {
+  // Get the shape type from the button-shapes map
+  $shapeType: map.get($button-shapes, $shape);
+
   // Get the data from the sizes map for this specific size
   $sizeData: map.get($button-sizes, $size);
 
-  // Get the padding from the size data
-  $padding: map.get($sizeData, padding);
-
-  // Apply the inset styles based on the size and padding
-  @include inset-styles($size, $padding);
-
   // Get the icon size from the size data
-  $iconSize: map.get($sizeData, iconSize);
+  $iconSizeMap: map.get($sizeData, iconSize);
+  $iconSize: map.get($iconSizeMap, $shapeType);
 
-  @include icon-styles($size, $iconSize);
+  // Apply the icon styles based on the size and icon size
+  @include icon-styles($shape, $size, $iconSize);
 
   // Get the outline size map from the size data
   $outlineSizeMap: map.get($sizeData, outlineSizeMap);
 
   // Get the outline size map for all shapes at this size from the map
-  $outlineSizeShapeMap: map.get($outlineSizeMap, map.get($button-shapes, $shape));
+  $outlineSizeShapeMap: map.get($outlineSizeMap, $shapeType);
 
   // Apply the outline styles based on the size, shape, and outline size map  
   @include outline-styles($size, $outlineSizeShapeMap, $shape);
@@ -218,8 +232,8 @@ $button-sizes: (
   }
 }
 
-@mixin icon-styles($size, $iconSize) {
-   :host([size='#{$size}']) {
+@mixin icon-styles($shape, $size, $iconSize) {
+   :host([size='#{$size}'][shape=#{$shape}]) {
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
       --ds-auro-icon-size: #{$iconSize};
@@ -243,11 +257,16 @@ $button-sizes: (
   }
 }
 
-// Loop through the map to generate styles for each size
+// Loop through the map to generate styles for each size and shape
 @each $size, $size-value in $button-sizes {
   @each $shape, $shape-value in $button-shapes {
     @include size-based-styles($size, $shape);
   }
+}
+
+// Size-based only styles
+@each $size, $size-value in $button-sizes {
+  @include inset-styles($size, map.get($size-value, padding));
 }
 
 :host([variant='flat']) {
@@ -380,82 +399,6 @@ slot {
       display: none;
     }
   }
-
-  // auro-button--slim
-  &--slim {
-    min-width: unset;
-    min-height: calc(var(--ds-size-500, vac.$ds-size-500) - var(--ds-size-50, vac.$ds-size-50));
-    max-height: calc(var(--ds-size-500, vac.$ds-size-500) - var(--ds-size-50, vac.$ds-size-50));
-  }
-
-  // auro-button--iconOnly
-  &--iconOnly {
-    ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
-      --ds-auro-icon-size: var(--ds-size-300, #{vac.$ds-size-300});
-    }
-
-    padding: 0 var(--ds-size-100, vac.$ds-size-100);
-
-    border-radius: 100px;
-    min-width: unset;
-
-    height: var(--ds-size-600, vac.$ds-size-600);
-    width: var(--ds-size-500, vac.$ds-size-500);
-  }
-
-  // auro-button--iconOnlySlim
-  &--iconOnlySlim {
-    ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
-      --ds-auro-icon-size: calc(var(--ds-size-200, #{vac.$ds-size-200}) + var(--ds-size-50, #{vac.$ds-size-50}));
-    }
-
-    padding: 0 var(--ds-size-50, vac.$ds-size-50);
-
-    height: calc(var(--ds-size-400, vac.$ds-size-400) + var(--ds-size-50, vac.$ds-size-50));
-    width: calc(var(--ds-size-300, vac.$ds-size-300) + var(--ds-size-50, vac.$ds-size-50));
-  }
-
-  // auro-button--rounded
-  &--rounded {
-    border-radius: 100px;
-    box-shadow: var(--ds-elevation-300, vac.$ds-elevation-300);
-
-    height: var(--ds-size-500, vac.$ds-size-500);
-    min-width: unset;
-
-    transition: padding 300ms ease-out, outline 0ms, outline-offset 0ms;
-
-    ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
-      --ds-auro-icon-size: var(--ds-size-300, #{vac.$ds-size-300});
-    }
-  }
-}
-
-:host([rounded]) {
-  .textSlot {
-    transition: opacity 300ms ease-in;
-    opacity: 1;
-  }
-}
-
-:host([rounded][iconOnly]) {
-  .textSlot {
-    opacity: 0;
-  }
-
-  .textWrapper {
-    display: none;
-  }
-
-  .auro-button {
-    min-width: unset;
-    padding: unset;
-
-    width: var(--ds-size-600, vac.$ds-size-600);
-  }
 }
 
 [auro-loader] {
@@ -464,4 +407,4 @@ slot {
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-}
+};
