@@ -1,4 +1,4 @@
-/* eslint-disable max-lines, curly, jsdoc/no-undefined-types, array-element-newline */
+/* eslint-disable max-lines, curly, jsdoc/no-undefined-types, array-element-newline, line-comment-position, no-inline-comments */
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -63,6 +63,7 @@ export class AuroButton extends AuroElement {
     this.onDark = false;
     this.fluid = false;
     this.loadingText = this.loadingText || 'Loading...';
+    this.variant = 'primary';
 
     // Support for HTML5 forms
     if (typeof this.attachInternals === 'function') {
@@ -311,6 +312,15 @@ export class AuroButton extends AuroElement {
   }
 
   /**
+   * Whether or not the button is set to an icon-only shape.
+   * @returns {boolean} - True if the button is icon-only, false otherwise.
+   * @private
+   */
+  get iconOnly() {
+    return ICON_ONLY_SHAPES.includes(this.shape);
+  }
+
+  /**
    * Gets a class name for the font size based on the button's size and shape.
    * @returns {string} - The font size class name.
    * @private
@@ -336,8 +346,7 @@ export class AuroButton extends AuroElement {
     };
 
     // Determine which map to use based on the shape
-    const isIconOnly = ICON_ONLY_SHAPES.includes(this.shape);
-    const sizeMap = isIconOnly ? iconOnlyButtonSizeMap : standardButtonSizeMap;
+    const sizeMap = this.iconOnly ? iconOnlyButtonSizeMap : standardButtonSizeMap;
 
     // Return the font size based on the button size and shape
     return sizeMap[this.size] || 'body-default';
@@ -360,6 +369,10 @@ export class AuroButton extends AuroElement {
       wrapper: true,
       loading: this.loading,
       [`${fontSize}`]: true,
+
+      // These remove the default borders so we can handle focus borders ourselves
+      'simple': !['secondary'].includes(this.variant),
+      'thin': ['secondary'].includes(this.variant),
     };
 
     return html`
