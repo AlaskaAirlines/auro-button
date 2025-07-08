@@ -4,7 +4,9 @@
 // ---------------------------------------------------------------------
 
 /* stylelint-disable
+   scss/dollar-variable-colon-newline-after,
    at-rule-no-unknown,
+   at-rule-empty-line-before,
    comment-empty-line-before,
    scss/dollar-variable-colon-space-after,
    scss/dollar-variable-empty-line-before,
@@ -37,15 +39,196 @@
 @use "@aurodesignsystem/webcorestylesheets/src/core";
 @use "@aurodesignsystem/webcorestylesheets/src/animation";
 
+@use "@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
+@use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
+
 @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap";
 
 $auro-inset-spacing-options: lg;
 $auro-inset-directions: '--squish';
+$defaultFocusOutlineWidth: 4px;
 
-@use "@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
-@use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
+$button-shapes: (
+  'rounded': oblong,
+  'pill': oblong,
+  'pill-left': oblong,
+  'pill-right': oblong,
+  'circle': symmetrical,
+  'square': symmetrical
+);
 
-@mixin size-styles($size, $padding) {
+$button-sizes: (
+  'xs': (
+    padding: var(--ds-size-150, #{vac.$ds-size-150}),
+    iconSize: var(--ds-size-300, #{vac.$ds-size-300}),
+    outlineSizeMap: (
+      oblong: (
+        primary: $defaultFocusOutlineWidth,
+        secondary: $defaultFocusOutlineWidth,
+        tertiary: $defaultFocusOutlineWidth,
+        ghost: 1px
+      ),
+      symmetrical: (
+        primary: 1px,
+        secondary: 1px,
+        tertiary: 2px,
+        flat: 1px,
+        ghost: 1px
+      )
+    ),
+  ),
+  'sm': (
+    padding: var(--ds-size-200, #{vac.$ds-size-200}),
+    iconSize: var(--ds-size-300, #{vac.$ds-size-300}),
+    outlineSizeMap: (
+      oblong: (
+        primary: $defaultFocusOutlineWidth,
+        secondary: $defaultFocusOutlineWidth,
+        tertiary: $defaultFocusOutlineWidth,
+        ghost: 1px
+      ),
+      symmetrical: (
+        primary: 2px,
+        secondary: 3px,
+        tertiary: 4px,
+        flat: 1px,
+        ghost: 1px
+      )
+    )
+  ),
+  'md': (
+    padding: var(--ds-size-300, #{vac.$ds-size-300}),
+    iconSize: var(--ds-size-300, #{vac.$ds-size-300}),
+    outlineSizeMap: (
+      oblong: (
+        primary: $defaultFocusOutlineWidth,
+        secondary: $defaultFocusOutlineWidth,
+        tertiary: $defaultFocusOutlineWidth,
+        ghost: 1px
+      ),
+      symmetrical: (
+        primary: 3px,
+        secondary: 3px,
+        tertiary: 4px,
+        flat: 1px,
+        ghost: 1px
+      )
+    )
+  ),
+  'lg': (
+    padding: var(--ds-size-400, #{vac.$ds-size-400}),
+    iconSize: calc(var(--ds-size-300, #{vac.$ds-size-300}) + var(--ds-size-50, #{vac.$ds-size-50})),
+    outlineSizeMap: (
+      oblong: (
+        primary: $defaultFocusOutlineWidth,
+        secondary: $defaultFocusOutlineWidth,
+        tertiary: $defaultFocusOutlineWidth,
+        ghost: 1px
+      ),
+      symmetrical: (
+        primary: 3.33px,
+        secondary: 3px,
+        tertiary: 4px,
+        flat: 1px,
+        ghost: 1px
+      )
+    )
+  ),
+  'xl': (
+    padding: var(--ds-size-500, #{vac.$ds-size-500}),
+    iconSize: calc(var(--ds-size-400, #{vac.$ds-size-400}) + var(--ds-size-50, #{vac.$ds-size-50})),
+    outlineSizeMap: (
+      oblong: (
+        primary: $defaultFocusOutlineWidth,
+        secondary: $defaultFocusOutlineWidth,
+        tertiary: $defaultFocusOutlineWidth,
+        ghost: 1px
+      ),
+      symmetrical: (
+        primary: 4px,
+        secondary: 3px,
+        tertiary: 4px,
+        flat: 1px,
+        ghost: 1px
+      )
+    )
+  )
+);
+
+@mixin size-based-styles($size, $shape) {
+  // Get the data from the sizes map for this specific size
+  $sizeData: map.get($button-sizes, $size);
+
+  // Get the padding from the size data
+  $padding: map.get($sizeData, padding);
+
+  // Apply the inset styles based on the size and padding
+  @include inset-styles($size, $padding);
+
+  // Get the icon size from the size data
+  $iconSize: map.get($sizeData, iconSize);
+
+  @include icon-styles($size, $iconSize);
+
+  // Get the outline size map from the size data
+  $outlineSizeMap: map.get($sizeData, outlineSizeMap);
+
+  // Get the outline size map for all shapes at this size from the map
+  $outlineSizeShapeMap: map.get($outlineSizeMap, map.get($button-shapes, $shape));
+
+  // Apply the outline styles based on the size, shape, and outline size map  
+  @include outline-styles($size, $outlineSizeShapeMap, $shape);
+}
+
+@mixin outline-styles($size, $outlineSize, $shape) {
+  @each $variant, $outline-width in $outlineSize {
+    :host([size='#{$size}'][shape='#{$shape}'][variant='#{$variant}']) {
+      .auro-button {
+        &:focus,
+        &:focus-visible {
+          // We need to adjust the outline width based on the variant and size
+          $outline-width: 
+            if($variant == 'primary', 
+              ($outline-width + 1px), 
+              $outline-width  
+            );
+
+          // Set box shadow for focus outline
+          box-shadow: inset 0 0 0 $outline-width var( --ds-auro-button-border-inset-color );
+
+          // Use a pseudo-element to add a border to make the primary variant look inset
+          @if $variant == 'primary' {
+            $insetAmount: 1px;
+
+            &:after {
+              content: '';
+              position: absolute;
+              border-radius: inherit;
+              box-sizing: content-box;
+              top: 0;
+              left: 0;
+              width: calc(100% - ($insetAmount * 2));
+              height: calc(100% - ($insetAmount * 2));
+              border: $insetAmount solid var( --ds-auro-button-border-color );
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin icon-styles($size, $iconSize) {
+   :host([size='#{$size}']) {
+    ::slotted(auro-icon),
+    ::slotted([auro-icon]) {
+      --ds-auro-icon-size: #{$iconSize};
+    }
+  }
+}
+
+// Style mixin for setting inset styles based on size
+@mixin inset-styles($size, $padding) {
   :host([size='#{$size}']) {
     .inset {
       padding-inline: $padding;
@@ -60,27 +243,11 @@ $auro-inset-directions: '--squish';
   }
 }
 
-$button-sizes: (
-  'xs': (
-    padding: var(--ds-size-150, #{vac.$ds-size-150})
-  ),
-  'sm': (
-    padding: var(--ds-size-200, #{vac.$ds-size-200})
-  ),
-  'md': (
-    padding: var(--ds-size-300, #{vac.$ds-size-300})
-  ),
-  'lg': (
-    padding: var(--ds-size-400, #{vac.$ds-size-400})
-  ),
-  'xl': (
-    padding: var(--ds-size-500, #{vac.$ds-size-500})
-  )
-);
-
 // Loop through the map to generate styles for each size
-@each $size, $values in $button-sizes {
-  @include size-styles($size, map.get($values, padding));
+@each $size, $size-value in $button-sizes {
+  @each $shape, $shape-value in $button-shapes {
+    @include size-based-styles($size, $shape);
+  }
 }
 
 :host([variant='flat']) {
@@ -109,6 +276,7 @@ slot {
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
+  outline: none;
 
   display: inline-flex;
   flex-direction: row;
@@ -125,18 +293,14 @@ slot {
 
   transition: padding 300ms ease-out;
 
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
   // handle active state
   &:active {
     transform: scale(0.95);
-  }
-
-  &:focus-visible, &:focus {
-    outline: none;
-
-    &:not([variant='flat']),
-    &:not([variant='ghost']) {
-      outline-style: solid;
-    }
   }
 
   &.loading {
