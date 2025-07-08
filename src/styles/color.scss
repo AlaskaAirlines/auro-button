@@ -74,6 +74,7 @@
         --ds-auro-button-text-color: var(--ds-advanced-color-button-secondary-text-hover, #{v.$ds-advanced-color-button-secondary-text-hover});
       }
 
+      &:focus,
       &:focus-visible {
         --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
       }
@@ -103,6 +104,7 @@
         --ds-auro-button-border-color: transparent;
       }
 
+      &:focus,
       &:focus-visible {
         --ds-auro-button-border-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
         --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
@@ -131,6 +133,7 @@
         --ds-auro-button-border-color: transparent;
       }
 
+      &:focus,
       &:focus-visible {
         border-color: transparent;
         --ds-auro-button-border-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
@@ -167,6 +170,7 @@
         border-color: transparent;
       }
 
+      &:focus,
       &:focus-visible {
         --ds-auro-button-border-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
         --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
@@ -188,6 +192,7 @@
       --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background-inverse-hover, #{v.$ds-advanced-color-button-primary-background-inverse-hover});
     }
 
+    &:focus,
     &:focus-visible {
       --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
     }
@@ -212,6 +217,7 @@
         --ds-auro-button-container-image: var(--ds-advanced-color-button-secondary-background-inverse-hover, #{v.$ds-advanced-color-button-secondary-background-inverse-hover});
       }
 
+      &:focus,
       &:focus-visible {
         --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
       }
@@ -235,6 +241,7 @@
         --ds-auro-button-container-image: var(--ds-advanced-color-button-tertiary-background-inverse-hover, #{v.$ds-advanced-color-button-tertiary-background-inverse-hover});
       }
 
+      &:focus,
       &:focus-visible {
         --ds-auro-button-border-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
         --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
@@ -259,6 +266,7 @@
         --ds-auro-button-border-color: transparent;
       }
 
+      &:focus,
       &:focus-visible {
         border-color: transparent;
         --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
@@ -290,6 +298,7 @@
         border-color: transparent;
       }
 
+      &:focus,
       &:focus-visible {
         --ds-auro-button-border-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
         --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
