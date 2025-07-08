@@ -218,7 +218,8 @@ The button comes with several different shapes available, pill, rounded, and cir
   <auro-button shape="rounded">Rounded Button</auro-button>
   <auro-button shape="pill">Pill Button</auro-button>
   <auro-button shape="circle">
-    <auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
+    <span>Account</span>
+    <auro-icon aria-hidden="true" customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -231,7 +232,8 @@ The button comes with several different shapes available, pill, rounded, and cir
 <auro-button shape="rounded">Rounded Button</auro-button>
 <auro-button shape="pill">Pill Button</auro-button>
 <auro-button shape="circle">
-  <auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
+  <span>Account</span>
+  <auro-icon aria-hidden="true" customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
