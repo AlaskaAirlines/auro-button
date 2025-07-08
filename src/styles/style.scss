@@ -1,7 +1,16 @@
-// Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
-// See LICENSE in the project root for license information.
-
-// ---------------------------------------------------------------------
+/**
+ * @file style.scss
+ * @description
+ *   Main SCSS file for auro-button web component.
+ *   - Imports design tokens, core styles, and utility mixins.
+ *   - Defines button shape and size maps for consistent styling.
+ *   - Provides mixins for shape, size, icon, and outline logic.
+ *   - Applies styles for button states, variants, and accessibility.
+ *   - Organizes code into clear sections for maintainability.
+ *
+ * @copyright Copyright (c) Alaska Air. All rights reserved.
+ * @license   Apache-2.0, see LICENSE in the project root for license information.
+ */
 
 /* stylelint-disable
    scss/dollar-variable-colon-newline-after,
@@ -29,25 +38,42 @@
    scss/no-global-function-names
    */
 
-// Import Auro Sass variables
+/**
+ * ----------------------------------------
+ * 1. Imports and Variables
+ * ----------------------------------------
+ * - Imports design tokens, core styles, and utility mixins.
+ * - Defines global variables for spacing and outlines.
+ */
+
+// Import Auro Sass variables and design tokens
 @use "sass:map";
 @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
 @use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
-// general WCSS imports
+// General WCSS imports
 @use "@aurodesignsystem/webcorestylesheets/src/breakpoints" as bp;
 @use "@aurodesignsystem/webcorestylesheets/src/core";
 @use "@aurodesignsystem/webcorestylesheets/src/animation";
-
 @use "@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
 @use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
-
 @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap";
+@use '@aurodesignsystem/webcorestylesheets/src/utilityClasses/displayProperties';
 
+// Global variables
 $auro-inset-spacing-options: lg;
 $auro-inset-directions: '--squish';
 $defaultFocusOutlineWidth: 4px;
 
+/**
+ * ----------------------------------------
+ * 2. Button Shape and Size Maps
+ * ----------------------------------------
+ * - $button-shapes: Maps shape names to their type (oblong or symmetrical).
+ * - $button-sizes: Maps size names to padding, icon size, and outline size.
+ */
+
+// Define the button shapes and their types
 $button-shapes: (
   'rounded': oblong,
   'pill': oblong,
@@ -57,6 +83,8 @@ $button-shapes: (
   'square': symmetrical
 );
 
+// Define the button sizes and their various properties
+// Maps in this map are based on the shape and/or shape type from the button-shapes map
 $button-sizes: (
   'xs': (
     padding: var(--ds-size-150, #{vac.$ds-size-150}),
@@ -170,47 +198,45 @@ $button-sizes: (
   )
 );
 
-@mixin size-based-styles($size, $shape) {
-  // Get the shape type from the button-shapes map
+/**
+ * ----------------------------------------
+ * 3. Shape and Size Mixins
+ * ----------------------------------------
+ * - Dynamically generates styles for each shape and size combination.
+ * - Mixins: size-and-shape-styles, outline-styles, icon-styles.
+ */
+
+/**
+ * @mixin size-and-shape-styles
+ * @description
+ *   Applies icon and outline styles for a given size and shape.
+ */
+@mixin size-and-shape-styles($size, $shape) {
   $shapeType: map.get($button-shapes, $shape);
-
-  // Get the data from the sizes map for this specific size
   $sizeData: map.get($button-sizes, $size);
-
-  // Get the icon size from the size data
   $iconSizeMap: map.get($sizeData, iconSize);
   $iconSize: map.get($iconSizeMap, $shapeType);
-
-  // Apply the icon styles based on the size and icon size
   @include icon-styles($shape, $size, $iconSize);
 
-  // Get the outline size map from the size data
   $outlineSizeMap: map.get($sizeData, outlineSizeMap);
-
-  // Get the outline size map for all shapes at this size from the map
   $outlineSizeShapeMap: map.get($outlineSizeMap, $shapeType);
-
-  // Apply the outline styles based on the size, shape, and outline size map  
   @include outline-styles($size, $outlineSizeShapeMap, $shape);
 }
 
+/**
+ * @mixin outline-styles
+ * @description
+ *   Sets focus outline and pseudo-border for each variant.
+ */
 @mixin outline-styles($size, $outlineSize, $shape) {
   @each $variant, $outline-width in $outlineSize {
     :host([size='#{$size}'][shape='#{$shape}'][variant='#{$variant}']) {
       .auro-button {
         &:focus,
         &:focus-visible {
-          // We need to adjust the outline width based on the variant and size
-          $outline-width: 
-            if($variant == 'primary', 
-              ($outline-width + 1px), 
-              $outline-width  
-            );
+          $outline-width: if($variant == 'primary', ($outline-width + 1px), $outline-width);
+          box-shadow: inset 0 0 0 $outline-width var(--ds-auro-button-border-inset-color);
 
-          // Set box shadow for focus outline
-          box-shadow: inset 0 0 0 $outline-width var( --ds-auro-button-border-inset-color );
-
-          // Use a pseudo-element to add a border to make the primary variant look inset
           @if $variant == 'primary' {
             $insetAmount: 1px;
 
@@ -223,7 +249,7 @@ $button-sizes: (
               left: 0;
               width: calc(100% - ($insetAmount * 2));
               height: calc(100% - ($insetAmount * 2));
-              border: $insetAmount solid var( --ds-auro-button-border-color );
+              border: $insetAmount solid var(--ds-auro-button-border-color);
             }
           }
         }
@@ -232,8 +258,13 @@ $button-sizes: (
   }
 }
 
+/**
+ * @mixin icon-styles
+ * @description
+ *   Sets icon size for a given shape and size.
+ */
 @mixin icon-styles($shape, $size, $iconSize) {
-   :host([size='#{$size}'][shape=#{$shape}]) {
+  :host([size='#{$size}'][shape=#{$shape}]) {
     ::slotted(auro-icon),
     ::slotted([auro-icon]) {
       --ds-auro-icon-size: #{$iconSize};
@@ -241,14 +272,33 @@ $button-sizes: (
   }
 }
 
-// Style mixin for setting inset styles based on size
+// SHAPE AND SIZE LOOP
+@each $size, $size-value in $button-sizes {
+  @each $shape, $shape-value in $button-shapes {
+    @include size-and-shape-styles($size, $shape);
+  }
+}
+
+/**
+ * ----------------------------------------
+ * 4. Size-based Styles
+ * ----------------------------------------
+ * - Apply styles that are based only on size.
+ * - Mixins: inset-styles
+ */
+
+/**
+ * @mixin inset-styles
+ * @description
+ *   Sets padding and width for .inset class based on size.
+ */
 @mixin inset-styles($size, $padding) {
   :host([size='#{$size}']) {
     .inset {
       padding-inline: $padding;
     }
   }
-
+  
   :host([fluid]),
   :host([fluid=true]) {
     .inset {
@@ -257,17 +307,52 @@ $button-sizes: (
   }
 }
 
-// Loop through the map to generate styles for each size and shape
-@each $size, $size-value in $button-sizes {
-  @each $shape, $shape-value in $button-shapes {
-    @include size-based-styles($size, $shape);
-  }
-}
-
-// Size-based only styles
+// SIZE LOOP
 @each $size, $size-value in $button-sizes {
   @include inset-styles($size, map.get($size-value, padding));
 }
+
+/**
+ * ----------------------------------------
+ * 5. Shape-specific Styles
+ * ----------------------------------------
+ * - Applies styles only for specific shapes.
+ * - Mixins: symmetrical-styles
+ */
+
+/**
+ * @mixin symmetrical-styles
+ * @description
+ *   Hides non-icon content for symmetrical shapes (e.g., circle, square).
+ */
+@mixin symmetrical-styles($shape) {
+  :host([shape='#{$shape}']) {
+    ::slotted(:not(auro-icon):not([auro-icon])) {
+      position: absolute;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      border: 0;
+    }
+  }
+}
+
+// SHAPE LOOP
+@each $shape, $shapeValue in $button-shapes {
+  $shapeType: map.get($button-shapes, $shape);
+  @if $shapeType == 'symmetrical' {
+    @include symmetrical-styles($shape);
+  }
+}
+
+/**
+ * ----------------------------------------
+ * 6. Utility and State Styles
+ * ----------------------------------------
+ * - Handles flat variant, icon alignment, slot pointer events, and button states.
+ */
 
 :host([variant='flat']) {
   display: inline-block;
@@ -283,7 +368,12 @@ slot {
   pointer-events: none;
 }
 
-// Button styles
+/**
+ * ----------------------------------------
+ * 7. Core Button Styles
+ * ----------------------------------------
+ * - Styles for .auro-button, including states, variants, and accessibility.
+ */
 .auro-button {
   position: relative;
   cursor: pointer;
@@ -338,73 +428,4 @@ slot {
     cursor: not-allowed;
     transform: unset;
   }
-
-  &[variant='secondary'] {
-    &:disabled {
-      cursor: not-allowed;
-      transform: unset;
-    }
-  }
-
-  &[variant='tertiary'] {
-    &:disabled {
-      cursor: not-allowed;
-      transform: unset;
-    }
-  }
-
-  &[variant='ghost'] {
-    &:disabled {
-      cursor: not-allowed;
-      transform: unset;
-    }
-  }
-
-  &[onDark] {
-    &:disabled {
-      cursor: not-allowed;
-      transform: unset;
-    }
-
-    &[variant='secondary'] {
-      &:disabled {
-        cursor: not-allowed;
-        transform: unset;
-      }
-    }
-
-    &[variant='tertiary'] {
-      @media (hover: hover) {
-        &:active,
-        &:hover {
-          box-shadow: none;
-        }
-      }
-
-      &:active {
-        box-shadow: none;
-      }
-
-      &:disabled {
-        cursor: not-allowed;
-        transform: unset;
-      }
-    }
-  }
-
-  &:not(.inset){
-    overflow: unset;
-
-    ::slotted(:not(auro-icon):not([auro-icon])) {
-      display: none;
-    }
-  }
 }
-
-[auro-loader] {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-};

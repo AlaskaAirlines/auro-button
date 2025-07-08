@@ -375,6 +375,11 @@ export class AuroButton extends AuroElement {
       'thin': ['secondary'].includes(this.variant),
     };
 
+    const contentClasses = {
+      "contentWrapper": true,
+      "util_displayHiddenVisually": this.loading
+    };
+
     return html`
       <${tag}
         part="${part}"
@@ -397,7 +402,7 @@ export class AuroButton extends AuroElement {
       >
         ${ifDefined(this.loading ? html`<${this.loaderTag} pulse part="loader"></${this.loaderTag}>` : undefined)}
 
-        <span class="contentWrapper">
+        <span class="${classMap(contentClasses)}">
           <span class="textSlot" part="text">
             <slot></slot>
           </span>
