@@ -1,5 +1,22 @@
 # Semantic Release Automated Changelog
 
+# [11.3.0](https://github.com/AlaskaAirlines/auro-button/compare/v11.2.1...v11.3.0) (2025-07-09)
+
+
+### Bug Fixes
+
+* add mapping for oblong button icon sizes and add missing &:focus to &:focus-visible selectors in color.scss to fix click-focus ([4250715](https://github.com/AlaskaAirlines/auro-button/commit/42507157e5ebd951c336c1935b825c7208a9a84e))
+* adjust shape/size button styles and create some in-depth demo pages ([1758011](https://github.com/AlaskaAirlines/auro-button/commit/17580118c95bdf8395fb0d0ef9b1f63c460f0d38))
+* correct various layout issues and doc examples ([3b39674](https://github.com/AlaskaAirlines/auro-button/commit/3b39674adfa6334e9811c5b8dde106d70ec742d0))
+* correctly use size and shape with button styles ([2495b0d](https://github.com/AlaskaAirlines/auro-button/commit/2495b0df81bd878a147e291ce92c75fb7ee2fced))
+* update docs head content ([2e286c2](https://github.com/AlaskaAirlines/auro-button/commit/2e286c2af4504392ea7bb9e8daec5b0671376873))
+
+
+### Features
+
+* add square button and icon-only button font sizing ([15e17a1](https://github.com/AlaskaAirlines/auro-button/commit/15e17a1df98499173d3521a8e41ba567827b3676))
+* update component structure and add new font classes ([dcfb557](https://github.com/AlaskaAirlines/auro-button/commit/dcfb557fa5d84c6152b3866f0aacec707ce4cc5b))
+
 ## [11.2.1](https://github.com/AlaskaAirlines/auro-button/compare/v11.2.0...v11.2.1) (2025-06-24)
 
 
