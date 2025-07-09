@@ -1,8 +1,15 @@
-/* eslint-disable max-lines, curly, jsdoc/no-undefined-types, array-element-newline, line-comment-position, no-inline-comments */
 // Copyright (c) Alaska Air. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
+
+/* eslint-disable
+  lit/no-invalid-html,
+  lit/binding-positions,
+  max-lines,
+  curly,
+  array-element-newline
+*/
 
 import { AuroElement } from "./layoutElement/auroElement.js";
 import { html, literal } from 'lit/static-html.js';
@@ -28,8 +35,6 @@ import loaderVersion from './loaderVersion.js';
  * @csspart text - Apply CSS to text slot.
  * @csspart icon - Apply CSS to icon slot.
  */
-
-/* eslint-disable lit/no-invalid-html, lit/binding-positions */
 
 const ICON_ONLY_SHAPES = ['circle', 'square'];
 
