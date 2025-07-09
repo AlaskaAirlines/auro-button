@@ -299,9 +299,10 @@ $button-sizes: (
     }
   }
   
-  :host([fluid]),
-  :host([fluid=true]) {
-    .inset {
+  :host([fluid]) {
+    display: block;
+
+    .auro-button {
       width: calc(100% - (#{$padding} * 2));
     }
   }
@@ -374,6 +375,11 @@ slot {
  * ----------------------------------------
  * - Styles for .auro-button, including states, variants, and accessibility.
  */
+ :host {
+  display: inline-block;
+  overflow: hidden;
+ }
+
 .auro-button {
   position: relative;
   cursor: pointer;
@@ -387,7 +393,7 @@ slot {
   white-space: nowrap;
   outline: none;
 
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
