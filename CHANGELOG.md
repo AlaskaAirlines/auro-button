@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [11.3.1](https://github.com/AlaskaAirlines/auro-button/compare/v11.3.0...v11.3.1) (2025-07-18)
+
+
+### Bug Fixes
+
+* make fluid buttons correct width [#337](https://github.com/AlaskaAirlines/auro-button/issues/337) ([eb0fefb](https://github.com/AlaskaAirlines/auro-button/commit/eb0fefbcb6ea33e058188088bab9885cad4deaf3))
+* simplify width calculation for thin button style ([8fcde26](https://github.com/AlaskaAirlines/auro-button/commit/8fcde26cb0edf4e2bd3c84f0875f0c3754cb2a25))
+
 # [11.3.0](https://github.com/AlaskaAirlines/auro-button/compare/v11.2.1...v11.3.0) (2025-07-09)
 
 
