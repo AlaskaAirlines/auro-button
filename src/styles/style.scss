@@ -446,7 +446,7 @@ slot {
     }
 
     &.thin {
-      width: calc(100% - calc(2 * #{$thinBorderSize}));
+      width: calc(100% - 2 * #{$thinBorderSize});
     }
 
     &.simple {
