@@ -290,20 +290,18 @@ $button-sizes: (
 /**
  * @mixin inset-styles
  * @description
- *   Sets padding and width for .inset class based on size.
+ *   Sets margin for .contentWrapper with a parented .inset based on size.
+ *   Margin is based on the padding sizes in the $button-sizes map.
  */
-@mixin inset-styles($size, $padding) {
+@mixin inset-styles($size, $margin) {
   :host([size='#{$size}']) {
     .inset {
-      padding-inline: $padding;
-    }
-  }
-  
-  :host([fluid]) {
-    display: block;
-
-    .auro-button {
-      width: calc(100% - (#{$padding} * 2));
+      .contentWrapper {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-inline: $margin;
+      }
     }
   }
 }
@@ -435,3 +433,25 @@ slot {
     transform: unset;
   }
 }
+
+:host([fluid]) {
+  display: block;
+
+  $defaultBorderSize: 2px;
+  $thinBorderSize: 1px;
+
+  .auro-button {
+    &:not(.thin):not(.simple) {
+      width: calc(100% - calc(2 * #{$defaultBorderSize})); 
+    }
+
+    &.thin {
+      width: calc(100% - calc(2 * #{$thinBorderSize}));
+    }
+
+    &.simple {
+      width: 100%;
+    }
+  }
+}
+
