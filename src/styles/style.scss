@@ -442,7 +442,7 @@ slot {
 
   .auro-button {
     &:not(.thin):not(.simple) {
-      width: calc(100% - calc(2 * #{$defaultBorderSize})); 
+      width: calc(100% - 2 * #{$defaultBorderSize});
     }
 
     &.thin {
