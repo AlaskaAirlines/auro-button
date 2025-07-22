@@ -18,7 +18,7 @@ import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
-import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
 import styleCss from "./styles/style-css.js";
 import colorCss from "./styles/color-css.js";
@@ -69,6 +69,8 @@ export class AuroButton extends AuroElement {
     this.fluid = false;
     this.loadingText = this.loadingText || 'Loading...';
     this.variant = 'primary';
+
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
 
     // Support for HTML5 forms
     if (typeof this.attachInternals === 'function') {
@@ -252,7 +254,7 @@ export class AuroButton extends AuroElement {
    *
    */
   static register(name = "auro-button") {
-    RuntimeUtils.default.prototype.registerComponent(name, AuroButton);
+    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroButton);
   }
 
   /**
@@ -355,6 +357,12 @@ export class AuroButton extends AuroElement {
 
     // Return the font size based on the button size and shape
     return sizeMap[this.size] || 'body-default';
+  }
+
+  firstUpdated() {
+    super.firstUpdated();
+
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-button');
   }
 
   /**
