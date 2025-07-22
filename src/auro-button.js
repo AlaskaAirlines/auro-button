@@ -70,6 +70,9 @@ export class AuroButton extends AuroElement {
     this.loadingText = this.loadingText || 'Loading...';
     this.variant = 'primary';
 
+    /**
+     * @private
+     */
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
 
     // Support for HTML5 forms
