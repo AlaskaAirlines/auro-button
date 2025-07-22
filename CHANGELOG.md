@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [11.3.2](https://github.com/AlaskaAirlines/auro-button/compare/v11.3.1...v11.3.2) (2025-07-22)
+
+
+### Bug Fixes
+
+* add component name attr when registering ([4f46e13](https://github.com/AlaskaAirlines/auro-button/commit/4f46e132100c621c574500349fa4ef24c2130969))
+* make runtimeutils private ([20325dc](https://github.com/AlaskaAirlines/auro-button/commit/20325dcbf7c3f42061c8fccb928ebeddfdea862b))
+
 ## [11.3.1](https://github.com/AlaskaAirlines/auro-button/compare/v11.3.0...v11.3.1) (2025-07-18)
 
 
