@@ -367,31 +367,11 @@ $button-sizes: (
   display: inline-flex;
   align-items: center;
   gap: var(--ds-size-100, #{vac.$ds-size-100});
-
-  // Ensure typography utility classes on text don't affect slotted icons
-  ::slotted(auro-icon),
-  ::slotted([auro-icon]),
-  ::slotted(svg) {
-    letter-spacing: normal;
-    text-transform: none;
-    line-height: 1;
-    vertical-align: middle;
-  }
 }
 
 // Prevent inherited font-size from affecting icon layout
 .contentWrapper {
   font-size: 0; // Text sizing is applied by .textSlot (type class)
-}
-
-// Prevent typography classes (heading-*, body-*) from affecting icons assigned to the default slot
-::slotted(auro-icon),
-::slotted([auro-icon]),
-::slotted(svg) {
-  font-size: 0;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
 }
 
 // Note: without this, events on a disabled element will still fire
