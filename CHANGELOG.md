@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [11.3.4](https://github.com/AlaskaAirlines/auro-button/compare/v11.3.3...v11.3.4) (2025-08-19)
+
+
+### Bug Fixes
+
+* icons should not inherit type styles ([66a1230](https://github.com/AlaskaAirlines/auro-button/commit/66a12301e5f10fe00e3e5257fde64ec81ef38115))
+
 ## [11.3.3](https://github.com/AlaskaAirlines/auro-button/compare/v11.3.2...v11.3.3) (2025-08-14)
 
 
