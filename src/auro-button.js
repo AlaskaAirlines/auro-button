@@ -384,7 +384,6 @@ export class AuroButton extends AuroElement {
       "inset": this.showText,
       wrapper: true,
       loading: this.loading,
-      [`${fontSize}`]: true,
 
       // These remove the default borders so we can handle focus borders ourselves
       'simple': !['secondary'].includes(this.variant),
@@ -394,6 +393,12 @@ export class AuroButton extends AuroElement {
     const contentClasses = {
       "contentWrapper": true,
       "util_displayHiddenVisually": this.loading
+    };
+
+    // Type classes should not be applied to the wrapper to avoid affecting icons
+    const textSlotClasses = {
+      textSlot: true,
+      [fontSize]: this.showText
     };
 
     return html`
@@ -419,7 +424,7 @@ export class AuroButton extends AuroElement {
         ${ifDefined(this.loading ? html`<${this.loaderTag} pulse part="loader"></${this.loaderTag}>` : undefined)}
 
         <span class="${classMap(contentClasses)}">
-          <span class="textSlot" part="text">
+          <span class="${classMap(textSlotClasses)}" part="text">
             <slot></slot>
           </span>
         </span>
