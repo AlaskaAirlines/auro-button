@@ -21,9 +21,9 @@
     "node": "^20.x || ^22.x "
   },
   "dependencies": {
-    "@aurodesignsystem/auro-library": "^5.4.0",
+    "@aurodesignsystem/auro-library": "^5.5.2",
     "@aurodesignsystem/auro-loader": "^5.1.2",
-    "@aurodesignsystem/design-tokens": "^8.4.1",
+    "@aurodesignsystem/design-tokens": "^8.4.2",
     "@aurodesignsystem/webcorestylesheets": "10.0.4",
     "chalk": "^5.4.1",
     "lit": "^3.3.0"

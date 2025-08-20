@@ -8,7 +8,9 @@
   lit/binding-positions,
   max-lines,
   curly,
-  array-element-newline
+  array-element-newline,
+  no-magic-numbers,
+  no-underscore-dangle
 */
 
 import { AuroElement } from "./layoutElement/auroElement.js";
@@ -63,6 +65,7 @@ export class AuroButton extends AuroElement {
     this.autofocus = false;
     this.disabled = false;
     this.loading = false;
+    this.static = false;
     this.size = "md";
     this.shape = "rounded";
     this.onDark = false;
@@ -245,6 +248,14 @@ export class AuroButton extends AuroElement {
       buttonRel: {
         type: String,
       },
+
+      /**
+       * If true, the button will be static and not respond to user interactions.
+       */
+      static: {
+        type: Boolean,
+        reflect: true
+      }
     };
   }
 
@@ -362,6 +373,17 @@ export class AuroButton extends AuroElement {
     return sizeMap[this.size] || 'body-default';
   }
 
+  /**
+   * Renders the tag for the component.
+   * @returns {TemplateResult}
+   * @private
+   */
+  get _renderTag() {
+    if (this.static) return literal`span`;
+
+    return this.buttonHref ? literal`a` : literal`button`;
+  }
+
   firstUpdated() {
     super.firstUpdated();
 
@@ -376,7 +398,6 @@ export class AuroButton extends AuroElement {
   renderLayoutDefault() {
 
     const fontSize = this.getFontSize();
-    const tag = this.buttonHref ? literal`a` : literal`button`;
     const part = this.buttonHref ? 'link' : 'button';
 
     const classes = {
@@ -401,12 +422,14 @@ export class AuroButton extends AuroElement {
       [fontSize]: this.showText
     };
 
+    const tabindex = this.tIndex || this.tabindex;
+
     return html`
-      <${tag}
+      <${this._renderTag}
         part="${part}"
         aria-label="${ifDefined(this.loading ? this.loadingText : this.currentAriaLabel || undefined)}"
         aria-labelledby="${ifDefined(this.loading ? undefined : this.currentAriaLabelledBy || undefined)}"
-        tabindex="${ifDefined(this.tIndex || this.tabindex)}"
+        tabindex="${ifDefined(this.static ? -1 : tabindex)}"
         ?autofocus="${this.autofocus}"
         class=${classMap(classes)}
         ?disabled="${this.disabled || this.loading}"
@@ -416,7 +439,7 @@ export class AuroButton extends AuroElement {
         type="${ifDefined(this.type ? this.type : undefined)}"
         variant="${ifDefined(this.variant ? this.variant : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
-        @click="${this.type === 'submit' ? this.surfaceSubmitEvent : undefined}"
+        @click="${!this.static && this.type === 'submit' ? this.surfaceSubmitEvent : undefined}"
         href="${ifDefined(this.buttonHref || undefined)}"
         target="${ifDefined(this.buttonTarget || undefined)}"
         rel="${ifDefined(this.buttonRel || undefined)}"
@@ -428,7 +451,7 @@ export class AuroButton extends AuroElement {
             <slot></slot>
           </span>
         </span>
-      </${tag}>
+      </${this._renderTag}>
     `;
   }
 

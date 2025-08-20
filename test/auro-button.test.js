@@ -299,4 +299,17 @@ describe('auro-button', () => {
 
     expect(el.form).to.be.null;
   })
+
+  it('if static attribute is set', async () => {
+    const el = await fixture(html`
+      <auro-button static>Static Button</auro-button>
+    `);
+
+    const root = el.shadowRoot;
+    const span = root.querySelector('span');
+
+    expect(span).to.not.be.null;
+    expect(root.querySelector('button')).to.be.null;
+    expect(el.hasAttribute('static')).to.be.true;
+  })
 });

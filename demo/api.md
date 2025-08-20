@@ -15,6 +15,7 @@
 | [onDark](#onDark)      |               | `boolean`                                        | false     | Indicates if the button is rendered in dark mode. |
 | [shape](#shape)       |               | `'default', 'rounded', 'pill', 'circle', 'square'` | "rounded" | Defines the shape of the button.                 |
 | [size](#size)        |               | `'xs', 'sm', 'md', 'lg', 'xl'`                   | "md"      | Defines the size of the button.                  |
+| [static](#static)      | `static`      | `boolean`                                        | false     | If true, the button will be static and not respond to user interactions. |
 | [tIndex](#tIndex)      | `tIndex`      | `string`                                         |           | Populates `tabindex` to define the focusable sequence in keyboard navigation. |
 | [tabindex](#tabindex)    | `tabindex`    | `string`                                         |           | Populates `tabindex` to define the focusable sequence in keyboard navigation.<br />Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.<br />Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`. |
 | [title](#title)       | `title`       | `string`                                         |           | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
@@ -141,6 +142,89 @@ This example demonstrates `auro-button` in it's `disabled` state.
 <auro-button variant="secondary" disabled ondark>Secondary</auro-button>
 <auro-button variant="tertiary" disabled ondark>Tertiary</auro-button>
 <auro-button variant="ghost" disabled ondark>Ghost</auro-button>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Static
+
+The `static` attribute creates a button with no interactivity. When applied, the button becomes non-clickable and serves purely as a visual element. This is useful for displaying button-styled elements that need to appear interactive but should not respond to user input, such as buttons within clickable cards or slides.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/static.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/static.html -->
+  <auro-button static>Static Primary Button</auro-button>
+  <auro-button static variant="secondary">Static Secondary Button</auro-button>
+  <auro-button static variant="tertiary">Static Tertiary Button</auro-button>
+  <br><br>
+  <auro-button static fluid>Static Fluid Button</auro-button>
+  <br><br>
+  <auro-button static size="xs">XS Static</auro-button>
+  <auro-button static size="sm">SM Static</auro-button>
+  <auro-button static size="md">MD Static</auro-button>
+  <auro-button static size="lg">LG Static</auro-button>
+  <auro-button static size="xl">XL Static</auro-button>
+  <br><br>
+  <auro-button static shape="pill">
+    <auro-icon name="home" slot="icon" customColor></auro-icon>
+    Static Pill with Icon
+  </auro-button>
+  <auro-button static shape="circle">
+    <auro-icon name="home" customColor></auro-icon>
+  </auro-button>
+  <auro-button static shape="square">
+    <auro-icon name="home" customColor></auro-icon>
+  </auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/static.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/static.html -->
+
+```html
+<auro-button static>Static Primary Button</auro-button>
+<auro-button static variant="secondary">Static Secondary Button</auro-button>
+<auro-button static variant="tertiary">Static Tertiary Button</auro-button>
+<br><br>
+<auro-button static fluid>Static Fluid Button</auro-button>
+<br><br>
+<auro-button static size="xs">XS Static</auro-button>
+<auro-button static size="sm">SM Static</auro-button>
+<auro-button static size="md">MD Static</auro-button>
+<auro-button static size="lg">LG Static</auro-button>
+<auro-button static size="xl">XL Static</auro-button>
+<br><br>
+<auro-button static shape="pill">
+  <auro-icon name="home" slot="icon" customColor></auro-icon>
+  Static Pill with Icon
+</auro-button>
+<auro-button static shape="circle">
+  <auro-icon name="home" customColor></auro-icon>
+</auro-button>
+<auro-button static shape="square">
+  <auro-icon name="home" customColor></auro-icon>
+</auro-button>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+<div class="exampleWrapper--ondark">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/staticOnDark.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/staticOnDark.html -->
+  <auro-button static onDark>Static Primary Button</auro-button>
+  <auro-button static variant="secondary" onDark>Static Secondary Button</auro-button>
+  <auro-button static variant="tertiary" onDark>Static Tertiary Button</auro-button>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/staticOnDark.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/staticOnDark.html -->
+
+```html
+<auro-button static onDark>Static Primary Button</auro-button>
+<auro-button static variant="secondary" onDark>Static Secondary Button</auro-button>
+<auro-button static variant="tertiary" onDark>Static Tertiary Button</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
