@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [11.4.0](https://github.com/AlaskaAirlines/auro-button/compare/v11.3.5...v11.4.0) (2025-08-20)
+
+
+### Features
+
+* add static button functionality [#346](https://github.com/AlaskaAirlines/auro-button/issues/346) ([c9a5412](https://github.com/AlaskaAirlines/auro-button/commit/c9a5412c4006dd77067f501347c5130bb5ef2fc4))
+
 ## [11.3.5](https://github.com/AlaskaAirlines/auro-button/compare/v11.3.4...v11.3.5) (2025-08-20)
 
 
