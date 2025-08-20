@@ -35,7 +35,9 @@
    selector-max-pseudo-class,
    selector-not-notation,
    scss/map-keys-quotes,
-   scss/no-global-function-names
+   scss/no-global-function-names,
+   selector-max-combinators,
+   selector-max-compound-selectors
    */
 
 /**
@@ -467,3 +469,14 @@ slot {
   }
 }
 
+:host([static]) {
+  .auro-button {
+    pointer-events: none;
+    cursor: default;
+    display: inline-flex;
+
+    .contentWrapper {
+       display: inline-flex;
+    }
+  }
+}
