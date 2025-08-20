@@ -97,14 +97,14 @@ $button-sizes: (
         primary: $defaultFocusOutlineWidth,
         secondary: $defaultFocusOutlineWidth,
         tertiary: $defaultFocusOutlineWidth,
-        ghost: 1px
+        ghost: $defaultFocusOutlineWidth
       ),
       symmetrical: (
         primary: 1px,
         secondary: 1px,
         tertiary: 2px,
-        flat: 1px,
-        ghost: 1px
+        flat: 2px,
+        ghost: 2px
       )
     ),
   ),
@@ -119,14 +119,14 @@ $button-sizes: (
         primary: $defaultFocusOutlineWidth,
         secondary: $defaultFocusOutlineWidth,
         tertiary: $defaultFocusOutlineWidth,
-        ghost: 1px
+        ghost: $defaultFocusOutlineWidth
       ),
       symmetrical: (
         primary: 2px,
         secondary: 3px,
         tertiary: 4px,
-        flat: 1px,
-        ghost: 1px
+        flat: 4px,
+        ghost: 4px
       )
     )
   ),
@@ -141,14 +141,14 @@ $button-sizes: (
         primary: $defaultFocusOutlineWidth,
         secondary: $defaultFocusOutlineWidth,
         tertiary: $defaultFocusOutlineWidth,
-        ghost: 1px
+        ghost: $defaultFocusOutlineWidth
       ),
       symmetrical: (
         primary: 3px,
         secondary: 3px,
         tertiary: 4px,
-        flat: 1px,
-        ghost: 1px
+        flat: 4px,
+        ghost: 4px
       )
     )
   ),
@@ -163,14 +163,14 @@ $button-sizes: (
         primary: $defaultFocusOutlineWidth,
         secondary: $defaultFocusOutlineWidth,
         tertiary: $defaultFocusOutlineWidth,
-        ghost: 1px
+        ghost: $defaultFocusOutlineWidth
       ),
       symmetrical: (
         primary: 3.33px,
         secondary: 3px,
         tertiary: 4px,
-        flat: 1px,
-        ghost: 1px
+        flat: 4px,
+        ghost: 4px
       )
     )
   ),
@@ -185,14 +185,14 @@ $button-sizes: (
         primary: $defaultFocusOutlineWidth,
         secondary: $defaultFocusOutlineWidth,
         tertiary: $defaultFocusOutlineWidth,
-        ghost: 1px
+        ghost: $defaultFocusOutlineWidth
       ),
       symmetrical: (
         primary: 4px,
         secondary: 3px,
         tertiary: 4px,
-        flat: 1px,
-        ghost: 1px
+        flat: 4px,
+        ghost: 4px
       )
     )
   )
