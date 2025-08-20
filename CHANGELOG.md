@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [11.3.5](https://github.com/AlaskaAirlines/auro-button/compare/v11.3.4...v11.3.5) (2025-08-20)
+
+
+### Bug Fixes
+
+* update ghost/flat and button outline sizes for consistency [#345](https://github.com/AlaskaAirlines/auro-button/issues/345) ([35c587a](https://github.com/AlaskaAirlines/auro-button/commit/35c587acfebc5a27a517c8fc20e7eace535401df))
+* update ghost/flat outline sizes to 2px [#345](https://github.com/AlaskaAirlines/auro-button/issues/345) ([90c5408](https://github.com/AlaskaAirlines/auro-button/commit/90c5408d9695d6358fa47d76a61c076916e87c49))
+
 ## [11.3.4](https://github.com/AlaskaAirlines/auro-button/compare/v11.3.3...v11.3.4) (2025-08-19)
 
 
