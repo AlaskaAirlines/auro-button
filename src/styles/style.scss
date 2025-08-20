@@ -97,7 +97,7 @@ $button-sizes: (
         primary: $defaultFocusOutlineWidth,
         secondary: $defaultFocusOutlineWidth,
         tertiary: $defaultFocusOutlineWidth,
-        ghost: $defaultFocusOutlineWidth
+        ghost: 2px
       ),
       symmetrical: (
         primary: 1px,
@@ -119,14 +119,14 @@ $button-sizes: (
         primary: $defaultFocusOutlineWidth,
         secondary: $defaultFocusOutlineWidth,
         tertiary: $defaultFocusOutlineWidth,
-        ghost: $defaultFocusOutlineWidth
+        ghost: 2px
       ),
       symmetrical: (
         primary: 2px,
         secondary: 3px,
         tertiary: 4px,
-        flat: 4px,
-        ghost: 4px
+        flat: 2px,
+        ghost: 2px
       )
     )
   ),
@@ -141,14 +141,14 @@ $button-sizes: (
         primary: $defaultFocusOutlineWidth,
         secondary: $defaultFocusOutlineWidth,
         tertiary: $defaultFocusOutlineWidth,
-        ghost: $defaultFocusOutlineWidth
+        ghost: 2px
       ),
       symmetrical: (
         primary: 3px,
         secondary: 3px,
         tertiary: 4px,
-        flat: 4px,
-        ghost: 4px
+        flat: 2px,
+        ghost: 2px
       )
     )
   ),
@@ -163,14 +163,14 @@ $button-sizes: (
         primary: $defaultFocusOutlineWidth,
         secondary: $defaultFocusOutlineWidth,
         tertiary: $defaultFocusOutlineWidth,
-        ghost: $defaultFocusOutlineWidth
+        ghost: 2px
       ),
       symmetrical: (
         primary: 3.33px,
         secondary: 3px,
         tertiary: 4px,
-        flat: 4px,
-        ghost: 4px
+        flat: 2px,
+        ghost: 2px
       )
     )
   ),
@@ -185,14 +185,14 @@ $button-sizes: (
         primary: $defaultFocusOutlineWidth,
         secondary: $defaultFocusOutlineWidth,
         tertiary: $defaultFocusOutlineWidth,
-        ghost: $defaultFocusOutlineWidth
+        ghost: 2px
       ),
       symmetrical: (
         primary: 4px,
         secondary: 3px,
         tertiary: 4px,
-        flat: 4px,
-        ghost: 4px
+        flat: 2px,
+        ghost: 2px
       )
     )
   )
