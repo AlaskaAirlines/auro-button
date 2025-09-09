@@ -446,7 +446,7 @@ export class AuroButton extends AuroElement {
       >
         ${ifDefined(this.loading ? html`<${this.loaderTag} pulse part="loader"></${this.loaderTag}>` : undefined)}
 
-        <span class="${classMap(contentClasses)}">
+        <span class="${classMap(contentClasses)}" part="contentWrapper">
           <span class="${classMap(textSlotClasses)}" part="text">
             <slot></slot>
           </span>
