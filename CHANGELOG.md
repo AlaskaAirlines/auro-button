@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [11.5.0](https://github.com/AlaskaAirlines/auro-button/compare/v11.4.0...v11.5.0) (2025-09-10)
+
+
+### Features
+
+* add CSS part for content wrapper ([a66861c](https://github.com/AlaskaAirlines/auro-button/commit/a66861c01c7efb84719235145c86e70c686c94fb))
+
 # [11.4.0](https://github.com/AlaskaAirlines/auro-button/compare/v11.3.5...v11.4.0) (2025-08-20)
 
 
