@@ -255,6 +255,24 @@ export class AuroButton extends AuroElement {
       static: {
         type: Boolean,
         reflect: true
+      },
+
+      /**
+       * @private
+       */
+      onHover: {
+        attribute: 'data-hover',
+        type: Boolean,
+        reflect: true
+      },
+
+      /**
+       * @private
+       */
+      onActive: {
+        attribute: 'data-active',
+        type: Boolean,
+        reflect: true
       }
     };
   }
@@ -391,6 +409,32 @@ export class AuroButton extends AuroElement {
   }
 
   /**
+   * This is to detect pointer events for hover and active states for styling purposes.
+   * :host with :has selector dont work together in Safari and Firefox
+   * @param {PointerEvent} event - The pointer event.
+   * @private
+   */
+  onPointerEvent(event) {
+    switch (event.type) {
+      case 'pointerenter':
+        this.onHover = true;
+        break;
+      case 'pointerleave':
+        this.onHover = false;
+        break;
+      case 'pointerdown':
+        this.onActive = true;
+        break;
+      case 'pointerup':
+      case 'blur':
+        this.onActive = false;
+        break;
+      default:
+        break;
+    }
+  }
+
+  /**
    * Renders the default layout for the button.
    * @returns {TemplateResult}
    * @private
@@ -440,6 +484,11 @@ export class AuroButton extends AuroElement {
         variant="${ifDefined(this.variant ? this.variant : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
         @click="${!this.static && this.type === 'submit' ? this.surfaceSubmitEvent : undefined}"
+        @pointerenter="${this.onPointerEvent}"
+        @pointerleave="${this.onPointerEvent}"
+        @pointerdown="${this.onPointerEvent}"
+        @pointerup="${this.onPointerEvent}"
+        @blur="${this.onPointerEvent}"
         href="${ifDefined(this.buttonHref || undefined)}"
         target="${ifDefined(this.buttonTarget || undefined)}"
         rel="${ifDefined(this.buttonRel || undefined)}"
