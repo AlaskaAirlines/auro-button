@@ -305,13 +305,9 @@ Any ARIA attributes can be applied directly to the element and will be handled i
 
 `<auro-button aria-label="My Button Label">Auro Button</auro-button>`
 
-
-
 ## Tab Index
 
 For `tabindex`, use `tIndex` instead to avoid duplicated focus interaction.
-
-
 
 ## Theme Support
 

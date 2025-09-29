@@ -15,16 +15,16 @@
 
 import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
-import { AuroLoader } from "@aurodesignsystem/auro-loader/src/auro-loader.js";
+import { AuroLoader } from "@aurodesignsystem/auro-loader/class";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { html, literal } from "lit/static-html.js";
 import { AuroElement } from "./layoutElement/auroElement.js";
 import loaderVersion from "./loaderVersion.js";
-import colorCss from "./styles/color-css.js";
-import shapeSize from "./styles/shapeSize-css.js";
-import styleCss from "./styles/style-css.js";
-import tokensCss from "./styles/tokens-css.js";
+import colorCss from "./styles/color.scss";
+import shapeSize from "./styles/shapeSize.scss";
+import styleCss from "./styles/style.scss";
+import tokensCss from "./styles/tokens.scss";
 
 /**
  * @slot - Default slot for the text of the button.
