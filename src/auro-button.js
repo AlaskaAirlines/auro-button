@@ -13,22 +13,18 @@
   no-underscore-dangle
 */
 
+import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
+import { AuroLoader } from "@aurodesignsystem/auro-loader/src/auro-loader.js";
+import { classMap } from "lit/directives/class-map.js";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { html, literal } from "lit/static-html.js";
 import { AuroElement } from "./layoutElement/auroElement.js";
-import { html, literal } from 'lit/static-html.js';
-
-import { classMap } from 'lit/directives/class-map.js';
-import { ifDefined } from 'lit/directives/if-defined.js';
-
-import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-
-import styleCss from "./styles/style-css.js";
+import loaderVersion from "./loaderVersion.js";
 import colorCss from "./styles/color-css.js";
-import tokensCss from "./styles/tokens-css.js";
 import shapeSize from "./styles/shapeSize-css.js";
-
-import { AuroLoader } from '@aurodesignsystem/auro-loader/src/auro-loader.js';
-import loaderVersion from './loaderVersion.js';
+import styleCss from "./styles/style-css.js";
+import tokensCss from "./styles/tokens-css.js";
 
 /**
  * @slot - Default slot for the text of the button.
@@ -38,7 +34,7 @@ import loaderVersion from './loaderVersion.js';
  * @csspart icon - Apply CSS to icon slot.
  */
 
-const ICON_ONLY_SHAPES = ['circle', 'square'];
+const ICON_ONLY_SHAPES = ["circle", "square"];
 
 /**
  * AuroButton is a custom element that provides a styled, accessible button with support for various states and form association.
@@ -50,7 +46,6 @@ const ICON_ONLY_SHAPES = ['circle', 'square'];
  * @property {boolean} onDark - Indicates if the button is rendered in dark mode.
  */
 export class AuroButton extends AuroElement {
-
   /**
    * Enables form association for this element.
    * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/attachInternals
@@ -70,8 +65,8 @@ export class AuroButton extends AuroElement {
     this.shape = "rounded";
     this.onDark = false;
     this.fluid = false;
-    this.loadingText = this.loadingText || 'Loading...';
-    this.variant = 'primary';
+    this.loadingText = this.loadingText || "Loading...";
+    this.variant = "primary";
 
     /**
      * @private
@@ -79,13 +74,15 @@ export class AuroButton extends AuroElement {
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
 
     // Support for HTML5 forms
-    if (typeof this.attachInternals === 'function') {
+    if (typeof this.attachInternals === "function") {
       this.internals = this.attachInternals();
     } else {
       this.internals = null;
 
       // eslint-disable-next-line no-console
-      console.warn('This browser does not support form association features. Some form-related functionality may not work as expected. Consider using a polyfill or handling click events manually.');
+      console.warn(
+        "This browser does not support form association features. Some form-related functionality may not work as expected. Consider using a polyfill or handling click events manually.",
+      );
     }
 
     /**
@@ -96,7 +93,11 @@ export class AuroButton extends AuroElement {
     /**
      * @private
      */
-    this.loaderTag = versioning.generateTag('auro-loader', loaderVersion, AuroLoader);
+    this.loaderTag = versioning.generateTag(
+      "auro-loader",
+      loaderVersion,
+      AuroLoader,
+    );
 
     /**
      *  @private
@@ -115,18 +116,12 @@ export class AuroButton extends AuroElement {
   }
 
   static get styles() {
-    return [
-      tokensCss,
-      styleCss,
-      colorCss,
-      shapeSize
-    ];
+    return [tokensCss, styleCss, colorCss, shapeSize];
   }
 
   static get properties() {
     return {
-
-      ...super.properties,
+      ...AuroElement.properties,
 
       /**
        * Override layout since it isn't used in this component.
@@ -135,7 +130,7 @@ export class AuroButton extends AuroElement {
       layout: {
         type: Boolean,
         attribute: false,
-        reflect: false
+        reflect: false,
       },
 
       /**
@@ -143,7 +138,7 @@ export class AuroButton extends AuroElement {
        */
       autofocus: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -151,7 +146,7 @@ export class AuroButton extends AuroElement {
        */
       disabled: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -159,7 +154,7 @@ export class AuroButton extends AuroElement {
        */
       fluid: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -167,14 +162,14 @@ export class AuroButton extends AuroElement {
        */
       loading: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
        */
       loadingText: {
-        type: String
+        type: String,
       },
 
       /**
@@ -182,7 +177,7 @@ export class AuroButton extends AuroElement {
        */
       tIndex: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -192,7 +187,7 @@ export class AuroButton extends AuroElement {
        */
       tabindex: {
         type: String,
-        reflect: false
+        reflect: false,
       },
 
       /**
@@ -200,7 +195,7 @@ export class AuroButton extends AuroElement {
        */
       title: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -208,7 +203,7 @@ export class AuroButton extends AuroElement {
        */
       type: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -216,7 +211,7 @@ export class AuroButton extends AuroElement {
        */
       value: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -225,7 +220,7 @@ export class AuroButton extends AuroElement {
        */
       variant: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -254,26 +249,26 @@ export class AuroButton extends AuroElement {
        */
       static: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * @private
        */
       onHover: {
-        attribute: 'data-hover',
+        attribute: "data-hover",
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * @private
        */
       onActive: {
-        attribute: 'data-active',
+        attribute: "data-active",
         type: Boolean,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
@@ -295,7 +290,7 @@ export class AuroButton extends AuroElement {
    * @returns {void}
    */
   focus() {
-    this.renderRoot.querySelector('button').focus();
+    this.renderRoot.querySelector("button").focus();
   }
 
   /**
@@ -346,7 +341,8 @@ export class AuroButton extends AuroElement {
   get currentAriaLabelledBy() {
     if (!this.attributeWatcher) return undefined;
 
-    const ariaLabelledBy = this.attributeWatcher.getObservedAttribute("aria-labelledby");
+    const ariaLabelledBy =
+      this.attributeWatcher.getObservedAttribute("aria-labelledby");
     return ariaLabelledBy || undefined;
   }
 
@@ -365,30 +361,31 @@ export class AuroButton extends AuroElement {
    * @private
    */
   getFontSize() {
-
     // Size map for standard buttons
     const standardButtonSizeMap = {
-      xs: 'body-xs',
-      sm: 'body-sm',
-      md: 'body-default',
-      lg: 'body-lg',
-      xl: 'body-lg'
+      xs: "body-xs",
+      sm: "body-sm",
+      md: "body-default",
+      lg: "body-lg",
+      xl: "body-lg",
     };
 
     // Size map for icon-only buttons
     const iconOnlyButtonSizeMap = {
-      xs: 'heading-xs',
-      sm: 'heading-sm',
-      md: 'heading-sm',
-      lg: 'heading-md',
-      xl: 'heading-lg'
+      xs: "heading-xs",
+      sm: "heading-sm",
+      md: "heading-sm",
+      lg: "heading-md",
+      xl: "heading-lg",
     };
 
     // Determine which map to use based on the shape
-    const sizeMap = this.iconOnly ? iconOnlyButtonSizeMap : standardButtonSizeMap;
+    const sizeMap = this.iconOnly
+      ? iconOnlyButtonSizeMap
+      : standardButtonSizeMap;
 
     // Return the font size based on the button size and shape
-    return sizeMap[this.size] || 'body-default';
+    return sizeMap[this.size] || "body-default";
   }
 
   /**
@@ -405,7 +402,7 @@ export class AuroButton extends AuroElement {
   firstUpdated() {
     super.firstUpdated();
 
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-button');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-button");
   }
 
   /**
@@ -416,17 +413,17 @@ export class AuroButton extends AuroElement {
    */
   onPointerEvent(event) {
     switch (event.type) {
-      case 'pointerenter':
+      case "pointerenter":
         this.onHover = true;
         break;
-      case 'pointerleave':
+      case "pointerleave":
         this.onHover = false;
         break;
-      case 'pointerdown':
+      case "pointerdown":
         this.onActive = true;
         break;
-      case 'pointerup':
-      case 'blur':
+      case "pointerup":
+      case "blur":
         this.onActive = false;
         break;
       default:
@@ -440,30 +437,29 @@ export class AuroButton extends AuroElement {
    * @private
    */
   renderLayoutDefault() {
-
     const fontSize = this.getFontSize();
-    const part = this.buttonHref ? 'link' : 'button';
+    const part = this.buttonHref ? "link" : "button";
 
     const classes = {
       "auro-button": true,
-      "inset": this.showText,
+      inset: this.showText,
       wrapper: true,
       loading: this.loading,
 
       // These remove the default borders so we can handle focus borders ourselves
-      'simple': !['secondary'].includes(this.variant),
-      'thin': ['secondary'].includes(this.variant),
+      simple: !["secondary"].includes(this.variant),
+      thin: ["secondary"].includes(this.variant),
     };
 
     const contentClasses = {
-      "contentWrapper": true,
-      "util_displayHiddenVisually": this.loading
+      contentWrapper: true,
+      util_displayHiddenVisually: this.loading,
     };
 
     // Type classes should not be applied to the wrapper to avoid affecting icons
     const textSlotClasses = {
       textSlot: true,
-      [fontSize]: this.showText
+      [fontSize]: this.showText,
     };
 
     const tabindex = this.tIndex || this.tabindex;
@@ -483,7 +479,7 @@ export class AuroButton extends AuroElement {
         type="${ifDefined(this.type ? this.type : undefined)}"
         variant="${ifDefined(this.variant ? this.variant : undefined)}"
         .value="${ifDefined(this.value ? this.value : undefined)}"
-        @click="${!this.static && this.type === 'submit' ? this.surfaceSubmitEvent : undefined}"
+        @click="${!this.static && this.type === "submit" ? this.surfaceSubmitEvent : undefined}"
         @pointerenter="${this.onPointerEvent}"
         @pointerleave="${this.onPointerEvent}"
         @pointerdown="${this.onPointerEvent}"

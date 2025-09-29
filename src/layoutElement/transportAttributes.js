@@ -5,18 +5,18 @@ const _observers = new WeakMap();
 
 /**
  * Private module-level WeakMap to hold attribute matchers and targets for each host element.
- * Structure: { 
- *   host: { 
- *     matchers: Set<Function>, 
- *     targets: Map<HTMLElement, Map<Function, {removeOriginal: boolean, currentAttributes: Map<string, string>}>> 
- *   } 
+ * Structure: {
+ *   host: {
+ *     matchers: Set<Function>,
+ *     targets: Map<HTMLElement, Map<Function, {removeOriginal: boolean, currentAttributes: Map<string, string>}>>
+ *   }
  * }
  */
 const _transportConfig = new WeakMap();
 
 /**
  * Transfers all matching attributes from a host element to a target element and observes for future changes.
- * 
+ *
  * @param {Object} params - The parameters for the function.
  * @param {HTMLElement} params.host - The host element from which attributes will be transported.
  * @param {HTMLElement} params.target - The target element to which attributes will be transported.
@@ -25,39 +25,52 @@ const _transportConfig = new WeakMap();
  * @returns {Function} A function to detach the observer when no longer needed.
  * @throws {TypeError} If the host or target parameters are not instances of HTMLElement.
  */
-export const transportAttributes = ({ host, target, match, removeOriginal = true }) => {
+export const transportAttributes = ({
+  host,
+  target,
+  match,
+  removeOriginal = true,
+}) => {
   // Guard Clause: Ensure host is valid HTMLElement instance
-  if (typeof host !== 'object' || !(host instanceof HTMLElement)) {
-    throw new TypeError('a11yUtilities.js | transportAttributes | The "host" parameter must be an instance of HTMLElement.');
+  if (typeof host !== "object" || !(host instanceof HTMLElement)) {
+    throw new TypeError(
+      'a11yUtilities.js | transportAttributes | The "host" parameter must be an instance of HTMLElement.',
+    );
   }
 
   // Guard Clause: Ensure target is valid HTMLElement instance
-  if (typeof target !== 'object' || !(target instanceof HTMLElement)) {
-    throw new TypeError('a11yUtilities.js | transportAttributes | The "target" parameter must be an instance of HTMLElement.');
+  if (typeof target !== "object" || !(target instanceof HTMLElement)) {
+    throw new TypeError(
+      'a11yUtilities.js | transportAttributes | The "target" parameter must be an instance of HTMLElement.',
+    );
   }
 
   // Guard Clause: Ensure match is a function
-  if (typeof match !== 'function') {
-    throw new TypeError('a11yUtilities.js | transportAttributes | The "match" parameter must be a function.');
+  if (typeof match !== "function") {
+    throw new TypeError(
+      'a11yUtilities.js | transportAttributes | The "match" parameter must be a function.',
+    );
   }
 
   // Guard Clause: Ensure removeOriginal is a boolean
-  if (typeof removeOriginal !== 'boolean') {
-    throw new TypeError('a11yUtilities.js | transportAttributes | The "removeOriginal" parameter must be a boolean.');
+  if (typeof removeOriginal !== "boolean") {
+    throw new TypeError(
+      'a11yUtilities.js | transportAttributes | The "removeOriginal" parameter must be a boolean.',
+    );
   }
-  
+
   // Register this transport and get cleanup function
   return _registerTransport({
     host,
     target,
     matcher: match,
-    removeOriginal
+    removeOriginal,
   });
 };
 
 /**
  * Registers a matcher and target for a host element and attaches an observer if needed.
- * 
+ *
  * @param {Object} params - The parameters object.
  * @param {HTMLElement} params.host - The host element to observe.
  * @param {HTMLElement} params.target - The target element to receive attributes.
@@ -67,48 +80,54 @@ export const transportAttributes = ({ host, target, match, removeOriginal = true
  * @returns {Function} Function to detach the specific matcher and target pairing.
  * @private
  */
-const _registerTransport = ({ host, target, matcher, removeOriginal = true }) => {
+const _registerTransport = ({
+  host,
+  target,
+  matcher,
+  removeOriginal = true,
+}) => {
   // Initialize config for this host if it doesn't exist
   if (!_transportConfig.has(host)) {
     _transportConfig.set(host, {
       matchers: new Set(),
-      targets: new Map()
+      targets: new Map(),
     });
   }
 
   const config = _transportConfig.get(host);
-  
+
   // Add the matcher to the set of matchers for this host
   config.matchers.add(matcher);
-  
+
   // Initialize target entry if it doesn't exist
   if (!config.targets.has(target)) {
     config.targets.set(target, new Map());
   }
-  
+
   // Store the matcher with its removeOriginal setting for this target
-  config.targets.get(target).set(matcher, { 
+  config.targets.get(target).set(matcher, {
     removeOriginal,
-    currentAttributes: new Map()
+    currentAttributes: new Map(),
   });
-  
+
   // Perform initial attribute transport
   _transportAttributes({ host, target, matcher, removeOriginal });
-  
+
   // Attach observer
   _attachObserver(host);
-  
+
   // Return cleanup function and utility functions
   return {
     cleanup: () => _cleanupTransport(host, target, matcher),
     getObservedAttributes: () => _getObservedAttributes(host, target, matcher),
-    getObservedAttribute: (attr) => _getObservedAttribute(host, target, matcher, attr),
-  }
+    getObservedAttribute: (attr) =>
+      _getObservedAttribute(host, target, matcher, attr),
+  };
 };
 
 /**
  * Cleans up resources associated with a specific matcher and target for a host element.
- * 
+ *
  * @param {HTMLElement} host - The host element
  * @param {HTMLElement} target - The target element
  * @param {Function} matcher - The matcher function
@@ -117,18 +136,18 @@ const _registerTransport = ({ host, target, matcher, removeOriginal = true }) =>
 const _cleanupTransport = (host, target, matcher) => {
   const config = _transportConfig.get(host);
   if (!config) return;
-  
+
   // Remove this matcher from this target
   const targetMatchers = config.targets.get(target);
   if (targetMatchers) {
     targetMatchers.delete(matcher);
-    
+
     // If this target has no more matchers, remove it
     if (targetMatchers.size === 0) {
       config.targets.delete(target);
     }
   }
-  
+
   // Check if this matcher is still used by any target
   let matcherStillUsed = false;
   for (const matcherMap of config.targets.values()) {
@@ -137,12 +156,12 @@ const _cleanupTransport = (host, target, matcher) => {
       break;
     }
   }
-  
+
   // If not used anymore, remove from matchers set
   if (!matcherStillUsed) {
     config.matchers.delete(matcher);
   }
-  
+
   // If no more targets or matchers, detach observer
   if (config.targets.size === 0 || config.matchers.size === 0) {
     _detachObserver(host);
@@ -151,7 +170,7 @@ const _cleanupTransport = (host, target, matcher) => {
 
 /**
  * Generic function to transport attributes from a host element to a target element.
- * 
+ *
  * @param {Object} params - The parameters object.
  * @param {HTMLElement} params.host - The host element from which to transport attributes.
  * @param {HTMLElement} params.target - The target element to which attributes will be transported.
@@ -160,10 +179,16 @@ const _cleanupTransport = (host, target, matcher) => {
  * @returns {void}
  * @private
  */
-const _transportAttributes = ({ host, target, matcher, removeOriginal = true }) => {
+const _transportAttributes = ({
+  host,
+  target,
+  matcher,
+  removeOriginal = true,
+}) => {
   // Get a list of all matching attributes on the host element and their values
-  const matchingAttributes = host.getAttributeNames()
-    .filter(attr => matcher(attr))
+  const matchingAttributes = host
+    .getAttributeNames()
+    .filter((attr) => matcher(attr))
     .reduce((acc, attr) => {
       acc[attr] = host.getAttribute(attr);
       return acc;
@@ -181,7 +206,7 @@ const _transportAttributes = ({ host, target, matcher, removeOriginal = true }) 
 
 /**
  * Attaches a MutationObserver to the host element to monitor attribute changes.
- * 
+ *
  * @param {HTMLElement} host - The element to observe for attribute changes.
  * @returns {MutationObserver} The observer instance.
  * @private
@@ -196,13 +221,13 @@ const _attachObserver = (host) => {
   const observer = new MutationObserver((mutations) => {
     const config = _transportConfig.get(host);
     if (!config) return;
-    
+
     // For each mutation affecting attributes
     mutations
-      .filter(mutation => mutation.type === 'attributes')
-      .forEach(mutation => {
+      .filter((mutation) => mutation.type === "attributes")
+      .forEach((mutation) => {
         const attributeName = mutation.attributeName;
-        
+
         // Find matchers that care about this attribute
         for (const matcher of config.matchers) {
           if (matcher(attributeName)) {
@@ -214,7 +239,7 @@ const _attachObserver = (host) => {
                   host,
                   target,
                   matcher,
-                  removeOriginal
+                  removeOriginal,
                 });
               }
             }
@@ -225,16 +250,16 @@ const _attachObserver = (host) => {
 
   // Start observing attribute changes
   observer.observe(host, { attributes: true });
-  
+
   // Store the observer
   _observers.set(host, observer);
-  
+
   return observer;
 };
 
 /**
  * Detaches and cleans up the MutationObserver for a given host element.
- * 
+ *
  * @param {HTMLElement} host - The element whose observer should be detached.
  * @private
  */
@@ -244,7 +269,7 @@ const _detachObserver = (host) => {
     observer.disconnect();
     _observers.delete(host);
   }
-  
+
   // Clean up the transport config as well
   if (_transportConfig.has(host)) {
     _transportConfig.delete(host);
@@ -262,10 +287,10 @@ const _detachObserver = (host) => {
 const _getMatcherConfig = (host, target, matcher) => {
   const config = _transportConfig.get(host);
   if (!config) return undefined;
-  
+
   const targetMatchers = config.targets.get(target);
   if (!targetMatchers) return undefined;
-  
+
   return targetMatchers.get(matcher);
 };
 
@@ -293,6 +318,7 @@ const _getObservedAttribute = (host, target, matcher, attr) => {
 
 const _getObservedAttributes = (host, target, matcher) => {
   const matcherConfig = _getMatcherConfig(host, target, matcher);
-  if (matcherConfig) return Array.from(matcherConfig.currentAttributes.entries());
+  if (matcherConfig)
+    return Array.from(matcherConfig.currentAttributes.entries());
   return [];
 };
