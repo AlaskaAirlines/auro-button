@@ -1,1 +1,4 @@
-./node_modules/.bin/npm-run-all preCommit linters test
+# .husky/pre-commit
+
+# npx auro test
+# npx lint-staged
