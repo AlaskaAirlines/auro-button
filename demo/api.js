@@ -1,9 +1,10 @@
-import { toggledTextExample } from "../apiExamples/toggledText";
 import { roundedRightAlignExample } from "../apiExamples/roundedRightAlign";
+import { toggledTextExample } from "../apiExamples/toggledText";
 
-import '../index.js';
+import "../index.js";
 
 export function initExamples(initCount) {
+  // biome-ignore lint: no-unused-vars
   initCount = initCount || 0;
 
   try {

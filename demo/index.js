@@ -1,12 +1,14 @@
-import { AuroButton } from '../src/auro-button.js';
+import { AuroButton } from "../src/auro-button.js";
 
 AuroButton.register();
-AuroButton.register('custom-button');
+AuroButton.register("custom-button");
 
 export function initExamples(initCount) {
+  // biome-ignore lint: no-unused-vars
   initCount = initCount || 0;
 
   try {
+    console.log("Initializing examples");
   } catch {
     if (initCount <= 20) {
       // setTimeout handles issue where content is sometimes loaded after the functions get called
