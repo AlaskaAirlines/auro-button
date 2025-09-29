@@ -1,4 +1,5 @@
 # .husky/pre-commit
 
-# npx auro test
-# npx lint-staged
+npm run build:version
+npx auro test
+npx lint-staged

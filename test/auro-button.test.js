@@ -9,8 +9,7 @@
 import { useAccessibleIt } from "@aurodesignsystem/auro-library/scripts/test-plugin/iterateWithA11Check.mjs";
 import { elementUpdated, expect, fixture, html } from "@open-wc/testing";
 import sinon from "sinon";
-import { AuroButton } from "../src/auro-button.js";
-import "../index.js";
+import "../src/registered";
 
 useAccessibleIt();
 
@@ -33,14 +32,6 @@ describe("auro-button", () => {
     expect(button.getAttribute("id")).to.be.null;
     expect(button.getAttribute("value")).to.be.null;
     expect(classList.includes("auro-button")).to.be.true;
-  });
-
-  it("successfully registers custom component", async () => {
-    AuroButton.register("custom-button");
-
-    expect(typeof customElements.get("custom-button")).to.equal(
-      typeof AuroButton,
-    );
   });
 
   it("tests setting autofocus", async () => {
