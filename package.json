@@ -25,12 +25,12 @@
     "lit": "^3.3.1"
   },
   "devDependencies": {
-    "@aurodesignsystem/auro-cli": "^3.0.3",
+    "@aurodesignsystem/auro-cli": "npm:@aurodesignsystem-dev/auro-cli@^0.0.0-pr168.0",
+    "@aurodesignsystem/auro-config": "^1.3.0",
     "@aurodesignsystem/auro-library": "^5.5.3",
     "@aurodesignsystem/auro-loader": "^6.0.0",
     "@aurodesignsystem/design-tokens": "^8.5.0",
     "@aurodesignsystem/webcorestylesheets": "10.1.0",
-    "@aurodesignsystem/auro-config": "^1.3.0",
     "husky": "^9.1.7",
     "sinon": "^20.0.0"
   },
