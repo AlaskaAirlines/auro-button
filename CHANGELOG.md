@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [11.5.1](https://github.com/AlaskaAirlines/auro-button/compare/v11.5.0...v11.5.1) (2025-10-01)
+
+
+### Bug Fixes
+
+* set tokens on `:host` level to allow customization [#354](https://github.com/AlaskaAirlines/auro-button/issues/354) ([c045f10](https://github.com/AlaskaAirlines/auro-button/commit/c045f10ef622d86caae47abba3b0b36ab3269cac))
+
 # [11.5.0](https://github.com/AlaskaAirlines/auro-button/compare/v11.4.0...v11.5.0) (2025-09-10)
 
 
