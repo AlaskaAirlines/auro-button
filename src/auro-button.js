@@ -43,7 +43,8 @@ const ICON_ONLY_SHAPES = ["circle", "square"];
  * @property {'xs', 'sm', 'md', 'lg', 'xl'} size - Defines the size of the button.
  * @property {'primary', 'secondary', 'tertiary', 'ghost', 'flat'} variant - Sets the button variant.
  * @property {'submit', 'reset', 'button'} type - The type of button. Matches HTML5 Button Spec.
- * @property {boolean} onDark - Indicates if the button is rendered in dark mode.
+ * @property {boolean} onDark - DEPRECATED - use `appearance` property
+ * @property {'default', 'inverse'} appearance - Defines whether the button will be on lighter or darker backgrounds.
  */
 export class AuroButton extends AuroElement {
   /**
@@ -63,7 +64,6 @@ export class AuroButton extends AuroElement {
     this.static = false;
     this.size = "md";
     this.shape = "rounded";
-    this.onDark = false;
     this.fluid = false;
     this.loadingText = this.loadingText || "Loading...";
     this.variant = "primary";
