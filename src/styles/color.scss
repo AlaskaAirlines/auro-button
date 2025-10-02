@@ -162,7 +162,8 @@
 // ONDARK DEFAULT / PRIMARY
 
 
-:host([onDark]) {
+:host([onDark]),
+:host([appearance="inverse"]) {
   --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border-inverse, #{v.$ds-advanced-color-button-primary-border-inverse});
   --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
   --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background-inverse, #{v.$ds-advanced-color-button-primary-background-inverse});
@@ -171,17 +172,20 @@
   --ds-auro-button-text-color: var(--ds-advanced-color-button-primary-text-inverse, #{v.$ds-advanced-color-button-primary-text-inverse});
 }
 
-:host([ondark]:not([disabled]):is([data-hover], [data-active])) {
+:host([ondark]:not([disabled]):is([data-hover], [data-active])),
+:host([appearance="inverse"]:not([disabled]):is([data-hover], [data-active])) {
   --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border-inverse-hover, #{v.$ds-advanced-color-button-primary-border-inverse-hover});
   --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background-inverse-hover, #{v.$ds-advanced-color-button-primary-background-inverse-hover});
   --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background-inverse-hover, #{v.$ds-advanced-color-button-primary-background-inverse-hover});
 }
 
-:host([ondark]:focus-within) {
+:host([ondark]:focus-within),
+:host([appearance="inverse"]:focus-within) {
   --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused, #{v.$ds-advanced-color-state-focused});
 }
 
-:host([ondark][disabled]) {
+:host([ondark][disabled]),
+:host([appearance="inverse"][disabled]) {
   --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border-inverse-disabled, #{v.$ds-advanced-color-button-primary-border-inverse-disabled});
   --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background-inverse-disabled, #{v.$ds-advanced-color-button-primary-background-inverse-disabled});
   --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background-inverse-disabled, #{v.$ds-advanced-color-button-primary-background-inverse-disabled});
@@ -189,7 +193,8 @@
 }
 
 // ONDARK SECONDARY
-:host([ondark][variant='secondary']) {
+:host([ondark][variant='secondary']),
+:host([appearance="inverse"][variant='secondary']) {
   --ds-auro-button-container-color: transparent;
   --ds-auro-button-container-image: transparent;
   --ds-auro-button-border-color: var(--ds-advanced-color-button-secondary-border-inverse, #{v.$ds-advanced-color-button-secondary-border-inverse});
@@ -197,23 +202,27 @@
   --ds-auro-button-loader-color: var(--ds-advanced-color-button-secondary-text-inverse, #{v.$ds-advanced-color-button-secondary-text-inverse});
 }
 
-:host([ondark][variant='secondary']:not([disabled]):is([data-hover], [data-active])) {
+:host([ondark][variant='secondary']:not([disabled]):is([data-hover], [data-active])),
+:host([appearance="inverse"][variant='secondary']:not([disabled]):is([data-hover], [data-active])) {
   --ds-auro-button-text-color: var(--ds-advanced-color-button-secondary-text-inverse, #{v.$ds-advanced-color-button-secondary-text-inverse});
   --ds-auro-button-container-color: var(--ds-advanced-color-button-secondary-background-inverse-hover, #{v.$ds-advanced-color-button-secondary-background-inverse-hover});
   --ds-auro-button-container-image: var(--ds-advanced-color-button-secondary-background-inverse-hover, #{v.$ds-advanced-color-button-secondary-background-inverse-hover});
 }
 
-:host([ondark][variant='secondary']:focus-within) {
+:host([ondark][variant='secondary']:focus-within),
+:host([appearance="inverse"][variant='secondary']:focus-within) {
   --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
 }
 
-:host([ondark][variant='secondary'][disabled]) {
+:host([ondark][variant='secondary'][disabled]),
+:host([appearance="inverse"][variant='secondary'][disabled]) {
   --ds-auro-button-text-color: var(--ds-basic-color-texticon-inverse-disabled, #{v.$ds-basic-color-texticon-inverse-disabled});
   --ds-auro-button-border-color: var(--ds-advanced-color-button-secondary-border-inverse-disabled, #{v.$ds-advanced-color-button-secondary-border-inverse-disabled});
 }
 
 // ONDARK TERTIARY
-:host([ondark][variant='tertiary']) {
+:host([ondark][variant='tertiary']),
+:host([appearance="inverse"][variant='tertiary']) {
   --ds-auro-button-container-color: var(--ds-advanced-color-button-tertiary-background-inverse, #{v.$ds-advanced-color-button-tertiary-background-inverse});
   --ds-auro-button-container-image: var(--ds-advanced-color-button-tertiary-background-inverse, #{v.$ds-advanced-color-button-tertiary-background-inverse});
   --ds-auro-button-border-color: transparent;
@@ -221,22 +230,26 @@
   --ds-auro-button-loader-color: var(--ds-advanced-color-button-tertiary-text-inverse, #{v.$ds-advanced-color-button-tertiary-text-inverse});
 }
 
-:host([ondark][variant='tertiary']:not([disabled]):is([data-hover], [data-active])) {
+:host([ondark][variant='tertiary']:not([disabled]):is([data-hover], [data-active])),
+:host([appearance="inverse"][variant='tertiary']:not([disabled]):is([data-hover], [data-active])) {
   --ds-auro-button-container-color: var(--ds-advanced-color-button-tertiary-background-inverse-hover, #{v.$ds-advanced-color-button-tertiary-background-inverse-hover});
   --ds-auro-button-container-image: var(--ds-advanced-color-button-tertiary-background-inverse-hover, #{v.$ds-advanced-color-button-tertiary-background-inverse-hover});
 }
 
-:host([ondark][variant='tertiary']:focus-within) {
+:host([ondark][variant='tertiary']:focus-within),
+:host([appearance="inverse"][variant='tertiary']:focus-within) {
   --ds-auro-button-border-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
   --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
 }
 
-:host([ondark][variant='tertiary'][disabled]) {
+:host([ondark][variant='tertiary'][disabled]),
+:host([appearance="inverse"][variant='tertiary'][disabled]) {
   --ds-auro-button-text-color: var(--ds-basic-color-texticon-inverse-disabled, #{v.$ds-basic-color-texticon-inverse-disabled});
 }
 
 // ONDARK GHOST
-:host([ondark][variant='ghost']) {
+:host([ondark][variant='ghost']),
+:host([appearance="inverse"][variant='ghost']) {
   --ds-auro-button-container-color: transparent;
   --ds-auro-button-container-image: transparent;
   --ds-auro-button-border-color: transparent;
@@ -244,23 +257,27 @@
   --ds-auro-button-loader-color: var(--ds-advanced-color-button-ghost-text-inverse, #{v.$ds-advanced-color-button-ghost-text-inverse});
 }
 
-:host([ondark][variant='ghost']:not([disabled]):is([data-hover], [data-active])) {
+:host([ondark][variant='ghost']:not([disabled]):is([data-hover], [data-active])),
+:host([appearance="inverse"][variant='ghost']:not([disabled]):is([data-hover], [data-active])) {
   --ds-auro-button-container-color: var(--ds-advanced-color-button-ghost-background-inverse-hover, #{v.$ds-advanced-color-button-ghost-background-inverse-hover});
   --ds-auro-button-container-image: var(--ds-advanced-color-button-ghost-background-inverse-hover, #{v.$ds-advanced-color-button-ghost-background-inverse-hover});
   --ds-auro-button-border-color: transparent;
 }
 
-:host([ondark][variant='ghost']:focus-within) {
+:host([ondark][variant='ghost']:focus-within),
+:host([appearance="inverse"][variant='ghost']:focus-within) {
   border-color: transparent;
   --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
 }
 
-:host([ondark][variant='ghost'][disabled]) {
+:host([ondark][variant='ghost'][disabled]),
+:host([appearance="inverse"][variant='ghost'][disabled]) {
   --ds-auro-button-text-color: var(--ds-basic-color-texticon-inverse-disabled, #{v.$ds-basic-color-texticon-inverse-disabled});
 }
 
 // ONDARK FLAT
-:host([ondark][variant='flat']) {
+:host([ondark][variant='flat']),
+:host([appearance="inverse"][variant='flat']) {
   .auro-button {
     color: var(--ds-advanced-color-button-flat-text-inverse, #{v.$ds-advanced-color-button-flat-text-inverse});
     background-color: transparent;
@@ -284,7 +301,8 @@
   }
 }
 
-:host([ondark][variant='flat']:focus-within) {
+:host([ondark][variant='flat']:focus-within),
+:host([appearance="inverse"][variant='flat']:focus-within) {
   --ds-auro-button-border-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
   --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
 }
