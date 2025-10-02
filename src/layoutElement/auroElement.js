@@ -2,7 +2,6 @@ import { LitElement } from "lit";
 import { transportAllA11yAttributes } from "./a11yUtilities.js";
 
 export class AuroElement extends LitElement {
-
   /**
    * @type {Object} return object from transportAttributes via a11yUtilities
    * @property {Function} cleanup - Function to clean up the attribute watcher.
@@ -14,7 +13,6 @@ export class AuroElement extends LitElement {
 
   static get properties() {
     return {
-
       /**
        * Defines the layout of an element.
        * @default {'default'}
@@ -22,9 +20,9 @@ export class AuroElement extends LitElement {
       layout: {
         type: String,
         attribute: "layout",
-        reflect: true
+        reflect: true,
       },
-      
+
       /**
        * Defines the shape of an element.
        * @property {'default', 'rounded', 'pill', 'circle'}
@@ -33,7 +31,7 @@ export class AuroElement extends LitElement {
       shape: {
         type: String,
         attribute: "shape",
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -44,17 +42,17 @@ export class AuroElement extends LitElement {
       size: {
         type: String,
         attribute: "size",
-        reflect: true
+        reflect: true,
       },
 
-      /** 
+      /**
        * This Boolean attribute lets you specify that the element should be rendered in dark mode.
        * @default {false}
        */
       onDark: {
         type: Boolean,
         attribute: "ondark",
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -66,24 +64,23 @@ export class AuroElement extends LitElement {
        */
       wrapper: {
         attribute: false,
-        reflect: false
-      }
+        reflect: false,
+      },
     };
   }
 
-  
-
   resetShapeClasses() {
     if (this.shape && this.size) {
-
       if (this.wrapper) {
         this.wrapper.classList.forEach((className) => {
-          if (className.startsWith('shape-')) {
+          if (className.startsWith("shape-")) {
             this.wrapper.classList.remove(className);
           }
         });
 
-        this.wrapper.classList.add(`shape-${this.shape.toLowerCase()}-${this.size.toLowerCase()}`);
+        this.wrapper.classList.add(
+          `shape-${this.shape.toLowerCase()}-${this.size.toLowerCase()}`,
+        );
       }
     }
   }
@@ -92,7 +89,7 @@ export class AuroElement extends LitElement {
     if (this.layout) {
       if (this.wrapper) {
         this.wrapper.classList.forEach((className) => {
-          if (className.startsWith('layout-')) {
+          if (className.startsWith("layout-")) {
             this.wrapper.classList.remove(className);
           }
         });
@@ -108,7 +105,11 @@ export class AuroElement extends LitElement {
   }
 
   updated(changedProperties) {
-    if (changedProperties.has('layout') || changedProperties.has('shape') || changedProperties.has('size')) {
+    if (
+      changedProperties.has("layout") ||
+      changedProperties.has("shape") ||
+      changedProperties.has("size")
+    ) {
       this.updateComponentArchitecture();
     }
   }
@@ -117,10 +118,13 @@ export class AuroElement extends LitElement {
     super.firstUpdated();
 
     // Set a reference to the wrapper element in the shadow DOM
-    this.wrapper = this.shadowRoot.querySelector('.wrapper');
+    this.wrapper = this.shadowRoot.querySelector(".wrapper");
 
     // Initialize the transportation of ARIA attributes to the target element and get the disconnect function for cleanup
-    this.attributeWatcher = transportAllA11yAttributes({ host: this, target: this.shadowRoot.querySelector('.wrapper') });
+    this.attributeWatcher = transportAllA11yAttributes({
+      host: this,
+      target: this.shadowRoot.querySelector(".wrapper"),
+    });
   }
 
   disconnectedCallback() {
@@ -140,10 +144,13 @@ export class AuroElement extends LitElement {
       return this.renderLayout();
     } catch (error) {
       // failed to get the defined layout
-      console.error('Failed to get the defined layout - using the default layout', error); // eslint-disable-line no-console
+      console.error(
+        "Failed to get the defined layout - using the default layout",
+        error,
+      ); // eslint-disable-line no-console
 
       // fallback to the default layout
-      return this.getLayout('default');
+      return this.getLayout("default");
     }
   }
 }

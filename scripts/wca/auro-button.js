@@ -1,5 +1,4 @@
-
-import { AuroButton } from '../../src/auro-button.js';
+import { AuroButton } from "../../src/auro-button.js";
 
 /** */
 class AuroButtonWCA extends AuroButton {}
