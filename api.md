@@ -12,9 +12,9 @@
 | [fluid](#fluid)       | `fluid`       | `boolean`                                        | false     | Alters the shape of the button to be full width of its parent container. |
 | [loading](#loading)     | `loading`     | `boolean`                                        | false     | If set to true button text will be replaced with `auro-loader` and become disabled. |
 | [loadingText](#loadingText) | `loadingText` | `string`                                         |           | Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used. |
-| [onDark](#onDark)      |               | `boolean`                                        | false     | Indicates if the button is rendered in dark mode. |
-| [shape](#shape)       |               | `'default', 'rounded', 'pill', 'circle', 'square'` | "rounded" | Defines the shape of the button.                 |
-| [size](#size)        |               | `'xs', 'sm', 'md', 'lg', 'xl'`                   | "md"      | Defines the size of the button.                  |
+| [onDark](#onDark)      | `ondark`      | `boolean`                                        | false     | Indicates if the button is rendered in dark mode. |
+| [shape](#shape)       | `shape`       | `'default', 'rounded', 'pill', 'circle', 'square'` | "rounded" | Defines the shape of the button.                 |
+| [size](#size)        | `size`        | `'xs', 'sm', 'md', 'lg', 'xl'`                   | "md"      | Defines the size of the button.                  |
 | [static](#static)      | `static`      | `boolean`                                        | false     | If true, the button will be static and not respond to user interactions. |
 | [tIndex](#tIndex)      | `tIndex`      | `string`                                         |           | Populates `tabindex` to define the focusable sequence in keyboard navigation. |
 | [tabindex](#tabindex)    | `tabindex`    | `string`                                         |           | Populates `tabindex` to define the focusable sequence in keyboard navigation.<br />Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.<br />Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`. |
@@ -22,6 +22,14 @@
 | [type](#type)        | `type`        | `'submit', 'reset', 'button'`                    |           | The type of button. Matches HTML5 Button Spec.   |
 | [value](#value)       | `value`       | `string`                                         |           | Defines the value associated with the button which is submitted with the form data. |
 | [variant](#variant)     | `variant`     | `'primary', 'secondary', 'tertiary', 'ghost', 'flat'` | "primary" | Sets the button variant.                         |
+
+## Methods
+
+| Method                        | Type       |
+|-------------------------------|------------|
+| [resetLayoutClasses](#resetLayoutClasses)          | `(): void` |
+| [resetShapeClasses](#resetShapeClasses)           | `(): void` |
+| [updateComponentArchitecture](#updateComponentArchitecture) | `(): void` |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 # API Examples
@@ -430,23 +438,23 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
 
 ```js
 export function toggledTextExample() {
-  const toggledTextElem = document.querySelector('#toggledTextElem');
+  const toggledTextElem = document.querySelector("#toggledTextElem");
 
   // The mouseover and mouseout events are to simulate toggling text for mouse users
-  toggledTextElem.addEventListener('mouseover', () => {
+  toggledTextElem.addEventListener("mouseover", () => {
     toggledTextElem.shape = "pill";
   });
 
-  toggledTextElem.addEventListener('mouseout', () => {
+  toggledTextElem.addEventListener("mouseout", () => {
     toggledTextElem.shape = "circle";
   });
 
   // The focusin and focusout events are to simulate toggling text for keyboard users
-  toggledTextElem.addEventListener('focusin', () => {
+  toggledTextElem.addEventListener("focusin", () => {
     toggledTextElem.shape = "pill";
   });
 
-  toggledTextElem.addEventListener('focusout', () => {
+  toggledTextElem.addEventListener("focusout", () => {
     toggledTextElem.shape = "circle";
   });
 }
@@ -488,23 +496,23 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 
 ```js
 export function roundedRightAlignExample() {
-  const rightAlignElem = document.querySelector('#rightAlignElem');
+  const rightAlignElem = document.querySelector("#rightAlignElem");
 
   // The mouseover and mouseout events are to simulate toggling text for mouse users
-  rightAlignElem.addEventListener('mouseover', () => {
+  rightAlignElem.addEventListener("mouseover", () => {
     rightAlignElem.shape = "pill";
   });
 
-  rightAlignElem.addEventListener('mouseout', () => {
+  rightAlignElem.addEventListener("mouseout", () => {
     rightAlignElem.shape = "circle";
   });
 
   // The focusin and focusout events are to simulate toggling text for keyboard users
-  rightAlignElem.addEventListener('focusin', () => {
+  rightAlignElem.addEventListener("focusin", () => {
     rightAlignElem.shape = "pill";
   });
 
-  rightAlignElem.addEventListener('focusout', () => {
+  rightAlignElem.addEventListener("focusout", () => {
     rightAlignElem.shape = "circle";
   });
 }
