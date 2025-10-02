@@ -19,14 +19,14 @@
 </auro-accordion>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/onDark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/onDark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/inverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -49,14 +49,14 @@ This example demonstrates `auro-button` in it's `disabled` state.
 </auro-accordion>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledOnDark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledInverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabledOnDark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabledInverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -79,14 +79,14 @@ The `static` attribute creates a button with no interactivity. When applied, the
 </auro-accordion>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/staticOnDark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/staticInverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/staticOnDark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/staticInverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -270,14 +270,14 @@ Use the `loading` attribute to alter the content to the shimmering dots to alert
 </auro-accordion>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loadingOnDark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loadingInverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loadingOnDark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loadingInverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>

@@ -47,19 +47,19 @@ In cases were the action of the button would not fit the criteria above, it is m
 
 </auro-accordion>
 
-## On Dark
+## Visual state on Dark Backgrounds
 
-These examples illustrate the core button types and a `disabled` state on dark backgrounds using the `onDark` attribute.
+These examples illustrate the core button types on dark backgrounds using the `appearance="inverse"` attribute .
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/onDark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/onDark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/inverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -82,14 +82,14 @@ This example demonstrates `auro-button` in it's `disabled` state.
 </auro-accordion>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledOnDark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledInverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabledOnDark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabledInverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
