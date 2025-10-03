@@ -28,6 +28,8 @@ import tokensCss from "./styles/tokens.scss";
 
 /**
  * @slot - Default slot for the text of the button.
+ * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button.
+ * @slot ariaLabel.loading - Use this slot to pass an aria-label to the HTML5 button when in loading state.
  * @csspart button - Apply CSS to HTML5 button.
  * @csspart loader - Apply CSS to auro-loader.
  * @csspart text - Apply CSS to text slot.
@@ -166,7 +168,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
+       * (Deprecated) Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
        */
       loadingText: {
         type: String,
@@ -432,6 +434,19 @@ export class AuroButton extends AuroElement {
   }
 
   /**
+   * Gets the text content of a named slot.
+   * @returns {String}
+   * @private
+   */
+  getSlotText(name) {
+    const slot = this.shadowRoot?.querySelector(`slot[name="${name}"]`);
+    const nodes = slot?.assignedNodes({ flatten: true }) || [];
+    const text = nodes.map(n => n.textContent?.trim()).join('').trim();
+    return text || null;
+  }
+
+
+  /**
    * Renders the default layout for the button.
    * @returns {TemplateResult}
    * @private
@@ -467,7 +482,7 @@ export class AuroButton extends AuroElement {
     return html`
       <${this._renderTag}
         part="${part}"
-        aria-label="${ifDefined(this.loading ? this.loadingText : this.currentAriaLabel || undefined)}"
+        aria-label="${ifDefined(this.loading ? this.getSlotText('ariaLabel.loading') || this.loadingText : this.getSlotText('ariaLabel') || this.currentAriaLabel)}"
         aria-labelledby="${ifDefined(this.loading ? undefined : this.currentAriaLabelledBy || undefined)}"
         tabindex="${ifDefined(this.static ? -1 : tabindex)}"
         ?autofocus="${this.autofocus}"
@@ -497,6 +512,10 @@ export class AuroButton extends AuroElement {
           </span>
         </span>
       </${this._renderTag}>
+
+      <!-- Hidden slots for aria labels -->
+      <slot name="ariaLabel" hidden></slot>
+      <slot name="ariaLabel.loading" hidden></slot>
     `;
   }
 
