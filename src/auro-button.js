@@ -28,6 +28,8 @@ import tokensCss from "./styles/tokens.scss";
 
 /**
  * @slot - Default slot for the text of the button.
+ * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button.
+ * @slot ariaLabel.loading - Use this slot to pass an aria-label to the HTML5 button when in loading state.
  * @csspart button - Apply CSS to HTML5 button.
  * @csspart loader - Apply CSS to auro-loader.
  * @csspart text - Apply CSS to text slot.
@@ -166,7 +168,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used.
+       * DEPRECATED - Use `slot="ariaLabel.loading"` instead.
        */
       loadingText: {
         type: String,
@@ -322,7 +324,7 @@ export class AuroButton extends AuroElement {
   }
 
   /**
-   * Returns the current value of the projected `aria-label` attribute or undefined if not set.
+   * Returns the current value of the projected `aria-label` attribute or undefined if not set. The `aria-label` attribute is for internal use only.
    * @returns {string | undefined}
    * @private
    */
@@ -406,6 +408,15 @@ export class AuroButton extends AuroElement {
   }
 
   /**
+   * Returns the appropriate string to be used for the aria-label attribute.
+   * @returns {String}
+   * @private
+   */
+  generateAriaLabel() {
+    return this.loading ? this.runtimeUtils.getSlotText(this, 'ariaLabel.loading') || this.loadingText : this.runtimeUtils.getSlotText(this, 'ariaLabel') || this.currentAriaLabel;
+  }
+
+  /**
    * This is to detect pointer events for hover and active states for styling purposes.
    * :host with :has selector dont work together in Safari and Firefox
    * @param {PointerEvent} event - The pointer event.
@@ -465,9 +476,13 @@ export class AuroButton extends AuroElement {
     const tabindex = this.tIndex || this.tabindex;
 
     return html`
+      <!-- Hidden slots for aria labels -->
+      <slot name="ariaLabel" hidden @slotchange="${this.requestUpdate}"></slot>
+      <slot name="ariaLabel.loading" hidden @slotchange="${this.requestUpdate}"></slot>
+
       <${this._renderTag}
         part="${part}"
-        aria-label="${ifDefined(this.loading ? this.loadingText : this.currentAriaLabel || undefined)}"
+        aria-label="${ifDefined(this.generateAriaLabel())}"
         aria-labelledby="${ifDefined(this.loading ? undefined : this.currentAriaLabelledBy || undefined)}"
         tabindex="${ifDefined(this.static ? -1 : tabindex)}"
         ?autofocus="${this.autofocus}"

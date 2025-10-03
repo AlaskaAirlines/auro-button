@@ -123,9 +123,23 @@ describe("auro-button", () => {
     expect(el.getAttribute("variant")).to.equal("tertiary");
   });
 
-  it("tests setting aria-label", async () => {
+  it("tests setting aria-label via attribute", async () => {
     const el = await fixture(html`
       <auro-button aria-label='label'>Click Me!</auro-button>
+    `);
+
+    const root = el.shadowRoot;
+    const button = root.querySelector("button");
+
+    expect(button.getAttribute("aria-label")).to.equal("label");
+  });
+
+    it("tests setting aria-label via slot", async () => {
+    const el = await fixture(html`
+      <auro-button>
+        <span slot="ariaLabel">label</span>
+        Click Me!
+      </auro-button>
     `);
 
     const root = el.shadowRoot;
@@ -142,10 +156,10 @@ describe("auro-button", () => {
     const root = el.shadowRoot;
     const button = root.querySelector("button");
 
-    expect(button.getAttribute("aria-label")).to.equal(el.loadingText);
+    expect(button.getAttribute("aria-label")).to.equal("Loading...");
   });
 
-  it("tests setting custom loading text on button in loading state", async () => {
+  it("tests setting custom loading text on button in loading state via attribute", async () => {
     const el = await fixture(html`
       <auro-button loading loadingText="cargando">Click Me!</auro-button>
     `);
@@ -154,6 +168,19 @@ describe("auro-button", () => {
     const button = root.querySelector("button");
 
     expect(button.getAttribute("aria-label")).to.equal(el.loadingText);
+  });
+
+  it("tests setting custom loading text on button in loading state via slot", async () => {
+    const el = await fixture(html`
+      <auro-button loading>
+        <span slot="ariaLabel.loading">Cargando...</span>
+      </auro-button>
+    `);
+
+    const root = el.shadowRoot;
+    const button = root.querySelector("button");
+
+    expect(button.getAttribute("aria-label")).to.equal("Cargando...");
   });
 
   it("tests setting aria-labelledby", async () => {

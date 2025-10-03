@@ -9,7 +9,7 @@
 | `disabled`    | `disabled`    | `boolean`                                        | false       | If set to true, button will become disabled and not allow for interactions. |
 | `fluid`       | `fluid`       | `boolean`                                        | false       | Alters the shape of the button to be full width of its parent container. |
 | `loading`     | `loading`     | `boolean`                                        | false       | If set to true button text will be replaced with `auro-loader` and become disabled. |
-| `loadingText` | `loadingText` | `string`                                         |             | Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used. |
+| `loadingText` | `loadingText` | `string`                                         |             | DEPRECATED - Use `slot="ariaLabel.loading"` instead. |
 | `onDark`      | `ondark`      | `boolean`                                        | "{false}"   | DEPRECATED - use `appearance` property           |
 | `shape`       | `shape`       | `'default', 'rounded', 'pill', 'circle', 'square'` | "rounded"   | Defines the shape of the button.                 |
 | `size`        | `size`        | `'xs', 'sm', 'md', 'lg', 'xl'`                   | "md"        | Defines the size of the button.                  |

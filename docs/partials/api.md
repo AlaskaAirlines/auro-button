@@ -161,7 +161,7 @@ default - `rounded`
 
 </auro-accordion>
 
-#### Toggle Text
+## Toggle Text
 
 The `rounded` attribute supports the ability to hide/show the text of the `auro-button`. This can be done by changing the value of the `iconOnly` attribute. In this example, the text is toggled via `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
@@ -181,7 +181,7 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
 
 </auro-accordion>
 
-#### Right Aligned
+## Right Aligned
 
 This example shows a `rounded` `auro-button` that is right-aligned, demonstrating how the button starts from the right and grows/shrinks from right to left when using the `toggleText` attribute in conjuction with the `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
@@ -282,28 +282,41 @@ Use the `loading` attribute to alter the content to the shimmering dots to alert
 
 </auro-accordion>
 
-### Loading text
+## ARIA Support
 
-To provide a custom loading message for assistive technologies, use the `loadingText` attribute. If not provided, the default message will be "Loading...".
+#### Aria Label
+
+Accessible text may be provided through the `ariaLabel` or `ariaLabel.loading` slots.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loadingText.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/ariaLabel.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loadingText.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/ariaLabel.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
-## ARIA Attributes
+#### Aria Labelledby
 
-Any ARIA attributes can be applied directly to the element and will be handled internally:
+The component supports both the `aria-labelledby` attribute for accessibility.
 
-`<auro-button aria-label="My Button Label">Auro Button</auro-button>`
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/ariaLabelledby.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/ariaLabelledby.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
 
 ## Tab Index
 
