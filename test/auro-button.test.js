@@ -56,9 +56,9 @@ describe("auro-button", () => {
     expect(button.getAttribute("disabled")).to.equal("");
   });
 
-  it("tests setting ondark", async () => {
+  it("tests setting inverse appearance", async () => {
     const el = await fixture(html`
-      <auro-button ondark>Click Me!</auro-button>
+      <auro-button appearance="inverse">Click Me!</auro-button>
     `);
 
     const root = el.shadowRoot;
@@ -66,7 +66,7 @@ describe("auro-button", () => {
     const classList = button.getAttribute("class").split(" ");
 
     expect(classList.includes("auro-button")).to.be.true;
-    expect(el.hasAttribute("ondark")).to.be.true;
+    expect(el.getAttribute("appearance")).to.equal("inverse");
   });
 
   it("tests setting secondary", async () => {
@@ -82,9 +82,9 @@ describe("auro-button", () => {
     expect(el.getAttribute("variant")).to.equal("secondary");
   });
 
-  it("tests setting secondary ondark", async () => {
+  it("tests setting secondary inverse appearance", async () => {
     const el = await fixture(html`
-      <auro-button variant="secondary" ondark>Click Me!</auro-button>
+      <auro-button variant="secondary" appearance="inverse">Click Me!</auro-button>
     `);
 
     const root = el.shadowRoot;
@@ -92,7 +92,7 @@ describe("auro-button", () => {
     const classList = button.getAttribute("class").split(" ");
 
     expect(classList.includes("auro-button")).to.be.true;
-    expect(el.hasAttribute("ondark")).to.be.true;
+    expect(el.getAttribute("appearance")).to.equal("inverse");
     expect(el.getAttribute("variant")).to.equal("secondary");
   });
 
@@ -109,9 +109,9 @@ describe("auro-button", () => {
     expect(el.getAttribute("variant")).to.equal("tertiary");
   });
 
-  it("tests setting tertiary ondark", async () => {
+  it("tests setting tertiary inverse appearance", async () => {
     const el = await fixture(html`
-      <auro-button variant="tertiary" ondark>Click Me!</auro-button>
+      <auro-button variant="tertiary" appearance="inverse">Click Me!</auro-button>
     `);
 
     const root = el.shadowRoot;
@@ -119,7 +119,7 @@ describe("auro-button", () => {
     const classList = button.getAttribute("class").split(" ");
 
     expect(classList.includes("auro-button")).to.be.true;
-    expect(el.hasAttribute("ondark")).to.be.true;
+    expect(el.getAttribute("appearance")).to.equal("inverse");
     expect(el.getAttribute("variant")).to.equal("tertiary");
   });
 
