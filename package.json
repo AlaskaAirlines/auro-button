@@ -27,7 +27,7 @@
   "devDependencies": {
     "@aurodesignsystem/auro-cli": "^3.0.4",
     "@aurodesignsystem/auro-config": "^1.3.0",
-    "@aurodesignsystem/auro-library": "^5.5.3",
+    "@aurodesignsystem/auro-library": "^5.5.4",
     "@aurodesignsystem/auro-loader": "^6.0.0",
     "@aurodesignsystem/design-tokens": "^8.5.0",
     "@aurodesignsystem/webcorestylesheets": "10.1.0",

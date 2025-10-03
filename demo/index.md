@@ -197,15 +197,18 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/icon.html) -->
   <!-- The below content is automatically added from ./../apiExamples/icon.html -->
-  <auro-button arialabel="wifi">
+  <auro-button>
+    <span slot="ariaLabel">wifi</span>
     <span>Activate WiFi</span>
     <auro-icon customColor category="in-flight" name="wifi"></auro-icon>
   </auro-button>
-  <auro-button variant="secondary" arialabel="arrow-left">
+  <auro-button variant="secondary">
+    <span slot="ariaLabel">arrow-left</span>
     <span>Previous action</span>
     <auro-icon customcolor category="interface" name="arrow-left" ></auro-icon>
   </auro-button>
-  <auro-button variant="tertiary" arialabel="heart-filled">
+  <auro-button variant="tertiary">
+    <span slot="ariaLabel">heart-filled</span>
     <span>Love this ...</span>
     <auro-icon customcolor category="interface" name="heart-filled" ></auro-icon>
   </auro-button>
@@ -217,15 +220,18 @@ Be sure to use the `customColor` attribute on the auro-icon component to allow c
 <!-- The below code snippet is automatically added from ./../apiExamples/icon.html -->
 
 ```html
-<auro-button arialabel="wifi">
+<auro-button>
+  <span slot="ariaLabel">wifi</span>
   <span>Activate WiFi</span>
   <auro-icon customColor category="in-flight" name="wifi"></auro-icon>
 </auro-button>
-<auro-button variant="secondary" arialabel="arrow-left">
+<auro-button variant="secondary">
+  <span slot="ariaLabel">arrow-left</span>
   <span>Previous action</span>
   <auro-icon customcolor category="interface" name="arrow-left" ></auro-icon>
 </auro-button>
-<auro-button variant="tertiary" arialabel="heart-filled">
+<auro-button variant="tertiary">
+  <span slot="ariaLabel">heart-filled</span>
   <span>Love this ...</span>
   <auro-icon customcolor category="interface" name="heart-filled" ></auro-icon>
 </auro-button>
