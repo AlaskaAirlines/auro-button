@@ -5,23 +5,24 @@
 
 ## Properties
 
-| Property      | Attribute     | Type                                             | Default   | Description                                      |
-|---------------|---------------|--------------------------------------------------|-----------|--------------------------------------------------|
-| [autofocus](#autofocus)   | `autofocus`   | `boolean`                                        | false     | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user. |
-| [disabled](#disabled)    | `disabled`    | `boolean`                                        | false     | If set to true, button will become disabled and not allow for interactions. |
-| [fluid](#fluid)       | `fluid`       | `boolean`                                        | false     | Alters the shape of the button to be full width of its parent container. |
-| [loading](#loading)     | `loading`     | `boolean`                                        | false     | If set to true button text will be replaced with `auro-loader` and become disabled. |
-| [loadingText](#loadingText) | `loadingText` | `string`                                         |           | Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used. |
-| [onDark](#onDark)      | `ondark`      | `boolean`                                        | false     | Indicates if the button is rendered in dark mode. |
-| [shape](#shape)       | `shape`       | `'default', 'rounded', 'pill', 'circle', 'square'` | "rounded" | Defines the shape of the button.                 |
-| [size](#size)        | `size`        | `'xs', 'sm', 'md', 'lg', 'xl'`                   | "md"      | Defines the size of the button.                  |
-| [static](#static)      | `static`      | `boolean`                                        | false     | If true, the button will be static and not respond to user interactions. |
-| [tIndex](#tIndex)      | `tIndex`      | `string`                                         |           | Populates `tabindex` to define the focusable sequence in keyboard navigation. |
-| [tabindex](#tabindex)    | `tabindex`    | `string`                                         |           | Populates `tabindex` to define the focusable sequence in keyboard navigation.<br />Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.<br />Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`. |
-| [title](#title)       | `title`       | `string`                                         |           | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
-| [type](#type)        | `type`        | `'submit', 'reset', 'button'`                    |           | The type of button. Matches HTML5 Button Spec.   |
-| [value](#value)       | `value`       | `string`                                         |           | Defines the value associated with the button which is submitted with the form data. |
-| [variant](#variant)     | `variant`     | `'primary', 'secondary', 'tertiary', 'ghost', 'flat'` | "primary" | Sets the button variant.                         |
+| Property      | Attribute     | Type                                             | Default     | Description                                      |
+|---------------|---------------|--------------------------------------------------|-------------|--------------------------------------------------|
+| [appearance](#appearance)  | `appearance`  | `'default', 'inverse'`                           | "'default'" | Defines whether the button will be on lighter or darker backgrounds. |
+| [autofocus](#autofocus)   | `autofocus`   | `boolean`                                        | false       | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user. |
+| [disabled](#disabled)    | `disabled`    | `boolean`                                        | false       | If set to true, button will become disabled and not allow for interactions. |
+| [fluid](#fluid)       | `fluid`       | `boolean`                                        | false       | Alters the shape of the button to be full width of its parent container. |
+| [loading](#loading)     | `loading`     | `boolean`                                        | false       | If set to true button text will be replaced with `auro-loader` and become disabled. |
+| [loadingText](#loadingText) | `loadingText` | `string`                                         |             | Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used. |
+| [onDark](#onDark)      | `ondark`      | `boolean`                                        | "{false}"   | DEPRECATED - use `appearance` property           |
+| [shape](#shape)       | `shape`       | `'default', 'rounded', 'pill', 'circle', 'square'` | "rounded"   | Defines the shape of the button.                 |
+| [size](#size)        | `size`        | `'xs', 'sm', 'md', 'lg', 'xl'`                   | "md"        | Defines the size of the button.                  |
+| [static](#static)      | `static`      | `boolean`                                        | false       | If true, the button will be static and not respond to user interactions. |
+| [tIndex](#tIndex)      | `tIndex`      | `string`                                         |             | Populates `tabindex` to define the focusable sequence in keyboard navigation. |
+| [tabindex](#tabindex)    | `tabindex`    | `string`                                         |             | Populates `tabindex` to define the focusable sequence in keyboard navigation.<br />Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.<br />Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`. |
+| [title](#title)       | `title`       | `string`                                         |             | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element. |
+| [type](#type)        | `type`        | `'submit', 'reset', 'button'`                    |             | The type of button. Matches HTML5 Button Spec.   |
+| [value](#value)       | `value`       | `string`                                         |             | Defines the value associated with the button which is submitted with the form data. |
+| [variant](#variant)     | `variant`     | `'primary', 'secondary', 'tertiary', 'ghost', 'flat'` | "primary"   | Sets the button variant.                         |
 
 ## Methods
 
@@ -59,48 +60,48 @@
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/onDark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/onDark.html -->
-  <auro-button ondark>Primary</auro-button>
-  <auro-button variant="secondary" ondark>Secondary</auro-button>
-  <auro-button variant="tertiary" ondark>Tertiary</auro-button>
-  <auro-button variant="ghost" ondark>Ghost</auro-button>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/inverseAppearance.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/inverseAppearance.html -->
+  <auro-button appearance="inverse">Primary</auro-button>
+  <auro-button variant="secondary" appearance="inverse">Secondary</auro-button>
+  <auro-button variant="tertiary" appearance="inverse">Tertiary</auro-button>
+  <auro-button variant="ghost" appearance="inverse">Ghost</auro-button>
   <br /><br/>
-  <auro-button ondark shape="circle" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="circle" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="circle" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="circle" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="circle" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="circle" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="circle" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="circle" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="circle" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="circle" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
   <br /><br/>
-  <auro-button ondark shape="square" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="square" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="square" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="square" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="square" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="square" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="square" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="square" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="square" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="square" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/onDark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/onDark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/inverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/inverseAppearance.html -->
 
 ```html
-<auro-button ondark>Primary</auro-button>
-<auro-button variant="secondary" ondark>Secondary</auro-button>
-<auro-button variant="tertiary" ondark>Tertiary</auro-button>
-<auro-button variant="ghost" ondark>Ghost</auro-button>
+<auro-button appearance="inverse">Primary</auro-button>
+<auro-button variant="secondary" appearance="inverse">Secondary</auro-button>
+<auro-button variant="tertiary" appearance="inverse">Tertiary</auro-button>
+<auro-button variant="ghost" appearance="inverse">Ghost</auro-button>
 <br /><br/>
-<auro-button ondark shape="circle" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="circle" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="circle" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="circle" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="circle" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="circle" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="circle" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="circle" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="circle" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="circle" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
 <br /><br/>
-<auro-button ondark shape="square" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="square" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="square" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="square" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="square" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="square" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="square" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="square" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="square" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="square" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -132,24 +133,24 @@ This example demonstrates `auro-button` in it's `disabled` state.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledOnDark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/disabledOnDark.html -->
-  <auro-button disabled ondark>Primary</auro-button>
-  <auro-button variant="secondary" disabled ondark>Secondary</auro-button>
-  <auro-button variant="tertiary" disabled ondark>Tertiary</auro-button>
-  <auro-button variant="ghost" disabled ondark>Ghost</auro-button>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledInverseAppearance.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/disabledInverseAppearance.html -->
+  <auro-button disabled appearance="inverse">Primary</auro-button>
+  <auro-button variant="secondary" disabled appearance="inverse">Secondary</auro-button>
+  <auro-button variant="tertiary" disabled appearance="inverse">Tertiary</auro-button>
+  <auro-button variant="ghost" disabled appearance="inverse">Ghost</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabledOnDark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/disabledOnDark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabledInverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/disabledInverseAppearance.html -->
 
 ```html
-<auro-button disabled ondark>Primary</auro-button>
-<auro-button variant="secondary" disabled ondark>Secondary</auro-button>
-<auro-button variant="tertiary" disabled ondark>Tertiary</auro-button>
-<auro-button variant="ghost" disabled ondark>Ghost</auro-button>
+<auro-button disabled appearance="inverse">Primary</auro-button>
+<auro-button variant="secondary" disabled appearance="inverse">Secondary</auro-button>
+<auro-button variant="tertiary" disabled appearance="inverse">Tertiary</auro-button>
+<auro-button variant="ghost" disabled appearance="inverse">Ghost</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -217,22 +218,22 @@ The `static` attribute creates a button with no interactivity. When applied, the
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/staticOnDark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/staticOnDark.html -->
-  <auro-button static onDark>Static Primary Button</auro-button>
-  <auro-button static variant="secondary" onDark>Static Secondary Button</auro-button>
-  <auro-button static variant="tertiary" onDark>Static Tertiary Button</auro-button>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/staticInverseAppearance.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/staticInverseAppearance.html -->
+  <auro-button static appearance="inverse">Static Primary Button</auro-button>
+  <auro-button static variant="secondary" appearance="inverse">Static Secondary Button</auro-button>
+  <auro-button static variant="tertiary" appearance="inverse">Static Tertiary Button</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/staticOnDark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/staticOnDark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/staticInverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/staticInverseAppearance.html -->
 
 ```html
-<auro-button static onDark>Static Primary Button</auro-button>
-<auro-button static variant="secondary" onDark>Static Secondary Button</auro-button>
-<auro-button static variant="tertiary" onDark>Static Tertiary Button</auro-button>
+<auro-button static appearance="inverse">Static Primary Button</auro-button>
+<auro-button static variant="secondary" appearance="inverse">Static Secondary Button</auro-button>
+<auro-button static variant="tertiary" appearance="inverse">Static Tertiary Button</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -630,24 +631,24 @@ Use the `loading` attribute to alter the content to the shimmering dots to alert
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loadingOnDark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/loadingOnDark.html -->
-  <auro-button ondark loading>Primary</auro-button>
-  <auro-button variant="secondary" ondark loading>Secondary</auro-button>
-  <auro-button variant="tertiary" ondark loading>Tertiary</auro-button>
-  <auro-button variant="ghost" ondark loading>Ghost</auro-button>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loadingInverseAppearance.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/loadingInverseAppearance.html -->
+  <auro-button appearance="inverse" loading>Primary</auro-button>
+  <auro-button variant="secondary" appearance="inverse" loading>Secondary</auro-button>
+  <auro-button variant="tertiary" appearance="inverse" loading>Tertiary</auro-button>
+  <auro-button variant="ghost" appearance="inverse" loading>Ghost</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loadingOnDark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/loadingOnDark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loadingInverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/loadingInverseAppearance.html -->
 
 ```html
-<auro-button ondark loading>Primary</auro-button>
-<auro-button variant="secondary" ondark loading>Secondary</auro-button>
-<auro-button variant="tertiary" ondark loading>Tertiary</auro-button>
-<auro-button variant="ghost" ondark loading>Ghost</auro-button>
+<auro-button appearance="inverse" loading>Primary</auro-button>
+<auro-button variant="secondary" appearance="inverse" loading>Secondary</auro-button>
+<auro-button variant="tertiary" appearance="inverse" loading>Tertiary</auro-button>
+<auro-button variant="ghost" appearance="inverse" loading>Ghost</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

@@ -88,53 +88,53 @@ In cases were the action of the button would not fit the criteria above, it is m
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## On Dark
+## Visual state on Dark Backgrounds
 
-These examples illustrate the core button types and a `disabled` state on dark backgrounds using the `onDark` attribute.
+These examples illustrate the core button types on dark backgrounds using the `appearance="inverse"` attribute .
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/onDark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/onDark.html -->
-  <auro-button ondark>Primary</auro-button>
-  <auro-button variant="secondary" ondark>Secondary</auro-button>
-  <auro-button variant="tertiary" ondark>Tertiary</auro-button>
-  <auro-button variant="ghost" ondark>Ghost</auro-button>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/inverseAppearance.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/inverseAppearance.html -->
+  <auro-button appearance="inverse">Primary</auro-button>
+  <auro-button variant="secondary" appearance="inverse">Secondary</auro-button>
+  <auro-button variant="tertiary" appearance="inverse">Tertiary</auro-button>
+  <auro-button variant="ghost" appearance="inverse">Ghost</auro-button>
   <br /><br/>
-  <auro-button ondark shape="circle" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="circle" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="circle" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="circle" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="circle" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="circle" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="circle" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="circle" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="circle" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="circle" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
   <br /><br/>
-  <auro-button ondark shape="square" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="square" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="square" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="square" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button ondark shape="square" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="square" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="square" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="square" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="square" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+  <auro-button appearance="inverse" shape="square" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/onDark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/onDark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/inverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/inverseAppearance.html -->
 
 ```html
-<auro-button ondark>Primary</auro-button>
-<auro-button variant="secondary" ondark>Secondary</auro-button>
-<auro-button variant="tertiary" ondark>Tertiary</auro-button>
-<auro-button variant="ghost" ondark>Ghost</auro-button>
+<auro-button appearance="inverse">Primary</auro-button>
+<auro-button variant="secondary" appearance="inverse">Secondary</auro-button>
+<auro-button variant="tertiary" appearance="inverse">Tertiary</auro-button>
+<auro-button variant="ghost" appearance="inverse">Ghost</auro-button>
 <br /><br/>
-<auro-button ondark shape="circle" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="circle" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="circle" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="circle" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="circle" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="circle" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="circle" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="circle" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="circle" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="circle" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
 <br /><br/>
-<auro-button ondark shape="square" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="square" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="square" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="square" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button ondark shape="square" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="square" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="square" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="square" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="square" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="square" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -166,24 +166,24 @@ This example demonstrates `auro-button` in it's `disabled` state.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledOnDark.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/disabledOnDark.html -->
-  <auro-button disabled ondark>Primary</auro-button>
-  <auro-button variant="secondary" disabled ondark>Secondary</auro-button>
-  <auro-button variant="tertiary" disabled ondark>Tertiary</auro-button>
-  <auro-button variant="ghost" disabled ondark>Ghost</auro-button>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabledInverseAppearance.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/disabledInverseAppearance.html -->
+  <auro-button disabled appearance="inverse">Primary</auro-button>
+  <auro-button variant="secondary" disabled appearance="inverse">Secondary</auro-button>
+  <auro-button variant="tertiary" disabled appearance="inverse">Tertiary</auro-button>
+  <auro-button variant="ghost" disabled appearance="inverse">Ghost</auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabledOnDark.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/disabledOnDark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabledInverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/disabledInverseAppearance.html -->
 
 ```html
-<auro-button disabled ondark>Primary</auro-button>
-<auro-button variant="secondary" disabled ondark>Secondary</auro-button>
-<auro-button variant="tertiary" disabled ondark>Tertiary</auro-button>
-<auro-button variant="ghost" disabled ondark>Ghost</auro-button>
+<auro-button disabled appearance="inverse">Primary</auro-button>
+<auro-button variant="secondary" disabled appearance="inverse">Secondary</auro-button>
+<auro-button variant="tertiary" disabled appearance="inverse">Tertiary</auro-button>
+<auro-button variant="ghost" disabled appearance="inverse">Ghost</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -270,10 +270,10 @@ The button comes with several different shapes available, `pill`, `rounded`, `ci
   <auro-button shape="rounded">Rounded Button</auro-button>
   <auro-button shape="pill">Pill Button</auro-button>
   <auro-button shape="circle">
-    <auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
+    <auro-icon customcolor category="interface" name="account-filled" appearance="inverse"></auro-icon>
   </auro-button>
   <auro-button shape="square">
-    <auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
+    <auro-icon customcolor category="interface" name="account-filled" appearance="inverse"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -286,10 +286,10 @@ The button comes with several different shapes available, `pill`, `rounded`, `ci
 <auro-button shape="rounded">Rounded Button</auro-button>
 <auro-button shape="pill">Pill Button</auro-button>
 <auro-button shape="circle">
-  <auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
+  <auro-icon customcolor category="interface" name="account-filled" appearance="inverse"></auro-icon>
 </auro-button>
 <auro-button shape="square">
-  <auro-icon customcolor category="interface" name="account-filled" ondark="true"></auro-icon>
+  <auro-icon customcolor category="interface" name="account-filled" appearance="inverse"></auro-icon>
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
