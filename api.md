@@ -12,7 +12,7 @@
 | [disabled](#disabled)    | `disabled`    | `boolean`                                        | false       | If set to true, button will become disabled and not allow for interactions. |
 | [fluid](#fluid)       | `fluid`       | `boolean`                                        | false       | Alters the shape of the button to be full width of its parent container. |
 | [loading](#loading)     | `loading`     | `boolean`                                        | false       | If set to true button text will be replaced with `auro-loader` and become disabled. |
-| [loadingText](#loadingText) | `loadingText` | `string`                                         |             | Sets custom loading text for the `aria-label` on a button in loading state. If not set, the default value of "Loading..." will be used. |
+| [loadingText](#loadingText) | `loadingText` | `string`                                         |             | DEPRECATED - Use `slot="ariaLabel.loading"` instead. |
 | [onDark](#onDark)      | `ondark`      | `boolean`                                        | "{false}"   | DEPRECATED - use `appearance` property           |
 | [shape](#shape)       | `shape`       | `'default', 'rounded', 'pill', 'circle', 'square'` | "rounded"   | Defines the shape of the button.                 |
 | [size](#size)        | `size`        | `'xs', 'sm', 'md', 'lg', 'xl'`                   | "md"        | Defines the size of the button.                  |
@@ -175,14 +175,14 @@ The `static` attribute creates a button with no interactivity. When applied, the
   <auro-button static size="xl">XL Static</auro-button>
   <br><br>
   <auro-button static shape="pill">
-    <auro-icon name="home" slot="icon" customColor></auro-icon>
+    <auro-icon category="interface" name="home-filled" slot="icon" customColor></auro-icon>
     Static Pill with Icon
   </auro-button>
   <auro-button static shape="circle">
-    <auro-icon name="home" customColor></auro-icon>
+    <auro-icon category="interface" name="home-filled" customColor></auro-icon>
   </auro-button>
   <auro-button static shape="square">
-    <auro-icon name="home" customColor></auro-icon>
+    <auro-icon category="interface" name="home-filled" customColor></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -205,14 +205,14 @@ The `static` attribute creates a button with no interactivity. When applied, the
 <auro-button static size="xl">XL Static</auro-button>
 <br><br>
 <auro-button static shape="pill">
-  <auro-icon name="home" slot="icon" customColor></auro-icon>
+  <auro-icon category="interface" name="home-filled" slot="icon" customColor></auro-icon>
   Static Pill with Icon
 </auro-button>
 <auro-button static shape="circle">
-  <auro-icon name="home" customColor></auro-icon>
+  <auro-icon category="interface" name="home-filled" customColor></auro-icon>
 </auro-button>
 <auro-button static shape="square">
-  <auro-icon name="home" customColor></auro-icon>
+  <auro-icon category="interface" name="home-filled" customColor></auro-icon>
 </auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -249,15 +249,18 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/icon.html) -->
   <!-- The below content is automatically added from ./../apiExamples/icon.html -->
-  <auro-button arialabel="wifi">
+  <auro-button>
+    <span slot="ariaLabel">wifi</span>
     <span>Activate WiFi</span>
     <auro-icon customColor category="in-flight" name="wifi"></auro-icon>
   </auro-button>
-  <auro-button variant="secondary" arialabel="arrow-left">
+  <auro-button variant="secondary">
+    <span slot="ariaLabel">arrow-left</span>
     <span>Previous action</span>
     <auro-icon customcolor category="interface" name="arrow-left" ></auro-icon>
   </auro-button>
-  <auro-button variant="tertiary" arialabel="heart-filled">
+  <auro-button variant="tertiary">
+    <span slot="ariaLabel">heart-filled</span>
     <span>Love this ...</span>
     <auro-icon customcolor category="interface" name="heart-filled" ></auro-icon>
   </auro-button>
@@ -269,15 +272,18 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
 <!-- The below code snippet is automatically added from ./../apiExamples/icon.html -->
 
 ```html
-<auro-button arialabel="wifi">
+<auro-button>
+  <span slot="ariaLabel">wifi</span>
   <span>Activate WiFi</span>
   <auro-icon customColor category="in-flight" name="wifi"></auro-icon>
 </auro-button>
-<auro-button variant="secondary" arialabel="arrow-left">
+<auro-button variant="secondary">
+  <span slot="ariaLabel">arrow-left</span>
   <span>Previous action</span>
   <auro-icon customcolor category="interface" name="arrow-left" ></auro-icon>
 </auro-button>
-<auro-button variant="tertiary" arialabel="heart-filled">
+<auro-button variant="tertiary">
+  <span slot="ariaLabel">heart-filled</span>
   <span>Love this ...</span>
   <auro-icon customcolor category="interface" name="heart-filled" ></auro-icon>
 </auro-button>
@@ -293,19 +299,24 @@ default - `rounded`
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle.html) -->
   <!-- The below content is automatically added from ./../apiExamples/shape-circle.html -->
-  <auro-button arialabel="home-filled" shape="circle" size="xl">
+  <auro-button shape="circle" size="xl">
+    <span slot="ariaLabel">home-filled</span>
     <auro-icon customColor category="interface" name="home-filled"></auro-icon>
   </auro-button>
-  <auro-button arialabel="home-filled" shape="circle" size="lg">
+  <auro-button shape="circle" size="lg">
+    <span slot="ariaLabel">home-filled</span>
     <auro-icon customColor category="interface" name="home-filled"></auro-icon>
   </auro-button>
-  <auro-button arialabel="home-filled" shape="circle" size="md">
+  <auro-button shape="circle" size="md">
+    <span slot="ariaLabel">home-filled</span>
     <auro-icon customColor category="interface" name="home-filled"></auro-icon>
   </auro-button>
-  <auro-button arialabel="home-filled" shape="circle" size="sm">
+  <auro-button shape="circle" size="sm">
+    <span slot="ariaLabel">home-filled</span>
     <auro-icon customColor category="interface" name="home-filled"></auro-icon>
   </auro-button>
-  <auro-button arialabel="home-filled" shape="circle" size="xs">
+  <auro-button shape="circle" size="xs">
+    <span slot="ariaLabel">home-filled</span>
     <auro-icon customColor category="interface" name="home-filled"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
@@ -316,19 +327,24 @@ default - `rounded`
 <!-- The below code snippet is automatically added from ./../apiExamples/shape-circle.html -->
 
 ```html
-<auro-button arialabel="home-filled" shape="circle" size="xl">
+<auro-button shape="circle" size="xl">
+  <span slot="ariaLabel">home-filled</span>
   <auro-icon customColor category="interface" name="home-filled"></auro-icon>
 </auro-button>
-<auro-button arialabel="home-filled" shape="circle" size="lg">
+<auro-button shape="circle" size="lg">
+  <span slot="ariaLabel">home-filled</span>
   <auro-icon customColor category="interface" name="home-filled"></auro-icon>
 </auro-button>
-<auro-button arialabel="home-filled" shape="circle" size="md">
+<auro-button shape="circle" size="md">
+  <span slot="ariaLabel">home-filled</span>
   <auro-icon customColor category="interface" name="home-filled"></auro-icon>
 </auro-button>
-<auro-button arialabel="home-filled" shape="circle" size="sm">
+<auro-button shape="circle" size="sm">
+  <span slot="ariaLabel">home-filled</span>
   <auro-icon customColor category="interface" name="home-filled"></auro-icon>
 </auro-button>
-<auro-button arialabel="home-filled" shape="circle" size="xs">
+<auro-button shape="circle" size="xs">
+  <span slot="ariaLabel">home-filled</span>
   <auro-icon customColor category="interface" name="home-filled"></auro-icon>
 </auro-button>
 ```
@@ -340,19 +356,24 @@ default - `rounded`
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-square.html) -->
   <!-- The below content is automatically added from ./../apiExamples/shape-square.html -->
-  <auro-button arialabel="home-filled" shape="square" size="xl">
+  <auro-button shape="square" size="xl">
+    <span slot="ariaLabel">home-filled</span>
     <auro-icon customColor category="interface" name="home-filled"></auro-icon>
   </auro-button>
-  <auro-button arialabel="home-filled" shape="square" size="lg">
+  <auro-button shape="square" size="lg">
+    <span slot="ariaLabel">home-filled</span>
     <auro-icon customColor category="interface" name="home-filled"></auro-icon>
   </auro-button>
-  <auro-button arialabel="home-filled" shape="square" size="md">
+  <auro-button shape="square" size="md">
+    <span slot="ariaLabel">home-filled</span>
     <auro-icon customColor category="interface" name="home-filled"></auro-icon>
   </auro-button>
-  <auro-button arialabel="home-filled" shape="square" size="sm">
+  <auro-button shape="square" size="sm">
+    <span slot="ariaLabel">home-filled</span>
     <auro-icon customColor category="interface" name="home-filled"></auro-icon>
   </auro-button>
-  <auro-button arialabel="home-filled" shape="square" size="xs">
+  <auro-button shape="square" size="xs">
+    <span slot="ariaLabel">home-filled</span>
     <auro-icon customColor category="interface" name="home-filled"></auro-icon>
   </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
@@ -363,19 +384,24 @@ default - `rounded`
 <!-- The below code snippet is automatically added from ./../apiExamples/shape-square.html -->
 
 ```html
-<auro-button arialabel="home-filled" shape="square" size="xl">
+<auro-button shape="square" size="xl">
+  <span slot="ariaLabel">home-filled</span>
   <auro-icon customColor category="interface" name="home-filled"></auro-icon>
 </auro-button>
-<auro-button arialabel="home-filled" shape="square" size="lg">
+<auro-button shape="square" size="lg">
+  <span slot="ariaLabel">home-filled</span>
   <auro-icon customColor category="interface" name="home-filled"></auro-icon>
 </auro-button>
-<auro-button arialabel="home-filled" shape="square" size="md">
+<auro-button shape="square" size="md">
+  <span slot="ariaLabel">home-filled</span>
   <auro-icon customColor category="interface" name="home-filled"></auro-icon>
 </auro-button>
-<auro-button arialabel="home-filled" shape="square" size="sm">
+<auro-button shape="square" size="sm">
+  <span slot="ariaLabel">home-filled</span>
   <auro-icon customColor category="interface" name="home-filled"></auro-icon>
 </auro-button>
-<auro-button arialabel="home-filled" shape="square" size="xs">
+<auro-button shape="square" size="xs">
+  <span slot="ariaLabel">home-filled</span>
   <auro-icon customColor category="interface" name="home-filled"></auro-icon>
 </auro-button>
 ```
@@ -409,14 +435,15 @@ default - `rounded`
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### Toggle Text
+## Toggle Text
 
 The `rounded` attribute supports the ability to hide/show the text of the `auro-button`. This can be done by changing the value of the `iconOnly` attribute. In this example, the text is toggled via `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggledText.html) -->
   <!-- The below content is automatically added from ./../apiExamples/toggledText.html -->
-  <auro-button arialabel="arrow-up" shape="circle" id="toggledTextElem">
+  <auro-button shape="circle" id="toggledTextElem">
+    <span slot="ariaLabel">arrow-up</span>
     <span>Text is now shown!</span>
     <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
   </auro-button>
@@ -428,7 +455,8 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
 <!-- The below code snippet is automatically added from ./../apiExamples/toggledText.html -->
 
 ```html
-<auro-button arialabel="arrow-up" shape="circle" id="toggledTextElem">
+<auro-button shape="circle" id="toggledTextElem">
+  <span slot="ariaLabel">arrow-up</span>
   <span>Text is now shown!</span>
   <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
 </auro-button>
@@ -463,7 +491,7 @@ export function toggledTextExample() {
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### Right Aligned
+## Right Aligned
 
 This example shows a `rounded` `auro-button` that is right-aligned, demonstrating how the button starts from the right and grows/shrinks from right to left when using the `toggleText` attribute in conjuction with the `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
@@ -471,7 +499,8 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/roundedRightAlign.html) -->
   <!-- The below content is automatically added from ./../apiExamples/roundedRightAlign.html -->
   <div style="display: flex; justify-content: flex-end; align-items: center; width: 100%">
-    <auro-button arialabel="in-flight" shape="circle" id="rightAlignElem">
+    <auro-button shape="circle" id="rightAlignElem">
+      <span slot="ariaLabel">in-flight</span>
       <span>Text is now shown!</span>
       <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
     </auro-button>
@@ -485,7 +514,8 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 
 ```html
 <div style="display: flex; justify-content: flex-end; align-items: center; width: 100%">
-  <auro-button arialabel="in-flight" shape="circle" id="rightAlignElem">
+  <auro-button shape="circle" id="rightAlignElem">
+    <span slot="ariaLabel">in-flight</span>
     <span>Text is now shown!</span>
     <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
   </auro-button>
@@ -653,32 +683,87 @@ Use the `loading` attribute to alter the content to the shimmering dots to alert
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Loading text
+## ARIA Support
 
-To provide a custom loading message for assistive technologies, use the `loadingText` attribute. If not provided, the default message will be "Loading...".
+#### Aria Label
+
+Accessible text may be provided through the `ariaLabel` or `ariaLabel.loading` slots.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loadingText.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/loadingText.html -->
-  <auro-button loading loadingText="Custom loading text">Primary</auro-button>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/ariaLabel.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/ariaLabel.html -->
+  <auro-button>
+    <span slot="ariaLabel">My Button Label</span>
+    Auro Button
+  </auro-button>
+  <auro-button loading>
+    <span slot="ariaLabel.loading">My Loading Button Label</span>
+    Auro Button
+  </auro-button>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loadingText.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/loadingText.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/ariaLabel.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/ariaLabel.html -->
 
 ```html
-<auro-button loading loadingText="Custom loading text">Primary</auro-button>
+<auro-button>
+  <span slot="ariaLabel">My Button Label</span>
+  Auro Button
+</auro-button>
+<auro-button loading>
+  <span slot="ariaLabel.loading">My Loading Button Label</span>
+  Auro Button
+</auro-button>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## ARIA Attributes
+#### Aria Labelledby
 
-Any ARIA attributes can be applied directly to the element and will be handled internally:
+The component supports both the `aria-labelledby` attribute for accessibility.
 
-`<auro-button aria-label="My Button Label">Auro Button</auro-button>`
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/ariaLabelledby.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/ariaLabelledby.html -->
+  <auro-button aria-labelledby="button-label">
+    Auro Button
+    <label id="button-label" class="util_displayHiddenVisually">My Button Label</label>
+  </auro-button>
+  <style>
+    .util_displayHiddenVisually {
+      clip: rect(1px, 1px, 1px, 1px);
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      border: 0;
+    }
+  </style>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/ariaLabelledby.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/ariaLabelledby.html -->
+
+```html
+<auro-button aria-labelledby="button-label">
+  Auro Button
+  <label id="button-label" class="util_displayHiddenVisually">My Button Label</label>
+</auro-button>
+<style>
+  .util_displayHiddenVisually {
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+  }
+</style>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
 
 ## Tab Index
 
