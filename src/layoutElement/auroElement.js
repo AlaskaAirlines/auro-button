@@ -46,7 +46,17 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * This Boolean attribute lets you specify that the element should be rendered in dark mode.
+       * Defines whether the button will be on lighter or darker backgrounds.
+       * @property {'default', 'inverse'}
+       * @default 'default'
+       */
+      appearance: {
+        type: String,
+        reflect: true
+      },
+
+      /**
+       * DEPRECATED - use `appearance` attribute.
        * @default {false}
        */
       onDark: {
@@ -67,6 +77,13 @@ export class AuroElement extends LitElement {
         reflect: false,
       },
     };
+  }
+
+  constructor() {
+    super();
+
+    this.onDark = false;
+    this.appearance = 'default';
   }
 
   resetShapeClasses() {
