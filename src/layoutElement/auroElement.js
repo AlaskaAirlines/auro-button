@@ -86,6 +86,9 @@ export class AuroElement extends LitElement {
     this.appearance = 'default';
   }
 
+  /**
+   * @private
+   */
   resetShapeClasses() {
     if (this.shape && this.size) {
       if (this.wrapper) {
@@ -102,6 +105,9 @@ export class AuroElement extends LitElement {
     }
   }
 
+  /**
+   * @private
+   */
   resetLayoutClasses() {
     if (this.layout) {
       if (this.wrapper) {
@@ -116,6 +122,9 @@ export class AuroElement extends LitElement {
     }
   }
 
+  /**
+   * @private
+   */
   updateComponentArchitecture() {
     this.resetLayoutClasses();
     this.resetShapeClasses();
