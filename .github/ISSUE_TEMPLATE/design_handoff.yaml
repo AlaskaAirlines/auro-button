@@ -1,0 +1,46 @@
+name: Design Handoff
+description: Handoff design work to the development team.
+type: "Task"
+title: 'Design Handoff: [Feature Name]'
+projects: ["AlaskaAirlines/19"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Design Description
+      description: A clear and concise description of what is new or changed in the design.
+  - type: input
+    id: figma
+    attributes:
+      label: Link to Figma file version.
+      description: This link should be to a specific version of the Figma file that is ready for development.
+  - type: textarea
+    id: issues
+    attributes:
+      label: Blocking Issues and Questions
+      description: List any issues and questions that are blocking the handoff acceptance.
+  - type: textarea
+    id: nonblockers
+    attributes:
+      label: Non-Blocking Issues and Questions
+      description: List any unresolved issues and questions that are not blocking the handoff acceptance.
+  - type: textarea
+    id: tech
+    attributes:
+      label: Engineering Implementation Notes
+      description: List any initial ideas for how engineering will implement the design.
+  - type: checkboxes
+    id: review
+    attributes:
+      label: Points of Review
+      description: This is a list of items that the development team should review before accepting handoff.
+      options:
+        - label: The design work is part of a Story or Support ticket and linked as a parent issue.
+        - label: The linked Figma file is the correct version.
+        - label: Design is consistent with the design system.
+        - label: UX is fully explained and documented.
+        - label: Responsive design has been considered.
+        - label: VoiceOver Experience has been considered.
+        - label: Other accessibility considerations have been discussed.
+        - label: All CSS rule values are based on current design tokens.
+        - label: There are no design features which require feature additions or changes have not been approved by Product.
