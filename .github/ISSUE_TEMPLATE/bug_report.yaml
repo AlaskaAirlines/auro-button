@@ -43,7 +43,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: Which version of auro-templates do you have installed?
+      label: Which version of auro-button do you have installed?
   - type: markdown
     attributes:
       value: >
