@@ -413,7 +413,11 @@ export class AuroButton extends AuroElement {
    * @private
    */
   generateAriaLabel() {
-    return this.loading ? this.runtimeUtils.getSlotText(this, 'ariaLabel.loading') || this.loadingText : this.runtimeUtils.getSlotText(this, 'ariaLabel') || this.currentAriaLabel;
+    return this.loading
+      ? this.runtimeUtils.getSlotText(this, "ariaLabel.loading") ||
+          this.loadingText
+      : this.runtimeUtils.getSlotText(this, "ariaLabel") ||
+          this.currentAriaLabel;
   }
 
   /**
@@ -464,7 +468,7 @@ export class AuroButton extends AuroElement {
 
     const contentClasses = {
       contentWrapper: true,
-      util_displayHiddenVisually: this.loading,
+      loading: this.loading,
     };
 
     // Type classes should not be applied to the wrapper to avoid affecting icons
