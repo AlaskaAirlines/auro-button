@@ -4,7 +4,6 @@ on:
   issues:
     types: [opened]
 
-
 jobs:
   action:
     uses: AlaskaAirlines/auro-actions/.github/workflows/add-project.yml@main

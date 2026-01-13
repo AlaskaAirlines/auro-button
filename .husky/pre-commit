@@ -1,5 +1,6 @@
 # .husky/pre-commit
 
 npm run build:version
+git add .
 npx auro test
 npx lint-staged
