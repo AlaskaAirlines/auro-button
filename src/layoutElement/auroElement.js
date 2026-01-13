@@ -52,7 +52,7 @@ export class AuroElement extends LitElement {
        */
       appearance: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -83,7 +83,7 @@ export class AuroElement extends LitElement {
     super();
 
     this.onDark = false;
-    this.appearance = 'default';
+    this.appearance = "default";
   }
 
   /**

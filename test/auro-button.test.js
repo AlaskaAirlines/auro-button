@@ -134,7 +134,7 @@ describe("auro-button", () => {
     expect(button.getAttribute("aria-label")).to.equal("label");
   });
 
-    it("tests setting aria-label via slot", async () => {
+  it("tests setting aria-label via slot", async () => {
     const el = await fixture(html`
       <auro-button>
         <span slot="ariaLabel">label</span>
