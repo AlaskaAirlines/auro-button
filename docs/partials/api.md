@@ -130,7 +130,7 @@ Available options are:
 
 The `rounded` and `pill` shapes are flexible and can hold any amount of information
 
-The `circle` and `square` shapes are always equal dimensions. We recommend only using them for icon-only buttons.
+The `circle` and `square` shapes are always equal dimensions. These shapes currently only support icon-only buttons.
 
 #### Rounded
 
