@@ -33,7 +33,6 @@ import tokensCss from "./styles/tokens.scss";
  * @csspart button - Apply CSS to HTML5 button.
  * @csspart loader - Apply CSS to auro-loader.
  * @csspart text - Apply CSS to text slot.
- * @csspart icon - Apply CSS to icon slot.
  */
 
 const ICON_ONLY_SHAPES = ["circle", "square"];
@@ -41,12 +40,7 @@ const ICON_ONLY_SHAPES = ["circle", "square"];
 /**
  * AuroButton is a custom element that provides a styled, accessible button with support for various states and form association.
  * It is designed to be flexible, supporting loading states, icon slots, and integration with HTML5 forms.
- * @property {'default', 'rounded', 'pill', 'circle', 'square'} shape - Defines the shape of the button.
- * @property {'xs', 'sm', 'md', 'lg', 'xl'} size - Defines the size of the button.
- * @property {'primary', 'secondary', 'tertiary', 'ghost', 'flat'} variant - Sets the button variant.
- * @property {'submit', 'reset', 'button'} type - The type of button. Matches HTML5 Button Spec.
- * @property {boolean} onDark - DEPRECATED - use `appearance` property
- * @property {'default', 'inverse'} appearance - Defines whether the button will be on lighter or darker backgrounds.
+ * @customElement auro-button
  */
 export class AuroButton extends AuroElement {
   /**
@@ -201,7 +195,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * The type of the button. Possible values are: `submit`, `reset`, `button`.
+       * @property {'submit', 'reset', 'button'} type - The type of button. Matches HTML5 Button Spec.
        */
       type: {
         type: String,
@@ -217,7 +211,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets button variant option.
+       * @property {'primary', 'secondary', 'tertiary', 'ghost', 'flat'} variant - Sets the button variant.
        * @default primary
        */
       variant: {
@@ -276,7 +270,7 @@ export class AuroButton extends AuroElement {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-button"] - The name of element that you want to register to.
+   * @param {string} [name="auro-button"] - The name of the element that you want to register.
    *
    * @example
    * AuroButton.register("custom-button") // this will register this element to <custom-button/>

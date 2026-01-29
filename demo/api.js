@@ -1,5 +1,5 @@
-import { roundedRightAlignExample } from "../apiExamples/roundedRightAlign";
-import { toggledTextExample } from "../apiExamples/toggledText";
+import { roundedRightAlignExample } from "../apiExamples/right-align";
+import { toggledTextExample } from "../apiExamples/toggled-text";
 
 import "../src/registered";
 
