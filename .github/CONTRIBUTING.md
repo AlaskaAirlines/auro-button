@@ -53,7 +53,7 @@ jdoe/cleanUpNpmApi/#80
 
 ## DO NOT git pull on a feature branch
 
-We ask that we keep our repo's history linear. This helps maintain a easy to understand version history and is crucial to our semantic versioning strategy. If you find yourself unable to push to the remote, please **DO NOT** use the `$ git pull` command. If this is discovered during a review, **the pull request will be rejected**. Please see the following instructions on rebasing below.
+We ask that we keep our repo's history linear. This helps maintain an easy to understand version history and is crucial to our semantic versioning strategy. If you find yourself unable to push to the remote, please **DO NOT** use the `$ git pull` command. If this is discovered during a review, **the pull request will be rejected**. Please see the following instructions on rebasing below.
 
 ### Rebase on main
 

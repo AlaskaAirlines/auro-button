@@ -17,7 +17,7 @@ body:
   - type: checkboxes
     id: platform
     attributes:
-      label: What devices platform(s) are you seeing the issue on?
+      label: On which platforms are you seeing the issue?
       description: Select all that apply.
       options:
         - label: Desktop
