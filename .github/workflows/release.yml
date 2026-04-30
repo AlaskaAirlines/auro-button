@@ -5,6 +5,7 @@ on:
     branches:
       - 'rc/**'
       - 'main'
+  workflow_dispatch:
 
 jobs:
   action:
