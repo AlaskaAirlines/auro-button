@@ -1,0 +1,12 @@
+name: RC Workflow
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'dev'
+
+jobs:
+  action:
+    uses: AlaskaAirlines/auro-actions/.github/workflows/release-candidate.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
