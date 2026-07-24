@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auro Web Component Demo | auro-button</title>
+
+    <!-- Prism.js Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css"/>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Legacy reference is still needed to support auro-button's use of legacy token values at this time -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/legacy/auro-classic/CSSCustomProperties.css"/>
+
+    <!-- Design Token Alaska Theme -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/themes/alaska/CSSCustomProperties--alaska.min.css"/>
+    
+    <!-- Webcore Stylesheet Alaska Theme -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/themes/alaska.global.min.css" />
+    
+    <!-- Demo Specific Styles -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/elementDemoStyles.css" />
+</head>
+  <body class="auro-markdown">
+    <main class="flex flex-col items-center justify-center py-4 bg-gray-100 gap-4">
+        <p>Primary - Secondary - Tertiary - Flat - Ghost</p>
+
+        <div class="flex flex-row justify-between w-full">
+          <h4 class="text-3xl font-bold w-full text-center">Square</h4>
+
+          <h4 class="text-3xl font-bold w-full text-center">Circle</h4>
+        </div>
+
+        <h4 class="text-3xl font-bold w-full text-center">XL</h4>
+        <div class="grid grid-cols-2 gap-4">
+          
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button size="xl" shape="square"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xl" shape="square" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xl" shape="square" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xl" shape="square" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xl" shape="square" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button size="xl" shape="circle"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xl" shape="circle" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xl" shape="circle" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xl" shape="circle" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xl" shape="circle" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 bg-[--ds-basic-color-surface-inverse]">
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button appearance="inverse" size="xl" shape="square"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xl" shape="square" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xl" shape="square" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xl" shape="square" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xl" shape="square" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button appearance="inverse" size="xl" shape="circle"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xl" shape="circle" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xl" shape="circle" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xl" shape="circle" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xl" shape="circle" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="text-3xl font-bold w-full text-center pt-8">LG</h4>
+        <div class="grid grid-cols-2 gap-4">
+          
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button size="lg" shape="square"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="lg" shape="square" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="lg" shape="square" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="lg" shape="square" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="lg" shape="square" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button size="lg" shape="circle"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="lg" shape="circle" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="lg" shape="circle" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="lg" shape="circle" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="lg" shape="circle" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 bg-[--ds-basic-color-surface-inverse]">
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button appearance="inverse" size="lg" shape="square"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="lg" shape="square" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="lg" shape="square" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="lg" shape="square" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="lg" shape="square" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button appearance="inverse" size="lg" shape="circle"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="lg" shape="circle" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="lg" shape="circle" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="lg" shape="circle" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="lg" shape="circle" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="text-3xl font-bold w-full text-center pt-8">MD</h4>
+        <div class="grid grid-cols-2 gap-4">
+          
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button size="md" shape="square"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="md" shape="square" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="md" shape="square" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="md" shape="square" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="md" shape="square" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button size="md" shape="circle"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="md" shape="circle" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="md" shape="circle" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="md" shape="circle" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="md" shape="circle" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 bg-[--ds-basic-color-surface-inverse]">
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button appearance="inverse" size="md" shape="square"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="md" shape="square" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="md" shape="square" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="md" shape="square" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="md" shape="square" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button appearance="inverse" size="md" shape="circle"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="md" shape="circle" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="md" shape="circle" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="md" shape="circle" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="md" shape="circle" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="text-3xl font-bold w-full text-center pt-8">SM</h4>
+        <div class="grid grid-cols-2 gap-4">
+          
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button size="sm" shape="square"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="sm" shape="square" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="sm" shape="square" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="sm" shape="square" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="sm" shape="square" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button size="sm" shape="circle"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="sm" shape="circle" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="sm" shape="circle" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="sm" shape="circle" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="sm" shape="circle" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 bg-[--ds-basic-color-surface-inverse]">
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button appearance="inverse" size="sm" shape="square"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="sm" shape="square" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="sm" shape="square" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="sm" shape="square" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="sm" shape="square" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button appearance="inverse" size="sm" shape="circle"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="sm" shape="circle" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="sm" shape="circle" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="sm" shape="circle" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="sm" shape="circle" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="text-3xl font-bold w-full text-center pt-8">XS</h4>
+        <div class="grid grid-cols-2 gap-4">
+          
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button size="xs" shape="square"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xs" shape="square" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xs" shape="square" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xs" shape="square" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xs" shape="square" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button size="xs" shape="circle"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xs" shape="circle" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xs" shape="circle" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xs" shape="circle" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button size="xs" shape="circle" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 bg-[--ds-basic-color-surface-inverse]">
+          <div class="flex flex-col items-center justify-center gap-4 p-8 w-full">
+            <div>
+              <auro-button appearance="inverse" size="xs" shape="square"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xs" shape="square" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xs" shape="square" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xs" shape="square" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xs" shape="square" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4 w-full">
+            <div>
+              <auro-button appearance="inverse" size="xs" shape="circle"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xs" shape="circle" variant="secondary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xs" shape="circle" variant="tertiary"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xs" shape="circle" variant="flat"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+              <auro-button appearance="inverse" size="xs" shape="circle" variant="ghost"><auro-icon customColor category="interface" name="home-filled"></auro-icon></auro-button>
+            </div>
+          </div>
+        </div>
+
+    </main>
+    <script type="module" data-demo-script="true">
+      import { initExamples } from './index.min.js';
+
+      initExamples();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-alert@latest/dist/auro-alert__bundled.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@latest/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/prism.js"></script>
+  </body>
+</html>
