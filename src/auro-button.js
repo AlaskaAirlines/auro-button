@@ -309,19 +309,21 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * When set, renders the button as an anchor (`<a>`) pointing to this URL. This exposes the `link` CSS part in place of `button`.
+       * When set, renders the button as an anchor (`<a>`) pointing to this URL. This exposes the `link` CSS part in place of `button`. Security: the value is used as an `href` without scheme sanitization — do not pass untrusted input, as `javascript:` URLs will execute on activation.
        * @type {string}
        */
       buttonHref: {
         type: String,
+        attribute: "buttonhref",
       },
 
       /**
-       * Sets the `target` of the generated link (e.g. `_blank`, `_self`). Only applies when `buttonHref` is set.
+       * Sets the `target` of the generated link (e.g. `_blank`, `_self`). Only applies when `buttonHref` is set. When using `_blank`, also set `buttonRel="noopener noreferrer"` to prevent reverse tabnabbing.
        * @type {string}
        */
       buttonTarget: {
         type: String,
+        attribute: "buttontarget",
       },
 
       /**
@@ -330,6 +332,7 @@ export class AuroButton extends AuroElement {
        */
       buttonRel: {
         type: String,
+        attribute: "buttonrel",
       },
 
       /**
