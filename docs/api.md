@@ -28,8 +28,8 @@ actions such as submitting a form, starting a task, or advancing a step in a flo
 | formAssociated |              | readonly  | boolean                                                     |             | Enables form association for this element.                                                                                                                                                                                                                                      |
 | layout         | layout       |           | string                                                      | `default`   | Override layout since it isn't used in this component.                                                                                                                                                                                                                          |
 | loading        | loading      |           | boolean                                                     | `false`     | If set to true button text will be replaced with `auro-loader` and become disabled.                                                                                                                                                                                             |
-| shape          | shape        |           | "rounded" \| "pill" \| "circle" \| "square"                 | `rounded`   | Defines the shape of an element.                                                                                                                                                                                                                                                |
-| size           | size         |           | "xs" \| "sm" \| "md" \| "lg" \| "xl"                        | `md`        | Defines the size of an element.                                                                                                                                                                                                                                                 |
+| shape          | shape        |           | "rounded" \| "pill" \| "circle" \| "square"                 | `rounded`   | Defines the shape of the button.                                                                                                                                                                                                                                                |
+| size           | size         |           | "xs" \| "sm" \| "md" \| "lg" \| "xl"                        | `md`        | Defines the size of the button.                                                                                                                                                                                                                                                 |
 | static         | static       |           | boolean                                                     | `false`     | If true, the button will be static and not respond to user interactions.                                                                                                                                                                                                        |
 | tabindex       | tabindex     |           | string                                                      |             | Populates `tabindex` to define the focusable sequence in keyboard navigation.<br>Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.<br>Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`. |
 | tIndex         | tIndex       |           | string                                                      |             | Populates `tabindex` to define the focusable sequence in keyboard navigation.                                                                                                                                                                                                   |
@@ -56,11 +56,13 @@ actions such as submitting a form, starting a task, or advancing a step in a flo
 
 ### CSS Shadow Parts
 
-| Name   | Description                |
-| ------ | -------------------------- |
-| button | Apply CSS to HTML5 button. |
-| loader | Apply CSS to auro-loader.  |
-| text   | Apply CSS to text slot.    |
+| Name           | Description                                                                             |
+| -------------- | --------------------------------------------------------------------------------------- |
+| button         | Apply CSS to HTML5 button.                                                              |
+| contentWrapper | Apply CSS to the span wrapping the button content.                                      |
+| link           | Apply CSS to the anchor (`<a>`) rendered in place of `button` when `buttonHref` is set. |
+| loader         | Apply CSS to auro-loader.                                                               |
+| text           | Apply CSS to text slot.                                                                 |
 
 ### CSS Custom Properties
 

@@ -28,9 +28,8 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines the shape of an element.
+       * Defines the shape of an element. Not defaulted at this base class; subclasses set their own default (e.g. `auro-button` uses `rounded`).
        * @type {"rounded" | "pill" | "circle" | "square"}
-       * @default 'rounded'
        */
       shape: {
         type: String,
@@ -39,9 +38,8 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines the size of an element.
+       * Defines the size of an element. Not defaulted at this base class; subclasses set their own default (e.g. `auro-button` uses `md`).
        * @type {"xs" | "sm" | "md" | "lg" | "xl"}
-       * @default 'md'
        */
       size: {
         type: String,
