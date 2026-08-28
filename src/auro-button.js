@@ -49,8 +49,10 @@ const ICON_ONLY_SHAPES = ["circle", "square"];
  * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button.
  * @slot ariaLabel.loading - Use this slot to pass an aria-label to the HTML5 button when in loading state.
  * @csspart button - Apply CSS to HTML5 button.
+ * @csspart link - Apply CSS to the anchor (`<a>`) rendered in place of `button` when `buttonHref` is set.
  * @csspart loader - Apply CSS to auro-loader.
  * @csspart text - Apply CSS to text slot.
+ * @csspart contentWrapper - Apply CSS to the span wrapping the button content.
  * @cssprop {Color} --ds-advanced-color-button-flat-text - Text color of the flat variant.
  * @cssprop {Color} --ds-advanced-color-button-flat-text-disabled - Text color of the flat variant (disabled).
  * @cssprop {Color} --ds-advanced-color-button-flat-text-hover - Text color of the flat variant (hover).
@@ -189,6 +191,28 @@ export class AuroButton extends AuroElement {
         type: Boolean,
         attribute: false,
         reflect: false,
+      },
+
+      /**
+       * Defines the shape of the button.
+       * @type {"rounded" | "pill" | "circle" | "square"}
+       * @default rounded
+       */
+      shape: {
+        type: String,
+        attribute: "shape",
+        reflect: true,
+      },
+
+      /**
+       * Defines the size of the button.
+       * @type {"xs" | "sm" | "md" | "lg" | "xl"}
+       * @default md
+       */
+      size: {
+        type: String,
+        attribute: "size",
+        reflect: true,
       },
 
       /**
