@@ -347,4 +347,35 @@ describe("auro-button", () => {
     expect(root.querySelector("button")).to.be.null;
     expect(el.hasAttribute("static")).to.be.true;
   });
+
+  it("renders an anchor with the link part when buttonHref is set", async () => {
+    const el = await fixture(html`
+      <auro-button buttonhref="/destination">Go</auro-button>
+    `);
+
+    const root = el.shadowRoot;
+    const anchor = root.querySelector("a");
+
+    expect(anchor).to.not.be.null;
+    expect(root.querySelector("button")).to.be.null;
+    expect(anchor.getAttribute("href")).to.equal("/destination");
+    expect(anchor.getAttribute("part")).to.equal("link");
+  });
+
+  it("binds buttonTarget and buttonRel onto the rendered anchor", async () => {
+    const el = await fixture(html`
+      <auro-button
+        buttonhref="https://example.com"
+        buttontarget="_blank"
+        buttonrel="noopener noreferrer"
+      >
+        Go
+      </auro-button>
+    `);
+
+    const anchor = el.shadowRoot.querySelector("a");
+
+    expect(anchor.getAttribute("target")).to.equal("_blank");
+    expect(anchor.getAttribute("rel")).to.equal("noopener noreferrer");
+  });
 });
