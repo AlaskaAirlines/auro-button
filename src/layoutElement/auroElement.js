@@ -1,6 +1,10 @@
 import { LitElement } from "lit";
 import { transportAllA11yAttributes } from "./a11yUtilities.js";
 
+/**
+ * AuroElement is the shared base class for Auro layout elements, providing common
+ * layout, shape, size, and appearance handling for components that extend it.
+ */
 export class AuroElement extends LitElement {
   /**
    * @type {Object} return object from transportAttributes via a11yUtilities
@@ -15,7 +19,7 @@ export class AuroElement extends LitElement {
     return {
       /**
        * Defines the layout of an element.
-       * @default {'default'}
+       * @default 'default'
        */
       layout: {
         type: String,
@@ -25,8 +29,8 @@ export class AuroElement extends LitElement {
 
       /**
        * Defines the shape of an element.
-       * @property {'default', 'rounded', 'pill', 'circle'}
-       * @default {'default'}
+       * @type {"rounded" | "pill" | "circle" | "square"}
+       * @default 'rounded'
        */
       shape: {
         type: String,
@@ -36,8 +40,8 @@ export class AuroElement extends LitElement {
 
       /**
        * Defines the size of an element.
-       * @property {'xs', 'sm', 'md', 'lg', 'xl'}
-       * @default {'md'}
+       * @type {"xs" | "sm" | "md" | "lg" | "xl"}
+       * @default 'md'
        */
       size: {
         type: String,
@@ -47,7 +51,7 @@ export class AuroElement extends LitElement {
 
       /**
        * Defines whether the button will be on lighter or darker backgrounds.
-       * @property {'default', 'inverse'}
+       * @type {"default" | "inverse"}
        * @default 'default'
        */
       appearance: {
@@ -57,7 +61,8 @@ export class AuroElement extends LitElement {
 
       /**
        * DEPRECATED - use `appearance` attribute.
-       * @default {false}
+       * @deprecated Use the `appearance` attribute instead.
+       * @default false
        */
       onDark: {
         type: Boolean,
@@ -69,7 +74,7 @@ export class AuroElement extends LitElement {
        * A reference to the wrapper element in the shadow DOM.
        * This is used to apply layout and shape classes dynamically.
        * @type {HTMLElement|null}
-       * @default {null}
+       * @default null
        * @private
        */
       wrapper: {
@@ -83,6 +88,8 @@ export class AuroElement extends LitElement {
     super();
 
     this.onDark = false;
+
+    /** @type {"default" | "inverse"} */
     this.appearance = "default";
   }
 
