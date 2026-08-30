@@ -253,6 +253,7 @@ export class AuroButton extends AuroElement {
        */
       loadingText: {
         type: String,
+        attribute: "loadingtext",
       },
 
       /**
@@ -260,6 +261,7 @@ export class AuroButton extends AuroElement {
        */
       tIndex: {
         type: String,
+        attribute: "tindex",
         reflect: true,
       },
 
