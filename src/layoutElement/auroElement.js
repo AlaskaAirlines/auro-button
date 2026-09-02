@@ -7,9 +7,10 @@ import { transportAllA11yAttributes } from "./a11yUtilities.js";
  */
 export class AuroElement extends LitElement {
   /**
-   * @type {Object} return object from transportAttributes via a11yUtilities
+   * Return object from transportAttributes via a11yUtilities.
+   * @type {{ cleanup: Function, getObservedAttributes: Function, getObservedAttribute: Function }}
    * @property {Function} cleanup - Function to clean up the attribute watcher.
-   * @property {Function} getCurrentAttributes - Function to get the current attributes being watched and their values.
+   * @property {Function} getObservedAttributes - Function to get the current attributes being watched and their values.
    * @property {Function} getObservedAttribute - Function to get the value of a specific observed attribute by name.
    * @private
    */
