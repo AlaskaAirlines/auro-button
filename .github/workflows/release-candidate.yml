@@ -10,3 +10,4 @@ jobs:
     uses: AlaskaAirlines/auro-actions/.github/workflows/release-candidate.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      ADO_TOKEN: ${{ secrets.ADO_TOKEN }}
