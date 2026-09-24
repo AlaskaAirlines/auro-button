@@ -28,25 +28,23 @@ The auro-button element should be used in situations where users may:
 ### Basic
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
-  <auro-button>Primary</auro-button>
-  <auro-button variant="secondary">Secondary</auro-button>
-  <auro-button variant="tertiary">Tertiary</auro-button>
-  <auro-button variant="ghost">Ghost</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+<!-- The below content is automatically added from ./../apiExamples/basic.html -->
 <auro-button>Primary</auro-button>
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
 <auro-button variant="ghost">Ghost</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button variant="secondary"&gt;Secondary&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary"&gt;Tertiary&lt;/auro-button&gt;
+&lt;auro-button variant="ghost"&gt;Ghost&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
  

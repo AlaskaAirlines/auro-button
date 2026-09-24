@@ -253,6 +253,7 @@ export class AuroButton extends AuroElement {
        */
       loadingText: {
         type: String,
+        attribute: "loadingtext",
       },
 
       /**
@@ -260,6 +261,7 @@ export class AuroButton extends AuroElement {
        */
       tIndex: {
         type: String,
+        attribute: "tindex",
         reflect: true,
       },
 
@@ -339,24 +341,6 @@ export class AuroButton extends AuroElement {
        * If true, the button will be static and not respond to user interactions.
        */
       static: {
-        type: Boolean,
-        reflect: true,
-      },
-
-      /**
-       * @private
-       */
-      onHover: {
-        attribute: "data-hover",
-        type: Boolean,
-        reflect: true,
-      },
-
-      /**
-       * @private
-       */
-      onActive: {
-        attribute: "data-active",
         type: Boolean,
         reflect: true,
       },
@@ -511,6 +495,9 @@ export class AuroButton extends AuroElement {
 
   /**
    * This is to detect pointer events for hover and active states for styling purposes.
+   * The `data-hover` / `data-active` attributes are set directly on the host (rather than
+   * via reactive properties) so they remain internal-only and are not exposed as public,
+   * settable attributes in the custom elements manifest.
    * :host with :has selector dont work together in Safari and Firefox
    * @param {PointerEvent} event - The pointer event.
    * @private
@@ -518,17 +505,17 @@ export class AuroButton extends AuroElement {
   onPointerEvent(event) {
     switch (event.type) {
       case "pointerenter":
-        this.onHover = true;
+        this.toggleAttribute("data-hover", true);
         break;
       case "pointerleave":
-        this.onHover = false;
+        this.toggleAttribute("data-hover", false);
         break;
       case "pointerdown":
-        this.onActive = true;
+        this.toggleAttribute("data-active", true);
         break;
       case "pointerup":
       case "blur":
-        this.onActive = false;
+        this.toggleAttribute("data-active", false);
         break;
       default:
         break;
