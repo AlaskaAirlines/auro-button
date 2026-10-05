@@ -13,9 +13,7 @@ actions such as submitting a form, starting a task, or advancing a step in a flo
 - **HTML5 form association** — participates in forms and supports `submit` / `reset` types.
 
 **Example**
-```html
-<auro-button variant="primary">Submit</auro-button>
-```
+<pre class="language-html"><code class="language-html">&lt;auro-button variant="primary"&gt;Submit&lt;/auro-button&gt;</code></pre>
 
 ### Properties & Attributes
 
@@ -35,12 +33,12 @@ actions such as submitting a form, starting a task, or advancing a step in a flo
 | size           | size         |           | "xs" \| "sm" \| "md" \| "lg" \| "xl"                        | `md`        | Defines the size of the button.                                                                                                                                                                                                                                                      |
 | static         | static       |           | boolean                                                     | `false`     | If true, the button will be static and not respond to user interactions.                                                                                                                                                                                                             |
 | tabindex       | tabindex     |           | string                                                      |             | Populates `tabindex` to define the focusable sequence in keyboard navigation.<br>Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.<br>Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`.      |
-| tIndex         | tIndex       |           | string                                                      |             | Populates `tabindex` to define the focusable sequence in keyboard navigation.                                                                                                                                                                                                        |
+| tIndex         | tindex       |           | string                                                      |             | Populates `tabindex` to define the focusable sequence in keyboard navigation.                                                                                                                                                                                                        |
 | title          | title        |           | string                                                      |             | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.                                                                                                                                                                   |
 | type           | type         |           | "submit" \| "reset" \| "button"                             |             | The type of button. Matches HTML5 Button Spec.                                                                                                                                                                                                                                       |
 | value          | value        |           | string                                                      |             | Defines the value associated with the button which is submitted with the form data.                                                                                                                                                                                                  |
 | variant        | variant      |           | "primary" \| "secondary" \| "tertiary" \| "ghost" \| "flat" | `primary`   | Sets the button variant.                                                                                                                                                                                                                                                             |
-| loadingText    | loadingText  |           | string                                                      |             | DEPRECATED - Use `slot="ariaLabel.loading"` instead.                                                                                                                                                                                                                                 |
+| loadingText    | loadingtext  |           | string                                                      |             | DEPRECATED - Use `slot="ariaLabel.loading"` instead.                                                                                                                                                                                                                                 |
 | onDark         | ondark       |           | boolean                                                     | `false`     | DEPRECATED - use `appearance` attribute.                                                                                                                                                                                                                                             |
 
 ### Methods
@@ -137,25 +135,23 @@ actions such as submitting a form, starting a task, or advancing a step in a flo
 ## Basic
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
-  <auro-button>Primary</auro-button>
-  <auro-button variant="secondary">Secondary</auro-button>
-  <auro-button variant="tertiary">Tertiary</auro-button>
-  <auro-button variant="ghost">Ghost</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+<!-- The below content is automatically added from ./../apiExamples/basic.html -->
 <auro-button>Primary</auro-button>
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
 <auro-button variant="ghost">Ghost</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button variant="secondary"&gt;Secondary&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary"&gt;Tertiary&lt;/auro-button&gt;
+&lt;auro-button variant="ghost"&gt;Ghost&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -170,32 +166,8 @@ For `tabindex`, use `tIndex` instead to avoid duplicated focus interaction.
 For dark backgrounds, the `inverse` attribute can be applied.
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/inverse.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/inverse.html -->
-  <auro-button appearance="inverse">Primary</auro-button>
-  <auro-button variant="secondary" appearance="inverse">Secondary</auro-button>
-  <auro-button variant="tertiary" appearance="inverse">Tertiary</auro-button>
-  <auro-button variant="ghost" appearance="inverse">Ghost</auro-button>
-  <br /><br/>
-  <auro-button appearance="inverse" shape="circle" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button appearance="inverse" shape="circle" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button appearance="inverse" shape="circle" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button appearance="inverse" shape="circle" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button appearance="inverse" shape="circle" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <br /><br/>
-  <auro-button appearance="inverse" shape="square" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button appearance="inverse" shape="square" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button appearance="inverse" shape="square" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button appearance="inverse" shape="square" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <auro-button appearance="inverse" shape="square" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/inverse.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/inverse.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/inverse.html) -->
+<!-- The below content is automatically added from ./../apiExamples/inverse.html -->
 <auro-button appearance="inverse">Primary</auro-button>
 <auro-button variant="secondary" appearance="inverse">Secondary</auro-button>
 <auro-button variant="tertiary" appearance="inverse">Tertiary</auro-button>
@@ -212,7 +184,29 @@ For dark backgrounds, the `inverse` attribute can be applied.
 <auro-button appearance="inverse" shape="square" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
 <auro-button appearance="inverse" shape="square" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
 <auro-button appearance="inverse" shape="square" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/inverse.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/inverse.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button appearance="inverse"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button variant="secondary" appearance="inverse"&gt;Secondary&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary" appearance="inverse"&gt;Tertiary&lt;/auro-button&gt;
+&lt;auro-button variant="ghost" appearance="inverse"&gt;Ghost&lt;/auro-button&gt;
+&lt;br /&gt;&lt;br/&gt;
+&lt;auro-button appearance="inverse" shape="circle" size="xl"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="circle" size="lg" variant="secondary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="circle" size="md" variant="tertiary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="circle" size="sm" variant="ghost"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="circle" size="xs" variant="flat"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&lt;br /&gt;&lt;br/&gt;
+&lt;auro-button appearance="inverse" shape="square" size="xl"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="square" size="lg" variant="secondary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="square" size="md" variant="tertiary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="square" size="sm" variant="ghost"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="square" size="xs" variant="flat"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -221,47 +215,43 @@ For dark backgrounds, the `inverse` attribute can be applied.
 The button can be disabled with the `disabled` attribute.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/disabled.html -->
-  <auro-button disabled>Primary</auro-button>
-  <auro-button variant="secondary" disabled>Secondary</auro-button>
-  <auro-button variant="tertiary" disabled>Tertiary</auro-button>
-  <auro-button variant="ghost" disabled>Ghost</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabled.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/disabled.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled.html) -->
+<!-- The below content is automatically added from ./../apiExamples/disabled.html -->
 <auro-button disabled>Primary</auro-button>
 <auro-button variant="secondary" disabled>Secondary</auro-button>
 <auro-button variant="tertiary" disabled>Tertiary</auro-button>
 <auro-button variant="ghost" disabled>Ghost</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabled.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/disabled.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button disabled&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button variant="secondary" disabled&gt;Secondary&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary" disabled&gt;Tertiary&lt;/auro-button&gt;
+&lt;auro-button variant="ghost" disabled&gt;Ghost&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled-inverse.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/disabled-inverse.html -->
-  <auro-button disabled appearance="inverse">Primary</auro-button>
-  <auro-button variant="secondary" disabled appearance="inverse">Secondary</auro-button>
-  <auro-button variant="tertiary" disabled appearance="inverse">Tertiary</auro-button>
-  <auro-button variant="ghost" disabled appearance="inverse">Ghost</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabled-inverse.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/disabled-inverse.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/disabled-inverse.html) -->
+<!-- The below content is automatically added from ./../apiExamples/disabled-inverse.html -->
 <auro-button disabled appearance="inverse">Primary</auro-button>
 <auro-button variant="secondary" disabled appearance="inverse">Secondary</auro-button>
 <auro-button variant="tertiary" disabled appearance="inverse">Tertiary</auro-button>
 <auro-button variant="ghost" disabled appearance="inverse">Ghost</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/disabled-inverse.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/disabled-inverse.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button disabled appearance="inverse"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button variant="secondary" disabled appearance="inverse"&gt;Secondary&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary" disabled appearance="inverse"&gt;Tertiary&lt;/auro-button&gt;
+&lt;auro-button variant="ghost" disabled appearance="inverse"&gt;Ghost&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -270,38 +260,8 @@ The button can be disabled with the `disabled` attribute.
 The `static` attribute creates a button with no interactivity. When applied, the button becomes non-clickable and serves purely as a visual element. This is useful for displaying button-styled elements that need to appear interactive but should not respond to user input, such as buttons within clickable cards or slides.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/static.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/static.html -->
-  <auro-button static>Static Primary Button</auro-button>
-  <auro-button static variant="secondary">Static Secondary Button</auro-button>
-  <auro-button static variant="tertiary">Static Tertiary Button</auro-button>
-  <br><br>
-  <auro-button static fluid>Static Fluid Button</auro-button>
-  <br><br>
-  <auro-button static size="xs">XS Static</auro-button>
-  <auro-button static size="sm">SM Static</auro-button>
-  <auro-button static size="md">MD Static</auro-button>
-  <auro-button static size="lg">LG Static</auro-button>
-  <auro-button static size="xl">XL Static</auro-button>
-  <br><br>
-  <auro-button static shape="pill">
-    <auro-icon category="interface" name="home-filled" slot="icon" customColor></auro-icon>
-    Static Pill with Icon
-  </auro-button>
-  <auro-button static shape="circle">
-    <auro-icon category="interface" name="home-filled" customColor></auro-icon>
-  </auro-button>
-  <auro-button static shape="square">
-    <auro-icon category="interface" name="home-filled" customColor></auro-icon>
-  </auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/static.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/static.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/static.html) -->
+<!-- The below content is automatically added from ./../apiExamples/static.html -->
 <auro-button static>Static Primary Button</auro-button>
 <auro-button static variant="secondary">Static Secondary Button</auro-button>
 <auro-button static variant="tertiary">Static Tertiary Button</auro-button>
@@ -315,36 +275,62 @@ The `static` attribute creates a button with no interactivity. When applied, the
 <auro-button static size="xl">XL Static</auro-button>
 <br><br>
 <auro-button static shape="pill">
-  <auro-icon category="interface" name="home-filled" slot="icon" customColor></auro-icon>
-  Static Pill with Icon
+<auro-icon category="interface" name="home-filled" slot="icon" customColor></auro-icon>
+    Static Pill with Icon
 </auro-button>
 <auro-button static shape="circle">
-  <auro-icon category="interface" name="home-filled" customColor></auro-icon>
+<auro-icon category="interface" name="home-filled" customColor></auro-icon>
 </auro-button>
 <auro-button static shape="square">
-  <auro-icon category="interface" name="home-filled" customColor></auro-icon>
+<auro-icon category="interface" name="home-filled" customColor></auro-icon>
 </auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/static.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/static.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button static&gt;Static Primary Button&lt;/auro-button&gt;
+&lt;auro-button static variant="secondary"&gt;Static Secondary Button&lt;/auro-button&gt;
+&lt;auro-button static variant="tertiary"&gt;Static Tertiary Button&lt;/auro-button&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;auro-button static fluid&gt;Static Fluid Button&lt;/auro-button&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;auro-button static size="xs"&gt;XS Static&lt;/auro-button&gt;
+&lt;auro-button static size="sm"&gt;SM Static&lt;/auro-button&gt;
+&lt;auro-button static size="md"&gt;MD Static&lt;/auro-button&gt;
+&lt;auro-button static size="lg"&gt;LG Static&lt;/auro-button&gt;
+&lt;auro-button static size="xl"&gt;XL Static&lt;/auro-button&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;auro-button static shape="pill"&gt;
+  &lt;auro-icon category="interface" name="home-filled" slot="icon" customColor&gt;&lt;/auro-icon&gt;
+  Static Pill with Icon
+&lt;/auro-button&gt;
+&lt;auro-button static shape="circle"&gt;
+  &lt;auro-icon category="interface" name="home-filled" customColor&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button static shape="square"&gt;
+  &lt;auro-icon category="interface" name="home-filled" customColor&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/static-inverse.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/static-inverse.html -->
-  <auro-button static appearance="inverse">Static Primary Button</auro-button>
-  <auro-button static variant="secondary" appearance="inverse">Static Secondary Button</auro-button>
-  <auro-button static variant="tertiary" appearance="inverse">Static Tertiary Button</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/static-inverse.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/static-inverse.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/static-inverse.html) -->
+<!-- The below content is automatically added from ./../apiExamples/static-inverse.html -->
 <auro-button static appearance="inverse">Static Primary Button</auro-button>
 <auro-button static variant="secondary" appearance="inverse">Static Secondary Button</auro-button>
 <auro-button static variant="tertiary" appearance="inverse">Static Tertiary Button</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/static-inverse.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/static-inverse.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button static appearance="inverse"&gt;Static Primary Button&lt;/auro-button&gt;
+&lt;auro-button static variant="secondary" appearance="inverse"&gt;Static Secondary Button&lt;/auro-button&gt;
+&lt;auro-button static variant="tertiary" appearance="inverse"&gt;Static Tertiary Button&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -353,27 +339,25 @@ The `static` attribute creates a button with no interactivity. When applied, the
 The size of the button can be set in t-shirt sizes from `xs` to `xl`
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/size.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/size.html -->
-  <auro-button size="xs">Extra Small</auro-button>
-  <auro-button size="sm">Small</auro-button>
-  <auro-button size="md">Medium</auro-button>
-  <auro-button size="lg">Large</auro-button>
-  <auro-button size="xl">Extra Large</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/size.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/size.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/size.html) -->
+<!-- The below content is automatically added from ./../apiExamples/size.html -->
 <auro-button size="xs">Extra Small</auro-button>
 <auro-button size="sm">Small</auro-button>
 <auro-button size="md">Medium</auro-button>
 <auro-button size="lg">Large</auro-button>
 <auro-button size="xl">Extra Large</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/size.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/size.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button size="xs"&gt;Extra Small&lt;/auro-button&gt;
+&lt;auro-button size="sm"&gt;Small&lt;/auro-button&gt;
+&lt;auro-button size="md"&gt;Medium&lt;/auro-button&gt;
+&lt;auro-button size="lg"&gt;Large&lt;/auro-button&gt;
+&lt;auro-button size="xl"&gt;Extra Large&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -396,27 +380,25 @@ The `circle` and `square` shapes are always equal dimensions. These shapes curre
 #### Rounded
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-rounded.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/shape-rounded.html -->
-  <auro-button shape="rounded" size="xl">Primary</auro-button>
-  <auro-button shape="rounded" size="lg">Primary</auro-button>
-  <auro-button shape="rounded" size="md">Primary</auro-button>
-  <auro-button shape="rounded" size="sm">Primary</auro-button>
-  <auro-button shape="rounded" size="xs">Primary</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-rounded.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/shape-rounded.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-rounded.html) -->
+<!-- The below content is automatically added from ./../apiExamples/shape-rounded.html -->
 <auro-button shape="rounded" size="xl">Primary</auro-button>
 <auro-button shape="rounded" size="lg">Primary</auro-button>
 <auro-button shape="rounded" size="md">Primary</auro-button>
 <auro-button shape="rounded" size="sm">Primary</auro-button>
 <auro-button shape="rounded" size="xs">Primary</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-rounded.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/shape-rounded.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button shape="rounded" size="xl"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button shape="rounded" size="lg"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button shape="rounded" size="md"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button shape="rounded" size="sm"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button shape="rounded" size="xs"&gt;Primary&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -425,195 +407,185 @@ The `circle` and `square` shapes are always equal dimensions. These shapes curre
 The `rounded` attribute supports the ability to hide/show the text of the `auro-button`. This can be done by changing the value of the `iconOnly` attribute. In this example, the text is toggled via `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggled-text.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/toggled-text.html -->
-  <auro-button shape="circle" id="toggledTextElem">
-    <span slot="ariaLabel">arrow-up</span>
-    <span>Text is now shown!</span>
-    <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
-  </auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggled-text.html) -->
+<!-- The below content is automatically added from ./../apiExamples/toggled-text.html -->
+<auro-button shape="circle" id="toggledTextElem">
+<span slot="ariaLabel">arrow-up</span>
+<span>Text is now shown!</span>
+<auro-icon customColor category="interface" name="arrow-up"></auro-icon>
+</auro-button>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/toggled-text.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/toggled-text.html -->
 
-```html
-<auro-button shape="circle" id="toggledTextElem">
-  <span slot="ariaLabel">arrow-up</span>
-  <span>Text is now shown!</span>
-  <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
-</auro-button>
-```
+<pre class="language-html"><code class="language-html">&lt;auro-button shape="circle" id="toggledTextElem"&gt;
+  &lt;span slot="ariaLabel"&gt;arrow-up&lt;/span&gt;
+  &lt;span&gt;Text is now shown!&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="arrow-up"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/toggled-text.js) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/toggled-text.js -->
 
-```js
-export function toggledTextExample() {
+<pre class="language-js"><code class="language-js">export function toggledTextExample() {
   const toggledTextElem = document.querySelector("#toggledTextElem");
-
+​
   // The mouseover and mouseout events are to simulate toggling text for mouse users
-  toggledTextElem.addEventListener("mouseover", () => {
+  toggledTextElem.addEventListener("mouseover", () =&gt; {
     toggledTextElem.shape = "pill";
   });
-
-  toggledTextElem.addEventListener("mouseout", () => {
+​
+  toggledTextElem.addEventListener("mouseout", () =&gt; {
     toggledTextElem.shape = "circle";
   });
-
+​
   // The focusin and focusout events are to simulate toggling text for keyboard users
-  toggledTextElem.addEventListener("focusin", () => {
+  toggledTextElem.addEventListener("focusin", () =&gt; {
     toggledTextElem.shape = "pill";
   });
-
-  toggledTextElem.addEventListener("focusout", () => {
+​
+  toggledTextElem.addEventListener("focusout", () =&gt; {
     toggledTextElem.shape = "circle";
   });
-}
-```
+}</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 #### Pill
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-pill.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/shape-pill.html -->
-  <auro-button shape="pill" size="xl">Primary</auro-button>
-  <auro-button shape="pill" size="lg">Primary</auro-button>
-  <auro-button shape="pill" size="md">Primary</auro-button>
-  <auro-button shape="pill" size="sm">Primary</auro-button>
-  <auro-button shape="pill" size="xs">Primary</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-pill.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/shape-pill.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-pill.html) -->
+<!-- The below content is automatically added from ./../apiExamples/shape-pill.html -->
 <auro-button shape="pill" size="xl">Primary</auro-button>
 <auro-button shape="pill" size="lg">Primary</auro-button>
 <auro-button shape="pill" size="md">Primary</auro-button>
 <auro-button shape="pill" size="sm">Primary</auro-button>
 <auro-button shape="pill" size="xs">Primary</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-pill.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/shape-pill.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button shape="pill" size="xl"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button shape="pill" size="lg"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button shape="pill" size="md"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button shape="pill" size="sm"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button shape="pill" size="xs"&gt;Primary&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 #### Circle
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/shape-circle.html -->
-  <auro-button shape="circle" size="xl">
-    <span slot="ariaLabel">home-filled</span>
-    <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-  </auro-button>
-  <auro-button shape="circle" size="lg">
-    <span slot="ariaLabel">home-filled</span>
-    <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-  </auro-button>
-  <auro-button shape="circle" size="md">
-    <span slot="ariaLabel">home-filled</span>
-    <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-  </auro-button>
-  <auro-button shape="circle" size="sm">
-    <span slot="ariaLabel">home-filled</span>
-    <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-  </auro-button>
-  <auro-button shape="circle" size="xs">
-    <span slot="ariaLabel">home-filled</span>
-    <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-  </auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle.html) -->
+<!-- The below content is automatically added from ./../apiExamples/shape-circle.html -->
+<auro-button shape="circle" size="xl">
+<span slot="ariaLabel">home-filled</span>
+<auro-icon customColor category="interface" name="home-filled"></auro-icon>
+</auro-button>
+<auro-button shape="circle" size="lg">
+<span slot="ariaLabel">home-filled</span>
+<auro-icon customColor category="interface" name="home-filled"></auro-icon>
+</auro-button>
+<auro-button shape="circle" size="md">
+<span slot="ariaLabel">home-filled</span>
+<auro-icon customColor category="interface" name="home-filled"></auro-icon>
+</auro-button>
+<auro-button shape="circle" size="sm">
+<span slot="ariaLabel">home-filled</span>
+<auro-icon customColor category="interface" name="home-filled"></auro-icon>
+</auro-button>
+<auro-button shape="circle" size="xs">
+<span slot="ariaLabel">home-filled</span>
+<auro-icon customColor category="interface" name="home-filled"></auro-icon>
+</auro-button>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-circle.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/shape-circle.html -->
 
-```html
-<auro-button shape="circle" size="xl">
-  <span slot="ariaLabel">home-filled</span>
-  <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-</auro-button>
-<auro-button shape="circle" size="lg">
-  <span slot="ariaLabel">home-filled</span>
-  <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-</auro-button>
-<auro-button shape="circle" size="md">
-  <span slot="ariaLabel">home-filled</span>
-  <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-</auro-button>
-<auro-button shape="circle" size="sm">
-  <span slot="ariaLabel">home-filled</span>
-  <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-</auro-button>
-<auro-button shape="circle" size="xs">
-  <span slot="ariaLabel">home-filled</span>
-  <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-</auro-button>
-```
+<pre class="language-html"><code class="language-html">&lt;auro-button shape="circle" size="xl"&gt;
+  &lt;span slot="ariaLabel"&gt;home-filled&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="home-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="lg"&gt;
+  &lt;span slot="ariaLabel"&gt;home-filled&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="home-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="md"&gt;
+  &lt;span slot="ariaLabel"&gt;home-filled&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="home-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="sm"&gt;
+  &lt;span slot="ariaLabel"&gt;home-filled&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="home-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="xs"&gt;
+  &lt;span slot="ariaLabel"&gt;home-filled&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="home-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 #### Square
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-square.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/shape-square.html -->
-  <auro-button shape="square" size="xl">
-    <span slot="ariaLabel">home-filled</span>
-    <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-  </auro-button>
-  <auro-button shape="square" size="lg">
-    <span slot="ariaLabel">home-filled</span>
-    <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-  </auro-button>
-  <auro-button shape="square" size="md">
-    <span slot="ariaLabel">home-filled</span>
-    <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-  </auro-button>
-  <auro-button shape="square" size="sm">
-    <span slot="ariaLabel">home-filled</span>
-    <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-  </auro-button>
-  <auro-button shape="square" size="xs">
-    <span slot="ariaLabel">home-filled</span>
-    <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-  </auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-square.html) -->
+<!-- The below content is automatically added from ./../apiExamples/shape-square.html -->
+<auro-button shape="square" size="xl">
+<span slot="ariaLabel">home-filled</span>
+<auro-icon customColor category="interface" name="home-filled"></auro-icon>
+</auro-button>
+<auro-button shape="square" size="lg">
+<span slot="ariaLabel">home-filled</span>
+<auro-icon customColor category="interface" name="home-filled"></auro-icon>
+</auro-button>
+<auro-button shape="square" size="md">
+<span slot="ariaLabel">home-filled</span>
+<auro-icon customColor category="interface" name="home-filled"></auro-icon>
+</auro-button>
+<auro-button shape="square" size="sm">
+<span slot="ariaLabel">home-filled</span>
+<auro-icon customColor category="interface" name="home-filled"></auro-icon>
+</auro-button>
+<auro-button shape="square" size="xs">
+<span slot="ariaLabel">home-filled</span>
+<auro-icon customColor category="interface" name="home-filled"></auro-icon>
+</auro-button>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-square.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/shape-square.html -->
 
-```html
-<auro-button shape="square" size="xl">
-  <span slot="ariaLabel">home-filled</span>
-  <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-</auro-button>
-<auro-button shape="square" size="lg">
-  <span slot="ariaLabel">home-filled</span>
-  <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-</auro-button>
-<auro-button shape="square" size="md">
-  <span slot="ariaLabel">home-filled</span>
-  <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-</auro-button>
-<auro-button shape="square" size="sm">
-  <span slot="ariaLabel">home-filled</span>
-  <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-</auro-button>
-<auro-button shape="square" size="xs">
-  <span slot="ariaLabel">home-filled</span>
-  <auro-icon customColor category="interface" name="home-filled"></auro-icon>
-</auro-button>
-```
+<pre class="language-html"><code class="language-html">&lt;auro-button shape="square" size="xl"&gt;
+  &lt;span slot="ariaLabel"&gt;home-filled&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="home-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="square" size="lg"&gt;
+  &lt;span slot="ariaLabel"&gt;home-filled&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="home-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="square" size="md"&gt;
+  &lt;span slot="ariaLabel"&gt;home-filled&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="home-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="square" size="sm"&gt;
+  &lt;span slot="ariaLabel"&gt;home-filled&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="home-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="square" size="xs"&gt;
+  &lt;span slot="ariaLabel"&gt;home-filled&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="home-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -624,25 +596,23 @@ Auro button can use several different variants, including `primary`, `secondary`
 The flat variant should only be used for interface elements that should only have a focus style such as close buttons on dialogs and clear buttons on form elements.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/variant.html -->
-  <auro-button variant="primary">Primary</auro-button>
-  <auro-button variant="secondary">Secondary</auro-button>
-  <auro-button variant="tertiary">Tertiary</auro-button>
-  <auro-button variant="ghost">Ghost</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/variant.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant.html) -->
+<!-- The below content is automatically added from ./../apiExamples/variant.html -->
 <auro-button variant="primary">Primary</auro-button>
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
 <auro-button variant="ghost">Ghost</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/variant.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/variant.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button variant="primary"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button variant="secondary"&gt;Secondary&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary"&gt;Tertiary&lt;/auro-button&gt;
+&lt;auro-button variant="ghost"&gt;Ghost&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -651,25 +621,23 @@ The flat variant should only be used for interface elements that should only hav
 In the following example see how the `fluid` attributes alters the shape of the button to be full width of its parent container.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/fluid.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/fluid.html -->
-  <auro-button fluid>Primary</auro-button>
-  <auro-button variant="secondary" fluid>Secondary</auro-button>
-  <auro-button variant="tertiary" fluid>Tertiary</auro-button>
-  <auro-button variant="ghost" fluid>Ghost</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/fluid.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/fluid.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/fluid.html) -->
+<!-- The below content is automatically added from ./../apiExamples/fluid.html -->
 <auro-button fluid>Primary</auro-button>
 <auro-button variant="secondary" fluid>Secondary</auro-button>
 <auro-button variant="tertiary" fluid>Tertiary</auro-button>
 <auro-button variant="ghost" fluid>Ghost</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/fluid.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/fluid.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button fluid&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button variant="secondary" fluid&gt;Secondary&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary" fluid&gt;Tertiary&lt;/auro-button&gt;
+&lt;auro-button variant="ghost" fluid&gt;Ghost&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -678,58 +646,54 @@ In the following example see how the `fluid` attributes alters the shape of the 
 This example shows a `rounded` `auro-button` that is right-aligned, demonstrating how the button starts from the right and grows/shrinks from right to left when using the `toggleText` attribute in conjuction with the `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/right-align.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/right-align.html -->
-  <div style="display: flex; justify-content: flex-end; align-items: center; width: 100%">
-    <auro-button shape="circle" id="rightAlignElem">
-      <span slot="ariaLabel">in-flight</span>
-      <span>Text is now shown!</span>
-      <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
-    </auro-button>
-  </div>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/right-align.html) -->
+<!-- The below content is automatically added from ./../apiExamples/right-align.html -->
+<div style="display: flex; justify-content: flex-end; align-items: center; width: 100%">
+<auro-button shape="circle" id="rightAlignElem">
+<span slot="ariaLabel">in-flight</span>
+<span>Text is now shown!</span>
+<auro-icon customColor category="interface" name="arrow-up"></auro-icon>
+</auro-button>
+</div>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/right-align.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/right-align.html -->
 
-```html
-<div style="display: flex; justify-content: flex-end; align-items: center; width: 100%">
-  <auro-button shape="circle" id="rightAlignElem">
-    <span slot="ariaLabel">in-flight</span>
-    <span>Text is now shown!</span>
-    <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
-  </auro-button>
-</div>
-```
+<pre class="language-html"><code class="language-html">&lt;div style="display: flex; justify-content: flex-end; align-items: center; width: 100%"&gt;
+  &lt;auro-button shape="circle" id="rightAlignElem"&gt;
+    &lt;span slot="ariaLabel"&gt;in-flight&lt;/span&gt;
+    &lt;span&gt;Text is now shown!&lt;/span&gt;
+    &lt;auro-icon customColor category="interface" name="arrow-up"&gt;&lt;/auro-icon&gt;
+  &lt;/auro-button&gt;
+&lt;/div&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/right-align.js) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/right-align.js -->
 
-```js
-export function roundedRightAlignExample() {
+<pre class="language-js"><code class="language-js">export function roundedRightAlignExample() {
   const rightAlignElem = document.querySelector("#rightAlignElem");
-
+​
   // The mouseover and mouseout events are to simulate toggling text for mouse users
-  rightAlignElem.addEventListener("mouseover", () => {
+  rightAlignElem.addEventListener("mouseover", () =&gt; {
     rightAlignElem.shape = "pill";
   });
-
-  rightAlignElem.addEventListener("mouseout", () => {
+​
+  rightAlignElem.addEventListener("mouseout", () =&gt; {
     rightAlignElem.shape = "circle";
   });
-
+​
   // The focusin and focusout events are to simulate toggling text for keyboard users
-  rightAlignElem.addEventListener("focusin", () => {
+  rightAlignElem.addEventListener("focusin", () =&gt; {
     rightAlignElem.shape = "pill";
   });
-
-  rightAlignElem.addEventListener("focusout", () => {
+​
+  rightAlignElem.addEventListener("focusout", () =&gt; {
     rightAlignElem.shape = "circle";
   });
-}
-```
+}</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -738,47 +702,43 @@ export function roundedRightAlignExample() {
 Use the `loading` attribute to alter the content to the shimmering dots to alert the user that the button/form is in an active state. The `loading` attribute will also place the element in a disabled state to keep the user from re-submitting an action.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loading.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/loading.html -->
-  <auro-button loading>Primary</auro-button>
-  <auro-button variant="secondary" loading>Secondary</auro-button>
-  <auro-button variant="tertiary" loading>Tertiary</auro-button>
-  <auro-button variant="ghost" loading>Ghost</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loading.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/loading.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loading.html) -->
+<!-- The below content is automatically added from ./../apiExamples/loading.html -->
 <auro-button loading>Primary</auro-button>
 <auro-button variant="secondary" loading>Secondary</auro-button>
 <auro-button variant="tertiary" loading>Tertiary</auro-button>
 <auro-button variant="ghost" loading>Ghost</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loading.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/loading.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button loading&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button variant="secondary" loading&gt;Secondary&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary" loading&gt;Tertiary&lt;/auro-button&gt;
+&lt;auro-button variant="ghost" loading&gt;Ghost&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loading-inverse.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/loading-inverse.html -->
-  <auro-button appearance="inverse" loading>Primary</auro-button>
-  <auro-button variant="secondary" appearance="inverse" loading>Secondary</auro-button>
-  <auro-button variant="tertiary" appearance="inverse" loading>Tertiary</auro-button>
-  <auro-button variant="ghost" appearance="inverse" loading>Ghost</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loading-inverse.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/loading-inverse.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loading-inverse.html) -->
+<!-- The below content is automatically added from ./../apiExamples/loading-inverse.html -->
 <auro-button appearance="inverse" loading>Primary</auro-button>
 <auro-button variant="secondary" appearance="inverse" loading>Secondary</auro-button>
 <auro-button variant="tertiary" appearance="inverse" loading>Tertiary</auro-button>
 <auro-button variant="ghost" appearance="inverse" loading>Ghost</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loading-inverse.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/loading-inverse.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button appearance="inverse" loading&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button variant="secondary" appearance="inverse" loading&gt;Secondary&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary" appearance="inverse" loading&gt;Tertiary&lt;/auro-button&gt;
+&lt;auro-button variant="ghost" appearance="inverse" loading&gt;Ghost&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -793,47 +753,45 @@ for quick and easy use.
 Be sure to use the customColor attribute on the `auro-icon` component to allow colors set in your parent element to pass through to the icon and `slot=icon` to properly place the `auro-icon` within the button.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/icon.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/icon.html -->
-  <auro-button>
-    <span slot="ariaLabel">wifi</span>
-    <span>Activate WiFi</span>
-    <auro-icon customColor category="in-flight" name="wifi"></auro-icon>
-  </auro-button>
-  <auro-button variant="secondary">
-    <span slot="ariaLabel">arrow-left</span>
-    <span>Previous action</span>
-    <auro-icon customcolor category="interface" name="arrow-left" ></auro-icon>
-  </auro-button>
-  <auro-button variant="tertiary">
-    <span slot="ariaLabel">heart-filled</span>
-    <span>Love this ...</span>
-    <auro-icon customcolor category="interface" name="heart-filled" ></auro-icon>
-  </auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/icon.html) -->
+<!-- The below content is automatically added from ./../apiExamples/icon.html -->
+<auro-button>
+<span slot="ariaLabel">wifi</span>
+<span>Activate WiFi</span>
+<auro-icon customColor category="in-flight" name="wifi"></auro-icon>
+</auro-button>
+<auro-button variant="secondary">
+<span slot="ariaLabel">arrow-left</span>
+<span>Previous action</span>
+<auro-icon customcolor category="interface" name="arrow-left" ></auro-icon>
+</auro-button>
+<auro-button variant="tertiary">
+<span slot="ariaLabel">heart-filled</span>
+<span>Love this ...</span>
+<auro-icon customcolor category="interface" name="heart-filled" ></auro-icon>
+</auro-button>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/icon.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/icon.html -->
 
-```html
-<auro-button>
-  <span slot="ariaLabel">wifi</span>
-  <span>Activate WiFi</span>
-  <auro-icon customColor category="in-flight" name="wifi"></auro-icon>
-</auro-button>
-<auro-button variant="secondary">
-  <span slot="ariaLabel">arrow-left</span>
-  <span>Previous action</span>
-  <auro-icon customcolor category="interface" name="arrow-left" ></auro-icon>
-</auro-button>
-<auro-button variant="tertiary">
-  <span slot="ariaLabel">heart-filled</span>
-  <span>Love this ...</span>
-  <auro-icon customcolor category="interface" name="heart-filled" ></auro-icon>
-</auro-button>
-```
+<pre class="language-html"><code class="language-html">&lt;auro-button&gt;
+  &lt;span slot="ariaLabel"&gt;wifi&lt;/span&gt;
+  &lt;span&gt;Activate WiFi&lt;/span&gt;
+  &lt;auro-icon customColor category="in-flight" name="wifi"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button variant="secondary"&gt;
+  &lt;span slot="ariaLabel"&gt;arrow-left&lt;/span&gt;
+  &lt;span&gt;Previous action&lt;/span&gt;
+  &lt;auro-icon customcolor category="interface" name="arrow-left" &gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary"&gt;
+  &lt;span slot="ariaLabel"&gt;heart-filled&lt;/span&gt;
+  &lt;span&gt;Love this ...&lt;/span&gt;
+  &lt;auro-icon customcolor category="interface" name="heart-filled" &gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -844,33 +802,31 @@ Be sure to use the customColor attribute on the `auro-icon` component to allow c
 Accessible text may be provided through the `ariaLabel` or `ariaLabel.loading` slots.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/aria-label.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/aria-label.html -->
-  <auro-button>
-    <span slot="ariaLabel">My Button Label</span>
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/aria-label.html) -->
+<!-- The below content is automatically added from ./../apiExamples/aria-label.html -->
+<auro-button>
+<span slot="ariaLabel">My Button Label</span>
     Auro Button
-  </auro-button>
-  <auro-button loading>
-    <span slot="ariaLabel.loading">My Loading Button Label</span>
+</auro-button>
+<auro-button loading>
+<span slot="ariaLabel.loading">My Loading Button Label</span>
     Auro Button
-  </auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
+</auro-button>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/aria-label.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/aria-label.html -->
 
-```html
-<auro-button>
-  <span slot="ariaLabel">My Button Label</span>
+<pre class="language-html"><code class="language-html">&lt;auro-button&gt;
+  &lt;span slot="ariaLabel"&gt;My Button Label&lt;/span&gt;
   Auro Button
-</auro-button>
-<auro-button loading>
-  <span slot="ariaLabel.loading">My Loading Button Label</span>
+&lt;/auro-button&gt;
+&lt;auro-button loading&gt;
+  &lt;span slot="ariaLabel.loading"&gt;My Loading Button Label&lt;/span&gt;
   Auro Button
-</auro-button>
-```
+&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -879,13 +835,13 @@ Accessible text may be provided through the `ariaLabel` or `ariaLabel.loading` s
 The component supports both the `aria-labelledby` attribute for accessibility.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/aria-labeledby.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/aria-labeledby.html -->
-  <auro-button aria-labelledby="button-label">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/aria-labeledby.html) -->
+<!-- The below content is automatically added from ./../apiExamples/aria-labeledby.html -->
+<auro-button aria-labelledby="button-label">
     Auro Button
-    <label id="button-label" class="util_displayHiddenVisually">My Button Label</label>
-  </auro-button>
-  <style>
+<label id="button-label" class="util_displayHiddenVisually">My Button Label</label>
+</auro-button>
+<style>
     .util_displayHiddenVisually {
       clip: rect(1px, 1px, 1px, 1px);
       width: 1px;
@@ -893,20 +849,19 @@ The component supports both the `aria-labelledby` attribute for accessibility.
       padding: 0;
       border: 0;
     }
-  </style>
-  <!-- AURO-GENERATED-CONTENT:END -->
+</style>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/aria-labeledby.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/aria-labeledby.html -->
 
-```html
-<auro-button aria-labelledby="button-label">
+<pre class="language-html"><code class="language-html">&lt;auro-button aria-labelledby="button-label"&gt;
   Auro Button
-  <label id="button-label" class="util_displayHiddenVisually">My Button Label</label>
-</auro-button>
-<style>
+  &lt;label id="button-label" class="util_displayHiddenVisually"&gt;My Button Label&lt;/label&gt;
+&lt;/auro-button&gt;
+&lt;style&gt;
   .util_displayHiddenVisually {
     clip: rect(1px, 1px, 1px, 1px);
     width: 1px;
@@ -914,8 +869,7 @@ The component supports both the `aria-labelledby` attribute for accessibility.
     padding: 0;
     border: 0;
   }
-</style>
-```
+&lt;/style&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -926,35 +880,33 @@ The component supports both the `aria-labelledby` attribute for accessibility.
 For buttons without a `buttonHref` attribute, the `button` part will be available.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_button.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/part_button.html -->
-  <auro-button id="part-button-example">Primary</auro-button>
-  <style>
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_button.html) -->
+<!-- The below content is automatically added from ./../apiExamples/part_button.html -->
+<auro-button id="part-button-example">Primary</auro-button>
+<style>
     #part-button-example::part(button) {
       background-color: white;
       background-image: none;
       color: #333;
       border: 1px solid #119933
     }
-  </style>
-  <!-- AURO-GENERATED-CONTENT:END -->
+</style>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/part_button.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/part_button.html -->
 
-```html
-<auro-button id="part-button-example">Primary</auro-button>
-<style>
+<pre class="language-html"><code class="language-html">&lt;auro-button id="part-button-example"&gt;Primary&lt;/auro-button&gt;
+&lt;style&gt;
   #part-button-example::part(button) {
     background-color: white;
     background-image: none;
     color: #333;
     border: 1px solid #119933
   }
-</style>
-```
+&lt;/style&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -963,140 +915,132 @@ For buttons without a `buttonHref` attribute, the `button` part will be availabl
 For buttons with a `buttonHref` property, the `link` part will be available
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_link.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/part_link.html -->
-  <auro-button id="part-link-example" buttonHref="/test">Primary</auro-button>
-  <style>
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_link.html) -->
+<!-- The below content is automatically added from ./../apiExamples/part_link.html -->
+<auro-button id="part-link-example" buttonHref="/test">Primary</auro-button>
+<style>
     #part-link-example::part(link) {
       background-color: white;
       background-image: none;
       color: #333;
       border: 1px solid #119933
     }
-  </style>
-  <!-- AURO-GENERATED-CONTENT:END -->
+</style>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/part_link.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/part_link.html -->
 
-```html
-<auro-button id="part-link-example" buttonHref="/test">Primary</auro-button>
-<style>
+<pre class="language-html"><code class="language-html">&lt;auro-button id="part-link-example" buttonHref="/test"&gt;Primary&lt;/auro-button&gt;
+&lt;style&gt;
   #part-link-example::part(link) {
     background-color: white;
     background-image: none;
     color: #333;
     border: 1px solid #119933
   }
-</style>
-```
+&lt;/style&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ### Content Wrapper
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_content-wrapper.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/part_content-wrapper.html -->
-  <auro-button id="part-content-wrapper-example">Primary</auro-button>
-  <style>
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_content-wrapper.html) -->
+<!-- The below content is automatically added from ./../apiExamples/part_content-wrapper.html -->
+<auro-button id="part-content-wrapper-example">Primary</auro-button>
+<style>
     #part-content-wrapper-example::part(contentWrapper) {
       background-color: white;
       background-image: none;
       color: #333;
       border: 1px solid #119933
     }
-  </style>
-  <!-- AURO-GENERATED-CONTENT:END -->
+</style>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/part_content-wrapper.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/part_content-wrapper.html -->
 
-```html
-<auro-button id="part-content-wrapper-example">Primary</auro-button>
-<style>
+<pre class="language-html"><code class="language-html">&lt;auro-button id="part-content-wrapper-example"&gt;Primary&lt;/auro-button&gt;
+&lt;style&gt;
   #part-content-wrapper-example::part(contentWrapper) {
     background-color: white;
     background-image: none;
     color: #333;
     border: 1px solid #119933
   }
-</style>
-```
+&lt;/style&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ### Text
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_text.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/part_text.html -->
-  <auro-button id="part-text-example">Primary</auro-button>
-  <style>
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_text.html) -->
+<!-- The below content is automatically added from ./../apiExamples/part_text.html -->
+<auro-button id="part-text-example">Primary</auro-button>
+<style>
     #part-text-example::part(text) {
       background-color: white;
       background-image: none;
       color: #333;
       border: 1px solid #119933
     }
-  </style>
-  <!-- AURO-GENERATED-CONTENT:END -->
+</style>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/part_text.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/part_text.html -->
 
-```html
-<auro-button id="part-text-example">Primary</auro-button>
-<style>
+<pre class="language-html"><code class="language-html">&lt;auro-button id="part-text-example"&gt;Primary&lt;/auro-button&gt;
+&lt;style&gt;
   #part-text-example::part(text) {
     background-color: white;
     background-image: none;
     color: #333;
     border: 1px solid #119933
   }
-</style>
-```
+&lt;/style&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ### Loader
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_loader.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/part_loader.html -->
-  <auro-button id="part-loader-example" loading>Primary</auro-button>
-  <style>
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_loader.html) -->
+<!-- The below content is automatically added from ./../apiExamples/part_loader.html -->
+<auro-button id="part-loader-example" loading>Primary</auro-button>
+<style>
     #part-loader-example::part(loader) {
       background-color: white;
       background-image: none;
       color: #333;
       border: 1px solid #119933
     }
-  </style>
-  <!-- AURO-GENERATED-CONTENT:END -->
+</style>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/part_loader.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/part_loader.html -->
 
-```html
-<auro-button id="part-loader-example" loading>Primary</auro-button>
-<style>
+<pre class="language-html"><code class="language-html">&lt;auro-button id="part-loader-example" loading&gt;Primary&lt;/auro-button&gt;
+&lt;style&gt;
   #part-loader-example::part(loader) {
     background-color: white;
     background-image: none;
     color: #333;
     border: 1px solid #119933
   }
-</style>
-```
+&lt;/style&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -1107,23 +1051,21 @@ For buttons with a `buttonHref` property, the `link` part will be available
 These examples illustrate a common use case where a user will want to pass a function into a button to support a click event. See the code examples for how this is achieved.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/pass-function.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/pass-function.html -->
-  <auro-button onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
-  <auro-button disabled onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
-  <auro-button loading onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/pass-function.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/pass-function.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/pass-function.html) -->
+<!-- The below content is automatically added from ./../apiExamples/pass-function.html -->
 <auro-button onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
 <auro-button disabled onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
 <auro-button loading onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/pass-function.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/pass-function.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button onclick="alert('YOU CLICKED ME!');"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button disabled onclick="alert('YOU CLICKED ME!');"&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button loading onclick="alert('YOU CLICKED ME!');"&gt;Primary&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -1132,29 +1074,27 @@ These examples illustrate a common use case where a user will want to pass a fun
 Don't combine `disabled` and `loading` attributes on any single instance of `auro-button`. An `auro-button` with `loading` *is* affectively a disabled instance. There is no need for both.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/do-and-dont.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/do-and-dont.html -->
-  <auro-alert type="error" noIcon>
-    <auro-button loading disabled>Primary</auro-button>
-  </auro-alert>
-  <auro-alert type="success" noIcon style="padding-top: 5px;">
-    <auro-button loading>Primary</auro-button>
-  </auro-alert>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/do-and-dont.html) -->
+<!-- The below content is automatically added from ./../apiExamples/do-and-dont.html -->
+<auro-alert type="error" noIcon>
+<auro-button loading disabled>Primary</auro-button>
+</auro-alert>
+<auro-alert type="success" noIcon style="padding-top: 5px;">
+<auro-button loading>Primary</auro-button>
+</auro-alert>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/do-and-dont.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/do-and-dont.html -->
 
-```html
-<auro-alert type="error" noIcon>
-  <auro-button loading disabled>Primary</auro-button>
-</auro-alert>
-<auro-alert type="success" noIcon style="padding-top: 5px;">
-  <auro-button loading>Primary</auro-button>
-</auro-alert>
-```
+<pre class="language-html"><code class="language-html">&lt;auro-alert type="error" noIcon&gt;
+  &lt;auro-button loading disabled&gt;Primary&lt;/auro-button&gt;
+&lt;/auro-alert&gt;
+&lt;auro-alert type="success" noIcon style="padding-top: 5px;"&gt;
+  &lt;auro-button loading&gt;Primary&lt;/auro-button&gt;
+&lt;/auro-alert&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -1166,9 +1106,8 @@ The component may be restyled by changing the values of the following token(s).
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- The below code snippet is automatically added from ./../src/styles/tokens.scss -->
 
-```scss
-@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
-
+<pre class="language-scss"><code class="language-scss">@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
+​
 :host {
   --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border, #{v.$ds-advanced-color-button-primary-border});
   --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
@@ -1176,6 +1115,5 @@ The component may be restyled by changing the values of the following token(s).
   --ds-auro-button-container-image: var(--ds-advanced-color-button-primary-background, #{v.$ds-advanced-color-button-primary-background});
   --ds-auro-button-loader-color: var(--ds-advanced-color-button-primary-text, #{v.$ds-advanced-color-button-primary-text});
   --ds-auro-button-text-color: var(--ds-advanced-color-button-primary-text, #{v.$ds-advanced-color-button-primary-text});
-}
-```
+}</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
