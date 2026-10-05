@@ -56,9 +56,7 @@ The auro-button element should be used in situations where users may:
 [![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-button?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 ![ESM supported](https://img.shields.io/badge/ESM-compatible-FFE900?style=for-the-badge)
 
-```shell
-$ npm i @aurodesignsystem/auro-button
-```
+<pre class="language-shell"><code class="language-shell">$ npm i @aurodesignsystem/auro-button</code></pre>
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -70,9 +68,7 @@ Defining the dependency within each project that is using the `<auro-button>` co
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/componentImport.md) -->
 
-```js
-import "@aurodesignsystem/auro-button";
-```
+<pre class="language-js"><code class="language-js">import "@aurodesignsystem/auro-button";</code></pre>
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -81,9 +77,7 @@ import "@aurodesignsystem/auro-button";
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/bundleInstallDescription.md) -->
 In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Legacy browsers such as IE11 are no longer supported.
 
-```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-button@latest/+esm"></script>
-```
+<pre class="language-html"><code class="language-html">&lt;script type="module" src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-button@latest/+esm"&gt;&lt;/script&gt;</code></pre>
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -92,12 +86,10 @@ In cases where the project is not able to process JS assets, there are pre-proce
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./apiExamples/basic.html -->
 
-```html
-<auro-button>Primary</auro-button>
-<auro-button variant="secondary">Secondary</auro-button>
-<auro-button variant="tertiary">Tertiary</auro-button>
-<auro-button variant="ghost">Ghost</auro-button>
-```
+<pre class="language-html"><code class="language-html">&lt;auro-button&gt;Primary&lt;/auro-button&gt;
+&lt;auro-button variant="secondary"&gt;Secondary&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary"&gt;Tertiary&lt;/auro-button&gt;
+&lt;auro-button variant="ghost"&gt;Ghost&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Custom Component Registration for Version Management
@@ -114,33 +106,29 @@ You can do this by importing only the component class and using the `register(na
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/customRegistration.md) -->
 <!-- The below content is automatically added from ./docs/partials/customRegistration.md -->
 
-```js
-// Import the class only
+<pre class="language-js"><code class="language-js">// Import the class only
 import { AuroButton } from '@aurodesignsystem/auro-button/class';
-
+​
 // Register with a custom name if desired
-AuroButton.register('custom-button');
-```
+AuroButton.register('custom-button');</code></pre>
 
 This will create a new custom element `<custom-button>` that behaves exactly like `<auro-button>`, allowing both to coexist on the same page without interfering with each other.
 <!-- AURO-GENERATED-CONTENT:END -->
 <div class="exampleWrapper exampleWrapper--flex">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->
-  <!-- The below content is automatically added from ./apiExamples/custom.html -->
-  <custom-button>Primary</custom-button>
-  <custom-button variant="secondary">Secondary</custom-button>
-  <custom-button variant="tertiary">Tertiary</custom-button>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/custom.html) -->
-<!-- The below code snippet is automatically added from ./apiExamples/custom.html -->
-
-```html
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->
+<!-- The below content is automatically added from ./apiExamples/custom.html -->
 <custom-button>Primary</custom-button>
 <custom-button variant="secondary">Secondary</custom-button>
 <custom-button variant="tertiary">Tertiary</custom-button>
-```
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/custom.html) -->
+<!-- The below code snippet is automatically added from ./apiExamples/custom.html -->
+
+<pre class="language-html"><code class="language-html">&lt;custom-button&gt;Primary&lt;/custom-button&gt;
+&lt;custom-button variant="secondary"&gt;Secondary&lt;/custom-button&gt;
+&lt;custom-button variant="tertiary"&gt;Tertiary&lt;/custom-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

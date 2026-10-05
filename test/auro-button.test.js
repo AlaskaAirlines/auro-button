@@ -378,4 +378,50 @@ describe("auro-button", () => {
     expect(anchor.getAttribute("target")).to.equal("_blank");
     expect(anchor.getAttribute("rel")).to.equal("noopener noreferrer");
   });
+
+  it("toggles data-hover on the host across pointerenter/pointerleave", async () => {
+    const el = await fixture(html`
+      <auro-button>Click Me!</auro-button>
+    `);
+
+    const button = el.shadowRoot.querySelector("button");
+
+    expect(el.hasAttribute("data-hover")).to.be.false;
+
+    button.dispatchEvent(new PointerEvent("pointerenter"));
+    expect(el.hasAttribute("data-hover")).to.be.true;
+
+    button.dispatchEvent(new PointerEvent("pointerleave"));
+    expect(el.hasAttribute("data-hover")).to.be.false;
+  });
+
+  it("toggles data-active on the host across pointerdown/pointerup", async () => {
+    const el = await fixture(html`
+      <auro-button>Click Me!</auro-button>
+    `);
+
+    const button = el.shadowRoot.querySelector("button");
+
+    expect(el.hasAttribute("data-active")).to.be.false;
+
+    button.dispatchEvent(new PointerEvent("pointerdown"));
+    expect(el.hasAttribute("data-active")).to.be.true;
+
+    button.dispatchEvent(new PointerEvent("pointerup"));
+    expect(el.hasAttribute("data-active")).to.be.false;
+  });
+
+  it("clears data-active on the host when the button blurs", async () => {
+    const el = await fixture(html`
+      <auro-button>Click Me!</auro-button>
+    `);
+
+    const button = el.shadowRoot.querySelector("button");
+
+    button.dispatchEvent(new PointerEvent("pointerdown"));
+    expect(el.hasAttribute("data-active")).to.be.true;
+
+    button.dispatchEvent(new FocusEvent("blur"));
+    expect(el.hasAttribute("data-active")).to.be.false;
+  });
 });
