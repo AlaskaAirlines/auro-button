@@ -1,9 +1,12 @@
 name: Sync Tags
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   action:
     uses: AlaskaAirlines/auro-actions/.github/workflows/sync-tags.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
