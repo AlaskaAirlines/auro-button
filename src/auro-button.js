@@ -232,10 +232,12 @@ export class AuroButton extends AuroElement {
       /**
        * Sets the button's position in the keyboard tab order (the inner element's `tabindex`). Use `-1` to remove the button from the tab order. Most buttons don't need this. Ignored when `static` is set.
        * @relevantWhen !static
+       * @minimum -1
+       * @maximum 2147483647
        * @category a11y
        */
       tIndex: {
-        type: String,
+        type: Number,
         attribute: "tindex",
         reflect: true,
       },
@@ -572,7 +574,7 @@ export class AuroButton extends AuroElement {
       [fontSize]: this.showText,
     };
 
-    const tabindex = this.tIndex || this.tabindex;
+    const tabindex = this.tIndex ?? this.tabindex;
 
     return html`
       <!-- Hidden slots for aria labels -->
