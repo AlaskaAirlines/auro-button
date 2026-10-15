@@ -136,8 +136,54 @@ export class AuroElement extends LitElement {
     this.resetShapeClasses();
   }
 
+  /**
+   * Points `wrapper` and the ARIA attribute transport at the wrapper element currently in the shadow DOM.
+   * Lit renders a new element when a template switches tags (for example, `auro-button` swapping `<button>` for `<a>` or `<span>`), so this runs after every update.
+   * @returns {boolean} - True if the wrapper was (re)bound; false if it was already current.
+   * @private
+   */
+  bindWrapper() {
+    const wrapper = this.shadowRoot.querySelector(".wrapper");
+
+    if (wrapper === this.wrapper && this.attributeWatcher) {
+      return false;
+    }
+
+    this.releaseWrapper();
+    this.wrapper = wrapper;
+
+    this.attributeWatcher = wrapper
+      ? transportAllA11yAttributes({ host: this, target: wrapper })
+      : null;
+
+    return true;
+  }
+
+  /**
+   * Stops the ARIA attribute transport and puts the attributes it moved back on the host.
+   * Transported attributes are removed from the host, so without this they would only exist on the old wrapper element, and the next `bindWrapper()` couldn't move them to the new one.
+   * @private
+   */
+  releaseWrapper() {
+    if (!this.attributeWatcher) {
+      return;
+    }
+
+    const transported = this.attributeWatcher.getObservedAttributes();
+
+    this.attributeWatcher.cleanup();
+    this.attributeWatcher = null;
+
+    for (const [name, value] of transported) {
+      this.setAttribute(name, value);
+    }
+  }
+
   updated(changedProperties) {
+    const wrapperBound = this.bindWrapper();
+
     if (
+      wrapperBound ||
       changedProperties.has("layout") ||
       changedProperties.has("shape") ||
       changedProperties.has("size")
@@ -149,24 +195,23 @@ export class AuroElement extends LitElement {
   firstUpdated() {
     super.firstUpdated();
 
-    // Set a reference to the wrapper element in the shadow DOM
-    this.wrapper = this.shadowRoot.querySelector(".wrapper");
+    // Bind here as well as in updated(), so subclasses can use `wrapper` in their own firstUpdated()
+    this.bindWrapper();
+  }
 
-    // Initialize the transportation of ARIA attributes to the target element and get the disconnect function for cleanup
-    this.attributeWatcher = transportAllA11yAttributes({
-      host: this,
-      target: this.shadowRoot.querySelector(".wrapper"),
-    });
+  connectedCallback() {
+    super.connectedCallback();
+
+    // Re-bind when the element is moved or re-inserted, since disconnectedCallback() released the transport
+    if (this.hasUpdated) {
+      this.bindWrapper();
+    }
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
 
-    // Cleanup the ARIA observer if it exists
-    if (this.attributeWatcher) {
-      this.attributeWatcher.cleanup();
-      this.attributeWatcher = null;
-    }
+    this.releaseWrapper();
   }
 
   // Try to render the defined `this.layout` layout. If that fails, fall back to the default layout.

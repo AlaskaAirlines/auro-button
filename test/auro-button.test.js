@@ -424,4 +424,86 @@ describe("auro-button", () => {
     button.dispatchEvent(new FocusEvent("blur"));
     expect(el.hasAttribute("data-active")).to.be.false;
   });
+
+  describe("when the rendered element is replaced after first render", () => {
+    const expectWrapperState = (el, tagName) => {
+      const inner = el.shadowRoot.querySelector(".wrapper");
+
+      expect(inner.tagName).to.equal(tagName);
+      expect(inner.classList.contains("shape-rounded-md")).to.be.true;
+      expect(inner.getAttribute("aria-describedby")).to.equal("hint");
+      expect(inner.getAttribute("aria-label")).to.equal("Submit order");
+      expect(el.wrapper).to.equal(inner);
+    };
+
+    it("keeps the shape class and ARIA attributes when static is set", async () => {
+      const el = await fixture(html`
+        <auro-button aria-describedby="hint" aria-label="Submit order">Submit</auro-button>
+      `);
+
+      el.setAttribute("static", "");
+      await elementUpdated(el);
+
+      expectWrapperState(el, "SPAN");
+    });
+
+    it("keeps the shape class and ARIA attributes when buttonhref is set", async () => {
+      const el = await fixture(html`
+        <auro-button aria-describedby="hint" aria-label="Submit order">Submit</auro-button>
+      `);
+
+      el.setAttribute("buttonhref", "/somewhere");
+      await elementUpdated(el);
+
+      expectWrapperState(el, "A");
+    });
+
+    it("keeps the shape class and ARIA attributes when static is removed again", async () => {
+      const el = await fixture(html`
+        <auro-button static aria-describedby="hint" aria-label="Submit order">Submit</auro-button>
+      `);
+
+      el.removeAttribute("static");
+      await elementUpdated(el);
+
+      expectWrapperState(el, "BUTTON");
+    });
+
+    it("moves ARIA attributes set after the swap onto the new element", async () => {
+      const el = await fixture(html`
+        <auro-button>Submit</auro-button>
+      `);
+
+      el.setAttribute("static", "");
+      await elementUpdated(el);
+
+      el.setAttribute("aria-describedby", "hint");
+      await elementUpdated(el);
+
+      const inner = el.shadowRoot.querySelector(".wrapper");
+      expect(inner.getAttribute("aria-describedby")).to.equal("hint");
+      expect(el.hasAttribute("aria-describedby")).to.be.false;
+    });
+  });
+
+  it("keeps moving ARIA attributes to the inner button after being removed and re-inserted", async () => {
+    const parent = await fixture(html`
+      <div>
+        <auro-button aria-label="Submit order">Submit</auro-button>
+      </div>
+    `);
+    const el = parent.querySelector("auro-button");
+
+    parent.removeChild(el);
+    parent.appendChild(el);
+
+    el.setAttribute("aria-expanded", "true");
+    el.variant = "secondary";
+    await elementUpdated(el);
+
+    const button = el.shadowRoot.querySelector("button");
+    expect(button.getAttribute("aria-expanded")).to.equal("true");
+    expect(button.getAttribute("aria-label")).to.equal("Submit order");
+    expect(el.hasAttribute("aria-expanded")).to.be.false;
+  });
 });
