@@ -278,9 +278,11 @@ export class AuroButton extends AuroElement {
       },
 
       /**
+       * Deprecated: Use `tIndex` instead.
        * Populates `tabindex` to define the focusable sequence in keyboard navigation.
        * Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.
        * Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`.
+       * @deprecated Use `tIndex` instead.
        */
       tabindex: {
         type: String,
