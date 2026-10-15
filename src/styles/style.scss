@@ -57,14 +57,11 @@
 @use "@aurodesignsystem/webcorestylesheets/src/breakpoints" as bp;
 @use "@aurodesignsystem/webcorestylesheets/src/core";
 @use "@aurodesignsystem/webcorestylesheets/src/animation";
-@use "@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
 @use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
 @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap";
 @use '@aurodesignsystem/webcorestylesheets/src/utilityClasses/displayProperties';
 
 // Global variables
-$auro-inset-spacing-options: lg;
-$auro-inset-directions: '--squish';
 $defaultFocusOutlineWidth: 4px;
 
 /**
