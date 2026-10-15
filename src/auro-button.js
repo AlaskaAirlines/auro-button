@@ -87,7 +87,7 @@ export class AuroButton extends AuroElement {
     this.size = "md";
     this.shape = "rounded";
     this.fluid = false;
-    this.loadingText = this.loadingText || "Loading...";
+    this.loadingText = "Loading...";
 
     /** @type {"primary" | "secondary" | "tertiary" | "ghost" | "flat"} */
     this.variant = "primary";
@@ -161,7 +161,7 @@ export class AuroButton extends AuroElement {
       /**
        * Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons. Icon-only buttons need a text alternative in the `ariaLabel` slot.
        * @type {"rounded" | "pill" | "circle" | "square"}
-       * @default rounded
+       * @default "rounded"
        * @category ui
        */
       shape: {
@@ -173,7 +173,7 @@ export class AuroButton extends AuroElement {
       /**
        * Sets the button's size, from `xs` (smallest) to `xl` (largest). Size controls the button's height, padding, and label text size.
        * @type {"xs" | "sm" | "md" | "lg" | "xl"}
-       * @default md
+       * @default "md"
        * @category ui
        */
       size: {
@@ -223,6 +223,7 @@ export class AuroButton extends AuroElement {
        * @deprecated Use `slot="ariaLabel.loading"` instead.
        * @relevantWhen loading
        * @category a11y
+       * @default "Loading..."
        */
       loadingText: {
         type: String,
@@ -277,7 +278,7 @@ export class AuroButton extends AuroElement {
       /**
        * Sets the button's visual emphasis. Use `primary` for the single most important action in a view, `secondary` for supporting actions, and `tertiary`, `ghost`, or `flat` for progressively quieter actions. `flat` shows only the label, with no background or border.
        * @type {"primary" | "secondary" | "tertiary" | "ghost" | "flat"}
-       * @default primary
+       * @default "primary"
        * @category ui
        */
       variant: {
