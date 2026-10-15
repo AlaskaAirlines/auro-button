@@ -305,14 +305,6 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Defines the value associated with the button which is submitted with the form data.
-       */
-      value: {
-        type: String,
-        reflect: true,
-      },
-
-      /**
        * Sets the button variant.
        * @type {"primary" | "secondary" | "tertiary" | "ghost" | "flat"}
        * @default primary
@@ -625,7 +617,6 @@ export class AuroButton extends AuroElement {
         name="${ifDefined(this.name ? this.name : undefined)}"
         type="${ifDefined(this.type ? this.type : undefined)}"
         variant="${ifDefined(this.variant ? this.variant : undefined)}"
-        .value="${ifDefined(this.value ? this.value : undefined)}"
         @click="${!this.static && this.type === "submit" ? this.surfaceSubmitEvent : undefined}"
         @pointerenter="${this.onPointerEvent}"
         @pointerleave="${this.onPointerEvent}"
