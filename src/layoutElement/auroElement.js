@@ -32,6 +32,7 @@ export class AuroElement extends LitElement {
       /**
        * Defines the shape of an element. Not defaulted at this base class; subclasses set their own default (e.g. `auro-button` uses `rounded`).
        * @type {"rounded" | "pill" | "circle" | "square"}
+       * @category ui
        */
       shape: {
         type: String,
@@ -42,6 +43,7 @@ export class AuroElement extends LitElement {
       /**
        * Defines the size of an element. Not defaulted at this base class; subclasses set their own default (e.g. `auro-button` uses `md`).
        * @type {"xs" | "sm" | "md" | "lg" | "xl"}
+       * @category ui
        */
       size: {
         type: String,
@@ -53,6 +55,7 @@ export class AuroElement extends LitElement {
        * Defines whether the button will be on lighter or darker backgrounds.
        * @type {"default" | "inverse"}
        * @default 'default'
+       * @category ui
        */
       appearance: {
         type: String,
@@ -63,6 +66,7 @@ export class AuroElement extends LitElement {
        * DEPRECATED - use `appearance` attribute.
        * @deprecated Use the `appearance` attribute instead.
        * @default false
+       * @category ui
        */
       onDark: {
         type: Boolean,

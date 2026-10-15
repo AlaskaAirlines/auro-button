@@ -46,9 +46,9 @@ const ICON_ONLY_SHAPES = ["circle", "square"];
  * @summary Styled, accessible button with loading, icon, and HTML5 form support.
  * @customElement auro-button
  * @forcePrivate {'layout'}
- * @slot - Default slot for the text of the button.
- * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button.
- * @slot ariaLabel.loading - Use this slot to pass an aria-label to the HTML5 button when in loading state.
+ * @slot - Default slot for the text of the button. {@requiredWhen always} {@category ui}
+ * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button. {@relevantWhen !loading} {@category a11y}
+ * @slot ariaLabel.loading - Use this slot to pass an aria-label to the HTML5 button when in loading state. {@relevantWhen loading} {@category a11y}
  * @csspart button - Apply CSS to HTML5 button.
  * @csspart loader - Apply CSS to auro-loader.
  * @csspart text - Apply CSS to text slot.
@@ -155,6 +155,7 @@ export class AuroButton extends AuroElement {
        * Defines the shape of the button.
        * @type {"rounded" | "pill" | "circle" | "square"}
        * @default rounded
+       * @category ui
        */
       shape: {
         type: String,
@@ -166,6 +167,7 @@ export class AuroButton extends AuroElement {
        * Defines the size of the button.
        * @type {"xs" | "sm" | "md" | "lg" | "xl"}
        * @default md
+       * @category ui
        */
       size: {
         type: String,
@@ -175,6 +177,7 @@ export class AuroButton extends AuroElement {
 
       /**
        * This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user.
+       * @category behavior
        */
       autofocus: {
         type: Boolean,
@@ -183,6 +186,7 @@ export class AuroButton extends AuroElement {
 
       /**
        * If set to true, button will become disabled and not allow for interactions.
+       * @category ui
        */
       disabled: {
         type: Boolean,
@@ -191,6 +195,7 @@ export class AuroButton extends AuroElement {
 
       /**
        * Alters the shape of the button to be full width of its parent container.
+       * @category ui
        */
       fluid: {
         type: Boolean,
@@ -199,6 +204,7 @@ export class AuroButton extends AuroElement {
 
       /**
        * If set to true button text will be replaced with `auro-loader` and become disabled.
+       * @category ui
        */
       loading: {
         type: Boolean,
@@ -208,6 +214,8 @@ export class AuroButton extends AuroElement {
       /**
        * DEPRECATED - Use `slot="ariaLabel.loading"` instead.
        * @deprecated Use `slot="ariaLabel.loading"` instead.
+       * @relevantWhen loading
+       * @category a11y
        */
       loadingText: {
         type: String,
@@ -216,6 +224,8 @@ export class AuroButton extends AuroElement {
 
       /**
        * Populates `tabindex` to define the focusable sequence in keyboard navigation.
+       * @relevantWhen !static
+       * @category a11y
        */
       tIndex: {
         type: String,
@@ -229,6 +239,8 @@ export class AuroButton extends AuroElement {
        * Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.
        * Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`.
        * @deprecated Use `tIndex` instead.
+       * @relevantWhen !static
+       * @category a11y
        */
       tabindex: {
         type: String,
@@ -237,6 +249,7 @@ export class AuroButton extends AuroElement {
 
       /**
        * Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.
+       * @category ui
        */
       title: {
         type: String,
@@ -246,6 +259,7 @@ export class AuroButton extends AuroElement {
       /**
        * The type of button. Matches HTML5 Button Spec.
        * @type {"submit" | "reset" | "button"}
+       * @category behavior
        */
       type: {
         type: String,
@@ -256,6 +270,7 @@ export class AuroButton extends AuroElement {
        * Sets the button variant.
        * @type {"primary" | "secondary" | "tertiary" | "ghost" | "flat"}
        * @default primary
+       * @category ui
        */
       variant: {
         type: String,
@@ -294,6 +309,7 @@ export class AuroButton extends AuroElement {
 
       /**
        * If true, the button will be static and not respond to user interactions.
+       * @category behavior
        */
       static: {
         type: Boolean,
