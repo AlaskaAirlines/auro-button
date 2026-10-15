@@ -173,6 +173,18 @@ export class AuroButton extends AuroElement {
     this.buttonHref = undefined;
     this.buttonTarget = undefined;
     this.buttonRel = undefined;
+
+    /**
+     * Re-renders when the text inside a slotted accessible-name element changes, which `slotchange` doesn't report.
+     * @private
+     */
+    this.ariaLabelObserver = new MutationObserver((mutations) => {
+      if (
+        mutations.some((mutation) => this.isInAriaLabelSlot(mutation.target))
+      ) {
+        this.requestUpdate();
+      }
+    });
   }
 
   static get styles() {
@@ -480,6 +492,46 @@ export class AuroButton extends AuroElement {
     this.runtimeUtils.handleComponentTagRename(this, "auro-button");
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+
+    this.ariaLabelObserver.observe(this, {
+      characterData: true,
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    this.ariaLabelObserver.disconnect();
+  }
+
+  /**
+   * Checks whether a node is inside an element slotted into `ariaLabel` or `ariaLabel.loading`.
+   * @param {Node} node - The node to check.
+   * @returns {boolean} - True if the node is inside a slotted accessible-name element; false otherwise.
+   * @private
+   */
+  isInAriaLabelSlot(node) {
+    const element =
+      node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+    const slotted = element?.closest(
+      '[slot="ariaLabel"], [slot="ariaLabel.loading"]',
+    );
+
+    return slotted?.parentElement === this;
+  }
+
+  /**
+   * Called when the elements slotted into `ariaLabel` or `ariaLabel.loading` change. Re-renders so the inner element's `aria-label` matches the new text.
+   * @private
+   */
+  onAriaLabelSlotChange() {
+    this.requestUpdate();
+  }
+
   /**
    * Returns the appropriate string to be used for the aria-label attribute.
    * @returns {String}
@@ -557,8 +609,8 @@ export class AuroButton extends AuroElement {
 
     return html`
       <!-- Hidden slots for aria labels -->
-      <slot name="ariaLabel" hidden @slotchange="${this.requestUpdate}"></slot>
-      <slot name="ariaLabel.loading" hidden @slotchange="${this.requestUpdate}"></slot>
+      <slot name="ariaLabel" hidden @slotchange="${this.onAriaLabelSlotChange}"></slot>
+      <slot name="ariaLabel.loading" hidden @slotchange="${this.onAriaLabelSlotChange}"></slot>
 
       <${this._renderTag}
         part="${part}"

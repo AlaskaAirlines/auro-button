@@ -486,6 +486,62 @@ describe("auro-button", () => {
     });
   });
 
+  describe("when the ariaLabel slot content changes", () => {
+    // Let pending renders finish, so they can't pick up the change by accident
+    const settle = async (el) => {
+      await el.updateComplete;
+      await new Promise((resolve) => setTimeout(resolve));
+      await el.updateComplete;
+    };
+
+    it("updates the accessible name when the slotted element is replaced", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle"><span slot="ariaLabel">Add to favorites</span>+</auro-button>
+      `);
+      await settle(el);
+
+      const next = document.createElement("span");
+      next.slot = "ariaLabel";
+      next.textContent = "Remove from favorites";
+      el.querySelector('[slot="ariaLabel"]').replaceWith(next);
+      await settle(el);
+
+      expect(
+        el.shadowRoot.querySelector("button").getAttribute("aria-label"),
+      ).to.equal("Remove from favorites");
+    });
+
+    it("updates the accessible name when the slotted element's text changes", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle"><span slot="ariaLabel">Add to favorites</span>+</auro-button>
+      `);
+      await settle(el);
+
+      el.querySelector('[slot="ariaLabel"]').textContent =
+        "Remove from favorites";
+      await settle(el);
+
+      expect(
+        el.shadowRoot.querySelector("button").getAttribute("aria-label"),
+      ).to.equal("Remove from favorites");
+    });
+
+    it("updates the loading accessible name when its slotted text changes", async () => {
+      const el = await fixture(html`
+        <auro-button loading><span slot="ariaLabel.loading">Saving</span>Save</auro-button>
+      `);
+      await settle(el);
+
+      el.querySelector('[slot="ariaLabel.loading"]').firstChild.data =
+        "Saving your changes";
+      await settle(el);
+
+      expect(
+        el.shadowRoot.querySelector("button").getAttribute("aria-label"),
+      ).to.equal("Saving your changes");
+    });
+  });
+
   it("keeps moving ARIA attributes to the inner button after being removed and re-inserted", async () => {
     const parent = await fixture(html`
       <div>
