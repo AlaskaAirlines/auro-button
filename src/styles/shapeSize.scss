@@ -1,5 +1,7 @@
 /* stylelint-disable */
 @use "sass:map";
+@use "sass:math";
+@use "sass:meta";
 @use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
 
 /**
@@ -61,9 +63,9 @@ $borderSizeMap: ( default: $defaultBorderSize, thin: 1px, simple: 0px );
 // Define border radius calculation functions to be used in the shape configuration below
 // This is required because SASS does not support inline functions in maps, but does allow function references
 // If you are adding a new shape that requires a custom border radius calculation, define the function here and include it in the shapeConfig map
-@function pillRadius($sizeValue) { @return ($sizeValue / 2) };
-@function pillLeftRadius($sizeValue) { @return ($sizeValue / 2) 0 0 ($sizeValue / 2); };
-@function pillRightRadius($sizeValue) { @return 0 ($sizeValue / 2) ($sizeValue / 2) 0; };
+@function pillRadius($sizeValue) { @return math.div($sizeValue, 2); }
+@function pillLeftRadius($sizeValue) { @return math.div($sizeValue, 2) 0 0 math.div($sizeValue, 2); }
+@function pillRightRadius($sizeValue) { @return 0 math.div($sizeValue, 2) math.div($sizeValue, 2) 0; }
 
 /**
  * Shape Configuration Map
@@ -94,15 +96,15 @@ $shapeConfig: (
   ),
   pill: (
     type: oblong,
-    borderRadiusFunc: pillRadius
+    borderRadiusFunc: meta.get-function(pillRadius)
   ),
   pill-left: (
     type: oblong,
-    borderRadiusFunc: pillLeftRadius
+    borderRadiusFunc: meta.get-function(pillLeftRadius)
   ),
   pill-right: (
     type: oblong,
-    borderRadiusFunc: pillRightRadius
+    borderRadiusFunc: meta.get-function(pillRightRadius)
   ),
   circle: (
     type: symmetrical,
@@ -134,14 +136,14 @@ $shapeConfig: (
   @if map.has-key($shapeData, borderRadiusFunc) {
     // Call the appropriate function
     $radiusFunc: map.get($shapeData, borderRadiusFunc);
-    @return call($radiusFunc, $sizeValue);
+    @return meta.call($radiusFunc, $sizeValue);
   }
   // Otherwise use the borderRadius map with fallback pattern
   @else {
     $borderRadiusConfig: map.get($shapeData, borderRadius);
     
     // If it's a map, look for specific size or fall back to default
-    @if type-of($borderRadiusConfig) == map {
+    @if meta.type-of($borderRadiusConfig) == map {
       @if map.has-key($borderRadiusConfig, $size) {
         @return map.get($borderRadiusConfig, $size);
       } @else {
