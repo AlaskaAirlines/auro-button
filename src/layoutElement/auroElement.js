@@ -2,12 +2,13 @@ import { LitElement } from "lit";
 import { transportAllA11yAttributes } from "./a11yUtilities.js";
 
 /**
- * AuroElement is the shared base class for Auro layout elements, providing common
- * layout, shape, size, and appearance handling for components that extend it.
+ * Shared base class for Auro components. It provides the common `layout`, `shape`,
+ * `size`, and `appearance` options, and moves ARIA attributes from the host element
+ * to the inner element so assistive technology reads them in the right place.
  */
 export class AuroElement extends LitElement {
   /**
-   * Return object from transportAttributes via a11yUtilities.
+   * Tracks the ARIA attributes moved from the host to the inner element, and stops tracking them when the component is removed.
    * @type {{ cleanup: Function, getObservedAttributes: Function, getObservedAttribute: Function }}
    * @property {Function} cleanup - Function to clean up the attribute watcher.
    * @property {Function} getObservedAttributes - Function to get the current attributes being watched and their values.
@@ -19,7 +20,7 @@ export class AuroElement extends LitElement {
   static get properties() {
     return {
       /**
-       * Defines the layout of an element.
+       * Selects which internal layout the component renders. Components with only one layout ignore it.
        * @default 'default'
        * @private
        */
@@ -30,7 +31,7 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines the shape of an element. Not defaulted at this base class; subclasses set their own default (e.g. `auro-button` uses `rounded`).
+       * Sets the component's shape. Each component sets its own default; `auro-button` uses `rounded`.
        * @type {"rounded" | "pill" | "circle" | "square"}
        * @category ui
        */
@@ -41,7 +42,7 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines the size of an element. Not defaulted at this base class; subclasses set their own default (e.g. `auro-button` uses `md`).
+       * Sets the component's size, from `xs` (smallest) to `xl` (largest). Each component sets its own default; `auro-button` uses `md`.
        * @type {"xs" | "sm" | "md" | "lg" | "xl"}
        * @category ui
        */
@@ -52,7 +53,7 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines whether the button will be on lighter or darker backgrounds.
+       * Matches the component's colors to the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.
        * @type {"default" | "inverse"}
        * @default 'default'
        * @category ui
@@ -63,8 +64,8 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * DEPRECATED - use `appearance` attribute.
-       * @deprecated Use the `appearance` attribute instead.
+       * Deprecated: Use `appearance="inverse"` instead.
+       * @deprecated Use `appearance="inverse"` instead.
        * @default false
        * @category ui
        */
@@ -75,8 +76,7 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * A reference to the wrapper element in the shadow DOM.
-       * This is used to apply layout and shape classes dynamically.
+       * The component's inner wrapper element, which receives the layout and shape classes.
        * @type {HTMLElement|null}
        * @default null
        * @private
