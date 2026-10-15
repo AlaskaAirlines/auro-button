@@ -21,6 +21,7 @@ export class AuroElement extends LitElement {
       /**
        * Defines the layout of an element.
        * @default 'default'
+       * @private
        */
       layout: {
         type: String,

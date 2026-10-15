@@ -45,11 +45,11 @@ const ICON_ONLY_SHAPES = ["circle", "square"];
  *
  * @summary Styled, accessible button with loading, icon, and HTML5 form support.
  * @customElement auro-button
+ * @forcePrivate {'layout'}
  * @slot - Default slot for the text of the button.
  * @slot ariaLabel - Use this slot to pass an aria-label to the HTML5 button.
  * @slot ariaLabel.loading - Use this slot to pass an aria-label to the HTML5 button when in loading state.
  * @csspart button - Apply CSS to HTML5 button.
- * @csspart link - Apply CSS to the anchor (`<a>`) rendered in place of `button` when `buttonHref` is set.
  * @csspart loader - Apply CSS to auro-loader.
  * @csspart text - Apply CSS to text slot.
  * @csspart contentWrapper - Apply CSS to the span wrapping the button content.
@@ -317,8 +317,9 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * When set, renders the button as an anchor (`<a>`) pointing to this URL. This exposes the `link` CSS part in place of `button`. Security: the value is used as an `href` without scheme sanitization — do not pass untrusted input, as `javascript:` URLs will execute on activation.
+       * Internal: set only by `auro-hyperlink` for its CTA links; not for direct use. Renders an `<a>` to this URL (with the `link` CSS part in place of `button`). The URL is used as-is, without sanitization.
        * @type {string}
+       * @internal
        */
       buttonHref: {
         type: String,
@@ -326,8 +327,9 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets the `target` of the generated link (e.g. `_blank`, `_self`). Only applies when `buttonHref` is set. When using `_blank`, also set `buttonRel="noopener noreferrer"` to prevent reverse tabnabbing.
+       * Internal: set only by `auro-hyperlink` for its CTA links; not for direct use. The link's `target` when `buttonHref` is set.
        * @type {string}
+       * @internal
        */
       buttonTarget: {
         type: String,
@@ -335,8 +337,9 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets the `rel` of the generated link (e.g. `noopener noreferrer`). Only applies when `buttonHref` is set.
+       * Internal: set only by `auro-hyperlink` for its CTA links; not for direct use. The link's `rel` when `buttonHref` is set.
        * @type {string}
+       * @internal
        */
       buttonRel: {
         type: String,
