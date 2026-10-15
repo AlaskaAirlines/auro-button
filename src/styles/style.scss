@@ -57,14 +57,11 @@
 @use "@aurodesignsystem/webcorestylesheets/src/breakpoints" as bp;
 @use "@aurodesignsystem/webcorestylesheets/src/core";
 @use "@aurodesignsystem/webcorestylesheets/src/animation";
-@use "@aurodesignsystem/webcorestylesheets/src/utilityMixins/insetUtility";
 @use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
 @use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariableMap";
 @use '@aurodesignsystem/webcorestylesheets/src/utilityClasses/displayProperties';
 
 // Global variables
-$auro-inset-spacing-options: lg;
-$auro-inset-directions: '--squish';
 $defaultFocusOutlineWidth: 4px;
 
 /**
@@ -243,15 +240,15 @@ $button-sizes: (
             $insetAmount: 1px;
 
             &:after {
-              content: '';
               position: absolute;
-              border-radius: inherit;
-              box-sizing: content-box;
               top: 0;
               left: 0;
               width: calc(100% - ($insetAmount * 2));
               height: calc(100% - ($insetAmount * 2));
+              box-sizing: content-box;
               border: $insetAmount solid var(--ds-auro-button-border-color);
+              border-radius: inherit;
+              content: '';
             }
           }
         }
@@ -300,9 +297,9 @@ $button-sizes: (
     .inset {
       .contentWrapper {
         overflow: hidden;
+        margin-inline: $margin;
         text-overflow: ellipsis;
         white-space: nowrap;
-        margin-inline: $margin;
       }
     }
   }
@@ -331,11 +328,11 @@ $button-sizes: (
     ::slotted(:not(auro-icon):not([auro-icon])) {
       position: absolute;
       overflow: hidden;
-      clip: rect(1px, 1px, 1px, 1px);
       width: 1px;
       height: 1px;
       padding: 0;
       border: 0;
+      clip: rect(1px, 1px, 1px, 1px);
     }
   }
 }
@@ -401,31 +398,31 @@ slot {
 
 .auro-button {
   position: relative;
-  cursor: pointer;
-  padding: 0 var(--ds-size-300, vac.$ds-size-300);
-  padding-inline: unset;
-  padding-block: unset;
-  box-sizing: content-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  user-select: none;
-  white-space: nowrap;
-  outline: none;
 
   display: flex;
+  overflow: hidden;
+  box-sizing: content-box;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--ds-size-100, vac.$ds-size-100);
+  padding: 0 var(--ds-size-300, vac.$ds-size-300);
 
   // removes margins around button in Safari
   margin: 0;
+  cursor: pointer;
+  gap: var(--ds-size-100, vac.$ds-size-100);
+  outline: none;
+  padding-block: unset;
+  padding-inline: unset;
+  text-overflow: ellipsis;
 
   // macOS / iOS agents
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
 
   transition: padding 300ms ease-out;
+  -webkit-user-select: none;
+  user-select: none;
+  white-space: nowrap;
 
   &:focus,
   &:focus-visible {
@@ -478,9 +475,9 @@ slot {
 
 :host([static]) {
   .auro-button {
-    pointer-events: none;
-    cursor: default;
     display: inline-flex;
+    cursor: default;
+    pointer-events: none;
 
     .contentWrapper {
        display: inline-flex;
