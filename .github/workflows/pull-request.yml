@@ -9,6 +9,6 @@ on:
 
 jobs:
   action:
-    uses: AlaskaAirlines/auro-actions/.github/workflows/pull-request.yml@main
+    uses: AlaskaAirlines/auro-actions/.github/workflows/pull-request.yml@sunMota/adding-package-to-cem
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
