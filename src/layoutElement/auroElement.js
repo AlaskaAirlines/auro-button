@@ -2,12 +2,13 @@ import { LitElement } from "lit";
 import { transportAllA11yAttributes } from "./a11yUtilities.js";
 
 /**
- * AuroElement is the shared base class for Auro layout elements, providing common
- * layout, shape, size, and appearance handling for components that extend it.
+ * Shared base class for Auro components. It provides the common `layout`, `shape`,
+ * `size`, and `appearance` options, and moves ARIA attributes from the host element
+ * to the inner element so assistive technology reads them in the right place.
  */
 export class AuroElement extends LitElement {
   /**
-   * Return object from transportAttributes via a11yUtilities.
+   * Tracks the ARIA attributes moved from the host to the inner element, and stops tracking them when the component is removed.
    * @type {{ cleanup: Function, getObservedAttributes: Function, getObservedAttribute: Function }}
    * @property {Function} cleanup - Function to clean up the attribute watcher.
    * @property {Function} getObservedAttributes - Function to get the current attributes being watched and their values.
@@ -19,8 +20,9 @@ export class AuroElement extends LitElement {
   static get properties() {
     return {
       /**
-       * Defines the layout of an element.
+       * Selects which internal layout the component renders. Components with only one layout ignore it.
        * @default 'default'
+       * @private
        */
       layout: {
         type: String,
@@ -29,8 +31,9 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines the shape of an element. Not defaulted at this base class; subclasses set their own default (e.g. `auro-button` uses `rounded`).
+       * Sets the component's shape. Each component sets its own default; `auro-button` uses `rounded`.
        * @type {"rounded" | "pill" | "circle" | "square"}
+       * @category ui
        */
       shape: {
         type: String,
@@ -39,8 +42,9 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines the size of an element. Not defaulted at this base class; subclasses set their own default (e.g. `auro-button` uses `md`).
+       * Sets the component's size, from `xs` (smallest) to `xl` (largest). Each component sets its own default; `auro-button` uses `md`.
        * @type {"xs" | "sm" | "md" | "lg" | "xl"}
+       * @category ui
        */
       size: {
         type: String,
@@ -49,9 +53,10 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Defines whether the button will be on lighter or darker backgrounds.
+       * Matches the component's colors to the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.
        * @type {"default" | "inverse"}
        * @default 'default'
+       * @category ui
        */
       appearance: {
         type: String,
@@ -59,9 +64,10 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * DEPRECATED - use `appearance` attribute.
-       * @deprecated Use the `appearance` attribute instead.
+       * Deprecated: Use `appearance="inverse"` instead.
+       * @deprecated Use `appearance="inverse"` instead.
        * @default false
+       * @category ui
        */
       onDark: {
         type: Boolean,
@@ -70,8 +76,7 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * A reference to the wrapper element in the shadow DOM.
-       * This is used to apply layout and shape classes dynamically.
+       * The component's inner wrapper element, which receives the layout and shape classes.
        * @type {HTMLElement|null}
        * @default null
        * @private
@@ -136,8 +141,54 @@ export class AuroElement extends LitElement {
     this.resetShapeClasses();
   }
 
+  /**
+   * Points `wrapper` and the ARIA attribute transport at the wrapper element currently in the shadow DOM.
+   * Lit renders a new element when a template switches tags (for example, `auro-button` swapping `<button>` for `<a>` or `<span>`), so this runs after every update.
+   * @returns {boolean} - True if the wrapper was (re)bound; false if it was already current.
+   * @private
+   */
+  bindWrapper() {
+    const wrapper = this.shadowRoot.querySelector(".wrapper");
+
+    if (wrapper === this.wrapper && this.attributeWatcher) {
+      return false;
+    }
+
+    this.releaseWrapper();
+    this.wrapper = wrapper;
+
+    this.attributeWatcher = wrapper
+      ? transportAllA11yAttributes({ host: this, target: wrapper })
+      : null;
+
+    return true;
+  }
+
+  /**
+   * Stops the ARIA attribute transport and puts the attributes it moved back on the host.
+   * Transported attributes are removed from the host, so without this they would only exist on the old wrapper element, and the next `bindWrapper()` couldn't move them to the new one.
+   * @private
+   */
+  releaseWrapper() {
+    if (!this.attributeWatcher) {
+      return;
+    }
+
+    const transported = this.attributeWatcher.getObservedAttributes();
+
+    this.attributeWatcher.cleanup();
+    this.attributeWatcher = null;
+
+    for (const [name, value] of transported) {
+      this.setAttribute(name, value);
+    }
+  }
+
   updated(changedProperties) {
+    const wrapperBound = this.bindWrapper();
+
     if (
+      wrapperBound ||
       changedProperties.has("layout") ||
       changedProperties.has("shape") ||
       changedProperties.has("size")
@@ -149,24 +200,23 @@ export class AuroElement extends LitElement {
   firstUpdated() {
     super.firstUpdated();
 
-    // Set a reference to the wrapper element in the shadow DOM
-    this.wrapper = this.shadowRoot.querySelector(".wrapper");
+    // Bind here as well as in updated(), so subclasses can use `wrapper` in their own firstUpdated()
+    this.bindWrapper();
+  }
 
-    // Initialize the transportation of ARIA attributes to the target element and get the disconnect function for cleanup
-    this.attributeWatcher = transportAllA11yAttributes({
-      host: this,
-      target: this.shadowRoot.querySelector(".wrapper"),
-    });
+  connectedCallback() {
+    super.connectedCallback();
+
+    // Re-bind when the element is moved or re-inserted, since disconnectedCallback() released the transport
+    if (this.hasUpdated) {
+      this.bindWrapper();
+    }
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
 
-    // Cleanup the ARIA observer if it exists
-    if (this.attributeWatcher) {
-      this.attributeWatcher.cleanup();
-      this.attributeWatcher = null;
-    }
+    this.releaseWrapper();
   }
 
   // Try to render the defined `this.layout` layout. If that fails, fall back to the default layout.

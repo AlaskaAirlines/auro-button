@@ -25,12 +25,13 @@
   /**
   * DEFAULT / PRIMARY VARIANT STYLES
   */
-  -webkit-tap-highlight-color: var(--ds-auro-button-tap-color);
-
-  color: var(--ds-auro-button-text-color);
+  border-color: var(--ds-auro-button-border-color);
   background-color: var(--ds-auro-button-container-color);
   background-image: linear-gradient(var(--ds-auro-button-container-image), var(--ds-auro-button-container-image));
-  border-color: var(--ds-auro-button-border-color);
+
+  color: var(--ds-auro-button-text-color);
+
+  -webkit-tap-highlight-color: var(--ds-auro-button-tap-color);
 }
 
 :host(:focus-within) .auro-button{
@@ -132,24 +133,24 @@
 // FLAT
 :host([variant='flat']) {
   .auro-button {
-    color: var(--ds-advanced-color-button-flat-text, #{v.$ds-advanced-color-button-flat-text});
+    border-color: transparent;
     background-color: transparent;
     background-image: none;
-    border-color: transparent;
+    color: var(--ds-advanced-color-button-flat-text, #{v.$ds-advanced-color-button-flat-text});
 
     &:active:not(:disabled),
     &:hover:not(:disabled) {
-      color: var(--ds-advanced-color-button-flat-text-hover, #{v.$ds-advanced-color-button-flat-text-hover});
+      border-color: transparent;
       background-color: transparent;
       background-image: none;
-      border-color: transparent;
+      color: var(--ds-advanced-color-button-flat-text-hover, #{v.$ds-advanced-color-button-flat-text-hover});
     }
 
     &:disabled {
-      color: var(--ds-advanced-color-button-flat-text-disabled, #{v.$ds-advanced-color-button-flat-text-disabled});
+      border-color: transparent;
       background-color: transparent;
       background-image: none;
-      border-color: transparent;
+      color: var(--ds-advanced-color-button-flat-text-disabled, #{v.$ds-advanced-color-button-flat-text-disabled});
     }
   }
 }
@@ -279,24 +280,24 @@
 :host([ondark][variant='flat']),
 :host([appearance="inverse"][variant='flat']) {
   .auro-button {
-    color: var(--ds-advanced-color-button-flat-text-inverse, #{v.$ds-advanced-color-button-flat-text-inverse});
+    border-color: transparent;
     background-color: transparent;
     background-image: none;
-    border-color: transparent;
+    color: var(--ds-advanced-color-button-flat-text-inverse, #{v.$ds-advanced-color-button-flat-text-inverse});
 
     &:active:not(:disabled),
     &:hover:not(:disabled) {
-      color: var(--ds-advanced-color-button-flat-text-inverse-hover, #{v.$ds-advanced-color-button-flat-text-inverse-hover});
+      border-color: transparent;
       background-color: transparent;
       background-image: none;
-      border-color: transparent;
+      color: var(--ds-advanced-color-button-flat-text-inverse-hover, #{v.$ds-advanced-color-button-flat-text-inverse-hover});
     }
 
     &:disabled {
-      color: var(--ds-advanced-color-button-flat-text-inverse-disabled, #{v.$ds-advanced-color-button-flat-text-inverse-disabled});
+      border-color: transparent;
       background-color: transparent;
       background-image: none;
-      border-color: transparent;
+      color: var(--ds-advanced-color-button-flat-text-inverse-disabled, #{v.$ds-advanced-color-button-flat-text-inverse-disabled});
     }
   }
 }
