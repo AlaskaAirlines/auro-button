@@ -551,4 +551,115 @@ describe("auro-button", () => {
     expect(button.getAttribute("aria-label")).to.equal("Submit order");
     expect(el.hasAttribute("aria-expanded")).to.be.false;
   });
+
+  describe("icon-only shapes with text", () => {
+    it("displays text in a circle shape when no icon is slotted", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">1</auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+      const fontSize = Number.parseFloat(getComputedStyle(textSlot).fontSize);
+
+      expect(textSlot.classList.contains("heading-sm")).to.be.true;
+      expect(fontSize).to.be.greaterThan(0);
+    });
+
+    it("displays text in a square shape when no icon is slotted", async () => {
+      const el = await fixture(html`
+        <auro-button shape="square">1</auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+      const fontSize = Number.parseFloat(getComputedStyle(textSlot).fontSize);
+
+      expect(textSlot.classList.contains("heading-sm")).to.be.true;
+      expect(fontSize).to.be.greaterThan(0);
+    });
+
+    it("uses the icon-only font size for each size", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle" size="xl">1</auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+
+      expect(textSlot.classList.contains("heading-lg")).to.be.true;
+    });
+
+    it("does not display bare text in a circle shape when an icon is slotted", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <auro-icon category="interface" name="plus-lg"></auro-icon>
+          Add
+        </auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+
+      expect(textSlot.className.includes("heading-")).to.be.false;
+      expect(getComputedStyle(textSlot).fontSize).to.equal("0px");
+    });
+
+    it("visually hides wrapped text in a circle shape when an icon is slotted", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <span slot="ariaLabel">arrow-up</span>
+          <span id="wrappedText">Text is now shown!</span>
+          <auro-icon category="interface" name="arrow-up"></auro-icon>
+        </auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+      const wrappedText = el.querySelector("#wrappedText");
+
+      expect(textSlot.className.includes("heading-")).to.be.false;
+      expect(getComputedStyle(wrappedText).width).to.equal("1px");
+      expect(getComputedStyle(wrappedText).position).to.equal("absolute");
+    });
+
+    it("updates text display when slotted content swaps between an icon and text", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <span slot="ariaLabel">Add item</span>
+          <auro-icon category="interface" name="plus-lg"></auro-icon>
+        </auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+      expect(textSlot.className.includes("heading-")).to.be.false;
+
+      const icon = el.querySelector("auro-icon");
+      icon.replaceWith(document.createTextNode("1"));
+      await new Promise((resolve) =>
+        el.shadowRoot
+          .querySelector(".textSlot slot")
+          .addEventListener("slotchange", resolve, { once: true }),
+      );
+      await elementUpdated(el);
+      expect(textSlot.classList.contains("heading-sm")).to.be.true;
+
+      const count = [...el.childNodes].find(
+        (node) => node.nodeType === Node.TEXT_NODE && node.data === "1",
+      );
+      count.replaceWith(icon);
+      await new Promise((resolve) =>
+        el.shadowRoot
+          .querySelector(".textSlot slot")
+          .addEventListener("slotchange", resolve, { once: true }),
+      );
+      await elementUpdated(el);
+      expect(textSlot.className.includes("heading-")).to.be.false;
+    });
+
+    it("keeps the standard font size for oblong shapes", async () => {
+      const el = await fixture(html`
+        <auro-button shape="rounded">Click Me!</auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+
+      expect(textSlot.classList.contains("body-default")).to.be.true;
+    });
+  });
 });

@@ -130,7 +130,7 @@ Available options are:
 
 The `rounded` and `pill` shapes are flexible and can hold any amount of information
 
-The `circle` and `square` shapes are always equal dimensions. These shapes currently only support icon-only buttons.
+The `circle` and `square` shapes are always equal dimensions. These shapes support either an icon or short text such as a count (e.g. `1`). Text is only displayed when no icon is slotted and the text is not wrapped in an element; otherwise only the icon is shown. A number alone is rarely a meaningful accessible name, so provide one with the `aria-label` attribute or the `ariaLabel` slot.
 
 #### Rounded
 
@@ -193,6 +193,23 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-circle.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+#### Circle - Text
+
+The `circle` and `square` shapes can display short text, such as a count, in place of an icon.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle-text.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-circle-text.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
