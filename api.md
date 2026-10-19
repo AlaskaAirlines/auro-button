@@ -3,133 +3,80 @@
 
 # auro-button
 
-The `<auro-button>` element creates an interactive, accessible button for triggering
-actions such as submitting a form, starting a task, or advancing a step in a flow.
+An accessible button that lets people take an action, such as submitting a form,
+starting a task, or moving to the next step in a flow. It's the standard button for
+Auro interfaces.
 
 **Key capabilities**
-- **Variants** — `primary`, `secondary`, `tertiary`, `ghost`, and `flat`.
-- **Shapes & sizes** — `rounded`, `pill`, `circle`, or `square` in five sizes (`xs`–`xl`).
-- **Loading state** — replaces the label with an `auro-loader` and disables interaction.
-- **HTML5 form association** — participates in forms and supports `submit` / `reset` types.
+- **Variants**: five levels of visual emphasis, from `primary` (the main action on the
+  page) through `secondary`, `tertiary`, and `ghost`, down to `flat` (text only).
+- **Shapes & sizes**: `rounded` or `pill` for text buttons, and `circle` or `square` for
+  icon-only buttons, each in five sizes (`xs`–`xl`).
+- **Light & dark backgrounds**: `appearance="inverse"` switches to colors designed for
+  dark backgrounds.
+- **Loading state**: swaps the label for a loading indicator and blocks clicks while
+  work is in progress, without changing the button's width.
+- **Forms**: `type="submit"` submits the form the button is placed in, and `type="reset"`
+  resets an `<auro-form>`.
 
 **Example**
 <pre class="language-html"><code class="language-html">&lt;auro-button variant="primary"&gt;Submit&lt;/auro-button&gt;</code></pre>
 
 ### Properties & Attributes
 
-| Properties     | Attributes   | Modifiers | Type                                                        | Default     | Description                                                                                                                                                                                                                                                                          |
-| -------------- | ------------ | --------- | ----------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| appearance     | appearance   |           | "default" \| "inverse"                                      | `default`   | Defines whether the button will be on lighter or darker backgrounds.                                                                                                                                                                                                                 |
-| autofocus      | autofocus    |           | boolean                                                     | `false`     | This Boolean attribute lets you specify that the button should have input focus when the page loads, unless overridden by the user.                                                                                                                                                  |
-| buttonHref     | buttonhref   |           | string                                                      | `undefined` | When set, renders the button as an anchor (`<a>`) pointing to this URL. This exposes the `link` CSS part in place of `button`. Security: the value is used as an `href` without scheme sanitization — do not pass untrusted input, as `javascript:` URLs will execute on activation. |
-| buttonRel      | buttonrel    |           | string                                                      | `undefined` | Sets the `rel` of the generated link (e.g. `noopener noreferrer`). Only applies when `buttonHref` is set.                                                                                                                                                                            |
-| buttonTarget   | buttontarget |           | string                                                      | `undefined` | Sets the `target` of the generated link (e.g. `_blank`, `_self`). Only applies when `buttonHref` is set. When using `_blank`, also set `buttonRel="noopener noreferrer"` to prevent reverse tabnabbing.                                                                              |
-| disabled       | disabled     |           | boolean                                                     | `false`     | If set to true, button will become disabled and not allow for interactions.                                                                                                                                                                                                          |
-| fluid          | fluid        |           | boolean                                                     | `false`     | Alters the shape of the button to be full width of its parent container.                                                                                                                                                                                                             |
-| formAssociated |              | readonly  | boolean                                                     |             | Enables form association for this element.                                                                                                                                                                                                                                           |
-| layout         | layout       |           | string                                                      | `default`   | Override layout since it isn't used in this component.                                                                                                                                                                                                                               |
-| loading        | loading      |           | boolean                                                     | `false`     | If set to true button text will be replaced with `auro-loader` and become disabled.                                                                                                                                                                                                  |
-| shape          | shape        |           | "rounded" \| "pill" \| "circle" \| "square"                 | `rounded`   | Defines the shape of the button.                                                                                                                                                                                                                                                     |
-| size           | size         |           | "xs" \| "sm" \| "md" \| "lg" \| "xl"                        | `md`        | Defines the size of the button.                                                                                                                                                                                                                                                      |
-| static         | static       |           | boolean                                                     | `false`     | If true, the button will be static and not respond to user interactions.                                                                                                                                                                                                             |
-| tabindex       | tabindex     |           | string                                                      |             | Populates `tabindex` to define the focusable sequence in keyboard navigation.<br>Must be used with "." to ensure the host element does not retain a reference to the `tabindex` attribute.<br>Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`.      |
-| tIndex         | tindex       |           | string                                                      |             | Populates `tabindex` to define the focusable sequence in keyboard navigation.                                                                                                                                                                                                        |
-| title          | title        |           | string                                                      |             | Sets title attribute. The information is most often shown as a tooltip text when the mouse moves over the element.                                                                                                                                                                   |
-| type           | type         |           | "submit" \| "reset" \| "button"                             |             | The type of button. Matches HTML5 Button Spec.                                                                                                                                                                                                                                       |
-| value          | value        |           | string                                                      |             | Defines the value associated with the button which is submitted with the form data.                                                                                                                                                                                                  |
-| variant        | variant      |           | "primary" \| "secondary" \| "tertiary" \| "ghost" \| "flat" | `primary`   | Sets the button variant.                                                                                                                                                                                                                                                             |
-| loadingText    | loadingtext  |           | string                                                      |             | DEPRECATED - Use `slot="ariaLabel.loading"` instead.                                                                                                                                                                                                                                 |
-| onDark         | ondark       |           | boolean                                                     | `false`     | DEPRECATED - use `appearance` attribute.                                                                                                                                                                                                                                             |
+| Properties     | Attributes  | Modifiers | Type                                                        | Default      | Description                                                                                                                                                                                                                                                                                                 |
+| -------------- | ----------- | --------- | ----------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| appearance     | appearance  |           | "default" \| "inverse"                                      | `default`    | Matches the component's colors to the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.                                                                                                                                                                                 |
+| autofocus      | autofocus   |           | boolean                                                     | `false`      | Moves keyboard focus to the button when the page loads. Use sparingly: moving focus without warning can disorient keyboard and screen reader users.                                                                                                                                                         |
+| disabled       | disabled    |           | boolean                                                     | `false`      | Turns the button off. A disabled button is shown in a muted style and can't be clicked or reached with the keyboard.                                                                                                                                                                                        |
+| fluid          | fluid       |           | boolean                                                     | `false`      | Stretches the button to fill the full width of its container.                                                                                                                                                                                                                                               |
+| formAssociated |             | readonly  | boolean                                                     |              | Enables form association, so the button can take part in the form it's placed in.                                                                                                                                                                                                                           |
+| loading        | loading     |           | boolean                                                     | `false`      | Shows a loading indicator in place of the label and blocks clicks until it is turned off. The button keeps its width, so the layout doesn't shift. Use the `ariaLabel.loading` slot to tell screen reader users what is happening.                                                                          |
+| shape          | shape       |           | "rounded" \| "pill" \| "circle" \| "square"                 | `rounded`    | Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons. Icon-only buttons need a text alternative in the `ariaLabel` slot.                                                                                            |
+| size           | size        |           | "xs" \| "sm" \| "md" \| "lg" \| "xl"                        | `md`         | Sets the button's size, from `xs` (smallest) to `xl` (largest). Size controls the button's height, padding, and label text size.                                                                                                                                                                            |
+| static         | static      |           | boolean                                                     | `false`      | Displays the button's styling without any button behavior. A static button can't be clicked or focused, and screen readers don't announce it as a button. Use it when the button sits inside another clickable element, such as a linked card.                                                              |
+| tIndex         | tindex      |           | number                                                      |              | Sets the button's position in the keyboard tab order (the inner element's `tabindex`). Use `-1` to remove the button from the tab order. Most buttons don't need this. Ignored when `static` is set.                                                                                                        |
+| title          | title       |           | string                                                      |              | Text shown as a browser tooltip when a mouse pointer rests on the button. Keyboard and touch users never see it, so don't use it for essential information.                                                                                                                                                 |
+| type           | type        |           | "submit" \| "reset" \| "button"                             |              | Sets what the button does in a form. `submit` submits the form the button is placed in, whether it's a native `<form>` or an `<auro-form>`. `reset` resets the fields of an `<auro-form>`, but has no effect in a native `<form>`. Leave it unset, or use `button`, when the button runs its own action.    |
+| variant        | variant     |           | "primary" \| "secondary" \| "tertiary" \| "ghost" \| "flat" | `primary`    | Sets the button's visual emphasis. Use `primary` for the single most important action in a view, `secondary` for supporting actions, and `tertiary`, `ghost`, or `flat` for progressively quieter actions. `flat` shows only the label, with no background or border.                                       |
+| loadingText    | loadingtext |           | string                                                      | `Loading...` | Deprecated: Use `slot="ariaLabel.loading"` instead.                                                                                                                                                                                                                                                         |
+| onDark         | ondark      |           | boolean                                                     | `false`      | Deprecated: Use `appearance="inverse"` instead.                                                                                                                                                                                                                                                             |
+| tabindex       | tabindex    |           | string                                                      |              | Deprecated: Use `tIndex` instead.<br>Sets the button's position in the keyboard tab order. Must be set as a property (with a leading `.` in Lit templates) so the `tabindex` attribute isn't left on the host element.<br>Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`. |
 
 ### Methods
 
-| Name     | Parameters                                                           | Return | Description                                       |
-| -------- | -------------------------------------------------------------------- | ------ | ------------------------------------------------- |
-| register | `name` (string) - The name of the element that you want to register. |        | This will register this element with the browser. |
+| Name     | Parameters                                                    | Return | Description                                                                                                                                                 |
+| -------- | ------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| register | `name` (string) - The tag name to register the element under. |        | Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-button` on the same page. |
 
 ### Slots
 
-| Name              | Description                                                                    |
-| ----------------- | ------------------------------------------------------------------------------ |
-| (default)         | Default slot for the text of the button.                                       |
-| ariaLabel         | Use this slot to pass an aria-label to the HTML5 button.                       |
-| ariaLabel.loading | Use this slot to pass an aria-label to the HTML5 button when in loading state. |
+| Name              | Description                                                                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (default)         | The button's visible label: text, an icon, or both.                                                                                               |
+| ariaLabel         | Text read by screen readers in place of the visible label. Needed for icon-only buttons (`circle` or `square` shape), which have no visible text. |
+| ariaLabel.loading | Text read by screen readers while the button is loading, for example "Saving your changes". Defaults to "Loading...".                             |
 
 ### CSS Shadow Parts
 
-| Name           | Description                                                                             |
-| -------------- | --------------------------------------------------------------------------------------- |
-| button         | Apply CSS to HTML5 button.                                                              |
-| contentWrapper | Apply CSS to the span wrapping the button content.                                      |
-| link           | Apply CSS to the anchor (`<a>`) rendered in place of `button` when `buttonHref` is set. |
-| loader         | Apply CSS to auro-loader.                                                               |
-| text           | Apply CSS to text slot.                                                                 |
+| Name           | Description                                                                                              |
+| -------------- | -------------------------------------------------------------------------------------------------------- |
+| button         | The inner `<button>` element (a `<span>` when `static` is set).                                          |
+| contentWrapper | The element wrapping all of the button's content. It is hidden, but still takes up space, while loading. |
+| loader         | The loading indicator shown while `loading` is set.                                                      |
+| text           | The element wrapping the button's label.                                                                 |
 
 ### CSS Custom Properties
 
-| Name                                                           | Description                                                            |
-| -------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| --ds-advanced-color-button-flat-text                           | Text color of the flat variant.                                        |
-| --ds-advanced-color-button-flat-text-disabled                  | Text color of the flat variant (disabled).                             |
-| --ds-advanced-color-button-flat-text-hover                     | Text color of the flat variant (hover).                                |
-| --ds-advanced-color-button-flat-text-inverse                   | Text color of the flat variant (inverse).                              |
-| --ds-advanced-color-button-flat-text-inverse-disabled          | Text color of the flat variant (inverse, disabled).                    |
-| --ds-advanced-color-button-flat-text-inverse-hover             | Text color of the flat variant (inverse, hover).                       |
-| --ds-advanced-color-button-ghost-background-hover              | Background color of the ghost variant (hover).                         |
-| --ds-advanced-color-button-ghost-background-inverse-hover      | Background color of the ghost variant (inverse, hover).                |
-| --ds-advanced-color-button-ghost-text                          | Text color of the ghost variant.                                       |
-| --ds-advanced-color-button-ghost-text-inverse                  | Text color of the ghost variant (inverse).                             |
-| --ds-advanced-color-button-primary-background                  | Background color of the primary variant.                               |
-| --ds-advanced-color-button-primary-background-disabled         | Background color of the primary variant (disabled).                    |
-| --ds-advanced-color-button-primary-background-hover            | Background color of the primary variant (hover).                       |
-| --ds-advanced-color-button-primary-background-inverse          | Background color of the primary variant (inverse).                     |
-| --ds-advanced-color-button-primary-background-inverse-disabled | Background color of the primary variant (inverse, disabled).           |
-| --ds-advanced-color-button-primary-background-inverse-hover    | Background color of the primary variant (inverse, hover).              |
-| --ds-advanced-color-button-primary-border                      | Border color of the primary variant.                                   |
-| --ds-advanced-color-button-primary-border-disabled             | Border color of the primary variant (disabled).                        |
-| --ds-advanced-color-button-primary-border-hover                | Border color of the primary variant (hover).                           |
-| --ds-advanced-color-button-primary-border-inverse              | Border color of the primary variant (inverse).                         |
-| --ds-advanced-color-button-primary-border-inverse-disabled     | Border color of the primary variant (inverse, disabled).               |
-| --ds-advanced-color-button-primary-border-inverse-hover        | Border color of the primary variant (inverse, hover).                  |
-| --ds-advanced-color-button-primary-text                        | Text color of the primary variant.                                     |
-| --ds-advanced-color-button-primary-text-inverse                | Text color of the primary variant (inverse).                           |
-| --ds-advanced-color-button-secondary-background                | Background color of the secondary variant.                             |
-| --ds-advanced-color-button-secondary-background-disabled       | Background color of the secondary variant (disabled).                  |
-| --ds-advanced-color-button-secondary-background-hover          | Background color of the secondary variant (hover).                     |
-| --ds-advanced-color-button-secondary-background-inverse-hover  | Background color of the secondary variant (inverse, hover).            |
-| --ds-advanced-color-button-secondary-border                    | Border color of the secondary variant.                                 |
-| --ds-advanced-color-button-secondary-border-disabled           | Border color of the secondary variant (disabled).                      |
-| --ds-advanced-color-button-secondary-border-hover              | Border color of the secondary variant (hover).                         |
-| --ds-advanced-color-button-secondary-border-inverse            | Border color of the secondary variant (inverse).                       |
-| --ds-advanced-color-button-secondary-border-inverse-disabled   | Border color of the secondary variant (inverse, disabled).             |
-| --ds-advanced-color-button-secondary-text                      | Text color of the secondary variant.                                   |
-| --ds-advanced-color-button-secondary-text-hover                | Text color of the secondary variant (hover).                           |
-| --ds-advanced-color-button-secondary-text-inverse              | Text color of the secondary variant (inverse).                         |
-| --ds-advanced-color-button-tertiary-background                 | Background color of the tertiary variant.                              |
-| --ds-advanced-color-button-tertiary-background-hover           | Background color of the tertiary variant (hover).                      |
-| --ds-advanced-color-button-tertiary-background-inverse         | Background color of the tertiary variant (inverse).                    |
-| --ds-advanced-color-button-tertiary-background-inverse-hover   | Background color of the tertiary variant (inverse, hover).             |
-| --ds-advanced-color-button-tertiary-text                       | Text color of the tertiary variant.                                    |
-| --ds-advanced-color-button-tertiary-text-inverse               | Text color of the tertiary variant (inverse).                          |
-| --ds-advanced-color-state-focused                              | Focus indicator color (shared state design token).                     |
-| --ds-advanced-color-state-focused-inverse                      | Focus indicator color on dark backgrounds (shared state design token). |
-| --ds-auro-button-border-color                                  | Border color of the button.                                            |
-| --ds-auro-button-border-inset-color                            | Inset border color of the button.                                      |
-| --ds-auro-button-container-color                               | Container background color of the button.                              |
-| --ds-auro-button-container-image                               | Container background image of the button.                              |
-| --ds-auro-button-loader-color                                  | Color of the loading indicator.                                        |
-| --ds-auro-button-tap-color                                     | Tap highlight color of the button.                                     |
-| --ds-auro-button-text-color                                    | Text color of the button.                                              |
-| --ds-auro-icon-size                                            | Size of an icon rendered inside the button.                            |
-| --ds-basic-color-texticon-disabled                             | Disabled text/icon color (shared design token).                        |
-| --ds-basic-color-texticon-inverse-disabled                     | Disabled text/icon color on dark backgrounds (shared design token).    |
-| --ds-size-100                                                  | Spacing/size scale token `--ds-size-100` (shared design token).        |
-| --ds-size-150                                                  | Spacing/size scale token `--ds-size-150` (shared design token).        |
-| --ds-size-200                                                  | Spacing/size scale token `--ds-size-200` (shared design token).        |
-| --ds-size-300                                                  | Spacing/size scale token `--ds-size-300` (shared design token).        |
-| --ds-size-400                                                  | Spacing/size scale token `--ds-size-400` (shared design token).        |
-| --ds-size-50                                                   | Spacing/size scale token `--ds-size-50` (shared design token).         |
-| --ds-size-500                                                  | Spacing/size scale token `--ds-size-500` (shared design token).        |
+| Name                                | Description                                                                  |
+| ----------------------------------- | ---------------------------------------------------------------------------- |
+| --ds-auro-button-border-color       | Border color of the button.                                                  |
+| --ds-auro-button-border-inset-color | Color of the inner ring shown when the button has keyboard focus.            |
+| --ds-auro-button-container-color    | Background color of the button.                                              |
+| --ds-auro-button-container-image    | Background image layered over the background color, used for gradient fills. |
+| --ds-auro-button-loader-color       | Color of the loading indicator.                                              |
+| --ds-auro-button-tap-color          | Highlight color shown briefly when the button is tapped on a touch screen.   |
+| --ds-auro-button-text-color         | Color of the button's label text.                                            |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Basic
@@ -195,14 +142,14 @@ For dark backgrounds, the `inverse` attribute can be applied.
 &lt;auro-button variant="secondary" appearance="inverse"&gt;Secondary&lt;/auro-button&gt;
 &lt;auro-button variant="tertiary" appearance="inverse"&gt;Tertiary&lt;/auro-button&gt;
 &lt;auro-button variant="ghost" appearance="inverse"&gt;Ghost&lt;/auro-button&gt;
-&lt;br /&gt;&lt;br/&gt;
-&lt;auro-button appearance="inverse" shape="circle" size="xl"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&#10;&lt;br /&gt;&lt;br/&gt;
+&#10;&lt;auro-button appearance="inverse" shape="circle" size="xl"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
 &lt;auro-button appearance="inverse" shape="circle" size="lg" variant="secondary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
 &lt;auro-button appearance="inverse" shape="circle" size="md" variant="tertiary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
 &lt;auro-button appearance="inverse" shape="circle" size="sm" variant="ghost"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
 &lt;auro-button appearance="inverse" shape="circle" size="xs" variant="flat"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
-&lt;br /&gt;&lt;br/&gt;
-&lt;auro-button appearance="inverse" shape="square" size="xl"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&#10;&lt;br /&gt;&lt;br/&gt;
+&#10;&lt;auro-button appearance="inverse" shape="square" size="xl"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
 &lt;auro-button appearance="inverse" shape="square" size="lg" variant="secondary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
 &lt;auro-button appearance="inverse" shape="square" size="md" variant="tertiary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
 &lt;auro-button appearance="inverse" shape="square" size="sm" variant="ghost"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
@@ -294,23 +241,23 @@ The `static` attribute creates a button with no interactivity. When applied, the
 <pre class="language-html"><code class="language-html">&lt;auro-button static&gt;Static Primary Button&lt;/auro-button&gt;
 &lt;auro-button static variant="secondary"&gt;Static Secondary Button&lt;/auro-button&gt;
 &lt;auro-button static variant="tertiary"&gt;Static Tertiary Button&lt;/auro-button&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;auro-button static fluid&gt;Static Fluid Button&lt;/auro-button&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;auro-button static size="xs"&gt;XS Static&lt;/auro-button&gt;
+&#10;&lt;br&gt;&lt;br&gt;
+&#10;&lt;auro-button static fluid&gt;Static Fluid Button&lt;/auro-button&gt;
+&#10;&lt;br&gt;&lt;br&gt;
+&#10;&lt;auro-button static size="xs"&gt;XS Static&lt;/auro-button&gt;
 &lt;auro-button static size="sm"&gt;SM Static&lt;/auro-button&gt;
 &lt;auro-button static size="md"&gt;MD Static&lt;/auro-button&gt;
 &lt;auro-button static size="lg"&gt;LG Static&lt;/auro-button&gt;
 &lt;auro-button static size="xl"&gt;XL Static&lt;/auro-button&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;auro-button static shape="pill"&gt;
+&#10;&lt;br&gt;&lt;br&gt;
+&#10;&lt;auro-button static shape="pill"&gt;
   &lt;auro-icon category="interface" name="home-filled" slot="icon" customColor&gt;&lt;/auro-icon&gt;
   Static Pill with Icon
 &lt;/auro-button&gt;
-&lt;auro-button static shape="circle"&gt;
+&#10;&lt;auro-button static shape="circle"&gt;
   &lt;auro-icon category="interface" name="home-filled" customColor&gt;&lt;/auro-icon&gt;
 &lt;/auro-button&gt;
-&lt;auro-button static shape="square"&gt;
+&#10;&lt;auro-button static shape="square"&gt;
   &lt;auro-icon category="interface" name="home-filled" customColor&gt;&lt;/auro-icon&gt;
 &lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -432,22 +379,18 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
 
 <pre class="language-js"><code class="language-js">export function toggledTextExample() {
   const toggledTextElem = document.querySelector("#toggledTextElem");
-​
-  // The mouseover and mouseout events are to simulate toggling text for mouse users
+&#10;  // The mouseover and mouseout events are to simulate toggling text for mouse users
   toggledTextElem.addEventListener("mouseover", () =&gt; {
     toggledTextElem.shape = "pill";
   });
-​
-  toggledTextElem.addEventListener("mouseout", () =&gt; {
+&#10;  toggledTextElem.addEventListener("mouseout", () =&gt; {
     toggledTextElem.shape = "circle";
   });
-​
-  // The focusin and focusout events are to simulate toggling text for keyboard users
+&#10;  // The focusin and focusout events are to simulate toggling text for keyboard users
   toggledTextElem.addEventListener("focusin", () =&gt; {
     toggledTextElem.shape = "pill";
   });
-​
-  toggledTextElem.addEventListener("focusout", () =&gt; {
+&#10;  toggledTextElem.addEventListener("focusout", () =&gt; {
     toggledTextElem.shape = "circle";
   });
 }</code></pre>
@@ -675,22 +618,18 @@ This example shows a `rounded` `auro-button` that is right-aligned, demonstratin
 
 <pre class="language-js"><code class="language-js">export function roundedRightAlignExample() {
   const rightAlignElem = document.querySelector("#rightAlignElem");
-​
-  // The mouseover and mouseout events are to simulate toggling text for mouse users
+&#10;  // The mouseover and mouseout events are to simulate toggling text for mouse users
   rightAlignElem.addEventListener("mouseover", () =&gt; {
     rightAlignElem.shape = "pill";
   });
-​
-  rightAlignElem.addEventListener("mouseout", () =&gt; {
+&#10;  rightAlignElem.addEventListener("mouseout", () =&gt; {
     rightAlignElem.shape = "circle";
   });
-​
-  // The focusin and focusout events are to simulate toggling text for keyboard users
+&#10;  // The focusin and focusout events are to simulate toggling text for keyboard users
   rightAlignElem.addEventListener("focusin", () =&gt; {
     rightAlignElem.shape = "pill";
   });
-​
-  rightAlignElem.addEventListener("focusout", () =&gt; {
+&#10;  rightAlignElem.addEventListener("focusout", () =&gt; {
     rightAlignElem.shape = "circle";
   });
 }</code></pre>
@@ -823,7 +762,7 @@ Accessible text may be provided through the `ariaLabel` or `ariaLabel.loading` s
   &lt;span slot="ariaLabel"&gt;My Button Label&lt;/span&gt;
   Auro Button
 &lt;/auro-button&gt;
-&lt;auro-button loading&gt;
+&#10;&lt;auro-button loading&gt;
   &lt;span slot="ariaLabel.loading"&gt;My Loading Button Label&lt;/span&gt;
   Auro Button
 &lt;/auro-button&gt;</code></pre>
@@ -861,7 +800,7 @@ The component supports both the `aria-labelledby` attribute for accessibility.
   Auro Button
   &lt;label id="button-label" class="util_displayHiddenVisually"&gt;My Button Label&lt;/label&gt;
 &lt;/auro-button&gt;
-&lt;style&gt;
+&#10;&lt;style&gt;
   .util_displayHiddenVisually {
     clip: rect(1px, 1px, 1px, 1px);
     width: 1px;
@@ -1107,8 +1046,7 @@ The component may be restyled by changing the values of the following token(s).
 <!-- The below code snippet is automatically added from ./../src/styles/tokens.scss -->
 
 <pre class="language-scss"><code class="language-scss">@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
-​
-:host {
+&#10;:host {
   --ds-auro-button-border-color: var(--ds-advanced-color-button-primary-border, #{v.$ds-advanced-color-button-primary-border});
   --ds-auro-button-border-inset-color: var(--ds-advanced-color-state-focused-inverse, #{v.$ds-advanced-color-state-focused-inverse});
   --ds-auro-button-container-color: var(--ds-advanced-color-button-primary-background, #{v.$ds-advanced-color-button-primary-background});
