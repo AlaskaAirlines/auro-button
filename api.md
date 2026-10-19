@@ -322,7 +322,7 @@ Available options are:
 
 The `rounded` and `pill` shapes are flexible and can hold any amount of information
 
-The `circle` and `square` shapes are always equal dimensions. These shapes currently only support icon-only buttons.
+The `circle` and `square` shapes are always equal dimensions. These shapes support either an icon or short text such as a count (e.g. `1`). Text is only displayed when no icon is slotted and the text is not wrapped in an element; otherwise only the icon is shown. A number alone is rarely a meaningful accessible name, so provide one with the `aria-label` attribute or the `ariaLabel` slot.
 
 #### Rounded
 
@@ -473,6 +473,63 @@ The `rounded` attribute supports the ability to hide/show the text of the `auro-
 &lt;auro-button shape="circle" size="xs"&gt;
   &lt;span slot="ariaLabel"&gt;home-filled&lt;/span&gt;
   &lt;auro-icon customColor category="interface" name="home-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;</code></pre>
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Circle - Text
+
+The `circle` and `square` shapes can display short text, such as a count, in place of an icon.
+
+<div class="exampleWrapper">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle-text.html) -->
+<!-- The below content is automatically added from ./../apiExamples/shape-circle-text.html -->
+<auro-button shape="circle" size="xl">
+<span slot="ariaLabel">Quantity 1</span>
+    1
+</auro-button>
+<auro-button shape="circle" size="lg">
+<span slot="ariaLabel">Quantity 1</span>
+    1
+</auro-button>
+<auro-button shape="circle" size="md">
+<span slot="ariaLabel">Quantity 1</span>
+    1
+</auro-button>
+<auro-button shape="circle" size="sm">
+<span slot="ariaLabel">Quantity 1</span>
+    1
+</auro-button>
+<auro-button shape="circle" size="xs">
+<span slot="ariaLabel">Quantity 1</span>
+    1
+</auro-button>
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-circle-text.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/shape-circle-text.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button shape="circle" size="xl"&gt;
+  &lt;span slot="ariaLabel"&gt;Quantity 1&lt;/span&gt;
+  1
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="lg"&gt;
+  &lt;span slot="ariaLabel"&gt;Quantity 1&lt;/span&gt;
+  1
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="md"&gt;
+  &lt;span slot="ariaLabel"&gt;Quantity 1&lt;/span&gt;
+  1
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="sm"&gt;
+  &lt;span slot="ariaLabel"&gt;Quantity 1&lt;/span&gt;
+  1
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="xs"&gt;
+  &lt;span slot="ariaLabel"&gt;Quantity 1&lt;/span&gt;
+  1
 &lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
