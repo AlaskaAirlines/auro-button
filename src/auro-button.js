@@ -412,6 +412,19 @@ export class AuroButton extends AuroElement {
   }
 
   /**
+   * Checks whether an icon is slotted into the default slot.
+   * @returns {boolean} - True if an icon is slotted; false otherwise.
+   * @private
+   */
+  get hasSlottedIcon() {
+    return Boolean(
+      this.querySelector(
+        ":scope > auro-icon, :scope > [auro-icon], :scope > svg",
+      ),
+    );
+  }
+
+  /**
    * Gets the typography class for the label, based on the button's size and shape.
    * @returns {string} - The typography class name.
    * @private
@@ -502,6 +515,14 @@ export class AuroButton extends AuroElement {
   }
 
   /**
+   * Called when the content slotted into the default slot changes. Re-renders so icon-only shapes show text (such as a count) only when no icon is slotted.
+   * @private
+   */
+  onDefaultSlotChange() {
+    this.requestUpdate();
+  }
+
+  /**
    * Gets the text screen readers announce for the button.
    * @returns {String} - While loading, the `ariaLabel.loading` slot text or `loadingText`. Otherwise, the `ariaLabel` slot text or the host's `aria-label`.
    * @private
@@ -569,10 +590,11 @@ export class AuroButton extends AuroElement {
       loading: this.loading,
     };
 
-    // Type classes should not be applied to the wrapper to avoid affecting icons
+    // Type classes should not be applied to the wrapper to avoid affecting icons.
+    // Icon-only shapes only get a type class when they hold text (e.g. a count) instead of an icon.
     const textSlotClasses = {
       textSlot: true,
-      [fontSize]: this.showText,
+      [fontSize]: this.showText || !this.hasSlottedIcon,
     };
 
     const tabindex = this.tIndex ?? this.tabindex;
@@ -609,7 +631,7 @@ export class AuroButton extends AuroElement {
 
         <span class="${classMap(contentClasses)}" part="contentWrapper">
           <span class="${classMap(textSlotClasses)}" part="text">
-            <slot></slot>
+            <slot @slotchange="${this.onDefaultSlotChange}"></slot>
           </span>
         </span>
       </${this._renderTag}>
