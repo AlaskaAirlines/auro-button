@@ -344,7 +344,7 @@ Use `circle` or `square` for a single icon, either an `<auro-icon>` or your own 
 
 #### Show text on hover and focus
 
-To show a label next to an icon only when people point at or focus the button, switch `shape` between `circle` and `pill`. A `circle` button hides its label and shows only the icon; a `pill` button shows both. This example switches on `mouseover` and `mouseout` for mouse users, and on `focusin` and `focusout` for keyboard users.
+To show a label next to an icon only when people point at or focus the button, switch `shape` between `circle` and `pill`. A `circle` button hides its label and shows only the icon; a `pill` button shows both. This example listens for `mouseover` and `mouseout` for mouse users, and for `focusin` and `focusout` for keyboard users. The label stays visible while the button is either hovered or focused, and hides only when neither is true.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggled-text.html) -->
@@ -372,19 +372,29 @@ To show a label next to an icon only when people point at or focus the button, s
 
 <pre class="language-js"><code class="language-js">export function toggledTextExample() {
   const toggledTextElem = document.querySelector("#toggledTextElem");
+&#10;  // Track hover and focus separately so the label stays visible while either is active
+  let isHovered = false;
+  let hasFocus = false;
+&#10;  const updateShape = () =&gt; {
+    toggledTextElem.shape = isHovered || hasFocus ? "pill" : "circle";
+  };
 &#10;  // The mouseover and mouseout events are to simulate toggling text for mouse users
   toggledTextElem.addEventListener("mouseover", () =&gt; {
-    toggledTextElem.shape = "pill";
+    isHovered = true;
+    updateShape();
   });
 &#10;  toggledTextElem.addEventListener("mouseout", () =&gt; {
-    toggledTextElem.shape = "circle";
+    isHovered = false;
+    updateShape();
   });
 &#10;  // The focusin and focusout events are to simulate toggling text for keyboard users
   toggledTextElem.addEventListener("focusin", () =&gt; {
-    toggledTextElem.shape = "pill";
+    hasFocus = true;
+    updateShape();
   });
 &#10;  toggledTextElem.addEventListener("focusout", () =&gt; {
-    toggledTextElem.shape = "circle";
+    hasFocus = false;
+    updateShape();
   });
 }</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -747,19 +757,29 @@ When a button that shows text on hover and focus is right-aligned, it grows and 
 
 <pre class="language-js"><code class="language-js">export function roundedRightAlignExample() {
   const rightAlignElem = document.querySelector("#rightAlignElem");
+&#10;  // Track hover and focus separately so the label stays visible while either is active
+  let isHovered = false;
+  let hasFocus = false;
+&#10;  const updateShape = () =&gt; {
+    rightAlignElem.shape = isHovered || hasFocus ? "pill" : "circle";
+  };
 &#10;  // The mouseover and mouseout events are to simulate toggling text for mouse users
   rightAlignElem.addEventListener("mouseover", () =&gt; {
-    rightAlignElem.shape = "pill";
+    isHovered = true;
+    updateShape();
   });
 &#10;  rightAlignElem.addEventListener("mouseout", () =&gt; {
-    rightAlignElem.shape = "circle";
+    isHovered = false;
+    updateShape();
   });
 &#10;  // The focusin and focusout events are to simulate toggling text for keyboard users
   rightAlignElem.addEventListener("focusin", () =&gt; {
-    rightAlignElem.shape = "pill";
+    hasFocus = true;
+    updateShape();
   });
 &#10;  rightAlignElem.addEventListener("focusout", () =&gt; {
-    rightAlignElem.shape = "circle";
+    hasFocus = false;
+    updateShape();
   });
 }</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
