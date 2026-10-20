@@ -149,7 +149,7 @@ The `circle` and `square` shapes are always equal dimensions. These shapes suppo
 
 #### Rounded - Toggle Text
 
-The `rounded` attribute supports the ability to hide/show the text of the `auro-button`. This can be done by changing the value of the `iconOnly` attribute. In this example, the text is toggled via `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users. The text stays visible while the button is either hovered or focused, and hides only when neither is true.
+The `rounded` attribute supports the ability to hide/show the text of the `auro-button`. This can be done by changing the value of the `iconOnly` attribute. In this example, the text is toggled via `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users. The text stays visible while the button is either hovered or focused, and hides only when neither is true. Screen readers still read the hidden text, so the button doesn't need an `ariaLabel` slot.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggled-text.html) -->
