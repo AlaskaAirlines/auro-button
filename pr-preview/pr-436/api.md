@@ -24,39 +24,38 @@ Auro interfaces.
 
 ### Properties & Attributes
 
-| Properties     | Attributes  | Modifiers | Type                                                        | Default      | Description                                                                                                                                                                                                                                                                                                                       |
-| -------------- | ----------- | --------- | ----------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| appearance     | appearance  |           | "default" \| "inverse"                                      | `default`    | Matches the component's colors to the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.                                                                                                                                                                                                       |
-| autofocus      | autofocus   |           | boolean                                                     | `false`      | Moves keyboard focus to the button when the page loads. Use sparingly: moving focus without warning can disorient keyboard and screen reader users.                                                                                                                                                                               |
-| disabled       | disabled    |           | boolean                                                     | `false`      | Turns the button off. A disabled button is shown in a muted style and can't be clicked or reached with the keyboard.                                                                                                                                                                                                              |
-| fluid          | fluid       |           | boolean                                                     | `false`      | Stretches the button to fill the full width of its container.                                                                                                                                                                                                                                                                     |
-| formAssociated |             | readonly  | boolean                                                     |              | Checks whether the button takes part in the form it's placed in. Always true, which turns on form association for `auro-button`.                                                                                                                                                                                                  |
-| loading        | loading     |           | boolean                                                     | `false`      | Shows a loading indicator in place of the label and blocks clicks until it is turned off. The button keeps its width, so the layout doesn't shift. Use the `ariaLabel.loading` slot to tell screen reader users what is happening.                                                                                                |
-| shape          | shape       |           | "rounded" \| "pill" \| "circle" \| "square"                 | `rounded`    | Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for a single icon (an `<auro-icon>` or an `<svg>`) or short text, such as a count. `circle` and `square` show text only when no icon is slotted, and they need a text alternative in the `ariaLabel` slot. |
-| size           | size        |           | "xs" \| "sm" \| "md" \| "lg" \| "xl"                        | `md`         | Sets the button's size, from `xs` (smallest) to `xl` (largest). Size controls the button's height, padding, and label text size.                                                                                                                                                                                                  |
-| static         | static      |           | boolean                                                     | `false`      | Displays the button's styling without any button behavior. A static button can't be clicked or focused, and screen readers don't announce it as a button. Use it when the button sits inside another clickable element, such as a linked card.                                                                                    |
-| tIndex         | tindex      |           | number                                                      |              | Sets the button's position in the keyboard tab order (the inner element's `tabindex`). Use `-1` to remove the button from the tab order. Most buttons don't need this. Ignored when `static` is set.                                                                                                                              |
-| title          | title       |           | string                                                      |              | Text shown as a browser tooltip when a mouse pointer rests on the button. Keyboard and touch users never see it, so don't use it for essential information.                                                                                                                                                                       |
-| type           | type        |           | "submit" \| "reset" \| "button"                             |              | Sets what the button does in a form. `submit` submits the form the button is placed in, whether it's a native `<form>` or an `<auro-form>`. `reset` resets the fields of an `<auro-form>`, but has no effect in a native `<form>`. Leave it unset, or use `button`, when the button runs its own action.                          |
-| variant        | variant     |           | "primary" \| "secondary" \| "tertiary" \| "ghost" \| "flat" | `primary`    | Sets the button's visual emphasis. Use `primary` for the single most important action in a view, `secondary` for supporting actions, and `tertiary`, `ghost`, or `flat` for progressively quieter actions. `flat` shows only the label, with no background or border.                                                             |
-| loadingText    | loadingtext |           | string                                                      | `Loading...` | Deprecated: Use `slot="ariaLabel.loading"` instead.<br>Sets the text screen readers announce while the button is loading.                                                                                                                                                                                                         |
-| onDark         | ondark      |           | boolean                                                     | `false`      | Deprecated: Use `appearance="inverse"` instead.<br>Switches the component to colors designed for dark backgrounds.                                                                                                                                                                                                                |
-| tabindex       | tabindex    |           | string                                                      |              | Deprecated: Use `tIndex` instead.<br>Sets the button's position in the keyboard tab order. Must be set as a property (with a leading `.` in Lit templates) so the `tabindex` attribute isn't left on the host element.<br>Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`.                       |
+| Properties     | Attributes  | Modifiers | Type                                                        | Default      | Description                                                                                                                                                                                                                                                                                                                               |
+| -------------- | ----------- | --------- | ----------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| appearance     | appearance  |           | "default" \| "inverse"                                      | `default`    | Matches the component's colors to the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.                                                                                                                                                                                                               |
+| autofocus      | autofocus   |           | boolean                                                     | `false`      | Moves keyboard focus to the button when the page loads. Use sparingly: moving focus without warning can disorient keyboard and screen reader users.                                                                                                                                                                                       |
+| disabled       | disabled    |           | boolean                                                     | `false`      | Turns the button off. A disabled button is shown in a muted style and can't be clicked or reached with the keyboard.                                                                                                                                                                                                                      |
+| fluid          | fluid       |           | boolean                                                     | `false`      | Stretches the button to fill the full width of its container.                                                                                                                                                                                                                                                                             |
+| formAssociated |             | readonly  | boolean                                                     |              | Checks whether the button takes part in the form it's placed in. Always true, which turns on form association for `auro-button`.                                                                                                                                                                                                          |
+| loading        | loading     |           | boolean                                                     | `false`      | Shows a loading indicator in place of the label and blocks clicks until it is turned off. The button keeps its width, so the layout doesn't shift. Use the `ariaLabel.loading` slot to tell screen reader users what is happening.                                                                                                        |
+| shape          | shape       |           | "rounded" \| "pill" \| "circle" \| "square"                 | `rounded`    | Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for a single icon or short text, such as a count. `circle` and `square` show text only when no icon is slotted and the text isn't wrapped in an element, and they need a text alternative in the `ariaLabel` slot. |
+| size           | size        |           | "xs" \| "sm" \| "md" \| "lg" \| "xl"                        | `md`         | Sets the button's size, from `xs` (smallest) to `xl` (largest). Size controls the button's height, padding, and label text size.                                                                                                                                                                                                          |
+| static         | static      |           | boolean                                                     | `false`      | Displays the button's styling without any button behavior. A static button can't be clicked or focused, and screen readers don't announce it as a button. Use it when the button sits inside another clickable element, such as a linked card.                                                                                            |
+| tIndex         | tindex      |           | number                                                      |              | Sets the button's position in the keyboard tab order (the inner element's `tabindex`). Use `-1` to remove the button from the tab order. Most buttons don't need this. Ignored when `static` is set.                                                                                                                                      |
+| title          | title       |           | string                                                      |              | Text shown as a browser tooltip when a mouse pointer rests on the button. Keyboard and touch users never see it, so don't use it for essential information.                                                                                                                                                                               |
+| type           | type        |           | "submit" \| "reset" \| "button"                             |              | Sets what the button does in a form. `submit` submits the form the button is placed in, whether it's a native `<form>` or an `<auro-form>`. `reset` resets the fields of an `<auro-form>`, but has no effect in a native `<form>`. Leave it unset, or use `button`, when the button runs its own action.                                  |
+| variant        | variant     |           | "primary" \| "secondary" \| "tertiary" \| "ghost" \| "flat" | `primary`    | Sets the button's visual emphasis. Use `primary` for the single most important action in a view, `secondary` for supporting actions, and `tertiary`, `ghost`, or `flat` for progressively quieter actions. `flat` shows only the label, with no background or border.                                                                     |
+| loadingText    | loadingtext |           | string                                                      | `Loading...` | Deprecated: Use `slot="ariaLabel.loading"` instead.<br>Sets the text screen readers announce while the button is loading.                                                                                                                                                                                                                 |
+| onDark         | ondark      |           | boolean                                                     | `false`      | Deprecated: Use `appearance="inverse"` instead.<br>Switches the component to colors designed for dark backgrounds.                                                                                                                                                                                                                        |
+| tabindex       | tabindex    |           | string                                                      |              | Deprecated: Use `tIndex` instead.<br>Sets the button's position in the keyboard tab order. Must be set as a property (with a leading `.` in Lit templates) so the `tabindex` attribute isn't left on the host element.<br>Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`.                               |
 
 ### Methods
 
-| Name     | Parameters                                                                      | Return | Description                                                                                                                                                                         |
-| -------- | ------------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| focus    | `options` (FocusOptions) - The options passed to the inner element's `focus()`. | void   | Moves keyboard focus to the inner `<button>` element, or to the inner `<a>` element when `buttonHref` is set. Does nothing when `static` is set or before the button first renders. |
-| register | `name` (string) - The tag name to register the element under.                   |        | Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-button` on the same page.                         |
+| Name     | Parameters                                                    | Return | Description                                                                                                                                                 |
+| -------- | ------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| register | `name` (string) - The tag name to register the element under. |        | Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-button` on the same page. |
 
 ### Slots
 
-| Name              | Description                                                                                                                                                                                   |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| (default)         | The button's visible label: text, an icon (an `<auro-icon>` or an `<svg>`), or both. Set `aria-hidden="true"` on a slotted `<svg>` so screen readers skip it and read only the button's name. |
-| ariaLabel         | Text read by screen readers in place of the visible label. Needed for `circle` and `square` buttons, whose icon or short text, such as a count, doesn't say what the button does.             |
-| ariaLabel.loading | Text read by screen readers while the button is loading, for example "Saving your changes". Defaults to "Loading...".                                                                         |
+| Name              | Description                                                                                                                                                                       |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (default)         | The button's visible label: text, an icon, or both.                                                                                                                               |
+| ariaLabel         | Text read by screen readers in place of the visible label. Needed for `circle` and `square` buttons, whose icon or short text, such as a count, doesn't say what the button does. |
+| ariaLabel.loading | Text read by screen readers while the button is loading, for example "Saving your changes". Defaults to "Loading...".                                                             |
 
 ### CSS Shadow Parts
 
@@ -315,7 +314,7 @@ Use the `shape` attribute to set the button's outline: `rounded` (the default), 
 
 Use `rounded` or `pill` for buttons with a text label. They grow to fit their content.
 
-Use `circle` or `square` for a single icon, either an `<auro-icon>` or your own `<svg>`, or for short text, such as a count. These shapes always have equal width and height. Text shows only when no icon is slotted; otherwise, only the icon shows. Because an icon or a number alone doesn't say what the button does, give these buttons an accessible name with the `ariaLabel` slot or the `aria-label` attribute.
+Use `circle` or `square` for a single icon, either an `<auro-icon>` or your own `<svg>`, or for short text, such as a count. These shapes always have equal width and height. Text shows only when no icon is slotted and the text isn't wrapped in an element; otherwise, only the icon shows. Because an icon or a number alone doesn't say what the button does, give these buttons an accessible name with the `ariaLabel` slot or the `aria-label` attribute.
 
 #### Rounded
 
@@ -344,12 +343,13 @@ Use `circle` or `square` for a single icon, either an `<auro-icon>` or your own 
 
 #### Show text on hover and focus
 
-To show a label next to an icon only when people point at or focus the button, switch `shape` between `circle` and `pill`. A `circle` button hides its label and shows only the icon; a `pill` button shows both. This example listens for `mouseover` and `mouseout` for mouse users, and for `focusin` and `focusout` for keyboard users. The label stays visible while the button is either hovered or focused, and hides only when neither is true. Screen readers still read the hidden label, so the button doesn't need an `ariaLabel` slot.
+To show a label next to an icon only when people point at or focus the button, switch `shape` between `circle` and `pill`. A `circle` button hides its label and shows only the icon; a `pill` button shows both. This example switches on `mouseover` and `mouseout` for mouse users, and on `focusin` and `focusout` for keyboard users.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggled-text.html) -->
 <!-- The below content is automatically added from ./../apiExamples/toggled-text.html -->
 <auro-button shape="circle" id="toggledTextElem">
+<span slot="ariaLabel">Back to top</span>
 <span>Back to top</span>
 <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
 </auro-button>
@@ -361,6 +361,7 @@ To show a label next to an icon only when people point at or focus the button, s
 <!-- The below code snippet is automatically added from ./../apiExamples/toggled-text.html -->
 
 <pre class="language-html"><code class="language-html">&lt;auro-button shape="circle" id="toggledTextElem"&gt;
+  &lt;span slot="ariaLabel"&gt;Back to top&lt;/span&gt;
   &lt;span&gt;Back to top&lt;/span&gt;
   &lt;auro-icon customColor category="interface" name="arrow-up"&gt;&lt;/auro-icon&gt;
 &lt;/auro-button&gt;</code></pre>
@@ -370,29 +371,19 @@ To show a label next to an icon only when people point at or focus the button, s
 
 <pre class="language-js"><code class="language-js">export function toggledTextExample() {
   const toggledTextElem = document.querySelector("#toggledTextElem");
-&#10;  // Track hover and focus separately so the label stays visible while either is active
-  let isHovered = false;
-  let hasFocus = false;
-&#10;  const updateShape = () =&gt; {
-    toggledTextElem.shape = isHovered || hasFocus ? "pill" : "circle";
-  };
 &#10;  // The mouseover and mouseout events are to simulate toggling text for mouse users
   toggledTextElem.addEventListener("mouseover", () =&gt; {
-    isHovered = true;
-    updateShape();
+    toggledTextElem.shape = "pill";
   });
 &#10;  toggledTextElem.addEventListener("mouseout", () =&gt; {
-    isHovered = false;
-    updateShape();
+    toggledTextElem.shape = "circle";
   });
 &#10;  // The focusin and focusout events are to simulate toggling text for keyboard users
   toggledTextElem.addEventListener("focusin", () =&gt; {
-    hasFocus = true;
-    updateShape();
+    toggledTextElem.shape = "pill";
   });
 &#10;  toggledTextElem.addEventListener("focusout", () =&gt; {
-    hasFocus = false;
-    updateShape();
+    toggledTextElem.shape = "circle";
   });
 }</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -480,29 +471,29 @@ To show a label next to an icon only when people point at or focus the button, s
 
 #### Circle with text
 
-Use short text, such as a count, in place of an icon. Don't slot an icon with it, and describe the button in the `ariaLabel` slot.
+Use short text, such as a count, in place of an icon. Put the text directly in the button, not inside another element, and describe the button in the `ariaLabel` slot.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle-text.html) -->
 <!-- The below content is automatically added from ./../apiExamples/shape-circle-text.html -->
 <auro-button shape="circle" size="xl">
-<span slot="ariaLabel">View cart, 1 item</span>
+<span slot="ariaLabel">1 item in your cart</span>
     1
 </auro-button>
 <auro-button shape="circle" size="lg">
-<span slot="ariaLabel">View cart, 1 item</span>
+<span slot="ariaLabel">1 item in your cart</span>
     1
 </auro-button>
 <auro-button shape="circle" size="md">
-<span slot="ariaLabel">View cart, 1 item</span>
+<span slot="ariaLabel">1 item in your cart</span>
     1
 </auro-button>
 <auro-button shape="circle" size="sm">
-<span slot="ariaLabel">View cart, 1 item</span>
+<span slot="ariaLabel">1 item in your cart</span>
     1
 </auro-button>
 <auro-button shape="circle" size="xs">
-<span slot="ariaLabel">View cart, 1 item</span>
+<span slot="ariaLabel">1 item in your cart</span>
     1
 </auro-button>
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -513,23 +504,23 @@ Use short text, such as a count, in place of an icon. Don't slot an icon with it
 <!-- The below code snippet is automatically added from ./../apiExamples/shape-circle-text.html -->
 
 <pre class="language-html"><code class="language-html">&lt;auro-button shape="circle" size="xl"&gt;
-  &lt;span slot="ariaLabel"&gt;View cart, 1 item&lt;/span&gt;
+  &lt;span slot="ariaLabel"&gt;1 item in your cart&lt;/span&gt;
   1
 &lt;/auro-button&gt;
 &lt;auro-button shape="circle" size="lg"&gt;
-  &lt;span slot="ariaLabel"&gt;View cart, 1 item&lt;/span&gt;
+  &lt;span slot="ariaLabel"&gt;1 item in your cart&lt;/span&gt;
   1
 &lt;/auro-button&gt;
 &lt;auro-button shape="circle" size="md"&gt;
-  &lt;span slot="ariaLabel"&gt;View cart, 1 item&lt;/span&gt;
+  &lt;span slot="ariaLabel"&gt;1 item in your cart&lt;/span&gt;
   1
 &lt;/auro-button&gt;
 &lt;auro-button shape="circle" size="sm"&gt;
-  &lt;span slot="ariaLabel"&gt;View cart, 1 item&lt;/span&gt;
+  &lt;span slot="ariaLabel"&gt;1 item in your cart&lt;/span&gt;
   1
 &lt;/auro-button&gt;
 &lt;auro-button shape="circle" size="xs"&gt;
-  &lt;span slot="ariaLabel"&gt;View cart, 1 item&lt;/span&gt;
+  &lt;span slot="ariaLabel"&gt;1 item in your cart&lt;/span&gt;
   1
 &lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -537,7 +528,7 @@ Use short text, such as a count, in place of an icon. Don't slot an icon with it
 
 #### Circle with an SVG
 
-To use your own graphic in place of an Auro icon, put an `<svg>` directly in the button. The button sizes it to match an Auro icon at the same button size. An `<svg>` without a `fill` attribute uses the button's text color; a `fill` you set is kept, so outline icons with `fill="none"` stay outlined. Set `aria-hidden="true"` on the `<svg>` so screen readers skip it, and describe the button in the `ariaLabel` slot.
+To use your own graphic in place of an Auro icon, put an `<svg>` directly in the button. The button sizes it to match an Auro icon at the same button size. Set `fill="currentColor"` on the `<svg>` so it uses the button's text color, set `aria-hidden="true"` so screen readers skip it, and describe the button in the `ariaLabel` slot.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle-svg.html) -->
@@ -730,6 +721,7 @@ When a button that shows text on hover and focus is right-aligned, it grows and 
 <!-- The below content is automatically added from ./../apiExamples/right-align.html -->
 <div style="display: flex; justify-content: flex-end; align-items: center; width: 100%">
 <auro-button shape="circle" id="rightAlignElem">
+<span slot="ariaLabel">Back to top</span>
 <span>Back to top</span>
 <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
 </auro-button>
@@ -743,6 +735,7 @@ When a button that shows text on hover and focus is right-aligned, it grows and 
 
 <pre class="language-html"><code class="language-html">&lt;div style="display: flex; justify-content: flex-end; align-items: center; width: 100%"&gt;
   &lt;auro-button shape="circle" id="rightAlignElem"&gt;
+    &lt;span slot="ariaLabel"&gt;Back to top&lt;/span&gt;
     &lt;span&gt;Back to top&lt;/span&gt;
     &lt;auro-icon customColor category="interface" name="arrow-up"&gt;&lt;/auro-icon&gt;
   &lt;/auro-button&gt;
@@ -753,29 +746,19 @@ When a button that shows text on hover and focus is right-aligned, it grows and 
 
 <pre class="language-js"><code class="language-js">export function roundedRightAlignExample() {
   const rightAlignElem = document.querySelector("#rightAlignElem");
-&#10;  // Track hover and focus separately so the label stays visible while either is active
-  let isHovered = false;
-  let hasFocus = false;
-&#10;  const updateShape = () =&gt; {
-    rightAlignElem.shape = isHovered || hasFocus ? "pill" : "circle";
-  };
 &#10;  // The mouseover and mouseout events are to simulate toggling text for mouse users
   rightAlignElem.addEventListener("mouseover", () =&gt; {
-    isHovered = true;
-    updateShape();
+    rightAlignElem.shape = "pill";
   });
 &#10;  rightAlignElem.addEventListener("mouseout", () =&gt; {
-    isHovered = false;
-    updateShape();
+    rightAlignElem.shape = "circle";
   });
 &#10;  // The focusin and focusout events are to simulate toggling text for keyboard users
   rightAlignElem.addEventListener("focusin", () =&gt; {
-    hasFocus = true;
-    updateShape();
+    rightAlignElem.shape = "pill";
   });
 &#10;  rightAlignElem.addEventListener("focusout", () =&gt; {
-    hasFocus = false;
-    updateShape();
+    rightAlignElem.shape = "circle";
   });
 }</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -975,6 +958,41 @@ The `button` part is the inner `<button>` element (a `<span>` when `static` is s
 <pre class="language-html"><code class="language-html">&lt;auro-button id="part-button-example"&gt;Primary&lt;/auro-button&gt;
 &lt;style&gt;
   #part-button-example::part(button) {
+    background-color: white;
+    background-image: none;
+    color: #333;
+    border: 1px solid #119933
+  }
+&lt;/style&gt;</code></pre>
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### Link
+
+The `link` part is the inner `<a>` element, rendered in place of `button` when `auro-hyperlink` uses `auro-button` to draw a button-styled link. `buttonHref` is internal to `auro-hyperlink`, so you'll usually style a link through `auro-hyperlink` instead.
+
+<div class="exampleWrapper">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_link.html) -->
+<!-- The below content is automatically added from ./../apiExamples/part_link.html -->
+<auro-button id="part-link-example" buttonHref="/test">Primary</auro-button>
+<style>
+    #part-link-example::part(link) {
+      background-color: white;
+      background-image: none;
+      color: #333;
+      border: 1px solid #119933
+    }
+</style>
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/part_link.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/part_link.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button id="part-link-example" buttonHref="/test"&gt;Primary&lt;/auro-button&gt;
+&lt;style&gt;
+  #part-link-example::part(link) {
     background-color: white;
     background-image: none;
     color: #333;
