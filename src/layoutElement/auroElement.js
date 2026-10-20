@@ -219,20 +219,16 @@ export class AuroElement extends LitElement {
     this.releaseWrapper();
   }
 
-  // Try to render the defined `this.layout` layout. If that fails, fall back to the default layout.
-  // This will catch if an invalid layout value is passed in and render the default layout if so.
+  // Try to render the defined layout.
   render() {
     try {
       return this.renderLayout();
     } catch (error) {
       // failed to get the defined layout
       console.error(
-        "Failed to get the defined layout - using the default layout",
+        "Failed to get the defined layout",
         error,
       ); // eslint-disable-line no-console
-
-      // fallback to the default layout
-      return this.getLayout("default");
     }
   }
 }
