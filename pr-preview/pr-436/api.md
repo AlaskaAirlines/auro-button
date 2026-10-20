@@ -480,7 +480,7 @@ To show a label next to an icon only when people point at or focus the button, s
 
 #### Circle with text
 
-Use short text, such as a count, in place of an icon. Put the text directly in the button, not inside another element, and describe the button in the `ariaLabel` slot.
+Use short text, such as a count, in place of an icon. Don't slot an icon with it, and describe the button in the `ariaLabel` slot.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle-text.html) -->
