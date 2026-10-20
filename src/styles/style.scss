@@ -324,38 +324,9 @@ $button-sizes: (
  * ----------------------------------------
  * 5. Shape-specific Styles
  * ----------------------------------------
- * - Applies styles only for specific shapes.
- * - Mixins: symmetrical-styles
+ * - Hiding non-icon content in symmetrical shapes is defined in auro-button.js
+ *   (`iconOnlyCss`), next to the list of selectors that count as an icon.
  */
-
-/**
- * @mixin symmetrical-styles
- * @description
- *   Hides non-icon content for symmetrical shapes (e.g., circle, square)
- *   when an icon is slotted. Without a recognized icon, all content shows,
- *   so wrapped icons such as an <img> or a <span> holding an svg stay visible.
- */
-@mixin symmetrical-styles($shape) {
-  :host([shape='#{$shape}']) {
-    .hasIcon ::slotted(:not(auro-icon):not([auro-icon]):not(svg)) {
-      position: absolute;
-      overflow: hidden;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      border: 0;
-      clip: rect(1px, 1px, 1px, 1px);
-    }
-  }
-}
-
-// SHAPE LOOP
-@each $shape, $shapeValue in $button-shapes {
-  $shapeType: map.get($button-shapes, $shape);
-  @if $shapeType == 'symmetrical' {
-    @include symmetrical-styles($shape);
-  }
-}
 
 /**
  * ----------------------------------------

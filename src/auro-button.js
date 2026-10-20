@@ -16,6 +16,7 @@
 import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 import { AuroLoader } from "@aurodesignsystem/auro-loader/class";
+import { css, unsafeCSS } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { html, literal } from "lit/static-html.js";
@@ -27,6 +28,25 @@ import styleCss from "./styles/style.scss";
 import tokensCss from "./styles/tokens.scss";
 
 const ICON_ONLY_SHAPES = ["circle", "square"];
+
+// Slotted elements that count as an icon. This list is the single source for both
+// `hasSlottedIcon` and the style that hides everything else in `circle` and `square` buttons.
+const ICON_SELECTORS = ["auro-icon", "[auro-icon]", "svg"];
+
+// Visually hides slotted content that isn't an icon when an icon-only shape holds an icon.
+// Without a recognized icon, all content shows, so wrapped icons such as an <img> or a
+// <span> holding an svg stay visible.
+const iconOnlyCss = css`
+  .iconOnly ::slotted(${unsafeCSS(ICON_SELECTORS.map((selector) => `:not(${selector})`).join(""))}) {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+`;
 
 /**
  * An accessible button that lets people take an action, such as submitting a form,
@@ -141,7 +161,7 @@ export class AuroButton extends AuroElement {
   }
 
   static get styles() {
-    return [tokensCss, styleCss, colorCss, shapeSize];
+    return [tokensCss, styleCss, colorCss, shapeSize, iconOnlyCss];
   }
 
   static get properties() {
@@ -421,7 +441,7 @@ export class AuroButton extends AuroElement {
   get hasSlottedIcon() {
     return Boolean(
       this.querySelector(
-        ":scope > auro-icon, :scope > [auro-icon], :scope > svg",
+        ICON_SELECTORS.map((selector) => `:scope > ${selector}`).join(", "),
       ),
     );
   }
@@ -594,11 +614,11 @@ export class AuroButton extends AuroElement {
 
     // Type classes should not be applied to the wrapper to avoid affecting icons.
     // Icon-only shapes only get a type class when they hold text (e.g. a count) instead of an icon.
-    // `hasIcon` lets icon-only shapes hide everything except the icon.
+    // `iconOnly` lets icon-only shapes hide everything except the icon.
     const hasSlottedIcon = this.hasSlottedIcon;
     const textSlotClasses = {
       textSlot: true,
-      hasIcon: hasSlottedIcon,
+      iconOnly: this.iconOnly && hasSlottedIcon,
       [fontSize]: this.showText || !hasSlottedIcon,
     };
 
