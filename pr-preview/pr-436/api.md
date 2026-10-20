@@ -488,23 +488,23 @@ Use short text, such as a count, in place of an icon. Put the text directly in t
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle-text.html) -->
 <!-- The below content is automatically added from ./../apiExamples/shape-circle-text.html -->
 <auro-button shape="circle" size="xl">
-<span slot="ariaLabel">1 item in your cart</span>
+<span slot="ariaLabel">View cart, 1 item</span>
     1
 </auro-button>
 <auro-button shape="circle" size="lg">
-<span slot="ariaLabel">1 item in your cart</span>
+<span slot="ariaLabel">View cart, 1 item</span>
     1
 </auro-button>
 <auro-button shape="circle" size="md">
-<span slot="ariaLabel">1 item in your cart</span>
+<span slot="ariaLabel">View cart, 1 item</span>
     1
 </auro-button>
 <auro-button shape="circle" size="sm">
-<span slot="ariaLabel">1 item in your cart</span>
+<span slot="ariaLabel">View cart, 1 item</span>
     1
 </auro-button>
 <auro-button shape="circle" size="xs">
-<span slot="ariaLabel">1 item in your cart</span>
+<span slot="ariaLabel">View cart, 1 item</span>
     1
 </auro-button>
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -515,23 +515,23 @@ Use short text, such as a count, in place of an icon. Put the text directly in t
 <!-- The below code snippet is automatically added from ./../apiExamples/shape-circle-text.html -->
 
 <pre class="language-html"><code class="language-html">&lt;auro-button shape="circle" size="xl"&gt;
-  &lt;span slot="ariaLabel"&gt;1 item in your cart&lt;/span&gt;
+  &lt;span slot="ariaLabel"&gt;View cart, 1 item&lt;/span&gt;
   1
 &lt;/auro-button&gt;
 &lt;auro-button shape="circle" size="lg"&gt;
-  &lt;span slot="ariaLabel"&gt;1 item in your cart&lt;/span&gt;
+  &lt;span slot="ariaLabel"&gt;View cart, 1 item&lt;/span&gt;
   1
 &lt;/auro-button&gt;
 &lt;auro-button shape="circle" size="md"&gt;
-  &lt;span slot="ariaLabel"&gt;1 item in your cart&lt;/span&gt;
+  &lt;span slot="ariaLabel"&gt;View cart, 1 item&lt;/span&gt;
   1
 &lt;/auro-button&gt;
 &lt;auro-button shape="circle" size="sm"&gt;
-  &lt;span slot="ariaLabel"&gt;1 item in your cart&lt;/span&gt;
+  &lt;span slot="ariaLabel"&gt;View cart, 1 item&lt;/span&gt;
   1
 &lt;/auro-button&gt;
 &lt;auro-button shape="circle" size="xs"&gt;
-  &lt;span slot="ariaLabel"&gt;1 item in your cart&lt;/span&gt;
+  &lt;span slot="ariaLabel"&gt;View cart, 1 item&lt;/span&gt;
   1
 &lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
