@@ -854,6 +854,31 @@ describe("auro-button", () => {
       }
     });
 
+    it("keeps the size and fill of a slotted svg when the shape changes to pill", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <span>Back to top</span>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+            <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+          </svg>
+        </auro-button>
+      `);
+
+      const svg = el.querySelector("svg");
+      const button = el.shadowRoot.querySelector(".auro-button");
+
+      for (const shape of ["circle", "pill", "circle"]) {
+        el.shape = shape;
+        await elementUpdated(el);
+
+        expect(getComputedStyle(svg).width, shape).to.equal("24px");
+        expect(getComputedStyle(svg).height, shape).to.equal("24px");
+        expect(getComputedStyle(svg).fill, shape).to.equal(
+          getComputedStyle(button).color,
+        );
+      }
+    });
+
     it("keeps the space of a slotted svg while loading", async () => {
       const el = await fixture(html`
         <auro-button shape="circle" loading>
@@ -938,10 +963,10 @@ describe("auro-button", () => {
       expect(getComputedStyle(count).position).to.not.equal("absolute");
     });
 
-    it("keeps the svg's own size in oblong shapes", async () => {
+    it("sizes and fills a slotted svg like auro-icon in oblong shapes", async () => {
       const el = await fixture(html`
-        <auro-button shape="rounded">
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+        <auro-button shape="rounded" size="xs" variant="primary">
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
             <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
           </svg>
           Add
@@ -949,8 +974,13 @@ describe("auro-button", () => {
       `);
 
       const svg = el.querySelector("svg");
+      const button = el.shadowRoot.querySelector(".auro-button");
 
       expect(getComputedStyle(svg).width).to.equal("16px");
+      expect(getComputedStyle(svg).height).to.equal("16px");
+      expect(getComputedStyle(svg).fill).to.equal(
+        getComputedStyle(button).color,
+      );
     });
   });
 });
