@@ -537,7 +537,7 @@ Use short text, such as a count, in place of an icon. Put the text directly in t
 
 #### Circle with an SVG
 
-To use your own graphic in place of an Auro icon, put an `<svg>` directly in the button. The button sizes it to match an Auro icon at the same button size. Set `fill="currentColor"` on the `<svg>` so it uses the button's text color, set `aria-hidden="true"` so screen readers skip it, and describe the button in the `ariaLabel` slot.
+To use your own graphic in place of an Auro icon, put an `<svg>` directly in the button. The button sizes it to match an Auro icon at the same button size. An `<svg>` without a `fill` attribute uses the button's text color; a `fill` you set is kept, so outline icons with `fill="none"` stay outlined. Set `aria-hidden="true"` on the `<svg>` so screen readers skip it, and describe the button in the `ariaLabel` slot.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle-svg.html) -->
