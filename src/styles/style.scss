@@ -261,7 +261,8 @@ $button-sizes: (
  * @mixin icon-styles
  * @description
  *   Sets icon size for a given shape and size.
- *   Symmetrical shapes also size a slotted svg to match auro-icon.
+ *   Symmetrical shapes also size a slotted svg and fill it with the
+ *   button text color to match auro-icon.
  */
 @mixin icon-styles($shape, $size, $iconSize) {
   :host([size='#{$size}'][shape=#{$shape}]) {
@@ -274,6 +275,7 @@ $button-sizes: (
       ::slotted(svg) {
         width: $iconSize;
         height: $iconSize;
+        fill: currentColor;
       }
     }
   }
