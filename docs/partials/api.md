@@ -392,23 +392,6 @@ For buttons without a `buttonHref` attribute, the `button` part will be availabl
 
 </auro-accordion>
 
-### Link
-
-For buttons with a `buttonHref` property, the `link` part will be available
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_link.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/part_link.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
-
 ### Content Wrapper
 
 <div class="exampleWrapper">
