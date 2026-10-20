@@ -151,6 +151,8 @@ The `circle` and `square` shapes are always equal dimensions. These shapes suppo
 
 A `circle` or `square` button with a slotted icon shows only the icon and hides the text, while a `pill` or `rounded` button shows the text next to the icon. To hide and show the text, change the `shape` attribute between these values. In this example, the button switches between `circle` and `pill` on `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users. The text stays visible while the button is either hovered or focused, and hides only when neither is true. Screen readers still read the hidden text, so the button doesn't need an `ariaLabel` slot.
 
+Use `<auro-icon>` for the icon in this pattern. A `circle` or `square` button sizes a slotted `<svg>` to the icon size and fills it with the button text color, but `rounded` and `pill` buttons leave the svg's own size and fill alone. So a slotted `<svg>` changes size and color when the shape changes. To keep a slotted `<svg>` the same in both shapes, set its size with page CSS and give it a `fill` attribute.
+
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggled-text.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
