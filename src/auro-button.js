@@ -73,7 +73,7 @@ const iconOnlyCss = css`
  * @summary Accessible button for taking an action, with variants, sizes, a loading state, and form support.
  * @customElement auro-button
  * @forcePrivate {'layout'}
- * @slot - The button's visible label: text, an icon, or both. {@requiredWhen always} {@category ui}
+ * @slot - The button's visible label: text, an icon (an `<auro-icon>` or an `<svg>`), or both. Set `aria-hidden="true"` on a slotted `<svg>` so screen readers skip it and read only the button's name. {@requiredWhen always} {@category ui}
  * @slot ariaLabel - Text read by screen readers in place of the visible label. Needed for icon-only buttons (`circle` or `square` shape), which have no visible text. {@relevantWhen !loading} {@category a11y}
  * @slot ariaLabel.loading - Text read by screen readers while the button is loading, for example "Saving your changes". Defaults to "Loading...". {@relevantWhen loading} {@category a11y}
  * @csspart button - The inner `<button>` element (a `<span>` when `static` is set).
@@ -179,7 +179,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons. Icon-only buttons need a text alternative in the `ariaLabel` slot.
+       * Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons (an `<auro-icon>` or an `<svg>`). Icon-only buttons need a text alternative in the `ariaLabel` slot.
        * @type {"rounded" | "pill" | "circle" | "square"}
        * @default "rounded"
        * @category ui
