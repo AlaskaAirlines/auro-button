@@ -314,7 +314,7 @@ Use the `shape` attribute to set the button's outline: `rounded` (the default), 
 
 Use `rounded` or `pill` for buttons with a text label. They grow to fit their content.
 
-Use `circle` or `square` for a single icon or short text, such as a count. These shapes always have equal width and height. Text shows only when no icon is slotted and the text isn't wrapped in an element; otherwise, only the icon shows. Because an icon or a number alone doesn't say what the button does, give these buttons an accessible name with the `ariaLabel` slot or the `aria-label` attribute.
+Use `circle` or `square` for a single icon, either an `<auro-icon>` or your own `<svg>`, or for short text, such as a count. These shapes always have equal width and height. Text shows only when no icon is slotted and the text isn't wrapped in an element; otherwise, only the icon shows. Because an icon or a number alone doesn't say what the button does, give these buttons an accessible name with the `ariaLabel` slot or the `aria-label` attribute.
 
 #### Rounded
 
@@ -522,6 +522,83 @@ Use short text, such as a count, in place of an icon. Put the text directly in t
 &lt;auro-button shape="circle" size="xs"&gt;
   &lt;span slot="ariaLabel"&gt;1 item in your cart&lt;/span&gt;
   1
+&lt;/auro-button&gt;</code></pre>
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Circle with an SVG
+
+To use your own graphic in place of an Auro icon, put an `<svg>` directly in the button. The button sizes it to match an Auro icon at the same button size. Set `fill="currentColor"` on the `<svg>` so it uses the button's text color, set `aria-hidden="true"` so screen readers skip it, and describe the button in the `ariaLabel` slot.
+
+<div class="exampleWrapper">
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle-svg.html) -->
+<!-- The below content is automatically added from ./../apiExamples/shape-circle-svg.html -->
+<auro-button shape="circle" size="xl">
+<span slot="ariaLabel">Add a passenger</span>
+<svg aria-hidden="true" fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+<path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+</svg>
+</auro-button>
+<auro-button shape="circle" size="lg">
+<span slot="ariaLabel">Add a passenger</span>
+<svg aria-hidden="true" fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+<path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+</svg>
+</auro-button>
+<auro-button shape="circle" size="md">
+<span slot="ariaLabel">Add a passenger</span>
+<svg aria-hidden="true" fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+<path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+</svg>
+</auro-button>
+<auro-button shape="circle" size="sm">
+<span slot="ariaLabel">Add a passenger</span>
+<svg aria-hidden="true" fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+<path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+</svg>
+</auro-button>
+<auro-button shape="circle" size="xs">
+<span slot="ariaLabel">Add a passenger</span>
+<svg aria-hidden="true" fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+<path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+</svg>
+</auro-button>
+<!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/shape-circle-svg.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/shape-circle-svg.html -->
+
+<pre class="language-html"><code class="language-html">&lt;auro-button shape="circle" size="xl"&gt;
+  &lt;span slot="ariaLabel"&gt;Add a passenger&lt;/span&gt;
+  &lt;svg aria-hidden="true" fill="currentColor" width="24" height="24" viewBox="0 0 24 24"&gt;
+    &lt;path d="M11 5h2v14h-2zM5 11h14v2H5z" /&gt;
+  &lt;/svg&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="lg"&gt;
+  &lt;span slot="ariaLabel"&gt;Add a passenger&lt;/span&gt;
+  &lt;svg aria-hidden="true" fill="currentColor" width="24" height="24" viewBox="0 0 24 24"&gt;
+    &lt;path d="M11 5h2v14h-2zM5 11h14v2H5z" /&gt;
+  &lt;/svg&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="md"&gt;
+  &lt;span slot="ariaLabel"&gt;Add a passenger&lt;/span&gt;
+  &lt;svg aria-hidden="true" fill="currentColor" width="24" height="24" viewBox="0 0 24 24"&gt;
+    &lt;path d="M11 5h2v14h-2zM5 11h14v2H5z" /&gt;
+  &lt;/svg&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="sm"&gt;
+  &lt;span slot="ariaLabel"&gt;Add a passenger&lt;/span&gt;
+  &lt;svg aria-hidden="true" fill="currentColor" width="24" height="24" viewBox="0 0 24 24"&gt;
+    &lt;path d="M11 5h2v14h-2zM5 11h14v2H5z" /&gt;
+  &lt;/svg&gt;
+&lt;/auro-button&gt;
+&lt;auro-button shape="circle" size="xs"&gt;
+  &lt;span slot="ariaLabel"&gt;Add a passenger&lt;/span&gt;
+  &lt;svg aria-hidden="true" fill="currentColor" width="24" height="24" viewBox="0 0 24 24"&gt;
+    &lt;path d="M11 5h2v14h-2zM5 11h14v2H5z" /&gt;
+  &lt;/svg&gt;
 &lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
