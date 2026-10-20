@@ -148,12 +148,19 @@ export class AuroButton extends AuroElement {
     this.buttonRel = undefined;
 
     /**
-     * Re-renders when the text inside a slotted accessible-name element changes, which `slotchange` doesn't report.
+     * Re-renders on light DOM changes that `slotchange` doesn't report: text changing inside a slotted
+     * accessible-name element, and a direct child gaining or losing the `auro-icon` attribute, such as
+     * a renamed icon that upgrades after the button renders.
      * @private
      */
-    this.ariaLabelObserver = new MutationObserver((mutations) => {
+    this.lightDomObserver = new MutationObserver((mutations) => {
       if (
-        mutations.some((mutation) => this.isInAriaLabelSlot(mutation.target))
+        mutations.some(
+          (mutation) =>
+            this.isInAriaLabelSlot(mutation.target) ||
+            (mutation.type === "attributes" &&
+              mutation.target.parentElement === this),
+        )
       ) {
         this.requestUpdate();
       }
@@ -499,7 +506,8 @@ export class AuroButton extends AuroElement {
   connectedCallback() {
     super.connectedCallback();
 
-    this.ariaLabelObserver.observe(this, {
+    this.lightDomObserver.observe(this, {
+      attributeFilter: ["auro-icon"],
       characterData: true,
       childList: true,
       subtree: true,
@@ -509,7 +517,7 @@ export class AuroButton extends AuroElement {
   disconnectedCallback() {
     super.disconnectedCallback();
 
-    this.ariaLabelObserver.disconnect();
+    this.lightDomObserver.disconnect();
   }
 
   /**

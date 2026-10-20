@@ -692,6 +692,28 @@ describe("auro-button", () => {
       expect(textSlot.className.includes("heading-")).to.be.false;
     });
 
+    it("hides text when a slotted renamed icon gains the auro-icon attribute after render", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <custom-icon></custom-icon>
+          <span id="wrappedText">Back to top</span>
+        </auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+      const wrappedText = el.querySelector("#wrappedText");
+      expect(textSlot.classList.contains("iconOnly")).to.be.false;
+
+      // A renamed icon gets this attribute from handleComponentTagRename when it upgrades.
+      el.querySelector("custom-icon").setAttribute("auro-icon", "");
+      await new Promise((resolve) => setTimeout(resolve));
+      await elementUpdated(el);
+
+      expect(textSlot.classList.contains("iconOnly")).to.be.true;
+      expect(textSlot.className.includes("heading-")).to.be.false;
+      expect(getComputedStyle(wrappedText).position).to.equal("absolute");
+    });
+
     it("keeps the standard font size for oblong shapes", async () => {
       const el = await fixture(html`
         <auro-button shape="rounded">Click Me!</auro-button>
