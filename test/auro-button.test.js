@@ -971,6 +971,50 @@ describe("auro-button", () => {
       expect(getComputedStyle(svg).width).to.equal("16px");
     });
 
+    it("sizes a slotted img from the icon size", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle" size="xl">
+          <span slot="ariaLabel">Add item</span>
+          <img
+            width="16"
+            height="16"
+            alt=""
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'/%3E"
+          />
+        </auro-button>
+      `);
+
+      const imgStyle = getComputedStyle(el.querySelector("img"));
+
+      expect(imgStyle.width).to.equal("36px");
+      expect(imgStyle.height).to.equal("36px");
+      expect(imgStyle.objectFit).to.equal("contain");
+    });
+
+    it("fills an svg wrapped in an element with the button text color", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle" variant="secondary">
+          <span slot="ariaLabel">Add item</span>
+          <span>
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+            </svg>
+            <svg aria-hidden="true" fill="none" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+          </span>
+        </auro-button>
+      `);
+
+      const [filled, outlined] = el.querySelectorAll("svg");
+      const button = el.shadowRoot.querySelector(".auro-button");
+
+      expect(getComputedStyle(filled.querySelector("path")).fill).to.equal(
+        getComputedStyle(button).color,
+      );
+      expect(getComputedStyle(outlined).fill).to.equal("none");
+    });
+
     it("visually hides text alongside a slotted img", async () => {
       const el = await fixture(html`
         <auro-button shape="square">
