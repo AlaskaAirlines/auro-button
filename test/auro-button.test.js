@@ -662,4 +662,74 @@ describe("auro-button", () => {
       expect(textSlot.classList.contains("body-default")).to.be.true;
     });
   });
+
+  describe("icon-only shapes with a slotted svg", () => {
+    it("displays a slotted svg in a circle shape at the icon size", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle" size="xl">
+          <span slot="ariaLabel">Add item</span>
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+          </svg>
+        </auro-button>
+      `);
+
+      const svg = el.querySelector("svg");
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+
+      expect(getComputedStyle(svg).position).to.not.equal("absolute");
+      expect(getComputedStyle(svg).width).to.equal("36px");
+      expect(getComputedStyle(svg).height).to.equal("36px");
+      expect(textSlot.className.includes("heading-")).to.be.false;
+    });
+
+    it("displays a slotted svg in a square shape at the icon size", async () => {
+      const el = await fixture(html`
+        <auro-button shape="square">
+          <span slot="ariaLabel">Add item</span>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+            <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+          </svg>
+        </auro-button>
+      `);
+
+      const svg = el.querySelector("svg");
+
+      expect(getComputedStyle(svg).position).to.not.equal("absolute");
+      expect(getComputedStyle(svg).width).to.equal("24px");
+      expect(getComputedStyle(svg).height).to.equal("24px");
+    });
+
+    it("visually hides wrapped text alongside a slotted svg", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <span slot="ariaLabel">Add item</span>
+          <span id="wrappedText">Add</span>
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+          </svg>
+        </auro-button>
+      `);
+
+      const wrappedText = el.querySelector("#wrappedText");
+
+      expect(getComputedStyle(wrappedText).width).to.equal("1px");
+      expect(getComputedStyle(wrappedText).position).to.equal("absolute");
+    });
+
+    it("keeps the svg's own size in oblong shapes", async () => {
+      const el = await fixture(html`
+        <auro-button shape="rounded">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+            <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+          </svg>
+          Add
+        </auro-button>
+      `);
+
+      const svg = el.querySelector("svg");
+
+      expect(getComputedStyle(svg).width).to.equal("16px");
+    });
+  });
 });
