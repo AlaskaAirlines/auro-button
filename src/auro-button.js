@@ -610,7 +610,7 @@ export class AuroButton extends AuroElement {
         part="${part}"
         aria-label="${ifDefined(this.generateAriaLabel())}"
         aria-labelledby="${ifDefined(this.loading ? undefined : this.currentAriaLabelledBy || undefined)}"
-        tabindex="${ifDefined(this.static ? -1 : tabindex)}"
+        tabindex="${ifDefined(this.static ? undefined : tabindex)}"
         ?autofocus="${this.autofocus}"
         class=${classMap(classes)}
         ?disabled="${this.disabled || this.loading}"

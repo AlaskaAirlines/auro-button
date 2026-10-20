@@ -245,6 +245,20 @@ describe("auro-button", () => {
     expect(document.activeElement === el).to.be.false;
   });
 
+  it("renders a static span that can't take focus, even when tIndex is set", async () => {
+    const el = await fixture(html`
+      <auro-button static tIndex="0">Static Button</auro-button>
+    `);
+
+    const span = el.shadowRoot.querySelector("span");
+
+    expect(span.hasAttribute("tabindex")).to.be.false;
+
+    span.focus();
+
+    expect(el.shadowRoot.activeElement).to.be.null;
+  });
+
   it("does not throw when focused before it first renders", () => {
     const el = document.createElement("auro-button");
 
