@@ -765,6 +765,21 @@ describe("auro-button", () => {
       expect(getComputedStyle(svg).fill).to.equal(disabledColor);
     });
 
+    it("keeps the fill attribute set on a slotted svg", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <span slot="ariaLabel">Add item</span>
+          <svg aria-hidden="true" fill="none" stroke="currentColor" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        </auro-button>
+      `);
+
+      const svg = el.querySelector("svg");
+
+      expect(getComputedStyle(svg).fill).to.equal("none");
+    });
+
     it("visually hides wrapped text alongside a slotted svg", async () => {
       const el = await fixture(html`
         <auro-button shape="circle">

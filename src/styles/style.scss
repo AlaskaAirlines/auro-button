@@ -279,11 +279,15 @@ $button-sizes: (
   }
 }
 
-// Symmetrical shapes size a slotted svg from the same token as auro-icon
-// and fill it with the button text color to match.
+// Symmetrical shapes size a slotted svg from the same token as auro-icon.
+// An svg without a fill attribute takes the button text color to match;
+// a fill the consumer sets, such as fill="none" on outline icons, is kept.
 %symmetrical-svg {
   width: var(--ds-auro-icon-size);
   height: var(--ds-auro-icon-size);
+}
+
+%symmetrical-svg-fill {
   fill: currentcolor;
 }
 
@@ -291,6 +295,10 @@ $button-sizes: (
   @if $shape-type == 'symmetrical' {
     :host([shape='#{$shape}']) ::slotted(svg) {
       @extend %symmetrical-svg;
+    }
+
+    :host([shape='#{$shape}']) ::slotted(svg:not([fill])) {
+      @extend %symmetrical-svg-fill;
     }
   }
 }
