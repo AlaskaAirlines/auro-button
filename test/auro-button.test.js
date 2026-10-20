@@ -225,6 +225,32 @@ describe("auro-button", () => {
     expect(document.activeElement === el).to.be.true;
   });
 
+  it("focuses the inner anchor when buttonHref is set", async () => {
+    const el = await fixture(html`
+      <auro-button buttonhref="/destination">Go</auro-button>
+    `);
+
+    el.focus();
+    expect(el.shadowRoot.activeElement).to.equal(
+      el.shadowRoot.querySelector("a"),
+    );
+  });
+
+  it("does not throw or take focus when static is set", async () => {
+    const el = await fixture(html`
+      <auro-button static>Static Button</auro-button>
+    `);
+
+    expect(() => el.focus()).to.not.throw();
+    expect(document.activeElement === el).to.be.false;
+  });
+
+  it("does not throw when focused before it first renders", () => {
+    const el = document.createElement("auro-button");
+
+    expect(() => el.focus()).to.not.throw();
+  });
+
   it("auro-button has various ARIA attrs properly set on <a> node", async () => {
     const el = await fixture(html`
       <div>

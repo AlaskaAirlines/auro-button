@@ -44,9 +44,10 @@ Auro interfaces.
 
 ### Methods
 
-| Name     | Parameters                                                    | Return | Description                                                                                                                                                 |
-| -------- | ------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| register | `name` (string) - The tag name to register the element under. |        | Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-button` on the same page. |
+| Name     | Parameters                                                                      | Return | Description                                                                                                                                                                         |
+| -------- | ------------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| focus    | `options` (FocusOptions) - The options passed to the inner element's `focus()`. | void   | Moves keyboard focus to the inner `<button>` element, or to the inner `<a>` element when `buttonHref` is set. Does nothing when `static` is set or before the button first renders. |
+| register | `name` (string) - The tag name to register the element under.                   |        | Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-button` on the same page.                         |
 
 ### Slots
 

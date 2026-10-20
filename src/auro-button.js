@@ -340,12 +340,14 @@ export class AuroButton extends AuroElement {
   }
 
   /**
-   * Moves keyboard focus to the inner `<button>` element.
-   * @private
+   * Moves keyboard focus to the inner `<button>` element, or to the inner `<a>` element when `buttonHref` is set. Does nothing when `static` is set or before the button first renders.
+   * @param {FocusOptions} [options] - The options passed to the inner element's `focus()`.
    * @returns {void}
    */
-  focus() {
-    this.renderRoot.querySelector("button").focus();
+  focus(options) {
+    if (this.static) return;
+
+    this.renderRoot?.querySelector("button, a")?.focus(options);
   }
 
   /**
