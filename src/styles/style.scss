@@ -347,6 +347,12 @@ $button-sizes: (
  *   (`renderIconOnlyStyle`), which knows which slotted elements hold an icon.
  */
 
+// Hidden bare text still takes part in the flex layout, so a gap beside it
+// would push the icon off center.
+.textSlot.iconOnly {
+  gap: 0;
+}
+
 /**
  * ----------------------------------------
  * 6. Utility and State Styles

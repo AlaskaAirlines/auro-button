@@ -1113,4 +1113,84 @@ describe("auro-button", () => {
       ).to.not.equal("absolute");
     });
   });
+
+  describe("icon-only shapes center their icon", () => {
+    const expectCentered = (el, icon) => {
+      const buttonRect = el.shadowRoot
+        .querySelector(".auro-button")
+        .getBoundingClientRect();
+      const iconRect = icon.getBoundingClientRect();
+      const center = (rect) => [
+        rect.left + rect.width / 2,
+        rect.top + rect.height / 2,
+      ];
+      const [buttonX, buttonY] = center(buttonRect);
+      const [iconX, iconY] = center(iconRect);
+
+      expect(iconRect.width).to.be.greaterThan(0);
+      expect(iconX - buttonX, "horizontal offset").to.be.closeTo(0, 0.5);
+      expect(iconY - buttonY, "vertical offset").to.be.closeTo(0, 0.5);
+    };
+
+    for (const shape of ["circle", "square"]) {
+      for (const size of ["xs", "md", "xl"]) {
+        it(`centers a slotted svg in a ${size} ${shape} button`, async () => {
+          const el = await fixture(html`
+            <auro-button shape=${shape} size=${size}>
+              <span slot="ariaLabel">Add item</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+              </svg>
+            </auro-button>
+          `);
+
+          expectCentered(el, el.querySelector("svg"));
+        });
+      }
+    }
+
+    it("centers a slotted img", async () => {
+      const el = await fixture(html`
+        <auro-button shape="square" size="lg">
+          <span slot="ariaLabel">Add item</span>
+          <img
+            alt=""
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'/%3E"
+          />
+        </auro-button>
+      `);
+
+      expectCentered(el, el.querySelector("img"));
+    });
+
+    it("centers an svg wrapped in an element", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle" size="lg">
+          <span slot="ariaLabel">Add item</span>
+          <span>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+            </svg>
+          </span>
+        </auro-button>
+      `);
+
+      expectCentered(el, el.querySelector("svg"));
+    });
+
+    it("centers an icon that has hidden text beside it", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle" size="md">
+          <span slot="ariaLabel">Add item</span>
+          <span>Add</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+          </svg>
+          Add
+        </auro-button>
+      `);
+
+      expectCentered(el, el.querySelector("svg"));
+    });
+  });
 });
