@@ -261,22 +261,13 @@ $button-sizes: (
  * @mixin icon-styles
  * @description
  *   Sets icon size for a given shape and size.
- *   Symmetrical shapes also size a slotted svg and fill it with the
- *   button text color to match auro-icon.
  */
 @mixin icon-styles($shape, $size, $iconSize) {
   :host([size='#{$size}'][shape=#{$shape}]) {
     ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
+    ::slotted([auro-icon]),
+    ::slotted(svg) {
       --ds-auro-icon-size: #{$iconSize};
-    }
-
-    @if map.get($button-shapes, $shape) == 'symmetrical' {
-      ::slotted(svg) {
-        width: $iconSize;
-        height: $iconSize;
-        fill: currentcolor;
-      }
     }
   }
 }
@@ -285,6 +276,22 @@ $button-sizes: (
 @each $size, $size-value in $button-sizes {
   @each $shape, $shape-value in $button-shapes {
     @include size-and-shape-styles($size, $shape);
+  }
+}
+
+// Symmetrical shapes size a slotted svg from the same token as auro-icon
+// and fill it with the button text color to match.
+%symmetrical-svg {
+  width: var(--ds-auro-icon-size);
+  height: var(--ds-auro-icon-size);
+  fill: currentcolor;
+}
+
+@each $shape, $shape-type in $button-shapes {
+  @if $shape-type == 'symmetrical' {
+    :host([shape='#{$shape}']) ::slotted(svg) {
+      @extend %symmetrical-svg;
+    }
   }
 }
 
