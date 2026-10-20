@@ -16,7 +16,6 @@
 import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 import { AuroLoader } from "@aurodesignsystem/auro-loader/class";
-import { css, unsafeCSS } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { html, literal } from "lit/static-html.js";
@@ -29,24 +28,9 @@ import tokensCss from "./styles/tokens.scss";
 
 const ICON_ONLY_SHAPES = ["circle", "square"];
 
-// Slotted elements that count as an icon. This list is the single source for both
-// `hasSlottedIcon` and the style that hides everything else in `circle` and `square` buttons.
-const ICON_SELECTORS = ["auro-icon", "[auro-icon]", "svg"];
-
-// Visually hides slotted content that isn't an icon when an icon-only shape holds an icon.
-// Without a recognized icon, all content shows, so wrapped icons such as an <img> or a
-// <span> holding an svg stay visible.
-const iconOnlyCss = css`
-  .iconOnly ::slotted(${unsafeCSS(ICON_SELECTORS.map((selector) => `:not(${selector})`).join(""))}) {
-    position: absolute;
-    overflow: hidden;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-  }
-`;
+// Elements that count as an icon. A slotted child holds an icon when it matches one of these
+// or wraps one, such as a <span> around an svg.
+const ICON_SELECTOR = "auro-icon, [auro-icon], svg, img";
 
 /**
  * An accessible button that lets people take an action, such as submitting a form,
@@ -149,17 +133,16 @@ export class AuroButton extends AuroElement {
 
     /**
      * Re-renders on light DOM changes that `slotchange` doesn't report: text changing inside a slotted
-     * accessible-name element, and a direct child gaining or losing the `auro-icon` attribute, such as
-     * a renamed icon that upgrades after the button renders.
+     * accessible-name element, an icon added to or removed from inside a slotted element, and an element
+     * gaining or losing the `auro-icon` attribute, such as a renamed icon that upgrades after the button renders.
      * @private
      */
     this.lightDomObserver = new MutationObserver((mutations) => {
       if (
         mutations.some(
           (mutation) =>
-            this.isInAriaLabelSlot(mutation.target) ||
-            (mutation.type === "attributes" &&
-              mutation.target.parentElement === this),
+            mutation.type !== "characterData" ||
+            this.isInAriaLabelSlot(mutation.target),
         )
       ) {
         this.requestUpdate();
@@ -168,7 +151,7 @@ export class AuroButton extends AuroElement {
   }
 
   static get styles() {
-    return [tokensCss, styleCss, colorCss, shapeSize, iconOnlyCss];
+    return [tokensCss, styleCss, colorCss, shapeSize];
   }
 
   static get properties() {
@@ -441,16 +424,44 @@ export class AuroButton extends AuroElement {
   }
 
   /**
-   * Checks whether an icon is slotted into the default slot.
-   * @returns {boolean} - True if an icon is slotted; false otherwise.
+   * Gets the children slotted into the default slot that hold an icon, either as the child itself or wrapped inside it.
+   * @returns {Element[]} - The children that hold an icon.
    * @private
    */
-  get hasSlottedIcon() {
-    return Boolean(
-      this.querySelector(
-        ICON_SELECTORS.map((selector) => `:scope > ${selector}`).join(", "),
-      ),
+  get slottedIcons() {
+    return [...this.children].filter(
+      (child) =>
+        !child.slot &&
+        (child.matches(ICON_SELECTOR) || child.querySelector(ICON_SELECTOR)),
     );
+  }
+
+  /**
+   * Renders the style that visually hides every slotted child except the ones holding an icon.
+   * `::slotted()` can't match an element by what it contains, so each icon child is matched by its position.
+   * @param {Element[]} slottedIcons - The children that hold an icon.
+   * @returns {TemplateResult} - The style element.
+   * @private
+   */
+  renderIconOnlyStyle(slottedIcons) {
+    const children = [...this.children];
+    const iconPositions = slottedIcons
+      .map((icon) => `:not(:nth-child(${children.indexOf(icon) + 1}))`)
+      .join("");
+
+    return html`
+      <style>
+        .iconOnly ::slotted(${iconPositions}) {
+          position: absolute;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          border: 0;
+          clip: rect(1px, 1px, 1px, 1px);
+        }
+      </style>
+    `;
   }
 
   /**
@@ -623,16 +634,19 @@ export class AuroButton extends AuroElement {
     // Type classes should not be applied to the wrapper to avoid affecting icons.
     // Icon-only shapes only get a type class when they hold text (e.g. a count) instead of an icon.
     // `iconOnly` lets icon-only shapes hide everything except the icon.
-    const hasSlottedIcon = this.hasSlottedIcon;
+    const slottedIcons = this.slottedIcons;
+    const iconOnly = this.iconOnly && slottedIcons.length > 0;
     const textSlotClasses = {
       textSlot: true,
-      iconOnly: this.iconOnly && hasSlottedIcon,
-      [fontSize]: this.showText || !hasSlottedIcon,
+      iconOnly,
+      [fontSize]: this.showText || slottedIcons.length === 0,
     };
 
     const tabindex = this.tIndex ?? this.tabindex;
 
     return html`
+      ${iconOnly ? this.renderIconOnlyStyle(slottedIcons) : undefined}
+
       <!-- Hidden slots for aria labels -->
       <slot name="ariaLabel" hidden @slotchange="${this.onAriaLabelSlotChange}"></slot>
       <slot name="ariaLabel.loading" hidden @slotchange="${this.onAriaLabelSlotChange}"></slot>

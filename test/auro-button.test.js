@@ -970,5 +970,103 @@ describe("auro-button", () => {
 
       expect(getComputedStyle(svg).width).to.equal("16px");
     });
+
+    it("visually hides text alongside a slotted img", async () => {
+      const el = await fixture(html`
+        <auro-button shape="square">
+          <span slot="ariaLabel">Add item</span>
+          <span id="wrappedText">Add</span>
+          <img
+            alt=""
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'/%3E"
+          />
+        </auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+      const wrappedText = el.querySelector("#wrappedText");
+      const img = el.querySelector("img");
+
+      expect(textSlot.classList.contains("iconOnly")).to.be.true;
+      expect(textSlot.className.includes("heading-")).to.be.false;
+      expect(getComputedStyle(wrappedText).position).to.equal("absolute");
+      expect(getComputedStyle(wrappedText).width).to.equal("1px");
+      expect(getComputedStyle(img).position).to.not.equal("absolute");
+    });
+
+    it("visually hides text alongside an svg wrapped in an element", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <span slot="ariaLabel">Add item</span>
+          <span id="wrappedText">Add</span>
+          <span id="iconWrapper">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+            </svg>
+          </span>
+          Add
+        </auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+      const wrappedText = el.querySelector("#wrappedText");
+      const iconWrapper = el.querySelector("#iconWrapper");
+
+      expect(textSlot.classList.contains("iconOnly")).to.be.true;
+      expect(textSlot.className.includes("heading-")).to.be.false;
+      expect(getComputedStyle(textSlot).fontSize).to.equal("0px");
+      expect(getComputedStyle(wrappedText).position).to.equal("absolute");
+      expect(getComputedStyle(iconWrapper).position).to.not.equal("absolute");
+      expect(getComputedStyle(iconWrapper).clip).to.equal("auto");
+    });
+
+    it("hides text when an icon is added inside a slotted element after render", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <span slot="ariaLabel">Add item</span>
+          <span id="wrappedText">Add</span>
+          <span id="iconWrapper"></span>
+        </auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+      const wrappedText = el.querySelector("#wrappedText");
+      expect(textSlot.classList.contains("iconOnly")).to.be.false;
+
+      el.querySelector("#iconWrapper").innerHTML =
+        '<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"></svg>';
+      await new Promise((resolve) => setTimeout(resolve));
+      await elementUpdated(el);
+
+      expect(textSlot.classList.contains("iconOnly")).to.be.true;
+      expect(getComputedStyle(wrappedText).position).to.equal("absolute");
+      expect(
+        getComputedStyle(el.querySelector("#iconWrapper")).position,
+      ).to.not.equal("absolute");
+    });
+
+    it("hides text when a wrapped renamed icon gains the auro-icon attribute after render", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <span id="iconWrapper"><custom-icon></custom-icon></span>
+          <span id="wrappedText">Back to top</span>
+        </auro-button>
+      `);
+
+      const textSlot = el.shadowRoot.querySelector(".textSlot");
+      expect(textSlot.classList.contains("iconOnly")).to.be.false;
+
+      el.querySelector("custom-icon").setAttribute("auro-icon", "");
+      await new Promise((resolve) => setTimeout(resolve));
+      await elementUpdated(el);
+
+      expect(textSlot.classList.contains("iconOnly")).to.be.true;
+      expect(
+        getComputedStyle(el.querySelector("#wrappedText")).position,
+      ).to.equal("absolute");
+      expect(
+        getComputedStyle(el.querySelector("#iconWrapper")).position,
+      ).to.not.equal("absolute");
+    });
   });
 });

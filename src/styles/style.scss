@@ -339,8 +339,8 @@ $button-sizes: (
  * ----------------------------------------
  * 5. Shape-specific Styles
  * ----------------------------------------
- * - Hiding non-icon content in symmetrical shapes is defined in auro-button.js
- *   (`iconOnlyCss`), next to the list of selectors that count as an icon.
+ * - Hiding non-icon content in symmetrical shapes is rendered by auro-button.js
+ *   (`renderIconOnlyStyle`), which knows which slotted elements hold an icon.
  */
 
 /**
