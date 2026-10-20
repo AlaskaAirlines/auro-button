@@ -454,6 +454,24 @@ describe("auro-button", () => {
     expect(el.hasAttribute("data-active")).to.be.false;
   });
 
+  it("logs and rethrows when the layout fails to render", async () => {
+    const el = await fixture(html`
+      <auro-button>Click Me!</auro-button>
+    `);
+
+    const layoutError = new Error("layout failed");
+    sinon.stub(el, "renderLayout").throws(layoutError);
+    const consoleError = sinon.stub(console, "error");
+
+    try {
+      expect(() => el.render()).to.throw(layoutError);
+      expect(consoleError.calledOnce).to.be.true;
+      expect(consoleError.firstCall.args[1]).to.equal(layoutError);
+    } finally {
+      sinon.restore();
+    }
+  });
+
   describe("when the rendered element is replaced after first render", () => {
     const expectWrapperState = (el, tagName) => {
       const inner = el.shadowRoot.querySelector(".wrapper");
