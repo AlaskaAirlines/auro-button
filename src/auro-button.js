@@ -74,9 +74,9 @@ const ICON_SELECTOR = "auro-icon, [auro-icon], svg, img";
  */
 export class AuroButton extends AuroElement {
   /**
-   * Enables form association, so the button can take part in the form it's placed in.
+   * Checks whether the button takes part in the form it's placed in. Always true, which turns on form association for `auro-button`.
    * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/attachInternals
-   * @returns {boolean} - Always true.
+   * @returns {boolean} - True.
    */
   static get formAssociated() {
     return true;
@@ -230,6 +230,7 @@ export class AuroButton extends AuroElement {
 
       /**
        * Deprecated: Use `slot="ariaLabel.loading"` instead.
+       * Sets the text screen readers announce while the button is loading.
        * @deprecated Use `slot="ariaLabel.loading"` instead.
        * @relevantWhen loading
        * @category a11y
@@ -383,7 +384,7 @@ export class AuroButton extends AuroElement {
   /**
    * Checks whether the button has a text-label shape (any shape other than `circle` or `square`).
    * @private
-   * @returns {Boolean} - True if the button has a text-label shape; false otherwise.
+   * @returns {boolean} - True if the button has a text-label shape; false otherwise.
    */
   get showText() {
     return !ICON_ONLY_SHAPES.includes(this.shape);
@@ -415,8 +416,8 @@ export class AuroButton extends AuroElement {
   }
 
   /**
-   * Checks whether the button has an icon-only shape (`circle` or `square`).
-   * @returns {boolean} - True if the button is icon-only; false otherwise.
+   * Checks whether the button has a `circle` or `square` shape, which holds an icon or short text instead of a label.
+   * @returns {boolean} - True if the shape is `circle` or `square`; false otherwise.
    * @private
    */
   get iconOnly() {
@@ -499,7 +500,7 @@ export class AuroButton extends AuroElement {
 
   /**
    * Gets the element tag to render.
-   * @returns {TemplateResult} - `span` when `static` is set, `a` when `buttonHref` is set, and `button` otherwise.
+   * @returns {TemplateResult} - The tag: `span` when `static` is set, `a` when `buttonHref` is set, and `button` otherwise.
    * @private
    */
   get _renderTag() {
@@ -565,7 +566,7 @@ export class AuroButton extends AuroElement {
 
   /**
    * Gets the text screen readers announce for the button.
-   * @returns {String} - While loading, the `ariaLabel.loading` slot text or `loadingText`. Otherwise, the `ariaLabel` slot text or the host's `aria-label`.
+   * @returns {string | undefined} - The `ariaLabel.loading` slot text or `loadingText` while loading; otherwise, the `ariaLabel` slot text, the host's `aria-label`, or `undefined` if neither is set.
    * @private
    */
   generateAriaLabel() {
@@ -632,7 +633,7 @@ export class AuroButton extends AuroElement {
     };
 
     // Type classes should not be applied to the wrapper to avoid affecting icons.
-    // Icon-only shapes only get a type class when they hold text (e.g. a count) instead of an icon.
+    // Icon-only shapes only get a type class when they hold text (such as a count) instead of an icon.
     // `iconOnly` lets icon-only shapes hide everything except the icon.
     const slottedIcons = this.slottedIcons;
     const iconOnly = this.iconOnly && slottedIcons.length > 0;

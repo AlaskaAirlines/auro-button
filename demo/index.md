@@ -8,22 +8,22 @@
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
 <!-- The below content is automatically added from ./../docs/partials/description.md -->
-The `<auro-button>` element creates interactive buttons for triggering actions in your application.
+An accessible button that lets people take an action, such as submitting a form, starting a task, or moving to the next step in a flow.
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Use Cases
+## Use cases
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./../docs/partials/useCases.md -->
-The auro-button element should be used in situations where users may:
+Use `<auro-button>` when people need to:
 
-* submit a form
-* begin a new task
-* trigger a new UI element to appear to the page
-* specify a new or next step in a process
+* Submit a form.
+* Start a new task.
+* Open a new part of the interface, such as a dialog.
+* Move to the next step in a process.
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Example(s)
+## Examples
 
 ### Basic
 

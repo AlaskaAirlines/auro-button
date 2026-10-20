@@ -4,7 +4,7 @@ import { transportAllA11yAttributes } from "./a11yUtilities.js";
 /**
  * Shared base class for Auro components. It provides the common `layout`, `shape`,
  * `size`, and `appearance` options, and moves ARIA attributes from the host element
- * to the inner element so assistive technology reads them in the right place.
+ * to the inner element, so screen readers announce them on the element people interact with.
  */
 export class AuroElement extends LitElement {
   /**
@@ -21,7 +21,7 @@ export class AuroElement extends LitElement {
     return {
       /**
        * Selects which internal layout the component renders. Components with only one layout ignore it.
-       * @default 'default'
+       * @default "default"
        * @private
        */
       layout: {
@@ -55,7 +55,7 @@ export class AuroElement extends LitElement {
       /**
        * Matches the component's colors to the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.
        * @type {"default" | "inverse"}
-       * @default 'default'
+       * @default "default"
        * @category ui
        */
       appearance: {
@@ -65,6 +65,7 @@ export class AuroElement extends LitElement {
 
       /**
        * Deprecated: Use `appearance="inverse"` instead.
+       * Switches the component to colors designed for dark backgrounds.
        * @deprecated Use `appearance="inverse"` instead.
        * @default false
        * @category ui
@@ -98,6 +99,7 @@ export class AuroElement extends LitElement {
   }
 
   /**
+   * Replaces the wrapper's `shape-*` class with one for the current `shape` and `size`.
    * @private
    */
   resetShapeClasses() {
@@ -117,6 +119,7 @@ export class AuroElement extends LitElement {
   }
 
   /**
+   * Replaces the wrapper's `layout-*` class with one for the current `layout`.
    * @private
    */
   resetLayoutClasses() {
@@ -134,6 +137,7 @@ export class AuroElement extends LitElement {
   }
 
   /**
+   * Updates the wrapper's layout and shape classes to match the current properties.
    * @private
    */
   updateComponentArchitecture() {

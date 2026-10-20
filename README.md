@@ -21,31 +21,27 @@ The following sections are editable by making changes to the following files:
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/description.md) -->
 <!-- The below content is automatically added from ./docs/partials/description.md -->
-The `<auro-button>` element creates interactive buttons for triggering actions in your application.
+An accessible button that lets people take an action, such as submitting a form, starting a task, or moving to the next step in a flow.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
 <!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
 
-## Responsive support
+## Width
 
-`<auro-button>` is responsive by default. The button will assume 100% of the width of its container for views less than [auro_breakpoint--sm](https://alaskaairlines.github.io/WebCoreStyleSheets/#responsive-mixin-auro_breakpoint--sm).
-
-Beyond that breakpoint `<auro-button>` will assume the width of the content or a min-width of `8.75rem`, which ever is greater.
-
-If the desired appearance of the `<auro-button>` is to be placed in the reverse direction of natural content, then the attributes of `responsive` and `reverse` are needed on the `<auro-button>` element.
+`<auro-button>` is as wide as its content at every screen size. To make it fill the full width of its container, such as on small screens, set `fluid`.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Use Cases
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./docs/partials/useCases.md -->
-The auro-button element should be used in situations where users may:
+Use `<auro-button>` when people need to:
 
-* submit a form
-* begin a new task
-* trigger a new UI element to appear to the page
-* specify a new or next step in a process
+* Submit a form.
+* Start a new task.
+* Open a new part of the interface, such as a dialog.
+* Move to the next step in a process.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Install
@@ -111,7 +107,7 @@ import { AuroButton } from '@aurodesignsystem/auro-button/class';
 &#10;// Register with a custom name if desired
 AuroButton.register('custom-button');</code></pre>
 
-This will create a new custom element `<custom-button>` that behaves exactly like `<auro-button>`, allowing both to coexist on the same page without interfering with each other.
+This creates a new custom element `<custom-button>` that behaves exactly like `<auro-button>`, allowing both to coexist on the same page without interfering with each other.
 <!-- AURO-GENERATED-CONTENT:END -->
 <div class="exampleWrapper exampleWrapper--flex">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->

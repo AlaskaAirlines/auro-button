@@ -1,6 +1,6 @@
-The auro-button element should be used in situations where users may:
+Use `<auro-button>` when people need to:
 
-* submit a form
-* begin a new task
-* trigger a new UI element to appear to the page
-* specify a new or next step in a process
+* Submit a form.
+* Start a new task.
+* Open a new part of the interface, such as a dialog.
+* Move to the next step in a process.
