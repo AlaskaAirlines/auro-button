@@ -988,41 +988,6 @@ The `button` part is the inner `<button>` element (a `<span>` when `static` is s
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Link
-
-The `link` part is the inner `<a>` element, rendered in place of `button` when `auro-hyperlink` uses `auro-button` to draw a button-styled link. `buttonHref` is internal to `auro-hyperlink`, so you'll usually style a link through `auro-hyperlink` instead.
-
-<div class="exampleWrapper">
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_link.html) -->
-<!-- The below content is automatically added from ./../apiExamples/part_link.html -->
-<auro-button id="part-link-example" buttonHref="/test">Primary</auro-button>
-<style>
-    #part-link-example::part(link) {
-      background-color: white;
-      background-image: none;
-      color: #333;
-      border: 1px solid #119933
-    }
-</style>
-<!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-<span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/part_link.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/part_link.html -->
-
-<pre class="language-html"><code class="language-html">&lt;auro-button id="part-link-example" buttonHref="/test"&gt;Primary&lt;/auro-button&gt;
-&lt;style&gt;
-  #part-link-example::part(link) {
-    background-color: white;
-    background-image: none;
-    color: #333;
-    border: 1px solid #119933
-  }
-&lt;/style&gt;</code></pre>
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
 ### Content wrapper
 
 The `contentWrapper` part is the element wrapping all of the button's content. It's hidden, but still takes up space, while the button is loading.
