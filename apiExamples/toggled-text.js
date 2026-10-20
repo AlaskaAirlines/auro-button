@@ -1,21 +1,33 @@
 export function toggledTextExample() {
   const toggledTextElem = document.querySelector("#toggledTextElem");
 
+  // Track hover and focus separately so the label stays visible while either is active
+  let isHovered = false;
+  let hasFocus = false;
+
+  const updateShape = () => {
+    toggledTextElem.shape = isHovered || hasFocus ? "pill" : "circle";
+  };
+
   // The mouseover and mouseout events are to simulate toggling text for mouse users
   toggledTextElem.addEventListener("mouseover", () => {
-    toggledTextElem.shape = "pill";
+    isHovered = true;
+    updateShape();
   });
 
   toggledTextElem.addEventListener("mouseout", () => {
-    toggledTextElem.shape = "circle";
+    isHovered = false;
+    updateShape();
   });
 
   // The focusin and focusout events are to simulate toggling text for keyboard users
   toggledTextElem.addEventListener("focusin", () => {
-    toggledTextElem.shape = "pill";
+    hasFocus = true;
+    updateShape();
   });
 
   toggledTextElem.addEventListener("focusout", () => {
-    toggledTextElem.shape = "circle";
+    hasFocus = false;
+    updateShape();
   });
 }
