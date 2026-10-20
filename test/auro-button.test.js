@@ -777,9 +777,68 @@ describe("auro-button", () => {
       `);
 
       const wrappedText = el.querySelector("#wrappedText");
+      const svg = el.querySelector("svg");
+      const svgStyle = getComputedStyle(svg);
 
       expect(getComputedStyle(wrappedText).width).to.equal("1px");
       expect(getComputedStyle(wrappedText).position).to.equal("absolute");
+      expect(svgStyle.position).to.not.equal("absolute");
+      expect(svgStyle.clip).to.equal("auto");
+      expect(svgStyle.visibility).to.equal("visible");
+      expect(svgStyle.width).to.equal("24px");
+      expect(svgStyle.height).to.equal("24px");
+    });
+
+    it("sizes a slotted svg from the icon size for each size", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <span slot="ariaLabel">Add item</span>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+            <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+          </svg>
+        </auro-button>
+      `);
+
+      const svg = el.querySelector("svg");
+      const expectedSizes = {
+        xs: "24px",
+        sm: "24px",
+        md: "24px",
+        lg: "28px",
+        xl: "36px",
+      };
+
+      for (const [size, iconSize] of Object.entries(expectedSizes)) {
+        el.size = size;
+        await elementUpdated(el);
+
+        expect(getComputedStyle(svg).width, size).to.equal(iconSize);
+        expect(getComputedStyle(svg).height, size).to.equal(iconSize);
+      }
+    });
+
+    it("keeps the space of a slotted svg while loading", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle" loading>
+          <span slot="ariaLabel">Add item</span>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+            <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+          </svg>
+        </auro-button>
+      `);
+
+      const svg = el.querySelector("svg");
+
+      expect(getComputedStyle(svg).visibility).to.equal("hidden");
+      expect(getComputedStyle(svg).position).to.not.equal("absolute");
+      expect(getComputedStyle(svg).width).to.equal("24px");
+      expect(el.shadowRoot.querySelector("[auro-loader]")).to.exist;
+
+      el.loading = false;
+      await elementUpdated(el);
+
+      expect(getComputedStyle(svg).visibility).to.equal("visible");
+      expect(getComputedStyle(svg).width).to.equal("24px");
     });
 
     it("displays an svg wrapped in an element in a circle shape", async () => {
@@ -795,9 +854,15 @@ describe("auro-button", () => {
       `);
 
       const iconWrapper = el.querySelector("#iconWrapper");
+      const svg = iconWrapper.querySelector("svg");
+      const svgRect = svg.getBoundingClientRect();
 
       expect(getComputedStyle(iconWrapper).position).to.not.equal("absolute");
       expect(getComputedStyle(iconWrapper).width).to.not.equal("1px");
+      expect(getComputedStyle(iconWrapper).clip).to.equal("auto");
+      expect(getComputedStyle(svg).visibility).to.equal("visible");
+      expect(svgRect.width).to.equal(24);
+      expect(svgRect.height).to.equal(24);
     });
 
     it("displays a slotted img in a square shape", async () => {
@@ -814,9 +879,13 @@ describe("auro-button", () => {
       `);
 
       const img = el.querySelector("img");
+      const imgStyle = getComputedStyle(img);
 
-      expect(getComputedStyle(img).position).to.not.equal("absolute");
-      expect(getComputedStyle(img).width).to.equal("24px");
+      expect(imgStyle.position).to.not.equal("absolute");
+      expect(imgStyle.clip).to.equal("auto");
+      expect(imgStyle.visibility).to.equal("visible");
+      expect(imgStyle.width).to.equal("24px");
+      expect(imgStyle.height).to.equal("24px");
     });
 
     it("displays wrapped text in a circle shape when no icon is slotted", async () => {
