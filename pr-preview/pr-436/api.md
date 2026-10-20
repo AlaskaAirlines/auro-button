@@ -344,13 +344,12 @@ Use `circle` or `square` for a single icon, either an `<auro-icon>` or your own 
 
 #### Show text on hover and focus
 
-To show a label next to an icon only when people point at or focus the button, switch `shape` between `circle` and `pill`. A `circle` button hides its label and shows only the icon; a `pill` button shows both. This example listens for `mouseover` and `mouseout` for mouse users, and for `focusin` and `focusout` for keyboard users. The label stays visible while the button is either hovered or focused, and hides only when neither is true.
+To show a label next to an icon only when people point at or focus the button, switch `shape` between `circle` and `pill`. A `circle` button hides its label and shows only the icon; a `pill` button shows both. This example listens for `mouseover` and `mouseout` for mouse users, and for `focusin` and `focusout` for keyboard users. The label stays visible while the button is either hovered or focused, and hides only when neither is true. Screen readers still read the hidden label, so the button doesn't need an `ariaLabel` slot.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggled-text.html) -->
 <!-- The below content is automatically added from ./../apiExamples/toggled-text.html -->
 <auro-button shape="circle" id="toggledTextElem">
-<span slot="ariaLabel">Back to top</span>
 <span>Back to top</span>
 <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
 </auro-button>
@@ -362,7 +361,6 @@ To show a label next to an icon only when people point at or focus the button, s
 <!-- The below code snippet is automatically added from ./../apiExamples/toggled-text.html -->
 
 <pre class="language-html"><code class="language-html">&lt;auro-button shape="circle" id="toggledTextElem"&gt;
-  &lt;span slot="ariaLabel"&gt;Back to top&lt;/span&gt;
   &lt;span&gt;Back to top&lt;/span&gt;
   &lt;auro-icon customColor category="interface" name="arrow-up"&gt;&lt;/auro-icon&gt;
 &lt;/auro-button&gt;</code></pre>
@@ -732,7 +730,6 @@ When a button that shows text on hover and focus is right-aligned, it grows and 
 <!-- The below content is automatically added from ./../apiExamples/right-align.html -->
 <div style="display: flex; justify-content: flex-end; align-items: center; width: 100%">
 <auro-button shape="circle" id="rightAlignElem">
-<span slot="ariaLabel">Back to top</span>
 <span>Back to top</span>
 <auro-icon customColor category="interface" name="arrow-up"></auro-icon>
 </auro-button>
@@ -746,7 +743,6 @@ When a button that shows text on hover and focus is right-aligned, it grows and 
 
 <pre class="language-html"><code class="language-html">&lt;div style="display: flex; justify-content: flex-end; align-items: center; width: 100%"&gt;
   &lt;auro-button shape="circle" id="rightAlignElem"&gt;
-    &lt;span slot="ariaLabel"&gt;Back to top&lt;/span&gt;
     &lt;span&gt;Back to top&lt;/span&gt;
     &lt;auro-icon customColor category="interface" name="arrow-up"&gt;&lt;/auro-icon&gt;
   &lt;/auro-button&gt;
