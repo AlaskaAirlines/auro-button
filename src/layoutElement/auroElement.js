@@ -219,16 +219,14 @@ export class AuroElement extends LitElement {
     this.releaseWrapper();
   }
 
-  // Try to render the defined layout.
+  // Render the defined layout. Log a failure, then rethrow so the update rejects instead of rendering empty.
   render() {
     try {
       return this.renderLayout();
     } catch (error) {
       // failed to get the defined layout
-      console.error(
-        "Failed to get the defined layout",
-        error,
-      ); // eslint-disable-line no-console
+      console.error("Failed to get the defined layout", error); // eslint-disable-line no-console
+      throw error;
     }
   }
 }
