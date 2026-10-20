@@ -782,6 +782,56 @@ describe("auro-button", () => {
       expect(getComputedStyle(wrappedText).position).to.equal("absolute");
     });
 
+    it("displays an svg wrapped in an element in a circle shape", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <span slot="ariaLabel">Add item</span>
+          <span id="iconWrapper">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M11 5h2v14h-2zM5 11h14v2H5z" />
+            </svg>
+          </span>
+        </auro-button>
+      `);
+
+      const iconWrapper = el.querySelector("#iconWrapper");
+
+      expect(getComputedStyle(iconWrapper).position).to.not.equal("absolute");
+      expect(getComputedStyle(iconWrapper).width).to.not.equal("1px");
+    });
+
+    it("displays a slotted img in a square shape", async () => {
+      const el = await fixture(html`
+        <auro-button shape="square">
+          <span slot="ariaLabel">Add item</span>
+          <img
+            width="24"
+            height="24"
+            alt=""
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'/%3E"
+          />
+        </auro-button>
+      `);
+
+      const img = el.querySelector("img");
+
+      expect(getComputedStyle(img).position).to.not.equal("absolute");
+      expect(getComputedStyle(img).width).to.equal("24px");
+    });
+
+    it("displays wrapped text in a circle shape when no icon is slotted", async () => {
+      const el = await fixture(html`
+        <auro-button shape="circle">
+          <span slot="ariaLabel">3 items in cart</span>
+          <span id="count">3</span>
+        </auro-button>
+      `);
+
+      const count = el.querySelector("#count");
+
+      expect(getComputedStyle(count).position).to.not.equal("absolute");
+    });
+
     it("keeps the svg's own size in oblong shapes", async () => {
       const el = await fixture(html`
         <auro-button shape="rounded">

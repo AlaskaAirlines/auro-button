@@ -130,7 +130,7 @@ Available options are:
 
 The `rounded` and `pill` shapes are flexible and can hold any amount of information
 
-The `circle` and `square` shapes are always equal dimensions. These shapes support either an icon or short text such as a count (e.g. `1`). Text is only displayed when no icon is slotted and the text is not wrapped in an element; otherwise only the icon is shown. A number alone is rarely a meaningful accessible name, so provide one with the `aria-label` attribute or the `ariaLabel` slot.
+The `circle` and `square` shapes are always equal dimensions. These shapes support either an icon or short text such as a count (e.g. `1`). Text is only displayed when no icon is slotted; otherwise only the icon is shown. A number alone is rarely a meaningful accessible name, so provide one with the `aria-label` attribute or the `ariaLabel` slot.
 
 #### Rounded
 

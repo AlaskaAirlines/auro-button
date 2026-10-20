@@ -275,7 +275,7 @@ $button-sizes: (
       ::slotted(svg) {
         width: $iconSize;
         height: $iconSize;
-        fill: currentColor;
+        fill: currentcolor;
       }
     }
   }
@@ -331,11 +331,13 @@ $button-sizes: (
 /**
  * @mixin symmetrical-styles
  * @description
- *   Hides non-icon content for symmetrical shapes (e.g., circle, square).
+ *   Hides non-icon content for symmetrical shapes (e.g., circle, square)
+ *   when an icon is slotted. Without a recognized icon, all content shows,
+ *   so wrapped icons such as an <img> or a <span> holding an svg stay visible.
  */
 @mixin symmetrical-styles($shape) {
   :host([shape='#{$shape}']) {
-    ::slotted(:not(auro-icon):not([auro-icon]):not(svg)) {
+    .hasIcon ::slotted(:not(auro-icon):not([auro-icon]):not(svg)) {
       position: absolute;
       overflow: hidden;
       width: 1px;

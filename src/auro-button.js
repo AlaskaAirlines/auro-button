@@ -594,9 +594,12 @@ export class AuroButton extends AuroElement {
 
     // Type classes should not be applied to the wrapper to avoid affecting icons.
     // Icon-only shapes only get a type class when they hold text (e.g. a count) instead of an icon.
+    // `hasIcon` lets icon-only shapes hide everything except the icon.
+    const hasSlottedIcon = this.hasSlottedIcon;
     const textSlotClasses = {
       textSlot: true,
-      [fontSize]: this.showText || !this.hasSlottedIcon,
+      hasIcon: hasSlottedIcon,
+      [fontSize]: this.showText || !hasSlottedIcon,
     };
 
     const tabindex = this.tIndex ?? this.tabindex;
