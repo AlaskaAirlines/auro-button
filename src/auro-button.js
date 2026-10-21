@@ -38,14 +38,14 @@ const ICON_SELECTOR = "auro-icon, [auro-icon], svg, img";
  * Auro interfaces.
  *
  * **Key capabilities**
- * - **Variants**: five levels of visual emphasis, from `primary` (the main action on the
- *   page) through `secondary`, `tertiary`, and `ghost`, down to `flat` (text only).
- * - **Shapes & sizes**: `rounded` or `pill` for text buttons, and `circle` or `square` for
- *   an icon or short text such as a count, each in five sizes (`xs`–`xl`).
- * - **Light & dark backgrounds**: `appearance="inverse"` switches to colors designed for
+ * - **Variants**: `variant` sets five levels of visual emphasis, from `primary` (the main
+ *   action on the page) through `secondary`, `tertiary`, and `ghost`, down to `flat` (text only).
+ * - **Shapes and sizes**: `shape` sets `rounded` or `pill` for text buttons, and `circle` or
+ *   `square` for an icon or short text, such as a count; `size` sets five sizes (`xs`–`xl`).
+ * - **Light and dark backgrounds**: `appearance="inverse"` switches to colors designed for
  *   dark backgrounds.
- * - **Loading state**: swaps the label for a loading indicator and blocks clicks while
- *   work is in progress, without changing the button's width.
+ * - **Loading state**: `loading` swaps the label for a loading indicator and blocks clicks
+ *   while work is in progress, without changing the button's width.
  * - **Forms**: `type="submit"` submits the form the button is placed in, and `type="reset"`
  *   resets an `<auro-form>`.
  *
@@ -54,29 +54,28 @@ const ICON_SELECTOR = "auro-icon, [auro-icon], svg, img";
  * <auro-button variant="primary">Submit</auro-button>
  * ```
  *
- * @summary Accessible button for taking an action, with variants, sizes, a loading state, and form support.
+ * @summary An accessible button for taking an action, with variants, sizes, a loading state, and form support.
  * @customElement auro-button
  * @forcePrivate {'layout'}
  * @slot - The button's visible label: text, an icon (an `<auro-icon>`, an `<svg>`, or an `<img>`), or both. Set `aria-hidden="true"` on a slotted `<svg>`, and `alt=""` on a slotted `<img>`, so screen readers skip it and read only the button's name. In `circle` and `square` buttons, an icon wrapped in another element still counts as the icon, but only an icon slotted directly is sized to the icon size. {@requiredWhen always} {@category ui}
- * @slot ariaLabel - Text read by screen readers in place of the visible label. Needed when a `circle` or `square` button shows only an icon, because it has no visible text. {@relevantWhen !loading} {@category a11y}
- * @slot ariaLabel.loading - Text read by screen readers while the button is loading, for example "Saving your changes". Defaults to "Loading...". {@relevantWhen loading} {@category a11y}
+ * @slot ariaLabel - Text read by screen readers in place of the visible label, for example "Save to favorites". Needed when a `circle` or `square` button shows only an icon or a count, unless the host has an `aria-label` or text visually hidden beside the icon already says what the button does. Without it, screen readers read the host's `aria-label`, or the visible label if there's none. {@relevantWhen !loading} {@category a11y}
+ * @slot ariaLabel.loading - Text read by screen readers in place of the visible label while the button is loading, for example "Saving your changes". Defaults to "Loading...". {@relevantWhen loading} {@category a11y}
  * @csspart button - The inner `<button>` element (a `<span>` when `static` is set).
  * @csspart loader - The loading indicator shown while `loading` is set.
  * @csspart text - The element wrapping the button's label.
- * @csspart contentWrapper - The element wrapping all of the button's content. It is hidden, but still takes up space, while loading.
- * @cssprop {Color} --ds-auro-button-border-color - Border color of the button.
- * @cssprop {Color} --ds-auro-button-border-inset-color - Color of the inner ring shown when the button has keyboard focus.
- * @cssprop {Color} --ds-auro-button-container-color - Background color of the button.
- * @cssprop {Image} --ds-auro-button-container-image - Background image layered over the background color, used for gradient fills.
+ * @csspart contentWrapper - The element wrapping all of the button's content. It's hidden, but still takes up space, while the button is loading.
+ * @cssprop {Color} --ds-auro-button-border-color - Border color of a `secondary` button, and of the thin outer edge of the focus ring on a `primary` button. Other variants don't show a border.
+ * @cssprop {Color} --ds-auro-button-border-inset-color - Color of the inner ring shown when the button has focus.
+ * @cssprop {Color} --ds-auro-button-container-color - Background color of the button. The `flat` variant doesn't use it.
+ * @cssprop {Color} --ds-auro-button-container-image - Color of a layer painted over the background color, which hides it. When you change `--ds-auro-button-container-color`, set this to the same value. The `flat` and `tertiary` variants don't use it.
  * @cssprop {Color} --ds-auro-button-loader-color - Color of the loading indicator.
- * @cssprop {Color} --ds-auro-button-tap-color - Highlight color shown briefly when the button is tapped on a touch screen.
- * @cssprop {Color} --ds-auro-button-text-color - Color of the button's label text.
+ * @cssprop {Color} --ds-auro-button-text-color - Color of the button's label text. The `flat` variant doesn't use it.
  */
 export class AuroButton extends AuroElement {
   /**
-   * Checks whether the button takes part in the form it's placed in. Always true, which turns on form association for `auro-button`.
+   * Checks whether the button can take part in a form. It always returns true, which turns on form association for `auro-button`.
    * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/attachInternals
-   * @returns {boolean} - True.
+   * @returns {boolean} - Always true.
    */
   static get formAssociated() {
     return true;
@@ -159,7 +158,7 @@ export class AuroButton extends AuroElement {
       ...AuroElement.properties,
 
       /**
-       * Override layout since it isn't used in this component.
+       * Removes the `layout` attribute inherited from `AuroElement`, because this component has only one layout.
        * @private
        */
       layout: {
@@ -169,7 +168,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for an icon (an `<auro-icon>`, an `<svg>`, or an `<img>`) or short text such as a count. When an icon is slotted, `circle` and `square` buttons show only the icon, so they need a text alternative in the `ariaLabel` slot.
+       * Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for an icon (an `<auro-icon>`, an `<svg>`, or an `<img>`) or short text, such as a count. When an icon is slotted, `circle` and `square` buttons show only the icon and visually hide any text beside it, so they need an accessible name from the `ariaLabel` slot or the `aria-label` attribute unless that hidden text says what the button does.
        * @type {"rounded" | "pill" | "circle" | "square"}
        * @default "rounded"
        * @category ui
@@ -220,7 +219,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Shows a loading indicator in place of the label and blocks clicks until it is turned off. The button keeps its width, so the layout doesn't shift. Use the `ariaLabel.loading` slot to tell screen reader users what is happening.
+       * Shows a loading indicator in place of the label and blocks clicks until it's turned off. The button keeps its width, so the layout doesn't shift. Use the `ariaLabel.loading` slot to tell screen reader users what's happening.
        * @category ui
        */
       loading: {
@@ -242,7 +241,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets the button's position in the keyboard tab order (the inner element's `tabindex`). Use `-1` to remove the button from the tab order. Most buttons don't need this. Ignored when `static` is set.
+       * Sets the button's position in the keyboard tab order (the inner element's `tabindex`). Use `-1` to remove the button from the tab order. Ignored when `static` is set.
        * @relevantWhen !static
        * @minimum -1
        * @maximum 2147483647
@@ -256,8 +255,7 @@ export class AuroButton extends AuroElement {
 
       /**
        * Deprecated: Use `tIndex` instead.
-       * Sets the button's position in the keyboard tab order. Must be set as a property (with a leading `.` in Lit templates) so the `tabindex` attribute isn't left on the host element.
-       * Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`.
+       * Sets the button's position in the keyboard tab order. Set it as a property, with a leading `.` in Lit templates, because a `tabindex` attribute on the host element can add a second tab stop.
        * @deprecated Use `tIndex` instead.
        * @relevantWhen !static
        * @category a11y
@@ -268,7 +266,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Text shown as a browser tooltip when a mouse pointer rests on the button. Keyboard and touch users never see it, so don't use it for essential information.
+       * Sets the tooltip text the browser shows when a mouse pointer rests on the button, such as more detail about what the button does (the `title` attribute). Keyboard and touch users never see it, so don't use it for essential information.
        * @category ui
        */
       title: {
@@ -277,7 +275,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets what the button does in a form. `submit` submits the form the button is placed in, whether it's a native `<form>` or an `<auro-form>`. `reset` resets the fields of an `<auro-form>`, but has no effect in a native `<form>`. Leave it unset, or use `button`, when the button runs its own action.
+       * Sets what the button does in a form. `submit` submits the form the button is placed in, whether it's a native `<form>` or an `<auro-form>`, and `reset` resets the fields of an `<auro-form>` but has no effect in a native `<form>`. When the button runs its own action, leave it unset or use `button`.
        * @type {"submit" | "reset" | "button"}
        * @category behavior
        */
@@ -287,7 +285,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets the button's visual emphasis. Use `primary` for the single most important action in a view, `secondary` for supporting actions, and `tertiary`, `ghost`, or `flat` for progressively quieter actions. `flat` shows only the label, with no background or border.
+       * Sets the button's visual emphasis. Use `primary` for the single most important action in a view, `secondary` for supporting actions, and `tertiary`, `ghost`, or `flat` for progressively quieter actions. `flat` shows only the label, with no background or border. A flat button with a `rounded` or `pill` shape doesn't currently show a focus ring, so use `flat` only with `circle` or `square`.
        * @type {"primary" | "secondary" | "tertiary" | "ghost" | "flat"}
        * @default "primary"
        * @category ui
@@ -298,7 +296,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Internal: set only by `auro-hyperlink` for its CTA links; not for direct use. Renders an `<a>` to this URL (with the `link` CSS part in place of `button`). The URL is used as-is, without sanitization.
+       * Internal: set only by `auro-hyperlink` for its CTA links; not for direct use. Renders an `<a>` to this URL (with the `link` CSS part in place of `button`). Security: the URL is used as-is, without sanitization, so don't pass untrusted input, because a `javascript:` URL runs when the link is activated.
        * @type {string}
        * @internal
        */
@@ -308,7 +306,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Internal: set only by `auro-hyperlink` for its CTA links; not for direct use. The link's `target` when `buttonHref` is set.
+       * Internal: set only by `auro-hyperlink` for its CTA links; not for direct use. Sets where the link opens when `buttonHref` is set, such as `_blank` for a new tab (the link's `target`).
        * @type {string}
        * @internal
        */
@@ -318,7 +316,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Internal: set only by `auro-hyperlink` for its CTA links; not for direct use. The link's `rel` when `buttonHref` is set.
+       * Internal: set only by `auro-hyperlink` for its CTA links; not for direct use. Sets the link's relationship to the page it opens when `buttonHref` is set, such as `noopener` (the link's `rel`).
        * @type {string}
        * @internal
        */
@@ -328,7 +326,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Displays the button's styling without any button behavior. A static button can't be clicked or focused, and screen readers don't announce it as a button. Use it when the button sits inside another clickable element, such as a linked card.
+       * Displays the button's styling without any button behavior. A static button can't be focused, doesn't submit a native `<form>`, and isn't announced as a button by screen readers. When the button sits inside another clickable element, such as a linked card, use a static button. Give that element an accessible name, because a name set on a static button isn't reliably read.
        * @category behavior
        */
       static: {
@@ -351,7 +349,7 @@ export class AuroButton extends AuroElement {
   }
 
   /**
-   * Moves keyboard focus to the inner `<button>` element, or to the inner `<a>` element when `buttonHref` is set. Does nothing when `static` is set or before the button first renders.
+   * Moves keyboard focus to the inner `<button>` element, or to the inner `<a>` element when `auro-hyperlink` renders the button as a link. Does nothing before the button first renders, when `static` is set, or when `disabled` or `loading` turns off the inner `<button>`.
    * @param {FocusOptions} [options] - The options passed to the inner element's `focus()`.
    * @returns {void}
    */
@@ -500,7 +498,7 @@ export class AuroButton extends AuroElement {
 
   /**
    * Gets the element tag to render.
-   * @returns {TemplateResult} - The tag: `span` when `static` is set, `a` when `buttonHref` is set, and `button` otherwise.
+   * @returns {StaticValue} - The tag: `span` when `static` is set, `a` when `buttonHref` is set, and `button` otherwise.
    * @private
    */
   get _renderTag() {
@@ -580,10 +578,9 @@ export class AuroButton extends AuroElement {
   /**
    * Called when a pointer enters, leaves, presses, or releases the button, or when the button
    * loses focus. Sets `data-hover` and `data-active` on the host so the styles can show hover
-   * and active states. This is needed because `:host` combined with `:has()` doesn't work in Safari and Firefox.
-   * The `data-hover` / `data-active` attributes are set directly on the host (rather than
-   * via reactive properties) so they stay internal and don't appear as public, settable
-   * attributes in the custom elements manifest.
+   * and active states, because `:host` combined with `:has()` doesn't work in Safari and Firefox.
+   * Sets them as plain attributes, not reactive properties, so they stay internal and don't
+   * appear as public, settable attributes in the custom elements manifest.
    * @param {PointerEvent} event - The pointer event.
    * @private
    */
@@ -609,7 +606,7 @@ export class AuroButton extends AuroElement {
 
   /**
    * Renders the button's default (and only) layout.
-   * @returns {TemplateResult}
+   * @returns {TemplateResult} - The button's template.
    * @private
    */
   renderLayoutDefault() {
@@ -635,18 +632,19 @@ export class AuroButton extends AuroElement {
     // Type classes should not be applied to the wrapper to avoid affecting icons.
     // Icon-only shapes only get a type class when they hold text (such as a count) instead of an icon.
     // `iconOnly` lets icon-only shapes hide everything except the icon.
+    // Not written as the `iconOnly` shorthand: the CEM analyzer publishes a shorthand property as a module variable.
     const slottedIcons = this.slottedIcons;
-    const iconOnly = this.iconOnly && slottedIcons.length > 0;
+    const showIconOnly = this.iconOnly && slottedIcons.length > 0;
     const textSlotClasses = {
       textSlot: true,
-      iconOnly,
+      iconOnly: showIconOnly,
       [fontSize]: this.showText || slottedIcons.length === 0,
     };
 
     const tabindex = this.tIndex ?? this.tabindex;
 
     return html`
-      ${iconOnly ? this.renderIconOnlyStyle(slottedIcons) : undefined}
+      ${showIconOnly ? this.renderIconOnlyStyle(slottedIcons) : undefined}
 
       <!-- Hidden slots for aria labels -->
       <slot name="ariaLabel" hidden @slotchange="${this.onAriaLabelSlotChange}"></slot>
@@ -688,7 +686,7 @@ export class AuroButton extends AuroElement {
 
   /**
    * Renders the button's current layout.
-   * @returns {TemplateResult}
+   * @returns {TemplateResult} - The button's template.
    * @private
    */
   renderLayout() {

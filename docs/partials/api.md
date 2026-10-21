@@ -21,7 +21,7 @@
 
 ### Tab index
 
-Use `tIndex` to set the button's position in the keyboard tab order, such as `-1` to remove it from the tab order. Don't use `tabindex`: it's deprecated, and on the host element it adds a second tab stop for keyboard users.
+Use `tIndex` to set the button's position in the keyboard tab order, such as `-1` to remove it from the tab order. Don't use `tabindex`: it's deprecated, and a `tabindex` attribute on the host element can add a second tab stop for keyboard users.
 
 ### Inverse
 
@@ -72,7 +72,9 @@ Use the `disabled` attribute to turn the button off. A disabled button is shown 
 
 ### Static
 
-Use the `static` attribute to show the button's styling without any button behavior. A static button can't be clicked or focused, and screen readers don't announce it as a button. Use it when the button sits inside another clickable element, such as a linked card or slide.
+Use the `static` attribute to show the button's styling without any button behavior. A static button can't be focused, doesn't submit a native `<form>`, and isn't announced as a button by screen readers. When the button sits inside another clickable element, such as a linked card or slide, use a static button.
+
+A static button renders a `<span>`, where screen readers don't reliably read an accessible name, so give the clickable element that contains it a name instead. A static `circle` or `square` button doesn't need an `ariaLabel` slot.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/static.html) -->
@@ -122,7 +124,7 @@ Use the `shape` attribute to set the button's outline: `rounded` (the default), 
 
 Use `rounded` or `pill` for buttons with a text label. They grow to fit their content.
 
-Use `circle` or `square` for a single icon or for short text, such as a count. These shapes always have equal width and height. Text shows only when no icon is slotted; otherwise, only the icon shows. An `<auro-icon>`, `<svg>`, or `<img>` counts as an icon whether it's slotted directly or wrapped in another element. The button sizes a slotted icon to the icon size and fills an `<svg>` with the button's text color, but it can't resize an icon inside a wrapper or recolor an `<img>`, so slot the icon directly. Because an icon or a number alone doesn't say what the button does, give these buttons an accessible name with the `ariaLabel` slot or the `aria-label` attribute.
+Use `circle` or `square` for a single icon or for short text, such as a count. These shapes always have equal width and height. Text shows only when no icon is slotted; otherwise, only the icon shows. An `<auro-icon>`, `<svg>`, or `<img>` counts as an icon whether it's slotted directly or wrapped in another element. The button sizes a slotted icon to the icon size and fills an `<svg>` with the button's text color, but it can't resize an icon inside a wrapper or recolor an `<img>`, so slot the icon directly. Because an icon or a number alone doesn't say what the button does, give these buttons an accessible name with the `ariaLabel` slot or the `aria-label` attribute. A static button is the exception; see [Static](#static).
 
 #### Rounded
 
@@ -193,7 +195,7 @@ Use `<auro-icon>` for the icon in this pattern. A `circle` or `square` button si
 
 #### Circle with text
 
-Use short text, such as a count, in place of an icon. Put the text directly in the button, not inside another element, and describe the button in the `ariaLabel` slot.
+Use short text, such as a count, in place of an icon, and describe the button in the `ariaLabel` slot.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle-text.html) -->
@@ -244,7 +246,7 @@ To use your own graphic in place of an Auro icon, put an `<svg>` directly in the
 
 Use the `variant` attribute to set the button's visual emphasis. Use `primary` (the default) for the single most important action in a view, `secondary` for supporting actions, and `tertiary`, `ghost`, or `flat` for progressively quieter actions.
 
-`flat` shows only the label, with no background or border. Use it only for controls that need no visible styling until they have focus, such as the close button on a dialog or the clear button in a form field.
+`flat` shows only the label, with no background or border. Use it only for `circle` or `square` buttons that need no visible styling until they have focus, such as the close button on a dialog or the clear button in a form field. A flat button with a `rounded` or `pill` shape doesn't currently show a focus ring.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant.html) -->
@@ -297,7 +299,7 @@ When a button that shows text on hover and focus is right-aligned, it grows and 
 
 ### Loading state
 
-Use the `loading` attribute while work is in progress, such as after a form is submitted. It replaces the label with an animated loading indicator and turns the button off, so people can't submit the same action twice. The button keeps its width, so the layout doesn't shift. Use the `ariaLabel.loading` slot to tell screen reader users what's happening.
+While work is in progress, such as after a form is submitted, use the `loading` attribute. It replaces the label with an animated loading indicator and turns the button off, so people can't submit the same action twice. The button keeps its width, so the layout doesn't shift. Use the `ariaLabel.loading` slot to tell screen reader users what's happening.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loading.html) -->
@@ -346,7 +348,7 @@ To show an icon from the Auro icons library, put an `<auro-icon>` in the button 
 
 ### Accessible names
 
-#### ariaLabel slots
+#### `ariaLabel` slots
 
 Use the `ariaLabel` slot to give screen reader users a more descriptive name than the visible label, and the `ariaLabel.loading` slot to tell them what's happening while the button is loading.
 
@@ -363,7 +365,7 @@ Use the `ariaLabel` slot to give screen reader users a more descriptive name tha
 
 </auro-accordion>
 
-#### aria-labelledby
+#### `aria-labelledby`
 
 Set `aria-labelledby` to the ID of another element whose text names the button. The attribute is moved from `<auro-button>` to the inner button element.
 
@@ -454,7 +456,7 @@ The `loader` part is the loading indicator shown while `loading` is set.
 
 ### Run a function on click
 
-To run your own code when people click the button, listen for its `click` event, as these examples do with `onclick`.
+To run your own code when people click the button, listen for its `click` event, as this example does with `onclick`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/pass-function.html) -->
@@ -469,9 +471,9 @@ To run your own code when people click the button, listen for its `click` event,
 
 </auro-accordion>
 
-### Do's and don'ts
+### Dos and don'ts
 
-Don't set `disabled` and `loading` on the same button. A loading button is already turned off, so `disabled` adds nothing.
+Don't set `disabled` and `loading` on the same button. A loading button is already turned off, so `disabled` isn't needed.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/do-and-dont.html) -->

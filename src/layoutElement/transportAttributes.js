@@ -1,10 +1,10 @@
 /**
- * Private module-level WeakMap to hold MutationObservers for each host element.
+ * Private module-level `WeakMap` to hold `MutationObservers` for each host element.
  */
 const _observers = new WeakMap();
 
 /**
- * Private module-level WeakMap to hold attribute matchers and targets for each host element.
+ * Private module-level `WeakMap` to hold attribute matchers and targets for each host element.
  * Structure: {
  *   host: {
  *     matchers: Set<Function>,
@@ -23,7 +23,7 @@ const _transportConfig = new WeakMap();
  * @param {Function} params.match - A function that takes an attribute name and returns true if that attribute should be moved.
  * @param {boolean} [params.removeOriginal=true] - If true, removes the attributes from the host after moving them. If false, leaves them on the host as well.
  * @returns {{ cleanup: Function, getObservedAttributes: Function, getObservedAttribute: Function }} The functions that stop moving attributes and read the attributes that have been moved.
- * @throws {TypeError} If `host` or `target` isn't an HTMLElement, `match` isn't a function, or `removeOriginal` isn't a boolean.
+ * @throws {TypeError} If `host` or `target` isn't an `HTMLElement`, `match` isn't a function, or `removeOriginal` isn't a boolean.
  */
 export const transportAttributes = ({
   host,
@@ -204,7 +204,7 @@ const _transportAttributes = ({
 };
 
 /**
- * Attaches a MutationObserver to the host element to monitor attribute changes.
+ * Attaches a `MutationObserver` to the host element to monitor attribute changes.
  *
  * @param {HTMLElement} host - The element to observe for attribute changes.
  * @returns {MutationObserver} The observer instance.
@@ -257,7 +257,7 @@ const _attachObserver = (host) => {
 };
 
 /**
- * Detaches and cleans up the MutationObserver for a given host element.
+ * Detaches and cleans up the `MutationObserver` for a given host element.
  *
  * @param {HTMLElement} host - The element whose observer should be detached.
  * @private
