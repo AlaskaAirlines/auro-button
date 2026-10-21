@@ -8,14 +8,14 @@ starting a task, or moving to the next step in a flow. It's the standard button 
 Auro interfaces.
 
 **Key capabilities**
-- **Variants**: five levels of visual emphasis, from `primary` (the main action on the
-  page) through `secondary`, `tertiary`, and `ghost`, down to `flat` (text only).
-- **Shapes & sizes**: `rounded` or `pill` for text buttons, and `circle` or `square` for
-  an icon or short text such as a count, each in five sizes (`xs`–`xl`).
-- **Light & dark backgrounds**: `appearance="inverse"` switches to colors designed for
+- **Variants**: `variant` sets five levels of visual emphasis, from `primary` (the main
+  action on the page) through `secondary`, `tertiary`, and `ghost`, down to `flat` (text only).
+- **Shapes and sizes**: `shape` sets `rounded` or `pill` for text buttons, and `circle` or
+  `square` for an icon or short text, such as a count; `size` sets five sizes (`xs`–`xl`).
+- **Light and dark backgrounds**: `appearance="inverse"` switches to colors designed for
   dark backgrounds.
-- **Loading state**: swaps the label for a loading indicator and blocks clicks while
-  work is in progress, without changing the button's width.
+- **Loading state**: `loading` swaps the label for a loading indicator and blocks clicks
+  while work is in progress, without changing the button's width.
 - **Forms**: `type="submit"` submits the form the button is placed in, and `type="reset"`
   resets an `<auro-form>`.
 
@@ -24,60 +24,59 @@ Auro interfaces.
 
 ### Properties & Attributes
 
-| Properties     | Attributes  | Modifiers | Type                                                        | Default      | Description                                                                                                                                                                                                                                                                                                                                         |
-| -------------- | ----------- | --------- | ----------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| appearance     | appearance  |           | "default" \| "inverse"                                      | `default`    | Matches the component's colors to the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.                                                                                                                                                                                                                         |
-| autofocus      | autofocus   |           | boolean                                                     | `false`      | Moves keyboard focus to the button when the page loads. Use sparingly: moving focus without warning can disorient keyboard and screen reader users.                                                                                                                                                                                                 |
-| disabled       | disabled    |           | boolean                                                     | `false`      | Turns the button off. A disabled button is shown in a muted style and can't be clicked or reached with the keyboard.                                                                                                                                                                                                                                |
-| fluid          | fluid       |           | boolean                                                     | `false`      | Stretches the button to fill the full width of its container.                                                                                                                                                                                                                                                                                       |
-| formAssociated |             | readonly  | boolean                                                     |              | Checks whether the button takes part in the form it's placed in. Always true, which turns on form association for `auro-button`.                                                                                                                                                                                                                    |
-| loading        | loading     |           | boolean                                                     | `false`      | Shows a loading indicator in place of the label and blocks clicks until it is turned off. The button keeps its width, so the layout doesn't shift. Use the `ariaLabel.loading` slot to tell screen reader users what is happening.                                                                                                                  |
-| shape          | shape       |           | "rounded" \| "pill" \| "circle" \| "square"                 | `rounded`    | Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for an icon (an `<auro-icon>`, an `<svg>`, or an `<img>`) or short text such as a count. When an icon is slotted, `circle` and `square` buttons show only the icon, so they need a text alternative in the `ariaLabel` slot. |
-| size           | size        |           | "xs" \| "sm" \| "md" \| "lg" \| "xl"                        | `md`         | Sets the button's size, from `xs` (smallest) to `xl` (largest). Size controls the button's height, padding, and label text size.                                                                                                                                                                                                                    |
-| static         | static      |           | boolean                                                     | `false`      | Displays the button's styling without any button behavior. A static button can't be clicked or focused, and screen readers don't announce it as a button. Use it when the button sits inside another clickable element, such as a linked card.                                                                                                      |
-| tIndex         | tindex      |           | number                                                      |              | Sets the button's position in the keyboard tab order (the inner element's `tabindex`). Use `-1` to remove the button from the tab order. Most buttons don't need this. Ignored when `static` is set.                                                                                                                                                |
-| title          | title       |           | string                                                      |              | Text shown as a browser tooltip when a mouse pointer rests on the button. Keyboard and touch users never see it, so don't use it for essential information.                                                                                                                                                                                         |
-| type           | type        |           | "submit" \| "reset" \| "button"                             |              | Sets what the button does in a form. `submit` submits the form the button is placed in, whether it's a native `<form>` or an `<auro-form>`. `reset` resets the fields of an `<auro-form>`, but has no effect in a native `<form>`. Leave it unset, or use `button`, when the button runs its own action.                                            |
-| variant        | variant     |           | "primary" \| "secondary" \| "tertiary" \| "ghost" \| "flat" | `primary`    | Sets the button's visual emphasis. Use `primary` for the single most important action in a view, `secondary` for supporting actions, and `tertiary`, `ghost`, or `flat` for progressively quieter actions. `flat` shows only the label, with no background or border.                                                                               |
-| loadingText    | loadingtext |           | string                                                      | `Loading...` | Deprecated: Use `slot="ariaLabel.loading"` instead.<br>Sets the text screen readers announce while the button is loading.                                                                                                                                                                                                                           |
-| onDark         | ondark      |           | boolean                                                     | `false`      | Deprecated: Use `appearance="inverse"` instead.<br>Switches the component to colors designed for dark backgrounds.                                                                                                                                                                                                                                  |
-| tabindex       | tabindex    |           | string                                                      |              | Deprecated: Use `tIndex` instead.<br>Sets the button's position in the keyboard tab order. Must be set as a property (with a leading `.` in Lit templates) so the `tabindex` attribute isn't left on the host element.<br>Example: `<auro-button .tabindex="${this.disabled ? '-1' : '0'}"></auro-button>`.                                         |
+| Properties     | Attributes  | Modifiers | Type                                                        | Default      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| -------------- | ----------- | --------- | ----------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| appearance     | appearance  |           | "default" \| "inverse"                                      | `default`    | Sets the component's colors for the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.                                                                                                                                                                                                                                                                                                                                                   |
+| autofocus      | autofocus   |           | boolean                                                     | `false`      | Moves keyboard focus to the button when the page loads. Use sparingly: moving focus without warning can disorient keyboard and screen reader users.                                                                                                                                                                                                                                                                                                                         |
+| disabled       | disabled    |           | boolean                                                     | `false`      | Turns the button off. A disabled button is shown in a muted style and can't be clicked or reached with the keyboard.                                                                                                                                                                                                                                                                                                                                                        |
+| fluid          | fluid       |           | boolean                                                     | `false`      | Stretches the button to fill the full width of its container.                                                                                                                                                                                                                                                                                                                                                                                                               |
+| formAssociated |             | readonly  | boolean                                                     |              | Checks whether the button can take part in a form. It always returns true, which turns on form association for `auro-button`.                                                                                                                                                                                                                                                                                                                                               |
+| loading        | loading     |           | boolean                                                     | `false`      | Shows a loading indicator in place of the label and blocks clicks until it's turned off. The button keeps its width, so the layout doesn't shift. Use the `ariaLabel.loading` slot to tell screen reader users what's happening.                                                                                                                                                                                                                                            |
+| shape          | shape       |           | "rounded" \| "pill" \| "circle" \| "square"                 | `rounded`    | Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for an icon (an `<auro-icon>`, an `<svg>`, or an `<img>`) or short text, such as a count. When an icon is slotted, `circle` and `square` buttons show only the icon and visually hide any text beside it, so they need an accessible name from the `ariaLabel` slot or the `aria-label` attribute unless that hidden text says what the button does. |
+| size           | size        |           | "xs" \| "sm" \| "md" \| "lg" \| "xl"                        | `md`         | Sets the button's size, from `xs` (smallest) to `xl` (largest). Size controls the button's height, padding, and label text size.                                                                                                                                                                                                                                                                                                                                            |
+| static         | static      |           | boolean                                                     | `false`      | Displays the button's styling without any button behavior. A static button can't be focused, doesn't submit a native `<form>`, and isn't announced as a button by screen readers. When the button sits inside another clickable element, such as a linked card, use a static button. Give that element an accessible name, because a name set on a static button isn't reliably read.                                                                                       |
+| tIndex         | tindex      |           | number                                                      |              | Sets the button's position in the keyboard tab order (the inner element's `tabindex`). Use `-1` to remove the button from the tab order. Ignored when `static` is set.                                                                                                                                                                                                                                                                                                      |
+| title          | title       |           | string                                                      |              | Sets the tooltip text the browser shows when a mouse pointer rests on the button, such as more detail about what the button does (the `title` attribute). Keyboard and touch users never see it, so don't use it for essential information.                                                                                                                                                                                                                                 |
+| type           | type        |           | "submit" \| "reset" \| "button"                             |              | Sets what the button does in a form. `submit` submits the form the button is placed in, whether it's a native `<form>` or an `<auro-form>`, and `reset` resets the fields of an `<auro-form>` but has no effect in a native `<form>`. When the button runs its own action, leave it unset or use `button`.                                                                                                                                                                  |
+| variant        | variant     |           | "primary" \| "secondary" \| "tertiary" \| "ghost" \| "flat" | `primary`    | Sets the button's visual emphasis. Use `primary` for the single most important action in a view, `secondary` for supporting actions, and `tertiary`, `ghost`, or `flat` for progressively quieter actions. `flat` shows only the label, with no background or border. A flat button with a `rounded` or `pill` shape doesn't currently show a focus ring, so use `flat` only with `circle` or `square`.                                                                     |
+| loadingText    | loadingtext |           | string                                                      | `Loading...` | Deprecated: Use `slot="ariaLabel.loading"` instead.<br>Sets the text screen readers announce while the button is loading.                                                                                                                                                                                                                                                                                                                                                   |
+| onDark         | ondark      |           | boolean                                                     | `false`      | Deprecated: Use `appearance="inverse"` instead.<br>Switches the component to colors designed for dark backgrounds.                                                                                                                                                                                                                                                                                                                                                          |
+| tabindex       | tabindex    |           | string                                                      |              | Deprecated: Use `tIndex` instead.<br>Sets the button's position in the keyboard tab order. Set it as a property, with a leading `.` in Lit templates, because a `tabindex` attribute on the host element can add a second tab stop.                                                                                                                                                                                                                                         |
 
 ### Methods
 
-| Name     | Parameters                                                                      | Return | Description                                                                                                                                                                         |
-| -------- | ------------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| focus    | `options` (FocusOptions) - The options passed to the inner element's `focus()`. | void   | Moves keyboard focus to the inner `<button>` element, or to the inner `<a>` element when `buttonHref` is set. Does nothing when `static` is set or before the button first renders. |
-| register | `name` (string) - The tag name to register the element under.                   |        | Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-button` on the same page.                         |
+| Name     | Parameters                                                                      | Return | Description                                                                                                                                                                                                                                                                 |
+| -------- | ------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| focus    | `options` (FocusOptions) - The options passed to the inner element's `focus()`. | void   | Moves keyboard focus to the inner `<button>` element, or to the inner `<a>` element when `auro-hyperlink` renders the button as a link. Does nothing before the button first renders, when `static` is set, or when `disabled` or `loading` turns off the inner `<button>`. |
+| register | `name` (string) - The tag name to register the element under.                   |        | Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-button` on the same page.                                                                                                                 |
 
 ### Slots
 
 | Name              | Description                                                                                                                                                                                                                                                                                                                                                                                                |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | (default)         | The button's visible label: text, an icon (an `<auro-icon>`, an `<svg>`, or an `<img>`), or both. Set `aria-hidden="true"` on a slotted `<svg>`, and `alt=""` on a slotted `<img>`, so screen readers skip it and read only the button's name. In `circle` and `square` buttons, an icon wrapped in another element still counts as the icon, but only an icon slotted directly is sized to the icon size. |
-| ariaLabel         | Text read by screen readers in place of the visible label. Needed when a `circle` or `square` button shows only an icon, because it has no visible text.                                                                                                                                                                                                                                                   |
-| ariaLabel.loading | Text read by screen readers while the button is loading, for example "Saving your changes". Defaults to "Loading...".                                                                                                                                                                                                                                                                                      |
+| ariaLabel         | Text read by screen readers in place of the visible label, for example "Save to favorites". Needed when a `circle` or `square` button shows only an icon or a count, unless the host has an `aria-label` or text visually hidden beside the icon already says what the button does. Without it, screen readers read the host's `aria-label`, or the visible label if there's none.                         |
+| ariaLabel.loading | Text read by screen readers in place of the visible label while the button is loading, for example "Saving your changes". Defaults to "Loading...".                                                                                                                                                                                                                                                        |
 
 ### CSS Shadow Parts
 
-| Name           | Description                                                                                              |
-| -------------- | -------------------------------------------------------------------------------------------------------- |
-| button         | The inner `<button>` element (a `<span>` when `static` is set).                                          |
-| contentWrapper | The element wrapping all of the button's content. It is hidden, but still takes up space, while loading. |
-| loader         | The loading indicator shown while `loading` is set.                                                      |
-| text           | The element wrapping the button's label.                                                                 |
+| Name           | Description                                                                                                           |
+| -------------- | --------------------------------------------------------------------------------------------------------------------- |
+| button         | The inner `<button>` element (a `<span>` when `static` is set).                                                       |
+| contentWrapper | The element wrapping all of the button's content. It's hidden, but still takes up space, while the button is loading. |
+| loader         | The loading indicator shown while `loading` is set.                                                                   |
+| text           | The element wrapping the button's label.                                                                              |
 
 ### CSS Custom Properties
 
-| Name                                | Description                                                                  |
-| ----------------------------------- | ---------------------------------------------------------------------------- |
-| --ds-auro-button-border-color       | Border color of the button.                                                  |
-| --ds-auro-button-border-inset-color | Color of the inner ring shown when the button has keyboard focus.            |
-| --ds-auro-button-container-color    | Background color of the button.                                              |
-| --ds-auro-button-container-image    | Background image layered over the background color, used for gradient fills. |
-| --ds-auro-button-loader-color       | Color of the loading indicator.                                              |
-| --ds-auro-button-tap-color          | Highlight color shown briefly when the button is tapped on a touch screen.   |
-| --ds-auro-button-text-color         | Color of the button's label text.                                            |
+| Name                                | Description                                                                                                                                                                            |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --ds-auro-button-border-color       | Border color of a `secondary` button, and of the thin outer edge of the focus ring on a `primary` button. Other variants don't show a border.                                          |
+| --ds-auro-button-border-inset-color | Color of the inner ring shown when the button has focus.                                                                                                                               |
+| --ds-auro-button-container-color    | Background color of the button. The `flat` variant doesn't use it.                                                                                                                     |
+| --ds-auro-button-container-image    | Color of a layer painted over the background color, which hides it. When you change `--ds-auro-button-container-color`, set this to the same value. The `flat` variant doesn't use it. |
+| --ds-auro-button-loader-color       | Color of the loading indicator.                                                                                                                                                        |
+| --ds-auro-button-text-color         | Color of the button's label text. The `flat` variant doesn't use it.                                                                                                                   |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Basic
@@ -107,7 +106,7 @@ Auro interfaces.
 
 ### Tab index
 
-Use `tIndex` to set the button's position in the keyboard tab order, such as `-1` to remove it from the tab order. Don't use `tabindex`: it's deprecated, and on the host element it adds a second tab stop for keyboard users.
+Use `tIndex` to set the button's position in the keyboard tab order, such as `-1` to remove it from the tab order. Don't use `tabindex`: it's deprecated, and a `tabindex` attribute on the host element can add a second tab stop for keyboard users.
 
 ### Inverse
 
@@ -121,17 +120,47 @@ On dark backgrounds, set `appearance="inverse"` to switch to colors designed for
 <auro-button variant="tertiary" appearance="inverse">Tertiary</auro-button>
 <auro-button variant="ghost" appearance="inverse">Ghost</auro-button>
 <br /><br/>
-<auro-button appearance="inverse" shape="circle" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button appearance="inverse" shape="circle" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button appearance="inverse" shape="circle" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button appearance="inverse" shape="circle" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button appearance="inverse" shape="circle" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="circle" size="xl">
+<span slot="ariaLabel">Save to favorites</span>
+<auro-icon customColor category="interface" name="heart-filled"></auro-icon>
+</auro-button>
+<auro-button appearance="inverse" shape="circle" size="lg" variant="secondary">
+<span slot="ariaLabel">Save to favorites</span>
+<auro-icon customColor category="interface" name="heart-filled"></auro-icon>
+</auro-button>
+<auro-button appearance="inverse" shape="circle" size="md" variant="tertiary">
+<span slot="ariaLabel">Save to favorites</span>
+<auro-icon customColor category="interface" name="heart-filled"></auro-icon>
+</auro-button>
+<auro-button appearance="inverse" shape="circle" size="sm" variant="ghost">
+<span slot="ariaLabel">Save to favorites</span>
+<auro-icon customColor category="interface" name="heart-filled"></auro-icon>
+</auro-button>
+<auro-button appearance="inverse" shape="circle" size="xs" variant="flat">
+<span slot="ariaLabel">Save to favorites</span>
+<auro-icon customColor category="interface" name="heart-filled"></auro-icon>
+</auro-button>
 <br /><br/>
-<auro-button appearance="inverse" shape="square" size="xl"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button appearance="inverse" shape="square" size="lg" variant="secondary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button appearance="inverse" shape="square" size="md" variant="tertiary"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button appearance="inverse" shape="square" size="sm" variant="ghost"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
-<auro-button appearance="inverse" shape="square" size="xs" variant="flat"><auro-icon customColor category="interface" name="heart-filled"></auro-icon></auro-button>
+<auro-button appearance="inverse" shape="square" size="xl">
+<span slot="ariaLabel">Save to favorites</span>
+<auro-icon customColor category="interface" name="heart-filled"></auro-icon>
+</auro-button>
+<auro-button appearance="inverse" shape="square" size="lg" variant="secondary">
+<span slot="ariaLabel">Save to favorites</span>
+<auro-icon customColor category="interface" name="heart-filled"></auro-icon>
+</auro-button>
+<auro-button appearance="inverse" shape="square" size="md" variant="tertiary">
+<span slot="ariaLabel">Save to favorites</span>
+<auro-icon customColor category="interface" name="heart-filled"></auro-icon>
+</auro-button>
+<auro-button appearance="inverse" shape="square" size="sm" variant="ghost">
+<span slot="ariaLabel">Save to favorites</span>
+<auro-icon customColor category="interface" name="heart-filled"></auro-icon>
+</auro-button>
+<auro-button appearance="inverse" shape="square" size="xs" variant="flat">
+<span slot="ariaLabel">Save to favorites</span>
+<auro-icon customColor category="interface" name="heart-filled"></auro-icon>
+</auro-button>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -144,17 +173,47 @@ On dark backgrounds, set `appearance="inverse"` to switch to colors designed for
 &lt;auro-button variant="tertiary" appearance="inverse"&gt;Tertiary&lt;/auro-button&gt;
 &lt;auro-button variant="ghost" appearance="inverse"&gt;Ghost&lt;/auro-button&gt;
 &#10;&lt;br /&gt;&lt;br/&gt;
-&#10;&lt;auro-button appearance="inverse" shape="circle" size="xl"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
-&lt;auro-button appearance="inverse" shape="circle" size="lg" variant="secondary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
-&lt;auro-button appearance="inverse" shape="circle" size="md" variant="tertiary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
-&lt;auro-button appearance="inverse" shape="circle" size="sm" variant="ghost"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
-&lt;auro-button appearance="inverse" shape="circle" size="xs" variant="flat"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
+&#10;&lt;auro-button appearance="inverse" shape="circle" size="xl"&gt;
+  &lt;span slot="ariaLabel"&gt;Save to favorites&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="circle" size="lg" variant="secondary"&gt;
+  &lt;span slot="ariaLabel"&gt;Save to favorites&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="circle" size="md" variant="tertiary"&gt;
+  &lt;span slot="ariaLabel"&gt;Save to favorites&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="circle" size="sm" variant="ghost"&gt;
+  &lt;span slot="ariaLabel"&gt;Save to favorites&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="circle" size="xs" variant="flat"&gt;
+  &lt;span slot="ariaLabel"&gt;Save to favorites&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
 &#10;&lt;br /&gt;&lt;br/&gt;
-&#10;&lt;auro-button appearance="inverse" shape="square" size="xl"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
-&lt;auro-button appearance="inverse" shape="square" size="lg" variant="secondary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
-&lt;auro-button appearance="inverse" shape="square" size="md" variant="tertiary"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
-&lt;auro-button appearance="inverse" shape="square" size="sm" variant="ghost"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;
-&lt;auro-button appearance="inverse" shape="square" size="xs" variant="flat"&gt;&lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;&lt;/auro-button&gt;</code></pre>
+&#10;&lt;auro-button appearance="inverse" shape="square" size="xl"&gt;
+  &lt;span slot="ariaLabel"&gt;Save to favorites&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="square" size="lg" variant="secondary"&gt;
+  &lt;span slot="ariaLabel"&gt;Save to favorites&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="square" size="md" variant="tertiary"&gt;
+  &lt;span slot="ariaLabel"&gt;Save to favorites&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="square" size="sm" variant="ghost"&gt;
+  &lt;span slot="ariaLabel"&gt;Save to favorites&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;
+&lt;auro-button appearance="inverse" shape="square" size="xs" variant="flat"&gt;
+  &lt;span slot="ariaLabel"&gt;Save to favorites&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -205,26 +264,28 @@ Use the `disabled` attribute to turn the button off. A disabled button is shown 
 
 ### Static
 
-Use the `static` attribute to show the button's styling without any button behavior. A static button can't be clicked or focused, and screen readers don't announce it as a button. Use it when the button sits inside another clickable element, such as a linked card or slide.
+Use the `static` attribute to show the button's styling without any button behavior. A static button can't be focused, doesn't submit a native `<form>`, and isn't announced as a button by screen readers. When the button sits inside another clickable element, such as a linked card or slide, use a static button.
+
+A static button renders a `<span>`, where screen readers don't reliably read an accessible name, so give the clickable element that contains it a name instead. A static `circle` or `square` button doesn't need an `ariaLabel` slot.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/static.html) -->
 <!-- The below content is automatically added from ./../apiExamples/static.html -->
-<auro-button static>Static Primary Button</auro-button>
-<auro-button static variant="secondary">Static Secondary Button</auro-button>
-<auro-button static variant="tertiary">Static Tertiary Button</auro-button>
+<auro-button static>Static primary button</auro-button>
+<auro-button static variant="secondary">Static secondary button</auro-button>
+<auro-button static variant="tertiary">Static tertiary button</auro-button>
 <br><br>
-<auro-button static fluid>Static Fluid Button</auro-button>
+<auro-button static fluid>Static fluid button</auro-button>
 <br><br>
-<auro-button static size="xs">XS Static</auro-button>
-<auro-button static size="sm">SM Static</auro-button>
-<auro-button static size="md">MD Static</auro-button>
-<auro-button static size="lg">LG Static</auro-button>
-<auro-button static size="xl">XL Static</auro-button>
+<auro-button static size="xs">Extra small static</auro-button>
+<auro-button static size="sm">Small static</auro-button>
+<auro-button static size="md">Medium static</auro-button>
+<auro-button static size="lg">Large static</auro-button>
+<auro-button static size="xl">Extra large static</auro-button>
 <br><br>
 <auro-button static shape="pill">
 <auro-icon category="interface" name="home-filled" customColor></auro-icon>
-    Static Pill with Icon
+    Static pill with icon
 </auro-button>
 <auro-button static shape="circle">
 <auro-icon category="interface" name="home-filled" customColor></auro-icon>
@@ -239,21 +300,21 @@ Use the `static` attribute to show the button's styling without any button behav
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/static.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/static.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-button static&gt;Static Primary Button&lt;/auro-button&gt;
-&lt;auro-button static variant="secondary"&gt;Static Secondary Button&lt;/auro-button&gt;
-&lt;auro-button static variant="tertiary"&gt;Static Tertiary Button&lt;/auro-button&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-button static&gt;Static primary button&lt;/auro-button&gt;
+&lt;auro-button static variant="secondary"&gt;Static secondary button&lt;/auro-button&gt;
+&lt;auro-button static variant="tertiary"&gt;Static tertiary button&lt;/auro-button&gt;
 &#10;&lt;br&gt;&lt;br&gt;
-&#10;&lt;auro-button static fluid&gt;Static Fluid Button&lt;/auro-button&gt;
+&#10;&lt;auro-button static fluid&gt;Static fluid button&lt;/auro-button&gt;
 &#10;&lt;br&gt;&lt;br&gt;
-&#10;&lt;auro-button static size="xs"&gt;XS Static&lt;/auro-button&gt;
-&lt;auro-button static size="sm"&gt;SM Static&lt;/auro-button&gt;
-&lt;auro-button static size="md"&gt;MD Static&lt;/auro-button&gt;
-&lt;auro-button static size="lg"&gt;LG Static&lt;/auro-button&gt;
-&lt;auro-button static size="xl"&gt;XL Static&lt;/auro-button&gt;
+&#10;&lt;auro-button static size="xs"&gt;Extra small static&lt;/auro-button&gt;
+&lt;auro-button static size="sm"&gt;Small static&lt;/auro-button&gt;
+&lt;auro-button static size="md"&gt;Medium static&lt;/auro-button&gt;
+&lt;auro-button static size="lg"&gt;Large static&lt;/auro-button&gt;
+&lt;auro-button static size="xl"&gt;Extra large static&lt;/auro-button&gt;
 &#10;&lt;br&gt;&lt;br&gt;
 &#10;&lt;auro-button static shape="pill"&gt;
   &lt;auro-icon category="interface" name="home-filled" customColor&gt;&lt;/auro-icon&gt;
-  Static Pill with Icon
+  Static pill with icon
 &lt;/auro-button&gt;
 &#10;&lt;auro-button static shape="circle"&gt;
   &lt;auro-icon category="interface" name="home-filled" customColor&gt;&lt;/auro-icon&gt;
@@ -266,9 +327,9 @@ Use the `static` attribute to show the button's styling without any button behav
 <div class="exampleWrapper--ondark">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/static-inverse.html) -->
 <!-- The below content is automatically added from ./../apiExamples/static-inverse.html -->
-<auro-button static appearance="inverse">Static Primary Button</auro-button>
-<auro-button static variant="secondary" appearance="inverse">Static Secondary Button</auro-button>
-<auro-button static variant="tertiary" appearance="inverse">Static Tertiary Button</auro-button>
+<auro-button static appearance="inverse">Static primary button</auro-button>
+<auro-button static variant="secondary" appearance="inverse">Static secondary button</auro-button>
+<auro-button static variant="tertiary" appearance="inverse">Static tertiary button</auro-button>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -276,9 +337,9 @@ Use the `static` attribute to show the button's styling without any button behav
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/static-inverse.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/static-inverse.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-button static appearance="inverse"&gt;Static Primary Button&lt;/auro-button&gt;
-&lt;auro-button static variant="secondary" appearance="inverse"&gt;Static Secondary Button&lt;/auro-button&gt;
-&lt;auro-button static variant="tertiary" appearance="inverse"&gt;Static Tertiary Button&lt;/auro-button&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-button static appearance="inverse"&gt;Static primary button&lt;/auro-button&gt;
+&lt;auro-button static variant="secondary" appearance="inverse"&gt;Static secondary button&lt;/auro-button&gt;
+&lt;auro-button static variant="tertiary" appearance="inverse"&gt;Static tertiary button&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -289,11 +350,11 @@ Use the `size` attribute to set the button's height, padding, and label text siz
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/size.html) -->
 <!-- The below content is automatically added from ./../apiExamples/size.html -->
-<auro-button size="xs">Extra Small</auro-button>
+<auro-button size="xs">Extra small</auro-button>
 <auro-button size="sm">Small</auro-button>
 <auro-button size="md">Medium</auro-button>
 <auro-button size="lg">Large</auro-button>
-<auro-button size="xl">Extra Large</auro-button>
+<auro-button size="xl">Extra large</auro-button>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -301,11 +362,11 @@ Use the `size` attribute to set the button's height, padding, and label text siz
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/size.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/size.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-button size="xs"&gt;Extra Small&lt;/auro-button&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-button size="xs"&gt;Extra small&lt;/auro-button&gt;
 &lt;auro-button size="sm"&gt;Small&lt;/auro-button&gt;
 &lt;auro-button size="md"&gt;Medium&lt;/auro-button&gt;
 &lt;auro-button size="lg"&gt;Large&lt;/auro-button&gt;
-&lt;auro-button size="xl"&gt;Extra Large&lt;/auro-button&gt;</code></pre>
+&lt;auro-button size="xl"&gt;Extra large&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -315,7 +376,7 @@ Use the `shape` attribute to set the button's outline: `rounded` (the default), 
 
 Use `rounded` or `pill` for buttons with a text label. They grow to fit their content.
 
-Use `circle` or `square` for a single icon or for short text, such as a count. These shapes always have equal width and height. Text shows only when no icon is slotted; otherwise, only the icon shows. An `<auro-icon>`, `<svg>`, or `<img>` counts as an icon whether it's slotted directly or wrapped in another element. The button sizes a slotted icon to the icon size and fills an `<svg>` with the button's text color, but it can't resize an icon inside a wrapper or recolor an `<img>`, so slot the icon directly. Because an icon or a number alone doesn't say what the button does, give these buttons an accessible name with the `ariaLabel` slot or the `aria-label` attribute.
+Use `circle` or `square` for a single icon or for short text, such as a count. These shapes always have equal width and height. Text shows only when no icon is slotted; otherwise, only the icon shows. An `<auro-icon>`, `<svg>`, or `<img>` counts as an icon whether it's slotted directly or wrapped in another element. The button sizes a slotted icon to the icon size and fills an `<svg>` with the button's text color, but it can't resize an icon inside a wrapper or recolor an `<img>`, so slot the icon directly. Because an icon or a number alone doesn't say what the button does, give these buttons an accessible name with the `ariaLabel` slot or the `aria-label` attribute. A static button is the exception; see [Static](#static).
 
 #### Rounded
 
@@ -482,7 +543,7 @@ Use `<auro-icon>` for the icon in this pattern. A `circle` or `square` button si
 
 #### Circle with text
 
-Use short text, such as a count, in place of an icon. Put the text directly in the button, not inside another element, and describe the button in the `ariaLabel` slot.
+Use short text, such as a count, in place of an icon, and describe the button in the `ariaLabel` slot.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/shape-circle-text.html) -->
@@ -673,7 +734,7 @@ To use your own graphic in place of an Auro icon, put an `<svg>` directly in the
 
 Use the `variant` attribute to set the button's visual emphasis. Use `primary` (the default) for the single most important action in a view, `secondary` for supporting actions, and `tertiary`, `ghost`, or `flat` for progressively quieter actions.
 
-`flat` shows only the label, with no background or border. Use it only for controls that need no visible styling until they have focus, such as the close button on a dialog or the clear button in a form field.
+`flat` shows only the label, with no background or border. Use it only for `circle` or `square` buttons that need no visible styling until they have focus, such as the close button on a dialog or the clear button in a form field. A flat button with a `rounded` or `pill` shape doesn't currently show a focus ring.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/variant.html) -->
@@ -682,7 +743,10 @@ Use the `variant` attribute to set the button's visual emphasis. Use `primary` (
 <auro-button variant="secondary">Secondary</auro-button>
 <auro-button variant="tertiary">Tertiary</auro-button>
 <auro-button variant="ghost">Ghost</auro-button>
-<auro-button variant="flat">Flat</auro-button>
+<auro-button variant="flat" shape="circle">
+<span slot="ariaLabel">Save to favorites</span>
+<auro-icon customColor category="interface" name="heart-filled"></auro-icon>
+</auro-button>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -694,7 +758,10 @@ Use the `variant` attribute to set the button's visual emphasis. Use `primary` (
 &lt;auro-button variant="secondary"&gt;Secondary&lt;/auro-button&gt;
 &lt;auro-button variant="tertiary"&gt;Tertiary&lt;/auro-button&gt;
 &lt;auro-button variant="ghost"&gt;Ghost&lt;/auro-button&gt;
-&lt;auro-button variant="flat"&gt;Flat&lt;/auro-button&gt;</code></pre>
+&lt;auro-button variant="flat" shape="circle"&gt;
+  &lt;span slot="ariaLabel"&gt;Save to favorites&lt;/span&gt;
+  &lt;auro-icon customColor category="interface" name="heart-filled"&gt;&lt;/auro-icon&gt;
+&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -785,15 +852,27 @@ When a button that shows text on hover and focus is right-aligned, it grows and 
 
 ### Loading state
 
-Use the `loading` attribute while work is in progress, such as after a form is submitted. It replaces the label with an animated loading indicator and turns the button off, so people can't submit the same action twice. The button keeps its width, so the layout doesn't shift. Use the `ariaLabel.loading` slot to tell screen reader users what's happening.
+While work is in progress, such as after a form is submitted, use the `loading` attribute. It replaces the label with an animated loading indicator and turns the button off, so people can't submit the same action twice. The button keeps its width, so the layout doesn't shift. Use the `ariaLabel.loading` slot to tell screen reader users what's happening.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loading.html) -->
 <!-- The below content is automatically added from ./../apiExamples/loading.html -->
-<auro-button loading>Primary</auro-button>
-<auro-button variant="secondary" loading>Secondary</auro-button>
-<auro-button variant="tertiary" loading>Tertiary</auro-button>
-<auro-button variant="ghost" loading>Ghost</auro-button>
+<auro-button loading>
+<span slot="ariaLabel.loading">Saving your changes</span>
+    Primary
+</auro-button>
+<auro-button variant="secondary" loading>
+<span slot="ariaLabel.loading">Saving your changes</span>
+    Secondary
+</auro-button>
+<auro-button variant="tertiary" loading>
+<span slot="ariaLabel.loading">Saving your changes</span>
+    Tertiary
+</auro-button>
+<auro-button variant="ghost" loading>
+<span slot="ariaLabel.loading">Saving your changes</span>
+    Ghost
+</auro-button>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -801,19 +880,43 @@ Use the `loading` attribute while work is in progress, such as after a form is s
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loading.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/loading.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-button loading&gt;Primary&lt;/auro-button&gt;
-&lt;auro-button variant="secondary" loading&gt;Secondary&lt;/auro-button&gt;
-&lt;auro-button variant="tertiary" loading&gt;Tertiary&lt;/auro-button&gt;
-&lt;auro-button variant="ghost" loading&gt;Ghost&lt;/auro-button&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-button loading&gt;
+  &lt;span slot="ariaLabel.loading"&gt;Saving your changes&lt;/span&gt;
+  Primary
+&lt;/auro-button&gt;
+&lt;auro-button variant="secondary" loading&gt;
+  &lt;span slot="ariaLabel.loading"&gt;Saving your changes&lt;/span&gt;
+  Secondary
+&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary" loading&gt;
+  &lt;span slot="ariaLabel.loading"&gt;Saving your changes&lt;/span&gt;
+  Tertiary
+&lt;/auro-button&gt;
+&lt;auro-button variant="ghost" loading&gt;
+  &lt;span slot="ariaLabel.loading"&gt;Saving your changes&lt;/span&gt;
+  Ghost
+&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/loading-inverse.html) -->
 <!-- The below content is automatically added from ./../apiExamples/loading-inverse.html -->
-<auro-button appearance="inverse" loading>Primary</auro-button>
-<auro-button variant="secondary" appearance="inverse" loading>Secondary</auro-button>
-<auro-button variant="tertiary" appearance="inverse" loading>Tertiary</auro-button>
-<auro-button variant="ghost" appearance="inverse" loading>Ghost</auro-button>
+<auro-button appearance="inverse" loading>
+<span slot="ariaLabel.loading">Saving your changes</span>
+    Primary
+</auro-button>
+<auro-button variant="secondary" appearance="inverse" loading>
+<span slot="ariaLabel.loading">Saving your changes</span>
+    Secondary
+</auro-button>
+<auro-button variant="tertiary" appearance="inverse" loading>
+<span slot="ariaLabel.loading">Saving your changes</span>
+    Tertiary
+</auro-button>
+<auro-button variant="ghost" appearance="inverse" loading>
+<span slot="ariaLabel.loading">Saving your changes</span>
+    Ghost
+</auro-button>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -821,10 +924,22 @@ Use the `loading` attribute while work is in progress, such as after a form is s
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/loading-inverse.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/loading-inverse.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-button appearance="inverse" loading&gt;Primary&lt;/auro-button&gt;
-&lt;auro-button variant="secondary" appearance="inverse" loading&gt;Secondary&lt;/auro-button&gt;
-&lt;auro-button variant="tertiary" appearance="inverse" loading&gt;Tertiary&lt;/auro-button&gt;
-&lt;auro-button variant="ghost" appearance="inverse" loading&gt;Ghost&lt;/auro-button&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-button appearance="inverse" loading&gt;
+  &lt;span slot="ariaLabel.loading"&gt;Saving your changes&lt;/span&gt;
+  Primary
+&lt;/auro-button&gt;
+&lt;auro-button variant="secondary" appearance="inverse" loading&gt;
+  &lt;span slot="ariaLabel.loading"&gt;Saving your changes&lt;/span&gt;
+  Secondary
+&lt;/auro-button&gt;
+&lt;auro-button variant="tertiary" appearance="inverse" loading&gt;
+  &lt;span slot="ariaLabel.loading"&gt;Saving your changes&lt;/span&gt;
+  Tertiary
+&lt;/auro-button&gt;
+&lt;auro-button variant="ghost" appearance="inverse" loading&gt;
+  &lt;span slot="ariaLabel.loading"&gt;Saving your changes&lt;/span&gt;
+  Ghost
+&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -838,7 +953,7 @@ To show an icon from the Auro icons library, put an `<auro-icon>` in the button 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/icon.html) -->
 <!-- The below content is automatically added from ./../apiExamples/icon.html -->
 <auro-button>
-<span>Activate WiFi</span>
+<span>Activate Wi-Fi</span>
 <auro-icon customColor category="in-flight" name="wifi"></auro-icon>
 </auro-button>
 <auro-button variant="secondary">
@@ -857,7 +972,7 @@ To show an icon from the Auro icons library, put an `<auro-icon>` in the button 
 <!-- The below code snippet is automatically added from ./../apiExamples/icon.html -->
 
 <pre class="language-html"><code class="language-html">&lt;auro-button&gt;
-  &lt;span&gt;Activate WiFi&lt;/span&gt;
+  &lt;span&gt;Activate Wi-Fi&lt;/span&gt;
   &lt;auro-icon customColor category="in-flight" name="wifi"&gt;&lt;/auro-icon&gt;
 &lt;/auro-button&gt;
 &lt;auro-button variant="secondary"&gt;
@@ -873,7 +988,7 @@ To show an icon from the Auro icons library, put an `<auro-icon>` in the button 
 
 ### Accessible names
 
-#### ariaLabel slots
+#### <a name="ariaLabel"></a>`ariaLabel`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a> slots
 
 Use the `ariaLabel` slot to give screen reader users a more descriptive name than the visible label, and the `ariaLabel.loading` slot to tell them what's happening while the button is loading.
 
@@ -885,7 +1000,7 @@ Use the `ariaLabel` slot to give screen reader users a more descriptive name tha
     Pay
 </auro-button>
 <auro-button loading>
-<span slot="ariaLabel.loading">Processing your payment</span>
+<span slot="ariaLabel.loading">Paying for your trip</span>
     Pay
 </auro-button>
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -900,29 +1015,31 @@ Use the `ariaLabel` slot to give screen reader users a more descriptive name tha
   Pay
 &lt;/auro-button&gt;
 &#10;&lt;auro-button loading&gt;
-  &lt;span slot="ariaLabel.loading"&gt;Processing your payment&lt;/span&gt;
+  &lt;span slot="ariaLabel.loading"&gt;Paying for your trip&lt;/span&gt;
   Pay
 &lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### aria-labelledby
+#### `aria-labelledby`
 
 Set `aria-labelledby` to the ID of another element whose text names the button. The attribute is moved from `<auro-button>` to the inner button element.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/aria-labeledby.html) -->
 <!-- The below content is automatically added from ./../apiExamples/aria-labeledby.html -->
-<auro-button aria-labelledby="button-label">
-    Auro Button
-<label id="button-label" class="util_displayHiddenVisually">My Button Label</label>
-</auro-button>
+<span id="button-label" class="util_displayHiddenVisually">Pay for your trip</span>
+<auro-button aria-labelledby="button-label">Pay</auro-button>
 <style>
     .util_displayHiddenVisually {
-      clip: rect(1px, 1px, 1px, 1px);
+      position: absolute;
       width: 1px;
       height: 1px;
       padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
       border: 0;
     }
 </style>
@@ -933,16 +1050,18 @@ Set `aria-labelledby` to the ID of another element whose text names the button. 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/aria-labeledby.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/aria-labeledby.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-button aria-labelledby="button-label"&gt;
-  Auro Button
-  &lt;label id="button-label" class="util_displayHiddenVisually"&gt;My Button Label&lt;/label&gt;
-&lt;/auro-button&gt;
+<pre class="language-html"><code class="language-html">&lt;span id="button-label" class="util_displayHiddenVisually"&gt;Pay for your trip&lt;/span&gt;
+&lt;auro-button aria-labelledby="button-label"&gt;Pay&lt;/auro-button&gt;
 &#10;&lt;style&gt;
   .util_displayHiddenVisually {
-    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
     width: 1px;
     height: 1px;
     padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
     border: 0;
   }
 &lt;/style&gt;</code></pre>
@@ -1063,7 +1182,10 @@ The `loader` part is the loading indicator shown while `loading` is set.
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_loader.html) -->
 <!-- The below content is automatically added from ./../apiExamples/part_loader.html -->
-<auro-button id="part-loader-example" loading>Primary</auro-button>
+<auro-button id="part-loader-example" loading>
+<span slot="ariaLabel.loading">Saving your changes</span>
+    Primary
+</auro-button>
 <style>
     #part-loader-example::part(loader) {
       background-color: white;
@@ -1079,7 +1201,10 @@ The `loader` part is the loading indicator shown while `loading` is set.
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/part_loader.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/part_loader.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-button id="part-loader-example" loading&gt;Primary&lt;/auro-button&gt;
+<pre class="language-html"><code class="language-html">&lt;auro-button id="part-loader-example" loading&gt;
+  &lt;span slot="ariaLabel.loading"&gt;Saving your changes&lt;/span&gt;
+  Primary
+&lt;/auro-button&gt;
 &lt;style&gt;
   #part-loader-example::part(loader) {
     background-color: white;
@@ -1095,14 +1220,12 @@ The `loader` part is the loading indicator shown while `loading` is set.
 
 ### Run a function on click
 
-To run your own code when people click the button, listen for its `click` event, as these examples do with `onclick`.
+To run your own code when people click the button, listen for its `click` event, as this example does with `onclick`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/pass-function.html) -->
 <!-- The below content is automatically added from ./../apiExamples/pass-function.html -->
-<auro-button onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
-<auro-button disabled onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
-<auro-button loading onclick="alert('YOU CLICKED ME!');">Primary</auro-button>
+<auro-button onclick="alert('You clicked me!');">Primary</auro-button>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -1110,24 +1233,30 @@ To run your own code when people click the button, listen for its `click` event,
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/pass-function.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/pass-function.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-button onclick="alert('YOU CLICKED ME!');"&gt;Primary&lt;/auro-button&gt;
-&lt;auro-button disabled onclick="alert('YOU CLICKED ME!');"&gt;Primary&lt;/auro-button&gt;
-&lt;auro-button loading onclick="alert('YOU CLICKED ME!');"&gt;Primary&lt;/auro-button&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-button onclick="alert('You clicked me!');"&gt;Primary&lt;/auro-button&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Do's and don'ts
+### Dos and don'ts
 
-Don't set `disabled` and `loading` on the same button. A loading button is already turned off, so `disabled` adds nothing.
+Don't set `disabled` and `loading` on the same button. A loading button is already turned off, so `disabled` isn't needed.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/do-and-dont.html) -->
 <!-- The below content is automatically added from ./../apiExamples/do-and-dont.html -->
 <auro-alert type="error" noIcon>
-<auro-button loading disabled>Primary</auro-button>
+<p><strong>Don't:</strong> set <code>disabled</code> and <code>loading</code> on the same button.</p>
+<auro-button loading disabled>
+<span slot="ariaLabel.loading">Saving your changes</span>
+      Primary
+</auro-button>
 </auro-alert>
 <auro-alert type="success" noIcon style="padding-top: 5px;">
-<auro-button loading>Primary</auro-button>
+<p><strong>Do:</strong> set only <code>loading</code>.</p>
+<auro-button loading>
+<span slot="ariaLabel.loading">Saving your changes</span>
+      Primary
+</auro-button>
 </auro-alert>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -1137,10 +1266,18 @@ Don't set `disabled` and `loading` on the same button. A loading button is alrea
 <!-- The below code snippet is automatically added from ./../apiExamples/do-and-dont.html -->
 
 <pre class="language-html"><code class="language-html">&lt;auro-alert type="error" noIcon&gt;
-  &lt;auro-button loading disabled&gt;Primary&lt;/auro-button&gt;
+  &lt;p&gt;&lt;strong&gt;Don't:&lt;/strong&gt; set &lt;code&gt;disabled&lt;/code&gt; and &lt;code&gt;loading&lt;/code&gt; on the same button.&lt;/p&gt;
+  &lt;auro-button loading disabled&gt;
+    &lt;span slot="ariaLabel.loading"&gt;Saving your changes&lt;/span&gt;
+    Primary
+  &lt;/auro-button&gt;
 &lt;/auro-alert&gt;
 &lt;auro-alert type="success" noIcon style="padding-top: 5px;"&gt;
-  &lt;auro-button loading&gt;Primary&lt;/auro-button&gt;
+  &lt;p&gt;&lt;strong&gt;Do:&lt;/strong&gt; set only &lt;code&gt;loading&lt;/code&gt;.&lt;/p&gt;
+  &lt;auro-button loading&gt;
+    &lt;span slot="ariaLabel.loading"&gt;Saving your changes&lt;/span&gt;
+    Primary
+  &lt;/auro-button&gt;
 &lt;/auro-alert&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
