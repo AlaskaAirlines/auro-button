@@ -261,20 +261,14 @@ $button-sizes: (
  * @mixin icon-styles
  * @description
  *   Sets icon size for a given shape and size.
- *   Symmetrical shapes also size a slotted svg to match auro-icon.
  */
 @mixin icon-styles($shape, $size, $iconSize) {
   :host([size='#{$size}'][shape=#{$shape}]) {
     ::slotted(auro-icon),
-    ::slotted([auro-icon]) {
+    ::slotted([auro-icon]),
+    ::slotted(svg),
+    ::slotted(img) {
       --ds-auro-icon-size: #{$iconSize};
-    }
-
-    @if map.get($button-shapes, $shape) == 'symmetrical' {
-      ::slotted(svg) {
-        width: $iconSize;
-        height: $iconSize;
-      }
     }
   }
 }
@@ -283,6 +277,33 @@ $button-sizes: (
 @each $size, $size-value in $button-sizes {
   @each $shape, $shape-value in $button-shapes {
     @include size-and-shape-styles($size, $shape);
+  }
+}
+
+// Symmetrical shapes size a slotted svg or img from the same token as auro-icon.
+// Fill is inherited, so an svg without a fill attribute takes the button text color,
+// whether it's slotted directly or wrapped in another element. A fill the consumer
+// sets, such as fill="none" on outline icons, is kept.
+%symmetrical-icon {
+  width: var(--ds-auro-icon-size);
+  height: var(--ds-auro-icon-size);
+  object-fit: contain;
+}
+
+%symmetrical-icon-fill {
+  fill: currentcolor;
+}
+
+@each $shape, $shape-type in $button-shapes {
+  @if $shape-type == 'symmetrical' {
+    :host([shape='#{$shape}']) ::slotted(svg),
+    :host([shape='#{$shape}']) ::slotted(img) {
+      @extend %symmetrical-icon;
+    }
+
+    :host([shape='#{$shape}']) .textSlot {
+      @extend %symmetrical-icon-fill;
+    }
   }
 }
 
@@ -322,35 +343,14 @@ $button-sizes: (
  * ----------------------------------------
  * 5. Shape-specific Styles
  * ----------------------------------------
- * - Applies styles only for specific shapes.
- * - Mixins: symmetrical-styles
+ * - Hiding non-icon content in symmetrical shapes is rendered by auro-button.js
+ *   (`renderIconOnlyStyle`), which knows which slotted elements hold an icon.
  */
 
-/**
- * @mixin symmetrical-styles
- * @description
- *   Hides non-icon content for symmetrical shapes (e.g., circle, square).
- */
-@mixin symmetrical-styles($shape) {
-  :host([shape='#{$shape}']) {
-    ::slotted(:not(auro-icon):not([auro-icon]):not(svg)) {
-      position: absolute;
-      overflow: hidden;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      border: 0;
-      clip: rect(1px, 1px, 1px, 1px);
-    }
-  }
-}
-
-// SHAPE LOOP
-@each $shape, $shapeValue in $button-shapes {
-  $shapeType: map.get($button-shapes, $shape);
-  @if $shapeType == 'symmetrical' {
-    @include symmetrical-styles($shape);
-  }
+// Hidden bare text still takes part in the flex layout, so a gap beside it
+// would push the icon off center.
+.textSlot.iconOnly {
+  gap: 0;
 }
 
 /**

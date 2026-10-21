@@ -130,7 +130,7 @@ Available options are:
 
 The `rounded` and `pill` shapes are flexible and can hold any amount of information
 
-The `circle` and `square` shapes are always equal dimensions. These shapes support either an icon or short text such as a count (e.g. `1`). Text is only displayed when no icon is slotted and the text is not wrapped in an element; otherwise only the icon is shown. A number alone is rarely a meaningful accessible name, so provide one with the `aria-label` attribute or the `ariaLabel` slot.
+The `circle` and `square` shapes are always equal dimensions. These shapes support either an icon or short text such as a count (e.g. `1`). Text is only displayed when no icon is slotted; otherwise only the icon is shown. An `<auro-icon>`, `<svg>`, or `<img>` counts as an icon whether it's slotted directly or wrapped in another element. The button sizes an icon to the icon size and fills an `<svg>` with the button text color, but it can't resize an icon inside a wrapper or recolor an `<img>`. Slot the icon directly so it matches the button. A number alone is rarely a meaningful accessible name, so provide one with the `aria-label` attribute or the `ariaLabel` slot.
 
 #### Rounded
 
@@ -149,7 +149,9 @@ The `circle` and `square` shapes are always equal dimensions. These shapes suppo
 
 #### Rounded - Toggle Text
 
-The `rounded` attribute supports the ability to hide/show the text of the `auro-button`. This can be done by changing the value of the `iconOnly` attribute. In this example, the text is toggled via `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
+A `circle` or `square` button holds an icon or short text such as a count. When an icon is slotted, it shows the icon and hides any text beside it, while a `pill` or `rounded` button shows the text next to the icon. To hide and show the text, change the `shape` attribute between these values. In this example, the button switches between `circle` and `pill` on `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users. The text stays visible while the button is either hovered or focused, and hides only when neither is true. Screen readers still read the hidden text, so the button doesn't need an `ariaLabel` slot.
+
+Use `<auro-icon>` for the icon in this pattern. A `circle` or `square` button sizes a slotted `<svg>` to the icon size and fills it with the button text color, but `rounded` and `pill` buttons leave the svg's own size and fill alone. So a slotted `<svg>` changes size and color when the shape changes. To keep a slotted `<svg>` the same in both shapes, set its size with page CSS and give it a `fill` attribute.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/toggled-text.html) -->
@@ -266,7 +268,7 @@ In the following example see how the `fluid` attributes alters the shape of the 
 
 ### Right Aligned
 
-This example shows a `rounded` `auro-button` that is right-aligned, demonstrating how the button starts from the right and grows/shrinks from right to left when using the `toggleText` attribute in conjuction with the `mouseover` and `mouseout` events. The `focusin` and `focusout` events simulate toggling text for keyboard users.
+This example shows a right-aligned `auro-button` that switches `shape` between `circle` and `pill` on `mouseover` and `mouseout` events. Because the button is right-aligned, it grows and shrinks from right to left as the text is shown and hidden. The `focusin` and `focusout` events simulate toggling text for keyboard users.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/right-align.html) -->
@@ -388,23 +390,6 @@ For buttons without a `buttonHref` attribute, the `button` part will be availabl
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/part_button.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
-
-### Link
-
-For buttons with a `buttonHref` property, the `link` part will be available
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/part_link.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/part_link.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>

@@ -28,6 +28,10 @@ import tokensCss from "./styles/tokens.scss";
 
 const ICON_ONLY_SHAPES = ["circle", "square"];
 
+// Elements that count as an icon. A slotted child holds an icon when it matches one of these
+// or wraps one, such as a <span> around an svg.
+const ICON_SELECTOR = "auro-icon, [auro-icon], svg, img";
+
 /**
  * An accessible button that lets people take an action, such as submitting a form,
  * starting a task, or moving to the next step in a flow. It's the standard button for
@@ -37,7 +41,7 @@ const ICON_ONLY_SHAPES = ["circle", "square"];
  * - **Variants**: five levels of visual emphasis, from `primary` (the main action on the
  *   page) through `secondary`, `tertiary`, and `ghost`, down to `flat` (text only).
  * - **Shapes & sizes**: `rounded` or `pill` for text buttons, and `circle` or `square` for
- *   icon-only buttons, each in five sizes (`xs`–`xl`).
+ *   an icon or short text such as a count, each in five sizes (`xs`–`xl`).
  * - **Light & dark backgrounds**: `appearance="inverse"` switches to colors designed for
  *   dark backgrounds.
  * - **Loading state**: swaps the label for a loading indicator and blocks clicks while
@@ -53,8 +57,8 @@ const ICON_ONLY_SHAPES = ["circle", "square"];
  * @summary Accessible button for taking an action, with variants, sizes, a loading state, and form support.
  * @customElement auro-button
  * @forcePrivate {'layout'}
- * @slot - The button's visible label: text, an icon, or both. {@requiredWhen always} {@category ui}
- * @slot ariaLabel - Text read by screen readers in place of the visible label. Needed for icon-only buttons (`circle` or `square` shape), which have no visible text. {@relevantWhen !loading} {@category a11y}
+ * @slot - The button's visible label: text, an icon (an `<auro-icon>`, an `<svg>`, or an `<img>`), or both. Set `aria-hidden="true"` on a slotted `<svg>`, and `alt=""` on a slotted `<img>`, so screen readers skip it and read only the button's name. In `circle` and `square` buttons, an icon wrapped in another element still counts as the icon, but only an icon slotted directly is sized to the icon size. {@requiredWhen always} {@category ui}
+ * @slot ariaLabel - Text read by screen readers in place of the visible label. Needed when a `circle` or `square` button shows only an icon, because it has no visible text. {@relevantWhen !loading} {@category a11y}
  * @slot ariaLabel.loading - Text read by screen readers while the button is loading, for example "Saving your changes". Defaults to "Loading...". {@relevantWhen loading} {@category a11y}
  * @csspart button - The inner `<button>` element (a `<span>` when `static` is set).
  * @csspart loader - The loading indicator shown while `loading` is set.
@@ -128,12 +132,18 @@ export class AuroButton extends AuroElement {
     this.buttonRel = undefined;
 
     /**
-     * Re-renders when the text inside a slotted accessible-name element changes, which `slotchange` doesn't report.
+     * Re-renders on light DOM changes that `slotchange` doesn't report: text changing inside a slotted
+     * accessible-name element, an icon added to or removed from inside a slotted element, and an element
+     * gaining or losing the `auro-icon` attribute, such as a renamed icon that upgrades after the button renders.
      * @private
      */
-    this.ariaLabelObserver = new MutationObserver((mutations) => {
+    this.lightDomObserver = new MutationObserver((mutations) => {
       if (
-        mutations.some((mutation) => this.isInAriaLabelSlot(mutation.target))
+        mutations.some(
+          (mutation) =>
+            mutation.type !== "characterData" ||
+            this.isInAriaLabelSlot(mutation.target),
+        )
       ) {
         this.requestUpdate();
       }
@@ -159,7 +169,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for icon-only buttons. Icon-only buttons need a text alternative in the `ariaLabel` slot.
+       * Sets the button's shape. Use `rounded` (the default) or `pill` for buttons with a text label, and `circle` or `square` for an icon (an `<auro-icon>`, an `<svg>`, or an `<img>`) or short text such as a count. When an icon is slotted, `circle` and `square` buttons show only the icon, so they need a text alternative in the `ariaLabel` slot.
        * @type {"rounded" | "pill" | "circle" | "square"}
        * @default "rounded"
        * @category ui
@@ -340,12 +350,14 @@ export class AuroButton extends AuroElement {
   }
 
   /**
-   * Moves keyboard focus to the inner `<button>` element.
-   * @private
+   * Moves keyboard focus to the inner `<button>` element, or to the inner `<a>` element when `buttonHref` is set. Does nothing when `static` is set or before the button first renders.
+   * @param {FocusOptions} [options] - The options passed to the inner element's `focus()`.
    * @returns {void}
    */
-  focus() {
-    this.renderRoot.querySelector("button").focus();
+  focus(options) {
+    if (this.static) return;
+
+    this.renderRoot?.querySelector("button, a")?.focus(options);
   }
 
   /**
@@ -412,16 +424,44 @@ export class AuroButton extends AuroElement {
   }
 
   /**
-   * Checks whether an icon is slotted into the default slot.
-   * @returns {boolean} - True if an icon is slotted; false otherwise.
+   * Gets the children slotted into the default slot that hold an icon, either as the child itself or wrapped inside it.
+   * @returns {Element[]} - The children that hold an icon.
    * @private
    */
-  get hasSlottedIcon() {
-    return Boolean(
-      this.querySelector(
-        ":scope > auro-icon, :scope > [auro-icon], :scope > svg",
-      ),
+  get slottedIcons() {
+    return [...this.children].filter(
+      (child) =>
+        !child.slot &&
+        (child.matches(ICON_SELECTOR) || child.querySelector(ICON_SELECTOR)),
     );
+  }
+
+  /**
+   * Renders the style that visually hides every slotted child except the ones holding an icon.
+   * `::slotted()` can't match an element by what it contains, so each icon child is matched by its position.
+   * @param {Element[]} slottedIcons - The children that hold an icon.
+   * @returns {TemplateResult} - The style element.
+   * @private
+   */
+  renderIconOnlyStyle(slottedIcons) {
+    const children = [...this.children];
+    const iconPositions = slottedIcons
+      .map((icon) => `:not(:nth-child(${children.indexOf(icon) + 1}))`)
+      .join("");
+
+    return html`
+      <style>
+        .iconOnly ::slotted(${iconPositions}) {
+          position: absolute;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          border: 0;
+          clip: rect(1px, 1px, 1px, 1px);
+        }
+      </style>
+    `;
   }
 
   /**
@@ -477,7 +517,8 @@ export class AuroButton extends AuroElement {
   connectedCallback() {
     super.connectedCallback();
 
-    this.ariaLabelObserver.observe(this, {
+    this.lightDomObserver.observe(this, {
+      attributeFilter: ["auro-icon"],
       characterData: true,
       childList: true,
       subtree: true,
@@ -487,7 +528,7 @@ export class AuroButton extends AuroElement {
   disconnectedCallback() {
     super.disconnectedCallback();
 
-    this.ariaLabelObserver.disconnect();
+    this.lightDomObserver.disconnect();
   }
 
   /**
@@ -592,14 +633,20 @@ export class AuroButton extends AuroElement {
 
     // Type classes should not be applied to the wrapper to avoid affecting icons.
     // Icon-only shapes only get a type class when they hold text (e.g. a count) instead of an icon.
+    // `iconOnly` lets icon-only shapes hide everything except the icon.
+    const slottedIcons = this.slottedIcons;
+    const iconOnly = this.iconOnly && slottedIcons.length > 0;
     const textSlotClasses = {
       textSlot: true,
-      [fontSize]: this.showText || !this.hasSlottedIcon,
+      iconOnly,
+      [fontSize]: this.showText || slottedIcons.length === 0,
     };
 
     const tabindex = this.tIndex ?? this.tabindex;
 
     return html`
+      ${iconOnly ? this.renderIconOnlyStyle(slottedIcons) : undefined}
+
       <!-- Hidden slots for aria labels -->
       <slot name="ariaLabel" hidden @slotchange="${this.onAriaLabelSlotChange}"></slot>
       <slot name="ariaLabel.loading" hidden @slotchange="${this.onAriaLabelSlotChange}"></slot>
@@ -608,7 +655,7 @@ export class AuroButton extends AuroElement {
         part="${part}"
         aria-label="${ifDefined(this.generateAriaLabel())}"
         aria-labelledby="${ifDefined(this.loading ? undefined : this.currentAriaLabelledBy || undefined)}"
-        tabindex="${ifDefined(this.static ? -1 : tabindex)}"
+        tabindex="${ifDefined(this.static ? undefined : tabindex)}"
         ?autofocus="${this.autofocus}"
         class=${classMap(classes)}
         ?disabled="${this.disabled || this.loading}"
