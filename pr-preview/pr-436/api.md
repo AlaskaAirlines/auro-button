@@ -69,14 +69,14 @@ Auro interfaces.
 
 ### CSS Custom Properties
 
-| Name                                | Description                                                                                                                                                                            |
-| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| --ds-auro-button-border-color       | Border color of a `secondary` button, and of the thin outer edge of the focus ring on a `primary` button. Other variants don't show a border.                                          |
-| --ds-auro-button-border-inset-color | Color of the inner ring shown when the button has focus.                                                                                                                               |
-| --ds-auro-button-container-color    | Background color of the button. The `flat` variant doesn't use it.                                                                                                                     |
-| --ds-auro-button-container-image    | Color of a layer painted over the background color, which hides it. When you change `--ds-auro-button-container-color`, set this to the same value. The `flat` variant doesn't use it. |
-| --ds-auro-button-loader-color       | Color of the loading indicator.                                                                                                                                                        |
-| --ds-auro-button-text-color         | Color of the button's label text. The `flat` variant doesn't use it.                                                                                                                   |
+| Name                                | Description                                                                                                                                                                                          |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --ds-auro-button-border-color       | Border color of a `secondary` button, and of the thin outer edge of the focus ring on a `primary` button. Other variants don't show a border.                                                        |
+| --ds-auro-button-border-inset-color | Color of the inner ring shown when the button has focus.                                                                                                                                             |
+| --ds-auro-button-container-color    | Background color of the button. The `flat` variant doesn't use it.                                                                                                                                   |
+| --ds-auro-button-container-image    | Color of a layer painted over the background color, which hides it. When you change `--ds-auro-button-container-color`, set this to the same value. The `flat` and `tertiary` variants don't use it. |
+| --ds-auro-button-loader-color       | Color of the loading indicator.                                                                                                                                                                      |
+| --ds-auro-button-text-color         | Color of the button's label text. The `flat` variant doesn't use it.                                                                                                                                 |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Basic
