@@ -30,8 +30,6 @@
   background-image: linear-gradient(var(--ds-auro-button-container-image), var(--ds-auro-button-container-image));
 
   color: var(--ds-auro-button-text-color);
-
-  -webkit-tap-highlight-color: var(--ds-auro-button-tap-color);
 }
 
 :host(:focus-within) .auro-button{
@@ -85,6 +83,11 @@
   --ds-auro-button-border-color: transparent;
   --ds-auro-button-text-color: var(--ds-advanced-color-button-tertiary-text, #{v.$ds-advanced-color-button-tertiary-text});
   --ds-auro-button-loader-color: var(--ds-advanced-color-button-tertiary-text, #{v.$ds-advanced-color-button-tertiary-text});
+
+  // Tertiary colors are translucent; painting the image over the color would double them.
+  .auro-button {
+    background-image: none;
+  }
 }
 
 :host([variant='tertiary']:not([disabled]):is([data-hover], [data-active])) {

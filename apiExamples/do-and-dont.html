@@ -1,6 +1,14 @@
 <auro-alert type="error" noIcon>
-  <auro-button loading disabled>Primary</auro-button>
+  <p><strong>Don't:</strong> set <code>disabled</code> and <code>loading</code> on the same button.</p>
+  <auro-button loading disabled>
+    <span slot="ariaLabel.loading">Saving your changes</span>
+    Primary
+  </auro-button>
 </auro-alert>
 <auro-alert type="success" noIcon style="padding-top: 5px;">
-  <auro-button loading>Primary</auro-button>
+  <p><strong>Do:</strong> set only <code>loading</code>.</p>
+  <auro-button loading>
+    <span slot="ariaLabel.loading">Saving your changes</span>
+    Primary
+  </auro-button>
 </auro-alert>

@@ -1,14 +1,16 @@
-<auro-button aria-labelledby="button-label">
-  Auro Button
-  <label id="button-label" class="util_displayHiddenVisually">My Button Label</label>
-</auro-button>
+<span id="button-label" class="util_displayHiddenVisually">Pay for your trip</span>
+<auro-button aria-labelledby="button-label">Pay</auro-button>
 
 <style>
   .util_displayHiddenVisually {
-    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
     width: 1px;
     height: 1px;
     padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
     border: 0;
   }
 </style>

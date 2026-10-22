@@ -1,1 +1,1 @@
-The `<auro-button>` element creates interactive buttons for triggering actions in your application.
+An accessible button that lets people take an action, such as submitting a form, starting a task, or moving to the next step in a flow.

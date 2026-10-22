@@ -2,9 +2,9 @@ import { LitElement } from "lit";
 import { transportAllA11yAttributes } from "./a11yUtilities.js";
 
 /**
- * Shared base class for Auro components. It provides the common `layout`, `shape`,
- * `size`, and `appearance` options, and moves ARIA attributes from the host element
- * to the inner element so assistive technology reads them in the right place.
+ * Shared base class for Auro components. It provides the common `shape`, `size`,
+ * and `appearance` options, and moves ARIA attributes from the host element
+ * to the inner element, so screen readers announce them on the element people interact with.
  */
 export class AuroElement extends LitElement {
   /**
@@ -21,7 +21,6 @@ export class AuroElement extends LitElement {
     return {
       /**
        * Selects which internal layout the component renders. Components with only one layout ignore it.
-       * @default 'default'
        * @private
        */
       layout: {
@@ -31,7 +30,7 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Sets the component's shape. Each component sets its own default; `auro-button` uses `rounded`.
+       * Sets the component's shape. Use `rounded` or `pill` for a text label, and `circle` or `square` for an icon or short text, such as a count. Each component sets its own default; `auro-button` uses `rounded`.
        * @type {"rounded" | "pill" | "circle" | "square"}
        * @category ui
        */
@@ -53,9 +52,9 @@ export class AuroElement extends LitElement {
       },
 
       /**
-       * Matches the component's colors to the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.
+       * Sets the component's colors for the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.
        * @type {"default" | "inverse"}
-       * @default 'default'
+       * @default "default"
        * @category ui
        */
       appearance: {
@@ -65,8 +64,8 @@ export class AuroElement extends LitElement {
 
       /**
        * Deprecated: Use `appearance="inverse"` instead.
+       * Switches the component to colors designed for dark backgrounds.
        * @deprecated Use `appearance="inverse"` instead.
-       * @default false
        * @category ui
        */
       onDark: {
@@ -78,7 +77,6 @@ export class AuroElement extends LitElement {
       /**
        * The component's inner wrapper element, which receives the layout and shape classes.
        * @type {HTMLElement|null}
-       * @default null
        * @private
        */
       wrapper: {
@@ -98,6 +96,7 @@ export class AuroElement extends LitElement {
   }
 
   /**
+   * Replaces the wrapper's `shape-*` class with one for the current `shape` and `size`.
    * @private
    */
   resetShapeClasses() {
@@ -117,6 +116,7 @@ export class AuroElement extends LitElement {
   }
 
   /**
+   * Replaces the wrapper's `layout-*` class with one for the current `layout`.
    * @private
    */
   resetLayoutClasses() {
@@ -134,6 +134,7 @@ export class AuroElement extends LitElement {
   }
 
   /**
+   * Updates the wrapper's layout and shape classes to match the current properties.
    * @private
    */
   updateComponentArchitecture() {
@@ -144,7 +145,7 @@ export class AuroElement extends LitElement {
   /**
    * Points `wrapper` and the ARIA attribute transport at the wrapper element currently in the shadow DOM.
    * Lit renders a new element when a template switches tags (for example, `auro-button` swapping `<button>` for `<a>` or `<span>`), so this runs after every update.
-   * @returns {boolean} - True if the wrapper was (re)bound; false if it was already current.
+   * @returns {boolean} - True if the wrapper was (re)bound; false otherwise.
    * @private
    */
   bindWrapper() {
@@ -219,20 +220,14 @@ export class AuroElement extends LitElement {
     this.releaseWrapper();
   }
 
-  // Try to render the defined `this.layout` layout. If that fails, fall back to the default layout.
-  // This will catch if an invalid layout value is passed in and render the default layout if so.
+  // Render the defined layout. Log a failure, then rethrow so the update rejects instead of rendering empty.
   render() {
     try {
       return this.renderLayout();
     } catch (error) {
       // failed to get the defined layout
-      console.error(
-        "Failed to get the defined layout - using the default layout",
-        error,
-      ); // eslint-disable-line no-console
-
-      // fallback to the default layout
-      return this.getLayout("default");
+      console.error("Failed to get the defined layout", error); // eslint-disable-line no-console
+      throw error;
     }
   }
 }
