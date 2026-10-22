@@ -165,7 +165,6 @@ $shapeConfig: (
     border-width: $simpleBorderSize;
     min-height: getCalculatedSize($size, $simpleBorderSize);
     max-height: getCalculatedSize($size, $simpleBorderSize);
-    background-color: unset;
     box-shadow: none; // only here to support classic shape temporarily
   }
 }
@@ -177,7 +176,6 @@ $shapeConfig: (
     border-width: $thinBorderSize;
     min-height: getCalculatedSize($size, $thinBorderSize);
     max-height: getCalculatedSize($size, $thinBorderSize);
-    background-color: unset;
   }
 }
 

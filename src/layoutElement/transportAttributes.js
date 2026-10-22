@@ -1,10 +1,10 @@
 /**
- * Private module-level WeakMap to hold MutationObservers for each host element.
+ * Private module-level `WeakMap` to hold `MutationObservers` for each host element.
  */
 const _observers = new WeakMap();
 
 /**
- * Private module-level WeakMap to hold attribute matchers and targets for each host element.
+ * Private module-level `WeakMap` to hold attribute matchers and targets for each host element.
  * Structure: {
  *   host: {
  *     matchers: Set<Function>,
@@ -23,7 +23,7 @@ const _transportConfig = new WeakMap();
  * @param {Function} params.match - A function that takes an attribute name and returns true if that attribute should be moved.
  * @param {boolean} [params.removeOriginal=true] - If true, removes the attributes from the host after moving them. If false, leaves them on the host as well.
  * @returns {{ cleanup: Function, getObservedAttributes: Function, getObservedAttribute: Function }} The functions that stop moving attributes and read the attributes that have been moved.
- * @throws {TypeError} If `host` or `target` isn't an HTMLElement, `match` isn't a function, or `removeOriginal` isn't a boolean.
+ * @throws {TypeError} If `host` or `target` isn't an `HTMLElement`, `match` isn't a function, or `removeOriginal` isn't a boolean.
  */
 export const transportAttributes = ({
   host,
@@ -74,7 +74,7 @@ export const transportAttributes = ({
  * @param {Object} params - The parameters object.
  * @param {HTMLElement} params.host - The host element to observe.
  * @param {HTMLElement} params.target - The target element to receive attributes.
- * @param {Function} params.matcher - Function that determines which attributes to transport.
+ * @param {Function} params.matcher - A function that takes an attribute name and returns true if that attribute should be moved.
  * @param {boolean} [params.removeOriginal=true] - If true, removes the original attributes from the host. If false, leaves them in place.
  * @returns {{ cleanup: Function, getObservedAttributes: Function, getObservedAttribute: Function }} The functions that detach this matcher and target pairing and read its observed attributes.
  * @private
@@ -168,12 +168,12 @@ const _cleanupTransport = (host, target, matcher) => {
 };
 
 /**
- * Generic function to transport attributes from a host element to a target element.
+ * Moves the attributes that `matcher` accepts from the host element to the target element.
  *
  * @param {Object} params - The parameters object.
- * @param {HTMLElement} params.host - The host element from which to transport attributes.
- * @param {HTMLElement} params.target - The target element to which attributes will be transported.
- * @param {Function} params.matcher - Function that takes an attribute name and returns true if it should be transported.
+ * @param {HTMLElement} params.host - The element to move attributes from.
+ * @param {HTMLElement} params.target - The element to move attributes to.
+ * @param {Function} params.matcher - A function that takes an attribute name and returns true if that attribute should be moved.
  * @param {boolean} [params.removeOriginal=true] - If true, removes the original attributes from the host. If false, leaves them in place.
  * @returns {void}
  * @private
@@ -204,7 +204,7 @@ const _transportAttributes = ({
 };
 
 /**
- * Attaches a MutationObserver to the host element to monitor attribute changes.
+ * Attaches a `MutationObserver` to the host element to monitor attribute changes.
  *
  * @param {HTMLElement} host - The element to observe for attribute changes.
  * @returns {MutationObserver} The observer instance.
@@ -257,7 +257,7 @@ const _attachObserver = (host) => {
 };
 
 /**
- * Detaches and cleans up the MutationObserver for a given host element.
+ * Detaches and cleans up the `MutationObserver` for a given host element.
  *
  * @param {HTMLElement} host - The element whose observer should be detached.
  * @private
@@ -280,7 +280,7 @@ const _detachObserver = (host) => {
  * @param {HTMLElement} host - The host element.
  * @param {HTMLElement} target - The target element.
  * @param {Function} matcher - The matcher function.
- * @returns {Object|undefined} The matcher configuration if found.
+ * @returns {Object|undefined} The matcher configuration, or `undefined` if there isn't one.
  * @private
  */
 const _getMatcherConfig = (host, target, matcher) => {

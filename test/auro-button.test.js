@@ -610,6 +610,39 @@ describe("auro-button", () => {
     expect(el.hasAttribute("aria-expanded")).to.be.false;
   });
 
+  it("paints --ds-auro-button-container-color as the background color", async () => {
+    for (const variant of ["primary", "secondary"]) {
+      const el = await fixture(html`
+        <auro-button
+          variant=${variant}
+          style="--ds-auro-button-container-color: rgb(255, 0, 0);"
+        >
+          Submit
+        </auro-button>
+      `);
+
+      const button = el.shadowRoot.querySelector("button");
+      expect(getComputedStyle(button).backgroundColor, variant).to.equal(
+        "rgb(255, 0, 0)",
+      );
+    }
+  });
+
+  it("paints a tertiary button's translucent background once", async () => {
+    const el = await fixture(html`
+      <auro-button
+        variant="tertiary"
+        style="--ds-auro-button-container-color: rgba(255, 0, 0, 0.1);"
+      >
+        Submit
+      </auro-button>
+    `);
+
+    const style = getComputedStyle(el.shadowRoot.querySelector("button"));
+    expect(style.backgroundColor).to.equal("rgba(255, 0, 0, 0.1)");
+    expect(style.backgroundImage).to.equal("none");
+  });
+
   describe("icon-only shapes with text", () => {
     it("displays text in a circle shape when no icon is slotted", async () => {
       const el = await fixture(html`
