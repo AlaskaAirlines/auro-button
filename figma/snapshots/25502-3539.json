@@ -1,0 +1,111 @@
+{
+  "name": "Auro toolkit",
+  "lastModified": "2026-10-27T20:42:40Z",
+  "version": "2415146363285310080",
+  "nodes": {
+    "25502:3539": {
+      "document": {
+        "id": "25502:3539",
+        "name": "Button",
+        "type": "COMPONENT_SET",
+        "componentPropertyDefinitions": {
+          "Label#2766:0": {
+            "type": "TEXT",
+            "defaultValue": "Button label"
+          },
+          "⮑ Icon Right Type#2775:395": {
+            "type": "INSTANCE_SWAP",
+            "defaultValue": "20658:35554",
+            "preferredValues": []
+          },
+          "⮑ Icon Left Type#2775:474": {
+            "type": "INSTANCE_SWAP",
+            "defaultValue": "20658:35554",
+            "preferredValues": []
+          },
+          "Icon Left#3007:912": {
+            "type": "BOOLEAN",
+            "defaultValue": false
+          },
+          "Icon Right#3007:943": {
+            "type": "BOOLEAN",
+            "defaultValue": false
+          },
+          "⮑ Number Label#25470:0": {
+            "type": "TEXT",
+            "defaultValue": "10"
+          },
+          "Show Num Label#25478:0": {
+            "type": "BOOLEAN",
+            "defaultValue": false
+          },
+          "Icon#25610:0": {
+            "type": "BOOLEAN",
+            "defaultValue": true
+          },
+          "⮑ Icon type#25610:1001": {
+            "type": "INSTANCE_SWAP",
+            "defaultValue": "20658:35554",
+            "preferredValues": [
+              {
+                "type": "COMPONENT",
+                "key": "f0c4d0f149651eb97d77d7af7760f936a7b4e9b1"
+              }
+            ]
+          },
+          "Variant": {
+            "type": "VARIANT",
+            "defaultValue": "Primary",
+            "variantOptions": [
+              "Primary",
+              "Secondary",
+              "Tertiary",
+              "Ghost",
+              "Flat"
+            ]
+          },
+          "State": {
+            "type": "VARIANT",
+            "defaultValue": "Default",
+            "variantOptions": [
+              "Default",
+              "Hover",
+              "Loading",
+              "Focused",
+              "Disabled"
+            ]
+          },
+          "Appearance": {
+            "type": "VARIANT",
+            "defaultValue": "Default",
+            "variantOptions": [
+              "Default",
+              "Inverse"
+            ]
+          },
+          "Size": {
+            "type": "VARIANT",
+            "defaultValue": "md",
+            "variantOptions": [
+              "xl",
+              "lg",
+              "md",
+              "sm",
+              "xs"
+            ]
+          },
+          "Shape": {
+            "type": "VARIANT",
+            "defaultValue": "Rounded",
+            "variantOptions": [
+              "Rounded",
+              "Pill",
+              "Square",
+              "Circle"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
