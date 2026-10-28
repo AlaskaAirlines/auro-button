@@ -360,6 +360,12 @@ export class AuroButton extends AuroElement {
   }
 
   /**
+   * Version check smoke test. Do not merge.
+   * @returns {void}
+   */
+  versionCheckSmokeTest() {}
+
+  /**
    * Submits the form the button is placed in, if there is one.
    * @private
    * @returns {void}
