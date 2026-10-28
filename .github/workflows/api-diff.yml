@@ -1,0 +1,11 @@
+name: Version Check
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, labeled, unlabeled]
+    branches: [dev]
+
+jobs:
+  action:
+    name: Version Check
+    uses: AlaskaAirlines/auro-actions/.github/workflows/api-diff.yml@main
