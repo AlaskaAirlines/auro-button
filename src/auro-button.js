@@ -180,7 +180,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets the button's size, from `xs` (smallest) to `xl` (largest). Size controls the button's height, padding, and label text size, e.g. `xs` will be the most compact.
+       * Sets the button's size, from `xs` (smallest) to `xl` (largest). Size controls the button's height, padding, and label text size.
        * @type {"xs" | "sm" | "md" | "lg" | "xl"}
        * @default "md"
        * @category ui
@@ -266,7 +266,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets the tooltip text the browser shows when a mouse pointer rests on the button, such as more detail about what the button does (the `title` attribute). Keyboard and touch users never see it, so don't use it for essential information.
+       * Used to set the tooltip text the browser shows when a mouse pointer rests on the button, such as more detail about what the button does (the `title` attribute). Keyboard and touch users never see it, so don't use it for essential information.
        * @category ui
        */
       title: {
