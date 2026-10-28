@@ -1227,3 +1227,5 @@ describe("auro-button", () => {
     });
   });
 });
+
+// Version check smoke test. Do not merge.
