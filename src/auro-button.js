@@ -180,7 +180,7 @@ export class AuroButton extends AuroElement {
       },
 
       /**
-       * Sets the button's size, from `xs` (smallest) to `xl` (largest). Size controls the button's height, padding, and label text size.
+       * Sets the button's size, from `xs` (smallest) to `xl` (largest). Size controls the button's height, padding, and label text size, e.g. `xs` will be the most compact.
        * @type {"xs" | "sm" | "md" | "lg" | "xl"}
        * @default "md"
        * @category ui
@@ -229,7 +229,7 @@ export class AuroButton extends AuroElement {
 
       /**
        * Deprecated: Use `slot="ariaLabel.loading"` instead.
-       * Sets the text screen readers announce while the button is loading.
+       * Sets the text screen readers announce while the button is loading. If you don't set it, screen readers announce "Please wait".
        * @deprecated Use `slot="ariaLabel.loading"` instead.
        * @relevantWhen loading
        * @category a11y
