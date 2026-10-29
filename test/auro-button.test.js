@@ -628,6 +628,20 @@ describe("auro-button", () => {
     }
   });
 
+  it("uses the primary disabled text color when a primary button is disabled", async () => {
+    const el = await fixture(html`
+      <auro-button
+        disabled
+        style="--ds-advanced-color-button-primary-text: rgb(0, 0, 255); --ds-advanced-color-button-primary-text-disabled: rgb(255, 0, 0);"
+      >
+        Submit
+      </auro-button>
+    `);
+
+    const button = el.shadowRoot.querySelector("button");
+    expect(getComputedStyle(button).color).to.equal("rgb(255, 0, 0)");
+  });
+
   it("paints a tertiary button's translucent background once", async () => {
     const el = await fixture(html`
       <auro-button
