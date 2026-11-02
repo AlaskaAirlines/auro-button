@@ -22,7 +22,7 @@ Auro interfaces.
 **Example**
 <pre class="language-html"><code class="language-html">&lt;auro-button variant="primary"&gt;Submit&lt;/auro-button&gt;</code></pre>
 
-### Properties & Attributes
+### Properties and attributes
 
 | Properties     | Attributes  | Modifiers | Type                                                        | Default      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | -------------- | ----------- | --------- | ----------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -58,7 +58,7 @@ Auro interfaces.
 | ariaLabel         | Text read by screen readers in place of the visible label, for example "Save to favorites". Needed when a `circle` or `square` button shows only an icon or a count, unless the host has an `aria-label` or text visually hidden beside the icon already says what the button does. Without it, screen readers read the host's `aria-label`, or the visible label if there's none.                         |
 | ariaLabel.loading | Text read by screen readers in place of the visible label while the button is loading, for example "Saving your changes". Defaults to "Loading...".                                                                                                                                                                                                                                                        |
 
-### CSS Shadow Parts
+### CSS shadow parts
 
 | Name           | Description                                                                                                           |
 | -------------- | --------------------------------------------------------------------------------------------------------------------- |
@@ -67,7 +67,7 @@ Auro interfaces.
 | loader         | The loading indicator shown while `loading` is set.                                                                   |
 | text           | The element wrapping the button's label.                                                                              |
 
-### CSS Custom Properties
+### CSS custom properties
 
 | Name                                | Description                                                                                                                                                                                          |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
